@@ -1,0 +1,9 @@
+
+GitKeys/
+Release/
+Debug/
+ipch/
+bin/
+lib/
+*.sdf
+*.suo
