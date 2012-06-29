@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Primitive">
+      <UniqueIdentifier>{9caffebf-f140-44a0-851e-3ce60b65f2bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{a93478d9-3522-41de-8b7f-02a93d17f217}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{76de89f7-e6a6-4865-927a-c7869d69de04}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Color.h">
+      <Filter>Primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="InputCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Precomp.h" />
+    <ClInclude Include="InputKeyboard.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="InputMouse.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="InputGamepad.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcesCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Primitive</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GraphicsCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="InputCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Precomp.cpp" />
+    <ClCompile Include="InputKeyboard.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="InputMouse.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="InputGamepad.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourcesCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
