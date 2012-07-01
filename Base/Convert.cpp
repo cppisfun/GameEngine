@@ -186,5 +186,15 @@ namespace base {
       return ret;
    }
 
+   const std::string AsString (const std::vector<char>& val)
+   {
+      return std::string(val.begin(), val.end());
+   }
+
+   const std::vector<char> AsBinary (const std::string& val)
+   {
+      return std::vector<char>(val.begin(), val.end());
+   }
+
 }
 

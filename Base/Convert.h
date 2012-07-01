@@ -60,5 +60,8 @@ namespace base {
    BASEDLL const std::string AsString (long long val, bool pretty = true);
    BASEDLL const std::string AsString (float val, int decimals = 2, bool pretty = true);
    BASEDLL const std::string AsString (double val, int decimals = 2, bool pretty = true);
+
+   BASEDLL const std::string AsString (const std::vector<char>& val);
+   BASEDLL const std::vector<char> AsBinary (const std::string& val);
 }
 
