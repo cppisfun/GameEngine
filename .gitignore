@@ -6,5 +6,6 @@ ipch/
 bin/
 lib/
 resources/
+*.opensdf
 *.sdf
 *.suo
