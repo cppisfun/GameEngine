@@ -6,9 +6,6 @@
 
 namespace base {
 
-   BASEDLL float Fraction (float val);
-   BASEDLL double Fraction (double val);
-
    BASEDLL const std::string LTrim (const std::string& val); // TODO: parameter for characters to be trimmed
    BASEDLL const std::string RTrim (const std::string& val);
    BASEDLL const std::string Trim (const std::string& val);

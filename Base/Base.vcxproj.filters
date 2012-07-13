@@ -30,10 +30,13 @@
     <ClInclude Include="Constants.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Misc.h">
+    <ClInclude Include="File.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="File.h">
+    <ClInclude Include="String.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Numeric.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,10 +50,13 @@
     <ClCompile Include="Convert.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Misc.cpp">
+    <ClCompile Include="File.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="File.cpp">
+    <ClCompile Include="String.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Numeric.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

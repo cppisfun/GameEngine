@@ -73,15 +73,17 @@
     <ClInclude Include="DLL_DEF.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="File.h" />
-    <ClInclude Include="Misc.h" />
+    <ClInclude Include="Numeric.h" />
     <ClInclude Include="Precomp.h" />
+    <ClInclude Include="String.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Convert.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="File.cpp" />
-    <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="Numeric.cpp" />
     <ClCompile Include="Precomp.cpp" />
+    <ClCompile Include="String.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
