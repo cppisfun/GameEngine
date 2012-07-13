@@ -17,12 +17,9 @@ int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
       auto resources = core->Resources();
       auto keyboard  = input->Keyboard();
 
-      resources->AddBinary("music", "../resources/audio/music/Killer Tofu.ogg");
+      resources->AddBinary("music", "../resources/audio/music/music.ogg");
 
-      audio->Add("music",     resources->Binary("music"));
-      audio->Add("bell",      "../resources/audio/sound/bell.wav");
-      audio->Add("explosion", "../resources/audio/sound/explosion.wav");
-
+      audio->Add("music", resources->Binary("music"));
       audio->Play("music", true);
 
       while (msg.message != WM_QUIT) {
@@ -35,9 +32,6 @@ int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
          }
          else {
             input->Update();
-
-            if (keyboard->KeyPressed())       audio->Play("bell");
-            else if (keyboard->KeyReleased()) audio->Play("explosion");
 
             graphics->Begin();
             // do your thing
