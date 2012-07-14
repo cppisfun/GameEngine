@@ -1,8 +1,10 @@
 
 #pragma once
 
+#include "DLL_DEF.h"
 
-class WindowsCore
+
+class GEDLL WindowsCore
 {
    HWND windowHandle;
    WNDCLASSEX wndClass;

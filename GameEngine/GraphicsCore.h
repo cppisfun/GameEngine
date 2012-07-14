@@ -6,8 +6,10 @@
 
 #include "Color.h"
 
+#include "DLL_DEF.h"
 
-class GraphicsCore
+
+class GEDLL GraphicsCore
 {
    D3D_DRIVER_TYPE driverType;
    D3D_FEATURE_LEVEL featureLevel;

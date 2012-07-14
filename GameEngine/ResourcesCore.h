@@ -1,8 +1,10 @@
 
 #pragma once
 
+#include "DLL_DEF.h"
 
-class ResourcesCore
+
+class GEDLL ResourcesCore
 {
    std::map<std::string, std::string> strings;
    std::map<std::string, std::vector<char>> binaries;

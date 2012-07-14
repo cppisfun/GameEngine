@@ -4,8 +4,10 @@
 #define DIRECTINPUT_VERSION 0x0800
 #include <dinput.h>
 
+#include "DLL_DEF.h"
 
-class InputKeyboard
+
+class GEDLL InputKeyboard
 {
    IDirectInputDevice8* device;
 

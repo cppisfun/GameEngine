@@ -3,8 +3,10 @@
 
 #include "Precomp.h"
 
+#include "DLL_DEF.h"
 
-class Color
+
+class GEDLL Color
 {
 public:
    enum ValueType {

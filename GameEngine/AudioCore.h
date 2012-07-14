@@ -1,6 +1,8 @@
 
 #pragma once
 
+#include "DLL_DEF.h"
+
 namespace irrklang {
    class ISoundEngine;
    class ISoundSource;
@@ -8,7 +10,7 @@ namespace irrklang {
 }
 
 
-class AudioCore
+class GEDLL AudioCore
 {
    irrklang::ISoundEngine* device;
 

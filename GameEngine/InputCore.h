@@ -8,8 +8,10 @@
 #include "InputMouse.h"
 #include "InputGamepad.h"
 
+#include "DLL_DEF.h"
 
-class InputCore
+
+class GEDLL InputCore
 {
 public:
    enum What {

@@ -3,8 +3,10 @@
 
 #include "Precomp.h"
 
+#include "DLL_DEF.h"
 
-class Vector
+
+class GEDLL Vector
 {
 public:
    enum ValueType {

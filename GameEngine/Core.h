@@ -9,8 +9,10 @@
 
 #include "../Base/Error.h"
 
+#include "DLL_DEF.h"
 
-class Core
+
+class GEDLL Core
 {
 public:
    enum What {

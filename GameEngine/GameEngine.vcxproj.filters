@@ -46,6 +46,7 @@
     <ClInclude Include="Vector.h">
       <Filter>Primitive</Filter>
     </ClInclude>
+    <ClInclude Include="DLL_DEF.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicsCore.cpp">
@@ -57,7 +58,6 @@
     <ClCompile Include="WindowsCore.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="Precomp.cpp" />
     <ClCompile Include="InputKeyboard.cpp">
       <Filter>Input</Filter>

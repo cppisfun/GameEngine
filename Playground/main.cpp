@@ -1,7 +1,7 @@
 
-#include "Precomp.h"
+#include <Windows.h>
 
-#include "Core.h"
+#include "GameEngine/Core.h"
 
 
 int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
