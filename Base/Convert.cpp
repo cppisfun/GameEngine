@@ -2,7 +2,8 @@
 #include "Precomp.h"
 
 #include "Convert.h"
-#include "Misc.h"
+#include "String.h"
+#include "Numeric.h"
 #include "Error.h"
 
 #include "Constants.h"

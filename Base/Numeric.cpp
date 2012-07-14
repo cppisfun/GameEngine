@@ -1,7 +1,7 @@
 
 #include "Precomp.h"
 
-#include "Misc.h"
+#include "Numeric.h"
 #include "Error.h"
 
 
