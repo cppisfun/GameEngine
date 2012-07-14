@@ -39,6 +39,9 @@
     <ClInclude Include="Numeric.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Tools.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Precomp.cpp">

@@ -76,6 +76,7 @@
     <ClInclude Include="Numeric.h" />
     <ClInclude Include="Precomp.h" />
     <ClInclude Include="String.h" />
+    <ClInclude Include="Tools.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Convert.cpp" />
