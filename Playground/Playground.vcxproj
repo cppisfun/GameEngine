@@ -62,7 +62,7 @@
     <TargetName>$(ProjectName)</TargetName>
     <ExecutablePath>$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
     <LibraryPath>E:\Projekte\Foreign\Microsoft DirectX 11 SDK\Lib\x86;E:\Projekte\Foreign\irrKlang-1.4.0\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath>E:\Projekte\Foreign\boost;E:\Projekte\Foreign\Microsoft DirectX 11 SDK\Include;E:\Projekte\Foreign\irrKlang-1.4.0\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\foreign\boost;E:\Projekte\Foreign\Microsoft DirectX 11 SDK\Include;E:\Projekte\Foreign\irrKlang-1.4.0\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
