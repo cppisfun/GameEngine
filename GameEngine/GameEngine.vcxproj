@@ -40,7 +40,7 @@
     <TargetName>$(ProjectName)</TargetName>
     <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
     <IncludePath>..\foreign\boost;E:\Projekte\Foreign\Microsoft DirectX 11 SDK\Include;E:\Projekte\Foreign\irrKlang-1.4.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Projekte\Foreign\Microsoft DirectX 11 SDK\Lib\x86;E:\Projekte\Foreign\irrKlang-1.4.0\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\$(Configuration);$(LibraryPath)</LibraryPath>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
