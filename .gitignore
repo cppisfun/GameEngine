@@ -5,6 +5,9 @@ Debug/
 ipch/
 bin/
 lib/
+
+foreign/boost/bin.v2/config.log
+
 *.opensdf
 *.sdf
 *.suo
