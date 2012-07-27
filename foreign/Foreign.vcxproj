@@ -57,7 +57,7 @@
       </Message>
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>Foreign.cmd</Command>
+      <Command>Foreign.cmd "Debug"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Erstelle und kopiere Dateien der Fremdkomponenten ...</Message>

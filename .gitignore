@@ -3,9 +3,8 @@ GitKeys/
 Release/
 Debug/
 ipch/
-bin/
-lib/
 
+foreign/boost/stage/
 foreign/boost/bin.v2/config.log
 
 *.opensdf

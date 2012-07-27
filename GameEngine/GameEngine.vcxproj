@@ -38,7 +38,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir>$(SolutionDir)\lib\</OutDir>
+    <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
     <IncludePath>..\foreign\boost;E:\Projekte\Foreign\Microsoft DirectX 11 SDK\Include;E:\Projekte\Foreign\irrKlang-1.4.0\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\Projekte\Foreign\Microsoft DirectX 11 SDK\Lib\x86;E:\Projekte\Foreign\irrKlang-1.4.0\lib;$(LibraryPath)</LibraryPath>
     <TargetExt>.dll</TargetExt>
@@ -58,7 +58,8 @@
       <AdditionalLibraryDirectories>..\foreign\boost\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>echo Kopiere GameEngine.dll nach bin &amp; xcopy ..\lib\GameEngine.dll ..\bin /i /y /q</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
