@@ -14,9 +14,10 @@ namespace Base {
 
    public:
       ScopeGuard (const std::function<void()>& releaser) : releaser(releaser) { }
-      ~ScopeGuard () { if (releaser != nullptr) releaser(); }
+      ~ScopeGuard () { Release(); }
 
       void Releaser (const std::function<void()>& val) { releaser = val; }
+      void Release ()                                  { if (releaser != nullptr) releaser(); Clear(); }
       void Clear ()                                    { releaser = nullptr; }
    };
 
