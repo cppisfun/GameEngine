@@ -1,25 +1,23 @@
 
 #pragma once
 
-#define DIRECTINPUT_VERSION 0x0800
-#include <dinput.h>
+#include <irrlicht.h>
+
+#include "EventListener.h"
 
 #include "DLL_DEF.h"
 
+class EventController;
 
-class GEDLL InputGamepad
+
+class GEDLL InputGamepad : public EventListener
 {
-   bool enabled;
+   void Init (EventController* eventCtrl);
 
-   void Init (IDirectInput8* input, HWND wnd);
+   void OnEvent (const irr::SEvent& event);
 
 public:
-   InputGamepad (IDirectInput8* input, HWND wnd);
+   InputGamepad (EventController* eventCtrl);
    virtual ~InputGamepad ();
-
-   void Update ();
-
-   InputGamepad& Enable (bool enable = true) { enabled = enable; return *this; }
-   InputGamepad& Disable ()                  { enabled = false; return *this; }
 };
 

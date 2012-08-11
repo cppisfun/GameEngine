@@ -2,61 +2,41 @@
 #include "Precomp.h"
 
 #include "InputKeyboard.h"
+#include "EventController.h"
 
 #include "../Base/Error.h"
 
+using namespace irr;
 
-InputKeyboard::InputKeyboard (IDirectInput8* input, HWND wnd) : device(nullptr)
+
+InputKeyboard::InputKeyboard (EventController* eventCtrl)
 {
-   Init(input, wnd);
+   Init(eventCtrl);
 }
 
 InputKeyboard::~InputKeyboard ()
 {
-   if (device != nullptr) {
-      device->Unacquire();
-      SecureRelease(device);
-   }
 }
 
-void InputKeyboard::Init (IDirectInput8* input, HWND wnd)
+void InputKeyboard::Init (EventController* eventCtrl)
 {
-   if (input == nullptr)    throw error::NullPointer("Invalid input device!", __FUNCTION__);
-   else if (wnd == nullptr) throw error::NullPointer("Invalid window handle!", __FUNCTION__);
-
-   HRESULT res = input->CreateDevice(GUID_SysKeyboard, &device, nullptr);
-   if (FAILED(res)) throw error::Create("Failed to create keyboard device!", __FUNCTION__);
-
-   res = device->SetDataFormat(&c_dfDIKeyboard);
-   if (FAILED(res)) throw error::Execute("Failed to set data format for keyboard device!", __FUNCTION__);
-
-   res = device->SetCooperativeLevel(wnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE);
-   if (FAILED(res)) throw error::Execute("Failed to set cooperative level for keyboard device!", __FUNCTION__);
-
-   res = device->Acquire();
-   if (FAILED(res)) throw error::Query("Failed to acquire keyboard device!", __FUNCTION__);
+   if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+   eventCtrl->KeyboardCallback(std::bind(&InputKeyboard::OnEvent, this, std::placeholders::_1));
 }
 
-void InputKeyboard::Update ()
+void InputKeyboard::OnEvent (const SEvent& event)
 {
-   std::swap(currKeys, prevKeys);
-
-   HRESULT res = device->GetDeviceState(currKeys.size(), (LPVOID)&currKeys);
-   if (FAILED(res)) {
-      if (FAILED(device->Acquire())) return;
-
-      res = device->GetDeviceState(currKeys.size(), (LPVOID)&currKeys);
-      if (FAILED(res)) throw error::Read("Failed to read keyboard device state!", __FUNCTION__);
-   }
+   prevKeys[event.KeyInput.Key] = std::move(currKeys[event.KeyInput.Key]);
+   currKeys[event.KeyInput.Key] = event.KeyInput.PressedDown;
 }
 
 bool InputKeyboard::Key (int key)
 {
-   if (key < NONE || key >= 256) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
-   else if (key >= 0) return CheckCurr(key);
+   if (key < NONE || key > KEY_KEY_CODES_COUNT) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+   else if (key >= 0) return currKeys[key];
 
-   for (int i = 0; i < 256; ++i) {
-      if (CheckCurr(i)) return (key == ANY);
+   for (int i = 0; i < KEY_KEY_CODES_COUNT; ++i) {
+      if (currKeys[i]) return (key == ANY);
    }
 
    return (key == NONE);
@@ -64,11 +44,11 @@ bool InputKeyboard::Key (int key)
 
 bool InputKeyboard::KeyPressed (int key)
 {
-   if (key < NONE || key >= 256) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
-   else if (key >= 0) return (CheckCurr(key) && !CheckPrev(key));
+   if (key < NONE || key > KEY_KEY_CODES_COUNT) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+   else if (key >= 0) return (currKeys[key] && !prevKeys[key]);
 
-   for (int i = 0; i < 256; ++i) {
-      if (CheckCurr(i) && !CheckPrev(i)) return (key == ANY);
+   for (int i = 0; i < KEY_KEY_CODES_COUNT; ++i) {
+      if (currKeys[i] && !prevKeys[i]) return (key == ANY);
    }
 
    return (key == NONE);
@@ -76,11 +56,11 @@ bool InputKeyboard::KeyPressed (int key)
 
 bool InputKeyboard::KeyReleased (int key)
 {
-   if (key < NONE || key >= 256) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
-   else if (key >= 0) return (!CheckCurr(key) && CheckPrev(key));
+   if (key < NONE || key > KEY_KEY_CODES_COUNT) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+   else if (key >= 0) return (!currKeys[key] && prevKeys[key]);
 
-   for (int i = 0; i < 256; ++i) {
-      if (!CheckCurr(i) && CheckPrev(i)) return (key == ANY);
+   for (int i = 0; i < KEY_KEY_CODES_COUNT; ++i) {
+      if (!currKeys[i] && prevKeys[i]) return (key == ANY);
    }
 
    return (key == NONE);

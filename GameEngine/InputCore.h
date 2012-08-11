@@ -1,8 +1,10 @@
 
 #pragma once
 
-#define DIRECTINPUT_VERSION 0x0800
-#include <dinput.h>
+
+#include <irrlicht.h>
+
+#include "EventController.h"
 
 #include "InputKeyboard.h"
 #include "InputMouse.h"
@@ -23,27 +25,20 @@ public:
    };
 
 private:
-   HINSTANCE instanceHandle;
-   HWND windowHandle;
-   IDirectInput8* device;
+   EventController* eventController;
 
    std::unique_ptr<InputKeyboard> keyboard;
-   std::unique_ptr<InputMouse> mouse;
-   std::unique_ptr<InputGamepad> gamepad;
+   std::unique_ptr<InputMouse>    mouse;
+   std::unique_ptr<InputGamepad>  gamepad;
 
-   void Init (HINSTANCE inst, HWND wnd);
+   void Init (EventController* eventCtrl);
 
 public:
-   InputCore (HINSTANCE inst, HWND wnd);
+   InputCore (EventController* eventCtrl);
    virtual ~InputCore ();
-
-   void Update ();
 
    InputCore& Reset (const What& what);
    InputCore& ShutDown (const What& what);
-
-   HINSTANCE InstanceHandle () const { return instanceHandle; }
-   HWND WindowHandle () const        { return windowHandle; }
 
    InputKeyboard* Keyboard () { if (keyboard == nullptr) Reset(KeyboardInterface); return keyboard.get(); }
    InputMouse* Mouse ()       { if (mouse == nullptr) Reset(MouseInterface); return mouse.get(); }

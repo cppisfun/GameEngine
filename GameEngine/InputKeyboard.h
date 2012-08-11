@@ -1,29 +1,27 @@
 
 #pragma once
 
-#define DIRECTINPUT_VERSION 0x0800
-#include <dinput.h>
+#include <irrlicht.h>
+
+#include "EventListener.h"
 
 #include "DLL_DEF.h"
 
+class EventController;
 
-class GEDLL InputKeyboard
+
+class GEDLL InputKeyboard : public EventListener
 {
-   IDirectInputDevice8* device;
+   std::array<bool, irr::KEY_KEY_CODES_COUNT> currKeys;
+   std::array<bool, irr::KEY_KEY_CODES_COUNT> prevKeys;
 
-   std::array<char, 256> currKeys;
-   std::array<char, 256> prevKeys;
+   void Init (EventController* eventCtrl);
 
-   void Init (IDirectInput8* input, HWND wnd);
-
-   bool CheckCurr (int key) { return (currKeys[key] & 0x80) ? true : false; }
-   bool CheckPrev (int key) { return (prevKeys[key] & 0x80) ? true : false; }
+   void OnEvent (const irr::SEvent& event) override;
 
 public:
-   InputKeyboard (IDirectInput8* input, HWND wnd);
+   InputKeyboard (EventController* eventCtrl);
    virtual ~InputKeyboard ();
-
-   void Update ();
 
    bool Key (int key = ANY);
    bool KeyPressed (int key = ANY);

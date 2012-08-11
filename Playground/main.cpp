@@ -1,42 +1,38 @@
 
 #include <Windows.h>
 
+#include "Base/Tools.h"
+
 #include "GameEngine/Core.h"
 
 
-int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
+int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
 {
-   MSG msg    = { 0 };
    Core* core = nullptr;
 
+   Base::ScopeGuard guard([&core] () { SecureDelete(core); });
+
    try {
-      core           = Core::Instance(instance);
+      core           = Core::Instance();
       auto graphics  = core->Graphics();
       auto input     = core->Input();
       auto audio     = core->Audio();
       auto resources = core->Resources();
       auto keyboard  = input->Keyboard();
 
+      core->WindowTitle("GameEngine 0.1.0");
+
       resources->AddBinary("music", "../resources/audio/music/music.ogg");
 
-      audio->Add("music", resources->Binary("music"));
+      audio->Add("music",  resources->Binary("music"));
       audio->Play("music", true);
 
-      while (msg.message != WM_QUIT) {
-         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
+      while (core->IsRunning() && !keyboard->KeyReleased(27)) {   // TODO
+         graphics->BeginScene();
+         {
+            graphics->Text(10, 10, "Hello World!");
          }
-         else if (GetAsyncKeyState(VK_ESCAPE)) {
-            PostQuitMessage(0);
-         }
-         else {
-            input->Update();
-
-            graphics->Begin();
-            // do your thing
-            graphics->End();
-         }
+         graphics->EndScene();
       }
    }
    catch (std::exception& e) {
@@ -45,9 +41,13 @@ int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
       err += "\n\nShutting down program.";
 
       ShowError(err.c_str());
+      return 5;
+   }
+   catch (...) {
+      ShowError("Unhandled exception caught in main loop!\n\nShutting down program.");
+      return 9;
    }
 
-   SecureDelete(core);
-   return static_cast<int>(msg.wParam);
+   return 0;
 }
 

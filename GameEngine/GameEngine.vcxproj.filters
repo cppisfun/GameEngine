@@ -24,9 +24,6 @@
     <ClInclude Include="InputCore.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="WindowsCore.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Precomp.h" />
     <ClInclude Include="InputKeyboard.h">
       <Filter>Input</Filter>
@@ -47,15 +44,18 @@
       <Filter>Primitive</Filter>
     </ClInclude>
     <ClInclude Include="DLL_DEF.h" />
+    <ClInclude Include="EventController.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="EventListener.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicsCore.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="InputCore.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowsCore.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Precomp.cpp" />
@@ -72,6 +72,9 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="ResourcesCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
       <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>

@@ -39,7 +39,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>$(ProjectName)</TargetName>
     <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
-    <IncludePath>..\foreign\boost;E:\Projekte\Foreign\Microsoft DirectX 11 SDK\Include;E:\Projekte\Foreign\irrKlang-1.4.0\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\foreign\boost;..\foreign\irrlicht\include;..\foreign\irrklang\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\$(Configuration);$(LibraryPath)</LibraryPath>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
@@ -54,8 +54,8 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;d3dx11.lib;dinput8.lib;xinput.lib;dxguid.lib;irrklang.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\foreign\boost\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>irrlicht.lib;irrklang.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -80,6 +80,8 @@
     <ClInclude Include="Color.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="DLL_DEF.h" />
+    <ClInclude Include="EventController.h" />
+    <ClInclude Include="EventListener.h" />
     <ClInclude Include="GraphicsCore.h" />
     <ClInclude Include="InputCore.h" />
     <ClInclude Include="InputGamepad.h" />
@@ -88,10 +90,10 @@
     <ClInclude Include="Precomp.h" />
     <ClInclude Include="ResourcesCore.h" />
     <ClInclude Include="Vector.h" />
-    <ClInclude Include="WindowsCore.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AudioCore.cpp" />
+    <ClCompile Include="Core.cpp" />
     <ClCompile Include="GraphicsCore.cpp" />
     <ClCompile Include="InputCore.cpp" />
     <ClCompile Include="InputGamepad.cpp" />
@@ -101,7 +103,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ResourcesCore.cpp" />
-    <ClCompile Include="WindowsCore.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base\Base.vcxproj">

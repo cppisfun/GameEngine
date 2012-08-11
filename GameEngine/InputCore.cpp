@@ -6,44 +6,30 @@
 #include "../Base/Error.h"
 
 
-InputCore::InputCore (HINSTANCE inst, HWND wnd)
-: device(nullptr), keyboard(nullptr), mouse(nullptr), gamepad(nullptr)
+InputCore::InputCore (EventController* eventCtrl)
+: eventController(nullptr), keyboard(nullptr), mouse(nullptr), gamepad(nullptr)
 {
-   Init(inst, wnd);
+   Init(eventCtrl);
 }
 
 InputCore::~InputCore ()
 {
    ShutDown(AllInterfaces);
-   SecureRelease(device);
 }
 
-void InputCore::Init (HINSTANCE inst, HWND wnd)
+void InputCore::Init (EventController* eventCtrl)
 {
-   if (inst == nullptr)     throw error::NullPointer("Invalid instance handle!", __FUNCTION__);
-   else if (wnd == nullptr) throw error::NullPointer("Invalid window handle!", __FUNCTION__);
+   if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
 
-   instanceHandle = inst;
-   windowHandle   = wnd;
-
-   HRESULT res = DirectInput8Create(inst, DIRECTINPUT_VERSION, IID_IDirectInput8, (LPVOID*)&device, nullptr);
-   if (FAILED(res)) throw error::Create("Failed to create DirectInput8 device!", __FUNCTION__);
-
+   eventController = eventCtrl;
    Reset(KeyboardInterface);
-}
-
-void InputCore::Update ()
-{
-   if (keyboard != nullptr) keyboard->Update();
-   if (mouse != nullptr)    mouse->Update();
-   if (gamepad != nullptr)  gamepad->Update();
 }
 
 InputCore& InputCore::Reset (const What& what)
 {
-   if (what & KeyboardInterface) keyboard.reset(new InputKeyboard(device, windowHandle));
-   if (what & MouseInterface)    mouse.reset(new InputMouse(device, windowHandle));
-   if (what & GamepadInterface)  gamepad.reset(new InputGamepad(device, windowHandle));
+   if (what & KeyboardInterface) keyboard.reset(new InputKeyboard(eventController));
+   if (what & MouseInterface)    mouse.reset(new InputMouse(eventController));
+   if (what & GamepadInterface)  gamepad.reset(new InputGamepad(eventController));
 
    return *this;
 }
