@@ -197,5 +197,13 @@ namespace base {
       return std::vector<char>(val.begin(), val.end());
    }
 
+   const std::wstring AsWString (const std::string& val)
+   {
+      std::wstring ret;
+      std::for_each(val.begin(), val.end(), [&ret] (char ch) { ret += static_cast<wchar_t>(ch); });
+
+      return ret;
+   }
+
 }
 

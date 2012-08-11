@@ -63,5 +63,7 @@ namespace base {
 
    BASEDLL const std::string AsString (const std::vector<char>& val);
    BASEDLL const std::vector<char> AsBinary (const std::string& val);
+
+   BASEDLL const std::wstring AsWString (const std::string& val);
 }
 
