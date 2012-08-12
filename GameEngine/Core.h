@@ -54,7 +54,7 @@ public:
 
    static Core* Instance ()
    {
-      if (!instance) instance = new Core();
+      if (!instance) instance = new Core;
       return instance;
    }
 
