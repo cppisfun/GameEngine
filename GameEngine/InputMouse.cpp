@@ -1,27 +1,33 @@
 
 #include "Precomp.h"
 
+#include <irrlicht.h>
+
 #include "InputMouse.h"
 #include "EventController.h"
 
 #include "../Base/Error.h"
 
 using namespace irr;
+using namespace irr::gui;
 
 
-InputMouse::InputMouse (EventController* eventCtrl)
-: currWheel(0), prevWheel(0), currX(0), prevX(0), currY(0), prevY(0)
+InputMouse::InputMouse (ICursorControl* cursorCtrl, EventController* eventCtrl)
+: cursor(nullptr), currWheel(0), prevWheel(0), currX(0), prevX(0), currY(0), prevY(0)
 {
-   Init(eventCtrl);
+   Init(cursorCtrl, eventCtrl);
 }
 
 InputMouse::~InputMouse ()
 {
 }
 
-void InputMouse::Init (EventController* eventCtrl)
+void InputMouse::Init (ICursorControl* cursorCtrl, EventController* eventCtrl)
 {
-   if (eventCtrl == nullptr) error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+   if (cursorCtrl == nullptr)     throw error::NullPointer("Invalid cursor control pointer!", __FUNCTION__);
+   else if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+
+   cursor = cursorCtrl;
    eventCtrl->MouseCallback(std::bind(&InputMouse::OnEvent, this, std::placeholders::_1));
 
    std::fill(currButtons.begin(), currButtons.end(), false);
@@ -80,6 +86,35 @@ void InputMouse::Update ()
    prevX     = currX;
    prevY     = currY;
    prevWheel = currWheel;
+}
+
+InputMouse& InputMouse::X (int x)
+{
+   currX = x;
+   prevX = x;
+
+   cursor->setPosition(x, currY);
+   return *this;
+}
+
+InputMouse& InputMouse::Y (int y)
+{
+   currY = y;
+   prevY = y;
+
+   cursor->setPosition(currX, y);
+   return *this;
+}
+
+InputMouse& InputMouse::Position (int x, int y)
+{
+   currX = x;
+   prevX = x;
+   currY = y;
+   prevY = y;
+
+   cursor->setPosition(x, y);
+   return *this;
 }
 
 bool InputMouse::Moved (int dir)

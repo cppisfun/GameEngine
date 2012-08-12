@@ -5,11 +5,13 @@
 
 #include "../Base/Error.h"
 
+using namespace irr;
 
-InputCore::InputCore (EventController* eventCtrl)
-: eventController(nullptr), keyboard(nullptr), mouse(nullptr), gamepad(nullptr)
+
+InputCore::InputCore (IrrlichtDevice* irrDevice, EventController* eventCtrl)
+: device(nullptr), eventController(nullptr), keyboard(nullptr), mouse(nullptr), gamepad(nullptr)
 {
-   Init(eventCtrl);
+   Init(irrDevice, eventCtrl);
 }
 
 InputCore::~InputCore ()
@@ -17,11 +19,14 @@ InputCore::~InputCore ()
    ShutDown(AllInterfaces);
 }
 
-void InputCore::Init (EventController* eventCtrl)
+void InputCore::Init (IrrlichtDevice* irrDevice, EventController* eventCtrl)
 {
-   if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+   if (irrDevice == nullptr)      throw error::NullPointer("Invalid Irrlicht device pointer!", __FUNCTION__);
+   else if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
 
+   device          = irrDevice;
    eventController = eventCtrl;
+
    Reset(KeyboardInterface);
 }
 
@@ -35,7 +40,7 @@ void InputCore::Update ()
 InputCore& InputCore::Reset (const What& what)
 {
    if (what & KeyboardInterface) keyboard.reset(new InputKeyboard(eventController));
-   if (what & MouseInterface)    mouse.reset(new InputMouse(eventController));
+   if (what & MouseInterface)    mouse.reset(new InputMouse(device->getCursorControl(), eventController));
    if (what & GamepadInterface)  gamepad.reset(new InputGamepad(eventController));
 
    return *this;

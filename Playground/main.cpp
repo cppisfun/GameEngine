@@ -32,29 +32,36 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
       std::vector<std::string> log;
 
       while (core->IsRunning()) {
-         if (keyboard->Key(27)) break;
+         if (core->IsWindowActive()) {
+            if (keyboard->Key(27)) core->Quit();
 
-         if (mouse->Clicked(LEFT_BUTTON)) {
-            log.push_back("CLICKED");
-         }
-
-         if (mouse->DoubleClicked(LEFT_BUTTON)) {
-            log.push_back("DOUBLE CLICKED");
-         }
-
-         if (mouse->TripleClicked(LEFT_BUTTON)) {
-            log.push_back("TRIPLE CLICKED");
-         }
-
-         graphics->BeginScene();
-         {
-            for (size_t i = 0; i < log.size(); ++i) {
-               graphics->Text(10, i * 10, log[i]);
+            if (mouse->Clicked(LEFT_BUTTON)) {
+               log.push_back("CLICKED");
             }
-         }
-         graphics->EndScene();
 
-         input->Update();
+            if (mouse->DoubleClicked(LEFT_BUTTON)) {
+               log.push_back("DOUBLE CLICKED");
+               core->MaximizeWindow();
+            }
+
+            if (mouse->TripleClicked(LEFT_BUTTON)) {
+               log.push_back("TRIPLE CLICKED");
+               core->MinimizeWindow();
+            }
+
+            graphics->BeginScene();
+            {
+               for (size_t i = 0; i < log.size(); ++i) {
+                  graphics->Text(10, i * 10, log[i]);
+               }
+            }
+            graphics->EndScene();
+
+            input->Update();
+         }
+         else {
+            core->DoNothing();
+         }
       }
    }
    catch (std::exception& e) {

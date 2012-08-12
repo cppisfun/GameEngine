@@ -7,6 +7,12 @@
 
 class EventController;
 
+namespace irr {
+   namespace gui {
+      class ICursorControl;
+   }
+}
+
 
 class GEDLL InputMouse : public EventListener
 {
@@ -18,6 +24,8 @@ class GEDLL InputMouse : public EventListener
       ButtonTripleClicked
    };
 
+   irr::gui::ICursorControl* cursor;
+
    int currX, currY;
    int prevX, prevY;
    float currWheel, prevWheel;
@@ -26,15 +34,23 @@ class GEDLL InputMouse : public EventListener
    std::array<bool, BUTTON_COUNT> prevButtons;
    std::array<ButtonClickState, BUTTON_COUNT> buttonClickStates;
 
-   void Init (EventController* eventCtrl);
+   void Init (irr::gui::ICursorControl* cursorCtrl, EventController* eventCtrl);
 
    void OnEvent (const irr::SEvent& event) override;
 
 public:
-   InputMouse (EventController* eventCtrl);
+   InputMouse (irr::gui::ICursorControl* cursorCtrl, EventController* eventCtrl);
    virtual ~InputMouse ();
 
    void Update ();
+
+   InputMouse& Show (bool show = true) { cursor->setVisible(show); return *this; }
+   InputMouse& Hide ()                 { cursor->setVisible(false); return *this; }
+   InputMouse& X (int x);
+   InputMouse& Y (int y);
+   InputMouse& Position (int x, int y);
+
+   bool IsVisible () const { return cursor->isVisible(); }
 
    int X () const { return currX; }
    int Y () const { return currY; }

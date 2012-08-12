@@ -25,16 +25,17 @@ public:
    };
 
 private:
+   irr::IrrlichtDevice* device;
    EventController* eventController;
 
    std::unique_ptr<InputKeyboard> keyboard;
    std::unique_ptr<InputMouse>    mouse;
    std::unique_ptr<InputGamepad>  gamepad;
 
-   void Init (EventController* eventCtrl);
+   void Init (irr::IrrlichtDevice* irrDevice, EventController* eventCtrl);
 
 public:
-   InputCore (EventController* eventCtrl);
+   InputCore (irr::IrrlichtDevice* irrDevice, EventController* eventCtrl);
    virtual ~InputCore ();
 
    void Update ();

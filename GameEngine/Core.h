@@ -30,13 +30,16 @@ private:
 
    std::unique_ptr<irr::IrrlichtDevice> device;
    std::unique_ptr<EventController> eventController;
+   bool resizableWindow;
 
    std::unique_ptr<GraphicsCore>  graphics;
    std::unique_ptr<InputCore>     input;
    std::unique_ptr<AudioCore>     audio;
    std::unique_ptr<ResourcesCore> resources;
 
-   Core () : device(nullptr), eventController(nullptr), graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
+   Core ()
+   : resizableWindow(false), device(nullptr), eventController(nullptr),
+     graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
    {
       Init();
    }
@@ -61,7 +64,7 @@ public:
    Core& Reset (const What& what)
    {
       if (what & GraphicsInterface)  graphics.reset(new GraphicsCore(device.get()));
-      if (what & InputInterface)     input.reset(new InputCore(eventController.get()));
+      if (what & InputInterface)     input.reset(new InputCore(device.get(), eventController.get()));
       if (what & AudioInterface)     audio.reset(new AudioCore);
       if (what & ResourcesInterface) resources.reset(new ResourcesCore);
 
@@ -79,6 +82,14 @@ public:
    }
 
    Core& WindowTitle (const std::string& title);
+   Core& ResizableWindow (bool resizable = true) { device->setResizable(resizable); return *this; }
+   Core& StaticWindow ()                         { device->setResizable(false); return *this; }
+   Core& MinimizeWindow ()                       { device->minimizeWindow(); return *this; }
+   Core& MaximizeWindow ()                       { device->maximizeWindow(); return *this; }
+   Core& RestoreWindow ()                        { device->restoreWindow(); return *this; }
+   Core& ClearSystemMessages ()                  { device->clearSystemMessages(); return *this; }
+   Core& DoNothing ()                            { device->yield(); return *this; }
+   Core& Quit ()                                 { device->closeDevice(); return *this; }
 
    GraphicsCore* Graphics ()      { if (graphics == nullptr) Reset(GraphicsInterface); return graphics.get(); }
    InputCore* Input ()            { if (input == nullptr) Reset(InputInterface); return input.get(); }
@@ -86,7 +97,12 @@ public:
    ResourcesCore* Resources ()    { if (resources == nullptr) Reset(ResourcesInterface); return resources.get(); }
    irr::IrrlichtDevice* Device () { return device.get(); }
 
-   bool IsRunning () const { return device->run(); }
+   bool IsRunning () const         { return device->run(); }
+   bool IsFullscreen () const      { return device->isFullscreen(); }
+   bool IsWindowActive () const    { return device->isWindowActive(); }
+   bool IsWindowFocused () const   { return device->isWindowFocused(); }
+   bool IsWindowResizable () const { return resizableWindow; }
+   bool IsWindowMinimized () const { return device->isWindowMinimized(); }
 };
 
 
