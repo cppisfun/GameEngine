@@ -75,6 +75,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PreBuildEvent>
+      <Command>Foreign.cmd "Release"</Command>
+      <Message>Erstelle und kopiere Dateien der Fremdkomponenten ...</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="Foreign.cmd" />
