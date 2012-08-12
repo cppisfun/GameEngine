@@ -29,26 +29,12 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
       audio->Add("music",  resources->Binary("music"));
       audio->Play("music", true);
 
-      mouse->X(100).Y(100);
-
-      std::vector<std::string> log;
-
       while (core->IsRunning()) {
          if (keyboard->Key(27)) break;
 
-         if (mouse->Moved(UP)) {
-            log.push_back("UP [" + base::AsString(mouse->X()) + "|" + base::AsString(mouse->Y()) + "]");
-         }
-
-         if (mouse->Moved(DOWN)) {
-            log.push_back("DOWN [" + base::AsString(mouse->X()) + "|" + base::AsString(mouse->Y()) + "]");
-         }
-
          graphics->BeginScene();
          {
-            for (size_t i = 0; i < log.size(); ++i) {
-               graphics->Text(10, i * 10, log[i]);
-            }
+            // drawing things goes here
          }
          graphics->EndScene();
 

@@ -27,15 +27,12 @@ public:
 
    void Update ();
 
-   InputMouse& X (int val) { currX = val; prevX = val; return *this; }
-   InputMouse& Y (int val) { currY = val; prevY = val; return *this; }
+   int X () const { return currX; }
+   int Y () const { return currY; }
+   float Wheel () const { return currWheel; }
 
-   int X () const  { return currX; }
-   int Y () const  { return currY; }
-   float Wheel () const  { return currWheel; }
-
-   int DX () const { return prevX - currX; }
-   int DY () const { return prevY - currY; }
+   int DX () const { return currX - prevX; }
+   int DY () const { return currY - prevY; }
    float DWheel () const { return prevWheel - currWheel; }
 
    bool Moved (int direction = ANY);
