@@ -9,7 +9,8 @@
 using namespace irr;
 
 
-InputMouse::InputMouse (EventController* eventCtrl) : currWheel(0), prevWheel(0)
+InputMouse::InputMouse (EventController* eventCtrl)
+: currWheel(0), prevWheel(0), currX(0), prevX(0), currY(0), prevY(0)
 {
    Init(eventCtrl);
 }
@@ -25,8 +26,7 @@ void InputMouse::Init (EventController* eventCtrl)
 
    std::fill(currButtons.begin(), currButtons.end(), false);
    std::fill(prevButtons.begin(), prevButtons.end(), false);
-
-   // TODO: initialize positions!
+   std::fill(buttonClickStates.begin(), buttonClickStates.end(), Nothing);
 }
 
 void InputMouse::OnEvent (const SEvent& event)
@@ -34,18 +34,18 @@ void InputMouse::OnEvent (const SEvent& event)
    if (!Enabled()) return;
 
    switch (event.MouseInput.Event) {
-      case EMIE_LMOUSE_PRESSED_DOWN: currButtons[LEFT_BUTTON]   = true;  return;
-      case EMIE_MMOUSE_PRESSED_DOWN: currButtons[MIDDLE_BUTTON] = true;  return;
-      case EMIE_RMOUSE_PRESSED_DOWN: currButtons[RIGHT_BUTTON]  = true;  return;
-      case EMIE_LMOUSE_LEFT_UP:      currButtons[LEFT_BUTTON]   = false; return;
-      case EMIE_MMOUSE_LEFT_UP:      currButtons[MIDDLE_BUTTON] = false; return;
-      case EMIE_RMOUSE_LEFT_UP:      currButtons[RIGHT_BUTTON]  = false; return;
-      //case EMIE_LMOUSE_DOUBLE_CLICK: buttons[LEFT_BUTTON] = DoubleClicked; return;
-      //case EMIE_MMOUSE_DOUBLE_CLICK: buttons[_BUTTON] = DoubleClicked; return;
-      //case EMIE_RMOUSE_DOUBLE_CLICK: buttons[_BUTTON] = DoubleClicked; return;
-      //case EMIE_LMOUSE_TRIPLE_CLICK: buttons[LEFT_BUTTON] = TripleClicked; return;
-      //case EMIE_MMOUSE_TRIPLE_CLICK: buttons[_BUTTON] = TripleClicked; return;
-      //case EMIE_RMOUSE_TRIPLE_CLICK: buttons[_BUTTON] = TripleClicked; return;
+      case EMIE_LMOUSE_PRESSED_DOWN: currButtons[LEFT_BUTTON]         = true;                return;
+      case EMIE_MMOUSE_PRESSED_DOWN: currButtons[MIDDLE_BUTTON]       = true;                return;
+      case EMIE_RMOUSE_PRESSED_DOWN: currButtons[RIGHT_BUTTON]        = true;                return;
+      case EMIE_LMOUSE_LEFT_UP:      currButtons[LEFT_BUTTON]         = false;               return;
+      case EMIE_MMOUSE_LEFT_UP:      currButtons[MIDDLE_BUTTON]       = false;               return;
+      case EMIE_RMOUSE_LEFT_UP:      currButtons[RIGHT_BUTTON]        = false;               return;
+      case EMIE_LMOUSE_DOUBLE_CLICK: buttonClickStates[LEFT_BUTTON]   = ButtonDoubleClicked; return;
+      case EMIE_MMOUSE_DOUBLE_CLICK: buttonClickStates[MIDDLE_BUTTON] = ButtonDoubleClicked; return;
+      case EMIE_RMOUSE_DOUBLE_CLICK: buttonClickStates[RIGHT_BUTTON]  = ButtonDoubleClicked; return;
+      case EMIE_LMOUSE_TRIPLE_CLICK: buttonClickStates[LEFT_BUTTON]   = ButtonTripleClicked; return;
+      case EMIE_MMOUSE_TRIPLE_CLICK: buttonClickStates[MIDDLE_BUTTON] = ButtonTripleClicked; return;
+      case EMIE_RMOUSE_TRIPLE_CLICK: buttonClickStates[RIGHT_BUTTON]  = ButtonTripleClicked; return;
 
       case EMIE_MOUSE_MOVED:
          currX = event.MouseInput.X;
@@ -62,7 +62,21 @@ void InputMouse::Update ()
 {
    if (!Enabled()) return;
 
+   for (int i = 0; i < BUTTON_COUNT; ++i) {
+      if (buttonClickStates[i] != ButtonWasPressed) {
+         buttonClickStates[i] = Nothing;
+      }
+
+      if (ButtonPressed(i) && buttonClickStates[i] == Nothing) {
+         buttonClickStates[i] = ButtonWasPressed;
+      }
+      else if (ButtonReleased(i) && buttonClickStates[i] == ButtonWasPressed) {
+         buttonClickStates[i] = ButtonClicked;
+      }
+   }
+
    std::copy(currButtons.begin(), currButtons.end(), prevButtons.begin());
+
    prevX     = currX;
    prevY     = currY;
    prevWheel = currWheel;
@@ -126,3 +140,38 @@ bool InputMouse::ButtonReleased (int btn)
    return (btn == NONE);
 }
 
+bool InputMouse::Clicked (int btn)
+{
+   if (btn < NONE || btn >= BUTTON_COUNT) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
+   else if (btn >= 0) return (buttonClickStates[btn] == ButtonClicked);
+
+   for (int i = 0; i < BUTTON_COUNT; ++i) {
+      if (buttonClickStates[i] == ButtonClicked) return (btn == ANY);
+   }
+
+   return (btn == NONE);
+}
+
+bool InputMouse::DoubleClicked (int btn)
+{
+   if (btn < NONE || btn >= BUTTON_COUNT) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
+   else if (btn >= 0) return (buttonClickStates[btn] == ButtonDoubleClicked);
+
+   for (int i = 0; i < BUTTON_COUNT; ++i) {
+      if (buttonClickStates[i] == ButtonDoubleClicked) return (btn == ANY);
+   }
+
+   return (btn == NONE);
+}
+
+bool InputMouse::TripleClicked (int btn)
+{
+   if (btn < NONE || btn >= BUTTON_COUNT) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
+   else if (btn >= 0) return (buttonClickStates[btn] == ButtonTripleClicked);
+
+   for (int i = 0; i < BUTTON_COUNT; ++i) {
+      if (buttonClickStates[i] == ButtonTripleClicked) return (btn == ANY);
+   }
+
+   return (btn == NONE);
+}

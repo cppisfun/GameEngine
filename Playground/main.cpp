@@ -29,12 +29,28 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
       audio->Add("music",  resources->Binary("music"));
       audio->Play("music", true);
 
+      std::vector<std::string> log;
+
       while (core->IsRunning()) {
          if (keyboard->Key(27)) break;
 
+         if (mouse->Clicked(LEFT_BUTTON)) {
+            log.push_back("CLICKED");
+         }
+
+         if (mouse->DoubleClicked(LEFT_BUTTON)) {
+            log.push_back("DOUBLE CLICKED");
+         }
+
+         if (mouse->TripleClicked(LEFT_BUTTON)) {
+            log.push_back("TRIPLE CLICKED");
+         }
+
          graphics->BeginScene();
          {
-            // drawing things goes here
+            for (size_t i = 0; i < log.size(); ++i) {
+               graphics->Text(10, i * 10, log[i]);
+            }
          }
          graphics->EndScene();
 

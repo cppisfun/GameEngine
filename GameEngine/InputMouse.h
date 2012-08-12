@@ -10,12 +10,21 @@ class EventController;
 
 class GEDLL InputMouse : public EventListener
 {
-private:
+   enum ButtonClickState {
+      Nothing = 0,
+      ButtonWasPressed,    // only used to determine single clicks
+      ButtonClicked,
+      ButtonDoubleClicked,
+      ButtonTripleClicked
+   };
+
    int currX, currY;
    int prevX, prevY;
    float currWheel, prevWheel;
+
    std::array<bool, BUTTON_COUNT> currButtons;
    std::array<bool, BUTTON_COUNT> prevButtons;
+   std::array<ButtonClickState, BUTTON_COUNT> buttonClickStates;
 
    void Init (EventController* eventCtrl);
 
@@ -41,7 +50,7 @@ public:
    bool Button (int btn = ANY);
    bool ButtonPressed (int btn = ANY);
    bool ButtonReleased (int btn = ANY);
-   //bool ButtonClicked (int btn = ANY);
-   //bool ButtonDoubleClicked (int btn = ANY);
-   //bool ButtonTripleClicked (int btn = ANY);
+   bool Clicked (int btn = ANY);
+   bool DoubleClicked (int btn = ANY);
+   bool TripleClicked (int btn = ANY);
 };
