@@ -6,6 +6,7 @@
 
 #include "File.h"
 
+#include "../Base/Tools.h"
 #include "../Base/Error.h"
 
 using namespace boost;
@@ -160,31 +161,29 @@ namespace base {
       if (path.empty()) throw error::InvalidParam("No path specified!", __FUNCTION__);
       else if (!ExistFile(path)) throw error::NotFound("Specified path does not exist!", __FUNCTION__);
 
-      HANDLE file = ::CreateFileA(path.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+      HANDLE file  = nullptr;
+      void* buffer = nullptr;
+
+      base::ScopeGuard guard([&] () {
+         if (buffer != nullptr) delete buffer;
+         if (file != nullptr)   ::CloseHandle(file);
+      });
+
+      file = ::CreateFileA(path.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
       if (file == nullptr) throw error::Create("Failed to create file handle!", __FUNCTION__);
 
       DWORD fileSize  = ::GetFileSize(file, nullptr);
       DWORD bytesRead = 0;
-      void* buffer    = malloc(fileSize);
+      buffer          = malloc(fileSize);
 
-      if (buffer == nullptr) {
-         if (file != nullptr) ::CloseHandle(file);
-         throw error::OutOfMemory("Not enough memory available for binary resource!", __FUNCTION__);
-      }
+      if (buffer == nullptr) throw error::OutOfMemory("Not enough memory available for binary resource!", __FUNCTION__);
 
       ZeroMemory(buffer, fileSize);
 
-      if (!::ReadFile(file, buffer, fileSize, &bytesRead, nullptr)) {
-         if (buffer != nullptr) delete buffer;
-         if (file != nullptr) ::CloseHandle(file);
-         throw error::Read("Failed to read from file!", __FUNCTION__);
-      }
+      if (!::ReadFile(file, buffer, fileSize, &bytesRead, nullptr)) throw error::Read("Failed to read from file!", __FUNCTION__);
 
       char* charBuffer = (char*)buffer;
       std::vector<char> content(charBuffer, charBuffer + fileSize);
-
-      if (buffer != nullptr) delete buffer;
-      if (file != nullptr) ::CloseHandle(file);
 
       return content;
    }
