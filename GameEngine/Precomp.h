@@ -36,16 +36,24 @@
 
 // General definitions
 
-#define ABS          false
-#define REL          true
+#define ABS             false
+#define REL             true
 
-#define ANY          -1
-#define NONE         -2
+#define ANY             -1
+#define NONE            -2
 
-#define LEFT         1
-#define RIGHT        2
-#define HORIZONTAL   3
-#define UP           4
-#define DOWN         8
-#define VERTICAL     12
+#define LEFT            1
+#define RIGHT           2
+#define HORIZONTAL      3
+#define UP              4
+#define DOWN            8
+#define VERTICAL        12
+
+
+// Mouse Buttons
+
+#define LEFT_BUTTON     0
+#define MIDDLE_BUTTON   1
+#define RIGHT_BUTTON    2
+#define BUTTON_COUNT    3
 

@@ -1,8 +1,6 @@
 
 #pragma once
 
-#include <irrlicht.h>
-
 #include "EventListener.h"
 
 #include "DLL_DEF.h"
@@ -19,5 +17,7 @@ class GEDLL InputGamepad : public EventListener
 public:
    InputGamepad (EventController* eventCtrl);
    virtual ~InputGamepad ();
+
+   void Update ();
 };
 

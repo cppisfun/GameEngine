@@ -26,6 +26,15 @@ void InputGamepad::Init (EventController* eventCtrl)
 
 void InputGamepad::OnEvent (const SEvent& event)
 {
+   if (!Enabled()) return;
+
+   // TODO
+}
+
+void InputGamepad::Update ()
+{
+   if (!Enabled()) return;
+
    // TODO
 }
 

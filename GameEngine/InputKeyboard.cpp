@@ -22,12 +22,21 @@ void InputKeyboard::Init (EventController* eventCtrl)
 {
    if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
    eventCtrl->KeyboardCallback(std::bind(&InputKeyboard::OnEvent, this, std::placeholders::_1));
+
+   std::fill(currKeys.begin(), currKeys.end(), false);
+   std::fill(prevKeys.begin(), prevKeys.end(), false);
 }
 
 void InputKeyboard::OnEvent (const SEvent& event)
 {
-   prevKeys[event.KeyInput.Key] = std::move(currKeys[event.KeyInput.Key]);
+   if (!Enabled()) return;
    currKeys[event.KeyInput.Key] = event.KeyInput.PressedDown;
+}
+
+void InputKeyboard::Update ()
+{
+   if (!Enabled()) return;
+   std::copy(currKeys.begin(), currKeys.end(), prevKeys.begin());
 }
 
 bool InputKeyboard::Key (int key)

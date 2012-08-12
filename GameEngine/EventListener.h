@@ -1,16 +1,17 @@
 
 #pragma once
 
-namespace irr {
-   struct SEvent;
-}
+#include <IEventReceiver.h>
+
+#include "DLL_DEF.h"
 
 
-class EventListener
+class GEDLL EventListener
 {
    bool enabled;
 
    virtual void OnEvent (const irr::SEvent& event) = 0;
+   virtual void Update () = 0;
 
 public:
    EventListener () : enabled(true) { }

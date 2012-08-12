@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include <irrlicht.h>
+#include <Keycodes.h>
 
 #include "EventListener.h"
 
@@ -12,6 +12,7 @@ class EventController;
 
 class GEDLL InputKeyboard : public EventListener
 {
+
    std::array<bool, irr::KEY_KEY_CODES_COUNT> currKeys;
    std::array<bool, irr::KEY_KEY_CODES_COUNT> prevKeys;
 
@@ -22,6 +23,8 @@ class GEDLL InputKeyboard : public EventListener
 public:
    InputKeyboard (EventController* eventCtrl);
    virtual ~InputKeyboard ();
+
+   void Update ();
 
    bool Key (int key = ANY);
    bool KeyPressed (int key = ANY);

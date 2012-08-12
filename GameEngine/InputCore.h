@@ -37,6 +37,8 @@ public:
    InputCore (EventController* eventCtrl);
    virtual ~InputCore ();
 
+   void Update ();
+
    InputCore& Reset (const What& what);
    InputCore& ShutDown (const What& what);
 

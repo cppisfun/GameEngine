@@ -2,6 +2,7 @@
 #include <Windows.h>
 
 #include "Base/Tools.h"
+#include "Base/Convert.h"
 
 #include "GameEngine/Core.h"
 
@@ -10,7 +11,7 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
 {
    Core* core = nullptr;
 
-   Base::ScopeGuard guard([&core] () { SecureDelete(core); });
+   base::ScopeGuard guard([&core] () { SecureDelete(core); });
 
    try {
       core           = Core::Instance();
@@ -19,6 +20,7 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
       auto audio     = core->Audio();
       auto resources = core->Resources();
       auto keyboard  = input->Keyboard();
+      auto mouse     = input->Mouse();
 
       core->WindowTitle("GameEngine 0.1.0");
 
@@ -27,18 +29,36 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
       audio->Add("music",  resources->Binary("music"));
       audio->Play("music", true);
 
-      while (core->IsRunning() && !keyboard->KeyReleased(27)) {   // TODO
+      mouse->X(100).Y(100);
+
+      std::vector<std::string> log;
+
+      while (core->IsRunning()) {
+         if (keyboard->Key(27)) break;
+
+         if (mouse->Moved(UP)) {
+            log.push_back("UP [" + base::AsString(mouse->X()) + "|" + base::AsString(mouse->Y()) + "]");
+         }
+
+         if (mouse->Moved(DOWN)) {
+            log.push_back("DOWN [" + base::AsString(mouse->X()) + "|" + base::AsString(mouse->Y()) + "]");
+         }
+
          graphics->BeginScene();
          {
-            graphics->Text(10, 10, "Hello World!");
+            for (size_t i = 0; i < log.size(); ++i) {
+               graphics->Text(10, i * 10, log[i]);
+            }
          }
          graphics->EndScene();
+
+         input->Update();
       }
    }
    catch (std::exception& e) {
-      std::string err = "Unhandeled exception caught in main loop!\n\n";
+      std::string err = "Unhandled exception caught in main loop!\n\n";
       err += e.what();
-      err += "\n\nShutting down program.";
+      err += "\n\nProgram will be shut down.";
 
       ShowError(err.c_str());
       return 5;

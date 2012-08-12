@@ -25,6 +25,13 @@ void InputCore::Init (EventController* eventCtrl)
    Reset(KeyboardInterface);
 }
 
+void InputCore::Update ()
+{
+   if (keyboard != nullptr) keyboard->Update();
+   if (mouse != nullptr)    mouse->Update();
+   if (gamepad != nullptr)  gamepad->Update();
+}
+
 InputCore& InputCore::Reset (const What& what)
 {
    if (what & KeyboardInterface) keyboard.reset(new InputKeyboard(eventController));
