@@ -6,7 +6,7 @@
 #include "DLL_DEF.h"
 
 
-namespace Base {
+namespace base {
 
    class ScopeGuard
    {
