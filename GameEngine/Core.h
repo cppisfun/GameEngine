@@ -87,6 +87,7 @@ public:
    Core& MinimizeWindow ()                       { device->minimizeWindow(); return *this; }
    Core& MaximizeWindow ()                       { device->maximizeWindow(); return *this; }
    Core& RestoreWindow ()                        { device->restoreWindow(); return *this; }
+
    Core& ClearSystemMessages ()                  { device->clearSystemMessages(); return *this; }
    Core& DoNothing ()                            { device->yield(); return *this; }
    Core& Quit ()                                 { device->closeDevice(); return *this; }
