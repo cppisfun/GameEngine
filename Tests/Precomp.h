@@ -4,5 +4,8 @@
 #include <set>
 #include <string>
 
+#include <functional>
+#include <algorithm>
+
 #include <UnitTest++.h>
 

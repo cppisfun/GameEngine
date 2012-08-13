@@ -6,10 +6,10 @@
 using namespace base;
 
 
-SUITE(BaseConvert)
+SUITE (BaseConvert)
 {
 
-   TEST(AsBool)
+   TEST (AsBool)
    {
       CHECK_EQUAL(true,  AsBool("true"));
       CHECK_EQUAL(true,  AsBool("TRUE"));
@@ -43,7 +43,7 @@ SUITE(BaseConvert)
       CHECK_EQUAL(true,  AsBool(-1.0));
    }
 
-   TEST(AsInt)
+   TEST (AsInt)
    {
       CHECK_EQUAL(1234567890,  AsInt("1234567890"));
       CHECK_EQUAL(-1234567890, AsInt("-1234567890"));
@@ -79,7 +79,7 @@ SUITE(BaseConvert)
       CHECK_EQUAL(0,           AsInt(-0.987));
    }
 
-   TEST(AsLong)
+   TEST (AsLong)
    {
       CHECK_EQUAL(1234567890L,  AsLong("1234567890"));
       CHECK_EQUAL(-1234567890L, AsLong("-1234567890"));
@@ -115,7 +115,7 @@ SUITE(BaseConvert)
       CHECK_EQUAL(0L,           AsLong(-0.987));
    }
 
-   TEST(AsLongLong)
+   TEST (AsLongLong)
    {
       CHECK_EQUAL(1234567890LL,  AsLong("1234567890"));
       CHECK_EQUAL(-1234567890LL, AsLong("-1234567890"));
@@ -134,8 +134,8 @@ SUITE(BaseConvert)
       CHECK_EQUAL(-1234567890LL, AsLong(-1234567890L));
       CHECK_EQUAL(0LL,           AsLong(0L));
 
-      CHECK_EQUAL(1234567936LL,  AsLong(1234567890.0f));  // hmm, do sth.?
-      CHECK_EQUAL(-1234567936LL, AsLong(-1234567890.0f)); // dito
+      CHECK_EQUAL(1234567936LL,  AsLong(1234567890.0f));    // hmm, do sth.?
+      CHECK_EQUAL(-1234567936LL, AsLong(-1234567890.0f));   // dito
       CHECK_EQUAL(0LL,           AsLong(0.0f));
       CHECK_EQUAL(0LL,           AsLong(0.123f));
       CHECK_EQUAL(0LL,           AsLong(0.987f));
@@ -149,6 +149,160 @@ SUITE(BaseConvert)
       CHECK_EQUAL(0LL,           AsLong(0.987));
       CHECK_EQUAL(0LL,           AsLong(-0.123));
       CHECK_EQUAL(0LL,           AsLong(-0.987));
+   }
+
+   TEST (AsDouble)
+   {
+      CHECK_EQUAL(1234567890.0,  AsDouble("1234567890"));
+      CHECK_EQUAL(-1234567890.0, AsDouble("-1234567890"));
+      CHECK_EQUAL(789.0,         AsDouble("789IgnoreMe23"));
+      CHECK_EQUAL(0.0,           AsDouble("theregoes789"));
+      CHECK_EQUAL(0.0,           AsDouble(""));
+      CHECK_EQUAL(123.45,        AsDouble("123.45"));
+      CHECK_EQUAL(123.45,        AsDouble("123.45000"));
+      CHECK_EQUAL(-567.89,       AsDouble("-567.89"));
+      CHECK_EQUAL(-567.89,       AsDouble("-567.89000"));
+
+      CHECK_EQUAL(0.0,           AsDouble(false));
+      CHECK_EQUAL(1.0,           AsDouble(true));
+
+      CHECK_EQUAL(1234567890.0,  AsDouble(1234567890));
+      CHECK_EQUAL(-1234567890.0, AsDouble(-1234567890));
+      CHECK_EQUAL(0.0,           AsDouble(0));
+
+      CHECK_EQUAL(1234567890.0,  AsDouble(1234567890L));
+      CHECK_EQUAL(-1234567890.0, AsDouble(-1234567890L));
+      CHECK_EQUAL(0.0,           AsDouble(0L));
+
+      CHECK_EQUAL(1234567890.0,  AsDouble(1234567890LL));
+      CHECK_EQUAL(-1234567890.0, AsDouble(-1234567890LL));
+      CHECK_EQUAL(0.0,           AsDouble(0LL));
+
+      CHECK_EQUAL(1234567936.0,  AsDouble(1234567890.0f));  // hmm, do sth.?
+      CHECK_EQUAL(-1234567936.0, AsDouble(-1234567890.0f)); // dito
+      CHECK_EQUAL(0.0,           AsDouble(0.0f));
+      CHECK_EQUAL(123.45,        AsDouble(123.45f));
+      CHECK_EQUAL(-567.89,       AsDouble(-567.89f));
+   }
+
+   TEST (AsFloat)
+   {
+      CHECK_EQUAL(1234567890.0f,  AsFloat("1234567890"));
+      CHECK_EQUAL(-1234567890.0f, AsFloat("-1234567890"));
+      CHECK_EQUAL(789.0f,         AsFloat("789IgnoreMe23"));
+      CHECK_EQUAL(0.0f,           AsFloat("theregoes789"));
+      CHECK_EQUAL(0.0f,           AsFloat(""));
+      CHECK_EQUAL(123.45f,        AsFloat("123.45"));
+      CHECK_EQUAL(123.45f,        AsFloat("123.45000"));
+      CHECK_EQUAL(-567.89f,       AsFloat("-567.89"));
+      CHECK_EQUAL(-567.89f,       AsFloat("-567.89000"));
+
+      CHECK_EQUAL(0.0f,           AsFloat(false));
+      CHECK_EQUAL(1.0f,           AsFloat(true));
+
+      CHECK_EQUAL(1234567890.0f,  AsFloat(1234567936));     // hmm, do sth.?
+      CHECK_EQUAL(-1234567890.0f, AsFloat(-1234567936));    // dito
+      CHECK_EQUAL(0.0f,           AsFloat(0));
+
+      CHECK_EQUAL(1234567890.0f,  AsFloat(1234567936L));    // dito
+      CHECK_EQUAL(-1234567890.0f, AsFloat(-1234567936L));   // dito
+      CHECK_EQUAL(0.0f,           AsFloat(0L));
+
+      CHECK_EQUAL(1234567890.0f,  AsFloat(1234567936LL));   // dito
+      CHECK_EQUAL(-1234567890.0f, AsFloat(-1234567936LL));  // dito
+      CHECK_EQUAL(0.0f,           AsFloat(0LL));
+
+      CHECK_EQUAL(1234567890.0f,  AsFloat(1234567890.0));
+      CHECK_EQUAL(-1234567890.0f, AsFloat(-1234567890.0));
+      CHECK_EQUAL(0.0f,           AsFloat(0.0));
+      CHECK_EQUAL(123.45f,        AsFloat(123.45));
+      CHECK_EQUAL(-567.89f,       AsFloat(-567.89));
+   }
+
+   TEST (AsString)
+   {
+      CHECK_EQUAL("True",  AsString(true));
+      CHECK_EQUAL("False", AsString(false));
+
+      CHECK_EQUAL("1234567890",       AsString(1234567890, false));
+      CHECK_EQUAL("-1234567890",      AsString(-1234567890, false));
+      CHECK_EQUAL("0",                AsString(0, false));
+      CHECK_EQUAL("1.234.567.890",    AsString(1234567890));
+      CHECK_EQUAL("-1.234.567.890",   AsString(-1234567890));
+      CHECK_EQUAL("0",                AsString(0));
+
+      CHECK_EQUAL("1234567890",       AsString(1234567890L, false));
+      CHECK_EQUAL("-1234567890",      AsString(-1234567890L, false));
+      CHECK_EQUAL("0",                AsString(0L, false));
+      CHECK_EQUAL("1.234.567.890",    AsString(1234567890L));
+      CHECK_EQUAL("-1.234.567.890",   AsString(-1234567890L));
+      CHECK_EQUAL("0",                AsString(0L));
+
+      CHECK_EQUAL("1234567890",       AsString(1234567890LL, false));
+      CHECK_EQUAL("-1234567890",      AsString(-1234567890LL, false));
+      CHECK_EQUAL("0",                AsString(0LL, false));
+      CHECK_EQUAL("1.234.567.890",    AsString(1234567890LL));
+      CHECK_EQUAL("-1.234.567.890",   AsString(-1234567890LL));
+      CHECK_EQUAL("0",                AsString(0LL));
+
+      CHECK_EQUAL("1234567890.0",     AsString(1234567890.0f, 1, false));
+      CHECK_EQUAL("-1234567890.0",    AsString(-1234567890.0f, 1, false));
+      CHECK_EQUAL("123.45",           AsString(123.45f, 2, false));
+      CHECK_EQUAL("123.457",          AsString(123.456789f, 3, false));
+      CHECK_EQUAL("-123.45",          AsString(-123.45f, 2, false));
+      CHECK_EQUAL("-123.457",         AsString(-123.456789f, 3, false));
+      CHECK_EQUAL("123.45000",        AsString(123.45f, 5, false));
+      CHECK_EQUAL("-123.45000",       AsString(-123.45f, 5, false));
+
+      CHECK_EQUAL("1.234.567.890,0",  AsString(1234567890.0f, 1));
+      CHECK_EQUAL("-1.234.567.890,0", AsString(-1234567890.0f, 1));
+      CHECK_EQUAL("123,45",           AsString(123.45f));
+      CHECK_EQUAL("123,457",          AsString(123.456789f, 3));
+      CHECK_EQUAL("-123,45",          AsString(-123.45f));
+      CHECK_EQUAL("-123,457",         AsString(-123.456789f, 3));
+      CHECK_EQUAL("123,45000",        AsString(123.45f, 5));
+      CHECK_EQUAL("-123,45000",       AsString(-123.45f, 5));
+
+      CHECK_EQUAL("1234567890.0",     AsString(1234567890.0, 1, false));
+      CHECK_EQUAL("-1234567890.0",    AsString(-1234567890.0, 1, false));
+      CHECK_EQUAL("123.45",           AsString(123.45, 2, false));
+      CHECK_EQUAL("123.457",          AsString(123.456789, 3, false));
+      CHECK_EQUAL("-123.45",          AsString(-123.45, 2, false));
+      CHECK_EQUAL("-123.457",         AsString(-123.456789, 3, false));
+      CHECK_EQUAL("123.45000",        AsString(123.45, 5, false));
+      CHECK_EQUAL("-123.45000",       AsString(-123.45, 5, false));
+
+      CHECK_EQUAL("1.234.567.890,0",  AsString(1234567890.0, 1));
+      CHECK_EQUAL("-1.234.567.890,0", AsString(-1234567890.0, 1));
+      CHECK_EQUAL("123,45",           AsString(123.45));
+      CHECK_EQUAL("123,457",          AsString(123.456789, 3));
+      CHECK_EQUAL("-123,45",          AsString(-123.45));
+      CHECK_EQUAL("-123,457",         AsString(-123.456789, 3));
+      CHECK_EQUAL("123,45000",        AsString(123.45, 5));
+      CHECK_EQUAL("-123,45000",       AsString(-123.45, 5));
+   }
+
+   TEST (StringBinary)
+   {
+      std::vector<char> binary;
+      binary.push_back('T'); binary.push_back('e'); binary.push_back('s'); binary.push_back('t'); binary.push_back(' ');
+      binary.push_back('T'); binary.push_back('E'); binary.push_back('S'); binary.push_back('T'); binary.push_back(' ');
+      binary.push_back('t'); binary.push_back('e'); binary.push_back('s'); binary.push_back('t');
+
+      CHECK_EQUAL("Test TEST test", AsString(binary));
+
+      binary.clear();
+
+      const std::string stdString = "Test TEST test";
+      binary                      = AsBinary(stdString);
+
+      CHECK_EQUAL(stdString.size(), binary.size());
+
+      if (stdString.size() == binary.size()) {
+         for (size_t i = 0; i < stdString.size(); ++i) {
+            CHECK_EQUAL(stdString[i], binary[i]);
+         }
+      }
    }
 
 }
