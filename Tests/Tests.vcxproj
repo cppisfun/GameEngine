@@ -37,10 +37,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>E:\Projekte\GameEngine\foreign\UnitTest++\src;$(IncludePath)</IncludePath>
+    <IncludePath>..\foreign\UnitTest++\src;..\foreign\boost;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\Projekte\GameEngine\foreign\UnitTest++\src;$(IncludePath)</IncludePath>
+    <IncludePath>..\foreign\UnitTest++\src;..\foreign\boost;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -94,7 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseConvert.cpp" />
+    <ClCompile Include="BaseTools.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="BaseNumeric.cpp" />
     <ClCompile Include="Precomp.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
