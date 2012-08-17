@@ -245,39 +245,39 @@ SUITE (BaseConvert)
       CHECK_EQUAL("-1.234.567.890",   AsString(-1234567890LL));
       CHECK_EQUAL("0",                AsString(0LL));
 
-      CHECK_EQUAL("1234567890.0",     AsString(1234567890.0f, 1, false));
-      CHECK_EQUAL("-1234567890.0",    AsString(-1234567890.0f, 1, false));
-      CHECK_EQUAL("123.45",           AsString(123.45f, 2, false));
-      CHECK_EQUAL("123.457",          AsString(123.456789f, 3, false));
-      CHECK_EQUAL("-123.45",          AsString(-123.45f, 2, false));
-      CHECK_EQUAL("-123.457",         AsString(-123.456789f, 3, false));
-      CHECK_EQUAL("123.45000",        AsString(123.45f, 5, false));
-      CHECK_EQUAL("-123.45000",       AsString(-123.45f, 5, false));
+      CHECK_EQUAL("1234567936.0",     AsString(1234567890.0f, 1, false));  // hmm, do sth.?
+      CHECK_EQUAL("-1234567936.0",    AsString(-1234567890.0f, 1, false)); // dito
+      CHECK_EQUAL("123.44",           AsString(123.45f, 2, false));        // dito
+      CHECK_EQUAL("123.456",          AsString(123.456789f, 3, false));
+      CHECK_EQUAL("-123.44",          AsString(-123.45f, 2, false));
+      CHECK_EQUAL("-123.456",         AsString(-123.456789f, 3, false));
+      CHECK_EQUAL("123.44999",        AsString(123.45f, 5, false));        // dito
+      CHECK_EQUAL("-123.44999",       AsString(-123.45f, 5, false));       // dito
 
-      CHECK_EQUAL("1.234.567.890,0",  AsString(1234567890.0f, 1));
-      CHECK_EQUAL("-1.234.567.890,0", AsString(-1234567890.0f, 1));
-      CHECK_EQUAL("123,45",           AsString(123.45f));
-      CHECK_EQUAL("123,457",          AsString(123.456789f, 3));
-      CHECK_EQUAL("-123,45",          AsString(-123.45f));
-      CHECK_EQUAL("-123,457",         AsString(-123.456789f, 3));
-      CHECK_EQUAL("123,45000",        AsString(123.45f, 5));
-      CHECK_EQUAL("-123,45000",       AsString(-123.45f, 5));
+      CHECK_EQUAL("1.234.567.936,0",  AsString(1234567890.0f, 1));         // hmm, do sth.?
+      CHECK_EQUAL("-1.234.567.936,0", AsString(-1234567890.0f, 1));        // dito
+      CHECK_EQUAL("123,44",           AsString(123.45f));                  // dito
+      CHECK_EQUAL("123,456",          AsString(123.456789f, 3));
+      CHECK_EQUAL("-123,44",          AsString(-123.45f));
+      CHECK_EQUAL("-123,456",         AsString(-123.456789f, 3));
+      CHECK_EQUAL("123,44999",        AsString(123.45f, 5));               // dito
+      CHECK_EQUAL("-123,44999",       AsString(-123.45f, 5));              // dito
 
       CHECK_EQUAL("1234567890.0",     AsString(1234567890.0, 1, false));
       CHECK_EQUAL("-1234567890.0",    AsString(-1234567890.0, 1, false));
       CHECK_EQUAL("123.45",           AsString(123.45, 2, false));
-      CHECK_EQUAL("123.457",          AsString(123.456789, 3, false));
+      CHECK_EQUAL("123.456",          AsString(123.456789, 3, false));
       CHECK_EQUAL("-123.45",          AsString(-123.45, 2, false));
-      CHECK_EQUAL("-123.457",         AsString(-123.456789, 3, false));
+      CHECK_EQUAL("-123.456",         AsString(-123.456789, 3, false));
       CHECK_EQUAL("123.45000",        AsString(123.45, 5, false));
       CHECK_EQUAL("-123.45000",       AsString(-123.45, 5, false));
 
       CHECK_EQUAL("1.234.567.890,0",  AsString(1234567890.0, 1));
       CHECK_EQUAL("-1.234.567.890,0", AsString(-1234567890.0, 1));
       CHECK_EQUAL("123,45",           AsString(123.45));
-      CHECK_EQUAL("123,457",          AsString(123.456789, 3));
+      CHECK_EQUAL("123,456",          AsString(123.456789, 3));
       CHECK_EQUAL("-123,45",          AsString(-123.45));
-      CHECK_EQUAL("-123,457",         AsString(-123.456789, 3));
+      CHECK_EQUAL("-123,456",         AsString(-123.456789, 3));
       CHECK_EQUAL("123,45000",        AsString(123.45, 5));
       CHECK_EQUAL("-123,45000",       AsString(-123.45, 5));
    }

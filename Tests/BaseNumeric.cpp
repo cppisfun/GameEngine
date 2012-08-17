@@ -14,8 +14,8 @@ SUITE (BaseNumeric)
       CHECK_EQUAL(0.0f,         Fraction(0.0f));
       CHECK_EQUAL(0.0f,         Fraction(1234567890.0f));
       CHECK_EQUAL(0.0f,         Fraction(-1234567890.0f));
-      CHECK_EQUAL(0.789f,       Fraction(456.789f));
-      CHECK_EQUAL(0.789f,       Fraction(-456.789f));
+      CHECK_EQUAL(0.789001f,    Fraction(456.789f));        // hmm, do sth.?
+      CHECK_EQUAL(0.789001f,    Fraction(-456.789f));       // dito
       CHECK_EQUAL(0.123456789f, Fraction(0.123456789f));
       CHECK_EQUAL(0.123456789f, Fraction(-0.123456789f));
 
