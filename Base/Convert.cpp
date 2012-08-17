@@ -71,7 +71,7 @@ namespace base {
       size_t pos = 0;
       while (pos < val.size() && ((val[pos] >= '0' && val[pos] <= '9') || (pos == 0 && val[pos] == '-'))) ++pos;
 
-      if (pos == 1 && val[0] == '-') return 0;
+      if (pos == 0 || (pos == 1 && val[0] == '-')) return 0;
       return boost::lexical_cast<int>(val.substr(0, pos));
    }
 
@@ -82,7 +82,7 @@ namespace base {
       size_t pos = 0;
       while (pos < val.size() && ((val[pos] >= '0' && val[pos] <= '9') || (pos == 0 && val[pos] == '-'))) ++pos;
 
-      if (pos == 1 && val[0] == '-') return 0L;
+      if (pos == 0 || (pos == 1 && val[0] == '-')) return 0L;
       return boost::lexical_cast<long>(val.substr(0, pos));
    }
 
@@ -93,7 +93,7 @@ namespace base {
       size_t pos = 0;
       while (pos < val.size() && ((val[pos] >= '0' && val[pos] <= '9') || (pos == 0 && val[pos] == '-'))) ++pos;
 
-      if (pos == 1 && val[0] == '-') return 0LL;
+      if (pos == 0 || (pos == 1 && val[0] == '-')) return 0LL;
       return boost::lexical_cast<long long>(val.substr(0, pos));
    }
 
@@ -105,11 +105,11 @@ namespace base {
       bool foundDot = false;
 
       while (pos < val.size() && ((val[pos] >= '0' && val[pos] <= '9') || (pos == 0 && val[pos] == '-') || (pos > 0 && !foundDot && val[pos] == '.'))) {
-         ++pos;
          if (val[pos] == '.') foundDot = true;
+         ++pos;
       }
 
-      if (pos == 1 && val[0] == '-') return 0.0f;
+      if (pos == 0 || (pos == 1 && val[0] == '-')) return 0.0f;
 
       std::string prefix((val[0] == '.') ? "0" : "");
       std::string suffix((val[pos] == '.') ? "0" : "");
@@ -173,7 +173,8 @@ namespace base {
 
    const std::string AsString (float val, int decimals, bool pretty)
    {
-      std::string ret(AsString(boost::numeric_cast<int>(val), pretty) + ",");
+      std::string ret(AsString(boost::numeric_cast<int>(val), pretty));
+      ret += (pretty) ? "," : ".";
       ret += RFill(AsString(boost::numeric_cast<int>(Fraction(val) * std::pow(10.0f, boost::numeric_cast<float>(decimals))), false), decimals, "0");
 
       return ret;
@@ -181,7 +182,8 @@ namespace base {
 
    const std::string AsString (double val, int decimals, bool pretty)
    {
-      std::string ret(AsString(boost::numeric_cast<int>(val), pretty) + ",");
+      std::string ret(AsString(boost::numeric_cast<int>(val), pretty));
+      ret += (pretty) ? "," : ".";
       ret += RFill(AsString(boost::numeric_cast<int>(Fraction(val) * std::pow(10.0, boost::numeric_cast<double>(decimals))), false), decimals, "0");
 
       return ret;
