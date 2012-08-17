@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseConvert.cpp" />
+    <ClCompile Include="BaseString.cpp" />
     <ClCompile Include="BaseTools.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="BaseNumeric.cpp" />
