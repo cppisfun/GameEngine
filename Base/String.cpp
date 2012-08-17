@@ -34,6 +34,8 @@ namespace base {
 
    const std::string LFill (const std::string& val, int length, const std::string& filling)
    {
+      if (length <= 0 || filling.empty()) return val;
+
       size_t len(length);
       if (len <= val.size()) return val;
 
@@ -45,6 +47,8 @@ namespace base {
 
    const std::string RFill (const std::string& val, int length, const std::string& filling)
    {
+      if (length <= 0 || filling.empty()) return val;
+
       size_t len(length);
       if (len < val.size()) return val;
 
@@ -156,8 +160,8 @@ namespace base {
 
    const std::string Replace (const std::string& src, const std::string& what, const std::string& with)
    {
-      if (src.empty()) return "";
-      else if (what.empty()) throw error::InvalidParam("No search string specified for replacement!", __FUNCTION__);
+      if (src.empty())                       return "";
+      else if (what.empty() || what == with) return src;
 
       std::string ret(src);
       size_t pos = ret.find(what);

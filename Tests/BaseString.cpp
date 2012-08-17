@@ -38,10 +38,10 @@ SUITE (BaseString)
 
    TEST (FillFunctions)
    {
-// FIXME: CHECK_EQUAL("",        LFill("", -1, ""));   // this causes an endless loop!
+      CHECK_EQUAL("",        LFill("", -1, ""));
       CHECK_EQUAL("",        LFill("", 0, ""));
-// FIXME: CHECK_EQUAL("",        LFill("", 1, ""));    // this causes an endless loop!
-// FIXME: CHECK_EQUAL("",        LFill("", -1, "+"));  // this causes an endless loop!
+      CHECK_EQUAL("",        LFill("", 1, ""));
+      CHECK_EQUAL("",        LFill("", -1, "+"));
       CHECK_EQUAL("",        LFill("", 0, "+"));
       CHECK_EQUAL("+",       LFill("", 1, "+"));
       CHECK_EQUAL("123",     LFill("123", 3, "+"));
@@ -49,10 +49,10 @@ SUITE (BaseString)
       CHECK_EQUAL("test123", LFill("123", 7, "test"));
       CHECK_EQUAL("test1",   LFill("123", 5, "test"));
 
-// FIXME: CHECK_EQUAL("",        RFill("", -1, ""));   // this causes an endless loop!
+      CHECK_EQUAL("",        RFill("", -1, ""));
       CHECK_EQUAL("",        RFill("", 0, ""));
-// FIXME: CHECK_EQUAL("",        RFill("", 1, ""));    // this causes an endless loop!
-// FIXME: CHECK_EQUAL("",        RFill("", -1, "+"));  // this causes an endless loop!
+      CHECK_EQUAL("",        RFill("", 1, ""));
+      CHECK_EQUAL("",        RFill("", -1, "+"));
       CHECK_EQUAL("",        RFill("", 0, "+"));
       CHECK_EQUAL("+",       RFill("", 1, "+"));
       CHECK_EQUAL("123",     RFill("123", 3, "+"));
@@ -149,7 +149,7 @@ SUITE (BaseString)
       CHECK_EQUAL("   ", Replace("   ", "", ""));
       CHECK_EQUAL("",    Replace("   ", "   ", ""));
       CHECK_EQUAL("   ", Replace("   ", "", "   "));
-// FIXME: CHECK_EQUAL("   ", Replace("   ", "   ", "   ")); // this causes an endless loop!
+      CHECK_EQUAL("   ", Replace("   ", "   ", "   "));
       CHECK_EQUAL("123", Replace("123", "", ""));
       CHECK_EQUAL("",    Replace("123", "123", ""));
       CHECK_EQUAL("1--", Replace("123", "23", "--"));
