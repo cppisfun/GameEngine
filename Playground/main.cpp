@@ -27,7 +27,7 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
       resources->AddBinary("music", "../resources/audio/music/music.ogg");
 
       audio->Add("music",  resources->Binary("music"));
-      audio->Play("music", true);
+      audio->PlayMusic("music", true);
 
       std::vector<std::string> log;
 
