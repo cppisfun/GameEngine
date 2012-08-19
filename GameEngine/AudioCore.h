@@ -40,12 +40,25 @@ public:
    AudioCore& StopMusic (const std::string& id);
    AudioCore& PauseMusic (bool pause = true);
    AudioCore& PauseMusic (const std::string& id, bool pause = true);
+   AudioCore& MusicVolume (int percent);
+   AudioCore& MusicVolume (const std::string& id, int percent);
+   AudioCore& MusicSpeed (int percent);
+   AudioCore& MusicSpeed (const std::string& id, int percent);
+   AudioCore& MusicPan (int percent);
+   AudioCore& MusicPan (const std::string& id, int percent);
+   AudioCore& MusicPosition (const std::string& id, int position);
 
    AudioCore& PlaySound (const std::string& id, bool looped = false);
    AudioCore& StopSound ();
    AudioCore& StopSound (const std::string& id);
    AudioCore& PauseSound (bool pause = true);
    AudioCore& PauseSound (const std::string& id, bool pause = true);
+   AudioCore& SoundVolume (int percent);
+   AudioCore& SoundVolume (const std::string& id, int percent);
+   AudioCore& SoundSpeed (int percent);
+   AudioCore& SoundSpeed (const std::string& id, int percent);
+   AudioCore& SoundPan (int percent);
+   AudioCore& SoundPan (const std::string& id, int percent);
 
    AudioCore& ResumeAll ()                        { return PauseAll(false); }
    AudioCore& ResumeMusic ()                      { return PauseMusic(false); }
@@ -58,6 +71,24 @@ public:
    int MasterVolume () const;
    int DefaultVolume (const std::string& id) const;
    bool IsPlaying (const std::string& id) const;
+
+   bool IsMusicPaused (const std::string& id) const;
+   bool IsMusicLooped (const std::string& id) const;
+   bool IsMusicFinished (const std::string& id) const;
+   int MusicVolume (const std::string& id) const;
+   int MusicSpeed (const std::string& id) const;
+   int MusicPan (const std::string& id) const;
+   int MusicPosition (const std::string& id) const;
+   int MusicLength (const std::string& id) const;
+
+   bool IsSoundPaused (const std::string& id) const;
+   bool IsSoundLooped (const std::string& id) const;
+   bool IsSoundFinished (const std::string& id) const;
+   int SoundVolume (const std::string& id) const;
+   int SoundSpeed (const std::string& id) const;
+   int SoundPan (const std::string& id) const;
+   int SoundPosition (const std::string& id) const;
+   int SoundLength (const std::string& id) const;
 
    const std::string FileName (const std::string& id) const;
 };
