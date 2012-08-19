@@ -26,34 +26,52 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
 
       resources->AddBinary("music", "../resources/audio/music/music.ogg");
 
-      audio->Add("music",  resources->Binary("music"));
-      audio->PlayMusic("music", true);
+      audio->Add("music", resources->Binary("music"));
+      audio->Add("piano", "../resources/audio/music/piano.ogg");
 
-      std::vector<std::string> log;
+      audio->DefaultVolume("piano", 0);
+
+      audio->PlayMusic("music", true);
+      audio->PlayMusic("piano", true);
+
+      bool paused = false;
 
       while (core->IsRunning()) {
          if (core->IsWindowActive()) {
             if (keyboard->Key(27)) core->Quit();
 
             if (mouse->Clicked(LEFT_BUTTON)) {
-               log.push_back("CLICKED");
+               paused = !paused;
+               audio->PauseMusic(paused);
             }
 
-            if (mouse->DoubleClicked(LEFT_BUTTON)) {
-               log.push_back("DOUBLE CLICKED");
-               core->MaximizeWindow();
+            if (mouse->Clicked(RIGHT_BUTTON)) {
+               audio->StopMusic();
             }
 
-            if (mouse->TripleClicked(LEFT_BUTTON)) {
-               log.push_back("TRIPLE CLICKED");
-               core->MinimizeWindow();
+            if (mouse->WheelMoved()) {
+               audio->MusicVolume("music", audio->MusicVolume("music") - (int)mouse->DWheel());
+               audio->MusicVolume("piano", audio->MusicVolume("piano") + (int)mouse->DWheel());
             }
 
             graphics->BeginScene();
             {
-               for (size_t i = 0; i < log.size(); ++i) {
-                  graphics->Text(10, i * 10, log[i]);
-               }
+               graphics->Text(10, 10,  "Filename: " + audio->FileName("music"));
+               graphics->Text(10, 20,  "Master Volume: " + base::AsString(audio->MasterVolume()) + "%");
+               graphics->Text(10, 30,  "Default Volume: " + base::AsString(audio->DefaultVolume("music")) + "%");
+
+               graphics->Text(10, 50,  "Source Playing: " + base::AsString(audio->IsPlaying("music")));
+
+               graphics->Text(10, 70,  "Music Paused: " + base::AsString(audio->IsMusicPaused("music")));
+               graphics->Text(10, 80,  "Music Looped: " + base::AsString(audio->IsMusicLooped("music")));
+               graphics->Text(10, 90,  "Music Finished: " + base::AsString(audio->IsMusicFinished("music")));
+
+               graphics->Text(10, 110, "Music Volume: " + base::AsString(audio->MusicVolume("music")) + "%");
+               graphics->Text(10, 120, "Music Speed: " + base::AsString(audio->MusicSpeed("music")) + "%");
+               graphics->Text(10, 130, "Music Pan: " + base::AsString(audio->MusicPan("music")) + "%");
+
+               graphics->Text(10, 150, "Music Length: " + base::AsString(audio->MusicLength("music")));
+               graphics->Text(10, 160, "Music Position: " + base::AsString(audio->MusicPosition("music")));
             }
             graphics->EndScene();
 

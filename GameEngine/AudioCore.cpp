@@ -217,6 +217,9 @@ AudioCore& AudioCore::MusicSpeed (int percent)
 {
    float spd = boost::numeric_cast<float>(percent) / 100.0f;
 
+   if (spd < 0.01f)     spd = 0.01f;
+   else if (spd > 4.0f) spd = 4.0f;
+
    std::for_each(music.begin(), music.end(), [&spd] (const std::pair<std::string, ISound*>& mus) {
       mus.second->setPlaybackSpeed(spd);
    });
@@ -231,7 +234,12 @@ AudioCore& AudioCore::MusicSpeed (const std::string& id, int percent)
    auto mus = music.find(id);
    if (mus == music.end()) return *this;
 
-   mus->second->setPlaybackSpeed(boost::numeric_cast<float>(percent) / 100.0f);
+   float spd = boost::numeric_cast<float>(percent) / 100.0f;
+
+   if (spd < 0.01f)     spd = 0.01f;
+   else if (spd > 4.0f) spd = 4.0f;
+
+   mus->second->setPlaybackSpeed(spd);
    return *this;
 }
 
@@ -389,6 +397,9 @@ AudioCore& AudioCore::SoundSpeed (int percent)
 {
    float spd = boost::numeric_cast<float>(percent) / 100.0f;
 
+   if (spd < 0.01f)     spd = 0.01f;
+   else if (spd > 4.0f) spd = 4.0f;
+
    for (auto it = sounds.begin(); it != sounds.end(); ++it) {
       std::for_each(it->second.begin(), it->second.end(), [&spd] (ISound* snd) {
          snd->setPlaybackSpeed(spd);
@@ -406,6 +417,9 @@ AudioCore& AudioCore::SoundSpeed (const std::string& id, int percent)
    if (snd == sounds.end() || snd->second.empty()) return *this;
 
    float spd = boost::numeric_cast<float>(percent) / 100.0f;
+
+   if (spd < 0.01f)     spd = 0.01f;
+   else if (spd > 4.0f) spd = 4.0f;
 
    std::for_each(snd->second.begin(), snd->second.end(), [&spd] (ISound* sound) {
       sound->setPlaybackSpeed(spd);
