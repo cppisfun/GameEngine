@@ -274,9 +274,9 @@ AudioCore& AudioCore::MusicPosition (const std::string& id, int position)
 
    size_t pos;
 
-   if (position < 0)                                     pos = 0;
-   else if (position > mus->second->getPlayLength() - 1) pos = mus->second->getPlayLength() - 1;
-   else                                                  pos = position;
+   if (position < 0)                                             pos = 0;
+   else if ((size_t)position > mus->second->getPlayLength() - 1) pos = mus->second->getPlayLength() - 1;
+   else                                                          pos = position;
 
    mus->second->setPlayPosition(pos);
    return *this;
