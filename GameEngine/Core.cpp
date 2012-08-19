@@ -10,6 +10,18 @@
 
 using namespace irr;
 
+Core::Core ()
+: resizableWindow(false), device(nullptr), eventController(nullptr),
+  graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
+{
+   Init();
+}
+
+Core::~Core ()
+{
+   ShutDown(AllInterfaces);
+}
+
 void Core::Init ()
 {
    eventController.reset(new EventController);

@@ -37,23 +37,14 @@ private:
    std::unique_ptr<AudioCore>     audio;
    std::unique_ptr<ResourcesCore> resources;
 
-   Core ()
-   : resizableWindow(false), device(nullptr), eventController(nullptr),
-     graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
-   {
-      Init();
-   }
-
+   Core ();
    Core (const Core&);
    Core& operator= (const Core&);
 
    void Init ();
 
 public:
-   ~Core ()
-   {
-      ShutDown(AllInterfaces);
-   }
+   ~Core ();
 
    static Core* Instance ()
    {
