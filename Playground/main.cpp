@@ -56,6 +56,8 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
 
             graphics->BeginScene();
             {
+               graphics->DrawBox(5, 5, 95, 175);
+
                graphics->Text(10, 10,  "Filename: " + audio->FileName("music"));
                graphics->Text(10, 20,  "Master Volume: " + base::AsString(audio->MasterVolume()) + "%");
                graphics->Text(10, 30,  "Default Volume: " + base::AsString(audio->DefaultVolume("music")) + "%");
