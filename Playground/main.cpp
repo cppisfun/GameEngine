@@ -24,9 +24,9 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
 
       core->WindowTitle("GameEngine 0.1.0");
 
-      resources->AddBinary("music", "../resources/audio/music/music.ogg");
+      resources->AddMusic("music", "../resources/audio/music/music.ogg");
 
-      audio->Add("music", resources->Binary("music"));
+      audio->Add("music", resources->Music("music"));
       audio->Add("piano", "../resources/audio/music/piano.ogg");
 
       audio->DefaultVolume("piano", 0);

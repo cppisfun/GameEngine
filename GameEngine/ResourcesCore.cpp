@@ -11,135 +11,56 @@
 using namespace base;
 
 
-ResourcesCore::ResourcesCore ()
+void ResourcesCore::Add (const std::string& id, const std::string& path, std::map<std::string, std::string>& map)
 {
-   Init();
+   if (id.empty())                     throw error::InvalidParam("No id specified!", __FUNCTION__);
+   else if (path.empty())              throw error::InvalidParam("No path specified!", __FUNCTION__);
+   else if (map.find(id) != map.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in map!", __FUNCTION__);
+
+   map.insert(std::make_pair(id, LoadString(path)));
 }
 
-ResourcesCore::~ResourcesCore ()
+void ResourcesCore::Add (const std::string& id, const std::string& path, std::map<std::string, std::vector<char>>& map)
 {
+   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+   else if (path.empty()) throw error::InvalidParam("No path specified!", __FUNCTION__);
+   else if (map.find(id) != map.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in map!", __FUNCTION__);
+
+   map.insert(std::make_pair(id, LoadBinary(path)));
 }
 
-void ResourcesCore::Init ()
-{
-}
-
-ResourcesCore& ResourcesCore::AddString (const std::string& id, const std::string& path)
-{
-   if (id.empty())                             throw error::InvalidParam("No id specified!", __FUNCTION__);
-   else if (path.empty())                      throw error::InvalidParam("No path specified!", __FUNCTION__);
-   else if (strings.find(id) != strings.end()) throw error::AlreadyExists("String resource with specified id already exists!", __FUNCTION__);
-
-   strings[id] = LoadString(path);
-   return *this;
-}
-
-ResourcesCore& ResourcesCore::AddBinary (const std::string& id, const std::string& path)
-{
-   if (id.empty())                               throw error::InvalidParam("No id specified!", __FUNCTION__);
-   else if (path.empty())                        throw error::InvalidParam("No path specified!", __FUNCTION__);
-   else if (binaries.find(id) != binaries.end()) throw error::AlreadyExists("String resource with specified id already exists!", __FUNCTION__);
-
-   binaries[id] = LoadBinary(path);
-   return *this;
-}
-
-ResourcesCore& ResourcesCore::AddScript (const std::string& id, const std::string& path)
-{
-   if (id.empty())                             throw error::InvalidParam("No id specified!", __FUNCTION__);
-   else if (path.empty())                      throw error::InvalidParam("No path specified!", __FUNCTION__);
-   else if (scripts.find(id) != scripts.end()) throw error::AlreadyExists("String resource with specified id already exists!", __FUNCTION__);
-
-   scripts[id] = LoadString(path);
-   return *this;
-}
-
-ResourcesCore& ResourcesCore::AddXML (const std::string& id, const std::string& path)
-{
-   if (id.empty())                       throw error::InvalidParam("No id specified!", __FUNCTION__);
-   else if (path.empty())                throw error::InvalidParam("No path specified!", __FUNCTION__);
-   else if (xmls.find(id) != xmls.end()) throw error::AlreadyExists("String resource with specified id already exists!", __FUNCTION__);
-
-   xmls[id] = LoadString(path);
-   return *this;
-}
-
-ResourcesCore& ResourcesCore::RemoveString (const std::string& id)
+void ResourcesCore::Remove (const std::string& id, std::map<std::string, std::string>& map)
 {
    if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   auto res = strings.find(id);
-   if (res != strings.end()) strings.erase(res);
-
-   return *this;
+   const auto res = map.find(id);
+   if (res != map.end()) map.erase(res);
 }
 
-ResourcesCore& ResourcesCore::RemoveBinary (const std::string& id)
+void ResourcesCore::Remove (const std::string& id, std::map<std::string, std::vector<char>>& map)
 {
    if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   auto res = binaries.find(id);
-   if (res != binaries.end()) binaries.erase(res);
-
-   return *this;
+   const auto res = map.find(id);
+   if (res != map.end()) map.erase(res);
 }
 
-ResourcesCore& ResourcesCore::RemoveScript (const std::string& id)
+const std::string& ResourcesCore::Find (const std::string& id, const std::map<std::string, std::string>& map) const
 {
    if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   auto res = scripts.find(id);
-   if (res != scripts.end()) scripts.erase(res);
-
-   return *this;
-}
-
-ResourcesCore& ResourcesCore::RemoveXML (const std::string& id)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto res = xmls.find(id);
-   if (res != xmls.end()) xmls.erase(res);
-
-   return *this;
-}
-
-const std::string& ResourcesCore::String (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto res = strings.find(id);
-   if (res == strings.end()) throw error::NotFound("String resource with specified id does not exist!", __FUNCTION__);
+   const auto res = map.find(id);
+   if (res == map.end()) throw error::NotFound("Resource with id \"" + id + "\" does not exist!", __FUNCTION__);
 
    return res->second;
 }
 
-const std::vector<char>& ResourcesCore::Binary (const std::string& id) const
+const std::vector<char>& ResourcesCore::Find (const std::string& id, const std::map<std::string, std::vector<char>>& map) const
 {
    if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   auto res = binaries.find(id);
-   if (res == binaries.end()) throw error::NotFound("String resource with specified id does not exist!", __FUNCTION__);
-
-   return res->second;
-}
-
-const std::string& ResourcesCore::Script (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto res = scripts.find(id);
-   if (res == scripts.end()) throw error::NotFound("String resource with specified id does not exist!", __FUNCTION__);
-
-   return res->second;
-}
-
-const std::string& ResourcesCore::XML (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto res = xmls.find(id);
-   if (res == xmls.end()) throw error::NotFound("String resource with specified id does not exist!", __FUNCTION__);
+   const auto res = map.find(id);
+   if (res == map.end()) throw error::NotFound("Resource with id \"" + id + "\" does not exist!", __FUNCTION__);
 
    return res->second;
 }
