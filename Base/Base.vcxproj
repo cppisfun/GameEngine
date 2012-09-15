@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetExt>.dll</TargetExt>
@@ -89,6 +89,7 @@
     <ClInclude Include="DLL_DEF.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="File.h" />
+    <ClInclude Include="LimitedValue.h" />
     <ClInclude Include="Numeric.h" />
     <ClInclude Include="Precomp.h" />
     <ClInclude Include="String.h" />

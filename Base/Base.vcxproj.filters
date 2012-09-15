@@ -10,6 +10,7 @@
     <ClInclude Include="Precomp.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Tools.h" />
+    <ClInclude Include="LimitedValue.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Convert.cpp" />
