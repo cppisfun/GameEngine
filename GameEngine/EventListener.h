@@ -6,20 +6,24 @@
 #include "DLL_DEF.h"
 
 
-class GEDLL EventListener
-{
-   bool enabled;
+namespace ge {
 
-   virtual void OnEvent (const irr::SEvent& event) = 0;
-   virtual void Update () = 0;
+   class GEDLL EventListener
+   {
+      bool enabled;
 
-public:
-   EventListener () : enabled(true) { }
-   virtual ~EventListener ()        { }
+      virtual void OnEvent (const irr::SEvent& event) = 0;
+      virtual void Update () = 0;
 
-   void Enable (bool enable) { enabled = enable; }
-   void Disable ()           { enabled = false; }
+   public:
+      EventListener () : enabled(true) { }
+      virtual ~EventListener ()        { }
 
-   bool Enabled () const { return enabled; }
-};
+      void Enable (bool enable) { enabled = enable; }
+      void Disable ()           { enabled = false; }
+
+      bool Enabled () const { return enabled; }
+   };
+
+}
 

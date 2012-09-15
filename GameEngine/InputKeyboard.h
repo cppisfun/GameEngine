@@ -7,27 +7,30 @@
 
 #include "DLL_DEF.h"
 
-class EventController;
 
+namespace ge {
 
-class GEDLL InputKeyboard : public EventListener
-{
+   class EventController;
 
-   std::array<bool, irr::KEY_KEY_CODES_COUNT> currKeys;
-   std::array<bool, irr::KEY_KEY_CODES_COUNT> prevKeys;
+   class GEDLL InputKeyboard : public EventListener
+   {
+      std::array<bool, irr::KEY_KEY_CODES_COUNT> currKeys;
+      std::array<bool, irr::KEY_KEY_CODES_COUNT> prevKeys;
 
-   void Init (EventController* eventCtrl);
+      void Init (EventController* eventCtrl);
 
-   void OnEvent (const irr::SEvent& event) override;
+      void OnEvent (const irr::SEvent& event) override;
 
-public:
-   InputKeyboard (EventController* eventCtrl);
-   virtual ~InputKeyboard ();
+   public:
+      InputKeyboard (EventController* eventCtrl);
+      virtual ~InputKeyboard ();
 
-   void Update ();
+      void Update ();
 
-   bool Key (int key = ANY);
-   bool KeyPressed (int key = ANY);
-   bool KeyReleased (int key = ANY);
-};
+      bool Key (int key = ANY);
+      bool KeyPressed (int key = ANY);
+      bool KeyReleased (int key = ANY);
+   };
+
+}
 

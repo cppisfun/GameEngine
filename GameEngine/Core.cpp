@@ -7,35 +7,39 @@
 #include "../Base/Convert.h"
 #include "../Base/Error.h"
 
-
 using namespace irr;
 
-Core::Core ()
-: resizableWindow(false), device(nullptr), eventController(nullptr),
-  graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
-{
-   Init();
-}
 
-Core::~Core ()
-{
-   ShutDown(AllInterfaces);
-}
+namespace ge {
 
-void Core::Init ()
-{
-   eventController.reset(new EventController);
-   if (eventController == nullptr) throw error::Create("Failed to create event controller!", __FUNCTION__);
+   Core::Core ()
+   : resizableWindow(false), device(nullptr), eventController(nullptr),
+     graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
+   {
+      Init();
+   }
 
-   device.reset(irr::createDevice());
-   if (device == nullptr) throw error::Create("Failed to create Irrlicht device!", __FUNCTION__);
+   Core::~Core ()
+   {
+      ShutDown(AllInterfaces);
+   }
 
-   device->setEventReceiver(eventController.get());
-}
+   void Core::Init ()
+   {
+      eventController.reset(new EventController);
+      if (eventController == nullptr) throw error::Create("Failed to create event controller!", __FUNCTION__);
 
-Core& Core::WindowTitle (const std::string& title)
-{
-   device->setWindowCaption(base::AsWString(title).c_str());
-   return *this;
+      device.reset(irr::createDevice());
+      if (device == nullptr) throw error::Create("Failed to create Irrlicht device!", __FUNCTION__);
+
+      device->setEventReceiver(eventController.get());
+   }
+
+   Core& Core::WindowTitle (const std::string& title)
+   {
+      device->setWindowCaption(base::AsWString(title).c_str());
+      return *this;
+   }
+
 }
 

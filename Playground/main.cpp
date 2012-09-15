@@ -6,6 +6,8 @@
 
 #include "GameEngine/Core.h"
 
+using namespace ge;
+
 
 int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
 {

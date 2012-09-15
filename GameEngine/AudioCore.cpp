@@ -10,681 +10,685 @@
 using namespace irrklang;
 
 
-AudioCore::AudioCore () : device(nullptr)
-{
-   Init();
-}
+namespace ge {
 
-AudioCore::~AudioCore ()
-{
-   if (device != nullptr) {
+   AudioCore::AudioCore () : device(nullptr)
+   {
+      Init();
+   }
+
+   AudioCore::~AudioCore ()
+   {
+      if (device != nullptr) {
+         device->stopAllSounds();
+
+         std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, ISound*> mus) {
+            mus.second->drop();
+         });
+
+         for (auto it = sounds.begin(); it != sounds.end(); ++it) {
+            std::for_each(it->second.begin(), it->second.end(), [] (ISound* snd) {
+               snd->drop();
+            });
+         }
+
+         std::for_each(audioPool.begin(), audioPool.end(), [] (const std::pair<std::string, ISoundSource*> aud) {
+            aud.second->drop();
+         });
+      }
+   }
+
+   void AudioCore::Init ()
+   {
+      device = createIrrKlangDevice();
+      if (device == nullptr) throw error::Create("Failed to create irrKlang audio device!", __FUNCTION__);
+   }
+
+   AudioCore& AudioCore::Add (const std::string& id, const std::string& audioFile)
+   {
+      if (id.empty())                                 throw error::InvalidParam("No id specified!", __FUNCTION__);
+      else if (audioFile.empty())                     throw error::InvalidParam("No audio file specified!", __FUNCTION__);
+      else if (audioPool.find(id) != audioPool.end()) throw error::AlreadyExists("Audio resource with specified id already exists!", __FUNCTION__);
+
+      auto aud = device->addSoundSourceFromFile(audioFile.c_str(), ESM_AUTO_DETECT, true);
+      if (aud == nullptr) throw error::Read("Failed to read audio file!", __FUNCTION__);
+
+      audioPool[id] = aud;
+      return *this;
+   }
+
+   AudioCore& AudioCore::Add (const std::string& id, const std::vector<char>& resource)
+   {
+      if (id.empty())                                 throw error::InvalidParam("No id specified!", __FUNCTION__);
+      else if (resource.empty())                      throw error::InvalidParam("No resource data specified!", __FUNCTION__);
+      else if (audioPool.find(id) != audioPool.end()) throw error::AlreadyExists("Audio resource with specified id already exists!", __FUNCTION__);
+
+      auto aud = device->addSoundSourceFromMemory((void*)&resource[0], resource.size(), id.c_str());
+      if (aud == nullptr) throw error::Query("Failed to query resource data!", __FUNCTION__);
+
+      audioPool[id] = aud;
+      return *this;
+   }
+
+   AudioCore& AudioCore::Remove (const std::string& id)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto aud = audioPool.find(id);
+      if (aud == audioPool.end()) return *this;
+
+      device->removeSoundSource(aud->second);
+      audioPool.erase(aud);
+
+      return *this;
+   }
+
+   AudioCore& AudioCore::RemoveAll ()
+   {
+      device->removeAllSoundSources();
+      audioPool.clear();
+
+      return *this;
+   }
+
+   AudioCore& AudioCore::StopAll ()
+   {
       device->stopAllSounds();
+      return *this;
+   }
 
+   AudioCore& AudioCore::PauseAll (bool pause)
+   {
+      device->setAllSoundsPaused(pause);
+      return *this;
+   }
+
+   AudioCore& AudioCore::MasterVolume (int percent)
+   {
+      float vol = boost::numeric_cast<float>(percent) / 100.0f;
+
+      if (vol < 0.0f) vol      = 0.0f;
+      else if (vol > 1.0f) vol = 1.0f;
+
+      device->setSoundVolume(vol);
+      return *this;
+   }
+
+   AudioCore& AudioCore::DefaultVolume (const std::string& id, int percent)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto aud = audioPool.find(id);
+      if (aud == audioPool.end()) return *this;
+
+      float vol = boost::numeric_cast<float>(percent) / 100.0f;
+
+      if (vol < 0.0f)      vol = 0.0f;
+      else if (vol > 1.0f) vol = 1.0f;
+
+      aud->second->setDefaultVolume(vol);
+      return *this;
+   }
+
+   AudioCore& AudioCore::PlayMusic (const std::string& id, bool looped)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      else if (music.find(id) != music.end()) return *this;
+
+      auto aud = audioPool.find(id);
+      if (aud == audioPool.end()) return *this;
+
+      auto mus = device->play2D(aud->second, looped, false, true, false);
+      if (mus == nullptr) return *this;
+
+      music[id] = mus;
+      return *this;
+   }
+
+   AudioCore& AudioCore::StopMusic ()
+   {
       std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, ISound*> mus) {
-         mus.second->drop();
+         mus.second->stop();
       });
 
+      return *this;
+   }
+
+   AudioCore& AudioCore::StopMusic (const std::string& id)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return *this;
+
+      mus->second->stop();
+      return *this;
+   }
+
+   AudioCore& AudioCore::PauseMusic (bool pause)
+   {
+      std::for_each(music.begin(), music.end(), [&pause] (const std::pair<std::string, ISound*> mus) {
+         mus.second->setIsPaused(pause);
+      });
+
+      return *this;
+   }
+
+   AudioCore& AudioCore::PauseMusic (const std::string& id, bool pause)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return *this;
+
+      mus->second->setIsPaused(pause);
+      return *this;
+   }
+
+   AudioCore& AudioCore::MusicVolume (int percent)
+   {
+      float vol = boost::numeric_cast<float>(percent) / 100.0f;
+
+      if (vol < 0.0f)      vol = 0.0f;
+      else if (vol > 1.0f) vol = 1.0f;
+
+      std::for_each(music.begin(), music.end(), [&vol] (const std::pair<std::string, ISound*>& mus) {
+         mus.second->setVolume(vol);
+      });
+
+      return *this;
+   }
+
+   AudioCore& AudioCore::MusicVolume (const std::string& id, int percent)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return *this;
+
+      float vol = boost::numeric_cast<float>(percent) / 100.0f;
+
+      if (vol < 0.0f) vol      = 0.0f;
+      else if (vol > 1.0f) vol = 1.0f;
+
+      mus->second->setVolume(vol);
+      return *this;
+   }
+
+   AudioCore& AudioCore::MusicSpeed (int percent)
+   {
+      float spd = boost::numeric_cast<float>(percent) / 100.0f;
+
+      if (spd < 0.01f)     spd = 0.01f;
+      else if (spd > 4.0f) spd = 4.0f;
+
+      std::for_each(music.begin(), music.end(), [&spd] (const std::pair<std::string, ISound*>& mus) {
+         mus.second->setPlaybackSpeed(spd);
+      });
+
+      return *this;
+   }
+
+   AudioCore& AudioCore::MusicSpeed (const std::string& id, int percent)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return *this;
+
+      float spd = boost::numeric_cast<float>(percent) / 100.0f;
+
+      if (spd < 0.01f)     spd = 0.01f;
+      else if (spd > 4.0f) spd = 4.0f;
+
+      mus->second->setPlaybackSpeed(spd);
+      return *this;
+   }
+
+   AudioCore& AudioCore::MusicPan (int percent)
+   {
+      float pan = boost::numeric_cast<float>(percent) / 100.0f;
+
+      if (pan < -1.0f)     pan = -1.0f;
+      else if (pan > 1.0f) pan = 1.0f;
+
+      std::for_each(music.begin(), music.end(), [&pan] (const std::pair<std::string, ISound*>& mus) {
+         mus.second->setPan(pan);
+      });
+
+      return *this;
+   }
+
+   AudioCore& AudioCore::MusicPan (const std::string& id, int percent)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return *this;
+
+      float pan = boost::numeric_cast<float>(percent) / 100.0f;
+
+      if (pan < -1.0f)     pan = -1.0f;
+      else if (pan > 1.0f) pan = 1.0f;
+
+      mus->second->setPan(pan);
+      return *this;
+   }
+
+   AudioCore& AudioCore::MusicPosition (const std::string& id, int position)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return *this;
+
+      size_t pos;
+
+      if (position < 0)                                             pos = 0;
+      else if ((size_t)position > mus->second->getPlayLength() - 1) pos = mus->second->getPlayLength() - 1;
+      else                                                          pos = position;
+
+      mus->second->setPlayPosition(pos);
+      return *this;
+   }
+
+   AudioCore& AudioCore::PlaySound (const std::string& id, bool looped)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto aud = audioPool.find(id);
+      if (aud == audioPool.end()) return *this;
+
+      auto snd = device->play2D(aud->second, looped, false, true, false);
+      if (snd == nullptr) return *this;
+
+      sounds[id].push_back(snd);
+      return *this;
+   }
+
+   AudioCore& AudioCore::StopSound ()
+   {
       for (auto it = sounds.begin(); it != sounds.end(); ++it) {
          std::for_each(it->second.begin(), it->second.end(), [] (ISound* snd) {
+            snd->stop();
             snd->drop();
          });
       }
 
-      std::for_each(audioPool.begin(), audioPool.end(), [] (const std::pair<std::string, ISoundSource*> aud) {
-         aud.second->drop();
-      });
+      sounds.clear();
+      return *this;
    }
-}
 
-void AudioCore::Init ()
-{
-   device = createIrrKlangDevice();
-   if (device == nullptr) throw error::Create("Failed to create irrKlang audio device!", __FUNCTION__);
-}
+   AudioCore& AudioCore::StopSound (const std::string& id)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-AudioCore& AudioCore::Add (const std::string& id, const std::string& audioFile)
-{
-   if (id.empty())                                 throw error::InvalidParam("No id specified!", __FUNCTION__);
-   else if (audioFile.empty())                     throw error::InvalidParam("No audio file specified!", __FUNCTION__);
-   else if (audioPool.find(id) != audioPool.end()) throw error::AlreadyExists("Audio resource with specified id already exists!", __FUNCTION__);
+      auto snd = sounds.find(id);
+      if (snd == sounds.end()) return *this;
 
-   auto aud = device->addSoundSourceFromFile(audioFile.c_str(), ESM_AUTO_DETECT, true);
-   if (aud == nullptr) throw error::Read("Failed to read audio file!", __FUNCTION__);
-
-   audioPool[id] = aud;
-   return *this;
-}
-
-AudioCore& AudioCore::Add (const std::string& id, const std::vector<char>& resource)
-{
-   if (id.empty())                                 throw error::InvalidParam("No id specified!", __FUNCTION__);
-   else if (resource.empty())                      throw error::InvalidParam("No resource data specified!", __FUNCTION__);
-   else if (audioPool.find(id) != audioPool.end()) throw error::AlreadyExists("Audio resource with specified id already exists!", __FUNCTION__);
-
-   auto aud = device->addSoundSourceFromMemory((void*)&resource[0], resource.size(), id.c_str());
-   if (aud == nullptr) throw error::Query("Failed to query resource data!", __FUNCTION__);
-
-   audioPool[id] = aud;
-   return *this;
-}
-
-AudioCore& AudioCore::Remove (const std::string& id)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto aud = audioPool.find(id);
-   if (aud == audioPool.end()) return *this;
-
-   device->removeSoundSource(aud->second);
-   audioPool.erase(aud);
-
-   return *this;
-}
-
-AudioCore& AudioCore::RemoveAll ()
-{
-   device->removeAllSoundSources();
-   audioPool.clear();
-
-   return *this;
-}
-
-AudioCore& AudioCore::StopAll ()
-{
-   device->stopAllSounds();
-   return *this;
-}
-
-AudioCore& AudioCore::PauseAll (bool pause)
-{
-   device->setAllSoundsPaused(pause);
-   return *this;
-}
-
-AudioCore& AudioCore::MasterVolume (int percent)
-{
-   float vol = boost::numeric_cast<float>(percent) / 100.0f;
-
-   if (vol < 0.0f) vol      = 0.0f;
-   else if (vol > 1.0f) vol = 1.0f;
-
-   device->setSoundVolume(vol);
-   return *this;
-}
-
-AudioCore& AudioCore::DefaultVolume (const std::string& id, int percent)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto aud = audioPool.find(id);
-   if (aud == audioPool.end()) return *this;
-
-   float vol = boost::numeric_cast<float>(percent) / 100.0f;
-
-   if (vol < 0.0f)      vol = 0.0f;
-   else if (vol > 1.0f) vol = 1.0f;
-
-   aud->second->setDefaultVolume(vol);
-   return *this;
-}
-
-AudioCore& AudioCore::PlayMusic (const std::string& id, bool looped)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-   else if (music.find(id) != music.end()) return *this;
-
-   auto aud = audioPool.find(id);
-   if (aud == audioPool.end()) return *this;
-
-   auto mus = device->play2D(aud->second, looped, false, true, false);
-   if (mus == nullptr) return *this;
-
-   music[id] = mus;
-   return *this;
-}
-
-AudioCore& AudioCore::StopMusic ()
-{
-   std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, ISound*> mus) {
-      mus.second->stop();
-   });
-
-   return *this;
-}
-
-AudioCore& AudioCore::StopMusic (const std::string& id)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto mus = music.find(id);
-   if (mus == music.end()) return *this;
-
-   mus->second->stop();
-   return *this;
-}
-
-AudioCore& AudioCore::PauseMusic (bool pause)
-{
-   std::for_each(music.begin(), music.end(), [&pause] (const std::pair<std::string, ISound*> mus) {
-      mus.second->setIsPaused(pause);
-   });
-
-   return *this;
-}
-
-AudioCore& AudioCore::PauseMusic (const std::string& id, bool pause)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto mus = music.find(id);
-   if (mus == music.end()) return *this;
-
-   mus->second->setIsPaused(pause);
-   return *this;
-}
-
-AudioCore& AudioCore::MusicVolume (int percent)
-{
-   float vol = boost::numeric_cast<float>(percent) / 100.0f;
-
-   if (vol < 0.0f)      vol = 0.0f;
-   else if (vol > 1.0f) vol = 1.0f;
-
-   std::for_each(music.begin(), music.end(), [&vol] (const std::pair<std::string, ISound*>& mus) {
-      mus.second->setVolume(vol);
-   });
-
-   return *this;
-}
-
-AudioCore& AudioCore::MusicVolume (const std::string& id, int percent)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto mus = music.find(id);
-   if (mus == music.end()) return *this;
-
-   float vol = boost::numeric_cast<float>(percent) / 100.0f;
-
-   if (vol < 0.0f) vol      = 0.0f;
-   else if (vol > 1.0f) vol = 1.0f;
-
-   mus->second->setVolume(vol);
-   return *this;
-}
-
-AudioCore& AudioCore::MusicSpeed (int percent)
-{
-   float spd = boost::numeric_cast<float>(percent) / 100.0f;
-
-   if (spd < 0.01f)     spd = 0.01f;
-   else if (spd > 4.0f) spd = 4.0f;
-
-   std::for_each(music.begin(), music.end(), [&spd] (const std::pair<std::string, ISound*>& mus) {
-      mus.second->setPlaybackSpeed(spd);
-   });
-
-   return *this;
-}
-
-AudioCore& AudioCore::MusicSpeed (const std::string& id, int percent)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto mus = music.find(id);
-   if (mus == music.end()) return *this;
-
-   float spd = boost::numeric_cast<float>(percent) / 100.0f;
-
-   if (spd < 0.01f)     spd = 0.01f;
-   else if (spd > 4.0f) spd = 4.0f;
-
-   mus->second->setPlaybackSpeed(spd);
-   return *this;
-}
-
-AudioCore& AudioCore::MusicPan (int percent)
-{
-   float pan = boost::numeric_cast<float>(percent) / 100.0f;
-
-   if (pan < -1.0f)     pan = -1.0f;
-   else if (pan > 1.0f) pan = 1.0f;
-
-   std::for_each(music.begin(), music.end(), [&pan] (const std::pair<std::string, ISound*>& mus) {
-      mus.second->setPan(pan);
-   });
-
-   return *this;
-}
-
-AudioCore& AudioCore::MusicPan (const std::string& id, int percent)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto mus = music.find(id);
-   if (mus == music.end()) return *this;
-
-   float pan = boost::numeric_cast<float>(percent) / 100.0f;
-
-   if (pan < -1.0f)     pan = -1.0f;
-   else if (pan > 1.0f) pan = 1.0f;
-
-   mus->second->setPan(pan);
-   return *this;
-}
-
-AudioCore& AudioCore::MusicPosition (const std::string& id, int position)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto mus = music.find(id);
-   if (mus == music.end()) return *this;
-
-   size_t pos;
-
-   if (position < 0)                                             pos = 0;
-   else if ((size_t)position > mus->second->getPlayLength() - 1) pos = mus->second->getPlayLength() - 1;
-   else                                                          pos = position;
-
-   mus->second->setPlayPosition(pos);
-   return *this;
-}
-
-AudioCore& AudioCore::PlaySound (const std::string& id, bool looped)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto aud = audioPool.find(id);
-   if (aud == audioPool.end()) return *this;
-
-   auto snd = device->play2D(aud->second, looped, false, true, false);
-   if (snd == nullptr) return *this;
-
-   sounds[id].push_back(snd);
-   return *this;
-}
-
-AudioCore& AudioCore::StopSound ()
-{
-   for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-      std::for_each(it->second.begin(), it->second.end(), [] (ISound* snd) {
+      std::for_each(snd->second.begin(), snd->second.end(), [] (ISound* snd) {
          snd->stop();
          snd->drop();
       });
+
+      sounds.erase(snd);
+      return *this;
    }
 
-   sounds.clear();
-   return *this;
-}
+   AudioCore& AudioCore::PauseSound (bool pause)
+   {
+      for (auto it = sounds.begin(); it != sounds.end(); ++it) {
+         std::for_each(it->second.begin(), it->second.end(), [&pause] (ISound* snd) {
+            snd->setIsPaused(pause);
+         });
+      }
 
-AudioCore& AudioCore::StopSound (const std::string& id)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return *this;
+   }
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end()) return *this;
+   AudioCore& AudioCore::PauseSound (const std::string& id, bool pause)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   std::for_each(snd->second.begin(), snd->second.end(), [] (ISound* snd) {
-      snd->stop();
-      snd->drop();
-   });
+      auto snd = sounds.find(id);
+      if (snd == sounds.end()) return *this;
 
-   sounds.erase(snd);
-   return *this;
-}
-
-AudioCore& AudioCore::PauseSound (bool pause)
-{
-   for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-      std::for_each(it->second.begin(), it->second.end(), [&pause] (ISound* snd) {
+      std::for_each(snd->second.begin(), snd->second.end(), [&pause] (ISound* snd) {
          snd->setIsPaused(pause);
       });
+
+      return *this;
    }
 
-   return *this;
-}
+   AudioCore& AudioCore::SoundVolume (int percent)
+   {
+      float vol = boost::numeric_cast<float>(percent) / 100.0f;
 
-AudioCore& AudioCore::PauseSound (const std::string& id, bool pause)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (vol < 0.0f)      vol = 0.0f;
+      else if (vol > 1.0f) vol = 1.0f;
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end()) return *this;
+      for (auto it = sounds.begin(); it != sounds.end(); ++it) {
+         std::for_each(it->second.begin(), it->second.end(), [&vol] (ISound* snd) {
+            snd->setVolume(vol);
+         });
+      }
 
-   std::for_each(snd->second.begin(), snd->second.end(), [&pause] (ISound* snd) {
-      snd->setIsPaused(pause);
-   });
+      return *this;
+   }
 
-   return *this;
-}
+   AudioCore& AudioCore::SoundVolume (const std::string& id, int percent)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-AudioCore& AudioCore::SoundVolume (int percent)
-{
-   float vol = boost::numeric_cast<float>(percent) / 100.0f;
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return *this;
 
-   if (vol < 0.0f)      vol = 0.0f;
-   else if (vol > 1.0f) vol = 1.0f;
+      float vol = boost::numeric_cast<float>(percent) / 100.0f;
 
-   for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-      std::for_each(it->second.begin(), it->second.end(), [&vol] (ISound* snd) {
-         snd->setVolume(vol);
+      if (vol < 0.0f)      vol = 0.0f;
+      else if (vol > 1.0f) vol = 1.0f;
+
+      std::for_each(snd->second.begin(), snd->second.end(), [&vol] (ISound* sound) {
+         sound->setVolume(vol);
       });
+
+      return *this;
    }
 
-   return *this;
-}
+   AudioCore& AudioCore::SoundSpeed (int percent)
+   {
+      float spd = boost::numeric_cast<float>(percent) / 100.0f;
 
-AudioCore& AudioCore::SoundVolume (const std::string& id, int percent)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (spd < 0.01f)     spd = 0.01f;
+      else if (spd > 4.0f) spd = 4.0f;
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return *this;
+      for (auto it = sounds.begin(); it != sounds.end(); ++it) {
+         std::for_each(it->second.begin(), it->second.end(), [&spd] (ISound* snd) {
+            snd->setPlaybackSpeed(spd);
+         });
+      }
 
-   float vol = boost::numeric_cast<float>(percent) / 100.0f;
+      return *this;
+   }
 
-   if (vol < 0.0f)      vol = 0.0f;
-   else if (vol > 1.0f) vol = 1.0f;
+   AudioCore& AudioCore::SoundSpeed (const std::string& id, int percent)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   std::for_each(snd->second.begin(), snd->second.end(), [&vol] (ISound* sound) {
-      sound->setVolume(vol);
-   });
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return *this;
 
-   return *this;
-}
+      float spd = boost::numeric_cast<float>(percent) / 100.0f;
 
-AudioCore& AudioCore::SoundSpeed (int percent)
-{
-   float spd = boost::numeric_cast<float>(percent) / 100.0f;
+      if (spd < 0.01f)     spd = 0.01f;
+      else if (spd > 4.0f) spd = 4.0f;
 
-   if (spd < 0.01f)     spd = 0.01f;
-   else if (spd > 4.0f) spd = 4.0f;
-
-   for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-      std::for_each(it->second.begin(), it->second.end(), [&spd] (ISound* snd) {
-         snd->setPlaybackSpeed(spd);
+      std::for_each(snd->second.begin(), snd->second.end(), [&spd] (ISound* sound) {
+         sound->setPlaybackSpeed(spd);
       });
+
+      return *this;
    }
 
-   return *this;
-}
+   AudioCore& AudioCore::SoundPan (int percent)
+   {
+      float pan = boost::numeric_cast<float>(percent) / 100.0f;
 
-AudioCore& AudioCore::SoundSpeed (const std::string& id, int percent)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (pan < -1.0f)     pan = -1.0f;
+      else if (pan > 1.0f) pan = 1.0f;
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return *this;
+      for (auto it = sounds.begin(); it != sounds.end(); ++it) {
+         std::for_each(it->second.begin(), it->second.end(), [&pan] (ISound* snd) {
+            snd->setPan(pan);
+         });
+      }
 
-   float spd = boost::numeric_cast<float>(percent) / 100.0f;
+      return *this;
+   }
 
-   if (spd < 0.01f)     spd = 0.01f;
-   else if (spd > 4.0f) spd = 4.0f;
+   AudioCore& AudioCore::SoundPan (const std::string& id, int percent)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   std::for_each(snd->second.begin(), snd->second.end(), [&spd] (ISound* sound) {
-      sound->setPlaybackSpeed(spd);
-   });
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return *this;
 
-   return *this;
-}
+      float pan = boost::numeric_cast<float>(percent) / 100.0f;
 
-AudioCore& AudioCore::SoundPan (int percent)
-{
-   float pan = boost::numeric_cast<float>(percent) / 100.0f;
+      if (pan < -1.0f)     pan = -1.0f;
+      else if (pan > 1.0f) pan = 1.0f;
 
-   if (pan < -1.0f)     pan = -1.0f;
-   else if (pan > 1.0f) pan = 1.0f;
-
-   for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-      std::for_each(it->second.begin(), it->second.end(), [&pan] (ISound* snd) {
-         snd->setPan(pan);
+      std::for_each(snd->second.begin(), snd->second.end(), [&pan] (ISound* sound) {
+         sound->setPan(pan);
       });
+
+      return *this;
    }
 
-   return *this;
-}
+   int AudioCore::MasterVolume () const
+   {
+      int vol = boost::numeric_cast<int>(device->getSoundVolume() * 100.0f);
 
-AudioCore& AudioCore::SoundPan (const std::string& id, int percent)
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (vol < 0)        vol = 0;
+      else if (vol > 100) vol = 100;
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return *this;
+      return vol;
+   }
 
-   float pan = boost::numeric_cast<float>(percent) / 100.0f;
+   int AudioCore::DefaultVolume (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   if (pan < -1.0f)     pan = -1.0f;
-   else if (pan > 1.0f) pan = 1.0f;
+      auto aud = audioPool.find(id);
+      if (aud == audioPool.end()) return 0;
 
-   std::for_each(snd->second.begin(), snd->second.end(), [&pan] (ISound* sound) {
-      sound->setPan(pan);
-   });
+      int vol = boost::numeric_cast<int>(aud->second->getDefaultVolume() * 100.0f);
 
-   return *this;
-}
+      if (vol < 0)        vol = 0;
+      else if (vol > 100) vol = 100;
 
-int AudioCore::MasterVolume () const
-{
-   int vol = boost::numeric_cast<int>(device->getSoundVolume() * 100.0f);
+      return vol;
+   }
 
-   if (vol < 0)        vol = 0;
-   else if (vol > 100) vol = 100;
+   bool AudioCore::IsPlaying (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   return vol;
-}
+      auto aud = audioPool.find(id);
+      if (aud == audioPool.end()) return false;
 
-int AudioCore::DefaultVolume (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return device->isCurrentlyPlaying(aud->second);
+   }
 
-   auto aud = audioPool.find(id);
-   if (aud == audioPool.end()) return 0;
+   bool AudioCore::IsMusicPaused (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   int vol = boost::numeric_cast<int>(aud->second->getDefaultVolume() * 100.0f);
+      auto mus = music.find(id);
+      if (mus == music.end()) return false;
 
-   if (vol < 0)        vol = 0;
-   else if (vol > 100) vol = 100;
+      return mus->second->getIsPaused();
+   }
 
-   return vol;
-}
+   bool AudioCore::IsMusicLooped (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-bool AudioCore::IsPlaying (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      auto mus = music.find(id);
+      if (mus == music.end()) return false;
 
-   auto aud = audioPool.find(id);
-   if (aud == audioPool.end()) return false;
+      return mus->second->isLooped();
+   }
 
-   return device->isCurrentlyPlaying(aud->second);
-}
+   bool AudioCore::IsMusicFinished (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-bool AudioCore::IsMusicPaused (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      auto mus = music.find(id);
+      if (mus == music.end()) return true;
 
-   auto mus = music.find(id);
-   if (mus == music.end()) return false;
+      return mus->second->isFinished();
+   }
 
-   return mus->second->getIsPaused();
-}
+   int AudioCore::MusicVolume (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-bool AudioCore::IsMusicLooped (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      auto mus = music.find(id);
+      if (mus == music.end()) return 0;
 
-   auto mus = music.find(id);
-   if (mus == music.end()) return false;
+      int vol = boost::numeric_cast<int>(mus->second->getVolume() * 100.0f);
 
-   return mus->second->isLooped();
-}
+      if (vol < 0)        vol = 0;
+      else if (vol > 100) vol = 100;
 
-bool AudioCore::IsMusicFinished (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return vol;
+   }
 
-   auto mus = music.find(id);
-   if (mus == music.end()) return true;
+   int AudioCore::MusicSpeed (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   return mus->second->isFinished();
-}
+      auto mus = music.find(id);
+      if (mus == music.end()) return 0;
 
-int AudioCore::MusicVolume (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return boost::numeric_cast<int>(mus->second->getPlaybackSpeed() * 100.0f);
+   }
 
-   auto mus = music.find(id);
-   if (mus == music.end()) return 0;
+   int AudioCore::MusicPan (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   int vol = boost::numeric_cast<int>(mus->second->getVolume() * 100.0f);
+      auto mus = music.find(id);
+      if (mus == music.end()) return 0;
 
-   if (vol < 0)        vol = 0;
-   else if (vol > 100) vol = 100;
+      int pan = boost::numeric_cast<int>(mus->second->getPan() * 100.0f);
 
-   return vol;
-}
+      if (pan < -100)     pan = -100;
+      else if (pan > 100) pan = 100;
 
-int AudioCore::MusicSpeed (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return pan;
+   }
 
-   auto mus = music.find(id);
-   if (mus == music.end()) return 0;
+   int AudioCore::MusicPosition (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   return boost::numeric_cast<int>(mus->second->getPlaybackSpeed() * 100.0f);
-}
+      auto mus = music.find(id);
+      if (mus == music.end()) return -1;
 
-int AudioCore::MusicPan (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return mus->second->getPlayPosition();
+   }
 
-   auto mus = music.find(id);
-   if (mus == music.end()) return 0;
+   int AudioCore::MusicLength (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   int pan = boost::numeric_cast<int>(mus->second->getPan() * 100.0f);
+      auto mus = music.find(id);
+      if (mus == music.end()) return -1;
 
-   if (pan < -100)     pan = -100;
-   else if (pan > 100) pan = 100;
+      return mus->second->getPlayLength();
+   }
 
-   return pan;
-}
+   bool AudioCore::IsSoundPaused (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-int AudioCore::MusicPosition (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return false;
 
-   auto mus = music.find(id);
-   if (mus == music.end()) return -1;
+      return snd->second.back()->getIsPaused();
+   }
 
-   return mus->second->getPlayPosition();
-}
+   bool AudioCore::IsSoundLooped (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-int AudioCore::MusicLength (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return false;
 
-   auto mus = music.find(id);
-   if (mus == music.end()) return -1;
+      return snd->second.back()->isLooped();
+   }
 
-   return mus->second->getPlayLength();
-}
+   bool AudioCore::IsSoundFinished (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-bool AudioCore::IsSoundPaused (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return true;
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return false;
+      return snd->second.back()->isFinished();
+   }
 
-   return snd->second.back()->getIsPaused();
-}
+   int AudioCore::SoundVolume (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-bool AudioCore::IsSoundLooped (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return 0;
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return false;
+      int vol = boost::numeric_cast<int>(snd->second.back()->getVolume() * 100.0f);
 
-   return snd->second.back()->isLooped();
-}
+      if (vol < 0)        vol = 0;
+      else if (vol > 100) vol = 100;
 
-bool AudioCore::IsSoundFinished (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return vol;
+   }
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return true;
+   int AudioCore::SoundSpeed (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   return snd->second.back()->isFinished();
-}
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return 0;
 
-int AudioCore::SoundVolume (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return boost::numeric_cast<int>(snd->second.back()->getPlaybackSpeed() * 100.0f);
+   }
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return 0;
+   int AudioCore::SoundPan (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   int vol = boost::numeric_cast<int>(snd->second.back()->getVolume() * 100.0f);
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return 0;
 
-   if (vol < 0)        vol = 0;
-   else if (vol > 100) vol = 100;
+      int pan = boost::numeric_cast<int>(snd->second.back()->getPan() * 100.0f);
 
-   return vol;
-}
+      if (pan < -100)     pan = -100;
+      else if (pan > 100) pan = 100;
 
-int AudioCore::SoundSpeed (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return pan;
+   }
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return 0;
+   int AudioCore::SoundPosition (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   return boost::numeric_cast<int>(snd->second.back()->getPlaybackSpeed() * 100.0f);
-}
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return -1;
 
-int AudioCore::SoundPan (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      return snd->second.back()->getPlayPosition();
+   }
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return 0;
+   int AudioCore::SoundLength (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-   int pan = boost::numeric_cast<int>(snd->second.back()->getPan() * 100.0f);
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return -1;
 
-   if (pan < -100)     pan = -100;
-   else if (pan > 100) pan = 100;
+      return snd->second.back()->getPlayLength();
+   }
 
-   return pan;
-}
+   const std::string AudioCore::FileName (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
-int AudioCore::SoundPosition (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      auto aud = audioPool.find(id);
+      if (aud == audioPool.end()) return "";
 
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return -1;
+      return std::string(aud->second->getName());
+   }
 
-   return snd->second.back()->getPlayPosition();
-}
-
-int AudioCore::SoundLength (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto snd = sounds.find(id);
-   if (snd == sounds.end() || snd->second.empty()) return -1;
-
-   return snd->second.back()->getPlayLength();
-}
-
-const std::string AudioCore::FileName (const std::string& id) const
-{
-   if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-
-   auto aud = audioPool.find(id);
-   if (aud == audioPool.end()) return "";
-
-   return std::string(aud->second->getName());
 }
 

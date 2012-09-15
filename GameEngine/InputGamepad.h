@@ -5,19 +5,23 @@
 
 #include "DLL_DEF.h"
 
-class EventController;
 
+namespace ge {
 
-class GEDLL InputGamepad : public EventListener
-{
-   void Init (EventController* eventCtrl);
+   class EventController;
 
-   void OnEvent (const irr::SEvent& event);
+   class GEDLL InputGamepad : public EventListener
+   {
+      void Init (EventController* eventCtrl);
 
-public:
-   InputGamepad (EventController* eventCtrl);
-   virtual ~InputGamepad ();
+      void OnEvent (const irr::SEvent& event);
 
-   void Update ();
-};
+   public:
+      InputGamepad (EventController* eventCtrl);
+      virtual ~InputGamepad ();
+
+      void Update ();
+   };
+
+}
 
