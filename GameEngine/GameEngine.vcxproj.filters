@@ -50,6 +50,12 @@
     <ClInclude Include="EventListener.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Primitive</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicsCore.cpp">

@@ -6,6 +6,7 @@
 #include "../Base/Convert.h"
 #include "../Base/Error.h"
 
+using namespace ge;
 using namespace irr;
 
 

@@ -98,7 +98,9 @@
     <ClInclude Include="InputGamepad.h" />
     <ClInclude Include="InputKeyboard.h" />
     <ClInclude Include="InputMouse.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Precomp.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="ResourcesCore.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
