@@ -58,24 +58,24 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
 
             graphics->BeginScene();
             {
-               graphics->DrawBox(5, 5, 95, 175);
+               graphics->DrawBox(5, 5, 160, 235);
 
-               graphics->Text(10, 10,  "Filename: " + audio->FileName("music"));
-               graphics->Text(10, 20,  "Master Volume: " + base::AsString(audio->MasterVolume()) + "%");
-               graphics->Text(10, 30,  "Default Volume: " + base::AsString(audio->DefaultVolume("music")) + "%");
+               graphics->Text(10, 10, "Filename: " + audio->FileName("music"));
+               graphics->Text(10, 25, "Master Volume: " + base::AsString(audio->MasterVolume()) + " %");
+               graphics->Text(10, 40, "Default Volume: " + base::AsString(audio->DefaultVolume("music")) + " %");
 
-               graphics->Text(10, 50,  "Source Playing: " + base::AsString(audio->IsPlaying("music")));
+               graphics->Log(10, 65, "Source Playing: " + base::AsString(audio->IsPlaying("music")));
 
-               graphics->Text(10, 70,  "Music Paused: " + base::AsString(audio->IsMusicPaused("music")));
-               graphics->Text(10, 80,  "Music Looped: " + base::AsString(audio->IsMusicLooped("music")));
-               graphics->Text(10, 90,  "Music Finished: " + base::AsString(audio->IsMusicFinished("music")));
+               graphics->Text(10, 90,  "Music Paused: " + base::AsString(audio->IsMusicPaused("music")));
+               graphics->Text(10, 105, "Music Looped: " + base::AsString(audio->IsMusicLooped("music")));
+               graphics->Text(10, 120, "Music Finished: " + base::AsString(audio->IsMusicFinished("music")));
 
-               graphics->Text(10, 110, "Music Volume: " + base::AsString(audio->MusicVolume("music")) + "%");
-               graphics->Text(10, 120, "Music Speed: " + base::AsString(audio->MusicSpeed("music")) + "%");
-               graphics->Text(10, 130, "Music Pan: " + base::AsString(audio->MusicPan("music")) + "%");
+               graphics->Log(10, 145, "Music Volume: " + base::AsString(audio->MusicVolume("music")) + " %");
+               graphics->Log(10, 160, "Music Speed: " + base::AsString(audio->MusicSpeed("music")) + " %");
+               graphics->Log(10, 175, "Music Pan: " + base::AsString(audio->MusicPan("music")) + " %");
 
-               graphics->Text(10, 150, "Music Length: " + base::AsString(audio->MusicLength("music")));
-               graphics->Text(10, 160, "Music Position: " + base::AsString(audio->MusicPosition("music")));
+               graphics->Text(10, 200, "Music Length: " + base::AsString(audio->MusicLength("music")));
+               graphics->Text(10, 215, "Music Position: " + base::AsString(audio->MusicPosition("music")));
             }
             graphics->EndScene();
 
