@@ -43,7 +43,7 @@ namespace ge {
 
    bool InputKeyboard::Key (int key)
    {
-      if (key < NONE || key > KEY_KEY_CODES_COUNT) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+      if (key < NONE || key >= KEY_KEY_CODES_COUNT) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
       else if (key >= 0) return currKeys[key];
 
       for (int i = 0; i < KEY_KEY_CODES_COUNT; ++i) {
@@ -55,7 +55,7 @@ namespace ge {
 
    bool InputKeyboard::KeyPressed (int key)
    {
-      if (key < NONE || key > KEY_KEY_CODES_COUNT) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+      if (key < NONE || key >= KEY_KEY_CODES_COUNT) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
       else if (key >= 0) return (currKeys[key] && !prevKeys[key]);
 
       for (int i = 0; i < KEY_KEY_CODES_COUNT; ++i) {
@@ -67,7 +67,7 @@ namespace ge {
 
    bool InputKeyboard::KeyReleased (int key)
    {
-      if (key < NONE || key > KEY_KEY_CODES_COUNT) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+      if (key < NONE || key >= KEY_KEY_CODES_COUNT) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
       else if (key >= 0) return (!currKeys[key] && prevKeys[key]);
 
       for (int i = 0; i < KEY_KEY_CODES_COUNT; ++i) {
