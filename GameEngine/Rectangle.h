@@ -81,7 +81,7 @@ namespace ge {
          return std::make_pair(irr::core::vector2d<int>(left, top), irr::core::vector2d<int>(right, bottom));
       }
 
-      const irr::core::rect<int> AsIrrRect () const { irr::core::rect<int>(left, top, right, bottom); }
+      const irr::core::rect<int> AsIrrRect () const { return irr::core::rect<int>(left, top, right, bottom); }
    };
 
 }
