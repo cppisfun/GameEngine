@@ -163,13 +163,15 @@ namespace ge {
    {
       if (type == Outline) driver->draw2DRectangleOutline(core::rect<int>(left, top, right, bottom), color.AsIrrColor());
       else                 driver->draw2DRectangle(color.AsIrrColor(), core::rect<int>(left, top, right, bottom));
-   
+
       return *this;
    }
 
    GraphicsCore& GraphicsCore::ScreenShot ()
    {
       // TODO
+
+      return *this;
    }
 
    irr::gui::IGUIFont* GraphicsCore::Font (const std::string& id) const
@@ -202,7 +204,7 @@ namespace ge {
       return driver->getScreenSize().Height;
    }
 
-   const Rectangle& GraphicsCore::Screen () const
+   const Rectangle GraphicsCore::Screen () const
    {
       auto dims = driver->getScreenSize();
 

@@ -97,7 +97,7 @@ namespace ge {
 
       int ScreenWidth () const;
       int ScreenHeight () const;
-      const Rectangle& Screen () const;
+      const Rectangle Screen () const;
 
       int FPS () const;
    };
