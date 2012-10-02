@@ -1,8 +1,6 @@
 
 #include "Precomp.h"
 
-#include <irrKlang.h>
-
 #include "ResourcesCore.h"
 
 #include "../Base/File.h"
@@ -24,8 +22,8 @@ namespace ge {
 
    void ResourcesCore::Add (const std::string& id, const std::string& path, std::map<std::string, std::vector<char>>& map)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
-      else if (path.empty()) throw error::InvalidParam("No path specified!", __FUNCTION__);
+      if (id.empty())                     throw error::InvalidParam("No id specified!", __FUNCTION__);
+      else if (path.empty())              throw error::InvalidParam("No path specified!", __FUNCTION__);
       else if (map.find(id) != map.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in map!", __FUNCTION__);
 
       map.insert(std::make_pair(id, LoadBinary(path)));

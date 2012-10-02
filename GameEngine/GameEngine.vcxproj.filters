@@ -10,6 +10,9 @@
     <Filter Include="Input">
       <UniqueIdentifier>{76de89f7-e6a6-4865-927a-c7869d69de04}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{795b61e1-4f41-4728-8f44-81f90863aa39}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color.h">
