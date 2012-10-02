@@ -4,6 +4,7 @@
 #include <irrlicht.h>
 
 #include "Color.h"
+#include "Rectangle.h"
 
 #include "DLL_DEF.h"
 
@@ -82,6 +83,9 @@ namespace ge {
       GraphicsCore& Text (int x, int y, const std::string& text)                            { DrawText(x, y, text, defaultFont); return *this; }
       GraphicsCore& Text (int x, int y, const std::string& text, const std::string& fontId) { DrawText(x, y, text, Font(fontId)); return *this; }
 
+      GraphicsCore& ScreenShot ();
+
+
       const Color& ClearColor () const { return clearColor; }
       const Color& ForeColor () const  { return foreColor; }
       const Color& BackColor () const  { return backColor; }
@@ -90,6 +94,12 @@ namespace ge {
       irr::gui::IGUIFont* DefaultFont () const { return defaultFont; }
       irr::gui::IGUIFont* Font (const std::string& id) const;
       irr::video::ITexture* Texture (const std::string& id) const;
+
+      int ScreenWidth () const;
+      int ScreenHeight () const;
+      const Rectangle& Screen () const;
+
+      int FPS () const;
    };
 
 }

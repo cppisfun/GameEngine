@@ -167,6 +167,11 @@ namespace ge {
       return *this;
    }
 
+   GraphicsCore& GraphicsCore::ScreenShot ()
+   {
+      // TODO
+   }
+
    irr::gui::IGUIFont* GraphicsCore::Font (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
@@ -187,5 +192,32 @@ namespace ge {
       return tex->second;
    }
 
+   int GraphicsCore::ScreenWidth () const
+   {
+      return driver->getScreenSize().Width;
+   }
+
+   int GraphicsCore::ScreenHeight () const
+   {
+      return driver->getScreenSize().Height;
+   }
+
+   const Rectangle& GraphicsCore::Screen () const
+   {
+      auto dims = driver->getScreenSize();
+
+      int right = dims.Width - 1;
+      if (right < 0) right = 0;
+
+      int bottom = dims.Height - 1;
+      if (bottom < 0) bottom = 0;
+
+      return Rectangle(0, 0, right, bottom);
+   }
+
+   int GraphicsCore::FPS () const
+   {
+      return driver->getFPS();
+   }
 }
 
