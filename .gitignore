@@ -10,3 +10,4 @@ foreign/boost/bin.v2/config.log
 *.opensdf
 *.sdf
 *.suo
+*.vcxproj.user
