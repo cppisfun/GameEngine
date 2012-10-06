@@ -1,0 +1,1535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: ge::GraphicsCore Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacege.html">ge</a></li><li class="navelem"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Öffentliche Typen</a> &#124;
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classge_1_1_graphics_core-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">ge::GraphicsCore Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Grafik-Basisklasse zur Steuerung von Grafik und Textausgabe. Wird über <a class="el" href="classge_1_1_core.html#a15eb85a25be37c890cadf65dbb8b73cf" title="Liefert den Pointer zur Kernkomponente für Grafik.">Core::Graphics()</a> geliefert.  
+ <a href="classge_1_1_graphics_core.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_graphics_core_8h_source.html">GraphicsCore.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Öffentliche Typen</h2></td></tr>
+<tr class="memitem:ac79d7d8c5b97699f3f4ee4d78146254d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254d">DrawType</a> { <a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254da6b596d558f3642e33414bc7a3db68512">Fill</a> = 0, 
+<a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254daa965a340b22aa960bd9c616c31c2ee5d">Outline</a>
+ }</td></tr>
+<tr class="memdesc:ac79d7d8c5b97699f3f4ee4d78146254d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auflistung der möglichen Modusangaben zur Verwendung mit <a class="el" href="classge_1_1_graphics_core.html#a729d7cbe24b7f205d90f7e4acb7fdf05" title="Zeichnet ein Rechteck unter Verwendung einer angegebenen Farbe für jede Ecke (hieraus werden automati...">GraphicsCore::DrawRectangle()</a>.  <a href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254d">Mehr ...</a><br/></td></tr>
+<tr class="separator:ac79d7d8c5b97699f3f4ee4d78146254d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:adff49744687afe35f2a2e65b2a2783ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#adff49744687afe35f2a2e65b2a2783ff">GraphicsCore</a> (irr::IrrlichtDevice *device)</td></tr>
+<tr class="memdesc:adff49744687afe35f2a2e65b2a2783ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Benötigt einen Pointer zu einem validen irrlicht-Device (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben).  <a href="#adff49744687afe35f2a2e65b2a2783ff"></a><br/></td></tr>
+<tr class="separator:adff49744687afe35f2a2e65b2a2783ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb59da925bef91f993e5b14cd1b3235"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a4eb59da925bef91f993e5b14cd1b3235">~GraphicsCore</a> ()</td></tr>
+<tr class="memdesc:a4eb59da925bef91f993e5b14cd1b3235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor. Gibt automatisch alle in <a class="el" href="classge_1_1_graphics_core.html" title="Grafik-Basisklasse zur Steuerung von Grafik und Textausgabe. Wird über Core::Graphics() geliefert...">GraphicsCore</a> gehaltenen Textur- und Font-Ressourcen frei.  <a href="#a4eb59da925bef91f993e5b14cd1b3235"></a><br/></td></tr>
+<tr class="separator:a4eb59da925bef91f993e5b14cd1b3235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3f3d9a5d725e3edc3892e32fd41760"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#abf3f3d9a5d725e3edc3892e32fd41760">AddFont</a> (const std::string &amp;id, const std::string &amp;fontFile)</td></tr>
+<tr class="memdesc:abf3f3d9a5d725e3edc3892e32fd41760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fügt eine Schriftart aus einer entsprechenden XML-Datei hinzu.  <a href="#abf3f3d9a5d725e3edc3892e32fd41760"></a><br/></td></tr>
+<tr class="separator:abf3f3d9a5d725e3edc3892e32fd41760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2760aa300bc9fa695072e3d7af09d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a1d2760aa300bc9fa695072e3d7af09d4">AddTexture</a> (const std::string &amp;id, const std::string &amp;textureFile)</td></tr>
+<tr class="memdesc:a1d2760aa300bc9fa695072e3d7af09d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fügt eine Textur aus einer entsprechenden Datei hinzu.  <a href="#a1d2760aa300bc9fa695072e3d7af09d4"></a><br/></td></tr>
+<tr class="separator:a1d2760aa300bc9fa695072e3d7af09d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af90f10cc24d40582254d65a234394b0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#af90f10cc24d40582254d65a234394b0e">BackColor</a> (const <a class="el" href="classge_1_1_color.html">Color</a> &amp;color)</td></tr>
+<tr class="memdesc:af90f10cc24d40582254d65a234394b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Farbe fest, welche bei Zeichenoperationen als.  <a href="#af90f10cc24d40582254d65a234394b0e"></a><br/></td></tr>
+<tr class="separator:af90f10cc24d40582254d65a234394b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a661598023bbf824791862e8e6b9fc404"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a661598023bbf824791862e8e6b9fc404">BackColor</a> () const </td></tr>
+<tr class="memdesc:a661598023bbf824791862e8e6b9fc404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Farbe, welche bei Zeichenoperationen als Hintergrundfarbe/Füllfarbe verwendet wird.  <a href="#a661598023bbf824791862e8e6b9fc404"></a><br/></td></tr>
+<tr class="separator:a661598023bbf824791862e8e6b9fc404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380b5dc435ec4aa242da6e9fb3c4251b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a380b5dc435ec4aa242da6e9fb3c4251b">BeginScene</a> ()</td></tr>
+<tr class="memdesc:a380b5dc435ec4aa242da6e9fb3c4251b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bereitet das irrlicht-Device auf den Beginn der Zeichenoperationen vor und <em>muss</em> daher vor der ersten Zeichenoperation aufgerufen werden.  <a href="#a380b5dc435ec4aa242da6e9fb3c4251b"></a><br/></td></tr>
+<tr class="separator:a380b5dc435ec4aa242da6e9fb3c4251b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da2490bde096b179347f23b91ff6fe1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a5da2490bde096b179347f23b91ff6fe1">ClearColor</a> (const <a class="el" href="classge_1_1_color.html">Color</a> &amp;color)</td></tr>
+<tr class="memdesc:a5da2490bde096b179347f23b91ff6fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Farbe fest, mit welcher der Grafik-Puffer "gelöscht" wird.  <a href="#a5da2490bde096b179347f23b91ff6fe1"></a><br/></td></tr>
+<tr class="separator:a5da2490bde096b179347f23b91ff6fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac76b13a585b7a73b01a2268f2ce11848"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ac76b13a585b7a73b01a2268f2ce11848">ClearColor</a> () const </td></tr>
+<tr class="memdesc:ac76b13a585b7a73b01a2268f2ce11848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Farbe, mit welcher der Grafik-Puffer "gelöscht" wird.  <a href="#ac76b13a585b7a73b01a2268f2ce11848"></a><br/></td></tr>
+<tr class="separator:ac76b13a585b7a73b01a2268f2ce11848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fa64f002bcb42772a3f6294f477c8f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a9fa64f002bcb42772a3f6294f477c8f0">DefaultFont</a> (const std::string &amp;fontFile)</td></tr>
+<tr class="memdesc:a9fa64f002bcb42772a3f6294f477c8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erstellt die Schriftart für Standard-Ausgaben aus einer entsprechenden XML-Datei.  <a href="#a9fa64f002bcb42772a3f6294f477c8f0"></a><br/></td></tr>
+<tr class="separator:a9fa64f002bcb42772a3f6294f477c8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5dbb53f15c5cf55e1d3521c5277f520"><td class="memItemLeft" align="right" valign="top">irr::gui::IGUIFont *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ac5dbb53f15c5cf55e1d3521c5277f520">DefaultFont</a> () const </td></tr>
+<tr class="memdesc:ac5dbb53f15c5cf55e1d3521c5277f520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zum irrlicht-Font, welches für die Standard-Schriftart verwendet wird.  <a href="#ac5dbb53f15c5cf55e1d3521c5277f520"></a><br/></td></tr>
+<tr class="separator:ac5dbb53f15c5cf55e1d3521c5277f520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac702ef5810fe540e24e265df13fbae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a7ac702ef5810fe540e24e265df13fbae">DrawBox</a> (int left, int top, int right, int bottom, const <a class="el" href="classge_1_1_color.html">Color</a> &amp;outlineColor, const <a class="el" href="classge_1_1_color.html">Color</a> &amp;fillColor)</td></tr>
+<tr class="memdesc:a7ac702ef5810fe540e24e265df13fbae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet ein gefülltes Rechteck mit Rahmen.  <a href="#a7ac702ef5810fe540e24e265df13fbae"></a><br/></td></tr>
+<tr class="separator:a7ac702ef5810fe540e24e265df13fbae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa241cfa5aa0d4bc541d55603ddde9b3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#aa241cfa5aa0d4bc541d55603ddde9b3b">DrawBox</a> (int left, int top, int right, int bottom)</td></tr>
+<tr class="memdesc:aa241cfa5aa0d4bc541d55603ddde9b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet ein gefülltes Rechteck mit Rahmen unter Verwendung der eingestellten Vorder- und Hintergrundfarbe.  <a href="#aa241cfa5aa0d4bc541d55603ddde9b3b"></a><br/></td></tr>
+<tr class="separator:aa241cfa5aa0d4bc541d55603ddde9b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5af7d987ed1079d1f1c03548fe3328"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a1b5af7d987ed1079d1f1c03548fe3328">DrawLine</a> (int left, int top, int right, int bottom, const <a class="el" href="classge_1_1_color.html">Color</a> &amp;color)</td></tr>
+<tr class="memdesc:a1b5af7d987ed1079d1f1c03548fe3328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet eine Linie.  <a href="#a1b5af7d987ed1079d1f1c03548fe3328"></a><br/></td></tr>
+<tr class="separator:a1b5af7d987ed1079d1f1c03548fe3328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a7ab4e388344156e3fed22a420deefc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a8a7ab4e388344156e3fed22a420deefc">DrawLine</a> (int left, int top, int right, int bottom)</td></tr>
+<tr class="memdesc:a8a7ab4e388344156e3fed22a420deefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet eine Linie unter Verwendung der eingestellten Vordergrundfarbe.  <a href="#a8a7ab4e388344156e3fed22a420deefc"></a><br/></td></tr>
+<tr class="separator:a8a7ab4e388344156e3fed22a420deefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc38f9fc786eb9d4b567e799d9496d22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#abc38f9fc786eb9d4b567e799d9496d22">DrawPixel</a> (int x, int y, const <a class="el" href="classge_1_1_color.html">Color</a> &amp;color)</td></tr>
+<tr class="memdesc:abc38f9fc786eb9d4b567e799d9496d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet einen Punkt.  <a href="#abc38f9fc786eb9d4b567e799d9496d22"></a><br/></td></tr>
+<tr class="separator:abc38f9fc786eb9d4b567e799d9496d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d51fee48a3aa85b00f6975ffe9a347"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ad6d51fee48a3aa85b00f6975ffe9a347">DrawPixel</a> (int x, int y)</td></tr>
+<tr class="memdesc:ad6d51fee48a3aa85b00f6975ffe9a347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet einen Pixel unter Verwendung der eingestellten Vordergrundfarbe.  <a href="#ad6d51fee48a3aa85b00f6975ffe9a347"></a><br/></td></tr>
+<tr class="separator:ad6d51fee48a3aa85b00f6975ffe9a347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a729d7cbe24b7f205d90f7e4acb7fdf05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a729d7cbe24b7f205d90f7e4acb7fdf05">DrawRectangle</a> (int left, int top, int right, int bottom, const <a class="el" href="classge_1_1_color.html">Color</a> &amp;colorTopLeft, const <a class="el" href="classge_1_1_color.html">Color</a> &amp;colorTopRight, const <a class="el" href="classge_1_1_color.html">Color</a> &amp;colorBottomRight, const <a class="el" href="classge_1_1_color.html">Color</a> &amp;colorBottomLeft)</td></tr>
+<tr class="memdesc:a729d7cbe24b7f205d90f7e4acb7fdf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet ein Rechteck unter Verwendung einer angegebenen Farbe für jede Ecke (hieraus werden automatisch entsprechende Farbverläufe generiert).  <a href="#a729d7cbe24b7f205d90f7e4acb7fdf05"></a><br/></td></tr>
+<tr class="separator:a729d7cbe24b7f205d90f7e4acb7fdf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47f46d6560f99fea4ca8a9b0635e0ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ac47f46d6560f99fea4ca8a9b0635e0ce">DrawRectangle</a> (int left, int top, int right, int bottom, const <a class="el" href="classge_1_1_color.html">Color</a> &amp;color, const <a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254d">DrawType</a> &amp;type)</td></tr>
+<tr class="memdesc:ac47f46d6560f99fea4ca8a9b0635e0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet ein Rechteck unter Verwendung einer Farbe.  <a href="#ac47f46d6560f99fea4ca8a9b0635e0ce"></a><br/></td></tr>
+<tr class="separator:ac47f46d6560f99fea4ca8a9b0635e0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb83489263be10d8b4aad80d2e33095"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#aebb83489263be10d8b4aad80d2e33095">DrawRectangle</a> (int left, int top, int right, int bottom, const <a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254d">DrawType</a> &amp;type)</td></tr>
+<tr class="memdesc:aebb83489263be10d8b4aad80d2e33095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet ein Rechteck unter Verwendung der entsprechenden eingestellten Farbe.  <a href="#aebb83489263be10d8b4aad80d2e33095"></a><br/></td></tr>
+<tr class="separator:aebb83489263be10d8b4aad80d2e33095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8924a808eed02f0d4a99143733da06f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a8924a808eed02f0d4a99143733da06f1">DrawTexture</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a8924a808eed02f0d4a99143733da06f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeichnet eine Texture. DUMMY, BITTE SINNVOLL DOKUMENTIEREN, WENNS FERTIG IST!  <a href="#a8924a808eed02f0d4a99143733da06f1"></a><br/></td></tr>
+<tr class="separator:a8924a808eed02f0d4a99143733da06f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54dd50a2539948dedd482862d294350f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a54dd50a2539948dedd482862d294350f">EndScene</a> ()</td></tr>
+<tr class="memdesc:a54dd50a2539948dedd482862d294350f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bereitet das irrlicht-Device auf das Anzeigen des geänderten Grafikpuffers vor und <em>muss</em> daher nach der letzten Zeichenoperation aufgerufen werden.  <a href="#a54dd50a2539948dedd482862d294350f"></a><br/></td></tr>
+<tr class="separator:a54dd50a2539948dedd482862d294350f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac477425b155a37df57c40d0e84433be8"><td class="memItemLeft" align="right" valign="top">irr::gui::IGUIFont *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ac477425b155a37df57c40d0e84433be8">Font</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:ac477425b155a37df57c40d0e84433be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zum irrlicht-Font, welches für eine Schriftart aus dem Schriftarten-Pool verwendet wird.  <a href="#ac477425b155a37df57c40d0e84433be8"></a><br/></td></tr>
+<tr class="separator:ac477425b155a37df57c40d0e84433be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06afda6514da53fc77774c6b6b9e217c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a06afda6514da53fc77774c6b6b9e217c">ForeColor</a> (const <a class="el" href="classge_1_1_color.html">Color</a> &amp;color)</td></tr>
+<tr class="memdesc:a06afda6514da53fc77774c6b6b9e217c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Farbe fest, welche bei Zeichenoperationen als Vordergrundfarbe/Zeichenfarbe verwendet wird.  <a href="#a06afda6514da53fc77774c6b6b9e217c"></a><br/></td></tr>
+<tr class="separator:a06afda6514da53fc77774c6b6b9e217c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a621feb5c273ca042facadc6c64dc94b9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a621feb5c273ca042facadc6c64dc94b9">ForeColor</a> () const </td></tr>
+<tr class="memdesc:a621feb5c273ca042facadc6c64dc94b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Farbe, welche bei Zeichenoperationen als Vordergrundfarbe/Zeichenfarbe verwendet wird.  <a href="#a621feb5c273ca042facadc6c64dc94b9"></a><br/></td></tr>
+<tr class="separator:a621feb5c273ca042facadc6c64dc94b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ca03c2f4ae38d473a0cb08cc7b4d766"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a0ca03c2f4ae38d473a0cb08cc7b4d766">FPS</a> () const </td></tr>
+<tr class="memdesc:a0ca03c2f4ae38d473a0cb08cc7b4d766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt die Anzahl Frames pro Sekunde.  <a href="#a0ca03c2f4ae38d473a0cb08cc7b4d766"></a><br/></td></tr>
+<tr class="separator:a0ca03c2f4ae38d473a0cb08cc7b4d766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e47a5169d1e1588302092b3ed289ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ac0e47a5169d1e1588302092b3ed289ee">Log</a> (int x, int y, const std::string &amp;text)</td></tr>
+<tr class="memdesc:ac0e47a5169d1e1588302092b3ed289ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt einen Log-Text aus (hierfür wird die System-Schriftart verwendet).  <a href="#ac0e47a5169d1e1588302092b3ed289ee"></a><br/></td></tr>
+<tr class="separator:ac0e47a5169d1e1588302092b3ed289ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856461af036617fdd6ed56bcb440468d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a856461af036617fdd6ed56bcb440468d">RemoveAllFonts</a> ()</td></tr>
+<tr class="memdesc:a856461af036617fdd6ed56bcb440468d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt alle Schriftarten (bis auf System-Schriftart und Standard-Schriftart).  <a href="#a856461af036617fdd6ed56bcb440468d"></a><br/></td></tr>
+<tr class="separator:a856461af036617fdd6ed56bcb440468d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d453abf63c66bc5c9b08c5437966362"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a3d453abf63c66bc5c9b08c5437966362">RemoveAllTextures</a> ()</td></tr>
+<tr class="memdesc:a3d453abf63c66bc5c9b08c5437966362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt alle Texturen.  <a href="#a3d453abf63c66bc5c9b08c5437966362"></a><br/></td></tr>
+<tr class="separator:a3d453abf63c66bc5c9b08c5437966362"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8170ca6b1e79641bdb655fd26c552832"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a8170ca6b1e79641bdb655fd26c552832">RemoveFont</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a8170ca6b1e79641bdb655fd26c552832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine Schriftart.  <a href="#a8170ca6b1e79641bdb655fd26c552832"></a><br/></td></tr>
+<tr class="separator:a8170ca6b1e79641bdb655fd26c552832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8bf98e612941126099ca1d94233b55f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ad8bf98e612941126099ca1d94233b55f">RemoveTexture</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:ad8bf98e612941126099ca1d94233b55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine Textur.  <a href="#ad8bf98e612941126099ca1d94233b55f"></a><br/></td></tr>
+<tr class="separator:ad8bf98e612941126099ca1d94233b55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8b6216bf653672a29a3448b0c2edcc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classge_1_1_rectangle.html">Rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a9e8b6216bf653672a29a3448b0c2edcc">Screen</a> () const </td></tr>
+<tr class="memdesc:a9e8b6216bf653672a29a3448b0c2edcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Dimensionen des Zeichenbereiches als Rechteck.  <a href="#a9e8b6216bf653672a29a3448b0c2edcc"></a><br/></td></tr>
+<tr class="separator:a9e8b6216bf653672a29a3448b0c2edcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5377410c093a992b0366fe19f5a3256"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ae5377410c093a992b0366fe19f5a3256">ScreenHeight</a> () const </td></tr>
+<tr class="memdesc:ae5377410c093a992b0366fe19f5a3256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt die Höhe des Zeichenbereiches.  <a href="#ae5377410c093a992b0366fe19f5a3256"></a><br/></td></tr>
+<tr class="separator:ae5377410c093a992b0366fe19f5a3256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73d1c4b7976b32711f573addcbeef00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ae73d1c4b7976b32711f573addcbeef00">ScreenShot</a> ()</td></tr>
+<tr class="memdesc:ae73d1c4b7976b32711f573addcbeef00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erzeugt einen Screenshot. DUMMY, BITTE SINNVOLL DOKUMENTIEREN, WENNS FERTIG IST!  <a href="#ae73d1c4b7976b32711f573addcbeef00"></a><br/></td></tr>
+<tr class="separator:ae73d1c4b7976b32711f573addcbeef00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d077411e1f4ed2dc82fa74f03f818cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a6d077411e1f4ed2dc82fa74f03f818cd">ScreenWidth</a> () const </td></tr>
+<tr class="memdesc:a6d077411e1f4ed2dc82fa74f03f818cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt die Breite des Zeichenbereiches.  <a href="#a6d077411e1f4ed2dc82fa74f03f818cd"></a><br/></td></tr>
+<tr class="separator:a6d077411e1f4ed2dc82fa74f03f818cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae159d3e37ddf8f1225487a276bbf0010"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ae159d3e37ddf8f1225487a276bbf0010">SystemFont</a> (const std::string &amp;fontFile)</td></tr>
+<tr class="memdesc:ae159d3e37ddf8f1225487a276bbf0010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erstellt die Schriftart für System-Ausgaben und Logging aus einer entsprechenden XML-Datei.  <a href="#ae159d3e37ddf8f1225487a276bbf0010"></a><br/></td></tr>
+<tr class="separator:ae159d3e37ddf8f1225487a276bbf0010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915f4b8293e6bc19dbe782de9003e103"><td class="memItemLeft" align="right" valign="top">irr::gui::IGUIFont *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a915f4b8293e6bc19dbe782de9003e103">SystemFont</a> () const </td></tr>
+<tr class="memdesc:a915f4b8293e6bc19dbe782de9003e103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zum irrlicht-Font, welches für die System-Schriftart verwendet wird.  <a href="#a915f4b8293e6bc19dbe782de9003e103"></a><br/></td></tr>
+<tr class="separator:a915f4b8293e6bc19dbe782de9003e103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dcde53882fa7db3fd8a21c2c9f46552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a6dcde53882fa7db3fd8a21c2c9f46552">Text</a> (int x, int y, const std::string &amp;text)</td></tr>
+<tr class="memdesc:a6dcde53882fa7db3fd8a21c2c9f46552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt einen Text aus (hierfür wird die Standard-Schriftart verwendet).  <a href="#a6dcde53882fa7db3fd8a21c2c9f46552"></a><br/></td></tr>
+<tr class="separator:a6dcde53882fa7db3fd8a21c2c9f46552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae060f6c801b27fe5ed6b4967c181d61e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#ae060f6c801b27fe5ed6b4967c181d61e">Text</a> (int x, int y, const std::string &amp;text, const std::string &amp;fontId)</td></tr>
+<tr class="memdesc:ae060f6c801b27fe5ed6b4967c181d61e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt einen Text aus (hierfür wird eine Schriftart aus dem Schriftarten-Pool verwendet).  <a href="#ae060f6c801b27fe5ed6b4967c181d61e"></a><br/></td></tr>
+<tr class="separator:ae060f6c801b27fe5ed6b4967c181d61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c8c4d4c30eb90c9c30031c469bca5a8"><td class="memItemLeft" align="right" valign="top">irr::video::ITexture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_graphics_core.html#a1c8c4d4c30eb90c9c30031c469bca5a8">Texture</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a1c8c4d4c30eb90c9c30031c469bca5a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zur irrlicht-Textur, welche für eine Textur im Texturen-Pool verwendet wird.  <a href="#a1c8c4d4c30eb90c9c30031c469bca5a8"></a><br/></td></tr>
+<tr class="separator:a1c8c4d4c30eb90c9c30031c469bca5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Grafik-Basisklasse zur Steuerung von Grafik und Textausgabe. Wird über <a class="el" href="classge_1_1_core.html#a15eb85a25be37c890cadf65dbb8b73cf" title="Liefert den Pointer zur Kernkomponente für Grafik.">Core::Graphics()</a> geliefert. </p>
+</div><h2 class="groupheader">Dokumentation der Aufzählungstypen</h2>
+<a class="anchor" id="ac79d7d8c5b97699f3f4ee4d78146254d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254d">ge::GraphicsCore::DrawType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Auflistung der möglichen Modusangaben zur Verwendung mit <a class="el" href="classge_1_1_graphics_core.html#a729d7cbe24b7f205d90f7e4acb7fdf05" title="Zeichnet ein Rechteck unter Verwendung einer angegebenen Farbe für jede Ecke (hieraus werden automati...">GraphicsCore::DrawRectangle()</a>. </p>
+<dl><dt><b>Aufzählungswerte: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ac79d7d8c5b97699f3f4ee4d78146254da6b596d558f3642e33414bc7a3db68512"></a>Fill</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ac79d7d8c5b97699f3f4ee4d78146254daa965a340b22aa960bd9c616c31c2ee5d"></a>Outline</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="adff49744687afe35f2a2e65b2a2783ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::GraphicsCore::GraphicsCore </td>
+          <td>(</td>
+          <td class="paramtype">irr::IrrlichtDevice *&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor. Benötigt einen Pointer zu einem validen irrlicht-Device (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben). </p>
+
+</div>
+</div>
+<a class="anchor" id="a4eb59da925bef91f993e5b14cd1b3235"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::GraphicsCore::~GraphicsCore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruktor. Gibt automatisch alle in <a class="el" href="classge_1_1_graphics_core.html" title="Grafik-Basisklasse zur Steuerung von Grafik und Textausgabe. Wird über Core::Graphics() geliefert...">GraphicsCore</a> gehaltenen Textur- und Font-Ressourcen frei. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="abf3f3d9a5d725e3edc3892e32fd41760"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::AddFont </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fontFile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fügt eine Schriftart aus einer entsprechenden XML-Datei hinzu. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool </td></tr>
+    <tr><td class="paramname">fontFile</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1d2760aa300bc9fa695072e3d7af09d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::AddTexture </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>textureFile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fügt eine Textur aus einer entsprechenden Datei hinzu. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Textur im Texturen-Pool </td></tr>
+    <tr><td class="paramname">textureFile</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af90f10cc24d40582254d65a234394b0e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::BackColor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Farbe fest, welche bei Zeichenoperationen als. </p>
+<p>Hintergrundfarbe/Füllfarbe verwendet wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="a661598023bbf824791862e8e6b9fc404"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classge_1_1_color.html">Color</a>&amp; ge::GraphicsCore::BackColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Farbe, welche bei Zeichenoperationen als Hintergrundfarbe/Füllfarbe verwendet wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="a380b5dc435ec4aa242da6e9fb3c4251b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ge::GraphicsCore::BeginScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bereitet das irrlicht-Device auf den Beginn der Zeichenoperationen vor und <em>muss</em> daher vor der ersten Zeichenoperation aufgerufen werden. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5da2490bde096b179347f23b91ff6fe1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::ClearColor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Farbe fest, mit welcher der Grafik-Puffer "gelöscht" wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac76b13a585b7a73b01a2268f2ce11848"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classge_1_1_color.html">Color</a>&amp; ge::GraphicsCore::ClearColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Farbe, mit welcher der Grafik-Puffer "gelöscht" wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9fa64f002bcb42772a3f6294f477c8f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::DefaultFont </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fontFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Erstellt die Schriftart für Standard-Ausgaben aus einer entsprechenden XML-Datei. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fontFile</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac5dbb53f15c5cf55e1d3521c5277f520"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">irr::gui::IGUIFont* ge::GraphicsCore::DefaultFont </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert den Pointer zum irrlicht-Font, welches für die Standard-Schriftart verwendet wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7ac702ef5810fe540e24e265df13fbae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::DrawBox </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>outlineColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>fillColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zeichnet ein gefülltes Rechteck mit Rahmen. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>Linke Position </td></tr>
+    <tr><td class="paramname">top</td><td>Obere Position </td></tr>
+    <tr><td class="paramname">right</td><td>Rechte Position </td></tr>
+    <tr><td class="paramname">bottom</td><td>Untere Position </td></tr>
+    <tr><td class="paramname">outlineColor</td><td>Rahmenfarbe </td></tr>
+    <tr><td class="paramname">fillColor</td><td>Füllfarbe </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa241cfa5aa0d4bc541d55603ddde9b3b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::DrawBox </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bottom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zeichnet ein gefülltes Rechteck mit Rahmen unter Verwendung der eingestellten Vorder- und Hintergrundfarbe. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1b5af7d987ed1079d1f1c03548fe3328"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::DrawLine </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zeichnet eine Linie. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8a7ab4e388344156e3fed22a420deefc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::DrawLine </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bottom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zeichnet eine Linie unter Verwendung der eingestellten Vordergrundfarbe. </p>
+
+</div>
+</div>
+<a class="anchor" id="abc38f9fc786eb9d4b567e799d9496d22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::DrawPixel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zeichnet einen Punkt. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad6d51fee48a3aa85b00f6975ffe9a347"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::DrawPixel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zeichnet einen Pixel unter Verwendung der eingestellten Vordergrundfarbe. </p>
+
+</div>
+</div>
+<a class="anchor" id="a729d7cbe24b7f205d90f7e4acb7fdf05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::DrawRectangle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>colorTopLeft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>colorTopRight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>colorBottomRight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>colorBottomLeft</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zeichnet ein Rechteck unter Verwendung einer angegebenen Farbe für jede Ecke (hieraus werden automatisch entsprechende Farbverläufe generiert). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>Linke Position </td></tr>
+    <tr><td class="paramname">top</td><td>Obere Position </td></tr>
+    <tr><td class="paramname">right</td><td>Rechte Position </td></tr>
+    <tr><td class="paramname">bottom</td><td>Untere Position </td></tr>
+    <tr><td class="paramname">colorTopLeft</td><td>Farbe der linken oberen Ecke </td></tr>
+    <tr><td class="paramname">colorTopRight</td><td>Farbe der rechten oberen Ecke </td></tr>
+    <tr><td class="paramname">colorBottomRight</td><td>Farbe der rechten unteren Ecke </td></tr>
+    <tr><td class="paramname">colorBottomLeft</td><td>Farbe der linken unteren Ecke </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac47f46d6560f99fea4ca8a9b0635e0ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::DrawRectangle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254d">DrawType</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zeichnet ein Rechteck unter Verwendung einer Farbe. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>Linke Position </td></tr>
+    <tr><td class="paramname">top</td><td>Obere Position </td></tr>
+    <tr><td class="paramname">right</td><td>Rechte Position </td></tr>
+    <tr><td class="paramname">bottom</td><td>Untere Position </td></tr>
+    <tr><td class="paramname">color</td><td>Farbe (wird für die gesamte Zeichenoperation verwendet) </td></tr>
+    <tr><td class="paramname">type</td><td>Modusangabe aus <a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254d" title="Auflistung der möglichen Modusangaben zur Verwendung mit GraphicsCore::DrawRectangle().">GraphicsCore::DrawType</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aebb83489263be10d8b4aad80d2e33095"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::DrawRectangle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254d">DrawType</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zeichnet ein Rechteck unter Verwendung der entsprechenden eingestellten Farbe. </p>
+<p>Bei DrawType::Fill wird die eingestellte Hintergrundfarbe verwendet, bei DrawType::Outline die eingestellte Vordergrundfarbe. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>Linke Position </td></tr>
+    <tr><td class="paramname">top</td><td>Obere Position </td></tr>
+    <tr><td class="paramname">right</td><td>Rechte Position </td></tr>
+    <tr><td class="paramname">bottom</td><td>Untere Position </td></tr>
+    <tr><td class="paramname">type</td><td>Modusangabe aus <a class="el" href="classge_1_1_graphics_core.html#ac79d7d8c5b97699f3f4ee4d78146254d" title="Auflistung der möglichen Modusangaben zur Verwendung mit GraphicsCore::DrawRectangle().">GraphicsCore::DrawType</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8924a808eed02f0d4a99143733da06f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::DrawTexture </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zeichnet eine Texture. DUMMY, BITTE SINNVOLL DOKUMENTIEREN, WENNS FERTIG IST! </p>
+
+</div>
+</div>
+<a class="anchor" id="a54dd50a2539948dedd482862d294350f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ge::GraphicsCore::EndScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bereitet das irrlicht-Device auf das Anzeigen des geänderten Grafikpuffers vor und <em>muss</em> daher nach der letzten Zeichenoperation aufgerufen werden. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac477425b155a37df57c40d0e84433be8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">irr::gui::IGUIFont * ge::GraphicsCore::Font </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert den Pointer zum irrlicht-Font, welches für eine Schriftart aus dem Schriftarten-Pool verwendet wird. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a06afda6514da53fc77774c6b6b9e217c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::ForeColor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Farbe fest, welche bei Zeichenoperationen als Vordergrundfarbe/Zeichenfarbe verwendet wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="a621feb5c273ca042facadc6c64dc94b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classge_1_1_color.html">Color</a>&amp; ge::GraphicsCore::ForeColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Farbe, welche bei Zeichenoperationen als Vordergrundfarbe/Zeichenfarbe verwendet wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0ca03c2f4ae38d473a0cb08cc7b4d766"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::GraphicsCore::FPS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt die Anzahl Frames pro Sekunde. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac0e47a5169d1e1588302092b3ed289ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::Log </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gibt einen Log-Text aus (hierfür wird die System-Schriftart verwendet). </p>
+
+</div>
+</div>
+<a class="anchor" id="a856461af036617fdd6ed56bcb440468d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::RemoveAllFonts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entfernt alle Schriftarten (bis auf System-Schriftart und Standard-Schriftart). </p>
+
+</div>
+</div>
+<a class="anchor" id="a3d453abf63c66bc5c9b08c5437966362"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::RemoveAllTextures </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entfernt alle Texturen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8170ca6b1e79641bdb655fd26c552832"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::RemoveFont </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entfernt eine Schriftart. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad8bf98e612941126099ca1d94233b55f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::RemoveTexture </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entfernt eine Textur. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Textur im Texturen-Pool </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e8b6216bf653672a29a3448b0c2edcc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classge_1_1_rectangle.html">Rectangle</a> ge::GraphicsCore::Screen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die Dimensionen des Zeichenbereiches als Rechteck. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae5377410c093a992b0366fe19f5a3256"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::GraphicsCore::ScreenHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt die Höhe des Zeichenbereiches. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae73d1c4b7976b32711f573addcbeef00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::ScreenShot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Erzeugt einen Screenshot. DUMMY, BITTE SINNVOLL DOKUMENTIEREN, WENNS FERTIG IST! </p>
+
+</div>
+</div>
+<a class="anchor" id="a6d077411e1f4ed2dc82fa74f03f818cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::GraphicsCore::ScreenWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt die Breite des Zeichenbereiches. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae159d3e37ddf8f1225487a276bbf0010"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> &amp; ge::GraphicsCore::SystemFont </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fontFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Erstellt die Schriftart für System-Ausgaben und Logging aus einer entsprechenden XML-Datei. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fontFile</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a915f4b8293e6bc19dbe782de9003e103"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">irr::gui::IGUIFont* ge::GraphicsCore::SystemFont </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert den Pointer zum irrlicht-Font, welches für die System-Schriftart verwendet wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6dcde53882fa7db3fd8a21c2c9f46552"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::Text </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gibt einen Text aus (hierfür wird die Standard-Schriftart verwendet). </p>
+
+</div>
+</div>
+<a class="anchor" id="ae060f6c801b27fe5ed6b4967c181d61e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a>&amp; ge::GraphicsCore::Text </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fontId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gibt einen Text aus (hierfür wird eine Schriftart aus dem Schriftarten-Pool verwendet). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>X-Position der linken oberen Ecke </td></tr>
+    <tr><td class="paramname">y</td><td>Y-Position der linken oberen Ecke </td></tr>
+    <tr><td class="paramname">text</td><td>Auszugebender Text </td></tr>
+    <tr><td class="paramname">fontId</td><td>Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1c8c4d4c30eb90c9c30031c469bca5a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">irr::video::ITexture * ge::GraphicsCore::Texture </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert den Pointer zur irrlicht-Textur, welche für eine Textur im Texturen-Pool verwendet wird. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Textur im Texturen-Pool </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_graphics_core_8h_source.html">GraphicsCore.h</a></li>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_graphics_core_8cpp.html">GraphicsCore.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: E:/Projekte/GameEngine/GameEngine/Core.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b304f6c6273f651fae44313af9022017.html">GameEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Core.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_core_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;irrlicht.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_graphics_core_8h.html">GraphicsCore.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_input_core_8h.html">InputCore.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_audio_core_8h.html">AudioCore.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_resources_core_8h.html">ResourcesCore.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html">DLL_DEF.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span>EventController;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>ge {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classge_1_1_core.html">   28</a></span>&#160;   <span class="keyword">class </span><a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html#ac72fb9969cca8dcf1382f1dca2c65d48">GEDLL</a> <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6c">   33</a></span>&#160;      <span class="keyword">enum</span> <a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6c" title="Auflistung der möglichen Komponentenangaben zur Verwendung mit Core::Reset() oder Core::ShutDown()...">What</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6cae4aedfb98f016e246767cd4e2072cb5e">   34</a></span>&#160;         NoInterface        = 0,</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6ca142d7102a0ec59de8cfc5b0f133f253e">   35</a></span>&#160;         GraphicsInterface  = 1,</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6ca8d4009c3e53e1baacb126498b392c113">   36</a></span>&#160;         InputInterface     = 2,</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6ca00bdcdb38830263c1b23cd220f227596">   37</a></span>&#160;         AudioInterface     = 4,</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6ca56aac4e84b331d77cb5399c40873db42">   38</a></span>&#160;         ResourcesInterface = 8,</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6ca64f7eb8234fa9c79c7f9747c7a48f431">   39</a></span>&#160;         AllInterfaces      = 15</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keyword">static</span> <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>* instance;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      std::unique_ptr&lt;irr::IrrlichtDevice&gt; device;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      std::unique_ptr&lt;EventController&gt; eventController;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordtype">bool</span> resizableWindow;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      std::unique_ptr&lt;GraphicsCore&gt;  graphics;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      std::unique_ptr&lt;InputCore&gt;     input;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      std::unique_ptr&lt;AudioCore&gt;     audio;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      std::unique_ptr&lt;ResourcesCore&gt; resources;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> ();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> (<span class="keyword">const</span> <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp;);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp;);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordtype">void</span> Init ();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      ~<a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> ();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aa1e28dc401305f12771f5cb2e9112d9e">   68</a></span>&#160;      <span class="keyword">static</span> <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>* Instance ()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;         <span class="keywordflow">if</span> (!instance) instance = <span class="keyword">new</span> <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         <span class="keywordflow">return</span> instance;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a70bc77ae79c79973be7305be911abb80">   79</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; Reset (<span class="keyword">const</span> <a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6c" title="Auflistung der möglichen Komponentenangaben zur Verwendung mit Core::Reset() oder Core::ShutDown()...">What</a>&amp; what)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         <span class="keywordflow">if</span> (what &amp; GraphicsInterface)  graphics.reset(<span class="keyword">new</span> <a class="code" href="classge_1_1_graphics_core.html" title="Grafik-Basisklasse zur Steuerung von Grafik und Textausgabe. Wird über Core::Graphics() geliefert...">GraphicsCore</a>(device.get()));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;         <span class="keywordflow">if</span> (what &amp; InputInterface)     input.reset(<span class="keyword">new</span> <a class="code" href="classge_1_1_input_core.html" title="Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über Core::Input() geliefert.">InputCore</a>(device.get(), eventController.get()));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         <span class="keywordflow">if</span> (what &amp; AudioInterface)     audio.reset(<span class="keyword">new</span> <a class="code" href="classge_1_1_audio_core.html" title="Audio-Basisklasse zur Steuerung von Sound- und Musik-Wiedergabe. Wird über Core::Audio() geliefert...">AudioCore</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;         <span class="keywordflow">if</span> (what &amp; ResourcesInterface) resources.reset(<span class="keyword">new</span> <a class="code" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung Text- und Binär-Ressourcen. Wird über Core::Resources() geliefe...">ResourcesCore</a>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;         <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#ab8e1ddfc8df1c43b242347f1802df523">   93</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; ShutDown (<span class="keyword">const</span> <a class="code" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6c" title="Auflistung der möglichen Komponentenangaben zur Verwendung mit Core::Reset() oder Core::ShutDown()...">What</a>&amp; what)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;         <span class="keywordflow">if</span> (what &amp; ResourcesInterface) resources.reset();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;         <span class="keywordflow">if</span> (what &amp; AudioInterface)     audio.reset();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;         <span class="keywordflow">if</span> (what &amp; InputInterface)     input.reset();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;         <span class="keywordflow">if</span> (what &amp; GraphicsInterface)  graphics.reset();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;         <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; WindowTitle (<span class="keyword">const</span> std::string&amp; title);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a00d7c438bdecbae8f30564b3e27245ba">  109</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; <a class="code" href="classge_1_1_core.html#a00d7c438bdecbae8f30564b3e27245ba" title="Legt fest, ob die Fenstergröße verändert werden kann.">ResizableWindow</a> (<span class="keywordtype">bool</span> resizable = <span class="keyword">true</span>) { device-&gt;setResizable(resizable); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a718ade574dd8ebb2f9e34c34da743358">  112</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; <a class="code" href="classge_1_1_core.html#a718ade574dd8ebb2f9e34c34da743358" title="Legt fest, dass die Fenstergröße nicht geändert werden kann.">StaticWindow</a> () { device-&gt;setResizable(<span class="keyword">false</span>); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a61ca6c61551d7a2bacdf36e86606582d">  115</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; <a class="code" href="classge_1_1_core.html#a61ca6c61551d7a2bacdf36e86606582d" title="Minimiert das Fenster.">MinimizeWindow</a> () { device-&gt;minimizeWindow(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aa5ffd27867acdd9569a62d069ecce92c">  118</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; <a class="code" href="classge_1_1_core.html#aa5ffd27867acdd9569a62d069ecce92c" title="Maximiert das Fenster.">MaximizeWindow</a> () { device-&gt;maximizeWindow(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aba8d762c9922a6f5dcd69145c0c1e811">  121</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; <a class="code" href="classge_1_1_core.html#aba8d762c9922a6f5dcd69145c0c1e811" title="Stellt das Fenster wieder her.">RestoreWindow</a> () { device-&gt;restoreWindow(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a98062e4dd0e8f804dfa80484e524f70f">  125</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; <a class="code" href="classge_1_1_core.html#a98062e4dd0e8f804dfa80484e524f70f" title="Leert den Puffer der Systemnachrichten an die Anwendung.">ClearSystemMessages</a> () { device-&gt;clearSystemMessages(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aa29309a9773ab1da030fbfaa113a2a9f">  128</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; <a class="code" href="classge_1_1_core.html#aa29309a9773ab1da030fbfaa113a2a9f" title="Signalisiert, dass das irrlicht-Device aktuell keine Rechenzeit benötigt.">DoNothing</a> () { device-&gt;yield(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#aa9e62ea0b797bb241e1a29e1b5e963c9">  131</a></span>&#160;      <a class="code" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a>&amp; <a class="code" href="classge_1_1_core.html#aa9e62ea0b797bb241e1a29e1b5e963c9" title="Schließt das irrlicht-Device.">Quit</a> () { device-&gt;closeDevice(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a15eb85a25be37c890cadf65dbb8b73cf">  135</a></span>&#160;      <a class="code" href="classge_1_1_graphics_core.html" title="Grafik-Basisklasse zur Steuerung von Grafik und Textausgabe. Wird über Core::Graphics() geliefert...">GraphicsCore</a>* <a class="code" href="classge_1_1_core.html#a15eb85a25be37c890cadf65dbb8b73cf" title="Liefert den Pointer zur Kernkomponente für Grafik.">Graphics</a> () { <span class="keywordflow">if</span> (graphics == <span class="keyword">nullptr</span>) Reset(GraphicsInterface); <span class="keywordflow">return</span> graphics.get(); }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a68dfb0faa14dc45d7a19b98a5ec88324">  138</a></span>&#160;      <a class="code" href="classge_1_1_input_core.html" title="Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über Core::Input() geliefert.">InputCore</a>* <a class="code" href="classge_1_1_core.html#a68dfb0faa14dc45d7a19b98a5ec88324" title="Liefert den Pointer zur Kernkomponente für Eingabegeräte.">Input</a> () { <span class="keywordflow">if</span> (input == <span class="keyword">nullptr</span>) Reset(InputInterface); <span class="keywordflow">return</span> input.get(); }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a0baf0b9f2fbec7002bf441c7daba1fc7">  141</a></span>&#160;      <a class="code" href="classge_1_1_audio_core.html" title="Audio-Basisklasse zur Steuerung von Sound- und Musik-Wiedergabe. Wird über Core::Audio() geliefert...">AudioCore</a>* <a class="code" href="classge_1_1_core.html#a0baf0b9f2fbec7002bf441c7daba1fc7" title="Liefert den Pointer zur Kernkomponente für Audio.">Audio</a> () { <span class="keywordflow">if</span> (audio == <span class="keyword">nullptr</span>) Reset(AudioInterface); <span class="keywordflow">return</span> audio.get(); }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a966e1157b4951cb336432f3807c60516">  144</a></span>&#160;      <a class="code" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung Text- und Binär-Ressourcen. Wird über Core::Resources() geliefe...">ResourcesCore</a>* <a class="code" href="classge_1_1_core.html#a966e1157b4951cb336432f3807c60516" title="Liefert den Pointer zur Kernkomponente für Ressourcen.">Resources</a> () { <span class="keywordflow">if</span> (resources == <span class="keyword">nullptr</span>) Reset(ResourcesInterface); <span class="keywordflow">return</span> resources.get(); }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a4a0d2f6b5f3f22657e2e012a12f5140c">  147</a></span>&#160;      irr::IrrlichtDevice* <a class="code" href="classge_1_1_core.html#a4a0d2f6b5f3f22657e2e012a12f5140c" title="Liefert den Pointer zum irrlicht-Device.">Device</a> () { <span class="keywordflow">return</span> device.get(); }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a9695b4634c08d92b468b21f00b71e36a">  151</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_core.html#a9695b4634c08d92b468b21f00b71e36a" title="Ermittelt, ob das irrlicht-Device aktiviert wurde und aktuell fehlerfrei arbeitet.">IsRunning</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> device-&gt;run(); }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a68a2d8a086ebfe8fa592e3a988bc122e">  154</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_core.html#a68a2d8a086ebfe8fa592e3a988bc122e" title="Ermittelt, ob die Anwendung im Fullscreen-Modus ausgeführt wird.">IsFullscreen</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> device-&gt;isFullscreen(); }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#afab824c207c91aa16b7a18c8f144ac0e">  157</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_core.html#afab824c207c91aa16b7a18c8f144ac0e" title="Ermittelt, ob das Fenster aktiviert ist.">IsWindowActive</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> device-&gt;isWindowActive(); }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a715ef0ae1a2947af8895aae41ebc76b7">  160</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_core.html#a715ef0ae1a2947af8895aae41ebc76b7" title="Ermittelt, ob das Fenster den Fokus besitzt.">IsWindowFocused</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> device-&gt;isWindowFocused(); }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#add344712b56ce95cf54314ca98589e06">  163</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_core.html#add344712b56ce95cf54314ca98589e06" title="Ermittelt, ob die Fenstergröße geändert werden kann.">IsWindowResizable</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> resizableWindow; }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="code" href="classge_1_1_core.html#a81b0c798aa2298ef23c48901e8ecbffb">  166</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_core.html#a81b0c798aa2298ef23c48901e8ecbffb" title="Ermittelt, ob das Fenster minimiert ist.">IsWindowMinimized</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> device-&gt;isWindowMinimized(); }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;   };</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;   Core* Core::instance = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

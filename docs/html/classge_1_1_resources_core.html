@@ -1,0 +1,972 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: ge::ResourcesCore Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacege.html">ge</a></li><li class="navelem"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classge_1_1_resources_core-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">ge::ResourcesCore Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Ressourcen-Basisklasse zur Verwaltung Text- und Binär-Ressourcen. Wird über <a class="el" href="classge_1_1_core.html#a966e1157b4951cb336432f3807c60516" title="Liefert den Pointer zur Kernkomponente für Ressourcen.">Core::Resources()</a> geliefert.  
+ <a href="classge_1_1_resources_core.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_resources_core_8h_source.html">ResourcesCore.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a81052dfe8f28151bcb072299144b9a4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a81052dfe8f28151bcb072299144b9a4c">ResourcesCore</a> ()</td></tr>
+<tr class="memdesc:a81052dfe8f28151bcb072299144b9a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor.  <a href="#a81052dfe8f28151bcb072299144b9a4c"></a><br/></td></tr>
+<tr class="separator:a81052dfe8f28151bcb072299144b9a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae013af841b49520ca43f32a095b16ce7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#ae013af841b49520ca43f32a095b16ce7">~ResourcesCore</a> ()</td></tr>
+<tr class="memdesc:ae013af841b49520ca43f32a095b16ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor. Entfernt automatisch alle in <a class="el" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung Text- und Binär-Ressourcen. Wird über Core::Resources() geliefe...">ResourcesCore</a> gehaltenen Text- und Binär-Ressourcen.  <a href="#ae013af841b49520ca43f32a095b16ce7"></a><br/></td></tr>
+<tr class="separator:ae013af841b49520ca43f32a095b16ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948a1b7798beee300359ef9c2226219a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a948a1b7798beee300359ef9c2226219a">AddBinary</a> (const std::string &amp;id, const std::string &amp;path)</td></tr>
+<tr class="memdesc:a948a1b7798beee300359ef9c2226219a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fügt eine Binär-Ressource aus einer Datei hinzu (Binärdaten).  <a href="#a948a1b7798beee300359ef9c2226219a"></a><br/></td></tr>
+<tr class="separator:a948a1b7798beee300359ef9c2226219a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6deb3d7ab92a09dcddb3df2349bfa23b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a6deb3d7ab92a09dcddb3df2349bfa23b">AddMusic</a> (const std::string &amp;id, const std::string &amp;path)</td></tr>
+<tr class="memdesc:a6deb3d7ab92a09dcddb3df2349bfa23b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fügt eine Musik-Ressource aus einer Datei hinzu (Binärdaten).  <a href="#a6deb3d7ab92a09dcddb3df2349bfa23b"></a><br/></td></tr>
+<tr class="separator:a6deb3d7ab92a09dcddb3df2349bfa23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a306215c5c492ebdede835dcc89c991"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a2a306215c5c492ebdede835dcc89c991">AddScript</a> (const std::string &amp;id, const std::string &amp;path)</td></tr>
+<tr class="memdesc:a2a306215c5c492ebdede835dcc89c991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fügt eine Script-Ressource aus einer Datei hinzu (Textdaten).  <a href="#a2a306215c5c492ebdede835dcc89c991"></a><br/></td></tr>
+<tr class="separator:a2a306215c5c492ebdede835dcc89c991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa14e8d5791c3929f9d0c1d38f2596937"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#aa14e8d5791c3929f9d0c1d38f2596937">AddSound</a> (const std::string &amp;id, const std::string &amp;path)</td></tr>
+<tr class="memdesc:aa14e8d5791c3929f9d0c1d38f2596937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fügt eine Sound-Ressource aus einer Datei hinzu (Binärdaten).  <a href="#aa14e8d5791c3929f9d0c1d38f2596937"></a><br/></td></tr>
+<tr class="separator:aa14e8d5791c3929f9d0c1d38f2596937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21f44347d088cbbfb3082523a31c5f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#ad21f44347d088cbbfb3082523a31c5f8">AddString</a> (const std::string &amp;id, const std::string &amp;path)</td></tr>
+<tr class="memdesc:ad21f44347d088cbbfb3082523a31c5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fügt eine String-Ressource aus einer Datei hinzu (Textdaten).  <a href="#ad21f44347d088cbbfb3082523a31c5f8"></a><br/></td></tr>
+<tr class="separator:ad21f44347d088cbbfb3082523a31c5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1944c8c889e2f04f88e7395cf13ca3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#ac1944c8c889e2f04f88e7395cf13ca3a">AddXML</a> (const std::string &amp;id, const std::string &amp;path)</td></tr>
+<tr class="memdesc:ac1944c8c889e2f04f88e7395cf13ca3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fügt eine XML-Ressource aus einer Datei hinzu (Textdaten).  <a href="#ac1944c8c889e2f04f88e7395cf13ca3a"></a><br/></td></tr>
+<tr class="separator:ac1944c8c889e2f04f88e7395cf13ca3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1abc8943695458e93082207b53b834ad"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; char &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a1abc8943695458e93082207b53b834ad">Binary</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a1abc8943695458e93082207b53b834ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert eine Binär-Ressource (Binärdaten).  <a href="#a1abc8943695458e93082207b53b834ad"></a><br/></td></tr>
+<tr class="separator:a1abc8943695458e93082207b53b834ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7316a99a437925bef493f1fdf9ecf671"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; char &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a7316a99a437925bef493f1fdf9ecf671">Music</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a7316a99a437925bef493f1fdf9ecf671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert eine Musik-Ressource (Binärdaten).  <a href="#a7316a99a437925bef493f1fdf9ecf671"></a><br/></td></tr>
+<tr class="separator:a7316a99a437925bef493f1fdf9ecf671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641b6cb04e607a29794d6445634fd420"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a641b6cb04e607a29794d6445634fd420">RemoveAllBinaries</a> ()</td></tr>
+<tr class="memdesc:a641b6cb04e607a29794d6445634fd420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt alle Binär-Ressourcen.  <a href="#a641b6cb04e607a29794d6445634fd420"></a><br/></td></tr>
+<tr class="separator:a641b6cb04e607a29794d6445634fd420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af79b8d201eac429e4bc716b2ba8424f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#af79b8d201eac429e4bc716b2ba8424f4">RemoveAllMusic</a> ()</td></tr>
+<tr class="memdesc:af79b8d201eac429e4bc716b2ba8424f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt alle Musik-Ressourcen.  <a href="#af79b8d201eac429e4bc716b2ba8424f4"></a><br/></td></tr>
+<tr class="separator:af79b8d201eac429e4bc716b2ba8424f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3519d9c1473cd4a4e7c957743ad3b2e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a3519d9c1473cd4a4e7c957743ad3b2e0">RemoveAllScripts</a> ()</td></tr>
+<tr class="memdesc:a3519d9c1473cd4a4e7c957743ad3b2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt alle Script-Ressourcen.  <a href="#a3519d9c1473cd4a4e7c957743ad3b2e0"></a><br/></td></tr>
+<tr class="separator:a3519d9c1473cd4a4e7c957743ad3b2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a866bbbc4f7d540c58aa33731344dd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a8a866bbbc4f7d540c58aa33731344dd8">RemoveAllSounds</a> ()</td></tr>
+<tr class="memdesc:a8a866bbbc4f7d540c58aa33731344dd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt alle Sound-Ressourcen.  <a href="#a8a866bbbc4f7d540c58aa33731344dd8"></a><br/></td></tr>
+<tr class="separator:a8a866bbbc4f7d540c58aa33731344dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025cba635d8d9f7ce9158d234df86a85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a025cba635d8d9f7ce9158d234df86a85">RemoveAllStrings</a> ()</td></tr>
+<tr class="memdesc:a025cba635d8d9f7ce9158d234df86a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt alle String-Ressourcen.  <a href="#a025cba635d8d9f7ce9158d234df86a85"></a><br/></td></tr>
+<tr class="separator:a025cba635d8d9f7ce9158d234df86a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb7717532927487e5b4b7c3b457c7102"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#adb7717532927487e5b4b7c3b457c7102">RemoveAllXMLs</a> ()</td></tr>
+<tr class="memdesc:adb7717532927487e5b4b7c3b457c7102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt alle XML-Ressourcen.  <a href="#adb7717532927487e5b4b7c3b457c7102"></a><br/></td></tr>
+<tr class="separator:adb7717532927487e5b4b7c3b457c7102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5eadd3afddc7a15eca95fb013185704"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#ae5eadd3afddc7a15eca95fb013185704">RemoveBinary</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:ae5eadd3afddc7a15eca95fb013185704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine Binär-Ressource.  <a href="#ae5eadd3afddc7a15eca95fb013185704"></a><br/></td></tr>
+<tr class="separator:ae5eadd3afddc7a15eca95fb013185704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea9872a9bd91f299904b348cb388e22a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#aea9872a9bd91f299904b348cb388e22a">RemoveMusic</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:aea9872a9bd91f299904b348cb388e22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine Musik-Ressource.  <a href="#aea9872a9bd91f299904b348cb388e22a"></a><br/></td></tr>
+<tr class="separator:aea9872a9bd91f299904b348cb388e22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c609d0e35bb7571f80964ee85f4e5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a79c609d0e35bb7571f80964ee85f4e5a">RemoveScript</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a79c609d0e35bb7571f80964ee85f4e5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine Script-Ressource.  <a href="#a79c609d0e35bb7571f80964ee85f4e5a"></a><br/></td></tr>
+<tr class="separator:a79c609d0e35bb7571f80964ee85f4e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c7b8bde91b984f63dccc8457ef264f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a2c7b8bde91b984f63dccc8457ef264f6">RemoveSound</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a2c7b8bde91b984f63dccc8457ef264f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine Sound-Ressource.  <a href="#a2c7b8bde91b984f63dccc8457ef264f6"></a><br/></td></tr>
+<tr class="separator:a2c7b8bde91b984f63dccc8457ef264f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f90a96896cd0c5972adb70cce5ddf7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a0f90a96896cd0c5972adb70cce5ddf7e">RemoveString</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a0f90a96896cd0c5972adb70cce5ddf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine String-Ressource.  <a href="#a0f90a96896cd0c5972adb70cce5ddf7e"></a><br/></td></tr>
+<tr class="separator:a0f90a96896cd0c5972adb70cce5ddf7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473e86ae7bfcfccd90f9606c5c05cae7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a473e86ae7bfcfccd90f9606c5c05cae7">RemoveXML</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a473e86ae7bfcfccd90f9606c5c05cae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine XML-Ressource.  <a href="#a473e86ae7bfcfccd90f9606c5c05cae7"></a><br/></td></tr>
+<tr class="separator:a473e86ae7bfcfccd90f9606c5c05cae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d767624dcfd0aafb50775f56e85921f"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a4d767624dcfd0aafb50775f56e85921f">Script</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a4d767624dcfd0aafb50775f56e85921f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert eine Script-Ressource (Textdaten).  <a href="#a4d767624dcfd0aafb50775f56e85921f"></a><br/></td></tr>
+<tr class="separator:a4d767624dcfd0aafb50775f56e85921f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218ed2258b784b2708b08c30e784528e"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; char &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a218ed2258b784b2708b08c30e784528e">Sound</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a218ed2258b784b2708b08c30e784528e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert eine Sound-Ressource (Binärdaten).  <a href="#a218ed2258b784b2708b08c30e784528e"></a><br/></td></tr>
+<tr class="separator:a218ed2258b784b2708b08c30e784528e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6410555ace033ea3a1771fff98404f32"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a6410555ace033ea3a1771fff98404f32">String</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a6410555ace033ea3a1771fff98404f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert eine String-Ressource (Textdaten).  <a href="#a6410555ace033ea3a1771fff98404f32"></a><br/></td></tr>
+<tr class="separator:a6410555ace033ea3a1771fff98404f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a783c915d641e841d2020ac3b8c18c7a7"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_resources_core.html#a783c915d641e841d2020ac3b8c18c7a7">XML</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a783c915d641e841d2020ac3b8c18c7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert eine XML-Ressource (Textdaten).  <a href="#a783c915d641e841d2020ac3b8c18c7a7"></a><br/></td></tr>
+<tr class="separator:a783c915d641e841d2020ac3b8c18c7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Ressourcen-Basisklasse zur Verwaltung Text- und Binär-Ressourcen. Wird über <a class="el" href="classge_1_1_core.html#a966e1157b4951cb336432f3807c60516" title="Liefert den Pointer zur Kernkomponente für Ressourcen.">Core::Resources()</a> geliefert. </p>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="a81052dfe8f28151bcb072299144b9a4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::ResourcesCore::ResourcesCore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae013af841b49520ca43f32a095b16ce7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ge::ResourcesCore::~ResourcesCore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruktor. Entfernt automatisch alle in <a class="el" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung Text- und Binär-Ressourcen. Wird über Core::Resources() geliefe...">ResourcesCore</a> gehaltenen Text- und Binär-Ressourcen. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a948a1b7798beee300359ef9c2226219a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::AddBinary </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fügt eine Binär-Ressource aus einer Datei hinzu (Binärdaten). </p>
+<p>Diese Ressourcen-Art sollte nur verwendet werden, wenn sich die Art der Daten nicht in direkter Form von <a class="el" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung Text- und Binär-Ressourcen. Wird über Core::Resources() geliefe...">ResourcesCore</a> verwalten lässt. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Binär-Ressource </td></tr>
+    <tr><td class="paramname">path</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6deb3d7ab92a09dcddb3df2349bfa23b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::AddMusic </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fügt eine Musik-Ressource aus einer Datei hinzu (Binärdaten). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Musik-Ressource </td></tr>
+    <tr><td class="paramname">path</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a306215c5c492ebdede835dcc89c991"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::AddScript </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fügt eine Script-Ressource aus einer Datei hinzu (Textdaten). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Script-Ressource </td></tr>
+    <tr><td class="paramname">path</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa14e8d5791c3929f9d0c1d38f2596937"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::AddSound </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fügt eine Sound-Ressource aus einer Datei hinzu (Binärdaten). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Sound-Ressource </td></tr>
+    <tr><td class="paramname">path</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad21f44347d088cbbfb3082523a31c5f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::AddString </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fügt eine String-Ressource aus einer Datei hinzu (Textdaten). </p>
+<p>Diese Ressourcen-Art sollte nur verwendet werden, wenn sich die Art der Daten nicht in direkter Form von <a class="el" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung Text- und Binär-Ressourcen. Wird über Core::Resources() geliefe...">ResourcesCore</a> verwalten lässt. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der String-Ressource </td></tr>
+    <tr><td class="paramname">path</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac1944c8c889e2f04f88e7395cf13ca3a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::AddXML </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fügt eine XML-Ressource aus einer Datei hinzu (Textdaten). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der XML-Ressource </td></tr>
+    <tr><td class="paramname">path</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1abc8943695458e93082207b53b834ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;char&gt;&amp; ge::ResourcesCore::Binary </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert eine Binär-Ressource (Binärdaten). </p>
+
+</div>
+</div>
+<a class="anchor" id="a7316a99a437925bef493f1fdf9ecf671"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;char&gt;&amp; ge::ResourcesCore::Music </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert eine Musik-Ressource (Binärdaten). </p>
+
+</div>
+</div>
+<a class="anchor" id="a641b6cb04e607a29794d6445634fd420"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveAllBinaries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt alle Binär-Ressourcen. </p>
+
+</div>
+</div>
+<a class="anchor" id="af79b8d201eac429e4bc716b2ba8424f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveAllMusic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt alle Musik-Ressourcen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3519d9c1473cd4a4e7c957743ad3b2e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveAllScripts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt alle Script-Ressourcen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8a866bbbc4f7d540c58aa33731344dd8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveAllSounds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt alle Sound-Ressourcen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a025cba635d8d9f7ce9158d234df86a85"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveAllStrings </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt alle String-Ressourcen. </p>
+
+</div>
+</div>
+<a class="anchor" id="adb7717532927487e5b4b7c3b457c7102"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveAllXMLs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt alle XML-Ressourcen. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae5eadd3afddc7a15eca95fb013185704"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveBinary </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt eine Binär-Ressource. </p>
+
+</div>
+</div>
+<a class="anchor" id="aea9872a9bd91f299904b348cb388e22a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveMusic </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt eine Musik-Ressource. </p>
+
+</div>
+</div>
+<a class="anchor" id="a79c609d0e35bb7571f80964ee85f4e5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveScript </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt eine Script-Ressource. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2c7b8bde91b984f63dccc8457ef264f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveSound </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt eine Sound-Ressource. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0f90a96896cd0c5972adb70cce5ddf7e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveString </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt eine String-Ressource. </p>
+
+</div>
+</div>
+<a class="anchor" id="a473e86ae7bfcfccd90f9606c5c05cae7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a>&amp; ge::ResourcesCore::RemoveXML </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt eine XML-Ressource. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4d767624dcfd0aafb50775f56e85921f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; ge::ResourcesCore::Script </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert eine Script-Ressource (Textdaten). </p>
+
+</div>
+</div>
+<a class="anchor" id="a218ed2258b784b2708b08c30e784528e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;char&gt;&amp; ge::ResourcesCore::Sound </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert eine Sound-Ressource (Binärdaten). </p>
+
+</div>
+</div>
+<a class="anchor" id="a6410555ace033ea3a1771fff98404f32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; ge::ResourcesCore::String </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert eine String-Ressource (Textdaten). </p>
+
+</div>
+</div>
+<a class="anchor" id="a783c915d641e841d2020ac3b8c18c7a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; ge::ResourcesCore::XML </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert eine XML-Ressource (Textdaten). </p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_resources_core_8h_source.html">ResourcesCore.h</a></li>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_resources_core_8cpp.html">ResourcesCore.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

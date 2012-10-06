@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: ge::InputCore Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacege.html">ge</a></li><li class="navelem"><a class="el" href="classge_1_1_input_core.html">InputCore</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Öffentliche Typen</a> &#124;
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classge_1_1_input_core-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">ge::InputCore Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über <a class="el" href="classge_1_1_core.html#a68dfb0faa14dc45d7a19b98a5ec88324" title="Liefert den Pointer zur Kernkomponente für Eingabegeräte.">Core::Input()</a> geliefert.  
+ <a href="classge_1_1_input_core.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_input_core_8h_source.html">InputCore.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Öffentliche Typen</h2></td></tr>
+<tr class="memitem:ae5eedc1e4eb359c39039ecb32ba790f0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0">What</a> { <br/>
+&#160;&#160;<a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0abdc447c2254ffcc7d4037a8b5f2d0c73">NoInterface</a> = 0, 
+<a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0afd7804417d47d9bd43fb43a25c50c78d">KeyboardInterface</a> = 1, 
+<a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0abcf033875aeb0589dc2d5ea2bfd90da7">MouseInterface</a> = 2, 
+<a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0a61c2b1cc8ed889e53b3ad8b5ef0b159b">GamepadInterface</a> = 4, 
+<br/>
+&#160;&#160;<a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0a2241b59687cce2f51bca9c1a99ea3d2b">AllInterfaces</a> = 7
+<br/>
+ }</td></tr>
+<tr class="memdesc:ae5eedc1e4eb359c39039ecb32ba790f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auflistung der möglichen Komponentenangaben zur Verwemdung mit <a class="el" href="classge_1_1_input_core.html#a2bb285c503f05ddac71a461b03553db9" title="Setzt eine oder mehrere Input-Komponenten zurück. Dies beinhaltet die Freigabe der Ressourcen...">InputCore::Reset()</a> oder <a class="el" href="classge_1_1_input_core.html#a511dd34f093906b7241a6c7bd708b625" title="Entfernt eine oder mehrere Input-Komponenten. Dies beinhaltet die Freigabe der Ressourcen, die in den entsprechenden Komponenten gehalten werden.">InputCore::ShutDown()</a>.  <a href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0">Mehr ...</a><br/></td></tr>
+<tr class="separator:ae5eedc1e4eb359c39039ecb32ba790f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a30f55064149826b8e1071bbb21764fc7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a30f55064149826b8e1071bbb21764fc7">InputCore</a> (irr::IrrlichtDevice *irrDevice, <a class="el" href="classge_1_1_event_controller.html">EventController</a> *eventCtrl)</td></tr>
+<tr class="memdesc:a30f55064149826b8e1071bbb21764fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Benötigt Pointer zu einem validen irrlicht-Device und einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventLi...">ge::EventController</a> (werden automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben).  <a href="#a30f55064149826b8e1071bbb21764fc7"></a><br/></td></tr>
+<tr class="separator:a30f55064149826b8e1071bbb21764fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4373b25d0dec9b5fa5579cc00f5128ac"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a4373b25d0dec9b5fa5579cc00f5128ac">~InputCore</a> ()</td></tr>
+<tr class="memdesc:a4373b25d0dec9b5fa5579cc00f5128ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor. Entfernt automatisch alle noch bestehenden Input-Komponenten und gibt Ressourcen frei, die innerhalb von <a class="el" href="classge_1_1_input_core.html" title="Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über Core::Input() geliefert.">InputCore</a> oder einer in <a class="el" href="classge_1_1_input_core.html" title="Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über Core::Input() geliefert.">InputCore</a> gehaltenen Input-Komponente erreichbar sind.  <a href="#a4373b25d0dec9b5fa5579cc00f5128ac"></a><br/></td></tr>
+<tr class="separator:a4373b25d0dec9b5fa5579cc00f5128ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a00a99ebde25a521a0ed06c1b3561e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_gamepad.html">InputGamepad</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a5a00a99ebde25a521a0ed06c1b3561e7">Gamepad</a> ()</td></tr>
+<tr class="memdesc:a5a00a99ebde25a521a0ed06c1b3561e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zur Komponente für Gamepad-Eingaben.  <a href="#a5a00a99ebde25a521a0ed06c1b3561e7"></a><br/></td></tr>
+<tr class="separator:a5a00a99ebde25a521a0ed06c1b3561e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a766adb2575d99ec85b9d5228904b9d4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_keyboard.html">InputKeyboard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a766adb2575d99ec85b9d5228904b9d4f">Keyboard</a> ()</td></tr>
+<tr class="memdesc:a766adb2575d99ec85b9d5228904b9d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zur Komponente für Taststur-Eingaben.  <a href="#a766adb2575d99ec85b9d5228904b9d4f"></a><br/></td></tr>
+<tr class="separator:a766adb2575d99ec85b9d5228904b9d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a330d9750639bc37ea72ac2df4c592f61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a330d9750639bc37ea72ac2df4c592f61">Mouse</a> ()</td></tr>
+<tr class="memdesc:a330d9750639bc37ea72ac2df4c592f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zur Komponente für Maus-Eingaben.  <a href="#a330d9750639bc37ea72ac2df4c592f61"></a><br/></td></tr>
+<tr class="separator:a330d9750639bc37ea72ac2df4c592f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb285c503f05ddac71a461b03553db9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_core.html">InputCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a2bb285c503f05ddac71a461b03553db9">Reset</a> (const <a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0">What</a> &amp;what)</td></tr>
+<tr class="memdesc:a2bb285c503f05ddac71a461b03553db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt eine oder mehrere Input-Komponenten zurück. Dies beinhaltet die Freigabe der Ressourcen, die in den entsprechenden Komponenten gehalten werden.  <a href="#a2bb285c503f05ddac71a461b03553db9"></a><br/></td></tr>
+<tr class="separator:a2bb285c503f05ddac71a461b03553db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a511dd34f093906b7241a6c7bd708b625"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_core.html">InputCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a511dd34f093906b7241a6c7bd708b625">ShutDown</a> (const <a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0">What</a> &amp;what)</td></tr>
+<tr class="memdesc:a511dd34f093906b7241a6c7bd708b625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine oder mehrere Input-Komponenten. Dies beinhaltet die Freigabe der Ressourcen, die in den entsprechenden Komponenten gehalten werden.  <a href="#a511dd34f093906b7241a6c7bd708b625"></a><br/></td></tr>
+<tr class="separator:a511dd34f093906b7241a6c7bd708b625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f6bc08ad15c55db14ba44b830e351f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a8f6bc08ad15c55db14ba44b830e351f3">Update</a> ()</td></tr>
+<tr class="memdesc:a8f6bc08ad15c55db14ba44b830e351f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualisiert den Eingabestatus aller vorhandenen und eingeschalteten Input-Komponenten.  <a href="#a8f6bc08ad15c55db14ba44b830e351f3"></a><br/></td></tr>
+<tr class="separator:a8f6bc08ad15c55db14ba44b830e351f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über <a class="el" href="classge_1_1_core.html#a68dfb0faa14dc45d7a19b98a5ec88324" title="Liefert den Pointer zur Kernkomponente für Eingabegeräte.">Core::Input()</a> geliefert. </p>
+</div><h2 class="groupheader">Dokumentation der Aufzählungstypen</h2>
+<a class="anchor" id="ae5eedc1e4eb359c39039ecb32ba790f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0">ge::InputCore::What</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Auflistung der möglichen Komponentenangaben zur Verwemdung mit <a class="el" href="classge_1_1_input_core.html#a2bb285c503f05ddac71a461b03553db9" title="Setzt eine oder mehrere Input-Komponenten zurück. Dies beinhaltet die Freigabe der Ressourcen...">InputCore::Reset()</a> oder <a class="el" href="classge_1_1_input_core.html#a511dd34f093906b7241a6c7bd708b625" title="Entfernt eine oder mehrere Input-Komponenten. Dies beinhaltet die Freigabe der Ressourcen, die in den entsprechenden Komponenten gehalten werden.">InputCore::ShutDown()</a>. </p>
+<dl><dt><b>Aufzählungswerte: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ae5eedc1e4eb359c39039ecb32ba790f0abdc447c2254ffcc7d4037a8b5f2d0c73"></a>NoInterface</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae5eedc1e4eb359c39039ecb32ba790f0afd7804417d47d9bd43fb43a25c50c78d"></a>KeyboardInterface</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae5eedc1e4eb359c39039ecb32ba790f0abcf033875aeb0589dc2d5ea2bfd90da7"></a>MouseInterface</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae5eedc1e4eb359c39039ecb32ba790f0a61c2b1cc8ed889e53b3ad8b5ef0b159b"></a>GamepadInterface</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae5eedc1e4eb359c39039ecb32ba790f0a2241b59687cce2f51bca9c1a99ea3d2b"></a>AllInterfaces</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="a30f55064149826b8e1071bbb21764fc7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::InputCore::InputCore </td>
+          <td>(</td>
+          <td class="paramtype">irr::IrrlichtDevice *&#160;</td>
+          <td class="paramname"><em>irrDevice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classge_1_1_event_controller.html">EventController</a> *&#160;</td>
+          <td class="paramname"><em>eventCtrl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor. Benötigt Pointer zu einem validen irrlicht-Device und einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventLi...">ge::EventController</a> (werden automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben). </p>
+
+</div>
+</div>
+<a class="anchor" id="a4373b25d0dec9b5fa5579cc00f5128ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::InputCore::~InputCore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruktor. Entfernt automatisch alle noch bestehenden Input-Komponenten und gibt Ressourcen frei, die innerhalb von <a class="el" href="classge_1_1_input_core.html" title="Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über Core::Input() geliefert.">InputCore</a> oder einer in <a class="el" href="classge_1_1_input_core.html" title="Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über Core::Input() geliefert.">InputCore</a> gehaltenen Input-Komponente erreichbar sind. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a5a00a99ebde25a521a0ed06c1b3561e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_gamepad.html">InputGamepad</a>* ge::InputCore::Gamepad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert den Pointer zur Komponente für Gamepad-Eingaben. </p>
+
+</div>
+</div>
+<a class="anchor" id="a766adb2575d99ec85b9d5228904b9d4f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_keyboard.html">InputKeyboard</a>* ge::InputCore::Keyboard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert den Pointer zur Komponente für Taststur-Eingaben. </p>
+
+</div>
+</div>
+<a class="anchor" id="a330d9750639bc37ea72ac2df4c592f61"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a>* ge::InputCore::Mouse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert den Pointer zur Komponente für Maus-Eingaben. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2bb285c503f05ddac71a461b03553db9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_core.html">InputCore</a> &amp; ge::InputCore::Reset </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0">What</a> &amp;&#160;</td>
+          <td class="paramname"><em>what</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setzt eine oder mehrere Input-Komponenten zurück. Dies beinhaltet die Freigabe der Ressourcen, die in den entsprechenden Komponenten gehalten werden. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">what</td><td>Komponentenangabe aus <a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0" title="Auflistung der möglichen Komponentenangaben zur Verwemdung mit InputCore::Reset() oder InputCore::Shu...">InputCore::What</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a511dd34f093906b7241a6c7bd708b625"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_core.html">InputCore</a> &amp; ge::InputCore::ShutDown </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0">What</a> &amp;&#160;</td>
+          <td class="paramname"><em>what</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entfernt eine oder mehrere Input-Komponenten. Dies beinhaltet die Freigabe der Ressourcen, die in den entsprechenden Komponenten gehalten werden. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">what</td><td>Komponentenangabe aus <a class="el" href="classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0" title="Auflistung der möglichen Komponentenangaben zur Verwemdung mit InputCore::Reset() oder InputCore::Shu...">InputCore::What</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8f6bc08ad15c55db14ba44b830e351f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ge::InputCore::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aktualisiert den Eingabestatus aller vorhandenen und eingeschalteten Input-Komponenten. </p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_input_core_8h_source.html">InputCore.h</a></li>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_input_core_8cpp.html">InputCore.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

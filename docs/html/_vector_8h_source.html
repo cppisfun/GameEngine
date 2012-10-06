@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: E:/Projekte/GameEngine/GameEngine/Vector.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b304f6c6273f651fae44313af9022017.html">GameEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Vector.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_vector_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_engine_2_precomp_8h.html">Precomp.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html">DLL_DEF.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>ge {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html">   12</a></span>&#160;   <span class="keyword">class </span><a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html#ac72fb9969cca8dcf1382f1dca2c65d48">GEDLL</a> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;   {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268">   17</a></span>&#160;      <span class="keyword">enum</span> <a class="code" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268" title="Auflistung der möglichen Koordinatenangaben zur Verwendung mit Vector::Value().">What</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268acd05758ebcbfa4d979fc45c38ae2d5e8">   18</a></span>&#160;         XValue = 0,</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268a0b1af67756c1aac332db03f41fead6d0">   19</a></span>&#160;         <a class="code" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268a0b1af67756c1aac332db03f41fead6d0">YValue</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268a7abec49d9ec74f0ceb2ee01479014ef4">   20</a></span>&#160;         ZValue</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      std::array&lt;float, 3&gt; values;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a72f32af572bc6774d0c6ae42edb1fa53">   28</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a> ()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;         Set(0.0f, 0.0f, 0.0f);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#ace43baa636245c3f74f1e94318427c10">   37</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a> (<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z = 0.0f)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;         Set(x, y, z);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a2ba91986018b8b96e78ea4a7f83002a5">   47</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; Set (<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z = 0.0f)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;         X(x); Y(y); Z(z);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;         <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32">   56</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; <a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32" title="Legt die X-Koordinate fest.">X</a> (<span class="keywordtype">float</span> val, <span class="keywordtype">bool</span> mode = <a class="code" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a>) { <span class="keywordflow">return</span> Value(XValue, val, mode); }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b">   61</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; <a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b" title="Legt die Y-Koordinate fest.">Y</a> (<span class="keywordtype">float</span> val, <span class="keywordtype">bool</span> mode = <a class="code" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a>) { <span class="keywordflow">return</span> Value(YValue, val, mode); }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091">   66</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; <a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091" title="Legt die Z-Koordinate fest.">Z</a> (<span class="keywordtype">float</span> val, <span class="keywordtype">bool</span> mode = <a class="code" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a>) { <span class="keywordflow">return</span> Value(ZValue, val, mode); }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#afa1c122c892ded30250e51dc1c8aeebf">   72</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; Value (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268" title="Auflistung der möglichen Koordinatenangaben zur Verwendung mit Vector::Value().">What</a>&amp; what, <span class="keywordtype">float</span> val, <span class="keywordtype">bool</span> mode = <a class="code" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a>)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;         <span class="keywordflow">if</span> (mode == <a class="code" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a>) values[what] = val;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         <span class="keywordflow">else</span>             values[what] += val;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;         <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a70e228fc72638d15417abb7c5a2996f0">   82</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="classge_1_1_vector.html#a70e228fc72638d15417abb7c5a2996f0" title="Liefert die X-Koordinate.">X</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> values[XValue]; }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#abd6d1d8b921a81308c8a3843eb9b562d">   85</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="classge_1_1_vector.html#abd6d1d8b921a81308c8a3843eb9b562d" title="Liefert die X-Koordinate.">Y</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> values[YValue]; }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a76068f847c16db2bf051f38e88219dd4">   88</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="classge_1_1_vector.html#a76068f847c16db2bf051f38e88219dd4" title="Liefert die X-Koordinate.">Z</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> values[ZValue]; }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a4c1c7af1a53393e708533d6a7a7515c7">   92</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="classge_1_1_vector.html#a4c1c7af1a53393e708533d6a7a7515c7" title="Liefert den angegebenen Wert aus dem Vector-Objekt.">Value</a> (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268" title="Auflistung der möglichen Koordinatenangaben zur Verwendung mit Vector::Value().">What</a>&amp; what)<span class="keyword"> const </span>{ values[what]; }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a8569f9c6c10f346b2405176b00ace832">   95</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_vector.html#a8569f9c6c10f346b2405176b00ace832" title="Ermittelt, ob es sich um einen Nullvektor handelt.">IsZero</a> ()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> (values[XValue] == 0.0f &amp;&amp; values[YValue] == 0.0f &amp;&amp; values[ZValue] == 0.0f); }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#abbbd439e86d12d87130456d269e93915">   98</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="classge_1_1_vector.html#abbbd439e86d12d87130456d269e93915" title="Ermittelt die Länge des Vektors ohne Berücksichtigung der Z-Dimension.">Length2D</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::sqrt(values[XValue] * values[XValue] + values[YValue] * values[YValue]); }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a3fb41500435afb99967f31ea4ea2fd42">  101</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="classge_1_1_vector.html#a3fb41500435afb99967f31ea4ea2fd42" title="Ermittelt die Länge des Vektors unter Berücksichtigung der Z-Dimension.">Length3D</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::sqrt(values[XValue] * values[XValue] + values[YValue] * values[YValue] + values[ZValue] * values[ZValue]); }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#af34132742a3cc97f08d173d93b752bf6">  104</a></span>&#160;      <span class="keyword">const</span> <span class="keywordtype">float</span>* <a class="code" href="classge_1_1_vector.html#af34132742a3cc97f08d173d93b752bf6" title="Liefert die Koordinaten als Daten-Pointer.">Get</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> values.data(); }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a1aa645c47808d1f2cca913a10ee18a24">  108</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a> operator+ (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; other) { <span class="keywordflow">return</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>(X() + other.<a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32" title="Legt die X-Koordinate fest.">X</a>(), Y() + other.<a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b" title="Legt die Y-Koordinate fest.">Y</a>(), Z() + other.<a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091" title="Legt die Z-Koordinate fest.">Z</a>()); }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a1a1a3c2f628186be1e47f96599933b26">  111</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a> operator- (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; other) { <span class="keywordflow">return</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>(X() - other.<a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32" title="Legt die X-Koordinate fest.">X</a>(), Y() - other.<a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b" title="Legt die Y-Koordinate fest.">Y</a>(), Z() - other.<a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091" title="Legt die Z-Koordinate fest.">Z</a>()); }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#ae89c3734a1a8ba98bbef3e2d615d57bc">  114</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a> operator* (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; other) { <span class="keywordflow">return</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>(X() * other.<a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32" title="Legt die X-Koordinate fest.">X</a>(), Y() * other.<a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b" title="Legt die Y-Koordinate fest.">Y</a>(), Z() * other.<a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091" title="Legt die Z-Koordinate fest.">Z</a>()); }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a42c4fb154d941ebbd80b21b6c857815f">  117</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; operator+= (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; other) { Set(X() + other.<a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32" title="Legt die X-Koordinate fest.">X</a>(), Y() + other.<a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b" title="Legt die Y-Koordinate fest.">Y</a>(), Z() + other.<a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091" title="Legt die Z-Koordinate fest.">Z</a>()); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a3bbe63e65b5ebc7a36a1eb0ff046b821">  120</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; operator-= (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; other) { Set(X() - other.<a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32" title="Legt die X-Koordinate fest.">X</a>(), Y() - other.<a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b" title="Legt die Y-Koordinate fest.">Y</a>(), Z() - other.<a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091" title="Legt die Z-Koordinate fest.">Z</a>()); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#ad5f9b55afc129e20b0babc47b2d5975d">  123</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; operator*= (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; other) { Set(X() * other.<a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32" title="Legt die X-Koordinate fest.">X</a>(), Y() * other.<a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b" title="Legt die Y-Koordinate fest.">Y</a>(), Z() * other.<a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091" title="Legt die Z-Koordinate fest.">Z</a>()); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a556da52fd1552b34e1cb1c4d8c888cd8">  127</a></span>&#160;      <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; operator*= (<span class="keywordtype">float</span> val) { Set(X() * val, Y() * val, Z() * val); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#a2ed2be54ba3e8b66adbb01abc1c8000d">  131</a></span>&#160;      <span class="keywordtype">bool</span> operator== (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; other) { <span class="keywordflow">return</span> (X() == other.<a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32" title="Legt die X-Koordinate fest.">X</a>() &amp;&amp; Y() == other.<a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b" title="Legt die Y-Koordinate fest.">Y</a>() &amp;&amp; Z() == other.<a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091" title="Legt die Z-Koordinate fest.">Z</a>()); }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="code" href="classge_1_1_vector.html#ac9f544e31a6110a64f998616da6ee439">  134</a></span>&#160;      <span class="keywordtype">bool</span> operator!= (<span class="keyword">const</span> <a class="code" href="classge_1_1_vector.html" title="Standard-Klasse für Vektoren (Koordinaten).">Vector</a>&amp; other) { <span class="keywordflow">return</span> !(X() == other.<a class="code" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32" title="Legt die X-Koordinate fest.">X</a>() &amp;&amp; Y() == other.<a class="code" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b" title="Legt die Y-Koordinate fest.">Y</a>() &amp;&amp; Z() == other.<a class="code" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091" title="Legt die Z-Koordinate fest.">Z</a>()); }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;   };</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

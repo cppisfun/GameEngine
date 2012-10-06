@@ -1,0 +1,1852 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: ge::AudioCore Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacege.html">ge</a></li><li class="navelem"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classge_1_1_audio_core-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">ge::AudioCore Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Audio-Basisklasse zur Steuerung von Sound- und Musik-Wiedergabe. Wird über <a class="el" href="classge_1_1_core.html#a0baf0b9f2fbec7002bf441c7daba1fc7" title="Liefert den Pointer zur Kernkomponente für Audio.">Core::Audio()</a> geliefert.  
+ <a href="classge_1_1_audio_core.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_audio_core_8h_source.html">AudioCore.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a3b37cbd3cdce70602053a2a865ce54af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a3b37cbd3cdce70602053a2a865ce54af">AudioCore</a> ()</td></tr>
+<tr class="memdesc:a3b37cbd3cdce70602053a2a865ce54af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor.  <a href="#a3b37cbd3cdce70602053a2a865ce54af"></a><br/></td></tr>
+<tr class="separator:a3b37cbd3cdce70602053a2a865ce54af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8d8c2450b9c30d0c66386cafcf8a673"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#af8d8c2450b9c30d0c66386cafcf8a673">~AudioCore</a> ()</td></tr>
+<tr class="memdesc:af8d8c2450b9c30d0c66386cafcf8a673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor. Gibt automatisch alle in <a class="el" href="classge_1_1_audio_core.html" title="Audio-Basisklasse zur Steuerung von Sound- und Musik-Wiedergabe. Wird über Core::Audio() geliefert...">AudioCore</a> gehaltenen Audio-Ressourcen frei.  <a href="#af8d8c2450b9c30d0c66386cafcf8a673"></a><br/></td></tr>
+<tr class="separator:af8d8c2450b9c30d0c66386cafcf8a673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad13f84c266ad758d619abe99424d42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#abad13f84c266ad758d619abe99424d42">Add</a> (const std::string &amp;id, const std::string &amp;audioFile)</td></tr>
+<tr class="memdesc:abad13f84c266ad758d619abe99424d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erstellt eine Audio-Ressource direkt aus einer Datei (ohne den Einsatz von ResourceCore).  <a href="#abad13f84c266ad758d619abe99424d42"></a><br/></td></tr>
+<tr class="separator:abad13f84c266ad758d619abe99424d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38f449714d2de24f64921f92d4fef4ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a38f449714d2de24f64921f92d4fef4ac">Add</a> (const std::string &amp;id, const std::vector&lt; char &gt; &amp;resource)</td></tr>
+<tr class="memdesc:a38f449714d2de24f64921f92d4fef4ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erstellt eine Audio-Ressource aus bereits im Speicher befindlichen Binärdaten (normalerweise im ResourceCore gehalten).  <a href="#a38f449714d2de24f64921f92d4fef4ac"></a><br/></td></tr>
+<tr class="separator:a38f449714d2de24f64921f92d4fef4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110d1fe44b5f00a39b968ff1b68dea6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a110d1fe44b5f00a39b968ff1b68dea6a">DefaultVolume</a> (const std::string &amp;id, int percent)</td></tr>
+<tr class="memdesc:a110d1fe44b5f00a39b968ff1b68dea6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Lautstärke für eine bestimmte Audio-Ressource fest.  <a href="#a110d1fe44b5f00a39b968ff1b68dea6a"></a><br/></td></tr>
+<tr class="separator:a110d1fe44b5f00a39b968ff1b68dea6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e01a335cb863d5a4000390083066c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#ab3e01a335cb863d5a4000390083066c7">DefaultVolume</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:ab3e01a335cb863d5a4000390083066c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Lautstärke, die für eine bestimmte Audio-Ressource gilt.  <a href="#ab3e01a335cb863d5a4000390083066c7"></a><br/></td></tr>
+<tr class="separator:ab3e01a335cb863d5a4000390083066c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b6ac36103b59de9c53aba2fb8ebe9a"><td class="memItemLeft" align="right" valign="top">irrklang::ISoundEngine *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a95b6ac36103b59de9c53aba2fb8ebe9a">Device</a> () const </td></tr>
+<tr class="memdesc:a95b6ac36103b59de9c53aba2fb8ebe9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zum irrKlang-Objekt, welches vom AudioCore-Objekt verwendet wird.  <a href="#a95b6ac36103b59de9c53aba2fb8ebe9a"></a><br/></td></tr>
+<tr class="separator:a95b6ac36103b59de9c53aba2fb8ebe9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af04ad380f8929db1b8d0f2ced8259d"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a6af04ad380f8929db1b8d0f2ced8259d">FileName</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a6af04ad380f8929db1b8d0f2ced8259d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Namen/Dateipfad einer bestimmten Audio-Ressource.  <a href="#a6af04ad380f8929db1b8d0f2ced8259d"></a><br/></td></tr>
+<tr class="separator:a6af04ad380f8929db1b8d0f2ced8259d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ca10d246c73d7a69eb1e9a364c8e3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a60ca10d246c73d7a69eb1e9a364c8e3e">IsMusicFinished</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a60ca10d246c73d7a69eb1e9a364c8e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob die Wiedergabe eines bestimmten Musik-Objektes abgeschlossen ist.  <a href="#a60ca10d246c73d7a69eb1e9a364c8e3e"></a><br/></td></tr>
+<tr class="separator:a60ca10d246c73d7a69eb1e9a364c8e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d40247043b19754f8ba009c28dcc6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a54d40247043b19754f8ba009c28dcc6d">IsMusicLooped</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a54d40247043b19754f8ba009c28dcc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob ein bestimmtes Musik-Objekt endlos wiedergegeben wird.  <a href="#a54d40247043b19754f8ba009c28dcc6d"></a><br/></td></tr>
+<tr class="separator:a54d40247043b19754f8ba009c28dcc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14818d1dfbe49cf99844c0c76ecbb1f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a14818d1dfbe49cf99844c0c76ecbb1f1">IsMusicPaused</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a14818d1dfbe49cf99844c0c76ecbb1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob ein bestimmtes Musik-Objekt gerade wiedergegeben wird.  <a href="#a14818d1dfbe49cf99844c0c76ecbb1f1"></a><br/></td></tr>
+<tr class="separator:a14818d1dfbe49cf99844c0c76ecbb1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb9177ff2e6a9262a6330870eba648c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#aebb9177ff2e6a9262a6330870eba648c">IsPlaying</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:aebb9177ff2e6a9262a6330870eba648c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob eine bestimmte Audio-Ressource gerade wiedergegeben wird.  <a href="#aebb9177ff2e6a9262a6330870eba648c"></a><br/></td></tr>
+<tr class="separator:aebb9177ff2e6a9262a6330870eba648c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad445fd9a26bdaf4c96d56c38f1517dd0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#ad445fd9a26bdaf4c96d56c38f1517dd0">IsSoundFinished</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:ad445fd9a26bdaf4c96d56c38f1517dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob die Wiedergabe eines bestimmten Sound-Objektes abgeschlossen ist.  <a href="#ad445fd9a26bdaf4c96d56c38f1517dd0"></a><br/></td></tr>
+<tr class="separator:ad445fd9a26bdaf4c96d56c38f1517dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180f9863ace6a969f6f1a9cb9bbe7b16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a180f9863ace6a969f6f1a9cb9bbe7b16">IsSoundLooped</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a180f9863ace6a969f6f1a9cb9bbe7b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob ein bestimmtes Sound-Objekt endlos wiedergegeben wird.  <a href="#a180f9863ace6a969f6f1a9cb9bbe7b16"></a><br/></td></tr>
+<tr class="separator:a180f9863ace6a969f6f1a9cb9bbe7b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa07158c8f898eff496a18ab48465ffec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#aa07158c8f898eff496a18ab48465ffec">IsSoundPaused</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:aa07158c8f898eff496a18ab48465ffec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob ein bestimmtes Sound-Objekt gerade wiedergegeben wird.  <a href="#aa07158c8f898eff496a18ab48465ffec"></a><br/></td></tr>
+<tr class="separator:aa07158c8f898eff496a18ab48465ffec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d3d5846fc0d5f8efb7244169b6b1c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a76d3d5846fc0d5f8efb7244169b6b1c5">MasterVolume</a> (int percent)</td></tr>
+<tr class="memdesc:a76d3d5846fc0d5f8efb7244169b6b1c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die allgemeine Lautstärke für alle Audio-Ressourcen fest.  <a href="#a76d3d5846fc0d5f8efb7244169b6b1c5"></a><br/></td></tr>
+<tr class="separator:a76d3d5846fc0d5f8efb7244169b6b1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db0ae657213c8da913a6727a0e8212d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a1db0ae657213c8da913a6727a0e8212d">MasterVolume</a> () const </td></tr>
+<tr class="memdesc:a1db0ae657213c8da913a6727a0e8212d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Lautstärke, die für alle Audio-Ressourcen gilt.  <a href="#a1db0ae657213c8da913a6727a0e8212d"></a><br/></td></tr>
+<tr class="separator:a1db0ae657213c8da913a6727a0e8212d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1866238815d66ede3fb62a02e6b31aba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a1866238815d66ede3fb62a02e6b31aba">MusicLength</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a1866238815d66ede3fb62a02e6b31aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Länge eines bestimmten Musik-Objekts.  <a href="#a1866238815d66ede3fb62a02e6b31aba"></a><br/></td></tr>
+<tr class="separator:a1866238815d66ede3fb62a02e6b31aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c70cf1eec6f66f84918dcf4f8f6323"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a66c70cf1eec6f66f84918dcf4f8f6323">MusicPan</a> (int percent)</td></tr>
+<tr class="memdesc:a66c70cf1eec6f66f84918dcf4f8f6323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die horizontale Position aller Musik-Objekte bei Stereo-Wiedergabe fest.  <a href="#a66c70cf1eec6f66f84918dcf4f8f6323"></a><br/></td></tr>
+<tr class="separator:a66c70cf1eec6f66f84918dcf4f8f6323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae54c89d6ba7d1134b66a1f65ab871555"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#ae54c89d6ba7d1134b66a1f65ab871555">MusicPan</a> (const std::string &amp;id, int percent)</td></tr>
+<tr class="memdesc:ae54c89d6ba7d1134b66a1f65ab871555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die horizontale Position eines bestimmten Musik-Objekts bei Stereo-Wiedergabe fest.  <a href="#ae54c89d6ba7d1134b66a1f65ab871555"></a><br/></td></tr>
+<tr class="separator:ae54c89d6ba7d1134b66a1f65ab871555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78cacfcce197a5318d7e6bee39febae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#ae78cacfcce197a5318d7e6bee39febae">MusicPan</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:ae78cacfcce197a5318d7e6bee39febae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die horizontale Position eines bestimmten Musik-Objekts (Stereo).  <a href="#ae78cacfcce197a5318d7e6bee39febae"></a><br/></td></tr>
+<tr class="separator:ae78cacfcce197a5318d7e6bee39febae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a245db6684a8c63e6de9ab9fd0b2f751a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a245db6684a8c63e6de9ab9fd0b2f751a">MusicPosition</a> (const std::string &amp;id, int position)</td></tr>
+<tr class="memdesc:a245db6684a8c63e6de9ab9fd0b2f751a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die aktuelle Abspiel-Position eines bestimmten Musik-Objekts fest.  <a href="#a245db6684a8c63e6de9ab9fd0b2f751a"></a><br/></td></tr>
+<tr class="separator:a245db6684a8c63e6de9ab9fd0b2f751a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e7d35756b7fe8551f63213bb32bc68"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a74e7d35756b7fe8551f63213bb32bc68">MusicPosition</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a74e7d35756b7fe8551f63213bb32bc68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die aktuelle Abspiel-Position eines bestimmten Musik-Objekts.  <a href="#a74e7d35756b7fe8551f63213bb32bc68"></a><br/></td></tr>
+<tr class="separator:a74e7d35756b7fe8551f63213bb32bc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92c788d9062db450b46ab7df42554816"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a92c788d9062db450b46ab7df42554816">MusicSpeed</a> (int percent)</td></tr>
+<tr class="memdesc:a92c788d9062db450b46ab7df42554816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Abspiel-Geschwindigkeit aller Musik-Objekte fest.  <a href="#a92c788d9062db450b46ab7df42554816"></a><br/></td></tr>
+<tr class="separator:a92c788d9062db450b46ab7df42554816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac466bd16c2fd9dc8914856ebb4c7f300"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#ac466bd16c2fd9dc8914856ebb4c7f300">MusicSpeed</a> (const std::string &amp;id, int percent)</td></tr>
+<tr class="memdesc:ac466bd16c2fd9dc8914856ebb4c7f300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Abspiel-Geschwindigkeit eines bestimmten Musik-Objekts fest.  <a href="#ac466bd16c2fd9dc8914856ebb4c7f300"></a><br/></td></tr>
+<tr class="separator:ac466bd16c2fd9dc8914856ebb4c7f300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4662d1c3fc5b6fc80c8ccb99c37aa97c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a4662d1c3fc5b6fc80c8ccb99c37aa97c">MusicSpeed</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a4662d1c3fc5b6fc80c8ccb99c37aa97c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Abspiel-Geschwindigkeit eines bestimmten Musik-Objekts.  <a href="#a4662d1c3fc5b6fc80c8ccb99c37aa97c"></a><br/></td></tr>
+<tr class="separator:a4662d1c3fc5b6fc80c8ccb99c37aa97c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79448ee1d0b961655db226704a16523a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a79448ee1d0b961655db226704a16523a">MusicVolume</a> (int percent)</td></tr>
+<tr class="memdesc:a79448ee1d0b961655db226704a16523a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die allgemeine Lautstärke für alle Musik-Objekte fest.  <a href="#a79448ee1d0b961655db226704a16523a"></a><br/></td></tr>
+<tr class="separator:a79448ee1d0b961655db226704a16523a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6507702f10dce9434140f21279ab07d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#ad6507702f10dce9434140f21279ab07d">MusicVolume</a> (const std::string &amp;id, int percent)</td></tr>
+<tr class="memdesc:ad6507702f10dce9434140f21279ab07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Lautstärke für ein bestimmtes Musik-Objekt fest.  <a href="#ad6507702f10dce9434140f21279ab07d"></a><br/></td></tr>
+<tr class="separator:ad6507702f10dce9434140f21279ab07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad76de475ec17f2810a01309fb94a15e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#ad76de475ec17f2810a01309fb94a15e4">MusicVolume</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:ad76de475ec17f2810a01309fb94a15e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Lautstärke eines bestimmten Musik-Objekts.  <a href="#ad76de475ec17f2810a01309fb94a15e4"></a><br/></td></tr>
+<tr class="separator:ad76de475ec17f2810a01309fb94a15e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2418ee7f6d65293c2e09c42a7529ad87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a2418ee7f6d65293c2e09c42a7529ad87">PauseAll</a> (bool pause=true)</td></tr>
+<tr class="memdesc:a2418ee7f6d65293c2e09c42a7529ad87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausiert die Wiedergabe aller vorhandenen Audio-Objekte oder setzt diese fort.  <a href="#a2418ee7f6d65293c2e09c42a7529ad87"></a><br/></td></tr>
+<tr class="separator:a2418ee7f6d65293c2e09c42a7529ad87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5443bc612dcf8cb0a409eba8990d96b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#aa5443bc612dcf8cb0a409eba8990d96b">PauseMusic</a> (bool pause=true)</td></tr>
+<tr class="memdesc:aa5443bc612dcf8cb0a409eba8990d96b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausiert die Wiedergabe aller vorhandenen Musik-Objekte oder setzt diese fort.  <a href="#aa5443bc612dcf8cb0a409eba8990d96b"></a><br/></td></tr>
+<tr class="separator:aa5443bc612dcf8cb0a409eba8990d96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ccf1e1fb71e59c3e4771b3cada4db75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a6ccf1e1fb71e59c3e4771b3cada4db75">PauseMusic</a> (const std::string &amp;id, bool pause=true)</td></tr>
+<tr class="memdesc:a6ccf1e1fb71e59c3e4771b3cada4db75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausiert die Wiedergabe eines bestimmten Musik-Objekts oder setzt diese fort.  <a href="#a6ccf1e1fb71e59c3e4771b3cada4db75"></a><br/></td></tr>
+<tr class="separator:a6ccf1e1fb71e59c3e4771b3cada4db75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ce628d224950c66ada0895f1b6878a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a66ce628d224950c66ada0895f1b6878a">PauseSound</a> (bool pause=true)</td></tr>
+<tr class="memdesc:a66ce628d224950c66ada0895f1b6878a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausiert die Wiedergabe aller vorhandenen Sound-Objekte oder setzt diese fort.  <a href="#a66ce628d224950c66ada0895f1b6878a"></a><br/></td></tr>
+<tr class="separator:a66ce628d224950c66ada0895f1b6878a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d66cd32b099cb9cb6b593bdf46ebdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a32d66cd32b099cb9cb6b593bdf46ebdb">PauseSound</a> (const std::string &amp;id, bool pause=true)</td></tr>
+<tr class="memdesc:a32d66cd32b099cb9cb6b593bdf46ebdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausiert die Wiedergabe eines bestimmten Sound-Objekts oder setzt diese fort.  <a href="#a32d66cd32b099cb9cb6b593bdf46ebdb"></a><br/></td></tr>
+<tr class="separator:a32d66cd32b099cb9cb6b593bdf46ebdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3d77214d8f36d628d36134a9f46f3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a7f3d77214d8f36d628d36134a9f46f3e">PlayMusic</a> (const std::string &amp;id, bool looped=false)</td></tr>
+<tr class="memdesc:a7f3d77214d8f36d628d36134a9f46f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erzeugt ein neues Musik-Objekt aus einer Audio-Ressource und startet die Wiedergabe.  <a href="#a7f3d77214d8f36d628d36134a9f46f3e"></a><br/></td></tr>
+<tr class="separator:a7f3d77214d8f36d628d36134a9f46f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b81dfb669bf535af1b42d3ac1a79495"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a9b81dfb669bf535af1b42d3ac1a79495">PlaySound</a> (const std::string &amp;id, bool looped=false)</td></tr>
+<tr class="memdesc:a9b81dfb669bf535af1b42d3ac1a79495"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erzeugt ein neues Sound-Objekt aus einer Audio-Ressource und startet die Wiedergabe.  <a href="#a9b81dfb669bf535af1b42d3ac1a79495"></a><br/></td></tr>
+<tr class="separator:a9b81dfb669bf535af1b42d3ac1a79495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f0e81146ef77a9334baa7292569557"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a49f0e81146ef77a9334baa7292569557">Remove</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a49f0e81146ef77a9334baa7292569557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine Audio-Ressource.  <a href="#a49f0e81146ef77a9334baa7292569557"></a><br/></td></tr>
+<tr class="separator:a49f0e81146ef77a9334baa7292569557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63834af2511edd460a47078ce4a1c544"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a63834af2511edd460a47078ce4a1c544">RemoveAll</a> ()</td></tr>
+<tr class="memdesc:a63834af2511edd460a47078ce4a1c544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt alle vorhandenen Audio-Ressourcen.  <a href="#a63834af2511edd460a47078ce4a1c544"></a><br/></td></tr>
+<tr class="separator:a63834af2511edd460a47078ce4a1c544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a881f28b2bc1d5594cbe3236c8f3de1eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a881f28b2bc1d5594cbe3236c8f3de1eb">ResumeAll</a> ()</td></tr>
+<tr class="memdesc:a881f28b2bc1d5594cbe3236c8f3de1eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt die Wiedergabe aller gestoppten Audio-Objekte fort.  <a href="#a881f28b2bc1d5594cbe3236c8f3de1eb"></a><br/></td></tr>
+<tr class="separator:a881f28b2bc1d5594cbe3236c8f3de1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e63f47ca736a8ea757e31c614ad4bdd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a9e63f47ca736a8ea757e31c614ad4bdd">ResumeMusic</a> ()</td></tr>
+<tr class="memdesc:a9e63f47ca736a8ea757e31c614ad4bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt die Wiedergabe aller gestoppten Musik-Objekte fort.  <a href="#a9e63f47ca736a8ea757e31c614ad4bdd"></a><br/></td></tr>
+<tr class="separator:a9e63f47ca736a8ea757e31c614ad4bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0891825d2cfe3a5337190074aed14fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#af0891825d2cfe3a5337190074aed14fc">ResumeMusic</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:af0891825d2cfe3a5337190074aed14fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt die Wiedergabe eines bestimmten gestoppten Musik-Objekts fort.  <a href="#af0891825d2cfe3a5337190074aed14fc"></a><br/></td></tr>
+<tr class="separator:af0891825d2cfe3a5337190074aed14fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3e1a52aa481c7bd8fce6b39e146672"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a9b3e1a52aa481c7bd8fce6b39e146672">ResumeSound</a> ()</td></tr>
+<tr class="memdesc:a9b3e1a52aa481c7bd8fce6b39e146672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt die Wiedergabe aller gestoppten Sound-Objekte fort.  <a href="#a9b3e1a52aa481c7bd8fce6b39e146672"></a><br/></td></tr>
+<tr class="separator:a9b3e1a52aa481c7bd8fce6b39e146672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e3a3c639f5909823b4a24ca7b2dd709"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a0e3a3c639f5909823b4a24ca7b2dd709">ResumeSound</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a0e3a3c639f5909823b4a24ca7b2dd709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt die Wiedergabe eines bestimmten gestoppten Sound-Objekts fort.  <a href="#a0e3a3c639f5909823b4a24ca7b2dd709"></a><br/></td></tr>
+<tr class="separator:a0e3a3c639f5909823b4a24ca7b2dd709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a420e11b4e0a430cbb181b21520dd2a7d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a420e11b4e0a430cbb181b21520dd2a7d">SoundLength</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a420e11b4e0a430cbb181b21520dd2a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Länge eines bestimmten Sound-Objekts.  <a href="#a420e11b4e0a430cbb181b21520dd2a7d"></a><br/></td></tr>
+<tr class="separator:a420e11b4e0a430cbb181b21520dd2a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4edf2c3d12cd37004aeed6b742a0417c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a4edf2c3d12cd37004aeed6b742a0417c">SoundPan</a> (int percent)</td></tr>
+<tr class="memdesc:a4edf2c3d12cd37004aeed6b742a0417c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die horizontale Position aller Sound-Objekte bei Stereo-Wiedergabe fest.  <a href="#a4edf2c3d12cd37004aeed6b742a0417c"></a><br/></td></tr>
+<tr class="separator:a4edf2c3d12cd37004aeed6b742a0417c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ca312c063948c851023eea627cae83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a49ca312c063948c851023eea627cae83">SoundPan</a> (const std::string &amp;id, int percent)</td></tr>
+<tr class="memdesc:a49ca312c063948c851023eea627cae83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die horizontale Position eines bestimmten Sound-Objekts bei Stereo-Wiedergabe fest.  <a href="#a49ca312c063948c851023eea627cae83"></a><br/></td></tr>
+<tr class="separator:a49ca312c063948c851023eea627cae83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817ed5102f18a1f69690b83c94c1fb7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a817ed5102f18a1f69690b83c94c1fb7c">SoundPan</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a817ed5102f18a1f69690b83c94c1fb7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die horizontale Position eines bestimmten Sound-Objekts (Stereo).  <a href="#a817ed5102f18a1f69690b83c94c1fb7c"></a><br/></td></tr>
+<tr class="separator:a817ed5102f18a1f69690b83c94c1fb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7fcee2acd05a082e62dbcc9b1b0eca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a7d7fcee2acd05a082e62dbcc9b1b0eca">SoundPosition</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a7d7fcee2acd05a082e62dbcc9b1b0eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die aktuelle Abspiel-Position eines bestimmten Sound-Objekts.  <a href="#a7d7fcee2acd05a082e62dbcc9b1b0eca"></a><br/></td></tr>
+<tr class="separator:a7d7fcee2acd05a082e62dbcc9b1b0eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d6c93a5e0e6a38ccfbd3c79b3d380d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#ae7d6c93a5e0e6a38ccfbd3c79b3d380d">SoundSpeed</a> (int percent)</td></tr>
+<tr class="memdesc:ae7d6c93a5e0e6a38ccfbd3c79b3d380d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Abspiel-Geschwindigkeit aller Sound-Objekte fest.  <a href="#ae7d6c93a5e0e6a38ccfbd3c79b3d380d"></a><br/></td></tr>
+<tr class="separator:ae7d6c93a5e0e6a38ccfbd3c79b3d380d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bbc22d0ed10c256eec93d7c1f0cfd1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a1bbc22d0ed10c256eec93d7c1f0cfd1e">SoundSpeed</a> (const std::string &amp;id, int percent)</td></tr>
+<tr class="memdesc:a1bbc22d0ed10c256eec93d7c1f0cfd1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Abspiel-Geschwindigkeit eines bestimmten Sound-Objekts fest.  <a href="#a1bbc22d0ed10c256eec93d7c1f0cfd1e"></a><br/></td></tr>
+<tr class="separator:a1bbc22d0ed10c256eec93d7c1f0cfd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4fb73a4a62c9f7900763f67675565e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a0e4fb73a4a62c9f7900763f67675565e">SoundSpeed</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a0e4fb73a4a62c9f7900763f67675565e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Abspiel-Geschwindigkeit eines bestimmten Sound-Objekts.  <a href="#a0e4fb73a4a62c9f7900763f67675565e"></a><br/></td></tr>
+<tr class="separator:a0e4fb73a4a62c9f7900763f67675565e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf126e75653a15a434525ec59916fa75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#acf126e75653a15a434525ec59916fa75">SoundVolume</a> (int percent)</td></tr>
+<tr class="memdesc:acf126e75653a15a434525ec59916fa75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die allgemeine Lautstärke für alle Sound-Objekte fest.  <a href="#acf126e75653a15a434525ec59916fa75"></a><br/></td></tr>
+<tr class="separator:acf126e75653a15a434525ec59916fa75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cb6d280b08e61b59635f26a75ee073a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a7cb6d280b08e61b59635f26a75ee073a">SoundVolume</a> (const std::string &amp;id, int percent)</td></tr>
+<tr class="memdesc:a7cb6d280b08e61b59635f26a75ee073a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Lautstärke für ein bestimmtes Sound-Objekt fest.  <a href="#a7cb6d280b08e61b59635f26a75ee073a"></a><br/></td></tr>
+<tr class="separator:a7cb6d280b08e61b59635f26a75ee073a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54ca38fc0aa771fadd2bca1f3707da53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a54ca38fc0aa771fadd2bca1f3707da53">SoundVolume</a> (const std::string &amp;id) const </td></tr>
+<tr class="memdesc:a54ca38fc0aa771fadd2bca1f3707da53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Lautstärke eines bestimmten Sound-Objekts.  <a href="#a54ca38fc0aa771fadd2bca1f3707da53"></a><br/></td></tr>
+<tr class="separator:a54ca38fc0aa771fadd2bca1f3707da53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c3d4bed41ed4d70c8bcb4c9f16c14a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a70c3d4bed41ed4d70c8bcb4c9f16c14a">StopAll</a> ()</td></tr>
+<tr class="memdesc:a70c3d4bed41ed4d70c8bcb4c9f16c14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stoppt die Wiedergabe aller vorhandenen Audio-Objekte.  <a href="#a70c3d4bed41ed4d70c8bcb4c9f16c14a"></a><br/></td></tr>
+<tr class="separator:a70c3d4bed41ed4d70c8bcb4c9f16c14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d28ff429863ef6a5ff258c286f9ae78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a8d28ff429863ef6a5ff258c286f9ae78">StopMusic</a> ()</td></tr>
+<tr class="memdesc:a8d28ff429863ef6a5ff258c286f9ae78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stoppt die Wiedergabe aller vorhandenen Musik-Objekte.  <a href="#a8d28ff429863ef6a5ff258c286f9ae78"></a><br/></td></tr>
+<tr class="separator:a8d28ff429863ef6a5ff258c286f9ae78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa4cd9e84c65197cfe55ba9cc529d30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a5aa4cd9e84c65197cfe55ba9cc529d30">StopMusic</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a5aa4cd9e84c65197cfe55ba9cc529d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stoppt die Wiedergabe eines bestimmten Musik-Objekts.  <a href="#a5aa4cd9e84c65197cfe55ba9cc529d30"></a><br/></td></tr>
+<tr class="separator:a5aa4cd9e84c65197cfe55ba9cc529d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a922dc2fc5a65fd1c95f563f393a1f51f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a922dc2fc5a65fd1c95f563f393a1f51f">StopSound</a> ()</td></tr>
+<tr class="memdesc:a922dc2fc5a65fd1c95f563f393a1f51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stoppt die Wiedergabe aller vorhandenen Sound-Objekte.  <a href="#a922dc2fc5a65fd1c95f563f393a1f51f"></a><br/></td></tr>
+<tr class="separator:a922dc2fc5a65fd1c95f563f393a1f51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a483fa182378ddf62912bb26d1574d9a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_audio_core.html#a483fa182378ddf62912bb26d1574d9a4">StopSound</a> (const std::string &amp;id)</td></tr>
+<tr class="memdesc:a483fa182378ddf62912bb26d1574d9a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stoppt die Wiedergabe eines bestimmten Sound-Objekts.  <a href="#a483fa182378ddf62912bb26d1574d9a4"></a><br/></td></tr>
+<tr class="separator:a483fa182378ddf62912bb26d1574d9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Audio-Basisklasse zur Steuerung von Sound- und Musik-Wiedergabe. Wird über <a class="el" href="classge_1_1_core.html#a0baf0b9f2fbec7002bf441c7daba1fc7" title="Liefert den Pointer zur Kernkomponente für Audio.">Core::Audio()</a> geliefert. </p>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="a3b37cbd3cdce70602053a2a865ce54af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::AudioCore::AudioCore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor. </p>
+
+</div>
+</div>
+<a class="anchor" id="af8d8c2450b9c30d0c66386cafcf8a673"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::AudioCore::~AudioCore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruktor. Gibt automatisch alle in <a class="el" href="classge_1_1_audio_core.html" title="Audio-Basisklasse zur Steuerung von Sound- und Musik-Wiedergabe. Wird über Core::Audio() geliefert...">AudioCore</a> gehaltenen Audio-Ressourcen frei. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="abad13f84c266ad758d619abe99424d42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::Add </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>audioFile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Erstellt eine Audio-Ressource direkt aus einer Datei (ohne den Einsatz von ResourceCore). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">audioFile</td><td>Dateipfad </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a38f449714d2de24f64921f92d4fef4ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::Add </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>resource</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Erstellt eine Audio-Ressource aus bereits im Speicher befindlichen Binärdaten (normalerweise im ResourceCore gehalten). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">resource</td><td>Binärdaten </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a110d1fe44b5f00a39b968ff1b68dea6a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::DefaultVolume </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die Lautstärke für eine bestimmte Audio-Ressource fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">percent</td><td>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab3e01a335cb863d5a4000390083066c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::DefaultVolume </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die Lautstärke, die für eine bestimmte Audio-Ressource gilt. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a95b6ac36103b59de9c53aba2fb8ebe9a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">irrklang::ISoundEngine* ge::AudioCore::Device </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert den Pointer zum irrKlang-Objekt, welches vom AudioCore-Objekt verwendet wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6af04ad380f8929db1b8d0f2ced8259d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ge::AudioCore::FileName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert den Namen/Dateipfad einer bestimmten Audio-Ressource. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a60ca10d246c73d7a69eb1e9a364c8e3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::AudioCore::IsMusicFinished </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob die Wiedergabe eines bestimmten Musik-Objektes abgeschlossen ist. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a54d40247043b19754f8ba009c28dcc6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::AudioCore::IsMusicLooped </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob ein bestimmtes Musik-Objekt endlos wiedergegeben wird. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a14818d1dfbe49cf99844c0c76ecbb1f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::AudioCore::IsMusicPaused </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob ein bestimmtes Musik-Objekt gerade wiedergegeben wird. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aebb9177ff2e6a9262a6330870eba648c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::AudioCore::IsPlaying </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob eine bestimmte Audio-Ressource gerade wiedergegeben wird. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad445fd9a26bdaf4c96d56c38f1517dd0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::AudioCore::IsSoundFinished </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob die Wiedergabe eines bestimmten Sound-Objektes abgeschlossen ist. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a180f9863ace6a969f6f1a9cb9bbe7b16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::AudioCore::IsSoundLooped </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob ein bestimmtes Sound-Objekt endlos wiedergegeben wird. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa07158c8f898eff496a18ab48465ffec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::AudioCore::IsSoundPaused </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob ein bestimmtes Sound-Objekt gerade wiedergegeben wird. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a76d3d5846fc0d5f8efb7244169b6b1c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::MasterVolume </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die allgemeine Lautstärke für alle Audio-Ressourcen fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percent</td><td>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1db0ae657213c8da913a6727a0e8212d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::MasterVolume </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die Lautstärke, die für alle Audio-Ressourcen gilt. </p>
+<dl class="section return"><dt>Rückgabe</dt><dd>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1866238815d66ede3fb62a02e6b31aba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::MusicLength </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die Länge eines bestimmten Musik-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a66c70cf1eec6f66f84918dcf4f8f6323"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::MusicPan </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die horizontale Position aller Musik-Objekte bei Stereo-Wiedergabe fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percent</td><td>Position in Prozent (-100 = nur links, 100 = nur rechts) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae54c89d6ba7d1134b66a1f65ab871555"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::MusicPan </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die horizontale Position eines bestimmten Musik-Objekts bei Stereo-Wiedergabe fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">percent</td><td>Position in Prozent (-100 = nur links, 100 = nur rechts) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae78cacfcce197a5318d7e6bee39febae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::MusicPan </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die horizontale Position eines bestimmten Musik-Objekts (Stereo). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Position in Prozent (-100 = nur links, 100 = nur rechts) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a245db6684a8c63e6de9ab9fd0b2f751a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::MusicPosition </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die aktuelle Abspiel-Position eines bestimmten Musik-Objekts fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">position</td><td>Position (0 = Anfang, [Länge der Musik-Ressource] = Ende) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a74e7d35756b7fe8551f63213bb32bc68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::MusicPosition </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die aktuelle Abspiel-Position eines bestimmten Musik-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Position (0 = Anfang, [Länge der Musik-Ressource] = Ende) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a92c788d9062db450b46ab7df42554816"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::MusicSpeed </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die Abspiel-Geschwindigkeit aller Musik-Objekte fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percent</td><td>Geschwindigkeit in Prozent (1 = annähernd gestoppt, 400 = vierfache Geschwindigkeit) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac466bd16c2fd9dc8914856ebb4c7f300"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::MusicSpeed </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die Abspiel-Geschwindigkeit eines bestimmten Musik-Objekts fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">percent</td><td>Geschwindigkeit in Prozent (1 = annähernd gestoppt, 400 = vierfache Geschwindigkeit) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4662d1c3fc5b6fc80c8ccb99c37aa97c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::MusicSpeed </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die Abspiel-Geschwindigkeit eines bestimmten Musik-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Geschwindigkeit in Prozent (1 = annähernd gestoppt, 400 = vierfache Geschwindigkeit) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a79448ee1d0b961655db226704a16523a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::MusicVolume </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die allgemeine Lautstärke für alle Musik-Objekte fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percent</td><td>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad6507702f10dce9434140f21279ab07d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::MusicVolume </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die Lautstärke für ein bestimmtes Musik-Objekt fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">percent</td><td>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad76de475ec17f2810a01309fb94a15e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::MusicVolume </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die Lautstärke eines bestimmten Musik-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2418ee7f6d65293c2e09c42a7529ad87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::PauseAll </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pause</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pausiert die Wiedergabe aller vorhandenen Audio-Objekte oder setzt diese fort. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pause</td><td>Gibt an, ob die Wiedergabe pausiert oder fortgesetzt werden soll (Standard: false) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa5443bc612dcf8cb0a409eba8990d96b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::PauseMusic </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pause</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pausiert die Wiedergabe aller vorhandenen Musik-Objekte oder setzt diese fort. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pause</td><td>Gibt an, ob die Wiedergabe pausiert oder fortgesetzt werden soll (Standard: false) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6ccf1e1fb71e59c3e4771b3cada4db75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::PauseMusic </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pause</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pausiert die Wiedergabe eines bestimmten Musik-Objekts oder setzt diese fort. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">pause</td><td>Gibt an, ob die Wiedergabe pausiert oder fortgesetzt werden soll (Standard: false) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a66ce628d224950c66ada0895f1b6878a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::PauseSound </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pause</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pausiert die Wiedergabe aller vorhandenen Sound-Objekte oder setzt diese fort. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pause</td><td>Gibt an, ob die Wiedergabe pausiert oder fortgesetzt werden soll (Standard: false) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a32d66cd32b099cb9cb6b593bdf46ebdb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::PauseSound </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pause</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pausiert die Wiedergabe eines bestimmten Sound-Objekts oder setzt diese fort. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">pause</td><td>Gibt an, ob die Wiedergabe pausiert oder fortgesetzt werden soll (Standard: false) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7f3d77214d8f36d628d36134a9f46f3e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::PlayMusic </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>looped</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Erzeugt ein neues Musik-Objekt aus einer Audio-Ressource und startet die Wiedergabe. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">looped</td><td>Gibt an, ob die Wiedergabe einfach oder endlos sein soll (Standard: false) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9b81dfb669bf535af1b42d3ac1a79495"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::PlaySound </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>looped</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Erzeugt ein neues Sound-Objekt aus einer Audio-Ressource und startet die Wiedergabe. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">looped</td><td>Gibt an, ob die Wiedergabe einfach oder endlos sein soll (Standard: false) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a49f0e81146ef77a9334baa7292569557"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::Remove </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entfernt eine Audio-Ressource. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a63834af2511edd460a47078ce4a1c544"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::RemoveAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entfernt alle vorhandenen Audio-Ressourcen. </p>
+
+</div>
+</div>
+<a class="anchor" id="a881f28b2bc1d5594cbe3236c8f3de1eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a>&amp; ge::AudioCore::ResumeAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setzt die Wiedergabe aller gestoppten Audio-Objekte fort. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9e63f47ca736a8ea757e31c614ad4bdd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a>&amp; ge::AudioCore::ResumeMusic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setzt die Wiedergabe aller gestoppten Musik-Objekte fort. </p>
+
+</div>
+</div>
+<a class="anchor" id="af0891825d2cfe3a5337190074aed14fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a>&amp; ge::AudioCore::ResumeMusic </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setzt die Wiedergabe eines bestimmten gestoppten Musik-Objekts fort. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9b3e1a52aa481c7bd8fce6b39e146672"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a>&amp; ge::AudioCore::ResumeSound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setzt die Wiedergabe aller gestoppten Sound-Objekte fort. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0e3a3c639f5909823b4a24ca7b2dd709"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a>&amp; ge::AudioCore::ResumeSound </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setzt die Wiedergabe eines bestimmten gestoppten Sound-Objekts fort. </p>
+
+</div>
+</div>
+<a class="anchor" id="a420e11b4e0a430cbb181b21520dd2a7d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::SoundLength </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die Länge eines bestimmten Sound-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4edf2c3d12cd37004aeed6b742a0417c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::SoundPan </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die horizontale Position aller Sound-Objekte bei Stereo-Wiedergabe fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percent</td><td>Position in Prozent (-100 = nur links, 100 = nur rechts) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a49ca312c063948c851023eea627cae83"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::SoundPan </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die horizontale Position eines bestimmten Sound-Objekts bei Stereo-Wiedergabe fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">percent</td><td>Position in Prozent (-100 = nur links, 100 = nur rechts) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a817ed5102f18a1f69690b83c94c1fb7c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::SoundPan </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die horizontale Position eines bestimmten Sound-Objekts (Stereo). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Position in Prozent (-100 = nur links, 100 = nur rechts) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7d7fcee2acd05a082e62dbcc9b1b0eca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::SoundPosition </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die aktuelle Abspiel-Position eines bestimmten Sound-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Position (0 = Anfang, [Länge der Sound-Ressource] = Ende) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae7d6c93a5e0e6a38ccfbd3c79b3d380d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::SoundSpeed </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die Abspiel-Geschwindigkeit aller Sound-Objekte fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percent</td><td>Geschwindigkeit in Prozent (1 = annähernd gestoppt, 400 = vierfache Geschwindigkeit) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1bbc22d0ed10c256eec93d7c1f0cfd1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::SoundSpeed </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die Abspiel-Geschwindigkeit eines bestimmten Sound-Objekts fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">percent</td><td>Geschwindigkeit in Prozent (1 = annähernd gestoppt, 400 = vierfache Geschwindigkeit) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0e4fb73a4a62c9f7900763f67675565e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::SoundSpeed </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die Abspiel-Geschwindigkeit eines bestimmten Sound-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Geschwindigkeit in Prozent (1 = annähernd gestoppt, 400 = vierfache Geschwindigkeit) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acf126e75653a15a434525ec59916fa75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::SoundVolume </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die allgemeine Lautstärke für alle Sound-Objekte fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percent</td><td>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7cb6d280b08e61b59635f26a75ee073a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::SoundVolume </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>percent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die Lautstärke für ein bestimmtes Sound-Objekt fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+    <tr><td class="paramname">percent</td><td>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a54ca38fc0aa771fadd2bca1f3707da53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::AudioCore::SoundVolume </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liefert die Lautstärke eines bestimmten Sound-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>Lautstärke in Prozent (0 = lautlos, 100 = volle Lautstärke) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a70c3d4bed41ed4d70c8bcb4c9f16c14a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::StopAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stoppt die Wiedergabe aller vorhandenen Audio-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8d28ff429863ef6a5ff258c286f9ae78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::StopMusic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stoppt die Wiedergabe aller vorhandenen Musik-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5aa4cd9e84c65197cfe55ba9cc529d30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::StopMusic </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stoppt die Wiedergabe eines bestimmten Musik-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a922dc2fc5a65fd1c95f563f393a1f51f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::StopSound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stoppt die Wiedergabe aller vorhandenen Sound-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a483fa182378ddf62912bb26d1574d9a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> &amp; ge::AudioCore::StopSound </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stoppt die Wiedergabe eines bestimmten Sound-Objekts. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Eindeutiger Bezeichner der Audio-Ressource </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_audio_core_8h_source.html">AudioCore.h</a></li>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_audio_core_8cpp.html">AudioCore.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

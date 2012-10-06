@@ -1,0 +1,973 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: ge::Vector Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacege.html">ge</a></li><li class="navelem"><a class="el" href="classge_1_1_vector.html">Vector</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Öffentliche Typen</a> &#124;
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classge_1_1_vector-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">ge::Vector Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Standard-Klasse für Vektoren (Koordinaten).  
+ <a href="classge_1_1_vector.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_vector_8h_source.html">Vector.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Öffentliche Typen</h2></td></tr>
+<tr class="memitem:aa8c0caa8259cca7ecaa66852b8893268"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268">What</a> { <a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268acd05758ebcbfa4d979fc45c38ae2d5e8">XValue</a> = 0, 
+<a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268a0b1af67756c1aac332db03f41fead6d0">YValue</a>, 
+<a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268a7abec49d9ec74f0ceb2ee01479014ef4">ZValue</a>
+ }</td></tr>
+<tr class="memdesc:aa8c0caa8259cca7ecaa66852b8893268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auflistung der möglichen Koordinatenangaben zur Verwendung mit <a class="el" href="classge_1_1_vector.html#afa1c122c892ded30250e51dc1c8aeebf" title="Legt den angegebenen Wert aus dem Vector-Objekt fest.">Vector::Value()</a>.  <a href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268">Mehr ...</a><br/></td></tr>
+<tr class="separator:aa8c0caa8259cca7ecaa66852b8893268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a72f32af572bc6774d0c6ae42edb1fa53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a72f32af572bc6774d0c6ae42edb1fa53">Vector</a> ()</td></tr>
+<tr class="memdesc:a72f32af572bc6774d0c6ae42edb1fa53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard-Konstruktor. Alle Werte werden mit 0 initialisiert.  <a href="#a72f32af572bc6774d0c6ae42edb1fa53"></a><br/></td></tr>
+<tr class="separator:a72f32af572bc6774d0c6ae42edb1fa53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace43baa636245c3f74f1e94318427c10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#ace43baa636245c3f74f1e94318427c10">Vector</a> (float x, float y, float z=0.0f)</td></tr>
+<tr class="memdesc:ace43baa636245c3f74f1e94318427c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Initialisierung über Zahlenwerte.  <a href="#ace43baa636245c3f74f1e94318427c10"></a><br/></td></tr>
+<tr class="separator:ace43baa636245c3f74f1e94318427c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34132742a3cc97f08d173d93b752bf6"><td class="memItemLeft" align="right" valign="top">const float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#af34132742a3cc97f08d173d93b752bf6">Get</a> () const </td></tr>
+<tr class="memdesc:af34132742a3cc97f08d173d93b752bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Koordinaten als Daten-Pointer.  <a href="#af34132742a3cc97f08d173d93b752bf6"></a><br/></td></tr>
+<tr class="separator:af34132742a3cc97f08d173d93b752bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8569f9c6c10f346b2405176b00ace832"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a8569f9c6c10f346b2405176b00ace832">IsZero</a> () const </td></tr>
+<tr class="memdesc:a8569f9c6c10f346b2405176b00ace832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob es sich um einen Nullvektor handelt.  <a href="#a8569f9c6c10f346b2405176b00ace832"></a><br/></td></tr>
+<tr class="separator:a8569f9c6c10f346b2405176b00ace832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbbd439e86d12d87130456d269e93915"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#abbbd439e86d12d87130456d269e93915">Length2D</a> () const </td></tr>
+<tr class="memdesc:abbbd439e86d12d87130456d269e93915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt die Länge des Vektors ohne Berücksichtigung der Z-Dimension.  <a href="#abbbd439e86d12d87130456d269e93915"></a><br/></td></tr>
+<tr class="separator:abbbd439e86d12d87130456d269e93915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb41500435afb99967f31ea4ea2fd42"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a3fb41500435afb99967f31ea4ea2fd42">Length3D</a> () const </td></tr>
+<tr class="memdesc:a3fb41500435afb99967f31ea4ea2fd42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt die Länge des Vektors unter Berücksichtigung der Z-Dimension.  <a href="#a3fb41500435afb99967f31ea4ea2fd42"></a><br/></td></tr>
+<tr class="separator:a3fb41500435afb99967f31ea4ea2fd42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9f544e31a6110a64f998616da6ee439"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#ac9f544e31a6110a64f998616da6ee439">operator!=</a> (const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;other)</td></tr>
+<tr class="memdesc:ac9f544e31a6110a64f998616da6ee439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator != für zwei Vector-Objekte.  <a href="#ac9f544e31a6110a64f998616da6ee439"></a><br/></td></tr>
+<tr class="separator:ac9f544e31a6110a64f998616da6ee439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89c3734a1a8ba98bbef3e2d615d57bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#ae89c3734a1a8ba98bbef3e2d615d57bc">operator*</a> (const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;other)</td></tr>
+<tr class="memdesc:ae89c3734a1a8ba98bbef3e2d615d57bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator * für zwei Vector-Objekte.  <a href="#ae89c3734a1a8ba98bbef3e2d615d57bc"></a><br/></td></tr>
+<tr class="separator:ae89c3734a1a8ba98bbef3e2d615d57bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5f9b55afc129e20b0babc47b2d5975d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#ad5f9b55afc129e20b0babc47b2d5975d">operator*=</a> (const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;other)</td></tr>
+<tr class="memdesc:ad5f9b55afc129e20b0babc47b2d5975d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator *= für zwei Vector-Objekte.  <a href="#ad5f9b55afc129e20b0babc47b2d5975d"></a><br/></td></tr>
+<tr class="separator:ad5f9b55afc129e20b0babc47b2d5975d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556da52fd1552b34e1cb1c4d8c888cd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a556da52fd1552b34e1cb1c4d8c888cd8">operator*=</a> (float val)</td></tr>
+<tr class="memdesc:a556da52fd1552b34e1cb1c4d8c888cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator *= für Vector-Objekt und float.  <a href="#a556da52fd1552b34e1cb1c4d8c888cd8"></a><br/></td></tr>
+<tr class="separator:a556da52fd1552b34e1cb1c4d8c888cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa645c47808d1f2cca913a10ee18a24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a1aa645c47808d1f2cca913a10ee18a24">operator+</a> (const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;other)</td></tr>
+<tr class="memdesc:a1aa645c47808d1f2cca913a10ee18a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator + für zwei Vector-Objekte.  <a href="#a1aa645c47808d1f2cca913a10ee18a24"></a><br/></td></tr>
+<tr class="separator:a1aa645c47808d1f2cca913a10ee18a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42c4fb154d941ebbd80b21b6c857815f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a42c4fb154d941ebbd80b21b6c857815f">operator+=</a> (const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;other)</td></tr>
+<tr class="memdesc:a42c4fb154d941ebbd80b21b6c857815f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator += für zwei Vector-Objekte.  <a href="#a42c4fb154d941ebbd80b21b6c857815f"></a><br/></td></tr>
+<tr class="separator:a42c4fb154d941ebbd80b21b6c857815f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a1a3c2f628186be1e47f96599933b26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a1a1a3c2f628186be1e47f96599933b26">operator-</a> (const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;other)</td></tr>
+<tr class="memdesc:a1a1a3c2f628186be1e47f96599933b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator - für zwei Vector-Objekte.  <a href="#a1a1a3c2f628186be1e47f96599933b26"></a><br/></td></tr>
+<tr class="separator:a1a1a3c2f628186be1e47f96599933b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bbe63e65b5ebc7a36a1eb0ff046b821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a3bbe63e65b5ebc7a36a1eb0ff046b821">operator-=</a> (const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;other)</td></tr>
+<tr class="memdesc:a3bbe63e65b5ebc7a36a1eb0ff046b821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator -= für zwei Vector-Objekte.  <a href="#a3bbe63e65b5ebc7a36a1eb0ff046b821"></a><br/></td></tr>
+<tr class="separator:a3bbe63e65b5ebc7a36a1eb0ff046b821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed2be54ba3e8b66adbb01abc1c8000d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a2ed2be54ba3e8b66adbb01abc1c8000d">operator==</a> (const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;other)</td></tr>
+<tr class="memdesc:a2ed2be54ba3e8b66adbb01abc1c8000d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator == für zwei Vector-Objekte.  <a href="#a2ed2be54ba3e8b66adbb01abc1c8000d"></a><br/></td></tr>
+<tr class="separator:a2ed2be54ba3e8b66adbb01abc1c8000d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba91986018b8b96e78ea4a7f83002a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a2ba91986018b8b96e78ea4a7f83002a5">Set</a> (float x, float y, float z=0.0f)</td></tr>
+<tr class="memdesc:a2ba91986018b8b96e78ea4a7f83002a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt alle Koordinaten über Zahlenwerte fest.  <a href="#a2ba91986018b8b96e78ea4a7f83002a5"></a><br/></td></tr>
+<tr class="separator:a2ba91986018b8b96e78ea4a7f83002a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1c122c892ded30250e51dc1c8aeebf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#afa1c122c892ded30250e51dc1c8aeebf">Value</a> (const <a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268">What</a> &amp;what, float val, bool mode=<a class="el" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a>)</td></tr>
+<tr class="memdesc:afa1c122c892ded30250e51dc1c8aeebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den angegebenen Wert aus dem Vector-Objekt fest.  <a href="#afa1c122c892ded30250e51dc1c8aeebf"></a><br/></td></tr>
+<tr class="separator:afa1c122c892ded30250e51dc1c8aeebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1c7af1a53393e708533d6a7a7515c7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a4c1c7af1a53393e708533d6a7a7515c7">Value</a> (const <a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268">What</a> &amp;what) const </td></tr>
+<tr class="memdesc:a4c1c7af1a53393e708533d6a7a7515c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den angegebenen Wert aus dem Vector-Objekt.  <a href="#a4c1c7af1a53393e708533d6a7a7515c7"></a><br/></td></tr>
+<tr class="separator:a4c1c7af1a53393e708533d6a7a7515c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f364b32b8a7a8d77177dcd52295a32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a47f364b32b8a7a8d77177dcd52295a32">X</a> (float val, bool mode=<a class="el" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a>)</td></tr>
+<tr class="memdesc:a47f364b32b8a7a8d77177dcd52295a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die X-Koordinate fest.  <a href="#a47f364b32b8a7a8d77177dcd52295a32"></a><br/></td></tr>
+<tr class="separator:a47f364b32b8a7a8d77177dcd52295a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70e228fc72638d15417abb7c5a2996f0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a70e228fc72638d15417abb7c5a2996f0">X</a> () const </td></tr>
+<tr class="memdesc:a70e228fc72638d15417abb7c5a2996f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die X-Koordinate.  <a href="#a70e228fc72638d15417abb7c5a2996f0"></a><br/></td></tr>
+<tr class="separator:a70e228fc72638d15417abb7c5a2996f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a546078249259c320b3473ecac8128d7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a546078249259c320b3473ecac8128d7b">Y</a> (float val, bool mode=<a class="el" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a>)</td></tr>
+<tr class="memdesc:a546078249259c320b3473ecac8128d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Y-Koordinate fest.  <a href="#a546078249259c320b3473ecac8128d7b"></a><br/></td></tr>
+<tr class="separator:a546078249259c320b3473ecac8128d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd6d1d8b921a81308c8a3843eb9b562d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#abd6d1d8b921a81308c8a3843eb9b562d">Y</a> () const </td></tr>
+<tr class="memdesc:abd6d1d8b921a81308c8a3843eb9b562d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die X-Koordinate.  <a href="#abd6d1d8b921a81308c8a3843eb9b562d"></a><br/></td></tr>
+<tr class="separator:abd6d1d8b921a81308c8a3843eb9b562d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe8d0fc366419214f687af5f7d63c091"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#afe8d0fc366419214f687af5f7d63c091">Z</a> (float val, bool mode=<a class="el" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a>)</td></tr>
+<tr class="memdesc:afe8d0fc366419214f687af5f7d63c091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Z-Koordinate fest.  <a href="#afe8d0fc366419214f687af5f7d63c091"></a><br/></td></tr>
+<tr class="separator:afe8d0fc366419214f687af5f7d63c091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76068f847c16db2bf051f38e88219dd4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_vector.html#a76068f847c16db2bf051f38e88219dd4">Z</a> () const </td></tr>
+<tr class="memdesc:a76068f847c16db2bf051f38e88219dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die X-Koordinate.  <a href="#a76068f847c16db2bf051f38e88219dd4"></a><br/></td></tr>
+<tr class="separator:a76068f847c16db2bf051f38e88219dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Standard-Klasse für Vektoren (Koordinaten). </p>
+</div><h2 class="groupheader">Dokumentation der Aufzählungstypen</h2>
+<a class="anchor" id="aa8c0caa8259cca7ecaa66852b8893268"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268">ge::Vector::What</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Auflistung der möglichen Koordinatenangaben zur Verwendung mit <a class="el" href="classge_1_1_vector.html#afa1c122c892ded30250e51dc1c8aeebf" title="Legt den angegebenen Wert aus dem Vector-Objekt fest.">Vector::Value()</a>. </p>
+<dl><dt><b>Aufzählungswerte: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="aa8c0caa8259cca7ecaa66852b8893268acd05758ebcbfa4d979fc45c38ae2d5e8"></a>XValue</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aa8c0caa8259cca7ecaa66852b8893268a0b1af67756c1aac332db03f41fead6d0"></a>YValue</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aa8c0caa8259cca7ecaa66852b8893268a7abec49d9ec74f0ceb2ee01479014ef4"></a>ZValue</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="a72f32af572bc6774d0c6ae42edb1fa53"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::Vector::Vector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Standard-Konstruktor. Alle Werte werden mit 0 initialisiert. </p>
+
+</div>
+</div>
+<a class="anchor" id="ace43baa636245c3f74f1e94318427c10"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::Vector::Vector </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em> = <code>0.0f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor. Initialisierung über Zahlenwerte. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>X-Position </td></tr>
+    <tr><td class="paramname">y</td><td>Y-Position </td></tr>
+    <tr><td class="paramname">z</td><td>Z-Position (Standard: 0) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="af34132742a3cc97f08d173d93b752bf6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float* ge::Vector::Get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Koordinaten als Daten-Pointer. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8569f9c6c10f346b2405176b00ace832"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::Vector::IsZero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob es sich um einen Nullvektor handelt. </p>
+
+</div>
+</div>
+<a class="anchor" id="abbbd439e86d12d87130456d269e93915"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ge::Vector::Length2D </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ermittelt die Länge des Vektors ohne Berücksichtigung der Z-Dimension. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3fb41500435afb99967f31ea4ea2fd42"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ge::Vector::Length3D </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ermittelt die Länge des Vektors unter Berücksichtigung der Z-Dimension. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac9f544e31a6110a64f998616da6ee439"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::Vector::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator != für zwei Vector-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae89c3734a1a8ba98bbef3e2d615d57bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a> ge::Vector::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator * für zwei Vector-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad5f9b55afc129e20b0babc47b2d5975d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a>&amp; ge::Vector::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator *= für zwei Vector-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a556da52fd1552b34e1cb1c4d8c888cd8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a>&amp; ge::Vector::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator *= für Vector-Objekt und float. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1aa645c47808d1f2cca913a10ee18a24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a> ge::Vector::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator + für zwei Vector-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a42c4fb154d941ebbd80b21b6c857815f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a>&amp; ge::Vector::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator += für zwei Vector-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1a1a3c2f628186be1e47f96599933b26"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a> ge::Vector::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator - für zwei Vector-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3bbe63e65b5ebc7a36a1eb0ff046b821"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a>&amp; ge::Vector::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator -= für zwei Vector-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ed2be54ba3e8b66adbb01abc1c8000d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::Vector::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator == für zwei Vector-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ba91986018b8b96e78ea4a7f83002a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a>&amp; ge::Vector::Set </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em> = <code>0.0f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt alle Koordinaten über Zahlenwerte fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>X-Position </td></tr>
+    <tr><td class="paramname">y</td><td>Y-Position </td></tr>
+    <tr><td class="paramname">z</td><td>Z-Position (Standard: 0) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afa1c122c892ded30250e51dc1c8aeebf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a>&amp; ge::Vector::Value </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268">What</a> &amp;&#160;</td>
+          <td class="paramname"><em>what</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt den angegebenen Wert aus dem Vector-Objekt fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">what</td><td>Koordinatenangabe aus <a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268" title="Auflistung der möglichen Koordinatenangaben zur Verwendung mit Vector::Value().">Vector::What</a> </td></tr>
+    <tr><td class="paramname">val</td><td>Positionswert </td></tr>
+    <tr><td class="paramname">mode</td><td>ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4c1c7af1a53393e708533d6a7a7515c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ge::Vector::Value </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268">What</a> &amp;&#160;</td>
+          <td class="paramname"><em>what</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert den angegebenen Wert aus dem Vector-Objekt. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">what</td><td>Koordinatenangabe aus <a class="el" href="classge_1_1_vector.html#aa8c0caa8259cca7ecaa66852b8893268" title="Auflistung der möglichen Koordinatenangaben zur Verwendung mit Vector::Value().">Vector::What</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a47f364b32b8a7a8d77177dcd52295a32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a>&amp; ge::Vector::X </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die X-Koordinate fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>X-Position </td></tr>
+    <tr><td class="paramname">mode</td><td>ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a70e228fc72638d15417abb7c5a2996f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ge::Vector::X </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die X-Koordinate. </p>
+
+</div>
+</div>
+<a class="anchor" id="a546078249259c320b3473ecac8128d7b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a>&amp; ge::Vector::Y </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Y-Koordinate fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>Y-Position </td></tr>
+    <tr><td class="paramname">mode</td><td>ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abd6d1d8b921a81308c8a3843eb9b562d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ge::Vector::Y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die X-Koordinate. </p>
+
+</div>
+</div>
+<a class="anchor" id="afe8d0fc366419214f687af5f7d63c091"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_vector.html">Vector</a>&amp; ge::Vector::Z </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4">ABS</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Z-Koordinate fest. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>Z-Position </td></tr>
+    <tr><td class="paramname">mode</td><td>ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a76068f847c16db2bf051f38e88219dd4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ge::Vector::Z </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die X-Koordinate. </p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_vector_8h_source.html">Vector.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: base::ScopeGuard Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacebase.html">base</a></li><li class="navelem"><a class="el" href="classbase_1_1_scope_guard.html">ScopeGuard</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classbase_1_1_scope_guard-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">base::ScopeGuard Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Hilfsklasse zur Sicherstellung, dass eine bestimmte Funktion spätestens bei der Zerstörung des Objektes ausgeführt wird.  
+ <a href="classbase_1_1_scope_guard.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_tools_8h_source.html">Tools.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a169fdab77b8b5021398175d0e25f96e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase_1_1_scope_guard.html#a169fdab77b8b5021398175d0e25f96e9">ScopeGuard</a> (const std::function&lt; void()&gt; &amp;releaser)</td></tr>
+<tr class="memdesc:a169fdab77b8b5021398175d0e25f96e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor.  <a href="#a169fdab77b8b5021398175d0e25f96e9"></a><br/></td></tr>
+<tr class="separator:a169fdab77b8b5021398175d0e25f96e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3e0205c4e555a4243da05bcf0661f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase_1_1_scope_guard.html#aad3e0205c4e555a4243da05bcf0661f8">~ScopeGuard</a> ()</td></tr>
+<tr class="memdesc:aad3e0205c4e555a4243da05bcf0661f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor.  <a href="#aad3e0205c4e555a4243da05bcf0661f8"></a><br/></td></tr>
+<tr class="separator:aad3e0205c4e555a4243da05bcf0661f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a687d9807828584979fb80f2b07f29a31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase_1_1_scope_guard.html#a687d9807828584979fb80f2b07f29a31">Clear</a> ()</td></tr>
+<tr class="memdesc:a687d9807828584979fb80f2b07f29a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt die Release-Funktion. Wird nun <a class="el" href="classbase_1_1_scope_guard.html#a0577bc5adfcbbddb41a7f8577e0299fd" title="Führt die Release-Funktion aus, sofern definiert.">Release()</a> aufgerufen oder das Objekt zerstört, wird kein zusätzlicher Code mehr ausgeführt, wenn nicht zuvor eine andere Release-Funktion über die Methode <a class="el" href="classbase_1_1_scope_guard.html#a437f774a30dfda0db03d92d7af885df1" title="Setzt die Release-Funktion.">Releaser()</a> angegeben wurde.  <a href="#a687d9807828584979fb80f2b07f29a31"></a><br/></td></tr>
+<tr class="separator:a687d9807828584979fb80f2b07f29a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0577bc5adfcbbddb41a7f8577e0299fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase_1_1_scope_guard.html#a0577bc5adfcbbddb41a7f8577e0299fd">Release</a> ()</td></tr>
+<tr class="memdesc:a0577bc5adfcbbddb41a7f8577e0299fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Führt die Release-Funktion aus, sofern definiert.  <a href="#a0577bc5adfcbbddb41a7f8577e0299fd"></a><br/></td></tr>
+<tr class="separator:a0577bc5adfcbbddb41a7f8577e0299fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a437f774a30dfda0db03d92d7af885df1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase_1_1_scope_guard.html#a437f774a30dfda0db03d92d7af885df1">Releaser</a> (const std::function&lt; void()&gt; &amp;val)</td></tr>
+<tr class="memdesc:a437f774a30dfda0db03d92d7af885df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt die Release-Funktion.  <a href="#a437f774a30dfda0db03d92d7af885df1"></a><br/></td></tr>
+<tr class="separator:a437f774a30dfda0db03d92d7af885df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Hilfsklasse zur Sicherstellung, dass eine bestimmte Funktion spätestens bei der Zerstörung des Objektes ausgeführt wird. </p>
+<p>Diese Objekte können beispielsweise dort angewendet werden, wo am Ende eines Vorgangs bestimmte Ressourcen wieder freigegeben werden müssen, ungeachtet des Ausstiegspunktes und vor allem auch im Fehlerfall. Wo es kein Objekt gibt, dessen Destruktor für die Abarbeitung genutzt werden kann, oder wenn der auszuführende Code für einen Destruktor ungeeignet ist, kann stattdessen ein ScopeGuard-Objekt verwendet werden. </p>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="a169fdab77b8b5021398175d0e25f96e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">base::ScopeGuard::ScopeGuard </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>releaser</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">releaser</td><td>Funktion, die spätestens bei der Zerstörung des Objektes ausgeführt werden soll </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aad3e0205c4e555a4243da05bcf0661f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">base::ScopeGuard::~ScopeGuard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruktor. </p>
+<p>Führt die angegebene Release-Funktion aus, wenn diese nicht schon vorher durch Aufruf von <a class="el" href="classbase_1_1_scope_guard.html#a0577bc5adfcbbddb41a7f8577e0299fd" title="Führt die Release-Funktion aus, sofern definiert.">Release()</a> abgearbeitet wurde. Wenn die Methode <a class="el" href="classbase_1_1_scope_guard.html#a687d9807828584979fb80f2b07f29a31" title="Entfernt die Release-Funktion. Wird nun Release() aufgerufen oder das Objekt zerstört, wird kein zusätzlicher Code mehr ausgeführt, wenn nicht zuvor eine andere Release-Funktion über die Methode Releaser() angegeben wurde.">Clear()</a> verwendet wurde, wird ebenfalls kein zusätzlicher Code mehr ausgeführt. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a687d9807828584979fb80f2b07f29a31"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base::ScopeGuard::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entfernt die Release-Funktion. Wird nun <a class="el" href="classbase_1_1_scope_guard.html#a0577bc5adfcbbddb41a7f8577e0299fd" title="Führt die Release-Funktion aus, sofern definiert.">Release()</a> aufgerufen oder das Objekt zerstört, wird kein zusätzlicher Code mehr ausgeführt, wenn nicht zuvor eine andere Release-Funktion über die Methode <a class="el" href="classbase_1_1_scope_guard.html#a437f774a30dfda0db03d92d7af885df1" title="Setzt die Release-Funktion.">Releaser()</a> angegeben wurde. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0577bc5adfcbbddb41a7f8577e0299fd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base::ScopeGuard::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Führt die Release-Funktion aus, sofern definiert. </p>
+<p>Wenn nach dem Aufruf von <a class="el" href="classbase_1_1_scope_guard.html#a0577bc5adfcbbddb41a7f8577e0299fd" title="Führt die Release-Funktion aus, sofern definiert.">Release()</a> keine weitere Funktionszuweisung über <a class="el" href="classbase_1_1_scope_guard.html#a437f774a30dfda0db03d92d7af885df1" title="Setzt die Release-Funktion.">Releaser()</a> mehr erfolgt, wird bei der Zerstörung des Objektes kein zusätzlicher Code mehr ausgeführt. Gleiches gilt nach Verwendung der Methode <a class="el" href="classbase_1_1_scope_guard.html#a687d9807828584979fb80f2b07f29a31" title="Entfernt die Release-Funktion. Wird nun Release() aufgerufen oder das Objekt zerstört, wird kein zusätzlicher Code mehr ausgeführt, wenn nicht zuvor eine andere Release-Funktion über die Methode Releaser() angegeben wurde.">Clear()</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a437f774a30dfda0db03d92d7af885df1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base::ScopeGuard::Releaser </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setzt die Release-Funktion. </p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+<li>E:/Projekte/GameEngine/Base/<a class="el" href="_tools_8h_source.html">Tools.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

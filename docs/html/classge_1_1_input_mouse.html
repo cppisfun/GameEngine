@@ -1,0 +1,780 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: ge::InputMouse Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacege.html">ge</a></li><li class="navelem"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classge_1_1_input_mouse-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">ge::InputMouse Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Input-Klasse für Mauseingaben. Wird über <a class="el" href="classge_1_1_input_core.html#a330d9750639bc37ea72ac2df4c592f61" title="Liefert den Pointer zur Komponente für Maus-Eingaben.">InputCore::Mouse()</a> geliefert.  
+ <a href="classge_1_1_input_mouse.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_input_mouse_8h_source.html">InputMouse.h</a>&gt;</code></p>
+<div class="dynheader">
+Klassendiagramm für ge::InputMouse:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classge_1_1_input_mouse.png" usemap="#ge::InputMouse_map" alt=""/>
+  <map id="ge::InputMouse_map" name="ge::InputMouse_map">
+<area href="classge_1_1_event_listener.html" title="Oberklasse für Event-Listener. Alle Klassen, die ihre Events von ge::EventController erhalten..." alt="ge::EventListener" shape="rect" coords="0,0,109,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:aac94395c98c07d8ae6e3a2941a0cc799"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#aac94395c98c07d8ae6e3a2941a0cc799">InputMouse</a> (irr::gui::ICursorControl *cursorCtrl, <a class="el" href="classge_1_1_event_controller.html">EventController</a> *eventCtrl)</td></tr>
+<tr class="memdesc:aac94395c98c07d8ae6e3a2941a0cc799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Benötigt Pointer zu einem validen irrlicht-Objekt für den Mauszeiger und einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventLi...">ge::EventController</a> (werden automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben).  <a href="#aac94395c98c07d8ae6e3a2941a0cc799"></a><br/></td></tr>
+<tr class="separator:aac94395c98c07d8ae6e3a2941a0cc799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3ae3e0bc5bc1dcd66eb7d75a71b134"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#acd3ae3e0bc5bc1dcd66eb7d75a71b134">~InputMouse</a> ()</td></tr>
+<tr class="memdesc:acd3ae3e0bc5bc1dcd66eb7d75a71b134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor.  <a href="#acd3ae3e0bc5bc1dcd66eb7d75a71b134"></a><br/></td></tr>
+<tr class="separator:acd3ae3e0bc5bc1dcd66eb7d75a71b134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b713205a8612303c7072627233c548c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a8b713205a8612303c7072627233c548c">Button</a> (int btn=<a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>)</td></tr>
+<tr class="memdesc:a8b713205a8612303c7072627233c548c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob ein Button gehalten wird. Im Gegensatz zu <a class="el" href="classge_1_1_input_mouse.html#a871e85fb028bd2f8a25576bbd2cc52fc" title="Ermittelt, ob ein Button gerade gedrückt wurde. Im Gegensatz zu Button() ist dieser Status nur im Mom...">ButtonPressed()</a> ist dieser Status immer <em>true</em>, solange der Button gehalten wird.  <a href="#a8b713205a8612303c7072627233c548c"></a><br/></td></tr>
+<tr class="separator:a8b713205a8612303c7072627233c548c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871e85fb028bd2f8a25576bbd2cc52fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a871e85fb028bd2f8a25576bbd2cc52fc">ButtonPressed</a> (int btn=<a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>)</td></tr>
+<tr class="memdesc:a871e85fb028bd2f8a25576bbd2cc52fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob ein Button gerade gedrückt wurde. Im Gegensatz zu <a class="el" href="classge_1_1_input_mouse.html#a8b713205a8612303c7072627233c548c" title="Ermittelt, ob ein Button gehalten wird. Im Gegensatz zu ButtonPressed() ist dieser Status immer true...">Button()</a> ist dieser Status nur im Moment des Herunterdrückens <em>true</em>, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>.  <a href="#a871e85fb028bd2f8a25576bbd2cc52fc"></a><br/></td></tr>
+<tr class="separator:a871e85fb028bd2f8a25576bbd2cc52fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8ebcb392997318798b875834cfa82f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a1d8ebcb392997318798b875834cfa82f">ButtonReleased</a> (int btn=<a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>)</td></tr>
+<tr class="memdesc:a1d8ebcb392997318798b875834cfa82f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob ein Button gerade losgelassen wurde. Dieser Status ist nur im Moment des Loslassens <em>true</em>, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>.  <a href="#a1d8ebcb392997318798b875834cfa82f"></a><br/></td></tr>
+<tr class="separator:a1d8ebcb392997318798b875834cfa82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f086bd29b6a0bed0d52a091df36f8f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a5f086bd29b6a0bed0d52a091df36f8f7">Clicked</a> (int btn=<a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>)</td></tr>
+<tr class="memdesc:a5f086bd29b6a0bed0d52a091df36f8f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob gerade ein Click erfolgt ist. Dieser Status ist nur in dem Moment <em>true</em>, in welchem der Click vollendet wurde, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>.  <a href="#a5f086bd29b6a0bed0d52a091df36f8f7"></a><br/></td></tr>
+<tr class="separator:a5f086bd29b6a0bed0d52a091df36f8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b39513d346ba653e80ebc78b0907db9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a4b39513d346ba653e80ebc78b0907db9">DoubleClicked</a> (int btn=<a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>)</td></tr>
+<tr class="memdesc:a4b39513d346ba653e80ebc78b0907db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob gerade ein Double-Click erfolgt ist. Dieser Status ist nur in dem Moment <em>true</em>, in welchem der Doppel-Click vollendet wurde, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>.  <a href="#a4b39513d346ba653e80ebc78b0907db9"></a><br/></td></tr>
+<tr class="separator:a4b39513d346ba653e80ebc78b0907db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a944e9fb78676eb082cb98395fbf911b0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a944e9fb78676eb082cb98395fbf911b0">DWheel</a> () const </td></tr>
+<tr class="separator:a944e9fb78676eb082cb98395fbf911b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f554fee93a031129a9f2f1f98ae3d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a29f554fee93a031129a9f2f1f98ae3d1">DX</a> () const </td></tr>
+<tr class="memdesc:a29f554fee93a031129a9f2f1f98ae3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Abweichung in X-Richtung seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf.  <a href="#a29f554fee93a031129a9f2f1f98ae3d1"></a><br/></td></tr>
+<tr class="separator:a29f554fee93a031129a9f2f1f98ae3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf036ea030c9720c4c2d7950c66e1918"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#abf036ea030c9720c4c2d7950c66e1918">DY</a> () const </td></tr>
+<tr class="memdesc:abf036ea030c9720c4c2d7950c66e1918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Abweichung in Y-Richtung seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf.  <a href="#abf036ea030c9720c4c2d7950c66e1918"></a><br/></td></tr>
+<tr class="separator:abf036ea030c9720c4c2d7950c66e1918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada91add8511ed7661a59e957783256ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#ada91add8511ed7661a59e957783256ef">Hide</a> ()</td></tr>
+<tr class="memdesc:ada91add8511ed7661a59e957783256ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt fest, dass der Mauszeiger nicht angezeigt wird.  <a href="#ada91add8511ed7661a59e957783256ef"></a><br/></td></tr>
+<tr class="separator:ada91add8511ed7661a59e957783256ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc0756f24aca71a595c552d72c91ef0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#abbc0756f24aca71a595c552d72c91ef0">IsVisible</a> () const </td></tr>
+<tr class="memdesc:abbc0756f24aca71a595c552d72c91ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob der Mauszeiger sichtbar ist.  <a href="#abbc0756f24aca71a595c552d72c91ef0"></a><br/></td></tr>
+<tr class="separator:abbc0756f24aca71a595c552d72c91ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d82de12b0361db17c220a880f0e92d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a2d82de12b0361db17c220a880f0e92d8">Moved</a> (int direction=<a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>)</td></tr>
+<tr class="memdesc:a2d82de12b0361db17c220a880f0e92d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob die Maus seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf bewegt wurde (und ggf. in welche Richtung).  <a href="#a2d82de12b0361db17c220a880f0e92d8"></a><br/></td></tr>
+<tr class="separator:a2d82de12b0361db17c220a880f0e92d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bda6e268bcb0022457cca458993b736"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a4bda6e268bcb0022457cca458993b736">Position</a> (int x, int y)</td></tr>
+<tr class="memdesc:a4bda6e268bcb0022457cca458993b736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt X- und Y-Position fest.  <a href="#a4bda6e268bcb0022457cca458993b736"></a><br/></td></tr>
+<tr class="separator:a4bda6e268bcb0022457cca458993b736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a440721058f02614a8d005345fb35edbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a440721058f02614a8d005345fb35edbc">Show</a> (bool show=true)</td></tr>
+<tr class="separator:a440721058f02614a8d005345fb35edbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4038545fb8a6be8ec40cbd2912a08d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#ad4038545fb8a6be8ec40cbd2912a08d0">TripleClicked</a> (int btn=<a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>)</td></tr>
+<tr class="memdesc:ad4038545fb8a6be8ec40cbd2912a08d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob gerade ein Triple-Click erfolgt ist. Dieser Status ist nur in dem Moment <em>true</em>, in welchem der Triple-Click vollendet wurde, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>.  <a href="#ad4038545fb8a6be8ec40cbd2912a08d0"></a><br/></td></tr>
+<tr class="separator:ad4038545fb8a6be8ec40cbd2912a08d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e09c5f6c7a8e852741a06c2716bcfba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba">Update</a> ()</td></tr>
+<tr class="memdesc:a6e09c5f6c7a8e852741a06c2716bcfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchlauf aufgerufen werden, damit die Eingaben korrekt verarbeitet werden können.  <a href="#a6e09c5f6c7a8e852741a06c2716bcfba"></a><br/></td></tr>
+<tr class="separator:a6e09c5f6c7a8e852741a06c2716bcfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92480fa317afa0a77fa38f0bc55e69ac"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a92480fa317afa0a77fa38f0bc55e69ac">Wheel</a> () const </td></tr>
+<tr class="memdesc:a92480fa317afa0a77fa38f0bc55e69ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Position des Mausrades.  <a href="#a92480fa317afa0a77fa38f0bc55e69ac"></a><br/></td></tr>
+<tr class="separator:a92480fa317afa0a77fa38f0bc55e69ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9245ae130b3ba41b6cf590a5ce47b322"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a9245ae130b3ba41b6cf590a5ce47b322">WheelMoved</a> (int direction=<a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>)</td></tr>
+<tr class="memdesc:a9245ae130b3ba41b6cf590a5ce47b322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob das Mausrad seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf bewegt wurde (und ggf. in welche Richtung).  <a href="#a9245ae130b3ba41b6cf590a5ce47b322"></a><br/></td></tr>
+<tr class="separator:a9245ae130b3ba41b6cf590a5ce47b322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa59921ce2a805a55e57bb75e3807a78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#afa59921ce2a805a55e57bb75e3807a78">X</a> (int x)</td></tr>
+<tr class="memdesc:afa59921ce2a805a55e57bb75e3807a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die X-Position fest.  <a href="#afa59921ce2a805a55e57bb75e3807a78"></a><br/></td></tr>
+<tr class="separator:afa59921ce2a805a55e57bb75e3807a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ee9014542cfcca74d9a94e10a133ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#ae6ee9014542cfcca74d9a94e10a133ba">X</a> () const </td></tr>
+<tr class="memdesc:ae6ee9014542cfcca74d9a94e10a133ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die X-Position.  <a href="#ae6ee9014542cfcca74d9a94e10a133ba"></a><br/></td></tr>
+<tr class="separator:ae6ee9014542cfcca74d9a94e10a133ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9987f14f0532134fde2a68ccecd4f6bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a9987f14f0532134fde2a68ccecd4f6bd">Y</a> (int y)</td></tr>
+<tr class="memdesc:a9987f14f0532134fde2a68ccecd4f6bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Y-Position fest.  <a href="#a9987f14f0532134fde2a68ccecd4f6bd"></a><br/></td></tr>
+<tr class="separator:a9987f14f0532134fde2a68ccecd4f6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce4962f007f9724c2624f1a86efe3e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a3ce4962f007f9724c2624f1a86efe3e2">Y</a> () const </td></tr>
+<tr class="memdesc:a3ce4962f007f9724c2624f1a86efe3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Y-Position.  <a href="#a3ce4962f007f9724c2624f1a86efe3e2"></a><br/></td></tr>
+<tr class="separator:a3ce4962f007f9724c2624f1a86efe3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classge_1_1_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classge_1_1_event_listener')"><img src="closed.png" alt="-"/>&#160;Öffentliche Methoden geerbt von <a class="el" href="classge_1_1_event_listener.html">ge::EventListener</a></td></tr>
+<tr class="memitem:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a95a24db2a870ab70445ecf066ccff4f3">EventListener</a> ()</td></tr>
+<tr class="memdesc:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Schaltet automatisch die Event-Bearbeitung ein.  <a href="#a95a24db2a870ab70445ecf066ccff4f3"></a><br/></td></tr>
+<tr class="separator:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8619ff6aa8543c02f4583cc22cd8c89c inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a8619ff6aa8543c02f4583cc22cd8c89c">~EventListener</a> ()</td></tr>
+<tr class="memdesc:a8619ff6aa8543c02f4583cc22cd8c89c inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor.  <a href="#a8619ff6aa8543c02f4583cc22cd8c89c"></a><br/></td></tr>
+<tr class="separator:a8619ff6aa8543c02f4583cc22cd8c89c inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9">Disable</a> ()</td></tr>
+<tr class="memdesc:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schaltet die Event-Bearbeitung aus. Events können zwar weiterhin an den Listener gesendet werden, es erfolgt aber keine Reaktion vom Listener.  <a href="#a359aca2f49af6e6777613bbfaee0eae9"></a><br/></td></tr>
+<tr class="separator:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633e4068e794befa7d0109fccf021731 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a633e4068e794befa7d0109fccf021731">Enable</a> (bool enable)</td></tr>
+<tr class="memdesc:a633e4068e794befa7d0109fccf021731 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt fest, ob dieser Listener aktuell auf Events reagieren soll.  <a href="#a633e4068e794befa7d0109fccf021731"></a><br/></td></tr>
+<tr class="separator:a633e4068e794befa7d0109fccf021731 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a766274fe6b1f0b1691325753d7d587d8">Enabled</a> () const </td></tr>
+<tr class="memdesc:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob der Listener aktuell auf Events reagiert oder die empfangenen Events ignoriert.  <a href="#a766274fe6b1f0b1691325753d7d587d8"></a><br/></td></tr>
+<tr class="separator:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Input-Klasse für Mauseingaben. Wird über <a class="el" href="classge_1_1_input_core.html#a330d9750639bc37ea72ac2df4c592f61" title="Liefert den Pointer zur Komponente für Maus-Eingaben.">InputCore::Mouse()</a> geliefert. </p>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="aac94395c98c07d8ae6e3a2941a0cc799"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::InputMouse::InputMouse </td>
+          <td>(</td>
+          <td class="paramtype">irr::gui::ICursorControl *&#160;</td>
+          <td class="paramname"><em>cursorCtrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classge_1_1_event_controller.html">EventController</a> *&#160;</td>
+          <td class="paramname"><em>eventCtrl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor. Benötigt Pointer zu einem validen irrlicht-Objekt für den Mauszeiger und einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventLi...">ge::EventController</a> (werden automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben). </p>
+
+</div>
+</div>
+<a class="anchor" id="acd3ae3e0bc5bc1dcd66eb7d75a71b134"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ge::InputMouse::~InputMouse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruktor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a8b713205a8612303c7072627233c548c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::InputMouse::Button </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>btn</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob ein Button gehalten wird. Im Gegensatz zu <a class="el" href="classge_1_1_input_mouse.html#a871e85fb028bd2f8a25576bbd2cc52fc" title="Ermittelt, ob ein Button gerade gedrückt wurde. Im Gegensatz zu Button() ist dieser Status nur im Mom...">ButtonPressed()</a> ist dieser Status immer <em>true</em>, solange der Button gehalten wird. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">btn</td><td>NONE = keiner, ANY = beliebig, LEFT_BUTTON, MIDDLE_BUTTON, RIGHT_BUTTON (Standard: ANY) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a871e85fb028bd2f8a25576bbd2cc52fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::InputMouse::ButtonPressed </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>btn</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob ein Button gerade gedrückt wurde. Im Gegensatz zu <a class="el" href="classge_1_1_input_mouse.html#a8b713205a8612303c7072627233c548c" title="Ermittelt, ob ein Button gehalten wird. Im Gegensatz zu ButtonPressed() ist dieser Status immer true...">Button()</a> ist dieser Status nur im Moment des Herunterdrückens <em>true</em>, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">btn</td><td>NONE = keiner, ANY = beliebig, LEFT_BUTTON, MIDDLE_BUTTON, RIGHT_BUTTON (Standard: ANY) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1d8ebcb392997318798b875834cfa82f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::InputMouse::ButtonReleased </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>btn</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob ein Button gerade losgelassen wurde. Dieser Status ist nur im Moment des Loslassens <em>true</em>, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">btn</td><td>NONE = keiner, ANY = beliebig, LEFT_BUTTON, MIDDLE_BUTTON, RIGHT_BUTTON (Standard: ANY) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5f086bd29b6a0bed0d52a091df36f8f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::InputMouse::Clicked </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>btn</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob gerade ein Click erfolgt ist. Dieser Status ist nur in dem Moment <em>true</em>, in welchem der Click vollendet wurde, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">btn</td><td>NONE = keiner, ANY = beliebig, LEFT_BUTTON, MIDDLE_BUTTON, RIGHT_BUTTON (Standard: ANY) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b39513d346ba653e80ebc78b0907db9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::InputMouse::DoubleClicked </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>btn</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob gerade ein Double-Click erfolgt ist. Dieser Status ist nur in dem Moment <em>true</em>, in welchem der Doppel-Click vollendet wurde, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">btn</td><td>NONE = keiner, ANY = beliebig, LEFT_BUTTON, MIDDLE_BUTTON, RIGHT_BUTTON (Standard: ANY) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a944e9fb78676eb082cb98395fbf911b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ge::InputMouse::DWheel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Liefert die Abweichung der Mausrad-Position seit dem letzten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a29f554fee93a031129a9f2f1f98ae3d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::InputMouse::DX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Abweichung in X-Richtung seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf. </p>
+
+</div>
+</div>
+<a class="anchor" id="abf036ea030c9720c4c2d7950c66e1918"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::InputMouse::DY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Abweichung in Y-Richtung seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf. </p>
+
+</div>
+</div>
+<a class="anchor" id="ada91add8511ed7661a59e957783256ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a>&amp; ge::InputMouse::Hide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt fest, dass der Mauszeiger nicht angezeigt wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="abbc0756f24aca71a595c552d72c91ef0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::InputMouse::IsVisible </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob der Mauszeiger sichtbar ist. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2d82de12b0361db17c220a880f0e92d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::InputMouse::Moved </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>direction</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob die Maus seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf bewegt wurde (und ggf. in welche Richtung). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>NONE = keine, ANY = beliebig, LEFT, RIGHT, UP, DOWN, HORIZONTAL, VERTICAL (Standard: ANY) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4bda6e268bcb0022457cca458993b736"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a> &amp; ge::InputMouse::Position </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt X- und Y-Position fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="a440721058f02614a8d005345fb35edbc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a>&amp; ge::InputMouse::Show </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Legt fest, ob der Mauszeiger angezeigt werden soll. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">show</td><td>Gibt an, ob der Mauszeiger sichtbar sein soll (Standard: true) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad4038545fb8a6be8ec40cbd2912a08d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::InputMouse::TripleClicked </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>btn</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob gerade ein Triple-Click erfolgt ist. Dieser Status ist nur in dem Moment <em>true</em>, in welchem der Triple-Click vollendet wurde, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">btn</td><td>NONE = keiner, ANY = beliebig, LEFT_BUTTON, MIDDLE_BUTTON, RIGHT_BUTTON (Standard: ANY) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6e09c5f6c7a8e852741a06c2716bcfba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ge::InputMouse::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchlauf aufgerufen werden, damit die Eingaben korrekt verarbeitet werden können. </p>
+
+<p>Implementiert <a class="el" href="classge_1_1_event_listener.html">ge::EventListener</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a92480fa317afa0a77fa38f0bc55e69ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ge::InputMouse::Wheel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Position des Mausrades. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9245ae130b3ba41b6cf590a5ce47b322"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::InputMouse::WheelMoved </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>direction</em> = <code><a class="el" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob das Mausrad seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a6e09c5f6c7a8e852741a06c2716bcfba" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf bewegt wurde (und ggf. in welche Richtung). </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>NONE = keine, ANY = beliebig, UP = nach oben / vom Benutzer weg, DOWN = nach unten / zum Benutzer hin (Standard: ANY) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afa59921ce2a805a55e57bb75e3807a78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a> &amp; ge::InputMouse::X </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die X-Position fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae6ee9014542cfcca74d9a94e10a133ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::InputMouse::X </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die X-Position. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9987f14f0532134fde2a68ccecd4f6bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_input_mouse.html">InputMouse</a> &amp; ge::InputMouse::Y </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legt die Y-Position fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3ce4962f007f9724c2624f1a86efe3e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ge::InputMouse::Y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Y-Position. </p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_input_mouse_8h_source.html">InputMouse.h</a></li>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_input_mouse_8cpp.html">InputMouse.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

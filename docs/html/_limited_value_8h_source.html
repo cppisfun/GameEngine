@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: E:/Projekte/GameEngine/Base/LimitedValue.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_628593db0cdce5a76fb85526ae5aa762.html">Base</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">LimitedValue.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_limited_value_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_2_precomp_8h.html">Precomp.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_base_2_d_l_l___d_e_f_8h.html">DLL_DEF.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="namespacemisc.html">   11</a></span>&#160;<span class="keyword">namespace </span>misc {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html">   26</a></span>&#160;   <span class="keyword">class </span><a class="code" href="_base_2_d_l_l___d_e_f_8h.html#acbf1fdbdcc4153ef807af5a5cdd56f49">BASEDLL</a> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keywordtype">bool</span> isCyclic;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      T minimum;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      T maximum;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      T value;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordtype">void</span> Adjust ()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;         <span class="keywordflow">if</span> (minimum &gt; maximum) std::swap(minimum, maximum);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;         <span class="keywordflow">if</span> (minimum == maximum) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            value = minimum;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;         }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isCyclic) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (value &lt; minimum)      <span class="keywordflow">while</span> (value &lt; minimum) value = value + maximum - minimum + 1;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &gt; maximum) <span class="keywordflow">while</span> (value &gt; maximum) value = value - maximum + minimum - 1;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;         <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (value &lt; minimum)      value = minimum;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &gt; maximum) value = maximum;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;         }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a7dca38bf1e94ff314be31951f02183d7">   56</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a> (T minimum, T maximum, <span class="keywordtype">bool</span> isCyclic = <span class="keyword">false</span>, T value = 0) : isCyclic(isCyclic), minimum(minimum), maximum(maximum), value(value)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;         static_assert(std::is_arithmetic&lt;T&gt;::value, <span class="stringliteral">&quot;LimitedValue&lt;&gt; only supports integral or floating point types!&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;         Adjust();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a67aef64cc7f0d44e83d5f5bb3406d06d">   64</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; <a class="code" href="classmisc_1_1_limited_value.html#a67aef64cc7f0d44e83d5f5bb3406d06d" title="Stellt das Verhalten des Objektes zyklisch bzw. nicht-zyklisch ein.">IsCyclic</a> (<span class="keywordtype">bool</span> val) { isCyclic = val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#ac4d97a2113e1a08d2b2cd52d332e3bb1">   67</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; <a class="code" href="classmisc_1_1_limited_value.html#ac4d97a2113e1a08d2b2cd52d332e3bb1" title="Setzt die Obergrenze.">Minimum</a> (T val) { minimum = val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a735694921b8fd640b15383dc4cbf8790">   70</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; <a class="code" href="classmisc_1_1_limited_value.html#a735694921b8fd640b15383dc4cbf8790" title="Setzt die Untergrenze.">Maximum</a> (T val) { maximum = val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421">   73</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; <a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a> (T val) { value = val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a251f5902c405020299beec89f37a2915">   77</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classmisc_1_1_limited_value.html#a251f5902c405020299beec89f37a2915" title="Liefert das aktuelle Verhalten des Objekts (zyklisch oder nicht-zyklisch).">IsCyclic</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> isCyclic; }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a4b3a0a87a6c85e41c1aad48a8eec6936">   80</a></span>&#160;      T <a class="code" href="classmisc_1_1_limited_value.html#a4b3a0a87a6c85e41c1aad48a8eec6936" title="Liefert die aktuelle Obergrenze.">Minimum</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> minimum; }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#aaa28662fd8b754efe8af681fb73ee95a">   83</a></span>&#160;      T <a class="code" href="classmisc_1_1_limited_value.html#aaa28662fd8b754efe8af681fb73ee95a" title="Liefert die aktuelle Untergrenze.">Maximum</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> maximum; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a59d59be0fb3549238079169255c5f4b3">   86</a></span>&#160;      T <a class="code" href="classmisc_1_1_limited_value.html#a59d59be0fb3549238079169255c5f4b3" title="Liefert den aktuellen Wert.">Value</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> value; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#ad9a660f180081f5c314fc31de70e77e4">   90</a></span>&#160;      <span class="keywordtype">bool</span> operator== (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { <span class="keywordflow">return</span> (value == other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>()); }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a8bccfaa601fea67544157627d4b35b02">   93</a></span>&#160;      <span class="keywordtype">bool</span> operator!= (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { <span class="keywordflow">return</span> (value != other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>()); }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a66c8742dcc8c285438a6920e751f03a3">   96</a></span>&#160;      <span class="keywordtype">bool</span> operator&lt; (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { <span class="keywordflow">return</span> (value &lt; other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>()); }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a449d25a5400a74936c53ba0915dac721">   99</a></span>&#160;      <span class="keywordtype">bool</span> operator&lt;= (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { <span class="keywordflow">return</span> (value &lt;= other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>()); }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#adccd7bff06c660cfccad2505aa335778">  102</a></span>&#160;      <span class="keywordtype">bool</span> operator&gt; (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { <span class="keywordflow">return</span> (value &gt; other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>()); }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a3887c71ad504a0768728a38a6efe2914">  105</a></span>&#160;      <span class="keywordtype">bool</span> operator&gt;= (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { <span class="keywordflow">return</span> (value &gt;= other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>()); }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a407af061a69e9c87967b9f443430a4dd">  109</a></span>&#160;      <span class="keywordtype">bool</span> operator== (T val) { <span class="keywordflow">return</span> (value == val); }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#af0eb5c90df098c8eab524879511f8d83">  112</a></span>&#160;      <span class="keywordtype">bool</span> operator!= (T val) { <span class="keywordflow">return</span> (value != val); }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#aaa2e9212d491dfe25c7b3c5d2b490b99">  115</a></span>&#160;      <span class="keywordtype">bool</span> operator&lt; (T val) { <span class="keywordflow">return</span> (value &lt; val); }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a57f7fffdc6e155bffae00a6f91b99fe0">  118</a></span>&#160;      <span class="keywordtype">bool</span> operator&lt;= (T val) { <span class="keywordflow">return</span> (value &lt;= val); }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a2e788308afbb3035f66d15d6728bb456">  121</a></span>&#160;      <span class="keywordtype">bool</span> operator&gt; (T val) { <span class="keywordflow">return</span> (value &gt; val); }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a2c4b8bd5647c9bfb928fbcfcc45dc5c0">  124</a></span>&#160;      <span class="keywordtype">bool</span> operator&gt;= (T val) { <span class="keywordflow">return</span> (value &gt;= val); }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#acd3f0b76041da8be0b4405d564b81b86">  128</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator+= (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { value += other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>(); Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a689e29ad83c3381fe5387e0c922bacc3">  131</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator-= (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { value -= other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>(); Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#ab74a8db28ce29fbb64f9232ef5f3531a">  134</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator*= (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { value *= other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>(); Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a626ed5f5fb08b9533f4fd7e38caec6b5">  137</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator/= (<span class="keyword">const</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue</a>&amp; other) { value /= other.<a class="code" href="classmisc_1_1_limited_value.html#aaad84c14b5174b285742510feb620421" title="Setzt den Wert.">Value</a>(); Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#af1316246d7f8c493bb593651fc776873">  141</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator+= (T val) { value += val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a7cfb7f8883711d1a736876baa569dafa">  144</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator-= (T val) { value -= val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a1951efb64feb0d42c027e62d205325b8">  147</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator*= (T val) { value *= val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a626537da9253cdf90d410858ee3a5798">  150</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator/= (T val) { value /= val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#afbc0d51c1bbb006e7e16197c0406724f">  154</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a> operator++ (T) { <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a> tmp(*<span class="keyword">this</span>); ++value; Adjust(); <span class="keywordflow">return</span> tmp; }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a71969347d7c9dbe5edde837d5b56429c">  157</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a> operator-- (T) { <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a> tmp(*<span class="keyword">this</span>); --value; Adjust(); <span class="keywordflow">return</span> tmp; }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#a1f52996dfbf174a8e8b387ce883d59f9">  160</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator++ () { ++value; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="code" href="classmisc_1_1_limited_value.html#ade2cdb1daa08aeb19cb1d101446316c0">  163</a></span>&#160;      <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;T&gt;</a>&amp; operator-- () { --value; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;   };</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="code" href="namespacemisc.html#a490d3c127519239a1d1581c35cda6531">  169</a></span>&#160;   <span class="keyword">typedef</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;int&gt;</a> <a class="code" href="namespacemisc.html#a490d3c127519239a1d1581c35cda6531" title="int-Variante von LimitedValue">LimitedInt</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="code" href="namespacemisc.html#af36bf719f0294276a5bf4b7bb934870c">  172</a></span>&#160;   <span class="keyword">typedef</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;long&gt;</a> <a class="code" href="namespacemisc.html#af36bf719f0294276a5bf4b7bb934870c" title="long-Variante von LimitedValue">LimitedLong</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="code" href="namespacemisc.html#a637337fd6c5ae005079f84c3a3cfc344">  175</a></span>&#160;   <span class="keyword">typedef</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;long long&gt;</a> <a class="code" href="namespacemisc.html#a637337fd6c5ae005079f84c3a3cfc344" title="long long-Variante von LimitedValue">LimitedLongLong</a>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="code" href="namespacemisc.html#a5b39db5225a64a365ee0c5bd0ca620e6">  178</a></span>&#160;   <span class="keyword">typedef</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;float&gt;</a> <a class="code" href="namespacemisc.html#a5b39db5225a64a365ee0c5bd0ca620e6" title="float-Variante von LimitedValue">LimitedFloat</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="code" href="namespacemisc.html#a997239cdf5bc061de30d37a2ad9872f9">  181</a></span>&#160;   <span class="keyword">typedef</span> <a class="code" href="classmisc_1_1_limited_value.html" title="Template-Klasse, die einen Wert unter Berücksichtigung einer Ober- und Untergrenze ändert...">LimitedValue&lt;double&gt;</a> <a class="code" href="namespacemisc.html#a997239cdf5bc061de30d37a2ad9872f9" title="double-Variante von LimitedValue">LimitedDouble</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>
