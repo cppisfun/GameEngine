@@ -15,9 +15,13 @@
 
 namespace ge {
 
+   /// @brief Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung
+   /// von Eingabegeräten. Wird über Core::Input() geliefert.
    class GEDLL InputCore
    {
    public:
+      /// @brief Auflistung der möglichen Komponentenangaben zur Verwemdung mit
+      /// InputCore::Reset() oder InputCore::ShutDown().
       enum What {
          NoInterface       = 0,
          KeyboardInterface = 1,
@@ -37,17 +41,44 @@ namespace ge {
       void Init (irr::IrrlichtDevice* irrDevice, EventController* eventCtrl);
 
    public:
+      /// @brief Konstruktor. Benötigt Pointer zu einem validen
+      /// irrlicht-Device und einem validen Objekt vom Typ ge::EventController
+      /// (werden automatisch bei der Initialisierung über Core übergeben).
       InputCore (irr::IrrlichtDevice* irrDevice, EventController* eventCtrl);
+
+      /// @brief Destruktor. Entfernt automatisch alle noch bestehenden
+      /// Input-Komponenten und gibt Ressourcen frei, die innerhalb von
+      /// InputCore oder einer in InputCore gehaltenen Input-Komponente
+      /// erreichbar sind.
       virtual ~InputCore ();
 
+
+      /// @brief Aktualisiert den Eingabestatus aller vorhandenen und
+      /// eingeschalteten Input-Komponenten.
       void Update ();
 
+
+      /// @brief Setzt eine oder mehrere Input-Komponenten zurück. Dies
+      /// beinhaltet die Freigabe der Ressourcen, die in den entsprechenden
+      /// Komponenten gehalten werden.
+      /// @param what Komponentenangabe aus InputCore::What
       InputCore& Reset (const What& what);
+
+      /// @brief Entfernt eine oder mehrere Input-Komponenten. Dies beinhaltet
+      /// die Freigabe der Ressourcen, die in den entsprechenden Komponenten
+      /// gehalten werden.
+      /// @param what Komponentenangabe aus InputCore::What
       InputCore& ShutDown (const What& what);
 
+
+      /// @brief Liefert den Pointer zur Komponente für Taststur-Eingaben.
       InputKeyboard* Keyboard () { if (keyboard == nullptr) Reset(KeyboardInterface); return keyboard.get(); }
-      InputMouse* Mouse ()       { if (mouse == nullptr) Reset(MouseInterface); return mouse.get(); }
-      InputGamepad* Gamepad ()   { if (gamepad == nullptr) Reset(GamepadInterface); return gamepad.get(); }
+
+      /// @brief Liefert den Pointer zur Komponente für Maus-Eingaben.
+      InputMouse* Mouse () { if (mouse == nullptr) Reset(MouseInterface); return mouse.get(); }
+
+      /// @brief Liefert den Pointer zur Komponente für Gamepad-Eingaben.
+      InputGamepad* Gamepad () { if (gamepad == nullptr) Reset(GamepadInterface); return gamepad.get(); }
    };
 
 }

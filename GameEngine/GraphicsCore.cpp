@@ -116,7 +116,7 @@ namespace ge {
       return *this;
    }
 
-   GraphicsCore& GraphicsCore::RemoveTexture (const std::string& id)
+    GraphicsCore& GraphicsCore::RemoveTexture (const std::string& id)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
@@ -159,6 +159,12 @@ namespace ge {
       return *this;
    }
 
+   GraphicsCore& GraphicsCore::DrawRectangle (int left, int top, int right, int bottom, const Color& colorTopLeft, const Color& colorTopRight, const Color& colorBottomRight, const Color& colorBottomLeft)
+   {
+      driver->draw2DRectangle(core::rect<int>(left, top, right, bottom), colorTopLeft.AsIrrColor(), colorTopRight.AsIrrColor(), colorBottomLeft.AsIrrColor(), colorBottomRight.AsIrrColor());
+      return *this;
+   }
+
    GraphicsCore& GraphicsCore::DrawRectangle (int left, int top, int right, int bottom, const Color& color, const DrawType& type)
    {
       if (type == Outline) driver->draw2DRectangleOutline(core::rect<int>(left, top, right, bottom), color.AsIrrColor());
@@ -171,6 +177,17 @@ namespace ge {
    {
       // TODO
 
+      return *this;
+   }
+
+   GraphicsCore& GraphicsCore::DrawTexture (const std::string& id)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto tex = textures.find(id);
+      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", __FUNCTION__);
+
+      driver->draw2DImage(tex->second, irr::core::vector2d<int>(0, 0));
       return *this;
    }
 

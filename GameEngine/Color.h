@@ -10,10 +10,13 @@
 
 namespace ge {
 
+   /// @brief Standard-Klasse für Farben.
    class GEDLL Color
    {
    public:
-      enum ValueType {
+      /// @brief Auflistung der möglichen Farbwertangaben zur Verwendung mit
+      /// Color::Value().
+      enum What {
          RedValue = 0,
          GreenValue,
          BlueValue,
@@ -24,68 +27,131 @@ namespace ge {
       std::array<int, 4> values;
 
    public:
+      /// @brief Konstruktor. Initialisierung über Zahlenangaben.
+      /// @param red Rotanteil (0 - 255)
+      /// @param green Grünanteil (0 - 255)
+      /// @param blue Blauanteil (0 - 255)
+      /// @param alpha Alphawert (0 - 255, Standard: 255)
       Color (int red, int green, int blue, int alpha = 255)
       {
          Set(red, green, blue, alpha);
       }
 
+      /// @brief Konstruktor. Initialisierung über eine irrlicht-Farbe.
       Color (const irr::video::SColor& color)
       {
          FromIrrColor(color);
       }
 
+
+      /// @brief Legt alle Farbanteile und den Alphawert über Zahlenwerte fest.
+      /// @param red Rotanteil (0 - 255)
+      /// @param green Grünanteil (0 - 255)
+      /// @param blue Blauanteil (0 - 255)
+      /// @param alpha Alphawert (0 - 255, Standard: 255)
       Color& Set (int red, int green, int blue, int alpha = 255)
       {
          Red(red); Green(green); Blue(blue); Alpha(alpha);
          return *this;
       }
 
+      /// @brief Legt alle Farbanteile und den Alphawert über eine irrlicht-Farbe fest.
       Color& FromIrrColor (const irr::video::SColor& color)
       {
          return Set(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
       }
 
-      Color& Red (int val, bool mode = ABS)   { return Value(RedValue, val, mode); }
+      /// @brief Legt den Rotanteil fest.
+      /// @param val Rotanteil (0 - 255)
+      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
+      Color& Red (int val, bool mode = ABS) { return Value(RedValue, val, mode); }
+
+      /// @brief Legt den Grünanteil fest.
+      /// @param val Grünanteil (0 - 255)
+      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
       Color& Green (int val, bool mode = ABS) { return Value(GreenValue, val, mode); }
-      Color& Blue (int val, bool mode = ABS)  { return Value(BlueValue, val, mode); }
+
+      /// @brief Legt den Blauanteil fest.
+      /// @param val Blauanteil (0 - 255)
+      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
+      Color& Blue (int val, bool mode = ABS) { return Value(BlueValue, val, mode); }
+
+      /// @brief Legt den Alphawert fest.
+      /// @param val Alphawert (0 - 255)
+      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
       Color& Alpha (int val, bool mode = ABS) { return Value(AlphaValue, val, mode); }
 
-      Color& Value (const ValueType& type, int val, bool mode = ABS)
+      /// @brief Legt den angegebenen Wert aus dem Farbobjekt fest.
+      /// @param what Farbwertangabe aus Color::ValueType
+      /// @param val Anteilswert (0 - 255)
+      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
+      Color& Value (const What& what, int val, bool mode = ABS)
       {
-         if (mode == ABS) values[type] = val;
-         else             values[type] += val;
+         if (mode == ABS) values[what] = val;
+         else             values[what] += val;
 
-         if (values[type] < 0)        values[type] = 0;
-         else if (values[type] > 255) values[type] = 255;
-         else                         values[type] = val;
+         if (values[what] < 0)        values[what] = 0;
+         else if (values[what] > 255) values[what] = 255;
+         else                         values[what] = val;
 
          return *this;
       }
 
-      int Red () const                        { return values[RedValue]; }
-      int Green () const                      { return values[GreenValue]; }
-      int Blue () const                       { return values[BlueValue]; }
-      int Alpha () const                      { return values[AlphaValue]; }
-      int Value (const ValueType& type) const { return values[type]; }
 
+      /// @brief Liefert den Rotanteil.
+      int Red () const { return values[RedValue]; }
+
+      /// @brief Liefert den Grünanteil.
+      int Green () const { return values[GreenValue]; }
+
+      /// @brief Liefert den Blauanteil.
+      int Blue () const { return values[BlueValue]; }
+
+      /// @brief Liefert den Alphawert.
+      int Alpha () const { return values[AlphaValue]; }
+
+      /// @brief Liefert den angegebenen Wert aus dem Farbobjekt.
+      /// @param what Farbwerteingabe aus Color::ValueType
+      int Value (const What& what) const { return values[what]; }
+
+
+      /// @brief Liefert die Farbanteile und den Alphawert als Daten-Pointer.
       const int* Get () const { return values.data(); }
 
+      /// @brief Liefert ein entsprechendes irrlicht-Farbobjekt.
       const irr::video::SColor AsIrrColor () const
       {
          return irr::video::SColor(values[AlphaValue], values[RedValue], values[GreenValue], values[BlueValue]);
       }
 
+
+      /// @brief Operator + für zwei Color-Objekte
       Color operator+ (const Color& other) { return Color(Red() + other.Red(), Green() + other.Green(), Blue() + other.Blue(), Alpha() + other.Alpha()); }
+
+      /// @brief Operator - für zwei Color-Objekte
       Color operator- (const Color& other) { return Color(Red() - other.Red(), Green() - other.Green(), Blue() - other.Blue(), Alpha() - other.Alpha()); }
+
+      /// @brief Operator * für zwei Color-Objekte
       Color operator* (const Color& other) { return Color(Red() * other.Red(), Green() * other.Green(), Blue() * other.Blue(), Alpha() * other.Alpha()); }
 
+      /// @brief Operator += für zwei Color-Objekte
       Color& operator+= (const Color& other) { Set(Red() + other.Red(), Green() + other.Green(), Blue() + other.Blue(), Alpha() + other.Alpha()); return *this; }
+
+      /// @brief Operator -= für zwei Color-Objekte
       Color& operator-= (const Color& other) { Set(Red() - other.Red(), Green() - other.Green(), Blue() - other.Blue(), Alpha() - other.Alpha()); return *this; }
+
+      /// @brief Operator *= für zwei Color-Objekte
       Color& operator*= (const Color& other) { Set(Red() * other.Red(), Green() * other.Green(), Blue() * other.Blue(), Alpha() * other.Alpha()); return *this; }
 
+
+      /// @brief Operator *= für Color-Objekt und int
       Color& operator*= (int val) { Set(Red() * val, Green() * val, Blue() * val, Alpha() * val); return *this; }
 
+
+      /// @brief Operator == für zwei Color-Objekte
       bool operator== (const Color& other) { return (Red() == other.Red() && Green() == other.Green() && Blue() == other.Blue() && Alpha() == other.Alpha()); }
+
+      /// @brief Operator != für zwei Color-Objekte
       bool operator!= (const Color& other) { return !(Red() == other.Red() && Green() == other.Green() && Blue() == other.Blue() && Alpha() == other.Alpha()); }
    };
 
