@@ -7,6 +7,11 @@ bjam -q --toolset=msvc --build-type=minimal --with-filesystem stage
 xcopy stage\lib\*.lib ..\..\%1 /i /y /q
 echo boost beendet.
 
+echo OIS 1.3 ...
+cd ..\ois
+xcopy lib\*.* ..\..\%1 /i /y/q
+echo OIS beendet.
+
 echo Beginne mit Irrlicht 1.7.3 ...
 cd ..\irrlicht
 xcopy lib\irrlicht.lib ..\..\%1 /i /y /q
