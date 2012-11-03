@@ -1,6 +1,4 @@
 
-#include <Windows.h>
-
 #include "Base/Tools.h"
 #include "Base/Convert.h"
 
@@ -27,6 +25,8 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
       core->WindowTitle("GameEngine 0.1.0");
 
       resources->AddMusic("music", "../resources/audio/music/music.ogg");
+
+      graphics->AddTexture("image", "../resources/graphics/textures/image.png");
 
       audio->Add("music", resources->Music("music"));
       audio->Add("piano", "../resources/audio/music/piano.ogg");
@@ -58,6 +58,10 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
 
             graphics->BeginScene();
             {
+               graphics->DrawTexture("image", ge::Rectangle(300, 100, 310, 110));
+               graphics->DrawTexture("image", ge::Rectangle(310, 110, 360, 160));
+               graphics->DrawTexture("image", ge::Rectangle(360, 160, 620, 320));
+
                graphics->DrawBox(5, 5, 160, 235);
 
                graphics->Text(10, 10, "Filename: " + audio->FileName("music"));

@@ -21,10 +21,7 @@ namespace ge {
    GraphicsCore::~GraphicsCore ()
    {
       // Irrlicht handles font resources by itself - deleting or using drop() on them WILL CRASH the program!
-
-      std::for_each(textures.begin(), textures.end(), [] (const std::pair<std::string, irr::video::ITexture*> tex) {
-         tex.second->drop();
-      });
+      // Same for texture resources held by Irrlicht!
    }
 
    void GraphicsCore::Init (IrrlichtDevice* device)
@@ -159,7 +156,7 @@ namespace ge {
       return *this;
    }
 
-   GraphicsCore& GraphicsCore::DrawRectangle (int left, int top, int right, int bottom, const Color& colorTopLeft, const Color& colorTopRight, const Color& colorBottomRight, const Color& colorBottomLeft)
+   GraphicsCore& GraphicsCore::DrawRectangle (int left, int top, int right, int bottom, const Color& colorTopLeft, const Color& colorTopRight, const Color& colorBottomLeft, const Color& colorBottomRight)
    {
       driver->draw2DRectangle(core::rect<int>(left, top, right, bottom), colorTopLeft.AsIrrColor(), colorTopRight.AsIrrColor(), colorBottomLeft.AsIrrColor(), colorBottomRight.AsIrrColor());
       return *this;
@@ -180,14 +177,47 @@ namespace ge {
       return *this;
    }
 
-   GraphicsCore& GraphicsCore::DrawTexture (const std::string& id)
+   GraphicsCore& GraphicsCore::DrawTexture (const std::string& id, const Point& pos)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
       auto tex = textures.find(id);
       if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", __FUNCTION__);
 
-      driver->draw2DImage(tex->second, irr::core::vector2d<int>(0, 0));
+      driver->draw2DImage(tex->second, pos.AsIrrVector());
+      return *this;
+   }
+
+   GraphicsCore& GraphicsCore::DrawTexture (const std::string& id, const Rectangle& rect)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto tex = textures.find(id);
+      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", __FUNCTION__);
+
+      driver->draw2DImage(tex->second, rect.AsIrrRect(), core::rect<int>(core::vector2d<int>(0, 0), tex->second->getSize()), nullptr, nullptr, true);
+      return *this;
+   }
+
+   GraphicsCore& GraphicsCore::DrawTexture (const std::string& id, const Rectangle& srcRect, const Point& dstPos)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto tex = textures.find(id);
+      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", __FUNCTION__);
+
+      driver->draw2DImage(tex->second, dstPos.AsIrrVector(), srcRect.AsIrrRect());
+      return *this;
+   }
+
+   GraphicsCore& GraphicsCore::DrawTexture (const std::string& id, const Rectangle& srcRect, const Rectangle& dstRect)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+
+      auto tex = textures.find(id);
+      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", __FUNCTION__);
+
+      driver->draw2DImage(tex->second, dstRect.AsIrrRect(), srcRect.AsIrrRect());
       return *this;
    }
 

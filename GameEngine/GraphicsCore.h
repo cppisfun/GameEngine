@@ -115,71 +115,179 @@ namespace ge {
       /// @brief Zeichnet einen Punkt.
       GraphicsCore& DrawPixel (int x, int y, const Color& color);
 
+      /// @brief Zeichnet einen Punkt.
+      GraphicsCore& DrawPixel (const Point& pos, const Color& color) { return DrawPixel(pos.X(), pos.Y(), color); }
+
+      /// @brief Zeichnet einen Pixel unter Verwendung der eingestellten
+      /// Vordergrundfarbe.
+      GraphicsCore& DrawPixel (int x, int y)
+      {
+         return DrawPixel(x, y, foreColor);
+      }
+
+      /// @brief Zeichnet einen Pixel unter Verwendung der eingestellten
+      /// Vordergrundfarbe.
+      GraphicsCore& DrawPixel (const Point& pos) { return DrawPixel(pos.X(), pos.Y(), foreColor); }
+
+
       /// @brief Zeichnet eine Linie.
       GraphicsCore& DrawLine (int left, int top, int right, int bottom, const Color& color);
+
+      /// @brief Zeichnet eine Linie.
+      GraphicsCore& DrawLine (const Point& topLeft, const Point& bottomRight, const Color& color)
+      {
+         return DrawLine(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), color);
+      }
+
+      /// @brief Zeichnet eine Linie unter Verwendung der eingestellten
+      /// Vordergrundfarbe.
+      GraphicsCore& DrawLine (int left, int top, int right, int bottom)
+      {
+         return DrawLine(left, top, right, bottom, foreColor);
+      }
+
+      /// @brief Zeichnet eine Linie unter Verwendung der eingestellten
+      /// Vordergrundfarbe.
+      GraphicsCore& DrawLine (const Point& topLeft, const Point& bottomRight)
+      {
+         return DrawLine(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), foreColor);
+      }
+
 
       /// @brief Zeichnet ein Rechteck unter Verwendung einer angegebenen Farbe
       /// für jede Ecke (hieraus werden automatisch entsprechende Farbverläufe
       /// generiert).
-      /// @param left Linke Position
-      /// @param top Obere Position
-      /// @param right Rechte Position
-      /// @param bottom Untere Position
-      /// @param colorTopLeft Farbe der linken oberen Ecke
-      /// @param colorTopRight Farbe der rechten oberen Ecke
-      /// @param colorBottomRight Farbe der rechten unteren Ecke
-      /// @param colorBottomLeft Farbe der linken unteren Ecke
-      GraphicsCore& DrawRectangle (int left, int top, int right, int bottom, const Color& colorTopLeft, const Color& colorTopRight, const Color& colorBottomRight, const Color& colorBottomLeft);
+      GraphicsCore& DrawRectangle (int left, int top, int right, int bottom, const Color& colorTopLeft, const Color& colorTopRight, const Color& colorBottomLeft, const Color& colorBottomRight);
+
+      /// @brief Zeichnet ein Rechteck unter Verwendung einer angegebenen Farbe
+      /// für jede Ecke (hieraus werden automatisch entsprechende Farbverläufe
+      /// generiert).
+      GraphicsCore& DrawRectangle (const Point& topLeft, const Point& bottomRight, const Color& colorTopLeft, const Color& colorTopRight, const Color& colorBottomLeft, const Color& colorBottomRight)
+      {
+         return DrawRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), colorTopLeft, colorTopRight, colorBottomLeft, colorBottomRight);
+      }
+
+      /// @brief Zeichnet ein Rechteck unter Verwendung einer angegebenen Farbe
+      /// für jede Ecke (hieraus werden automatisch entsprechende Farbverläufe
+      /// generiert).
+      GraphicsCore& DrawRectangle (const Rectangle& rect, const Color& colorTopLeft, const Color& colorTopRight, const Color& colorBottomLeft, const Color& colorBottomRight)
+      {
+         return DrawRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), colorTopLeft, colorTopRight, colorBottomLeft, colorBottomRight);
+      }
 
       /// @brief Zeichnet ein Rechteck unter Verwendung einer Farbe.
-      /// @param left Linke Position
-      /// @param top Obere Position
-      /// @param right Rechte Position
-      /// @param bottom Untere Position
-      /// @param color Farbe (wird für die gesamte Zeichenoperation verwendet)
-      /// @param type Modusangabe aus GraphicsCore::DrawType
+      ///
+      /// _type_ ist hierbei eine Modusangabe aus GraphicsCore::DrawType.
+      /// Bei DrawType::Fill wird die eingestellte Hintergrundfarbe verwendet,
+      /// bei DrawType::Outline die eingestellte Vordergrundfarbe.
       GraphicsCore& DrawRectangle (int left, int top, int right, int bottom, const Color& color, const DrawType& type);
 
+      /// @brief Zeichnet ein Rechteck unter Verwendung einer Farbe.
+      ///
+      /// _type_ ist hierbei eine Modusangabe aus GraphicsCore::DrawType.
+      /// Bei DrawType::Fill wird die eingestellte Hintergrundfarbe verwendet,
+      /// bei DrawType::Outline die eingestellte Vordergrundfarbe.
+      GraphicsCore& DrawRectangle (const Point& topLeft, const Point& bottomRight, const Color& color, const DrawType& type)
+      {
+         return DrawRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), color, type);
+      }
+
+      /// @brief Zeichnet ein Rechteck unter Verwendung einer Farbe.
+      ///
+      /// _type_ ist hierbei eine Modusangabe aus GraphicsCore::DrawType.
+      /// Bei DrawType::Fill wird die eingestellte Hintergrundfarbe verwendet,
+      /// bei DrawType::Outline die eingestellte Vordergrundfarbe.
+      GraphicsCore& DrawRectangle (const Rectangle& rect, const Color& color, const DrawType& type)
+      {
+         return DrawRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), color, type);
+      }
+
       /// @brief Zeichnet ein gefülltes Rechteck mit Rahmen.
-      /// @param left Linke Position
-      /// @param top Obere Position
-      /// @param right Rechte Position
-      /// @param bottom Untere Position
-      /// @param outlineColor Rahmenfarbe
-      /// @param fillColor Füllfarbe
       GraphicsCore& DrawBox (int left, int top, int right, int bottom, const Color& outlineColor, const Color& fillColor)
       {
          return DrawRectangle(left, top, right, bottom, fillColor, Fill).DrawRectangle(left, top, right, bottom, outlineColor, Outline);
       }
 
+      /// @brief Zeichnet ein gefülltes Rechteck mit Rahmen.
+      GraphicsCore& DrawBox (const Point& topLeft, const Point& bottomRight, const Color& outlineColor, const Color& fillColor)
+      {
+         return DrawBox(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), outlineColor, fillColor);
+      }
 
-      /// @brief Zeichnet einen Pixel unter Verwendung der eingestellten
-      /// Vordergrundfarbe.
-      GraphicsCore& DrawPixel (int x, int y) { return DrawPixel(x, y, foreColor); }
+      /// @brief Zeichnet ein gefülltes Rechteck mit Rahmen.
+      GraphicsCore& DrawBox (const Rectangle& rect, const Color& outlineColor, const Color& fillColor)
+      {
+         return DrawBox(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), outlineColor, fillColor);
+      }
 
-      /// @brief Zeichnet eine Linie unter Verwendung der eingestellten
-      /// Vordergrundfarbe.
-      GraphicsCore& DrawLine (int left, int top, int right, int bottom) { return DrawLine(left, top, right, bottom, foreColor); }
-
-      /// @brief Zeichnet ein gefülltes Rechteck mit Rahmen unter Verwendung der
-      /// eingestellten Vorder- und Hintergrundfarbe.
-      GraphicsCore& DrawBox (int left, int top, int right, int bottom) { return DrawBox(left, top, right, bottom, foreColor, backColor); }
 
       /// @brief Zeichnet ein Rechteck unter Verwendung der entsprechenden
       /// eingestellten Farbe.
       ///
+      /// _type_ ist hierbei eine Modusangabe aus GraphicsCore::DrawType.
       /// Bei DrawType::Fill wird die eingestellte Hintergrundfarbe verwendet,
       /// bei DrawType::Outline die eingestellte Vordergrundfarbe.
-      /// @param left Linke Position
-      /// @param top Obere Position
-      /// @param right Rechte Position
-      /// @param bottom Untere Position
-      /// @param type Modusangabe aus GraphicsCore::DrawType
       GraphicsCore& DrawRectangle (int left, int top, int right, int bottom, const DrawType& type)
       {
          if (type == Outline) return DrawRectangle(left, top, right, bottom, foreColor, type);
          else                 return DrawRectangle(left, top, right, bottom, backColor, type);
       }
+
+      /// @brief Zeichnet ein Rechteck unter Verwendung der entsprechenden
+      /// eingestellten Farbe.
+      ///
+      /// _type_ ist hierbei eine Modusangabe aus GraphicsCore::DrawType.
+      /// Bei DrawType::Fill wird die eingestellte Hintergrundfarbe verwendet,
+      /// bei DrawType::Outline die eingestellte Vordergrundfarbe.
+      GraphicsCore& DrawRectangle (const Point& topLeft, const Point& bottomRight, const DrawType& type)
+      {
+         return DrawRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), type);
+      }
+
+      /// @brief Zeichnet ein Rechteck unter Verwendung der entsprechenden
+      /// eingestellten Farbe.
+      ///
+      /// _type_ ist hierbei eine Modusangabe aus GraphicsCore::DrawType.
+      /// Bei DrawType::Fill wird die eingestellte Hintergrundfarbe verwendet,
+      /// bei DrawType::Outline die eingestellte Vordergrundfarbe.
+      GraphicsCore& DrawRectangle (const Rectangle& rect, const DrawType& type)
+      {
+         return DrawRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), type);
+      }
+
+      /// @brief Zeichnet ein gefülltes Rechteck mit Rahmen unter Verwendung der
+      /// eingestellten Vorder- und Hintergrundfarbe.
+      GraphicsCore& DrawBox (int left, int top, int right, int bottom)
+      {
+         return DrawBox(left, top, right, bottom, foreColor, backColor);
+      }
+
+      /// @brief Zeichnet ein gefülltes Rechteck mit Rahmen unter Verwendung der
+      /// eingestellten Vorder- und Hintergrundfarbe.
+      GraphicsCore& DrawBox (const Point& topLeft, const Point& bottomRight)
+      {
+         return DrawBox(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), foreColor, backColor);
+      }
+
+      /// @brief Zeichnet ein gefülltes Rechteck mit Rahmen unter Verwendung der
+      /// eingestellten Vorder- und Hintergrundfarbe.
+      GraphicsCore& DrawBox (const Rectangle& rect)
+      {
+         return DrawBox(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), foreColor, backColor);
+      }
+
+
+      /// @brief Zeichnet eine Textur in Originalgröße an eine Position.
+      GraphicsCore& DrawTexture (const std::string& id, const Point& pos);
+
+      /// @brief Zeichnet eine Textur passend in einen Rechtecksbereich.
+      GraphicsCore& DrawTexture (const std::string& id, const Rectangle& rect);
+
+      /// @brief Zeichnet einen Texturausschnitt an eine Position.
+      GraphicsCore& DrawTexture (const std::string& id, const Rectangle& srcRect, const Point& dstPos);
+
+      /// @brief Zeichnet einen Texturausschnitt passend in einen Rechtecksbereich.
+      GraphicsCore& DrawTexture (const std::string& id, const Rectangle& srcRect, const Rectangle& dstRect);
 
 
       /// @brief Gibt einen Log-Text aus (hierfür wird die System-Schriftart verwendet).
@@ -198,10 +306,6 @@ namespace ge {
 
       /// @brief Erzeugt einen Screenshot. DUMMY, BITTE SINNVOLL DOKUMENTIEREN, WENNS FERTIG IST!
       GraphicsCore& ScreenShot ();
-
-
-      /// @brief Zeichnet eine Texture. DUMMY, BITTE SINNVOLL DOKUMENTIEREN, WENNS FERTIG IST!
-      GraphicsCore& DrawTexture (const std::string& id);
 
 
       /// @brief Liefert die Farbe, mit welcher der Grafik-Puffer "gelöscht"
