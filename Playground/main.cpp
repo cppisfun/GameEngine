@@ -22,7 +22,7 @@ int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
 
       resources->AddMusic("music", "../resources/audio/music/music.ogg");
 
-      graphics->AddTexture("image", "../resources/graphics/textures/image.png");
+//      graphics->AddTexture("image", "../resources/graphics/textures/image.png");
 
       audio->Add("music", resources->Music("music"));
       audio->Add("piano", "../resources/audio/music/piano.ogg");
@@ -36,7 +36,7 @@ int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
 
       while (core->IsRunning()) {
          if (core->IsWindowActive()) {
-            if (keyboard->Key(27)) core->Quit();
+            if (keyboard->Key(0x01)) core->Quit(); // escape key
 
 //            if (mouse->Clicked(LEFT_BUTTON)) {
 //               paused = !paused;
@@ -54,9 +54,9 @@ int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
 
             graphics->BeginScene();
             {
-               graphics->DrawTexture("image", ge::Rectangle(300, 100, 310, 110));
-               graphics->DrawTexture("image", ge::Rectangle(310, 110, 360, 160));
-               graphics->DrawTexture("image", ge::Rectangle(360, 160, 620, 320));
+//               graphics->DrawTexture("image", ge::Rectangle(300, 100, 310, 110));
+//               graphics->DrawTexture("image", ge::Rectangle(310, 110, 360, 160));
+//               graphics->DrawTexture("image", ge::Rectangle(360, 160, 620, 320));
 
                graphics->DrawBox(5, 5, 160, 235);
 

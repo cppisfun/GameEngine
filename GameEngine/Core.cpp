@@ -32,7 +32,7 @@ namespace ge {
    Core::~Core ()
    {
       ShutDown(AllInterfaces);
-      UnregisterClass("GE_MainWindow", instanceHandle);
+      UnregisterClass(windowClassName, instanceHandle);
    }
 
    void Core::Init ()
@@ -50,22 +50,19 @@ namespace ge {
 
    void Core::InitWindow ()
    {
-      WNDCLASSEX wnd;
-      wnd.cbSize        = sizeof(wnd);
-      wnd.style         = CS_CLASSDC;
+      WNDCLASSEX wnd    = { 0 };
+      wnd.cbSize        = sizeof(WNDCLASSEX);
+      wnd.style         = CS_HREDRAW | CS_VREDRAW;
       wnd.lpfnWndProc   = WindowProc;
-      wnd.cbClsExtra    = 0;
       wnd.hInstance     = instanceHandle;
-      wnd.hIcon         = LoadIcon(nullptr, IDI_APPLICATION);
-      wnd.hIconSm       = LoadIcon(nullptr, IDI_APPLICATION);
       wnd.hCursor       = LoadIcon(nullptr, IDC_ARROW);
-      wnd.hbrBackground = nullptr;
+      wnd.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
       wnd.lpszMenuName  = nullptr;
-      wnd.lpszClassName = "GE_MainWindow";
+      wnd.lpszClassName = windowClassName;
 
       if (!RegisterClassEx(&wnd)) throw error::Create("Failed to register window class!", __FUNCTION__);
 
-      windowHandle = CreateWindow("GE_MainWindow", "GE Main Window", WS_OVERLAPPEDWINDOW, 0, 0, 640, 480, nullptr, nullptr, instanceHandle, nullptr);
+      windowHandle = CreateWindow(windowClassName, "GE Main Window", WS_OVERLAPPEDWINDOW, 0, 0, 640, 480, nullptr, nullptr, instanceHandle, nullptr);
       if (windowHandle == nullptr) throw error::Create("Failed to create main window!", __FUNCTION__);
 
       ShowWindow(windowHandle, SW_NORMAL);

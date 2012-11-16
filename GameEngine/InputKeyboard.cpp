@@ -40,7 +40,7 @@ namespace ge {
    {
       if (input == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
 
-      device.reset((Keyboard*)input->createInputObject(OISKeyboard, true));
+      device = (Keyboard*)input->createInputObject(OISKeyboard, true);
       if (device == nullptr) error::Create("Failed to create keyboard device!", __FUNCTION__);
 
       eventHandler.reset(new EventHandler);

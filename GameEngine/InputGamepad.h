@@ -17,7 +17,7 @@ namespace ge {
    /// geliefert.
    class GEDLL InputGamepad : public EventReceiver
    {
-      std::unique_ptr<OIS::JoyStick> device;
+      OIS::JoyStick* device;  // no ownership, managed by OIS::InputManager
 
       void Init (OIS::InputManager* input);
 

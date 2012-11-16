@@ -17,7 +17,7 @@ namespace ge {
    /// geliefert.
    class GEDLL InputMouse : public EventReceiver
    {
-      std::unique_ptr<OIS::Mouse> device;
+      OIS::Mouse* device;  // no ownership, managed by OIS::InputManager
 
       void Init (OIS::InputManager* input);
 

@@ -26,7 +26,7 @@ namespace ge {
    {
       if (input == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
 
-      device.reset((Mouse*)input->createInputObject(OISMouse, true));
+      device =(Mouse*)input->createInputObject(OISMouse, true);
       if (device == nullptr) throw error::Create("Failed to create mouse device!", __FUNCTION__);
    }
 

@@ -27,8 +27,8 @@ namespace ge {
       };
 
    private:
-      std::unique_ptr<EventHandler>  eventHandler;
-      std::unique_ptr<OIS::Keyboard> device;
+      std::unique_ptr<EventHandler> eventHandler;
+      OIS::Keyboard* device;  // no ownership, managed by OIS::InputManager
 
       std::array<char, 256> currKeys;
       std::array<char, 256> prevKeys;

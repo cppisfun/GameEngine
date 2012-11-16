@@ -26,7 +26,7 @@ namespace ge {
    {
       if (input == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
 
-      device.reset((JoyStick*)input->createInputObject(OISJoyStick, true));
+      device = (JoyStick*)input->createInputObject(OISJoyStick, true);
       if (device == nullptr) throw error::Create("Failed to create gamepad device!", __FUNCTION__);
    }
 

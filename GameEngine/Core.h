@@ -38,6 +38,7 @@ namespace ge {
       };
 
    private:
+      static const char* windowClassName;
       static std::unique_ptr<Core> instance;
 
       HINSTANCE instanceHandle;
@@ -183,6 +184,7 @@ namespace ge {
 
 
 
+   const char* Core::windowClassName    = "GE_MainWindow";
    std::unique_ptr<Core> Core::instance = nullptr;
 
 }
