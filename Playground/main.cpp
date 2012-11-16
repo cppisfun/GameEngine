@@ -7,14 +7,10 @@
 using namespace ge;
 
 
-int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
+int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
 {
-   Core* core = nullptr;
-
-   base::ScopeGuard guard([&core] () { SecureDelete(core); });
-
    try {
-      core           = Core::Instance();
+      auto core      = Core::Instance(instance);
       auto graphics  = core->Graphics();
       auto input     = core->Input();
       auto audio     = core->Audio();
@@ -42,19 +38,19 @@ int WINAPI WinMain (HINSTANCE, HINSTANCE, LPSTR, int)
          if (core->IsWindowActive()) {
             if (keyboard->Key(27)) core->Quit();
 
-            if (mouse->Clicked(LEFT_BUTTON)) {
-               paused = !paused;
-               audio->PauseMusic(paused);
-            }
+//            if (mouse->Clicked(LEFT_BUTTON)) {
+//               paused = !paused;
+//               audio->PauseMusic(paused);
+//            }
 
-            if (mouse->Clicked(RIGHT_BUTTON)) {
-               audio->StopMusic();
-            }
+//            if (mouse->Clicked(RIGHT_BUTTON)) {
+//               audio->StopMusic();
+//            }
 
-            if (mouse->WheelMoved()) {
-               audio->MusicVolume("music", audio->MusicVolume("music") - (int)mouse->DWheel());
-               audio->MusicVolume("piano", audio->MusicVolume("piano") + (int)mouse->DWheel());
-            }
+//            if (mouse->WheelMoved()) {
+//               audio->MusicVolume("music", audio->MusicVolume("music") - (int)mouse->DWheel());
+//               audio->MusicVolume("piano", audio->MusicVolume("piano") + (int)mouse->DWheel());
+//            }
 
             graphics->BeginScene();
             {

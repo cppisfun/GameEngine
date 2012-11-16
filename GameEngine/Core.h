@@ -10,8 +10,6 @@
 
 #include "DLL_DEF.h"
 
-class EventController;
-
 
 /// @brief Namespace für alle GameEngine-Komponenten.
 namespace ge {
@@ -40,10 +38,12 @@ namespace ge {
       };
 
    private:
-      static Core* instance;
+      static std::unique_ptr<Core> instance;
+
+      HINSTANCE instanceHandle;
+      HWND windowHandle;
 
       std::unique_ptr<irr::IrrlichtDevice> device;
-      std::unique_ptr<EventController> eventController;
       bool resizableWindow;
 
       std::unique_ptr<GraphicsCore>  graphics;
@@ -51,11 +51,12 @@ namespace ge {
       std::unique_ptr<AudioCore>     audio;
       std::unique_ptr<ResourcesCore> resources;
 
-      Core ();
+      Core (HINSTANCE inst);
       Core (const Core&);
       Core& operator= (const Core&);
 
       void Init ();
+      void InitWindow ();
 
    public:
       /// @brief Destruktor. Entfernt automatisch alle noch bestehenden
@@ -65,10 +66,17 @@ namespace ge {
 
       /// @brief Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird
       /// dieses erstellt, alle Aufrufe liefern dieses einzelne Objekt zurück.
-      static Core* Instance ()
+      ///
+      /// Für den ersten Aufruf muss das Instanz-Handle übergeben werden,
+      /// unter welchem die Anwendung gestartet wurde. Dieses kann aus dem
+      /// ersten Parameter der WinMain-Funktion direkt übernommen werden.
+      ///
+      /// Sobald das Core-Objekt erstellt wurde, genügt das Aufrufen der
+      /// Funktion Instance() ohne die Angabe von Parametern.
+      static Core* Instance (HINSTANCE inst = nullptr)
       {
-         if (!instance) instance = new Core;
-         return instance;
+         if (instance == nullptr) instance.reset(new Core(inst));
+         return instance.get();
       }
 
 
@@ -79,7 +87,7 @@ namespace ge {
       Core& Reset (const What& what)
       {
          if (what & GraphicsInterface)  graphics.reset(new GraphicsCore(device.get()));
-         if (what & InputInterface)     input.reset(new InputCore(device.get(), eventController.get()));
+         if (what & InputInterface)     input.reset(new InputCore(windowHandle));
          if (what & AudioInterface)     audio.reset(new AudioCore);
          if (what & ResourcesInterface) resources.reset(new ResourcesCore);
 
@@ -131,6 +139,16 @@ namespace ge {
       Core& Quit () { device->closeDevice(); return *this; }
 
 
+      /// @brief Liefert den Pointer zum irrlicht-Device.
+      irr::IrrlichtDevice* Device () const { return device.get(); }
+
+      /// @brief Liefert das Handle der Instanz, unter welchem die Anwendung läuft.
+      HINSTANCE InstanceHandle () const { return instanceHandle; }
+
+      /// @brief Liefert das Handle des Fensters, in welchem die Anwendung läuft.
+      HWND WindowHandle () const { return windowHandle; }
+
+
       /// @brief Liefert den Pointer zur Kernkomponente für Grafik.
       GraphicsCore* Graphics () { if (graphics == nullptr) Reset(GraphicsInterface); return graphics.get(); }
 
@@ -142,9 +160,6 @@ namespace ge {
 
       /// @brief Liefert den Pointer zur Kernkomponente für Ressourcen.
       ResourcesCore* Resources () { if (resources == nullptr) Reset(ResourcesInterface); return resources.get(); }
-
-      /// @brief Liefert den Pointer zum irrlicht-Device.
-      irr::IrrlichtDevice* Device () { return device.get(); }
 
 
       /// @brief Ermittelt, ob das irrlicht-Device aktiviert wurde und aktuell fehlerfrei arbeitet.
@@ -167,7 +182,8 @@ namespace ge {
    };
 
 
-   Core* Core::instance = nullptr;
+
+   std::unique_ptr<Core> Core::instance = nullptr;
 
 }
 

@@ -1,33 +1,41 @@
 
 #include "Precomp.h"
 
+#include <OISInputManager.h>
+
 #include "InputCore.h"
 
+#include "../Base/Convert.h"
 #include "../Base/Error.h"
 
-using namespace irr;
+using namespace OIS;
+using namespace base;
 
 
 namespace ge {
 
-   InputCore::InputCore (IrrlichtDevice* irrDevice, EventController* eventCtrl)
-   : device(nullptr), eventController(nullptr), keyboard(nullptr), mouse(nullptr), gamepad(nullptr)
+   InputCore::InputCore (HWND window)
+   : input(nullptr), keyboard(nullptr), mouse(nullptr), gamepad(nullptr)
    {
-      Init(irrDevice, eventCtrl);
+      Init(window);
    }
 
    InputCore::~InputCore ()
    {
       ShutDown(AllInterfaces);
+
+      if (input != nullptr) {
+         InputManager::destroyInputSystem(input);
+         input = nullptr;
+      }
    }
 
-   void InputCore::Init (IrrlichtDevice* irrDevice, EventController* eventCtrl)
+   void InputCore::Init (HWND window)
    {
-      if (irrDevice == nullptr)      throw error::NullPointer("Invalid Irrlicht device pointer!", __FUNCTION__);
-      else if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+      if (window == nullptr) throw error::NullPointer("Invalid window handle!", __FUNCTION__);
 
-      device          = irrDevice;
-      eventController = eventCtrl;
+      input = InputManager::createInputSystem((size_t)window);
+      if (input == nullptr) throw error::Create("Failed to create input system!", __FUNCTION__);
 
       Reset(KeyboardInterface);
    }
@@ -41,9 +49,9 @@ namespace ge {
 
    InputCore& InputCore::Reset (const What& what)
    {
-      if (what & KeyboardInterface) keyboard.reset(new InputKeyboard(eventController));
-      if (what & MouseInterface)    mouse.reset(new InputMouse(device->getCursorControl(), eventController));
-      if (what & GamepadInterface)  gamepad.reset(new InputGamepad(eventController));
+      if (what & KeyboardInterface) keyboard.reset(new InputKeyboard(input));
+      if (what & MouseInterface)    mouse.reset(new InputMouse(input));
+      if (what & GamepadInterface)  gamepad.reset(new InputGamepad(input));
 
       return *this;
    }

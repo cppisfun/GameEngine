@@ -1,16 +1,15 @@
 
 #pragma once
 
-
-#include <irrlicht.h>
-
-#include "EventController.h"
-
 #include "InputKeyboard.h"
 #include "InputMouse.h"
 #include "InputGamepad.h"
 
 #include "DLL_DEF.h"
+
+namespace OIS {
+   class InputManager;
+}
 
 
 namespace ge {
@@ -31,27 +30,24 @@ namespace ge {
       };
 
    private:
-      irr::IrrlichtDevice* device;
-      EventController* eventController;
+      OIS::InputManager* input;
 
       std::unique_ptr<InputKeyboard> keyboard;
       std::unique_ptr<InputMouse>    mouse;
       std::unique_ptr<InputGamepad>  gamepad;
 
-      void Init (irr::IrrlichtDevice* irrDevice, EventController* eventCtrl);
+      void Init (HWND window);
 
    public:
-      /// @brief Konstruktor. Benötigt Pointer zu einem validen
-      /// irrlicht-Device und einem validen Objekt vom Typ ge::EventController
-      /// (werden automatisch bei der Initialisierung über Core übergeben).
-      InputCore (irr::IrrlichtDevice* irrDevice, EventController* eventCtrl);
+      /// @brief Konstruktor. Benötigt ein valides Window-Handle (wird
+      /// automatisch bei der Initialisierung über Core übergeben).
+      InputCore (HWND window);
 
       /// @brief Destruktor. Entfernt automatisch alle noch bestehenden
       /// Input-Komponenten und gibt Ressourcen frei, die innerhalb von
       /// InputCore oder einer in InputCore gehaltenen Input-Komponente
       /// erreichbar sind.
       virtual ~InputCore ();
-
 
       /// @brief Aktualisiert den Eingabestatus aller vorhandenen und
       /// eingeschalteten Input-Komponenten.

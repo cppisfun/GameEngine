@@ -1,6 +1,47 @@
 
 #include "Precomp.h"
 
+#include <OISInputManager.h>
+#include <OISMouse.h>
+
+#include "InputMouse.h"
+
+#include "../Base/Error.h"
+
+using namespace OIS;
+
+
+namespace ge {
+
+   InputMouse::InputMouse (InputManager* input) : device(nullptr)
+   {
+      Init(input);
+   }
+
+   InputMouse::~InputMouse ()
+   {
+   }
+
+   void InputMouse::Init (InputManager* input)
+   {
+      if (input == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
+
+      device.reset((Mouse*)input->createInputObject(OISMouse, true));
+      if (device == nullptr) throw error::Create("Failed to create mouse device!", __FUNCTION__);
+   }
+
+   void InputMouse::Update ()
+   {
+      if (!Enabled()) return;
+      // TODO
+   }
+
+}
+
+
+/*
+#include "Precomp.h"
+
 #include <irrlicht.h>
 
 #include "InputMouse.h"
@@ -215,3 +256,4 @@ namespace ge {
 
 }
 
+*/

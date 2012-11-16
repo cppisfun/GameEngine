@@ -47,17 +47,14 @@
       <Filter>Primitive</Filter>
     </ClInclude>
     <ClInclude Include="DLL_DEF.h" />
-    <ClInclude Include="EventController.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="EventListener.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Rectangle.h">
       <Filter>Primitive</Filter>
     </ClInclude>
     <ClInclude Include="Point.h">
       <Filter>Primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="EventReceiver.h">
+      <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

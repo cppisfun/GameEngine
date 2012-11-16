@@ -1,6 +1,47 @@
 
 #pragma once
 
+#include "EventReceiver.h"
+
+#include "DLL_DEF.h"
+
+namespace OIS {
+   class InputManager;
+   class Mouse;
+}
+
+
+namespace ge {
+
+   /// @brief Input-Klasse für Maus-Steuerung. Wird über InputCore::Mouse()
+   /// geliefert.
+   class GEDLL InputMouse : public EventReceiver
+   {
+      std::unique_ptr<OIS::Mouse> device;
+
+      void Init (OIS::InputManager* input);
+
+   public:
+      /// @brief Konstruktor. Benötigt den Pointer zu einem validen Objekt vom
+      /// Typ OIS::InputManager (wird automatisch bei der Initialisierung über
+      /// Core übergeben).
+      InputMouse (OIS::InputManager* input);
+
+      /// @brief Destruktor.
+      virtual ~InputMouse ();
+
+      /// @brief Aktualisiert den Eingabestatus und stellt Abweichungen vom
+      /// vorigen Status fest. Muss bei jedem Durchlauf aufgerufen werden,
+      /// damit die Eingaben korrekt verarbeitet werden können.
+      void Update () override;
+   };
+
+}
+
+
+/*
+#pragma once
+
 #include "EventListener.h"
 
 #include "DLL_DEF.h"
@@ -39,8 +80,6 @@ namespace ge {
       std::array<ButtonClickState, BUTTON_COUNT> buttonClickStates;
 
       void Init (irr::gui::ICursorControl* cursorCtrl, EventController* eventCtrl);
-
-      void OnEvent (const irr::SEvent& event) override;
 
    public:
       /// @brief Konstruktor. Benötigt Pointer zu einem validen
@@ -162,3 +201,4 @@ namespace ge {
 
 }
 
+*/

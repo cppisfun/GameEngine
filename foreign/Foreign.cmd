@@ -7,7 +7,7 @@ bjam -q --toolset=msvc --build-type=minimal --with-filesystem stage
 xcopy stage\lib\*.lib ..\..\%1 /i /y /q
 echo boost beendet.
 
-echo OIS 1.3 ...
+echo OIS 1.4 unstable ...
 cd ..\ois
 xcopy lib\*.* ..\..\%1 /i /y/q
 echo OIS beendet.
