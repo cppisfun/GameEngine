@@ -17,15 +17,16 @@ namespace ge {
    /// geliefert.
    class GEDLL InputGamepad : public EventReceiver
    {
-      OIS::JoyStick* device;  // no ownership, managed by OIS::InputManager
+      OIS::InputManager* input;
+      OIS::JoyStick*    device;
 
-      void Init (OIS::InputManager* input);
+      void Init (OIS::InputManager* inputManager);
 
    public:
       /// @brief Konstruktor. Benötigt den Pointer zu einem validen Objekt vom
       /// Typ OIS::InputManager (wird automatisch bei der Initialisierung über
       /// Core übergeben).
-      InputGamepad (OIS::InputManager* input);
+      InputGamepad (OIS::InputManager* inputManager);
 
       /// @brief Destruktor.
       virtual ~InputGamepad ();

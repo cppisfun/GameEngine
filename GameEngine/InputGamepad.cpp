@@ -13,18 +13,24 @@ using namespace OIS;
 
 namespace ge {
 
-   InputGamepad::InputGamepad (InputManager* input) : device(nullptr)
+   InputGamepad::InputGamepad (InputManager* inputManager)
+   : input(nullptr), device(nullptr)
    {
-      Init(input);
+      Init(inputManager);
    }
 
    InputGamepad::~InputGamepad ()
    {
+      if (device != nullptr) {
+         input->destroyInputObject(device);
+         device = nullptr;
+      }
    }
 
-   void InputGamepad::Init (InputManager* input)
+   void InputGamepad::Init (InputManager* inputManager)
    {
-      if (input == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
+      if (inputManager == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
+      input = inputManager;
 
       device = (JoyStick*)input->createInputObject(OISJoyStick, true);
       if (device == nullptr) throw error::Create("Failed to create gamepad device!", __FUNCTION__);

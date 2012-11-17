@@ -36,7 +36,7 @@ int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
 
       while (core->IsRunning()) {
          if (core->IsWindowActive()) {
-            if (keyboard->Key(0x01)) core->Quit(); // escape key
+            if (keyboard->KeyReleased(0x01)) core->Quit(); // escape key
 
 //            if (mouse->Clicked(LEFT_BUTTON)) {
 //               paused = !paused;

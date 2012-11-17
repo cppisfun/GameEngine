@@ -26,19 +26,25 @@ namespace ge {
 
 
 
-   InputKeyboard::InputKeyboard (InputManager* input) : device(nullptr), eventHandler(nullptr)
+   InputKeyboard::InputKeyboard (InputManager* inputManager)
+   : input(nullptr), device(nullptr), eventHandler(nullptr)
    {
-      Init(input);
+      Init(inputManager);
    }
 
    InputKeyboard::~InputKeyboard ()
    {
-      if (device != nullptr) device->setEventCallback(nullptr);
+      if (device != nullptr) {
+         device->setEventCallback(nullptr);
+         input->destroyInputObject(device);
+         device = nullptr;
+      }
    }
 
-   void InputKeyboard::Init (InputManager* input)
+   void InputKeyboard::Init (InputManager* inputManager)
    {
-      if (input == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
+      if (inputManager == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
+      input = inputManager;
 
       device = (Keyboard*)input->createInputObject(OISKeyboard, true);
       if (device == nullptr) error::Create("Failed to create keyboard device!", __FUNCTION__);

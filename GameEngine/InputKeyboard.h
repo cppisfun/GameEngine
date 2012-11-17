@@ -28,18 +28,19 @@ namespace ge {
 
    private:
       std::unique_ptr<EventHandler> eventHandler;
-      OIS::Keyboard* device;  // no ownership, managed by OIS::InputManager
+      OIS::InputManager* input;
+      OIS::Keyboard*     device;
 
       std::array<char, 256> currKeys;
       std::array<char, 256> prevKeys;
 
-      void Init (OIS::InputManager* input);
+      void Init (OIS::InputManager* inputManager);
 
    public:
       /// @brief Konstruktor. Benötigt den Pointer zu einem validen Objekt vom
       /// Typ OIS::InputManager (wird automatisch bei der Initialisierung über
       /// Core übergeben).
-      InputKeyboard (OIS::InputManager* input);
+      InputKeyboard (OIS::InputManager* inputManager);
 
       /// @brief Destruktor.
       virtual ~InputKeyboard ();

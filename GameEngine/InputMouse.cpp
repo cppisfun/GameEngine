@@ -13,18 +13,24 @@ using namespace OIS;
 
 namespace ge {
 
-   InputMouse::InputMouse (InputManager* input) : device(nullptr)
+   InputMouse::InputMouse (InputManager* inputManager)
+   : input(nullptr), device(nullptr)
    {
-      Init(input);
+      Init(inputManager);
    }
 
    InputMouse::~InputMouse ()
    {
+      if (device != nullptr) {
+         input->destroyInputObject(device);
+         device = nullptr;
+      }
    }
 
-   void InputMouse::Init (InputManager* input)
+   void InputMouse::Init (InputManager* inputManager)
    {
-      if (input == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
+      if (inputManager == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
+      input = inputManager;
 
       device =(Mouse*)input->createInputObject(OISMouse, true);
       if (device == nullptr) throw error::Create("Failed to create mouse device!", __FUNCTION__);

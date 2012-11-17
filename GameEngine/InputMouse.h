@@ -17,15 +17,16 @@ namespace ge {
    /// geliefert.
    class GEDLL InputMouse : public EventReceiver
    {
-      OIS::Mouse* device;  // no ownership, managed by OIS::InputManager
+      OIS::InputManager* input;
+      OIS::Mouse*        device;
 
-      void Init (OIS::InputManager* input);
+      void Init (OIS::InputManager* inputManager);
 
    public:
       /// @brief Konstruktor. Benötigt den Pointer zu einem validen Objekt vom
       /// Typ OIS::InputManager (wird automatisch bei der Initialisierung über
       /// Core übergeben).
-      InputMouse (OIS::InputManager* input);
+      InputMouse (OIS::InputManager* inputManager);
 
       /// @brief Destruktor.
       virtual ~InputMouse ();
