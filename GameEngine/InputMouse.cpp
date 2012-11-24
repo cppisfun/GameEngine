@@ -117,49 +117,6 @@ namespace ge {
 
 
 /*
-namespace ge {
-
-   void InputMouse::Init (ICursorControl* cursorCtrl, EventController* eventCtrl)
-   {
-      std::fill(buttonClickStates.begin(), buttonClickStates.end(), Nothing);
-   }
-
-   void InputMouse::OnEvent (const SEvent& event)
-   {
-      if (!Enabled()) return;
-
-      switch (event.MouseInput.Event) {
-         case EMIE_LMOUSE_PRESSED_DOWN: currButtons[LEFT_BUTTON]         = true;                return;
-         case EMIE_MMOUSE_PRESSED_DOWN: currButtons[MIDDLE_BUTTON]       = true;                return;
-         case EMIE_RMOUSE_PRESSED_DOWN: currButtons[RIGHT_BUTTON]        = true;                return;
-         case EMIE_LMOUSE_LEFT_UP:      currButtons[LEFT_BUTTON]         = false;               return;
-         case EMIE_MMOUSE_LEFT_UP:      currButtons[MIDDLE_BUTTON]       = false;               return;
-         case EMIE_RMOUSE_LEFT_UP:      currButtons[RIGHT_BUTTON]        = false;               return;
-         case EMIE_LMOUSE_DOUBLE_CLICK: buttonClickStates[LEFT_BUTTON]   = ButtonDoubleClicked; return;
-         case EMIE_MMOUSE_DOUBLE_CLICK: buttonClickStates[MIDDLE_BUTTON] = ButtonDoubleClicked; return;
-         case EMIE_RMOUSE_DOUBLE_CLICK: buttonClickStates[RIGHT_BUTTON]  = ButtonDoubleClicked; return;
-         case EMIE_LMOUSE_TRIPLE_CLICK: buttonClickStates[LEFT_BUTTON]   = ButtonTripleClicked; return;
-         case EMIE_MMOUSE_TRIPLE_CLICK: buttonClickStates[MIDDLE_BUTTON] = ButtonTripleClicked; return;
-         case EMIE_RMOUSE_TRIPLE_CLICK: buttonClickStates[RIGHT_BUTTON]  = ButtonTripleClicked; return;
-      }
-   }
-
-   void InputMouse::Update ()
-   {
-      for (int i = 0; i < BUTTON_COUNT; ++i) {
-         if (buttonClickStates[i] != ButtonWasPressed) {
-            buttonClickStates[i] = Nothing;
-         }
-
-         if (ButtonPressed(i) && buttonClickStates[i] == Nothing) {
-            buttonClickStates[i] = ButtonWasPressed;
-         }
-         else if (ButtonReleased(i) && buttonClickStates[i] == ButtonWasPressed) {
-            buttonClickStates[i] = ButtonClicked;
-         }
-      }
-   }
-
    InputMouse& InputMouse::X (int x)
    {
       currX = x;
@@ -188,43 +145,4 @@ namespace ge {
       cursor->setPosition(x, y);
       return *this;
    }
-
-   bool InputMouse::Clicked (int btn)
-   {
-      if (btn < NONE || btn >= BUTTON_COUNT) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
-      else if (btn >= 0) return (buttonClickStates[btn] == ButtonClicked);
-
-      for (int i = 0; i < BUTTON_COUNT; ++i) {
-         if (buttonClickStates[i] == ButtonClicked) return (btn == ANY);
-      }
-
-      return (btn == NONE);
-   }
-
-   bool InputMouse::DoubleClicked (int btn)
-   {
-      if (btn < NONE || btn >= BUTTON_COUNT) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
-      else if (btn >= 0) return (buttonClickStates[btn] == ButtonDoubleClicked);
-
-      for (int i = 0; i < BUTTON_COUNT; ++i) {
-         if (buttonClickStates[i] == ButtonDoubleClicked) return (btn == ANY);
-      }
-
-      return (btn == NONE);
-   }
-
-   bool InputMouse::TripleClicked (int btn)
-   {
-      if (btn < NONE || btn >= BUTTON_COUNT) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
-      else if (btn >= 0) return (buttonClickStates[btn] == ButtonTripleClicked);
-
-      for (int i = 0; i < BUTTON_COUNT; ++i) {
-         if (buttonClickStates[i] == ButtonTripleClicked) return (btn == ANY);
-      }
-
-      return (btn == NONE);
-   }
-
-}
-
 */

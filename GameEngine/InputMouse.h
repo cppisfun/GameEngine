@@ -144,17 +144,7 @@ namespace ge {
 /*
    class GEDLL InputMouse : public EventListener
    {
-      enum ButtonClickState {
-         Nothing = 0,
-         ButtonWasPressed,    // only used to determine single clicks
-         ButtonClicked,
-         ButtonDoubleClicked,
-         ButtonTripleClicked
-      };
-
       irr::gui::ICursorControl* cursor;
-
-      std::array<ButtonClickState, BUTTON_COUNT> buttonClickStates;
 
    public:
       /// Legt fest, ob der Mauszeiger angezeigt werden soll.
@@ -177,30 +167,6 @@ namespace ge {
 
       /// Ermittelt, ob der Mauszeiger sichtbar ist.
       bool IsVisible () const { return cursor->isVisible(); }
-
-
-      /// @brief Ermittelt, ob gerade ein Click erfolgt ist. Dieser Status ist
-      /// nur in dem Moment _true_, in welchem der Click vollendet wurde, nach
-      /// dem nächsten Aufruf von Update() allerdings wieder _false_.
-      /// @param btn NONE = keiner, ANY = beliebig, LEFT_BUTTON, MIDDLE_BUTTON,
-      /// RIGHT_BUTTON (Standard: ANY)
-      bool Clicked (int btn = ANY);
-
-      /// @brief Ermittelt, ob gerade ein Double-Click erfolgt ist. Dieser
-      /// Status ist nur in dem Moment _true_, in welchem der Doppel-Click
-      /// vollendet wurde, nach dem nächsten Aufruf von Update() allerdings
-      /// wieder _false_.
-      /// @param btn NONE = keiner, ANY = beliebig, LEFT_BUTTON, MIDDLE_BUTTON,
-      /// RIGHT_BUTTON (Standard: ANY)
-      bool DoubleClicked (int btn = ANY);
-
-      /// @brief Ermittelt, ob gerade ein Triple-Click erfolgt ist. Dieser
-      /// Status ist nur in dem Moment _true_, in welchem der Triple-Click
-      /// vollendet wurde, nach dem nächsten Aufruf von Update() allerdings
-      /// wieder _false_.
-      /// @param btn NONE = keiner, ANY = beliebig, LEFT_BUTTON, MIDDLE_BUTTON,
-      /// RIGHT_BUTTON (Standard: ANY)
-      bool TripleClicked (int btn = ANY);
    };
 
 }
