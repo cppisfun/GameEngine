@@ -38,19 +38,20 @@ int WINAPI WinMain (HINSTANCE instance, HINSTANCE, LPSTR, int)
          if (core->IsWindowActive()) {
             if (keyboard->KeyReleased(0x01)) core->Quit(); // escape key
 
-//            if (mouse->Clicked(LEFT_BUTTON)) {
-//               paused = !paused;
-//               audio->PauseMusic(paused);
-//            }
+            if (mouse->ButtonPressed(InputMouse::Button_Left)) {
+               paused = !paused;
+               audio->PauseMusic(paused);
+            }
 
-//            if (mouse->Clicked(RIGHT_BUTTON)) {
-//               audio->StopMusic();
-//            }
+            if (mouse->ButtonPressed(InputMouse::Button_Right)) {
+               if (audio->MusicPan("music")) audio->StopMusic("music");
+               else audio->PlayMusic("music", true);
+            }
 
-//            if (mouse->WheelMoved()) {
-//               audio->MusicVolume("music", audio->MusicVolume("music") - (int)mouse->DWheel());
-//               audio->MusicVolume("piano", audio->MusicVolume("piano") + (int)mouse->DWheel());
-//            }
+            if (mouse->WheelMoved()) {
+               audio->MusicVolume("music", audio->MusicVolume("music") + mouse->DWheel() / 100);
+               audio->MusicVolume("piano", audio->MusicVolume("piano") - mouse->DWheel() / 100);
+            }
 
             graphics->BeginScene();
             {

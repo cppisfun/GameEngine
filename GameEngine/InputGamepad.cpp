@@ -8,12 +8,10 @@
 
 #include "../Base/Error.h"
 
-using namespace OIS;
-
 
 namespace ge {
 
-   InputGamepad::InputGamepad (InputManager* inputManager)
+   InputGamepad::InputGamepad (OIS::InputManager* inputManager)
    : input(nullptr), device(nullptr)
    {
       Init(inputManager);
@@ -27,12 +25,12 @@ namespace ge {
       }
    }
 
-   void InputGamepad::Init (InputManager* inputManager)
+   void InputGamepad::Init (OIS::InputManager* inputManager)
    {
       if (inputManager == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
       input = inputManager;
 
-      device = (JoyStick*)input->createInputObject(OISJoyStick, true);
+      device = (OIS::JoyStick*)input->createInputObject(OIS::OISJoyStick, true);
       if (device == nullptr) throw error::Create("Failed to create gamepad device!", __FUNCTION__);
    }
 

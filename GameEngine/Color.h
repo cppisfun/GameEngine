@@ -55,7 +55,8 @@ namespace ge {
          return *this;
       }
 
-      /// @brief Legt alle Farbanteile und den Alphawert über eine irrlicht-Farbe fest.
+      /// @brief Legt alle Farbanteile und den Alphawert über eine
+      /// irrlicht-Farbe fest.
       Color& FromIrrColor (const irr::video::SColor& color)
       {
          return Set(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
@@ -63,32 +64,37 @@ namespace ge {
 
       /// @brief Legt den Rotanteil fest.
       /// @param val Rotanteil (0 - 255)
-      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
-      Color& Red (int val, bool mode = ABS) { return Value(RedValue, val, mode); }
+      /// @param absolute _true_ = absolute Änderung / Zuweisung, _false_ =
+      /// relative Änderung / Addition (Standard: _true_)
+      Color& Red (int val, bool absolute = true) { return Value(RedValue, val, absolute); }
 
       /// @brief Legt den Grünanteil fest.
       /// @param val Grünanteil (0 - 255)
-      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
-      Color& Green (int val, bool mode = ABS) { return Value(GreenValue, val, mode); }
+      /// @param absolute _true_ = absolute Änderung / Zuweisung, _false_ =
+      /// relative Änderung / Addition (Standard: _true_)
+      Color& Green (int val, bool absolute = true) { return Value(GreenValue, val, absolute); }
 
       /// @brief Legt den Blauanteil fest.
       /// @param val Blauanteil (0 - 255)
-      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
-      Color& Blue (int val, bool mode = ABS) { return Value(BlueValue, val, mode); }
+      /// @param absolute _true_ = absolute Änderung / Zuweisung, _false_ =
+      /// relative Änderung / Addition (Standard: _true_)
+      Color& Blue (int val, bool absolute = true) { return Value(BlueValue, val, absolute); }
 
       /// @brief Legt den Alphawert fest.
       /// @param val Alphawert (0 - 255)
-      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
-      Color& Alpha (int val, bool mode = ABS) { return Value(AlphaValue, val, mode); }
+      /// @param absolute _true_ = absolute Änderung / Zuweisung, _false_ =
+      /// relative Änderung / Addition (Standard: _true_)
+      Color& Alpha (int val, bool absolute = true) { return Value(AlphaValue, val, absolute); }
 
       /// @brief Legt den angegebenen Wert aus dem Farbobjekt fest.
       /// @param what Farbwertangabe aus Color::ValueType
       /// @param val Anteilswert (0 - 255)
-      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
-      Color& Value (const What& what, int val, bool mode = ABS)
+      /// @param absolute _true_ = absolute Änderung / Zuweisung, _false_ =
+      /// relative Änderung / Addition (Standard: _true_)
+      Color& Value (const What& what, int val, bool absolute = true)
       {
-         if (mode == ABS) values[what] = val;
-         else             values[what] += val;
+         if (absolute) values[what] = val;
+         else          values[what] += val;
 
          if (values[what] < 0)        values[what] = 0;
          else if (values[what] > 255) values[what] = 255;

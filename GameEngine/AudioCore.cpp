@@ -7,8 +7,6 @@
 
 #include "../Base/Error.h"
 
-using namespace irrklang;
-
 
 namespace ge {
 
@@ -22,17 +20,17 @@ namespace ge {
       if (device != nullptr) {
          device->stopAllSounds();
 
-         std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, ISound*> mus) {
+         std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, irrklang::ISound*> mus) {
             mus.second->drop();
          });
 
          for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-            std::for_each(it->second.begin(), it->second.end(), [] (ISound* snd) {
+            std::for_each(it->second.begin(), it->second.end(), [] (irrklang::ISound* snd) {
                snd->drop();
             });
          }
 
-         std::for_each(audioPool.begin(), audioPool.end(), [] (const std::pair<std::string, ISoundSource*> aud) {
+         std::for_each(audioPool.begin(), audioPool.end(), [] (const std::pair<std::string, irrklang::ISoundSource*> aud) {
             aud.second->drop();
          });
       }
@@ -40,7 +38,7 @@ namespace ge {
 
    void AudioCore::Init ()
    {
-      device = createIrrKlangDevice();
+      device = irrklang::createIrrKlangDevice();
       if (device == nullptr) throw error::Create("Failed to create irrKlang audio device!", __FUNCTION__);
    }
 
@@ -50,7 +48,7 @@ namespace ge {
       else if (audioFile.empty())                     throw error::InvalidParam("No audio file specified!", __FUNCTION__);
       else if (audioPool.find(id) != audioPool.end()) throw error::AlreadyExists("Audio resource with specified id already exists!", __FUNCTION__);
 
-      auto aud = device->addSoundSourceFromFile(audioFile.c_str(), ESM_AUTO_DETECT, true);
+      auto aud = device->addSoundSourceFromFile(audioFile.c_str(), irrklang::ESM_AUTO_DETECT, true);
       if (aud == nullptr) throw error::Read("Failed to read audio file!", __FUNCTION__);
 
       audioPool[id] = aud;
@@ -147,7 +145,7 @@ namespace ge {
 
    AudioCore& AudioCore::StopMusic ()
    {
-      std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, ISound*> mus) {
+      std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, irrklang::ISound*> mus) {
          mus.second->stop();
       });
 
@@ -167,7 +165,7 @@ namespace ge {
 
    AudioCore& AudioCore::PauseMusic (bool pause)
    {
-      std::for_each(music.begin(), music.end(), [&pause] (const std::pair<std::string, ISound*> mus) {
+      std::for_each(music.begin(), music.end(), [&pause] (const std::pair<std::string, irrklang::ISound*> mus) {
          mus.second->setIsPaused(pause);
       });
 
@@ -192,7 +190,7 @@ namespace ge {
       if (vol < 0.0f)      vol = 0.0f;
       else if (vol > 1.0f) vol = 1.0f;
 
-      std::for_each(music.begin(), music.end(), [&vol] (const std::pair<std::string, ISound*>& mus) {
+      std::for_each(music.begin(), music.end(), [&vol] (const std::pair<std::string, irrklang::ISound*>& mus) {
          mus.second->setVolume(vol);
       });
 
@@ -222,7 +220,7 @@ namespace ge {
       if (spd < 0.01f)     spd = 0.01f;
       else if (spd > 4.0f) spd = 4.0f;
 
-      std::for_each(music.begin(), music.end(), [&spd] (const std::pair<std::string, ISound*>& mus) {
+      std::for_each(music.begin(), music.end(), [&spd] (const std::pair<std::string, irrklang::ISound*>& mus) {
          mus.second->setPlaybackSpeed(spd);
       });
 
@@ -252,7 +250,7 @@ namespace ge {
       if (pan < -1.0f)     pan = -1.0f;
       else if (pan > 1.0f) pan = 1.0f;
 
-      std::for_each(music.begin(), music.end(), [&pan] (const std::pair<std::string, ISound*>& mus) {
+      std::for_each(music.begin(), music.end(), [&pan] (const std::pair<std::string, irrklang::ISound*>& mus) {
          mus.second->setPan(pan);
       });
 
@@ -309,7 +307,7 @@ namespace ge {
    AudioCore& AudioCore::StopSound ()
    {
       for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [] (ISound* snd) {
+         std::for_each(it->second.begin(), it->second.end(), [] (irrklang::ISound* snd) {
             snd->stop();
             snd->drop();
          });
@@ -326,7 +324,7 @@ namespace ge {
       auto snd = sounds.find(id);
       if (snd == sounds.end()) return *this;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [] (ISound* snd) {
+      std::for_each(snd->second.begin(), snd->second.end(), [] (irrklang::ISound* snd) {
          snd->stop();
          snd->drop();
       });
@@ -338,7 +336,7 @@ namespace ge {
    AudioCore& AudioCore::PauseSound (bool pause)
    {
       for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [&pause] (ISound* snd) {
+         std::for_each(it->second.begin(), it->second.end(), [&pause] (irrklang::ISound* snd) {
             snd->setIsPaused(pause);
          });
       }
@@ -353,7 +351,7 @@ namespace ge {
       auto snd = sounds.find(id);
       if (snd == sounds.end()) return *this;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [&pause] (ISound* snd) {
+      std::for_each(snd->second.begin(), snd->second.end(), [&pause] (irrklang::ISound* snd) {
          snd->setIsPaused(pause);
       });
 
@@ -368,7 +366,7 @@ namespace ge {
       else if (vol > 1.0f) vol = 1.0f;
 
       for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [&vol] (ISound* snd) {
+         std::for_each(it->second.begin(), it->second.end(), [&vol] (irrklang::ISound* snd) {
             snd->setVolume(vol);
          });
       }
@@ -388,7 +386,7 @@ namespace ge {
       if (vol < 0.0f)      vol = 0.0f;
       else if (vol > 1.0f) vol = 1.0f;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [&vol] (ISound* sound) {
+      std::for_each(snd->second.begin(), snd->second.end(), [&vol] (irrklang::ISound* sound) {
          sound->setVolume(vol);
       });
 
@@ -403,7 +401,7 @@ namespace ge {
       else if (spd > 4.0f) spd = 4.0f;
 
       for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [&spd] (ISound* snd) {
+         std::for_each(it->second.begin(), it->second.end(), [&spd] (irrklang::ISound* snd) {
             snd->setPlaybackSpeed(spd);
          });
       }
@@ -423,7 +421,7 @@ namespace ge {
       if (spd < 0.01f)     spd = 0.01f;
       else if (spd > 4.0f) spd = 4.0f;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [&spd] (ISound* sound) {
+      std::for_each(snd->second.begin(), snd->second.end(), [&spd] (irrklang::ISound* sound) {
          sound->setPlaybackSpeed(spd);
       });
 
@@ -438,7 +436,7 @@ namespace ge {
       else if (pan > 1.0f) pan = 1.0f;
 
       for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [&pan] (ISound* snd) {
+         std::for_each(it->second.begin(), it->second.end(), [&pan] (irrklang::ISound* snd) {
             snd->setPan(pan);
          });
       }
@@ -458,7 +456,7 @@ namespace ge {
       if (pan < -1.0f)     pan = -1.0f;
       else if (pan > 1.0f) pan = 1.0f;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [&pan] (ISound* sound) {
+      std::for_each(snd->second.begin(), snd->second.end(), [&pan] (irrklang::ISound* sound) {
          sound->setPan(pan);
       });
 

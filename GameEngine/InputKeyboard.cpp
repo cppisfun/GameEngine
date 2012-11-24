@@ -8,26 +8,10 @@
 
 #include "../Base/Error.h"
 
-using namespace OIS;
-
 
 namespace ge {
 
-   class InputKeyboard::EventHandler : public KeyListener
-   {
-   public:
-      EventHandler () { }
-
-      bool keyPressed (const KeyEvent& event) override  { return true; }
-      bool keyReleased (const KeyEvent& event) override { return true; }
-   };
-
-
-
-
-
-   InputKeyboard::InputKeyboard (InputManager* inputManager)
-   : input(nullptr), device(nullptr), eventHandler(nullptr)
+   InputKeyboard::InputKeyboard (OIS::InputManager* inputManager) : input(nullptr), device(nullptr)
    {
       Init(inputManager);
    }
@@ -35,24 +19,18 @@ namespace ge {
    InputKeyboard::~InputKeyboard ()
    {
       if (device != nullptr) {
-         device->setEventCallback(nullptr);
          input->destroyInputObject(device);
          device = nullptr;
       }
    }
 
-   void InputKeyboard::Init (InputManager* inputManager)
+   void InputKeyboard::Init (OIS::InputManager* inputManager)
    {
       if (inputManager == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
       input = inputManager;
 
-      device = (Keyboard*)input->createInputObject(OISKeyboard, true);
+      device = (OIS::Keyboard*)input->createInputObject(OIS::OISKeyboard, true);
       if (device == nullptr) error::Create("Failed to create keyboard device!", __FUNCTION__);
-
-      eventHandler.reset(new EventHandler);
-      if (eventHandler == nullptr) error::Create("Failed to create keyboard event handler!", __FUNCTION__);
-
-      device->setEventCallback(eventHandler.get());
 
       std::fill(currKeys.begin(), currKeys.end(), false);
       std::fill(prevKeys.begin(), prevKeys.end(), false);
@@ -69,38 +47,38 @@ namespace ge {
 
    bool InputKeyboard::Key (int key)
    {
-      if (key < NONE || key >= KeyCount) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+      if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
       else if (key >= 0) return (currKeys[key] > 0);
 
-      for (int i = 0; i < KeyCount; ++i) {
-         if (currKeys[i] > 0) return (key == Any);
+      for (int i = 0; i < Key_Count; ++i) {
+         if (currKeys[i] > 0) return (key == Key_Any);
       }
 
-      return (key == None);
+      return (key == Key_None);
    }
 
    bool InputKeyboard::KeyPressed (int key)
    {
-      if (key < None || key >= KeyCount) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+      if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
       else if (key >= 0) return (currKeys[key] > 0 && prevKeys[key] == 0);
 
-      for (int i = 0; i < KeyCount; ++i) {
-         if (currKeys[i] > 0 && prevKeys[i] == 0) return (key == Any);
+      for (int i = 0; i < Key_Count; ++i) {
+         if (currKeys[i] > 0 && prevKeys[i] == 0) return (key == Key_Any);
       }
 
-      return (key == None);
+      return (key == Key_None);
    }
 
    bool InputKeyboard::KeyReleased (int key)
    {
-      if (key < None || key >= KeyCount) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+      if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
       else if (key >= 0) return (currKeys[key] == 0 && prevKeys[key] > 0);
 
-      for (int i = 0; i < KeyCount; ++i) {
-         if (currKeys[i] == 0 && prevKeys[i] > 0) return (key == Any);
+      for (int i = 0; i < Key_Count; ++i) {
+         if (currKeys[i] == 0 && prevKeys[i] > 0) return (key == Key_Any);
       }
 
-      return (key == None);
+      return (key == Key_None);
    }
 
 }

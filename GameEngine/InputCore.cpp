@@ -8,7 +8,6 @@
 #include "../Base/Convert.h"
 #include "../Base/Error.h"
 
-using namespace OIS;
 using namespace base;
 
 
@@ -25,7 +24,7 @@ namespace ge {
       ShutDown(AllInterfaces);
 
       if (input != nullptr) {
-         InputManager::destroyInputSystem(input);
+         OIS::InputManager::destroyInputSystem(input);
          input = nullptr;
       }
    }
@@ -34,7 +33,7 @@ namespace ge {
    {
       if (window == nullptr) throw error::NullPointer("Invalid window handle!", __FUNCTION__);
 
-      input = InputManager::createInputSystem((size_t)window);
+      input = OIS::InputManager::createInputSystem((size_t)window);
       if (input == nullptr) throw error::Create("Failed to create input system!", __FUNCTION__);
 
       Reset(KeyboardInterface);

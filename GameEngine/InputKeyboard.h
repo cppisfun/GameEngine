@@ -17,22 +17,19 @@ namespace ge {
    /// geliefert.
    class GEDLL InputKeyboard : public EventReceiver
    {
-      class EventHandler;
-
    public:
       enum KeyType {
-         None     = -2,
-         Any      = -1,
-         KeyCount = 256
+         Key_None  =  -2,
+         Key_Any   =  -1,
+         Key_Count = 256
       };
 
    private:
-      std::unique_ptr<EventHandler> eventHandler;
       OIS::InputManager* input;
       OIS::Keyboard*     device;
 
-      std::array<char, 256> currKeys;
-      std::array<char, 256> prevKeys;
+      std::array<char, Key_Count> currKeys;
+      std::array<char, Key_Count> prevKeys;
 
       void Init (OIS::InputManager* inputManager);
 
@@ -55,26 +52,26 @@ namespace ge {
       ///
       /// Im Gegensatz zu KeyPressed() ist dieser Status immer _true_, solange
       /// die Taste gehalten wird.
-      /// @param key NONE = keine, ANY = beliebig; Nummer 0 - 255
-      /// (Standard: ANY)
-      bool Key (int key = Any);
+      /// @param key None = keine, Any = beliebig; Nummer 0 - 255
+      /// (Standard: Any)
+      bool Key (int key = Key_Any);
 
       /// @brief Ermittelt, ob gerade eine Taste gedrückt wurde.
       ///
       /// Im Gegensatz zu Key() ist dieser Status nur im Moment des
       /// Herunterdrückens _true_, nach dem nächsten Aufruf von Update()
       /// allerdings wieder _false_.
-      /// @param key NONE = keine, ANY = beliebig; Nummer 0 - 255
-      /// (Standard: ANY)
-      bool KeyPressed (int key = Any);
+      /// @param key None = keine, Any = beliebig; Nummer 0 - 255
+      /// (Standard: Any)
+      bool KeyPressed (int key = Key_Any);
 
       /// @brief Ermittelt, ob gerade eine Taste losgelassen wurde.
       ///
       /// Dieser Status ist nur im Moment des Loslassens _true_, nach dem
       /// nächsten Aufruf von Update() allerdings wieder _false_.
-      /// @param key NONE = keine, ANY = beliebig; Nummer 0 - 255
-      /// (Standard: ANY)
-      bool KeyReleased (int key = Any);
+      /// @param key None = keine, Any = beliebig; Nummer 0 - 255
+      /// (Standard: Any)
+      bool KeyReleased (int key = Key_Any);
    };
 
 }
