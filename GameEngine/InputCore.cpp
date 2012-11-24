@@ -32,8 +32,20 @@ namespace ge {
    void InputCore::Init (HWND window)
    {
       if (window == nullptr) throw error::NullPointer("Invalid window handle!", __FUNCTION__);
+      std::ostringstream hwnd;
+      hwnd << (size_t)window;
 
-      input = OIS::InputManager::createInputSystem((size_t)window);
+      OIS::ParamList params = boost::assign::map_list_of
+         ("WINDOW", hwnd.str())
+         ("w32_keyboard", "DISCL_FOREGROUND")
+         ("w32_keyboard", "DISCL_NONEXCLUSIVE")
+         ("w32_keyboard", "DISCL_NOWINKEY")
+         ("w32_mouse",    "DISCL_FOREGROUND")
+         ("w32_mouse",    "DISCL_NONEXCLUSIVE")
+         ("w32_joystick", "DISCL_FOREGROUND")
+         ("w32_joystick", "DISCL_EXCLUSIVE");
+
+      input = OIS::InputManager::createInputSystem(params);
       if (input == nullptr) throw error::Create("Failed to create input system!", __FUNCTION__);
 
       Reset(KeyboardInterface);
