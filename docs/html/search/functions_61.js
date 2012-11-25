@@ -9,7 +9,7 @@ var searchData=
   ['addstring',['AddString',['../classge_1_1_resources_core.html#ad21f44347d088cbbfb3082523a31c5f8',1,'ge::ResourcesCore']]],
   ['addtexture',['AddTexture',['../classge_1_1_graphics_core.html#a1d2760aa300bc9fa695072e3d7af09d4',1,'ge::GraphicsCore']]],
   ['addxml',['AddXML',['../classge_1_1_resources_core.html#ac1944c8c889e2f04f88e7395cf13ca3a',1,'ge::ResourcesCore']]],
-  ['alpha',['Alpha',['../classge_1_1_color.html#ab1b7ccd95fb48eeb42311ba23fcb79b1',1,'ge::Color::Alpha(int val, bool mode=ABS)'],['../classge_1_1_color.html#a54dba3fd2471ad6896fd56dd4c8db531',1,'ge::Color::Alpha() const ']]],
+  ['alpha',['Alpha',['../classge_1_1_color.html#ad1e20272e2a174c5a2a160cabcb05247',1,'ge::Color::Alpha(int val, bool absolute=true)'],['../classge_1_1_color.html#a54dba3fd2471ad6896fd56dd4c8db531',1,'ge::Color::Alpha() const ']]],
   ['alreadyexists',['AlreadyExists',['../namespaceerror.html#a7411241b6bd7c94dc7b42e0899c0d813',1,'error']]],
   ['asbinary',['AsBinary',['../namespacebase.html#a868616fa88da75dc20ef07b1a24609cb',1,'base']]],
   ['asbool',['AsBool',['../namespacebase.html#a1d1ac7e0f400c6300596b66379f82493',1,'base::AsBool(int val)'],['../namespacebase.html#ac1ea01d6bfe8c3a53603c7a576085d5e',1,'base::AsBool(long val)'],['../namespacebase.html#a042316d3f97301efd04e3345cc6add47',1,'base::AsBool(long long val)'],['../namespacebase.html#af0e3037c70fa37cbd1452ea93c5b0aab',1,'base::AsBool(float val)'],['../namespacebase.html#a3cbb31d5c011ea30d111a354550aa8aa',1,'base::AsBool(double val)'],['../namespacebase.html#acceae1b76279ba14794d56f677f48e4a',1,'base::AsBool(const char *val)'],['../namespacebase.html#ad4f1d77d931446eeecee35cc5d2b16f7',1,'base::AsBool(const std::string &amp;val)']]],

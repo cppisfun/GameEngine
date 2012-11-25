@@ -4,6 +4,5 @@ var searchData=
   ['texture',['Texture',['../classge_1_1_graphics_core.html#a1c8c4d4c30eb90c9c30031c469bca5a8',1,'ge::GraphicsCore']]],
   ['tools_2eh',['Tools.h',['../_tools_8h.html',1,'']]],
   ['top',['Top',['../classge_1_1_rectangle.html#a3c8e3542b4ef0bd6d4803f0fe1e2ae60',1,'ge::Rectangle::Top(int val)'],['../classge_1_1_rectangle.html#abd127d1306eb9f3939749a13f72cad50',1,'ge::Rectangle::Top() const ']]],
-  ['trim',['Trim',['../namespacebase.html#aaee5e57af175ff6bb8f41d2aed219fd4',1,'base']]],
-  ['tripleclicked',['TripleClicked',['../classge_1_1_input_mouse.html#ad4038545fb8a6be8ec40cbd2912a08d0',1,'ge::InputMouse']]]
+  ['trim',['Trim',['../namespacebase.html#aaee5e57af175ff6bb8f41d2aed219fd4',1,'base']]]
 ];

@@ -8,7 +8,6 @@ var searchData=
   ['screenwidth',['ScreenWidth',['../classge_1_1_graphics_core.html#a6d077411e1f4ed2dc82fa74f03f818cd',1,'ge::GraphicsCore']]],
   ['script',['Script',['../classge_1_1_resources_core.html#a4d767624dcfd0aafb50775f56e85921f',1,'ge::ResourcesCore']]],
   ['set',['Set',['../classge_1_1_color.html#a68347d6d4cf38e5a76a846d82db54dfc',1,'ge::Color::Set()'],['../classge_1_1_point.html#a59e5a38b0eca6e32d25d602181fcb92c',1,'ge::Point::Set()'],['../classge_1_1_rectangle.html#a40bee16dd64d8f7bd727d2a1d3f63ffe',1,'ge::Rectangle::Set()'],['../classge_1_1_vector.html#a2ba91986018b8b96e78ea4a7f83002a5',1,'ge::Vector::Set()']]],
-  ['show',['Show',['../classge_1_1_input_mouse.html#a440721058f02614a8d005345fb35edbc',1,'ge::InputMouse']]],
   ['shutdown',['ShutDown',['../classge_1_1_core.html#ab8e1ddfc8df1c43b242347f1802df523',1,'ge::Core::ShutDown()'],['../classge_1_1_input_core.html#a511dd34f093906b7241a6c7bd708b625',1,'ge::InputCore::ShutDown()']]],
   ['sound',['Sound',['../classge_1_1_resources_core.html#a218ed2258b784b2708b08c30e784528e',1,'ge::ResourcesCore']]],
   ['soundlength',['SoundLength',['../classge_1_1_audio_core.html#a420e11b4e0a430cbb181b21520dd2a7d',1,'ge::AudioCore']]],

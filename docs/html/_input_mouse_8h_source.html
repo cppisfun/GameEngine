@@ -92,106 +92,126 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <a href="_input_mouse_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_event_listener_8h.html">EventListener.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html">DLL_DEF.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="namespaceirr.html">    8</a></span>&#160;<span class="keyword">namespace </span>irr {</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="namespaceirr_1_1gui.html">    9</a></span>&#160;   <span class="keyword">namespace </span>gui {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;      <span class="keyword">class </span>ICursorControl;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   }</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_event_receiver_8h.html">EventReceiver.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_point_8h.html">Point.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html">DLL_DEF.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>OIS {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;   <span class="keyword">class </span>InputManager;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   <span class="keyword">class </span>Mouse;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>ge {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   <span class="keyword">class </span>EventController;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html">   21</a></span>&#160;   <span class="keyword">class </span><a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html#ac72fb9969cca8dcf1382f1dca2c65d48">GEDLL</a> <a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Mauseingaben. Wird über InputCore::Mouse() geliefert.">InputMouse</a> : <span class="keyword">public</span> <a class="code" href="classge_1_1_event_listener.html" title="Oberklasse für Event-Listener. Alle Klassen, die ihre Events von ge::EventController erhalten...">EventListener</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keyword">enum</span> ButtonClickState {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         Nothing = 0,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;         ButtonWasPressed,    <span class="comment">// only used to determine single clicks</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;         ButtonClicked,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         ButtonDoubleClicked,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         ButtonTripleClicked</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      irr::gui::ICursorControl* cursor;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html">   19</a></span>&#160;   <span class="keyword">class </span><a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html#ac72fb9969cca8dcf1382f1dca2c65d48">GEDLL</a> <a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Maus-Steuerung. Wird über InputCore::Mouse() geliefert.">InputMouse</a> : <span class="keyword">public</span> <a class="code" href="classge_1_1_event_receiver.html">EventReceiver</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265">   22</a></span>&#160;      <span class="keyword">enum</span> <a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265">DirectionType</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265a3f5a5544261dfbd5af35fdf707da61e3">   23</a></span>&#160;         Direction_Any        = -1,</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265a3e135b501b259b6aaf92baa73c9eca7a">   24</a></span>&#160;         Direction_None       =  0,</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265a3189e6cc9000ef192c1b941cd0de6607">   25</a></span>&#160;         Direction_Left       =  1,</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265aca04f5d4a9d5629a43bc7cc2b003aca6">   26</a></span>&#160;         Direction_Right      =  2,</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265ab994b6a048e97a3b15195ff651485f60">   27</a></span>&#160;         Direction_Horizontal =  3,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265aaf538c31ff7652ced848b1061fbf8ccc">   28</a></span>&#160;         Direction_Up         =  4,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265a290964b47933c9983ba828f14d98928d">   29</a></span>&#160;         Direction_Down       =  8,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265ac8b902795a3031f2b83f84a4fe3af9ab">   30</a></span>&#160;         Direction_Vertical   = 12</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      };</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordtype">int</span> currX, currY;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordtype">int</span> prevX, prevY;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordtype">float</span> currWheel, prevWheel;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      std::array&lt;bool, BUTTON_COUNT&gt; currButtons;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      std::array&lt;bool, BUTTON_COUNT&gt; prevButtons;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      std::array&lt;ButtonClickState, BUTTON_COUNT&gt; buttonClickStates;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordtype">void</span> Init (irr::gui::ICursorControl* cursorCtrl, <a class="code" href="classge_1_1_event_controller.html" title="Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventLi...">EventController</a>* eventCtrl);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordtype">void</span> OnEvent (<span class="keyword">const</span> irr::SEvent&amp; event) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Mauseingaben. Wird über InputCore::Mouse() geliefert.">InputMouse</a> (irr::gui::ICursorControl* cursorCtrl, <a class="code" href="classge_1_1_event_controller.html" title="Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventLi...">EventController</a>* eventCtrl);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keyword">virtual</span> ~<a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Mauseingaben. Wird über InputCore::Mouse() geliefert.">InputMouse</a> ();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89">   33</a></span>&#160;      <span class="keyword">enum</span> <a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89">ButtonType</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a0bfd510269f689c6e01be219036f7eb0">   34</a></span>&#160;         Button_None   = -2,</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a911e559fae183db3b899d5e0b2a08a50">   35</a></span>&#160;         Button_Any    = -1,</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89aba032799f1591215c0ee64d7c7da2d35">   36</a></span>&#160;         Button_Left   =  0,</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a388a7738291d276a501576808e4ec1ce">   37</a></span>&#160;         Button_Right  =  1,</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a078b820c74029dd4c5bb8ea29d9bc8dd">   38</a></span>&#160;         Button_Middle =  2,</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89afe6420122c8281715cf52c79f4d11908">   39</a></span>&#160;         Button_Extra1 =  3,</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89ae1655fb7949e356e2bab6a98711d1556">   40</a></span>&#160;         Button_Extra2 =  4,</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a312a065a91c6a7d52ce13348c3fbb939">   41</a></span>&#160;         Button_Extra3 =  5,</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a51b05c816a08eed3f5d3f0e900e3241b">   42</a></span>&#160;         Button_Extra4 =  6,</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89ac0af40dd033e29ec6ec24281dbbb8a31">   43</a></span>&#160;         Button_Extra5 =  7,</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89aa490ab2dfb94511177c792e23eca7e4c">   44</a></span>&#160;         Button_Count  =  8</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      OIS::InputManager* input;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      OIS::Mouse*        device;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a> currPosition;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a> prevPosition;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">int</span>   currWheelPosition;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordtype">int</span>   prevWheelPosition;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordtype">void</span> Update ();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      std::array&lt;bool, Button_Count&gt; currButtons;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      std::array&lt;bool, Button_Count&gt; prevButtons;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordtype">void</span> Init (OIS::InputManager* inputManager);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a440721058f02614a8d005345fb35edbc">   65</a></span>&#160;      <a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Mauseingaben. Wird über InputCore::Mouse() geliefert.">InputMouse</a>&amp; <a class="code" href="classge_1_1_input_mouse.html#a440721058f02614a8d005345fb35edbc">Show</a> (<span class="keywordtype">bool</span> show = <span class="keyword">true</span>) { cursor-&gt;setVisible(show); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Maus-Steuerung. Wird über InputCore::Mouse() geliefert.">InputMouse</a> (OIS::InputManager* inputManager);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#ada91add8511ed7661a59e957783256ef">   68</a></span>&#160;      <a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Mauseingaben. Wird über InputCore::Mouse() geliefert.">InputMouse</a>&amp; <a class="code" href="classge_1_1_input_mouse.html#ada91add8511ed7661a59e957783256ef" title="Legt fest, dass der Mauszeiger nicht angezeigt wird.">Hide</a> () { cursor-&gt;setVisible(<span class="keyword">false</span>); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">virtual</span> ~<a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Maus-Steuerung. Wird über InputCore::Mouse() geliefert.">InputMouse</a> ();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Mauseingaben. Wird über InputCore::Mouse() geliefert.">InputMouse</a>&amp; X (<span class="keywordtype">int</span> x);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Mauseingaben. Wird über InputCore::Mouse() geliefert.">InputMouse</a>&amp; Y (<span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordtype">void</span> Update () <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <a class="code" href="classge_1_1_input_mouse.html" title="Input-Klasse für Mauseingaben. Wird über InputCore::Mouse() geliefert.">InputMouse</a>&amp; Position (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#ae6ee9014542cfcca74d9a94e10a133ba">   77</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#ae6ee9014542cfcca74d9a94e10a133ba" title="Liefert die X-Position.">X</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currPosition.X(); }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#abbc0756f24aca71a595c552d72c91ef0">   81</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_input_mouse.html#abbc0756f24aca71a595c552d72c91ef0" title="Ermittelt, ob der Mauszeiger sichtbar ist.">IsVisible</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cursor-&gt;isVisible(); }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#ae6ee9014542cfcca74d9a94e10a133ba">   85</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#ae6ee9014542cfcca74d9a94e10a133ba" title="Liefert die X-Position.">X</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currX; }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a3ce4962f007f9724c2624f1a86efe3e2">   88</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#a3ce4962f007f9724c2624f1a86efe3e2" title="Liefert die Y-Position.">Y</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currY; }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a92480fa317afa0a77fa38f0bc55e69ac">   91</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="classge_1_1_input_mouse.html#a92480fa317afa0a77fa38f0bc55e69ac" title="Liefert die Position des Mausrades.">Wheel</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currWheel; }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a29f554fee93a031129a9f2f1f98ae3d1">   95</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#a29f554fee93a031129a9f2f1f98ae3d1" title="Liefert die Abweichung in X-Richtung seit dem letzten Update()-Aufruf.">DX</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currX - prevX; }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#abf036ea030c9720c4c2d7950c66e1918">   98</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#abf036ea030c9720c4c2d7950c66e1918" title="Liefert die Abweichung in Y-Richtung seit dem letzten Update()-Aufruf.">DY</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currY - prevY; }</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a3ce4962f007f9724c2624f1a86efe3e2">   80</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#a3ce4962f007f9724c2624f1a86efe3e2" title="Liefert die Y-Position.">Y</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currPosition.Y(); }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a8bc38efcff31a17d68166c51bb259803">   83</a></span>&#160;      <span class="keyword">const</span> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a>&amp; <a class="code" href="classge_1_1_input_mouse.html#a8bc38efcff31a17d68166c51bb259803" title="Liefert die Mausposition als ge::Point.">Position</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currPosition; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#ab8b5540705ede9fe74947f624e7ee073">   86</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#ab8b5540705ede9fe74947f624e7ee073" title="Liefert die Position des Mausrades.">Wheel</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currWheelPosition; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a29f554fee93a031129a9f2f1f98ae3d1">   90</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#a29f554fee93a031129a9f2f1f98ae3d1" title="Liefert die Positionsänderung in X-Richtung seit dem letzten Aufruf von Update().">DX</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currPosition.X() - prevPosition.X(); }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#abf036ea030c9720c4c2d7950c66e1918">   94</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#abf036ea030c9720c4c2d7950c66e1918" title="Liefert die Positionsänderung in Y-Richtung seit dem letzten Aufruf von Update().">DY</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currPosition.Y() - prevPosition.Y(); }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#ae171533bdf59a3b906b1d0b17c64b054">   98</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_input_mouse.html#ae171533bdf59a3b906b1d0b17c64b054" title="Liefert die Positionsänderung des Mausrades seit dem letzten Aufruf von Update().">DWheel</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currWheelPosition - prevWheelPosition; }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="classge_1_1_input_mouse.html#a944e9fb78676eb082cb98395fbf911b0">  102</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="classge_1_1_input_mouse.html#a944e9fb78676eb082cb98395fbf911b0">DWheel</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> prevWheel - currWheel; }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keywordtype">bool</span> Moved (<span class="keywordtype">int</span> direction = <a class="code" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <span class="keywordtype">bool</span> WheelMoved (<span class="keywordtype">int</span> direction = <a class="code" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <span class="keywordtype">bool</span> Button (<span class="keywordtype">int</span> btn = <a class="code" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <span class="keywordtype">bool</span> ButtonPressed (<span class="keywordtype">int</span> btn = <a class="code" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keywordtype">bool</span> Moved (<span class="keywordtype">int</span> direction = Direction_Any);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="keywordtype">bool</span> WheelMoved (<span class="keywordtype">int</span> direction = Direction_Any);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      <span class="keywordtype">bool</span> Button (<span class="keywordtype">int</span> btn = Button_Any);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <span class="keywordtype">bool</span> ButtonPressed (<span class="keywordtype">int</span> btn = Button_Any);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="keywordtype">bool</span> ButtonReleased (<span class="keywordtype">int</span> btn = <a class="code" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      <span class="keywordtype">bool</span> Clicked (<span class="keywordtype">int</span> btn = <a class="code" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordtype">bool</span> DoubleClicked (<span class="keywordtype">int</span> btn = <a class="code" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordtype">bool</span> TripleClicked (<span class="keywordtype">int</span> btn = <a class="code" href="_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae">ANY</a>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;   };</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordtype">bool</span> ButtonReleased (<span class="keywordtype">int</span> btn = Button_Any);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;   };</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">   class GEDLL InputMouse : public EventListener</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">   {</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">      irr::gui::ICursorControl* cursor;</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">   public:</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">      InputMouse&amp; Show (bool show = true) { cursor-&gt;setVisible(show); return *this; }</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">      InputMouse&amp; Hide () { cursor-&gt;setVisible(false); return *this; }</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">      InputMouse&amp; X (int x);</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">      InputMouse&amp; Y (int y);</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">      InputMouse&amp; Position (int x, int y);</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">      bool IsVisible () const { return cursor-&gt;isVisible(); }</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">   };</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">*/</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

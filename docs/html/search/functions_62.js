@@ -4,9 +4,9 @@ var searchData=
   ['badreference',['BadReference',['../namespaceerror.html#a34e8487e5b1f40a2f3301c1f5da1abbf',1,'error']]],
   ['beginscene',['BeginScene',['../classge_1_1_graphics_core.html#a380b5dc435ec4aa242da6e9fb3c4251b',1,'ge::GraphicsCore']]],
   ['binary',['Binary',['../classge_1_1_resources_core.html#a1abc8943695458e93082207b53b834ad',1,'ge::ResourcesCore']]],
-  ['blue',['Blue',['../classge_1_1_color.html#af355279b6effb7abac2181f434d37f2b',1,'ge::Color::Blue(int val, bool mode=ABS)'],['../classge_1_1_color.html#a11183573805304e42ca4c46127d436c4',1,'ge::Color::Blue() const ']]],
+  ['blue',['Blue',['../classge_1_1_color.html#acb8fe4dcd3bed256c8cfa950129eb2b2',1,'ge::Color::Blue(int val, bool absolute=true)'],['../classge_1_1_color.html#a11183573805304e42ca4c46127d436c4',1,'ge::Color::Blue() const ']]],
   ['bottom',['Bottom',['../classge_1_1_rectangle.html#a821b2460aeea1081773a03f6ce32ee5c',1,'ge::Rectangle::Bottom(int val)'],['../classge_1_1_rectangle.html#a6e0849570961cc43e7dd9bbcf1962586',1,'ge::Rectangle::Bottom() const ']]],
-  ['button',['Button',['../classge_1_1_input_gamepad.html#a221173066bcb91277bffbde8dfa0ef56',1,'ge::InputGamepad::Button()'],['../classge_1_1_input_mouse.html#a8b713205a8612303c7072627233c548c',1,'ge::InputMouse::Button()']]],
-  ['buttonpressed',['ButtonPressed',['../classge_1_1_input_gamepad.html#a0cb55880c4ff54a74b964dbec14005a7',1,'ge::InputGamepad::ButtonPressed()'],['../classge_1_1_input_mouse.html#a871e85fb028bd2f8a25576bbd2cc52fc',1,'ge::InputMouse::ButtonPressed()']]],
-  ['buttonreleased',['ButtonReleased',['../classge_1_1_input_gamepad.html#a4aecd188a0dcff4a53219b2d94a12a7b',1,'ge::InputGamepad::ButtonReleased()'],['../classge_1_1_input_mouse.html#a1d8ebcb392997318798b875834cfa82f',1,'ge::InputMouse::ButtonReleased()']]]
+  ['button',['Button',['../classge_1_1_input_mouse.html#a71cd00c109da0636c6e9f8e328c539eb',1,'ge::InputMouse']]],
+  ['buttonpressed',['ButtonPressed',['../classge_1_1_input_mouse.html#a71c34019fad1fb5a4649d1ee684fb50f',1,'ge::InputMouse']]],
+  ['buttonreleased',['ButtonReleased',['../classge_1_1_input_mouse.html#a91cbabb337d71778bea21a6d0bfc0ab4',1,'ge::InputMouse']]]
 ];

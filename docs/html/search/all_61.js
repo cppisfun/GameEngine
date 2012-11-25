@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['abs',['ABS',['../_game_engine_2_precomp_8h.html#a26e668489fb528456f4bc54ba908d5b4',1,'Precomp.h']]],
   ['add',['Add',['../classge_1_1_audio_core.html#abad13f84c266ad758d619abe99424d42',1,'ge::AudioCore::Add(const std::string &amp;id, const std::string &amp;audioFile)'],['../classge_1_1_audio_core.html#a38f449714d2de24f64921f92d4fef4ac',1,'ge::AudioCore::Add(const std::string &amp;id, const std::vector&lt; char &gt; &amp;resource)']]],
   ['addbinary',['AddBinary',['../classge_1_1_resources_core.html#a948a1b7798beee300359ef9c2226219a',1,'ge::ResourcesCore']]],
   ['addfont',['AddFont',['../classge_1_1_graphics_core.html#abf3f3d9a5d725e3edc3892e32fd41760',1,'ge::GraphicsCore']]],
@@ -11,10 +10,9 @@ var searchData=
   ['addtexture',['AddTexture',['../classge_1_1_graphics_core.html#a1d2760aa300bc9fa695072e3d7af09d4',1,'ge::GraphicsCore']]],
   ['addxml',['AddXML',['../classge_1_1_resources_core.html#ac1944c8c889e2f04f88e7395cf13ca3a',1,'ge::ResourcesCore']]],
   ['allinterfaces',['AllInterfaces',['../classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6ca64f7eb8234fa9c79c7f9747c7a48f431',1,'ge::Core::AllInterfaces()'],['../classge_1_1_input_core.html#ae5eedc1e4eb359c39039ecb32ba790f0a2241b59687cce2f51bca9c1a99ea3d2b',1,'ge::InputCore::AllInterfaces()']]],
-  ['alpha',['Alpha',['../classge_1_1_color.html#ab1b7ccd95fb48eeb42311ba23fcb79b1',1,'ge::Color::Alpha(int val, bool mode=ABS)'],['../classge_1_1_color.html#a54dba3fd2471ad6896fd56dd4c8db531',1,'ge::Color::Alpha() const ']]],
+  ['alpha',['Alpha',['../classge_1_1_color.html#ad1e20272e2a174c5a2a160cabcb05247',1,'ge::Color::Alpha(int val, bool absolute=true)'],['../classge_1_1_color.html#a54dba3fd2471ad6896fd56dd4c8db531',1,'ge::Color::Alpha() const ']]],
   ['alphavalue',['AlphaValue',['../classge_1_1_color.html#a66de6b9450395f4fc839cf1a4375c041a7ad9851b6f98b7f92ba52b1074403634',1,'ge::Color']]],
   ['alreadyexists',['AlreadyExists',['../namespaceerror.html#a7411241b6bd7c94dc7b42e0899c0d813',1,'error']]],
-  ['any',['ANY',['../_game_engine_2_precomp_8h.html#a756cb5435a9a4479ee2066ab9da0dbae',1,'Precomp.h']]],
   ['asbinary',['AsBinary',['../namespacebase.html#a868616fa88da75dc20ef07b1a24609cb',1,'base']]],
   ['asbool',['AsBool',['../namespacebase.html#a1d1ac7e0f400c6300596b66379f82493',1,'base::AsBool(int val)'],['../namespacebase.html#ac1ea01d6bfe8c3a53603c7a576085d5e',1,'base::AsBool(long val)'],['../namespacebase.html#a042316d3f97301efd04e3345cc6add47',1,'base::AsBool(long long val)'],['../namespacebase.html#af0e3037c70fa37cbd1452ea93c5b0aab',1,'base::AsBool(float val)'],['../namespacebase.html#a3cbb31d5c011ea30d111a354550aa8aa',1,'base::AsBool(double val)'],['../namespacebase.html#acceae1b76279ba14794d56f677f48e4a',1,'base::AsBool(const char *val)'],['../namespacebase.html#ad4f1d77d931446eeecee35cc5d2b16f7',1,'base::AsBool(const std::string &amp;val)']]],
   ['asdouble',['AsDouble',['../namespacebase.html#a122e84aac5155fff99499c2e1655686d',1,'base::AsDouble(bool val)'],['../namespacebase.html#abd94349c11e7e112a7f1326a562e9591',1,'base::AsDouble(int val)'],['../namespacebase.html#ac83ba908a16ca2eeabcaa3d95e380590',1,'base::AsDouble(long val)'],['../namespacebase.html#a5f531f141e5f6e4dc556cf32c0283268',1,'base::AsDouble(long long val)'],['../namespacebase.html#a3f46cb04438b03960d2b10b64b518eb1',1,'base::AsDouble(float val)'],['../namespacebase.html#afc20291b8256dd97d85a30d4405c8f37',1,'base::AsDouble(const char *val)'],['../namespacebase.html#afee9f07c4156715fe88bbd7fa206b528',1,'base::AsDouble(const std::string &amp;val)']]],
