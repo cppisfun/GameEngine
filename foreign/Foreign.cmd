@@ -7,9 +7,14 @@ bjam -q --toolset=msvc --build-type=minimal --with-filesystem stage
 xcopy stage\lib\*.lib ..\..\%1 /i /y /q
 echo boost beendet.
 
-echo OIS 1.4 unstable ...
+echo Beginne mit SFML 1.6 ...
+cd ..\SFML
+xcopy lib\*.* ..\..\%1 /i /y /q
+echo SFML beendet.
+
+echo Beginne mit OIS 1.4 unstable ...
 cd ..\ois
-xcopy lib\*.* ..\..\%1 /i /y/q
+xcopy lib\*.* ..\..\%1 /i /y /q
 echo OIS beendet.
 
 echo Beginne mit Irrlicht 1.7.3 ...
