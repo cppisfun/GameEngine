@@ -1,40 +1,42 @@
 
 #include "Precomp.h"
 
-#include <OISInputManager.h>
-#include <OISMouse.h>
-
 #include "InputMouse.h"
+#include "EventController.h"
 
 #include "../Base/Error.h"
 
 
 namespace ge {
 
-   InputMouse::InputMouse (OIS::InputManager* inputManager)
-   : input(nullptr), device(nullptr), currPosition(0, 0), prevPosition(0, 0), currWheelPosition(0), prevWheelPosition(0)
+   InputMouse::InputMouse (EventController* eventCtrl)
+   : currPosition(0, 0), prevPosition(0, 0), currWheelPosition(0), prevWheelPosition(0)
    {
-      Init(inputManager);
+      if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+      eventCtrl->MouseCallback(std::bind(&InputMouse::OnEvent, this, std::placeholders::_1));
+
+      std::fill(currButtons.begin(), currButtons.end(), false);
+      std::fill(prevButtons.begin(), prevButtons.end(), false);
    }
 
    InputMouse::~InputMouse ()
    {
-      if (device != nullptr) {
-         input->destroyInputObject(device);
-         device = nullptr;
-      }
    }
 
-   void InputMouse::Init (OIS::InputManager* inputManager)
+   bool InputMouse::OnEvent (const sf::Event& event)
    {
-      if (inputManager == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
-      input = inputManager;
+      if (!Enabled()) return false;
 
-      device =(OIS::Mouse*)input->createInputObject(OIS::OISMouse, true);
-      if (device == nullptr) throw error::Create("Failed to create mouse device!", __FUNCTION__);
+      switch (event.Type) {
+         case sf::Event::MouseButtonPressed:  currButtons[event.MouseButton.Button] = true;  return true;
+         case sf::Event::MouseButtonReleased: currButtons[event.MouseButton.Button] = false; return true;
+         // TODO: sf::Event::MouseMoved
+         // TODO: sf::Event::MouseWheelMoved
+         // TODO: sf::Event::MouseEntered
+         // TODO: sf::Event::MouseLeft
+      }
 
-      std::fill(currButtons.begin(), currButtons.end(), false);
-      std::fill(prevButtons.begin(), prevButtons.end(), false);
+      return false;
    }
 
    void InputMouse::Update ()
@@ -42,16 +44,15 @@ namespace ge {
       if (!Enabled()) return;
 
       std::move(currButtons.begin(), currButtons.end(), prevButtons.begin());
-      device->capture();
 
-      auto state = device->getMouseState();
-      std::swap(currPosition, prevPosition);
-      currPosition.Set(state.X.abs, state.Y.abs);
-      prevWheelPosition = currWheelPosition;
-      currWheelPosition = state.Z.abs;
-
-      int  buttonState = state.buttons;
-      for (int i = 0; i < Button_Count; ++i) { currButtons[i] = ((buttonState & (1L << i)) != 0); }
+//      auto state = device->getMouseState();
+//      std::swap(currPosition, prevPosition);
+//      currPosition.Set(state.X.abs, state.Y.abs);
+//      prevWheelPosition = currWheelPosition;
+//      currWheelPosition = state.Z.abs;
+//
+//      int  buttonState = state.buttons;
+//      for (int i = 0; i < Button_Count; ++i) { currButtons[i] = ((buttonState & (1L << i)) != 0); }
    }
 
    bool InputMouse::Button (int btn)

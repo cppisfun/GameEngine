@@ -53,7 +53,10 @@
     <ClInclude Include="Point.h">
       <Filter>Primitive</Filter>
     </ClInclude>
-    <ClInclude Include="EventReceiver.h">
+    <ClInclude Include="EventListener.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="EventController.h">
       <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>

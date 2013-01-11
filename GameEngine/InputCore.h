@@ -1,21 +1,19 @@
 
 #pragma once
 
+#include "EventController.h"
+
 #include "InputKeyboard.h"
 #include "InputMouse.h"
 #include "InputGamepad.h"
 
 #include "DLL_DEF.h"
 
-namespace OIS {
-   class InputManager;
-}
-
 
 namespace ge {
 
-   /// @brief Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung
-   /// von Eingabegeräten. Wird über Core::Input() geliefert.
+   /// @brief Input-Basisklasse, verwaltet alle Input-Komponenten zur
+   /// Behandlung von Eingabegeräten. Wird über Core::Input() geliefert.
    class GEDLL InputCore
    {
    public:
@@ -30,24 +28,24 @@ namespace ge {
       };
 
    private:
-      OIS::InputManager* input;
+      EventController* eventController;
 
       std::unique_ptr<InputKeyboard> keyboard;
       std::unique_ptr<InputMouse>    mouse;
       std::unique_ptr<InputGamepad>  gamepad;
 
-      void Init (HWND window);
-
    public:
-      /// @brief Konstruktor. Benötigt ein valides Window-Handle (wird
-      /// automatisch bei der Initialisierung über Core übergeben).
-      InputCore (HWND window);
+      /// @brief Konstruktor. Benötigt einen Pointer zu einem validen Objekt
+      /// vom Typ ge::EventController (wird automatisch bei der Initialisierung
+      /// über Core übergeben).
+      InputCore (EventController* eventCtrl);
 
       /// @brief Destruktor. Entfernt automatisch alle noch bestehenden
       /// Input-Komponenten und gibt Ressourcen frei, die innerhalb von
       /// InputCore oder einer in InputCore gehaltenen Input-Komponente
       /// erreichbar sind.
       virtual ~InputCore ();
+
 
       /// @brief Aktualisiert den Eingabestatus aller vorhandenen und
       /// eingeschalteten Input-Komponenten.

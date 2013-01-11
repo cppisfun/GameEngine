@@ -1,57 +1,52 @@
 
 #include "Precomp.h"
 
-#include <OISInputManager.h>
-#include <OISKeyboard.h>
-
 #include "InputKeyboard.h"
+#include "EventController.h"
 
 #include "../Base/Error.h"
 
 
 namespace ge {
 
-   InputKeyboard::InputKeyboard (OIS::InputManager* inputManager) : input(nullptr), device(nullptr)
+   InputKeyboard::InputKeyboard (EventController* eventCtrl)
    {
-      Init(inputManager);
-   }
-
-   InputKeyboard::~InputKeyboard ()
-   {
-      if (device != nullptr) {
-         input->destroyInputObject(device);
-         device = nullptr;
-      }
-   }
-
-   void InputKeyboard::Init (OIS::InputManager* inputManager)
-   {
-      if (inputManager == nullptr) throw error::NullPointer("Invalid input manager pointer!", __FUNCTION__);
-      input = inputManager;
-
-      device = (OIS::Keyboard*)input->createInputObject(OIS::OISKeyboard, true);
-      if (device == nullptr) error::Create("Failed to create keyboard device!", __FUNCTION__);
+      if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+      eventCtrl->KeyboardCallback(std::bind(&InputKeyboard::OnEvent, this, std::placeholders::_1));
 
       std::fill(currKeys.begin(), currKeys.end(), false);
       std::fill(prevKeys.begin(), prevKeys.end(), false);
    }
 
+   InputKeyboard::~InputKeyboard ()
+   {
+   }
+
+   bool InputKeyboard::OnEvent (const sf::Event& event)
+   {
+      if (!Enabled()) return false;
+
+      switch (event.Type) {
+         case sf::Event::KeyPressed:  currKeys[event.Key.Code] = true;  return true;
+         case sf::Event::KeyReleased: currKeys[event.Key.Code] = false; return true;
+      }
+
+      return false;
+   }
+
    void InputKeyboard::Update ()
    {
       if (!Enabled()) return;
-
-      std::move(currKeys.begin(), currKeys.end(), prevKeys.begin());
-      device->capture();
-      device->copyKeyStates(currKeys.data());
+      std::copy(currKeys.begin(), currKeys.end(), prevKeys.begin());
    }
 
    bool InputKeyboard::Key (int key)
    {
       if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
-      else if (key >= 0) return (currKeys[key] > 0);
+      else if (key >= 0) return (currKeys[key]);
 
       for (int i = 0; i < Key_Count; ++i) {
-         if (currKeys[i] > 0) return (key == Key_Any);
+         if (currKeys[i]) return (key == Key_Any);
       }
 
       return (key == Key_None);
@@ -60,10 +55,10 @@ namespace ge {
    bool InputKeyboard::KeyPressed (int key)
    {
       if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
-      else if (key >= 0) return (currKeys[key] > 0 && prevKeys[key] == 0);
+      else if (key >= 0) return (currKeys[key] && !prevKeys[key]);
 
       for (int i = 0; i < Key_Count; ++i) {
-         if (currKeys[i] > 0 && prevKeys[i] == 0) return (key == Key_Any);
+         if (currKeys[i] && !prevKeys[i]) return (key == Key_Any);
       }
 
       return (key == Key_None);
@@ -72,10 +67,10 @@ namespace ge {
    bool InputKeyboard::KeyReleased (int key)
    {
       if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
-      else if (key >= 0) return (currKeys[key] == 0 && prevKeys[key] > 0);
+      else if (key >= 0) return (!currKeys[key] && prevKeys[key]);
 
       for (int i = 0; i < Key_Count; ++i) {
-         if (currKeys[i] == 0 && prevKeys[i] > 0) return (key == Key_Any);
+         if (!currKeys[i] && prevKeys[i]) return (key == Key_Any);
       }
 
       return (key == Key_None);

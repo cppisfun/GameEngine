@@ -1,6 +1,5 @@
-Setting environment for using Microsoft Visual Studio 2010 x86 tools.
 ###
-### Using 'vc10' toolset.
+### Using 'vc11' toolset.
 ###
 
 E:\Projekte\GameEngine\foreign\boost\tools\build\v2\engine>if exist bootstrap rd /S /Q bootstrap 
@@ -58,12 +57,12 @@ sequence.c
 order.c
 Code wird generiert...
 
-E:\Projekte\GameEngine\foreign\boost\tools\build\v2\engine>.\bootstrap\jam0 -f build.jam --toolset=vc10 "--toolset-root=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\..\..\VC\ "  clean 
+E:\Projekte\GameEngine\foreign\boost\tools\build\v2\engine>.\bootstrap\jam0 -f build.jam --toolset=vc11 "--toolset-root=C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\..\..\VC\ "  clean 
 ...found 1 target...
 ...updating 1 target...
 ...updated 1 target...
 
-E:\Projekte\GameEngine\foreign\boost\tools\build\v2\engine>.\bootstrap\jam0 -f build.jam --toolset=vc10 "--toolset-root=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\..\..\VC\ "  
+E:\Projekte\GameEngine\foreign\boost\tools\build\v2\engine>.\bootstrap\jam0 -f build.jam --toolset=vc11 "--toolset-root=C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\..\..\VC\ "  
 ...found 50 targets...
 ...updating 3 targets...
 [MKDIR] bin.ntx86

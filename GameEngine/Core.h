@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include <irrlicht.h>
+#include <SFML/Graphics.hpp>
 
 #include "GraphicsCore.h"
 #include "InputCore.h"
@@ -9,6 +9,8 @@
 #include "ResourcesCore.h"
 
 #include "DLL_DEF.h"
+
+class EventController;
 
 
 /// @brief Namespace für alle GameEngine-Komponenten.
@@ -38,45 +40,41 @@ namespace ge {
       };
 
    private:
-      static const char* windowClassName;
       static std::unique_ptr<Core> instance;
 
-      HINSTANCE instanceHandle;
-      HWND windowHandle;
+      sf::RenderWindow window;
 
-      std::unique_ptr<irr::IrrlichtDevice> device;
-      bool resizableWindow;
+      std::unique_ptr<EventController> eventController;
+      std::unique_ptr<GraphicsCore>    graphics;
+      std::unique_ptr<InputCore>       input;
+      std::unique_ptr<AudioCore>       audio;
+      std::unique_ptr<ResourcesCore>   resources;
 
-      std::unique_ptr<GraphicsCore>  graphics;
-      std::unique_ptr<InputCore>     input;
-      std::unique_ptr<AudioCore>     audio;
-      std::unique_ptr<ResourcesCore> resources;
-
-      Core (HINSTANCE inst);
+      Core ();
       Core (const Core&);
       Core& operator= (const Core&);
 
-      void Init ();
-      void InitWindow ();
+      void Update ()
+      {
+         sf::Event event;
+         if (window.GetEvent(event)) eventController->Event(event);
+      }
 
    public:
       /// @brief Destruktor. Entfernt automatisch alle noch bestehenden
       /// Kernkomponenten und gibt Ressourcen frei, die innerhalb von Core
       /// oder eines in Core gehaltenen Kernobjektes erreichbar sind.
-      ~Core ();
+      ~Core ()
+      {
+         ShutDown(AllInterfaces);
+         if (window.IsOpened()) window.Close();
+      }
 
       /// @brief Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird
       /// dieses erstellt, alle Aufrufe liefern dieses einzelne Objekt zurück.
-      ///
-      /// Für den ersten Aufruf muss das Instanz-Handle übergeben werden,
-      /// unter welchem die Anwendung gestartet wurde. Dieses kann aus dem
-      /// ersten Parameter der WinMain-Funktion direkt übernommen werden.
-      ///
-      /// Sobald das Core-Objekt erstellt wurde, genügt das Aufrufen der
-      /// Funktion Instance() ohne die Angabe von Parametern.
-      static Core* Instance (HINSTANCE inst = nullptr)
+      static Core* Instance ()
       {
-         if (instance == nullptr) instance.reset(new Core(inst));
+         if (instance == nullptr) instance.reset(new Core);
          return instance.get();
       }
 
@@ -87,8 +85,8 @@ namespace ge {
       /// @param what Komponentenangabe aus Core::What
       Core& Reset (const What& what)
       {
-         if (what & GraphicsInterface)  graphics.reset(new GraphicsCore(device.get()));
-         if (what & InputInterface)     input.reset(new InputCore(windowHandle));
+         if (what & GraphicsInterface)  graphics.reset(new GraphicsCore(nullptr));
+         if (what & InputInterface)     input.reset(new InputCore(eventController.get()));
          if (what & AudioInterface)     audio.reset(new AudioCore);
          if (what & ResourcesInterface) resources.reset(new ResourcesCore);
 
@@ -110,44 +108,14 @@ namespace ge {
       }
 
 
-      /// @brief Legt den Fenstertitel fest.
-      Core& WindowTitle (const std::string& title);
+      /// @brief Legt fest, ob das Fenster sichtbar sein soll.
+      Core& ShowWindow (bool show = true) { window.Show(show); return *this; }
 
-      /// @brief Legt fest, ob die Fenstergröße verändert werden kann.
-      /// @param resizable Gibt an, ob die Größenänderung möglich ist (Standard: true)
-      Core& ResizableWindow (bool resizable = true) { device->setResizable(resizable); return *this; }
-
-      /// @brief Legt fest, dass die Fenstergröße nicht geändert werden kann.
-      Core& StaticWindow () { device->setResizable(false); return *this; }
-
-      /// @brief Minimiert das Fenster.
-      Core& MinimizeWindow () { device->minimizeWindow(); return *this; }
-
-      /// @brief Maximiert das Fenster.
-      Core& MaximizeWindow () { device->maximizeWindow(); return *this; }
-
-      /// @brief Stellt das Fenster wieder her.
-      Core& RestoreWindow () { device->restoreWindow(); return *this; }
-
-
-      /// @brief Leert den Puffer der Systemnachrichten an die Anwendung.
-      Core& ClearSystemMessages () { device->clearSystemMessages(); return *this; }
-
-      /// @brief Signalisiert, dass das irrlicht-Device aktuell keine Rechenzeit benötigt.
-      Core& DoNothing () { device->yield(); return *this; }
+      /// @brief Macht das Fenster unsichtbar (es besteht jedoch noch).
+      Core& HideWindow () { window.Show(false); return *this; }
 
       /// @brief Schließt das irrlicht-Device.
-      Core& Quit () { device->closeDevice(); return *this; }
-
-
-      /// @brief Liefert den Pointer zum irrlicht-Device.
-      irr::IrrlichtDevice* Device () const { return device.get(); }
-
-      /// @brief Liefert das Handle der Instanz, unter welchem die Anwendung läuft.
-      HINSTANCE InstanceHandle () const { return instanceHandle; }
-
-      /// @brief Liefert das Handle des Fensters, in welchem die Anwendung läuft.
-      HWND WindowHandle () const { return windowHandle; }
+      Core& Quit () { window.Close(); return *this; }
 
 
       /// @brief Liefert den Pointer zur Kernkomponente für Grafik.
@@ -164,27 +132,15 @@ namespace ge {
 
 
       /// @brief Ermittelt, ob das irrlicht-Device aktiviert wurde und aktuell fehlerfrei arbeitet.
-      bool IsRunning () const { return device->run(); }
-
-      /// @brief Ermittelt, ob die Anwendung im Fullscreen-Modus ausgeführt wird.
-      bool IsFullscreen () const { return device->isFullscreen(); }
-
-      /// @brief Ermittelt, ob das Fenster aktiviert ist.
-      bool IsWindowActive () const { return device->isWindowActive(); }
-
-      /// @brief Ermittelt, ob das Fenster den Fokus besitzt
-      bool IsWindowFocused () const { return device->isWindowFocused(); }
-
-      /// @brief Ermittelt, ob die Fenstergröße geändert werden kann.
-      bool IsWindowResizable () const { return resizableWindow; }
-
-      /// @brief Ermittelt, ob das Fenster minimiert ist.
-      bool IsWindowMinimized () const { return device->isWindowMinimized(); }
+      bool IsRunning ()
+      {
+         Update();
+         return window.IsOpened();
+      }
    };
 
 
 
-   const char* Core::windowClassName    = "GE_MainWindow";
    std::unique_ptr<Core> Core::instance = nullptr;
 
 }

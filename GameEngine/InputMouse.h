@@ -1,22 +1,21 @@
 
 #pragma once
 
-#include "EventReceiver.h"
+#include <SFML/Window/Event.hpp>
+
+#include "EventListener.h"
 #include "Point.h"
 
 #include "DLL_DEF.h"
 
-namespace OIS {
-   class InputManager;
-   class Mouse;
-}
-
 
 namespace ge {
 
+   class EventController;
+
    /// @brief Input-Klasse für Maus-Steuerung. Wird über InputCore::Mouse()
    /// geliefert.
-   class GEDLL InputMouse : public EventReceiver
+   class GEDLL InputMouse : public EventListener
    {
    public:
       enum DirectionType {
@@ -33,21 +32,15 @@ namespace ge {
       enum ButtonType {
          Button_None   = -2,
          Button_Any    = -1,
-         Button_Left   =  0,
-         Button_Right  =  1,
-         Button_Middle =  2,
-         Button_Extra1 =  3,
-         Button_Extra2 =  4,
-         Button_Extra3 =  5,
-         Button_Extra4 =  6,
-         Button_Extra5 =  7,
-         Button_Count  =  8
+         Button_Left   = sf::Mouse::Left,
+         Button_Right  = sf::Mouse::Right,
+         Button_Middle = sf::Mouse::Middle,
+         Button_Extra1 = sf::Mouse::XButton1,
+         Button_Extra2 = sf::Mouse::XButton2,
+         Button_Count  = sf::Mouse::ButtonCount
       };
 
    private:
-      OIS::InputManager* input;
-      OIS::Mouse*        device;
-
       Point currPosition;
       Point prevPosition;
       int   currWheelPosition;
@@ -56,16 +49,17 @@ namespace ge {
       std::array<bool, Button_Count> currButtons;
       std::array<bool, Button_Count> prevButtons;
 
-      void Init (OIS::InputManager* inputManager);
+      bool OnEvent (const sf::Event& event) override;
 
    public:
       /// @brief Konstruktor. Benötigt den Pointer zu einem validen Objekt vom
       /// Typ OIS::InputManager (wird automatisch bei der Initialisierung über
       /// Core übergeben).
-      InputMouse (OIS::InputManager* inputManager);
+      InputMouse (EventController* eventCtrl);
 
       /// @brief Destruktor.
       virtual ~InputMouse ();
+
 
       /// @brief Aktualisiert den Eingabestatus und stellt Abweichungen vom
       /// vorigen Status fest. Muss bei jedem Durchlauf aufgerufen werden,
@@ -100,15 +94,16 @@ namespace ge {
 
       /// @brief Ermittelt, ob die Maus seit dem letzten Update()-Aufruf
       /// bewegt wurde (und ggf. in welche Richtung).
-      /// @param direction NoDirection = keine, AnyDirection = beliebig,
-      /// Left, Right, Up, Down, Horizontal, Vertical (Standard: AnyDirection)
+      /// @param direction Direction_None = keine, Direction_Any = beliebig,
+      /// Direction_Left, Direction_Right, Direction_Up, Direction_Down,
+      /// Direction_Horizontal, Direction_Vertical (Standard: Direction_Any)
       bool Moved (int direction = Direction_Any);
 
       /// @brief Ermittelt, ob das Mausrad seit dem letzten Update()-Aufruf
       /// bewegt wurde (und ggf. in welche Richtung).
-      /// @param direction NoDirection = keine, AnyDirection = beliebig,
-      /// Up = nach oben / vom Benutzer weg, Down = nach unten / zum Benutzer
-      /// hin (Standard: AnyDirection)
+      /// @param direction Direction_None = keine, Direction_Any = beliebig,
+      /// Direction_Up = nach oben / vom Benutzer weg, Direction_Down = nach
+      /// unten / zum Benutzer hin (Standard: Direction_Any)
       bool WheelMoved (int direction = Direction_Any);
 
 
@@ -116,8 +111,8 @@ namespace ge {
       ///
       /// Im Gegensatz zu ButtonPressed() ist dieser Status immer _true_,
       /// solange der Button gehalten wird.
-      /// @param btn None = keiner, Any = beliebig; Nummer 0 - 7
-      /// (Standard: Any)
+      /// @param btn Button_None = keiner, Button_Any = beliebig; Nummer 0 - 4
+      /// (Standard: Button_Any)
       bool Button (int btn = Button_Any);
 
       /// @brief Ermittelt, ob gerade ein Button gedrückt wurde.
@@ -125,16 +120,16 @@ namespace ge {
       /// Im Gegensatz zu Button() ist dieser Status nur im Moment des
       /// Herunterdrückens _true_, nach dem nächsten Aufruf von Update()
       /// allerdings wieder _false_.
-      /// @param btn None = keiner, Any = beliebig; Nummer 0 - 7
-      /// (Standard: Any)
+      /// @param btn Button_None = keiner, Button_Any = beliebig; Nummer 0 - 4
+      /// (Standard: Button_Any)
       bool ButtonPressed (int btn = Button_Any);
 
       /// @brief Ermittelt, ob gerade eine Taste losgelassen wurde.
       ///
       /// Dieser Status ist nur im Moment des Loslassens _true_, nach dem
       /// nächsten Aufruf von Update() allerdings wieder _false_.
-      /// @param btn None = keiner, Any = beliebig; Nummer 0 - 7
-      /// (Standard: Any)
+      /// @param btn Button_None = keiner, Button_Any = beliebig; Nummer 0 - 4
+      /// (Standard: Button_Any)
       bool ButtonReleased (int btn = Button_Any);
    };
 
