@@ -27,9 +27,9 @@ namespace ge {
    {
       if (!Enabled()) return false;
 
-      switch (event.Type) {
-         case sf::Event::MouseButtonPressed:  currButtons[event.MouseButton.Button] = true;  return true;
-         case sf::Event::MouseButtonReleased: currButtons[event.MouseButton.Button] = false; return true;
+      switch (event.type) {
+         case sf::Event::MouseButtonPressed:  currButtons[event.mouseButton.button] = true;  return true;
+         case sf::Event::MouseButtonReleased: currButtons[event.mouseButton.button] = false; return true;
          // TODO: sf::Event::MouseMoved
          // TODO: sf::Event::MouseWheelMoved
          // TODO: sf::Event::MouseEntered

@@ -45,11 +45,13 @@
     <TargetExt>.dll</TargetExt>
     <IncludePath>..\foreign\boost;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetExt>.dll</TargetExt>
     <IncludePath>..\foreign\boost;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -58,6 +60,7 @@
       <PreprocessorDefinitions>_WINDLL;DEBUG;BASE_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precomp.h</PrecompiledHeaderFile>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -77,6 +80,7 @@
       <PreprocessorDefinitions>_WINDLL;BASE_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precomp.h</PrecompiledHeaderFile>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

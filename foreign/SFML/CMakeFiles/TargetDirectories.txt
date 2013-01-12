@@ -1,0 +1,8 @@
+E:/Projekte/GameEngine/foreign/SFML/CMakeFiles/ALL_BUILD.dir
+E:/Projekte/GameEngine/foreign/SFML/CMakeFiles/ZERO_CHECK.dir
+E:/Projekte/GameEngine/foreign/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir
+E:/Projekte/GameEngine/foreign/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
+E:/Projekte/GameEngine/foreign/SFML/src/SFML/Main/CMakeFiles/sfml-main.dir
+E:/Projekte/GameEngine/foreign/SFML/src/SFML/Network/CMakeFiles/sfml-network.dir
+E:/Projekte/GameEngine/foreign/SFML/src/SFML/System/CMakeFiles/sfml-system.dir
+E:/Projekte/GameEngine/foreign/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir

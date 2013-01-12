@@ -28,9 +28,9 @@ namespace ge {
    {
       if (!Enabled()) return false;
 
-      switch (event.Type) {
-         case sf::Event::JoyButtonPressed:  currButtons[event.JoyButton.Button] = true;  return true;
-         case sf::Event::JoyButtonReleased: currButtons[event.JoyButton.Button] = false; return true;
+      switch (event.type) {
+         case sf::Event::JoystickButtonPressed:  currButtons[event.joystickButton.button] = true;  return true;
+         case sf::Event::JoystickButtonReleased: currButtons[event.joystickButton.button] = false; return true;
          // TODO: sf::Event::JoyMoved
       }
 

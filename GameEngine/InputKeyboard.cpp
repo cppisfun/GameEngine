@@ -26,9 +26,9 @@ namespace ge {
    {
       if (!Enabled()) return false;
 
-      switch (event.Type) {
-         case sf::Event::KeyPressed:  currKeys[event.Key.Code] = true;  return true;
-         case sf::Event::KeyReleased: currKeys[event.Key.Code] = false; return true;
+      switch (event.type) {
+         case sf::Event::KeyPressed:  currKeys[event.key.code] = true;  return true;
+         case sf::Event::KeyReleased: currKeys[event.key.code] = false; return true;
       }
 
       return false;

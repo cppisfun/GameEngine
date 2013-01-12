@@ -24,7 +24,7 @@ namespace ge {
       enum KeyType {
          Key_None  =  -2,
          Key_Any   =  -1,
-         Key_Count = sf::Key::Count
+         Key_Count = sf::Keyboard::KeyCount
       };
 
    private:

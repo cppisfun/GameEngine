@@ -7,9 +7,9 @@ bjam -q --toolset=msvc --build-type=minimal --with-filesystem stage
 xcopy stage\lib\*.lib ..\..\%1 /i /y /q
 echo boost beendet.
 
-echo Beginne mit SFML 1.6 ...
+echo Beginne mit SFML 2.0 RC (Build 119) ...
 cd ..\SFML
-xcopy lib\*.* ..\..\%1 /i /y /q
+xcopy lib\%1\*.* ..\..\%1 /i /y /q
 echo SFML beendet.
 
 echo Beginne mit OIS 1.4 unstable ...

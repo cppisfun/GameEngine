@@ -62,7 +62,7 @@ namespace ge {
       /// @brief Leitet einen Event an den entsprechenden Listener weiter.
       bool Event (const sf::Event& event)
       {
-         switch (event.Type) {
+         switch (event.type) {
             case sf::Event::Closed:
             case sf::Event::Resized:
             case sf::Event::LostFocus:
@@ -85,9 +85,9 @@ namespace ge {
                if (mouseCallback != nullptr) return mouseCallback(event);
                break;
 
-            case sf::Event::JoyButtonPressed:
-            case sf::Event::JoyButtonReleased:
-            case sf::Event::JoyMoved:
+            case sf::Event::JoystickButtonPressed:
+            case sf::Event::JoystickButtonReleased:
+            case sf::Event::JoystickMoved:
                if (gamepadCallback != nullptr) return gamepadCallback(event);
                break;
          }

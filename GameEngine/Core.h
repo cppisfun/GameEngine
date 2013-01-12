@@ -57,7 +57,7 @@ namespace ge {
       void Update ()
       {
          sf::Event event;
-         if (window.GetEvent(event)) eventController->Event(event);
+         if (window.pollEvent(event)) eventController->Event(event);
       }
 
    public:
@@ -67,7 +67,7 @@ namespace ge {
       ~Core ()
       {
          ShutDown(AllInterfaces);
-         if (window.IsOpened()) window.Close();
+         if (window.isOpen()) window.close();
       }
 
       /// @brief Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird
@@ -109,13 +109,14 @@ namespace ge {
 
 
       /// @brief Legt fest, ob das Fenster sichtbar sein soll.
-      Core& ShowWindow (bool show = true) { window.Show(show); return *this; }
+//      Core& ShowWindow (bool show = true) { window.(show); return *this; }
 
       /// @brief Macht das Fenster unsichtbar (es besteht jedoch noch).
-      Core& HideWindow () { window.Show(false); return *this; }
+//      Core& HideWindow () { window.Show(false); return *this; }
 
-      /// @brief Schließt das irrlicht-Device.
-      Core& Quit () { window.Close(); return *this; }
+      /// @brief Schließt das Fenster und beendet die Einsatzbereitschaft der
+      /// Kernkomponenten.
+      Core& Quit () { window.close(); return *this; }
 
 
       /// @brief Liefert den Pointer zur Kernkomponente für Grafik.
@@ -135,7 +136,7 @@ namespace ge {
       bool IsRunning ()
       {
          Update();
-         return window.IsOpened();
+         return window.isOpen();
       }
    };
 

@@ -24,7 +24,7 @@ namespace ge {
       enum ButtonType {
          Button_None  = -2,
          Button_Any   = -1,
-         Button_Count = sf::Joy::ButtonCount
+         Button_Count = sf::Joystick::ButtonCount
       };
 
    private:
