@@ -21,9 +21,6 @@ namespace ge {
       /// @brief Konstruktor. Initialisierung über Zahlenangaben.
       Point (int x, int y) : x(x), y(y) { }
 
-      /// @brief Konstruktor. Initialisierung über einen irrlicht-Vektor.
-      Point (const irr::core::vector2d<int>& vec) : x(vec.X), y(vec.Y) { }
-
       /// @brief Konstruktor. Initialisierung über einen SFML-Vektor.
       Point (const sf::Vector2<int>& vec) : x(vec.x), y(vec.y) { }
 
@@ -37,9 +34,6 @@ namespace ge {
       /// @brief Legt die Position über Zahlenwerte fest.
       Point& Set (int xVal, int yVal) { x = xVal; y = yVal; return *this; }
 
-      /// @brief Legt die Position über einen irrlicht-Vektor fest.
-      Point& FromIrrVector (const irr::core::vector2d<int>& vec) { return Set(vec.X, vec.Y); }
-
       /// @brief Legt die Position über einen SFML-Vektor fest.
       Point& FromSFMLVector (const sf::Vector2<int>& vec) { return Set(vec.x, vec.y); }
 
@@ -50,9 +44,6 @@ namespace ge {
       /// @brief Liefert die Y-Position.
       int Y () const { return y; }
 
-
-      /// @brief Liefert einen entsprechenden irrlicht-Vektor.
-      const irr::core::vector2d<int> AsIrrVector () const { return irr::core::vector2d<int>(x, y); }
 
       /// @brief Liefert einen entsprechenden SFML-Vektor.
       const sf::Vector2<int> AsSFMLVector () const { return sf::Vector2<int>(x, y); }

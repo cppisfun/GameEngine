@@ -85,7 +85,9 @@ namespace ge {
       /// @param what Komponentenangabe aus Core::What
       Core& Reset (const What& what)
       {
-         if (what & GraphicsInterface)  graphics.reset(new GraphicsCore(nullptr));
+         // FIXME: GE-42
+         if (what & GraphicsInterface)  graphics.reset(new GraphicsCore);
+         //if (what & GraphicsInterface)  graphics.reset(new GraphicsCore(nullptr));
          if (what & InputInterface)     input.reset(new InputCore(eventController.get()));
          if (what & AudioInterface)     audio.reset(new AudioCore);
          if (what & ResourcesInterface) resources.reset(new ResourcesCore);

@@ -3,8 +3,6 @@
 
 #include "Precomp.h"
 
-#include <vector2d.h>
-#include <rect.h>
 #include <SFML/System/Vector2.hpp>
 
 #include "Point.h"
@@ -39,18 +37,6 @@ namespace ge {
       Rectangle (const Point& topLeft, const Point& bottomRight)
       {
          Set(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y());
-      }
-
-      /// @brief Konstruktor. Initialisierung über irrlicht-Vektoren.
-      Rectangle (const irr::core::vector2d<int>& topLeft, irr::core::vector2d<int>& bottomRight)
-      {
-         Set(topLeft.X, topLeft.Y, bottomRight.X, bottomRight.Y);
-      }
-
-      /// @brief Konstruktor. Initialisierung über ein irrlicht-Rechteck.
-      Rectangle (const irr::core::rect<int>& rect)
-      {
-         Set(rect.UpperLeftCorner.X, rect.UpperLeftCorner.Y, rect.LowerRightCorner.X, rect.LowerRightCorner.Y);
       }
 
       /// @brief Konstruktor. Initialisierung über SFML-Vektoren.
@@ -112,15 +98,6 @@ namespace ge {
 
       /// @brief Liefert ein entsprechendes Paar aus ge::Point.
       const std::pair<Point, Point> AsPoints () const { return std::make_pair(Point(left, top), Point(right, bottom)); }
-
-      /// @brief Liefert ein entsprechendes Paar aus irrlicht-Vektoren.
-      const std::pair<irr::core::vector2d<int>, irr::core::vector2d<int>> AsIrrVectors () const
-      {
-         return std::make_pair(irr::core::vector2d<int>(left, top), irr::core::vector2d<int>(right, bottom));
-      }
-
-      /// @brief Liefert ein entsprechendes irrlicht-Rechteck.
-      const irr::core::rect<int> AsIrrRect () const { return irr::core::rect<int>(left, top, right, bottom); }
 
       /// @brief Liefert ein entsprechendes Paar aus SFML-Vektoren.
       const std::pair<sf::Vector2<int>, sf::Vector2<int>> AsSFMLVectors () const
