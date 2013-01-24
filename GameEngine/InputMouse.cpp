@@ -31,7 +31,7 @@ namespace ge {
          case sf::Event::MouseButtonPressed:  currButtons[event.mouseButton.button] = true;           return true;
          case sf::Event::MouseButtonReleased: currButtons[event.mouseButton.button] = false;          return true;
          case sf::Event::MouseMoved:          currPosition.Set(event.mouseMove.x, event.mouseMove.y); return true;
-         case sf::Event::MouseWheelMoved:     currWheelPosition = event.mouseWheel.y;                 return true;
+         case sf::Event::MouseWheelMoved:     currWheelPosition += event.mouseWheel.delta;            return true;
          // TODO: sf::Event::MouseEntered
          // TODO: sf::Event::MouseLeft
       }
@@ -44,15 +44,8 @@ namespace ge {
       if (!Enabled()) return;
 
       std::move(currButtons.begin(), currButtons.end(), prevButtons.begin());
-
-//      auto state = device->getMouseState();
-//      std::swap(currPosition, prevPosition);
-//      currPosition.Set(state.X.abs, state.Y.abs);
-//      prevWheelPosition = currWheelPosition;
-//      currWheelPosition = state.Z.abs;
-//
-//      int  buttonState = state.buttons;
-//      for (int i = 0; i < Button_Count; ++i) { currButtons[i] = ((buttonState & (1L << i)) != 0); }
+      prevPosition      = currPosition;
+      prevWheelPosition = currWheelPosition;
    }
 
    bool InputMouse::Button (int btn)

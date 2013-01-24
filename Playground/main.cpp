@@ -41,7 +41,7 @@ int main ()
          }
 
          if (mouse->ButtonPressed(InputMouse::Button_Right)) {
-            if (audio->MusicPan("music")) audio->StopMusic("music");
+            if (audio->IsPlaying("music")) audio->StopMusic("music");
             else audio->PlayMusic("music", true);
          }
 

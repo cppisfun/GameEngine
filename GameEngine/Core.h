@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "EventListener.h"
 #include "GraphicsCore.h"
 #include "InputCore.h"
 #include "AudioCore.h"
@@ -25,7 +26,7 @@ namespace ge {
    /// Methode Reset() oder Verwenden eines entsprechenden Getters. Sollte die
    /// Verwendung einer Kernkomponente vom Bestehen einer anderen abhängen,
    /// wird dies intern entsprechend berücksichtigt.
-   class GEDLL Core
+   class GEDLL Core : public EventListener
    {
    public:
       /// @brief Auflistung der möglichen Komponentenangaben zur Verwendung mit
@@ -50,14 +51,30 @@ namespace ge {
       std::unique_ptr<AudioCore>       audio;
       std::unique_ptr<ResourcesCore>   resources;
 
+      bool hasFocus;
+
       Core ();
       Core (const Core&);
       Core& operator= (const Core&);
 
-      void Update ()
+      void Update () override
       {
          sf::Event event;
          if (window->pollEvent(event)) eventController->Event(event);
+      }
+
+      bool OnEvent (const sf::Event& event) override
+      {
+         if (!Enabled()) return false;
+
+         switch (event.type) {
+            case sf::Event::Closed:      window->close();  return true;
+            case sf::Event::GainedFocus: hasFocus = true;  return true;
+            case sf::Event::LostFocus:   hasFocus = false; return true;
+            // TODO: sf::Event::Resized:
+         }
+
+         return false;
       }
 
    public:
@@ -132,8 +149,12 @@ namespace ge {
       ResourcesCore* Resources () { if (resources == nullptr) Reset(ResourcesInterface); return resources.get(); }
 
 
-      /// @brief Ermittelt, ob das irrlicht-Device aktiviert wurde und aktuell fehlerfrei arbeitet.
+      /// @brief Ermittelt, ob das SFML-RenderWindow aktiviert wurde und
+      /// aktuell fehlerfrei arbeitet.
       bool IsRunning () { Update(); return window->isOpen(); }
+
+      /// @brief Ermittelt, ob das SFML-RenderWindow aktuell den Fokus besitzt.
+      bool HasFocus () const { return hasFocus; }
    };
 
 
