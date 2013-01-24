@@ -13,12 +13,15 @@
 namespace ge {
 
    /// @brief Standard-Klasse für Rechtecke (Koordinaten).
+   template<typename T>
    class GEDLL Rectangle
    {
-      int left;
-      int top;
-      int right;
-      int bottom;
+      T left;
+      T top;
+      T right;
+      T bottom;
+
+      void CheckType() { static_assert(std::is_arithmetic<T>::value, "ge::Rectangle<T> only supports integral or floating point types!"); }
 
       void Adjust ()
       {
@@ -28,38 +31,38 @@ namespace ge {
 
    public:
       /// @brief Konstruktor. Initialisierung über Zahlenangaben.
-      Rectangle (int left, int top, int right, int bottom)
+      Rectangle (T left, T top, T right, T bottom)
       {
          Set(left, top, right, bottom);
       }
 
       /// @brief Konstruktor. Initialisierung über ge::Point.
-      Rectangle (const Point& topLeft, const Point& bottomRight)
+      Rectangle (const Point<T>& topLeft, const Point<T>& bottomRight)
       {
          Set(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y());
       }
 
       /// @brief Konstruktor. Initialisierung über SFML-Vektoren.
-      Rectangle (const sf::Vector2<int>& topLeft, const sf::Vector2<int>& bottomRight)
+      Rectangle (const sf::Vector2<T>& topLeft, const sf::Vector2<T>& bottomRight)
       {
          Set(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
       }
 
 
       /// @brief Legt die linke Position fest (verändert die Breite).
-      Rectangle& Left (int val) { left = val; Adjust(); return *this; }
+      Rectangle& Left (T val) { left = val; Adjust(); return *this; }
 
       /// @brief Legt die obere Position fest (verändert die Höhe).
-      Rectangle& Top (int val) { top = val; Adjust(); return *this; }
+      Rectangle& Top (T val) { top = val; Adjust(); return *this; }
 
       /// @brief Legt die rechte Position fest (verändert die Breite).
-      Rectangle& Right (int val) { right = val; Adjust(); return *this; }
+      Rectangle& Right (T val) { right = val; Adjust(); return *this; }
 
       /// @brief Legt die untere Position fest (verändert die Höhe).
-      Rectangle& Bottom (int val) { bottom = val; Adjust(); return *this; }
+      Rectangle& Bottom (T val) { bottom = val; Adjust(); return *this; }
 
       /// @brief Legt alle Positionen über Zahlenwerte fest.
-      Rectangle& Set (int leftVal, int topVal, int rightVal, int bottomVal)
+      Rectangle& Set (T leftVal, T topVal, T rightVal, T bottomVal)
       {
          left   = leftVal;
          top    = topVal;
@@ -71,38 +74,38 @@ namespace ge {
       }
 
       /// @brief Legt die Breite fest (verändert rechte Position).
-      Rectangle& Width (int val)  { right = left + val; Adjust(); return *this; }
+      Rectangle& Width (T val)  { right = left + val; Adjust(); return *this; }
 
       /// @brief Legt die Höhe fest (verändert untere Position).
-      Rectangle& Height (int val) { bottom = top + val; Adjust(); return *this; }
+      Rectangle& Height (T val) { bottom = top + val; Adjust(); return *this; }
 
 
       /// @brief Liefert die linke Position.
-      int Left () const { return left; }
+      T Left () const { return left; }
 
       /// @brief Liefert die obere Position.
-      int Top () const { return top; }
+      T Top () const { return top; }
 
       /// @brief Liefert die rechte Position.
-      int Right () const { return right; }
+      T Right () const { return right; }
 
       /// @brief Liefert die untere Position.
-      int Bottom () const { return bottom; }
+      T Bottom () const { return bottom; }
 
       /// @brief Liefert die Breite.
-      int Width () const { return right - left; }
+      T Width () const { return right - left; }
 
       /// @brief Liefert die Höhe.
-      int Height () const { return bottom - top; }
+      T Height () const { return bottom - top; }
 
 
       /// @brief Liefert ein entsprechendes Paar aus ge::Point.
-      const std::pair<Point, Point> AsPoints () const { return std::make_pair(Point(left, top), Point(right, bottom)); }
+      const std::pair<Point<T>, Point<T>> AsPoints () const { return std::make_pair(Point<T>(left, top), Point<T>(right, bottom)); }
 
       /// @brief Liefert ein entsprechendes Paar aus SFML-Vektoren.
-      const std::pair<sf::Vector2<int>, sf::Vector2<int>> AsSFMLVectors () const
+      const std::pair<sf::Vector2<T>, sf::Vector2<T>> AsSFMLVectors () const
       {
-         return std::make_pair(sf::Vector2<int>(left, top), sf::Vector2<int>(right, bottom));
+         return std::make_pair(sf::Vector2<T>(left, top), sf::Vector2<int>(right, bottom));
       }
    };
 

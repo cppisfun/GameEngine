@@ -41,10 +41,10 @@ namespace ge {
       };
 
    private:
-      Point currPosition;
-      Point prevPosition;
-      int   currWheelPosition;
-      int   prevWheelPosition;
+      Point<int> currPosition;
+      Point<int> prevPosition;
+      int        currWheelPosition;
+      int        prevWheelPosition;
 
       std::array<bool, Button_Count> currButtons;
       std::array<bool, Button_Count> prevButtons;
@@ -74,7 +74,7 @@ namespace ge {
       int Y () const { return currPosition.Y(); }
 
       /// @brief Liefert die Mausposition als ge::Point.
-      const Point& Position () const { return currPosition; }
+      const Point<int>& Position () const { return currPosition; }
 
       /// @brief Liefert die Position des Mausrades.
       int Wheel () const { return currWheelPosition; }

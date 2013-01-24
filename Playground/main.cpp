@@ -11,7 +11,7 @@ int main ()
 {
    try {
       auto core      = Core::Instance();
-//      auto graphics  = core->Graphics();
+      auto graphics  = core->Graphics();
       auto input     = core->Input();
       auto audio     = core->Audio();
       auto resources = core->Resources();
@@ -20,7 +20,7 @@ int main ()
 
       resources->AddMusic("music", "../resources/audio/music/music.ogg");
 
-//      graphics->AddTexture("image", "../resources/graphics/textures/image.png");
+      graphics->AddTexture("image", "../resources/graphics/textures/texture.png");
 
       audio->Add("music", resources->Music("music"));
       audio->Add("piano", "../resources/audio/music/piano.ogg");
@@ -46,16 +46,16 @@ int main ()
          }
 
          if (mouse->WheelMoved()) {
-            audio->MusicVolume("music", audio->MusicVolume("music") + mouse->DWheel() / 100);
-            audio->MusicVolume("piano", audio->MusicVolume("piano") - mouse->DWheel() / 100);
+            audio->MusicVolume("music", audio->MusicVolume("music") + mouse->DWheel());
+            audio->MusicVolume("piano", audio->MusicVolume("piano") - mouse->DWheel());
          }
 
-//         graphics->BeginScene();
-//         {
-//            graphics->DrawTexture("image", ge::Rectangle(300, 100, 310, 110));
-//            graphics->DrawTexture("image", ge::Rectangle(310, 110, 360, 160));
-//            graphics->DrawTexture("image", ge::Rectangle(360, 160, 620, 320));
-//
+         graphics->BeginScene();
+         {
+            graphics->DrawTexture("image", ge::Rectangle<float>(300, 100, 310, 110));
+            graphics->DrawTexture("image", ge::Rectangle<float>(310, 110, 360, 160));
+            graphics->DrawTexture("image", ge::Rectangle<float>(360, 160, 620, 320));
+
 //            graphics->DrawBox(5, 5, 160, 235);
 //
 //            graphics->Text(10, 10, "Filename: " + audio->FileName("music"));
@@ -74,8 +74,8 @@ int main ()
 //
 //            graphics->Text(10, 200, "Music Length: " + base::AsString(audio->MusicLength("music")));
 //            graphics->Text(10, 215, "Music Position: " + base::AsString(audio->MusicPosition("music")));
-//         }
-//         graphics->EndScene();
+         }
+         graphics->EndScene();
 
          input->Update();
       }

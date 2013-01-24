@@ -42,7 +42,7 @@ namespace ge {
    private:
       static std::unique_ptr<Core> instance;
 
-      sf::RenderWindow window;
+      std::unique_ptr<sf::RenderWindow> window;
 
       std::unique_ptr<EventController> eventController;
       std::unique_ptr<GraphicsCore>    graphics;
@@ -57,7 +57,7 @@ namespace ge {
       void Update ()
       {
          sf::Event event;
-         if (window.pollEvent(event)) eventController->Event(event);
+         if (window->pollEvent(event)) eventController->Event(event);
       }
 
    public:
@@ -67,7 +67,7 @@ namespace ge {
       ~Core ()
       {
          ShutDown(AllInterfaces);
-         if (window.isOpen()) window.close();
+         if (window->isOpen()) window->close();
       }
 
       /// @brief Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird
@@ -85,9 +85,7 @@ namespace ge {
       /// @param what Komponentenangabe aus Core::What
       Core& Reset (const What& what)
       {
-         // FIXME: GE-42
-         if (what & GraphicsInterface)  graphics.reset(new GraphicsCore);
-         //if (what & GraphicsInterface)  graphics.reset(new GraphicsCore(nullptr));
+         if (what & GraphicsInterface)  graphics.reset(new GraphicsCore(window.get()));
          if (what & InputInterface)     input.reset(new InputCore(eventController.get()));
          if (what & AudioInterface)     audio.reset(new AudioCore);
          if (what & ResourcesInterface) resources.reset(new ResourcesCore);
@@ -118,7 +116,7 @@ namespace ge {
 
       /// @brief Schließt das Fenster und beendet die Einsatzbereitschaft der
       /// Kernkomponenten.
-      Core& Quit () { window.close(); return *this; }
+      Core& Quit () { window->close(); return *this; }
 
 
       /// @brief Liefert den Pointer zur Kernkomponente für Grafik.
@@ -135,11 +133,7 @@ namespace ge {
 
 
       /// @brief Ermittelt, ob das irrlicht-Device aktiviert wurde und aktuell fehlerfrei arbeitet.
-      bool IsRunning ()
-      {
-         Update();
-         return window.isOpen();
-      }
+      bool IsRunning () { Update(); return window->isOpen(); }
    };
 
 
