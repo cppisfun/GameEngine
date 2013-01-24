@@ -4,6 +4,7 @@
 #include "Precomp.h"
 
 #include <SColor.h>
+#include <SFML/Graphics/Color.hpp>
 
 #include "DLL_DEF.h"
 
@@ -43,24 +44,27 @@ namespace ge {
          FromIrrColor(color);
       }
 
+      /// @brief Konstruktor. Initialisierung über eine SFML-Farbe.
+      Color (const sf::Color& color)
+      {
+         FromSFMLColor(color);
+      }
+
 
       /// @brief Legt alle Farbanteile und den Alphawert über Zahlenwerte fest.
       /// @param red Rotanteil (0 - 255)
       /// @param green Grünanteil (0 - 255)
       /// @param blue Blauanteil (0 - 255)
       /// @param alpha Alphawert (0 - 255, Standard: 255)
-      Color& Set (int red, int green, int blue, int alpha = 255)
-      {
-         Red(red); Green(green); Blue(blue); Alpha(alpha);
-         return *this;
-      }
+      Color& Set (int red, int green, int blue, int alpha = 255) { Red(red); Green(green); Blue(blue); Alpha(alpha); return *this; }
 
       /// @brief Legt alle Farbanteile und den Alphawert über eine
       /// irrlicht-Farbe fest.
-      Color& FromIrrColor (const irr::video::SColor& color)
-      {
-         return Set(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
-      }
+      Color& FromIrrColor (const irr::video::SColor& color) { return Set(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha()); }
+
+      /// @brief Legt alle Farbanteile und den Alphawert über eine
+      /// SFML-Farbe fest.
+      Color& FromSFMLColor (const sf::Color& color) { return Set(color.r, color.g, color.b, color.a); }
 
       /// @brief Legt den Rotanteil fest.
       /// @param val Rotanteil (0 - 255)
@@ -125,10 +129,10 @@ namespace ge {
       const int* Get () const { return values.data(); }
 
       /// @brief Liefert ein entsprechendes irrlicht-Farbobjekt.
-      const irr::video::SColor AsIrrColor () const
-      {
-         return irr::video::SColor(values[AlphaValue], values[RedValue], values[GreenValue], values[BlueValue]);
-      }
+      const irr::video::SColor AsIrrColor () const { return irr::video::SColor(values[AlphaValue], values[RedValue], values[GreenValue], values[BlueValue]); }
+
+      /// @brief Liefert ein entsprechendes SFML-Farbobjekt.
+      const sf::Color AsSFMLColor () const { return sf::Color(values[RedValue], values[GreenValue], values[BlueValue], values[AlphaValue]); }
 
 
       /// @brief Operator + für zwei Color-Objekte
