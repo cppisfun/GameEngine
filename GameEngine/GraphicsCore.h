@@ -36,12 +36,12 @@ namespace ge {
       std::map<std::string, sf::Font>    fonts;
       std::map<std::string, sf::Texture> textures;
 
-//      void DrawText (int x, int y, const std::string& text, irr::gui::IGUIFont* font);
+      void DrawText (float x, float y, const std::string& text, const sf::Font& font, int fontSizeInPixels);
 
    public:
       // TODO: anpassen GE-42
       /// @brief Konstruktor. Benötigt einen Pointer zu einem validen
-      /// irrlicht-Device (wird automatisch bei der Initialisierung über Core
+      /// SFML-RenderWindow (wird automatisch bei der Initialisierung über Core
       /// übergeben).
       GraphicsCore (sf::RenderWindow* device);
 
@@ -290,17 +290,26 @@ namespace ge {
 
 
       /// @brief Gibt einen Log-Text aus (hierfür wird die System-Schriftart verwendet).
-//      GraphicsCore& Log (int x, int y, const std::string& text) { DrawText(x, y, text, systemFont); return *this; }
+      GraphicsCore& Log (float x, float y, const std::string& text, int fontSizeInPixels = 16)
+      {
+         DrawText(x, y, text, systemFont, fontSizeInPixels); return *this;
+      }
 
       /// @brief Gibt einen Text aus (hierfür wird die Standard-Schriftart verwendet).
-//      GraphicsCore& Text (int x, int y, const std::string& text) { DrawText(x, y, text, defaultFont); return *this; }
+      GraphicsCore& Text (float x, float y, const std::string& text, int fontSizeInPixels = 16)
+      {
+         DrawText(x, y, text, defaultFont, fontSizeInPixels); return *this;
+      }
 
       /// @brief Gibt einen Text aus (hierfür wird eine Schriftart aus dem Schriftarten-Pool verwendet).
       /// @param x X-Position der linken oberen Ecke
       /// @param y Y-Position der linken oberen Ecke
       /// @param text Auszugebender Text
       /// @param fontId Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool.
-//      GraphicsCore& Text (int x, int y, const std::string& text, const std::string& fontId) { DrawText(x, y, text, Font(fontId)); return *this; }
+      GraphicsCore& Text (float x, float y, const std::string& text, const std::string& fontId, int fontSizeInPixels = 16)
+      {
+         DrawText(x, y, text, Font(fontId), fontSizeInPixels); return *this;
+      }
 
 
       /// @brief Erzeugt einen Screenshot. DUMMY, BITTE SINNVOLL DOKUMENTIEREN, WENNS FERTIG IST!

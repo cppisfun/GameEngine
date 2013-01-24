@@ -24,12 +24,13 @@ namespace ge {
    {
    }
 
-// FIXME: GE-42
-//   void GraphicsCore::DrawText (int x, int y, const std::string& text, irr::gui::IGUIFont* font)
-//   {
-//      auto fnt = (font != nullptr) ? font : gui->getBuiltInFont();
-//      fnt->draw(base::AsWString(text).c_str(), core::rect<int>(x, y, x + 100, y + 100), foreColor.AsIrrColor());
-//   }
+   void GraphicsCore::DrawText (float x, float y, const std::string& text, const sf::Font& font, int fontSizeInPixels)
+   {
+      sf::Text txt(text, font, (fontSizeInPixels > 0) ? fontSizeInPixels : 0);
+      txt.setPosition(x, y);
+
+      device->draw(txt);
+   }
 
    GraphicsCore& GraphicsCore::SystemFont (const std::string& fontFile)
    {

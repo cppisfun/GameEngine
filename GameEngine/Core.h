@@ -62,8 +62,8 @@ namespace ge {
 
    public:
       /// @brief Destruktor. Entfernt automatisch alle noch bestehenden
-      /// Kernkomponenten und gibt Ressourcen frei, die innerhalb von Core
-      /// oder eines in Core gehaltenen Kernobjektes erreichbar sind.
+      /// Kernkomponenten und gibt Ressourcen frei, die innerhalb von Core oder
+      /// eines in Core gehaltenen Kernobjektes erreichbar sind.
       ~Core ()
       {
          ShutDown(AllInterfaces);
