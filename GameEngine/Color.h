@@ -3,7 +3,6 @@
 
 #include "Precomp.h"
 
-#include <SColor.h>
 #include <SFML/Graphics/Color.hpp>
 
 #include "DLL_DEF.h"

@@ -3,7 +3,6 @@
 
 #include "Precomp.h"
 
-#include <vector2d.h>
 #include <SFML/System/Vector2.hpp>
 
 #include "DLL_DEF.h"

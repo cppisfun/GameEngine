@@ -1,8 +1,6 @@
 
 #pragma once
 
-#include <irrlicht.h>
-
 #include "Color.h"
 #include "Rectangle.h"
 

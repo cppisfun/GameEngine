@@ -7,7 +7,6 @@
 #include "../Base/Error.h"
 
 using namespace ge;
-using namespace irr;
 
 
 namespace ge {
