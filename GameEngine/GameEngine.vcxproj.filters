@@ -13,18 +13,18 @@
     <Filter Include="Graphics">
       <UniqueIdentifier>{795b61e1-4f41-4728-8f44-81f90863aa39}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{2863eea9-0f89-43e3-86a2-85e4923163be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{326483f7-910a-477a-99c0-81d11530ccee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color.h">
       <Filter>Primitive</Filter>
     </ClInclude>
     <ClInclude Include="Core.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicsCore.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="InputCore.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="Precomp.h" />
@@ -36,12 +36,6 @@
     </ClInclude>
     <ClInclude Include="InputGamepad.h">
       <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="AudioCore.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourcesCore.h">
-      <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="Vector.h">
       <Filter>Primitive</Filter>
@@ -59,14 +53,20 @@
     <ClInclude Include="EventController.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="GraphicsCore.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="InputCore.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioCore.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcesCore.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GraphicsCore.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="InputCore.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="Precomp.cpp" />
     <ClCompile Include="InputKeyboard.cpp">
       <Filter>Input</Filter>
@@ -77,14 +77,20 @@
     <ClCompile Include="InputGamepad.cpp">
       <Filter>Input</Filter>
     </ClCompile>
-    <ClCompile Include="AudioCore.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourcesCore.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="Core.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsCore.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="InputCore.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioCore.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourcesCore.cpp">
+      <Filter>Resources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
