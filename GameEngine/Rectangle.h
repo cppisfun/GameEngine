@@ -5,6 +5,7 @@
 
 #include <vector2d.h>
 #include <rect.h>
+#include <SFML/System/Vector2.hpp>
 
 #include "Point.h"
 
@@ -50,6 +51,12 @@ namespace ge {
       Rectangle (const irr::core::rect<int>& rect)
       {
          Set(rect.UpperLeftCorner.X, rect.UpperLeftCorner.Y, rect.LowerRightCorner.X, rect.LowerRightCorner.Y);
+      }
+
+      /// @brief Konstruktor. Initialisierung über SFML-Vektoren.
+      Rectangle (const sf::Vector2<int>& topLeft, const sf::Vector2<int>& bottomRight)
+      {
+         Set(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
       }
 
 
@@ -114,6 +121,12 @@ namespace ge {
 
       /// @brief Liefert ein entsprechendes irrlicht-Rechteck.
       const irr::core::rect<int> AsIrrRect () const { return irr::core::rect<int>(left, top, right, bottom); }
+
+      /// @brief Liefert ein entsprechendes Paar aus SFML-Vektoren.
+      const std::pair<sf::Vector2<int>, sf::Vector2<int>> AsSFMLVectors () const
+      {
+         return std::make_pair(sf::Vector2<int>(left, top), sf::Vector2<int>(right, bottom));
+      }
    };
 
 }
