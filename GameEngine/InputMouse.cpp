@@ -28,10 +28,10 @@ namespace ge {
       if (!Enabled()) return false;
 
       switch (event.type) {
-         case sf::Event::MouseButtonPressed:  currButtons[event.mouseButton.button] = true;  return true;
-         case sf::Event::MouseButtonReleased: currButtons[event.mouseButton.button] = false; return true;
-         // TODO: sf::Event::MouseMoved
-         // TODO: sf::Event::MouseWheelMoved
+         case sf::Event::MouseButtonPressed:  currButtons[event.mouseButton.button] = true;           return true;
+         case sf::Event::MouseButtonReleased: currButtons[event.mouseButton.button] = false;          return true;
+         case sf::Event::MouseMoved:          currPosition.Set(event.mouseMove.x, event.mouseMove.y); return true;
+         case sf::Event::MouseWheelMoved:     currWheelPosition = event.mouseWheel.y;                 return true;
          // TODO: sf::Event::MouseEntered
          // TODO: sf::Event::MouseLeft
       }

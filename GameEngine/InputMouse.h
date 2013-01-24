@@ -53,8 +53,8 @@ namespace ge {
 
    public:
       /// @brief Konstruktor. Benötigt den Pointer zu einem validen Objekt vom
-      /// Typ OIS::InputManager (wird automatisch bei der Initialisierung über
-      /// Core übergeben).
+      /// Typ ge::EventController (wird automatisch bei der Initialisierung
+      /// über Core übergeben).
       InputMouse (EventController* eventCtrl);
 
       /// @brief Destruktor.

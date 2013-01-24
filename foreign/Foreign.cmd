@@ -12,11 +12,6 @@ cd ..\SFML
 xcopy lib\%1\*.* ..\..\%1 /i /y /q
 echo SFML beendet.
 
-echo Beginne mit OIS 1.4 unstable ...
-cd ..\ois
-xcopy lib\*.* ..\..\%1 /i /y /q
-echo OIS beendet.
-
 echo Beginne mit Irrlicht 1.7.3 ...
 cd ..\irrlicht
 xcopy lib\irrlicht.lib ..\..\%1 /i /y /q
