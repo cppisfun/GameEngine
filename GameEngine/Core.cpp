@@ -15,7 +15,7 @@ namespace ge {
       eventController.reset(new EventController);
       if (eventController == nullptr) throw error::Create("Failed to create event controller!", __FUNCTION__);
 
-      window.create(sf::VideoMode(800, 600), "GameEngine 0.4");
+      window.create(sf::VideoMode(800, 600), "GameEngine 0.0.5");
       window.clear(sf::Color::Blue);
       window.display();
    }
