@@ -3,15 +3,17 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "EventController.h"
 #include "EventListener.h"
+
 #include "GraphicsCore.h"
 #include "InputCore.h"
 #include "AudioCore.h"
 #include "ResourcesCore.h"
 
-#include "DLL_DEF.h"
+#include "../Base/Error.h"
 
-class EventController;
+#include "DLL_DEF.h"
 
 
 /// @brief Namespace für alle GameEngine-Komponenten.
@@ -53,7 +55,21 @@ namespace ge {
 
       bool hasFocus;
 
-      Core ();
+      Core () : hasFocus(true), eventController(nullptr), graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
+      {
+         window.reset(new sf::RenderWindow);
+         if (window == nullptr) throw error::Create("Failed to create application window!", __FUNCTION__);
+
+         window->create(sf::VideoMode(800, 600), "GameEngine 0.0.5");
+         window->clear(sf::Color::Blue);
+         window->display();
+
+         eventController.reset(new EventController);
+         if (eventController == nullptr) throw error::Create("Failed to create event controller!", __FUNCTION__);
+
+         eventController->WindowCallback(std::bind(&Core::OnEvent, this, std::placeholders::_1));
+      }
+
       Core (const Core&);
       Core& operator= (const Core&);
 
@@ -130,6 +146,10 @@ namespace ge {
 
       /// @brief Macht das Fenster unsichtbar (es besteht jedoch noch).
 //      Core& HideWindow () { window.Show(false); return *this; }
+
+      /// @brief Stoppt die Ausführung des Programms, ohne Prozessor-Zeit zu
+      /// beanspruchen (z.B. wenn das Fenster keinen Fokus besitzt).
+      Core& DoNothing () { sf::sleep(sf::milliseconds(50)); return *this; }
 
       /// @brief Schließt das Fenster und beendet die Einsatzbereitschaft der
       /// Kernkomponenten.

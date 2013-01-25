@@ -77,9 +77,6 @@
     <ClCompile Include="InputGamepad.cpp">
       <Filter>Input</Filter>
     </ClCompile>
-    <ClCompile Include="Core.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="GraphicsCore.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>

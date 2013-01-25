@@ -113,7 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AudioCore.cpp" />
-    <ClCompile Include="Core.cpp" />
     <ClCompile Include="GraphicsCore.cpp" />
     <ClCompile Include="InputCore.cpp" />
     <ClCompile Include="InputGamepad.cpp" />
