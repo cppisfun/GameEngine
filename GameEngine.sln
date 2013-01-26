@@ -1,9 +1,16 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C++ Express 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngine", "GameEngine\GameEngine.vcxproj", "{007246B1-8809-41C2-8BD8-E8483C497546}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9C8FC4B9-49FE-4237-AA64-663457949BC6} = {9C8FC4B9-49FE-4237-AA64-663457949BC6}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Base", "Base\Base.vcxproj", "{694B9EE2-D734-488E-A803-3866DE7BFCD1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9C8FC4B9-49FE-4237-AA64-663457949BC6} = {9C8FC4B9-49FE-4237-AA64-663457949BC6}
+		{64A4FEFE-0461-4E95-8CC1-91EF5F57DBC6} = {64A4FEFE-0461-4E95-8CC1-91EF5F57DBC6}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Playground", "Playground\Playground.vcxproj", "{C67C2E30-B8BE-4F7F-BAD7-8CBD7D36C772}"
 	ProjectSection(ProjectDependencies) = postProject
