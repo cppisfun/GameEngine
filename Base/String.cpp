@@ -7,116 +7,105 @@
 
 namespace base {
 
-   const std::string LTrim (const std::string& val)
+   void LTrim (std::string& val) { boost::trim_left(val); }
+   void RTrim (std::string& val) { boost::trim_right(val); }
+   void Trim (std::string& val)  { boost::trim(val); }
+   void Upper (std::string& val) { boost::to_upper(val); }
+   void Lower (std::string& val) { boost::to_lower(val); }
+
+   void Replace (std::string& src, const std::string& what, const std::string& with) { boost::replace_all(src, what, with); }
+
+   void Left (std::string& val, int length)
    {
-      if (val.empty()) return "";
-
-      std::string ret(val);
-      while (!ret.empty() && ret[0] == ' ') ret.erase(ret.begin());
-
-      return ret;
-   }
-
-   const std::string RTrim (const std::string& val)
-   {
-      if (val.empty()) return "";
-
-      std::string ret(val);
-      while (!ret.empty() && ret[ret.size() - 1] == ' ') ret.erase(ret.end() - 1);
-
-      return ret;
-   }
-
-   const std::string Trim (const std::string& val)
-   {
-      return RTrim(LTrim(val));
-   }
-
-   const std::string LFill (const std::string& val, int length, const std::string& filling)
-   {
-      if (length <= 0 || filling.empty()) return val;
-
-      size_t len(length);
-      if (len <= val.size()) return val;
-
-      std::string ret(val);
-      while (ret.size() < len) ret = filling + ret;
-
-      return ret.substr(0, len);
-   }
-
-   const std::string RFill (const std::string& val, int length, const std::string& filling)
-   {
-      if (length <= 0 || filling.empty()) return val;
-
-      size_t len(length);
-      if (len < val.size()) return val;
-
-      std::string ret(val);
-      while (ret.size() < len) ret += filling;
-
-      return ret.substr(0, len);
-   }
-
-   const std::string Left (const std::string& val, int length)
-   {
-      if (length <= 0) return "";
-
-      size_t len(length);
-      if (val.size() <= len) return val;
-
-      return val.substr(0, len);
-   }
-
-   const std::string Right (const std::string& val, int length)
-   {
-      if (length <= 0) return "";
-
-      size_t len(length);
-      if (val.size() <= len) return val;
-
-      return val.substr(val.size() - len, len);
-   }
-
-   const std::string Upper (const std::string& val)
-   {
-      if (val.empty()) return "";
-
-      std::string ret(val);
-
-      for (size_t i = 0; i < ret.size(); ++i) {
-         if (ret[i] >= 'a' && ret[i] <= 'z') ret[i] -= 32;
-         else if (ret[i] == 'ä')             ret[i] = 'Ä';
-         else if (ret[i] == 'ö')             ret[i] = 'Ö';
-         else if (ret[i] == 'ü')             ret[i] = 'Ü';
+      if (length <= 0) {
+         val.clear();
+         return;
       }
 
-      return ret;
+      size_t len(length);
+      if (val.size() <= len) return;
+
+      val = val.substr(0, len);
    }
 
-   const std::string Lower (const std::string& val)
+   void Right (std::string& val, int length)
    {
-      if (val.empty()) return "";
-
-      std::string ret(val);
-
-      for (size_t i = 0; i < ret.size(); ++i) {
-         if (ret[i] >= 'A' && ret[i] <= 'Z') ret[i] += 32;
-         else if (ret[i] == 'Ä')             ret[i] = 'ä';
-         else if (ret[i] == 'Ö')             ret[i] = 'ö';
-         else if (ret[i] == 'Ü')             ret[i] = 'ü';
+      if (length <= 0) {
+         val.clear();
+         return;
       }
 
+      size_t len(length);
+      if (val.size() <= len) return;
+
+      val = val.substr(val.size() - len, len);
+   }
+
+   void LFill (std::string& val, int length, const std::string& filling)
+   {
+      if (length <= 0 || filling.empty()) return;
+
+      size_t len(length);
+      if (len <= val.size()) return;
+
+      while (val.size() < len) val = filling + val;
+      val = val.substr(0, len);
+   }
+
+   void RFill (std::string& val, int length, const std::string& filling)
+   {
+      if (length <= 0 || filling.empty()) return;
+
+      size_t len(length);
+      if (len < val.size()) return;
+
+      while (val.size() < len) val += filling;
+      val = val.substr(0, len);
+   }
+
+   std::string LTrim (const std::string& val) { return boost::trim_left_copy(val); }
+   std::string RTrim (const std::string& val) { return boost::trim_right_copy(val); }
+   std::string Trim (const std::string& val)  { return boost::trim_copy(val); }
+   std::string Upper (const std::string& val) { return boost::to_upper_copy(val); }
+   std::string Lower (const std::string& val) { return boost::to_lower_copy(val); }
+
+   std::string Replace (const std::string& src, const std::string& what, const std::string& with) { return boost::replace_all_copy(src, what, with); }
+
+   std::string Left (const std::string& val, int length)
+   {
+      std::string ret(val);
+      Left(ret, length);
       return ret;
    }
 
-   const std::string Letters (const std::string& val)
+   std::string Right (const std::string& val, int length)
+   {
+      std::string ret(val);
+      Right(ret, length);
+      return ret;
+   }
+
+   std::string LFill (const std::string& val, int length, const std::string& filling)
+   {
+      std::string ret(val);
+      LFill(ret, length, filling);
+      return ret;
+   }
+
+   std::string RFill (const std::string& val, int length, const std::string& filling)
+   {
+      std::string ret(val);
+      RFill(ret, length, filling);
+      return ret;
+   }
+
+   std::string Letters (const std::string& val)
    {
       if (val.empty()) return "";
 
       std::string ret;
 
-      std::for_each(val.begin(), val.end(), [&ret] (const char& ch) {
+      std::for_each(val.begin(), val.end(), [&ret] (char ch) {
          if ((ch >= 'A' && ch <= 'Z') ||
              (ch >= 'a' && ch <= 'z') ||
              ch == 'Ä' || ch == 'Ö' || ch == 'Ü' ||
@@ -127,26 +116,26 @@ namespace base {
       return ret;
    }
 
-   const std::string Digits (const std::string& val)
+   std::string Digits (const std::string& val)
    {
       if (val.empty()) return "";
 
       std::string ret;
 
-      std::for_each(val.begin(), val.end(), [&ret] (const char& ch) {
+      std::for_each(val.begin(), val.end(), [&ret] (char ch) {
          if (ch >= '0' && ch <= '9') ret += ch;
       });
 
       return ret;
    }
 
-   const std::string LettersDigits (const std::string& val)
+   std::string LettersDigits (const std::string& val)
    {
       if (val.empty()) return "";
 
       std::string ret;
 
-      std::for_each(val.begin(), val.end(), [&ret] (const char& ch) {
+      std::for_each(val.begin(), val.end(), [&ret] (char ch) {
          if ((ch >= 'A' && ch <= 'Z') ||
              (ch >= 'a' && ch <= 'z') ||
              (ch >= '0' && ch <= '9') ||
@@ -158,19 +147,21 @@ namespace base {
       return ret;
    }
 
-   const std::string Replace (const std::string& src, const std::string& what, const std::string& with)
+   std::vector<std::string> Split (const std::string& val, const std::string& seperator)
    {
-      if (src.empty())                       return "";
-      else if (what.empty() || what == with) return src;
+      std::vector<std::string> ret;
+      if (seperator.empty()) return ret;
 
-      std::string ret(src);
-      size_t pos = ret.find(what);
+      boost::split(ret, val, boost::is_any_of(seperator));
+      return ret;
+   }
 
-      while (pos != std::string::npos) {
-         ret.replace(pos, what.size(), with);
-         pos = ret.find(what);
-      }
+   std::string Join (const std::vector<std::string>& vals, const std::string& seperator)
+   {
+      std::string ret;
+      if (vals.empty()) return ret;
 
+      boost::join(vals, seperator);
       return ret;
    }
 

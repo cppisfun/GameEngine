@@ -13,4 +13,5 @@
 
 #include <boost/assign.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/algorithm/string.hpp>
 
