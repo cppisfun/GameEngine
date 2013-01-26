@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "Color.h"
-#include "Rectangle.h"
+#include "Rect.h"
 
 #include "DLL_DEF.h"
 
@@ -294,7 +294,7 @@ namespace ge {
       GraphicsCore& DrawTexture (const std::string& id, const Point<float>& pos);
 
       /// @brief Zeichnet eine Textur passend in einen Rechtecksbereich.
-      GraphicsCore& DrawTexture (const std::string& id, const Rectangle<float>& rect);
+      GraphicsCore& DrawTexture (const std::string& id, const Rect<float>& rect);
 
       /// @brief Zeichnet einen Texturausschnitt an eine Position.
 //      GraphicsCore& DrawTexture (const std::string& id, const Rectangle& srcRect, const Point& dstPos);

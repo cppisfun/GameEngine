@@ -174,7 +174,7 @@ namespace ge {
       return *this;
    }
 
-   GraphicsCore& GraphicsCore::DrawTexture (const std::string& id, const Rectangle<float>& rect)
+   GraphicsCore& GraphicsCore::DrawTexture (const std::string& id, const Rect<float>& rect)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 

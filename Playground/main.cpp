@@ -3,6 +3,7 @@
 #include "Base/Convert.h"
 
 #include "GameEngine/Core.h"
+#include "GameEngine/Rect.h"
 
 using namespace ge;
 
@@ -60,9 +61,9 @@ int main ()
 
             graphics->BeginScene();
             {
-               graphics->DrawTexture("image", ge::Rectangle<float>(300, 100, 310, 110));
-               graphics->DrawTexture("image", ge::Rectangle<float>(310, 110, 360, 160));
-               graphics->DrawTexture("image", ge::Rectangle<float>(360, 160, 620, 320));
+               graphics->DrawTexture("image", Rect<float>(300, 100, 310, 110));
+               graphics->DrawTexture("image", Rect<float>(310, 110, 360, 160));
+               graphics->DrawTexture("image", Rect<float>(360, 160, 620, 320));
 
    //            graphics->DrawBox(5, 5, 160, 235);
 

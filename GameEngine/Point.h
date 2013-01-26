@@ -21,10 +21,18 @@ namespace ge {
 
    public:
       /// @brief Konstruktor. Initialisierung über Zahlenangaben.
-      Point (T x, T y) : x(x), y(y) { CheckType(); }
+      Point (T x, T y)
+      {
+         CheckType();
+         Set(x, y);
+      }
 
       /// @brief Konstruktor. Initialisierung über einen SFML-Vektor.
-      Point (const sf::Vector2<T>& vec) : x(vec.x), y(vec.y) { CheckType(); }
+      Point (const sf::Vector2<T>& vec)
+      {
+         CheckType();
+         FromSFMLVector(vec);
+      }
 
 
       /// @brief Legt die X-Position fest.
@@ -49,6 +57,13 @@ namespace ge {
 
       /// @brief Liefert einen entsprechenden SFML-Vektor.
       const sf::Vector2<T> AsSFMLVector () const { return sf::Vector2<T>(x, y); }
+
+
+      /// @brief Operator == für zwei Point-Objekte.
+      bool operator== (const Point<T>& other) const { return x == other.X() && y == other.Y(); }
+
+      /// @brief Operator != für zwei Point-Objekte.
+      bool operator!= (const Point<T>& other) const { return x != other.X() || y != other.Y(); }
    };
 
 }

@@ -107,7 +107,7 @@
     <ClInclude Include="InputMouse.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Precomp.h" />
-    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Rect.h" />
     <ClInclude Include="ResourcesCore.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>

@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Primitive">
-      <UniqueIdentifier>{9caffebf-f140-44a0-851e-3ce60b65f2bd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core">
       <UniqueIdentifier>{a93478d9-3522-41de-8b7f-02a93d17f217}</UniqueIdentifier>
     </Filter>
@@ -19,10 +16,13 @@
     <Filter Include="Resources">
       <UniqueIdentifier>{326483f7-910a-477a-99c0-81d11530ccee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Primitives">
+      <UniqueIdentifier>{9caffebf-f140-44a0-851e-3ce60b65f2bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color.h">
-      <Filter>Primitive</Filter>
+      <Filter>Primitives</Filter>
     </ClInclude>
     <ClInclude Include="Core.h">
       <Filter>Core</Filter>
@@ -37,13 +37,10 @@
       <Filter>Input</Filter>
     </ClInclude>
     <ClInclude Include="Vector.h">
-      <Filter>Primitive</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Primitive</Filter>
+      <Filter>Primitives</Filter>
     </ClInclude>
     <ClInclude Include="Point.h">
-      <Filter>Primitive</Filter>
+      <Filter>Primitives</Filter>
     </ClInclude>
     <ClInclude Include="EventListener.h">
       <Filter>Core</Filter>
@@ -68,6 +65,9 @@
     </ClInclude>
     <ClInclude Include="Precomp.h">
       <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Primitives</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
