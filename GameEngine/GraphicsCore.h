@@ -73,10 +73,17 @@ namespace ge {
       /// @param fontFile Dateipfad
       GraphicsCore& DefaultFont (const std::string& fontFile);
 
-      /// @brief Fügt eine Schriftart aus einer entsprechenden XML-Datei hinzu.
+      /// @brief Fügt eine Schriftart aus einer entsprechenden Datei hinzu
+      /// (ohne den Einsatz von ResourcesCore).
       /// @param id Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool
       /// @param fontFile Dateipfad
       GraphicsCore& AddFont (const std::string& id, const std::string& fontFile);
+
+      /// @brief Fügt eine Schriftart aus bereits im Speicher befindlichen
+      /// Binärdaten hinzu (normalerweise im ResourcesCore gehalten).
+      /// @param id Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool
+      /// @param resource Binärdaten
+      GraphicsCore& AddFont (const std::string& id, const std::vector<char>& resource);
 
       /// @brief Entfernt eine Schriftart.
       /// @param id Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool
@@ -87,10 +94,17 @@ namespace ge {
       GraphicsCore& RemoveAllFonts () { fonts.clear(); return *this; }
 
 
-      /// @brief Fügt eine Textur aus einer entsprechenden Datei hinzu.
+      /// @brief Fügt eine Textur aus einer entsprechenden Datei hinzu (ohne
+      /// den Einsatz von ResourcesCore).
       /// @param id Eindeutiger Bezeichner der Textur im Texturen-Pool
       /// @param textureFile Dateipfad
       GraphicsCore& AddTexture (const std::string& id, const std::string& textureFile);
+
+      /// @brief Fügt eine Textur aus bereits im Speicher befindlichen
+      /// Binärdaten hinzu (normalerweise im ResourcesCore gehalten).
+      /// @param id Eindeutiger Bezeichner der Textur im Texturen-Pool
+      /// @param resource Binärdaten
+      GraphicsCore& AddTexture (const std::string& id, const std::vector<char>& resource);
 
       /// @brief Entfernt eine Textur.
       /// @param id Eindeutiger Bezeichner der Textur im Texturen-Pool
@@ -312,10 +326,6 @@ namespace ge {
       }
 
 
-      /// @brief Erzeugt einen Screenshot. DUMMY, BITTE SINNVOLL DOKUMENTIEREN, WENNS FERTIG IST!
-//      GraphicsCore& ScreenShot ();
-
-
       /// @brief Liefert die Farbe, mit welcher der Grafik-Puffer "gelöscht"
       /// wird.
       const Color& ClearColor () const { return clearColor; }
@@ -360,6 +370,9 @@ namespace ge {
 
       /// @brief Ermittelt die Anzahl Frames pro Sekunde.
 //      int FPS () const;
+
+      /// @brief Erzeugt einen Screenshot als SFML-Image.
+      sf::Image ScreenShot () const { return device->capture(); }
    };
 
 }

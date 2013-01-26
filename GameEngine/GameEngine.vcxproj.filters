@@ -27,7 +27,6 @@
     <ClInclude Include="Core.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Precomp.h" />
     <ClInclude Include="InputKeyboard.h">
       <Filter>Input</Filter>
     </ClInclude>
@@ -40,7 +39,6 @@
     <ClInclude Include="Vector.h">
       <Filter>Primitive</Filter>
     </ClInclude>
-    <ClInclude Include="DLL_DEF.h" />
     <ClInclude Include="Rectangle.h">
       <Filter>Primitive</Filter>
     </ClInclude>
@@ -65,9 +63,14 @@
     <ClInclude Include="ResourcesCore.h">
       <Filter>Resources</Filter>
     </ClInclude>
+    <ClInclude Include="DLL_DEF.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Precomp.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Precomp.cpp" />
     <ClCompile Include="InputKeyboard.cpp">
       <Filter>Input</Filter>
     </ClCompile>
@@ -88,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="ResourcesCore.cpp">
       <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Precomp.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

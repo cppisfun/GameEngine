@@ -33,12 +33,14 @@ namespace ge {
       virtual ~AudioCore ();
 
 
-      /// @brief Erstellt eine Audio-Ressource direkt aus einer Datei (ohne den Einsatz von ResourceCore).
+      /// @brief Erstellt eine Audio-Ressource direkt aus einer Datei (ohne den
+      /// Einsatz von ResourceCore).
       /// @param id Eindeutiger Bezeichner der Audio-Ressource
       /// @param audioFile Dateipfad
       AudioCore& Add (const std::string& id, const std::string& audioFile);
 
-      /// @brief Erstellt eine Audio-Ressource aus bereits im Speicher befindlichen Binärdaten (normalerweise im ResourceCore gehalten).
+      /// @brief Erstellt eine Audio-Ressource aus bereits im Speicher
+      /// befindlichen Binärdaten (normalerweise im ResourceCore gehalten).
       /// @param id Eindeutiger Bezeichner der Audio-Ressource
       /// @param resource Binärdaten
       AudioCore& Add (const std::string& id, const std::vector<char>& resource);

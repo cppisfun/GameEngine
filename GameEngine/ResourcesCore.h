@@ -6,7 +6,8 @@
 
 namespace ge {
 
-   /// @brief Ressourcen-Basisklasse zur Verwaltung Text- und Binär-Ressourcen.
+   /// @brief Ressourcen-Basisklasse zur Verwaltung diverser Resourcen in Text-
+   /// bzw. Binärform.
    /// Wird über Core::Resources() geliefert.
    class GEDLL ResourcesCore
    {
@@ -20,6 +21,8 @@ namespace ge {
       BinaryMap binaries;
       BinaryMap musics;
       BinaryMap sounds;
+      BinaryMap fonts;
+      BinaryMap textures;
 
       void Add (const std::string& id, const std::string& path, StringMap& map);
       void Add (const std::string& id, const std::string& path, BinaryMap& map);
@@ -75,6 +78,16 @@ namespace ge {
       /// @param path Dateipfad
       ResourcesCore& AddSound (const std::string& id, const std::string& path) { Add(id, path, sounds); return *this; }
 
+      /// @brief Fügt eine Font-Ressource aus einer Datei hinzu (Binärdaten).
+      /// @param id Eindeutiger Bezeichner der Font-Ressource
+      /// @param path Dateipfad
+      ResourcesCore& AddFont (const std::string& id, const std::string& path) { Add(id, path, fonts); return *this; }
+
+      /// @brief Fügt eine Textur-Ressource aus einer Datei ein (Binärdaten).
+      /// @param id Eindeutiger Bezeichner der Textur-Ressource
+      /// @param path Dateipfad
+      ResourcesCore& AddTexture (const std::string& id, const std::string& path) { Add(id, path, textures); return *this; }
+
 
       /// @brief Entfernt eine String-Ressource.
       ResourcesCore& RemoveString (const std::string& id) { Remove(id, strings); return *this; }
@@ -94,6 +107,12 @@ namespace ge {
 
       /// @brief Entfernt eine Sound-Ressource.
       ResourcesCore& RemoveSound (const std::string& id) { Remove(id, sounds); return *this; }
+
+      /// @brief Entfernt eine Font-Ressource.
+      ResourcesCore& RemoveFont (const std::string& id) { Remove(id, fonts); return *this; }
+
+      /// @brief Entfernt eine Textur-Ressource.
+      ResourcesCore& RemoveTexture (const std::string& id) { Remove(id, textures); return *this; }
 
 
       /// @brief Entfernt alle String-Ressourcen.
@@ -115,6 +134,12 @@ namespace ge {
       /// @brief Entfernt alle Sound-Ressourcen.
       ResourcesCore& RemoveAllSounds () { sounds.clear(); return *this; }
 
+      /// @brief Entfernt alle Font-Ressourcen.
+      ResourcesCore& RemoveAllFonts () { fonts.clear(); return *this; }
+
+      /// @brief Entfernt alle Textur-Ressourcen.
+      ResourcesCore& RemoveAllTextures () { textures.clear(); return *this; }
+
 
       /// @brief Liefert eine String-Ressource (Textdaten).
       const std::string& String (const std::string& id) const { return Find(id, strings); }
@@ -134,6 +159,12 @@ namespace ge {
 
       /// @brief Liefert eine Sound-Ressource (Binärdaten).
       const std::vector<char>& Sound (const std::string& id) const { return Find(id, sounds); }
+
+      /// @brief Liefert eine Font-Ressource (Binärdaten).
+      const std::vector<char>& Font (const std::string& id) const { return Find(id, fonts); }
+
+      /// @brief Liefert eine Textur-Ressource (Binärdaten).
+      const std::vector<char>& Texture (const std::string& id) const { return Find(id, textures); }
    };
 
 }

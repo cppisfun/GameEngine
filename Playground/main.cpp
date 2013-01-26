@@ -18,9 +18,10 @@ int main ()
       auto keyboard  = input->Keyboard();
       auto mouse     = input->Mouse();
 
+      resources->AddTexture("texture", "../resources/graphics/textures/texture.png");
       resources->AddMusic("music", "../resources/audio/music/music.ogg");
 
-      graphics->AddTexture("image", "../resources/graphics/textures/texture.png");
+      graphics->AddTexture("image", resources->Texture("texture"));
 
       audio->Add("music", resources->Music("music"));
       audio->Add("piano", "../resources/audio/music/piano.ogg");
@@ -32,6 +33,8 @@ int main ()
 
       bool paused = false;
 
+      core->WindowIcon(resources->Texture("texture"));
+
       while (core->IsRunning()) {
          if (!core->HasFocus()) core->DoNothing();
          else {
@@ -40,6 +43,7 @@ int main ()
             if (keyboard->KeyReleased()) core->Quit();
 
             if (mouse->ButtonPressed(InputMouse::Button_Left)) {
+               core->ShowMouse(paused);
                paused = !paused;
                audio->PauseMusic(paused);
             }

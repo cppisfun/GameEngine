@@ -52,10 +52,23 @@ namespace ge {
    {
       if (id.empty())                         throw error::InvalidParam("No id specified!", __FUNCTION__);
       else if (fontFile.empty())              throw error::InvalidParam("No font file specified!", __FUNCTION__);
-      else if (fonts.find(id) != fonts.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in map!", __FUNCTION__);
+      else if (fonts.find(id) != fonts.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in font map!", __FUNCTION__);
 
       sf::Font fnt;
-      if (!fnt.loadFromFile(fontFile)) throw error::Read("Failed to read from font file \"" + fontFile + "\"!", __FUNCTION__);
+      if (!fnt.loadFromFile(fontFile)) throw error::Create("Failed to create font from file \"" + fontFile + "\"!", __FUNCTION__);
+
+      fonts.insert(std::make_pair(id, fnt));
+      return *this;
+   }
+
+   GraphicsCore& GraphicsCore::AddFont (const std::string& id, const std::vector<char>& resource)
+   {
+      if (id.empty())                         throw error::InvalidParam("No id specified!", __FUNCTION__);
+      else if (resource.empty())              throw error::InvalidParam("Font resource is empty!", __FUNCTION__);
+      else if (fonts.find(id) != fonts.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in font map!", __FUNCTION__);
+
+      sf::Font fnt;
+      if (!fnt.loadFromMemory(resource.data(), resource.size())) throw error::Read("Failed to create font from resource!", __FUNCTION__);
 
       fonts.insert(std::make_pair(id, fnt));
       return *this;
@@ -75,10 +88,23 @@ namespace ge {
    {
       if (id.empty())                               throw error::InvalidParam("No id specified!", __FUNCTION__);
       else if (textureFile.empty())                 throw error::InvalidParam("No texture file specified!", __FUNCTION__);
-      else if (textures.find(id) != textures.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in map!", __FUNCTION__);
+      else if (textures.find(id) != textures.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in texture map!", __FUNCTION__);
 
       sf::Texture tex;
-      if (!tex.loadFromFile(textureFile)) throw error::Read("Failed to read from texture file \"" + textureFile + "\"!", __FUNCTION__);
+      if (!tex.loadFromFile(textureFile)) throw error::Create("Failed to create texture from file \"" + textureFile + "\"!", __FUNCTION__);
+
+      textures.insert(std::make_pair(id, tex));
+      return *this;
+   }
+
+   GraphicsCore& GraphicsCore::AddTexture (const std::string& id, const std::vector<char>& resource)
+   {
+      if (id.empty())                               throw error::InvalidParam("No id specified!", __FUNCTION__);
+      else if (resource.empty())                    throw error::InvalidParam("Texture resource is empty!", __FUNCTION__);
+      else if (textures.find(id) != textures.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in texture map!", __FUNCTION__);
+
+      sf::Texture tex;
+      if (!tex.loadFromMemory(resource.data(), resource.size())) throw error::Create("Failed to create texture from resource!", __FUNCTION__);
 
       textures.insert(std::make_pair(id, tex));
       return *this;
@@ -130,14 +156,6 @@ namespace ge {
 //   {
 //      if (type == Outline) driver->draw2DRectangleOutline(core::rect<int>(left, top, right, bottom), color.AsIrrColor());
 //      else                 driver->draw2DRectangle(color.AsIrrColor(), core::rect<int>(left, top, right, bottom));
-//
-//      return *this;
-//   }
-
-// FIXME: GE-42
-//   GraphicsCore& GraphicsCore::ScreenShot ()
-//   {
-//      // TODO
 //
 //      return *this;
 //   }

@@ -11,6 +11,8 @@
 #include "AudioCore.h"
 #include "ResourcesCore.h"
 
+#include "Point.h"
+
 #include "../Base/Error.h"
 
 #include "DLL_DEF.h"
@@ -75,8 +77,10 @@ namespace ge {
 
       void Update () override
       {
+         if (!Enabled()) return;
+
          sf::Event event;
-         if (window->pollEvent(event)) eventController->Event(event);
+         while (window->pollEvent(event)) eventController->Event(event);
       }
 
       bool OnEvent (const sf::Event& event) override
@@ -87,7 +91,8 @@ namespace ge {
             case sf::Event::Closed:      window->close();  return true;
             case sf::Event::GainedFocus: hasFocus = true;  return true;
             case sf::Event::LostFocus:   hasFocus = false; return true;
-            // TODO: sf::Event::Resized:
+            // TODO: sf::Event::Resized
+            // TODO: sf::Event::TextEntered
          }
 
          return false;
@@ -141,11 +146,81 @@ namespace ge {
       }
 
 
+      /// @brief Legt den Fenstertitel fest.
+      Core& WindowTitle (const std::string& title) { window->setTitle(title); return *this; }
+
+      /// @brief Erzeugt das Fenster-Icon aus einer entsprechenden Datei (ohne
+      /// die Verwendung von ResourcesCore).
+      Core& WindowIcon (const std::string& iconFile)
+      {
+         if (iconFile.empty()) throw error::InvalidParam("No icon file specified!", __FUNCTION__);
+
+         sf::Image img;
+         if (!img.loadFromFile(iconFile)) throw error::Create("Failed to create icon from file \"" + iconFile + "\"!", __FUNCTION__);
+
+         const auto size = img.getSize();
+         window->setIcon(size.x, size.y, img.getPixelsPtr());
+
+         return *this;
+      }
+
+      /// @brief Erzeugt das Fenster-Icon aus bereits im Speicher befindlichen
+      /// Binärdaten (normalerweise im ResourcesCore gehalten).
+      Core& WindowIcon (const std::vector<char>& resource)
+      {
+         if (resource.empty()) throw error::InvalidParam("Icon resource is empty!", __FUNCTION__);
+
+         sf::Image img;
+         if (!img.loadFromMemory(resource.data(), resource.size())) throw error::Create("Failed to create icon from resource!", __FUNCTION__);
+
+         const auto size = img.getSize();
+         window->setIcon(size.x, size.y, img.getPixelsPtr());
+
+         return *this;
+      }
+
+      /// @brief Legt die Fensterposition fest.
+      Core& WindowPosition (int x, int y) { window->setPosition(sf::Vector2<int>(x, y)); return *this; }
+
+      /// @brief Legt die Fensterposition fest.
+      Core& WindowPosition (const Point<int>& pos) { window->setPosition(pos.AsSFMLVector()); return *this; }
+
+      /// @brief Legt die Fenstergröße fest.
+      Core& WindowSize (unsigned int width, unsigned int height) { window->setSize(sf::Vector2<unsigned int>(width, height)); return *this; }
+
+      /// @brief Legt die Fenstergröße fest.
+      Core& WindowSize (const Point<unsigned int>& dims) { window->setSize(dims.AsSFMLVector()); return *this; }
+
       /// @brief Legt fest, ob das Fenster sichtbar sein soll.
-//      Core& ShowWindow (bool show = true) { window.(show); return *this; }
+      Core& ShowWindow (bool show = true) { window->setVisible(show); return *this; }
 
       /// @brief Macht das Fenster unsichtbar (es besteht jedoch noch).
-//      Core& HideWindow () { window.Show(false); return *this; }
+      Core& HideWindow () { window->setVisible(false); return *this; }
+
+      /// @brief Legt fest, ob der Mauszeiger sichtbar sein soll.
+      Core& ShowMouse (bool show = true) { window->setMouseCursorVisible(show); return *this; }
+
+      /// @brief Macht den Mauszeiger unsichtbar.
+      Core& HideMouse () { window->setMouseCursorVisible(false); return *this; }
+
+      /// @brief Legt fest, ob Vertical Sync verwendet werden soll.
+      Core& EnableVSync (bool enable = true) { window->setVerticalSyncEnabled(enable); return *this; }
+
+      /// @brief Schaltet die Verwendung von Vertical Sync ab.
+      Core& DisableVSync () { window->setVerticalSyncEnabled(false); return *this; }
+
+      /// @brief Legt fest, ob automatisches Key Repeat verwendet werden soll.
+      Core& EnableKeyRepeat (bool enable = true) { window->setKeyRepeatEnabled(enable); return *this; }
+
+      /// @brief Schaltet die Verwendung des automatischen Key Repeat ab.
+      Core& DisableKeyRepeat () { window->setKeyRepeatEnabled(false); return *this; }
+
+      /// @brief Legt die Limitierung der Frame-Rate fest (limit > 0) oder
+      /// schaltet die Limitierung ab (limit = 0).
+      Core& EnableFrameRateLimit (unsigned int limit) { window->setFramerateLimit(limit); return *this; }
+
+      /// @brief Schaltet die Limitierung der Frame-Rate ab.
+      Core& DisableFrameRateLimit () { window->setFramerateLimit(0u); return *this; }
 
       /// @brief Stoppt die Ausführung des Programms, ohne Prozessor-Zeit zu
       /// beanspruchen (z.B. wenn das Fenster keinen Fokus besitzt).
@@ -155,6 +230,22 @@ namespace ge {
       /// Kernkomponenten.
       Core& Quit () { window->close(); return *this; }
 
+
+      /// @brief Liefert die Fensterposition.
+      const Point<int> WindowPosition () const { return Point<int>(window->getPosition()); }
+
+      /// @brief Liefert die Fenstergröße.
+      const Point<unsigned int> WindowSize () const { return Point<unsigned int>(window->getSize()); }
+
+      /// @brief Liefert das Handle des Fensters.
+      HWND WindowHandle () const { return window->getSystemHandle(); }
+
+      /// @brief Ermittelt, ob das SFML-RenderWindow aktiviert wurde und
+      /// aktuell fehlerfrei arbeitet.
+      bool IsRunning () { Update(); return window->isOpen(); }
+
+      /// @brief Ermittelt, ob das SFML-RenderWindow aktuell den Fokus besitzt.
+      bool HasFocus () const { return hasFocus; }
 
       /// @brief Liefert den Pointer zur Kernkomponente für Grafik.
       GraphicsCore* Graphics () { if (graphics == nullptr) Reset(GraphicsInterface); return graphics.get(); }
@@ -167,14 +258,6 @@ namespace ge {
 
       /// @brief Liefert den Pointer zur Kernkomponente für Ressourcen.
       ResourcesCore* Resources () { if (resources == nullptr) Reset(ResourcesInterface); return resources.get(); }
-
-
-      /// @brief Ermittelt, ob das SFML-RenderWindow aktiviert wurde und
-      /// aktuell fehlerfrei arbeitet.
-      bool IsRunning () { Update(); return window->isOpen(); }
-
-      /// @brief Ermittelt, ob das SFML-RenderWindow aktuell den Fokus besitzt.
-      bool HasFocus () const { return hasFocus; }
    };
 
 
