@@ -118,6 +118,12 @@
 
 
 
+/// @brief _Beschreibung siehe boost-Dokumentation._
+namespace boost { }
+
 /// @brief _Beschreibung siehe irrKlang-Dokumentation._
 namespace irrklang { }
+
+/// @brief _Beschreibung siehe SFML-Dokumentation._
+namespace sf { }
 

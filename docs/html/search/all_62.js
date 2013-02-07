@@ -9,6 +9,7 @@ var searchData=
   ['binaryresource',['BinaryResource',['../classge_1_1_resources_core.html#a511a20214565147e4f3f2efdcb5e3948',1,'ge::ResourcesCore']]],
   ['blue',['Blue',['../classge_1_1_color.html#acb8fe4dcd3bed256c8cfa950129eb2b2',1,'ge::Color::Blue(int val, bool absolute=true)'],['../classge_1_1_color.html#a11183573805304e42ca4c46127d436c4',1,'ge::Color::Blue() const ']]],
   ['bluevalue',['BlueValue',['../classge_1_1_color.html#a66de6b9450395f4fc839cf1a4375c041a67af9e44410160a455ca175465b83efb',1,'ge::Color']]],
+  ['boost',['boost',['../namespaceboost.html',1,'']]],
   ['bottom',['Bottom',['../classge_1_1_rect.html#ae040ff64d0d10c0f5bb9dfaaa988d853',1,'ge::Rect::Bottom(T val)'],['../classge_1_1_rect.html#af30863b3935ec5b4646b7f5bc0c935f5',1,'ge::Rect::Bottom() const ']]],
   ['button',['Button',['../classge_1_1_input_gamepad.html#ab09fbce85d93b169ec6ee6c5de15369f',1,'ge::InputGamepad::Button()'],['../classge_1_1_input_mouse.html#a71cd00c109da0636c6e9f8e328c539eb',1,'ge::InputMouse::Button()']]],
   ['button_5fany',['Button_Any',['../classge_1_1_input_gamepad.html#a28eac16b19731009624fd72dfd20b199a56fce9ba4d9e1e200fef281b8459817c',1,'ge::InputGamepad::Button_Any()'],['../classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a911e559fae183db3b899d5e0b2a08a50',1,'ge::InputMouse::Button_Any()']]],
