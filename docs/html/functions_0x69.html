@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -128,31 +128,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 : <a class="el" href="classge_1_1_core.html#a68dfb0faa14dc45d7a19b98a5ec88324">ge::Core</a>
 </li>
 <li>InputCore()
-: <a class="el" href="classge_1_1_input_core.html#a9a8783da3ddf4706488548b8ab96b651">ge::InputCore</a>
+: <a class="el" href="classge_1_1_input_core.html#a5f5c22497b956c13c95bc874543ac7c3">ge::InputCore</a>
 </li>
 <li>InputGamepad()
-: <a class="el" href="classge_1_1_input_gamepad.html#acbc7017aa22fb8c32b043bf6d17babfd">ge::InputGamepad</a>
+: <a class="el" href="classge_1_1_input_gamepad.html#a8f8202ce0647b72f4bda7209bd5e3998">ge::InputGamepad</a>
 </li>
 <li>InputInterface
 : <a class="el" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6ca8d4009c3e53e1baacb126498b392c113">ge::Core</a>
 </li>
 <li>InputKeyboard()
-: <a class="el" href="classge_1_1_input_keyboard.html#aeaf8efa93da1f2b982cd653c73db9833">ge::InputKeyboard</a>
+: <a class="el" href="classge_1_1_input_keyboard.html#aece3008cd8f047cc72be8facef81f89d">ge::InputKeyboard</a>
 </li>
 <li>InputMouse()
-: <a class="el" href="classge_1_1_input_mouse.html#ad356c33b2d5c3ed2d1fbe7b7efb94f65">ge::InputMouse</a>
+: <a class="el" href="classge_1_1_input_mouse.html#afbcecddbe6e5612bd1e61f84fdeab017">ge::InputMouse</a>
 </li>
 <li>Instance()
-: <a class="el" href="classge_1_1_core.html#a51240e3b80a751ff2c2575f531fa3697">ge::Core</a>
+: <a class="el" href="classge_1_1_core.html#aa1e28dc401305f12771f5cb2e9112d9e">ge::Core</a>
 </li>
-<li>InstanceHandle()
-: <a class="el" href="classge_1_1_core.html#a352c49bb0a18bd601b56ff060a7547bc">ge::Core</a>
+<li>Intersects()
+: <a class="el" href="classge_1_1_rect.html#ac53e92f2c21b0f0f2a41da9c8bcbd35c">ge::Rect&lt; T &gt;</a>
 </li>
 <li>IsCyclic()
 : <a class="el" href="classmisc_1_1_limited_value.html#a67aef64cc7f0d44e83d5f5bb3406d06d">misc::LimitedValue&lt; T &gt;</a>
-</li>
-<li>IsFullscreen()
-: <a class="el" href="classge_1_1_core.html#a68a2d8a086ebfe8fa592e3a988bc122e">ge::Core</a>
 </li>
 <li>IsMusicFinished()
 : <a class="el" href="classge_1_1_audio_core.html#a60ca10d246c73d7a69eb1e9a364c8e3e">ge::AudioCore</a>
@@ -167,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 : <a class="el" href="classge_1_1_audio_core.html#aebb9177ff2e6a9262a6330870eba648c">ge::AudioCore</a>
 </li>
 <li>IsRunning()
-: <a class="el" href="classge_1_1_core.html#a9695b4634c08d92b468b21f00b71e36a">ge::Core</a>
+: <a class="el" href="classge_1_1_core.html#a6bcacd36b497e154eb9aebde7ec3e9b5">ge::Core</a>
 </li>
 <li>IsSoundFinished()
 : <a class="el" href="classge_1_1_audio_core.html#ad445fd9a26bdaf4c96d56c38f1517dd0">ge::AudioCore</a>
@@ -178,18 +175,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <li>IsSoundPaused()
 : <a class="el" href="classge_1_1_audio_core.html#aa07158c8f898eff496a18ab48465ffec">ge::AudioCore</a>
 </li>
-<li>IsWindowActive()
-: <a class="el" href="classge_1_1_core.html#afab824c207c91aa16b7a18c8f144ac0e">ge::Core</a>
-</li>
-<li>IsWindowFocused()
-: <a class="el" href="classge_1_1_core.html#a715ef0ae1a2947af8895aae41ebc76b7">ge::Core</a>
-</li>
-<li>IsWindowMinimized()
-: <a class="el" href="classge_1_1_core.html#a81b0c798aa2298ef23c48901e8ecbffb">ge::Core</a>
-</li>
-<li>IsWindowResizable()
-: <a class="el" href="classge_1_1_core.html#add344712b56ce95cf54314ca98589e06">ge::Core</a>
-</li>
 <li>IsZero()
 : <a class="el" href="classge_1_1_vector.html#a8569f9c6c10f346b2405176b00ace832">ge::Vector</a>
 </li>
@@ -197,7 +182,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:53 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

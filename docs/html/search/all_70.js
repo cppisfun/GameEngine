@@ -6,11 +6,12 @@ var searchData=
   ['playmusic',['PlayMusic',['../classge_1_1_audio_core.html#a7f3d77214d8f36d628d36134a9f46f3e',1,'ge::AudioCore']]],
   ['playsound',['PlaySound',['../classge_1_1_audio_core.html#a9b81dfb669bf535af1b42d3ac1a79495',1,'ge::AudioCore']]],
   ['point',['Point',['../classge_1_1_point.html',1,'ge']]],
-  ['point',['Point',['../classge_1_1_point.html#a0d20fd5fc72dd558f54ad36f0b76e2c6',1,'ge::Point::Point(int x, int y)'],['../classge_1_1_point.html#a269a5b8062fa22f6d233f215379f8c8a',1,'ge::Point::Point(const irr::core::vector2d&lt; int &gt; &amp;vec)']]],
+  ['point',['Point',['../classge_1_1_point.html#a97e343a3beaadc4b82dbad4b49733adb',1,'ge::Point::Point(T x, T y)'],['../classge_1_1_point.html#a7f6bc2275f00df634b0f02b6b423ddea',1,'ge::Point::Point(const sf::Vector2&lt; T &gt; &amp;vec)']]],
   ['point_2eh',['Point.h',['../_point_8h.html',1,'']]],
-  ['position',['Position',['../classge_1_1_input_mouse.html#a8bc38efcff31a17d68166c51bb259803',1,'ge::InputMouse']]],
+  ['point_3c_20int_20_3e',['Point&lt; int &gt;',['../classge_1_1_point.html',1,'ge']]],
+  ['position',['Position',['../classge_1_1_input_mouse.html#ac262874be79b4f7242ff0f3f80980ef9',1,'ge::InputMouse']]],
   ['precomp_2ecpp',['Precomp.cpp',['../_game_engine_2_precomp_8cpp.html',1,'']]],
   ['precomp_2ecpp',['Precomp.cpp',['../_base_2_precomp_8cpp.html',1,'']]],
-  ['precomp_2eh',['Precomp.h',['../_base_2_precomp_8h.html',1,'']]],
-  ['precomp_2eh',['Precomp.h',['../_game_engine_2_precomp_8h.html',1,'']]]
+  ['precomp_2eh',['Precomp.h',['../_game_engine_2_precomp_8h.html',1,'']]],
+  ['precomp_2eh',['Precomp.h',['../_base_2_precomp_8h.html',1,'']]]
 ];

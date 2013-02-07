@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -97,13 +97,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
   <tr class="even"><td class="entry"><a class="el" href="classge_1_1_color.html#ad1e20272e2a174c5a2a160cabcb05247">Alpha</a>(int val, bool absolute=true)</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classge_1_1_color.html#a54dba3fd2471ad6896fd56dd4c8db531">Alpha</a>() const </td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classge_1_1_color.html#a66de6b9450395f4fc839cf1a4375c041a7ad9851b6f98b7f92ba52b1074403634">AlphaValue</a> enum-Wert</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classge_1_1_color.html#a938c226fdfec9a6e0cadaf911524c508">AsIrrColor</a>() const </td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classge_1_1_color.html#a150d3bc9916d3cabeb83260d6eb0e0da">AsSFMLColor</a>() const </td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classge_1_1_color.html#acb8fe4dcd3bed256c8cfa950129eb2b2">Blue</a>(int val, bool absolute=true)</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classge_1_1_color.html#a11183573805304e42ca4c46127d436c4">Blue</a>() const </td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classge_1_1_color.html#a66de6b9450395f4fc839cf1a4375c041a67af9e44410160a455ca175465b83efb">BlueValue</a> enum-Wert</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classge_1_1_color.html#a7c3ab3dfc4fef85542b494321a476aa3">Color</a>(int red, int green, int blue, int alpha=255)</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_color.html#a4c1ce62f7d1070b668b62d1e93dc4d05">Color</a>(const irr::video::SColor &amp;color)</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classge_1_1_color.html#a12fb3531e08244965fc09e583756f1e1">FromIrrColor</a>(const irr::video::SColor &amp;color)</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_color.html#a0aca3a6f07a7a37bb1930d96bc845153">Color</a>(const sf::Color &amp;color)</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classge_1_1_color.html#a3a6db4d975a867e810fb620e02bd2138">FromSFMLColor</a>(const sf::Color &amp;color)</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classge_1_1_color.html#a5f89f52cabe36dc91da9369e7a2e1e11">Get</a>() const </td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classge_1_1_color.html#a46102254eb6131237cec0d16c1f03765">Green</a>(int val, bool absolute=true)</td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classge_1_1_color.html#a76bc9042eaa30f380c205aafc3d1c319">Green</a>() const </td><td class="entry"><a class="el" href="classge_1_1_color.html">ge::Color</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

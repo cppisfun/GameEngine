@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -128,9 +128,9 @@ Funktionen</h2></td></tr>
 <tr class="memitem:ace9b91040bcf05533cd098d3ed28cd51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebase.html#ace9b91040bcf05533cd098d3ed28cd51">base::ExistFile</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:ace9b91040bcf05533cd098d3ed28cd51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob eine Datei existiert.  <a href="#ace9b91040bcf05533cd098d3ed28cd51"></a><br/></td></tr>
 <tr class="separator:ace9b91040bcf05533cd098d3ed28cd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac83218cd13458ad7068747ba1039b3d7"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebase.html#ac83218cd13458ad7068747ba1039b3d7">base::LoadBinary</a> (const std::string &amp;path)</td></tr>
-<tr class="memdesc:ac83218cd13458ad7068747ba1039b3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert Binärdaten aus einer Datei.  <a href="#ac83218cd13458ad7068747ba1039b3d7"></a><br/></td></tr>
-<tr class="separator:ac83218cd13458ad7068747ba1039b3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8b003be7297a67393715f04d5e28940"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_base_2_precomp_8h.html#a1e63762fee40128116e0ac87ba6b8089">Binary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebase.html#ab8b003be7297a67393715f04d5e28940">base::LoadBinary</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:ab8b003be7297a67393715f04d5e28940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert Binärdaten aus einer Datei.  <a href="#ab8b003be7297a67393715f04d5e28940"></a><br/></td></tr>
+<tr class="separator:ab8b003be7297a67393715f04d5e28940"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda18042b0d9f8d1aad982921cb564b6"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebase.html#aeda18042b0d9f8d1aad982921cb564b6">base::LoadString</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:aeda18042b0d9f8d1aad982921cb564b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert Textdaten aus einer Datei.  <a href="#aeda18042b0d9f8d1aad982921cb564b6"></a><br/></td></tr>
 <tr class="separator:aeda18042b0d9f8d1aad982921cb564b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,14 +149,14 @@ Funktionen</h2></td></tr>
 <tr class="memitem:a233b6b6c8aba0770e6af46b011dbca06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebase.html#a233b6b6c8aba0770e6af46b011dbca06">base::Save</a> (const std::string &amp;path, const std::string &amp;content, bool append=false, bool removeExisting=false)</td></tr>
 <tr class="memdesc:a233b6b6c8aba0770e6af46b011dbca06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speichert Textdaten in einer Datei.  <a href="#a233b6b6c8aba0770e6af46b011dbca06"></a><br/></td></tr>
 <tr class="separator:a233b6b6c8aba0770e6af46b011dbca06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5c773ae1f6f79b2ea5005b7814ca86f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebase.html#ad5c773ae1f6f79b2ea5005b7814ca86f">base::Save</a> (const std::string &amp;path, const std::vector&lt; char &gt; &amp;content, bool append=false, bool removeExisting=false)</td></tr>
-<tr class="memdesc:ad5c773ae1f6f79b2ea5005b7814ca86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speichert Binärdaten in einer Datei.  <a href="#ad5c773ae1f6f79b2ea5005b7814ca86f"></a><br/></td></tr>
-<tr class="separator:ad5c773ae1f6f79b2ea5005b7814ca86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700915af098fd47e193bce235638e4e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebase.html#a700915af098fd47e193bce235638e4e8">base::Save</a> (const std::string &amp;path, const <a class="el" href="_base_2_precomp_8h.html#a1e63762fee40128116e0ac87ba6b8089">Binary</a> &amp;content, bool append=false, bool removeExisting=false)</td></tr>
+<tr class="memdesc:a700915af098fd47e193bce235638e4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speichert Binärdaten in einer Datei.  <a href="#a700915af098fd47e193bce235638e4e8"></a><br/></td></tr>
+<tr class="separator:a700915af098fd47e193bce235638e4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

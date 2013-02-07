@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -106,7 +106,7 @@ Klassendiagramm für ge::InputKeyboard:</div>
  <div class="center">
   <img src="classge_1_1_input_keyboard.png" usemap="#ge::InputKeyboard_map" alt=""/>
   <map id="ge::InputKeyboard_map" name="ge::InputKeyboard_map">
-<area href="classge_1_1_event_receiver.html" alt="ge::EventReceiver" shape="rect" coords="0,0,115,24"/>
+<area href="classge_1_1_event_listener.html" alt="ge::EventListener" shape="rect" coords="0,0,114,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -114,15 +114,15 @@ Klassendiagramm für ge::InputKeyboard:</div>
 Öffentliche Typen</h2></td></tr>
 <tr class="memitem:a578f917c8d52a9f67206c6d4e40c75be"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_keyboard.html#a578f917c8d52a9f67206c6d4e40c75be">KeyType</a> { <a class="el" href="classge_1_1_input_keyboard.html#a578f917c8d52a9f67206c6d4e40c75bea90350901be302ebc7fa12053171d9879">Key_None</a> = -2, 
 <a class="el" href="classge_1_1_input_keyboard.html#a578f917c8d52a9f67206c6d4e40c75bea8d8a11a7e4f2ae66f9eabcd8b38e68b9">Key_Any</a> = -1, 
-<a class="el" href="classge_1_1_input_keyboard.html#a578f917c8d52a9f67206c6d4e40c75beae370b54c6b955cca3464e9f9e0f43948">Key_Count</a> = 256
+<a class="el" href="classge_1_1_input_keyboard.html#a578f917c8d52a9f67206c6d4e40c75beae370b54c6b955cca3464e9f9e0f43948">Key_Count</a> = sf::Keyboard::KeyCount
  }</td></tr>
 <tr class="separator:a578f917c8d52a9f67206c6d4e40c75be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:aeaf8efa93da1f2b982cd653c73db9833"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_keyboard.html#aeaf8efa93da1f2b982cd653c73db9833">InputKeyboard</a> (OIS::InputManager *inputManager)</td></tr>
-<tr class="memdesc:aeaf8efa93da1f2b982cd653c73db9833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Benötigt den Pointer zu einem validen Objekt vom Typ OIS::InputManager (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben).  <a href="#aeaf8efa93da1f2b982cd653c73db9833"></a><br/></td></tr>
-<tr class="separator:aeaf8efa93da1f2b982cd653c73db9833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece3008cd8f047cc72be8facef81f89d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_keyboard.html#aece3008cd8f047cc72be8facef81f89d">InputKeyboard</a> (<a class="el" href="classge_1_1_event_controller.html">EventController</a> *eventCtrl)</td></tr>
+<tr class="memdesc:aece3008cd8f047cc72be8facef81f89d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Benötigt den Pointer zu einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Klasse zur zentralen Event-Erfassung und deren Weiterleitung an die zuständigen EventListener-Objekte...">ge::EventController</a> (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben).  <a href="#aece3008cd8f047cc72be8facef81f89d"></a><br/></td></tr>
+<tr class="separator:aece3008cd8f047cc72be8facef81f89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9ad6776163316166b058d03038e50b0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_keyboard.html#af9ad6776163316166b058d03038e50b0">~InputKeyboard</a> ()</td></tr>
 <tr class="memdesc:af9ad6776163316166b058d03038e50b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor.  <a href="#af9ad6776163316166b058d03038e50b0"></a><br/></td></tr>
 <tr class="separator:af9ad6776163316166b058d03038e50b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,19 +138,19 @@ Klassendiagramm für ge::InputKeyboard:</div>
 <tr class="memitem:aa3143383fffcc9ed906df6d6936dce87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_keyboard.html#aa3143383fffcc9ed906df6d6936dce87">Update</a> () override</td></tr>
 <tr class="memdesc:aa3143383fffcc9ed906df6d6936dce87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchlauf aufgerufen werden, damit die Eingaben korrekt verarbeitet werden können.  <a href="#aa3143383fffcc9ed906df6d6936dce87"></a><br/></td></tr>
 <tr class="separator:aa3143383fffcc9ed906df6d6936dce87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classge_1_1_event_receiver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classge_1_1_event_receiver')"><img src="closed.png" alt="-"/>&#160;Öffentliche Methoden geerbt von <a class="el" href="classge_1_1_event_receiver.html">ge::EventReceiver</a></td></tr>
-<tr class="memitem:a67765e3a8e9525a9e3c6f9aa1d67ac33 inherit pub_methods_classge_1_1_event_receiver"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_receiver.html#a67765e3a8e9525a9e3c6f9aa1d67ac33">EventReceiver</a> ()</td></tr>
-<tr class="memdesc:a67765e3a8e9525a9e3c6f9aa1d67ac33 inherit pub_methods_classge_1_1_event_receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Das Verarbeiten von Events ist nach Anlegen eines Objektes automatisch aktiviert. Dieser Status kann mit <a class="el" href="classge_1_1_event_receiver.html#ac37443daeb887dc9b08612d0bbfd7f2f" title="Aktiviert bzw. Deaktiviert das Verarbeiten von Events.">Enable()</a> bzw. <a class="el" href="classge_1_1_event_receiver.html#aa1caab296b14cde913f9b27716714abd" title="Deaktiviert das Verarbeiten von Events.">Disable()</a> jederzeit geändert werden.  <a href="#a67765e3a8e9525a9e3c6f9aa1d67ac33"></a><br/></td></tr>
-<tr class="separator:a67765e3a8e9525a9e3c6f9aa1d67ac33 inherit pub_methods_classge_1_1_event_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1caab296b14cde913f9b27716714abd inherit pub_methods_classge_1_1_event_receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_receiver.html#aa1caab296b14cde913f9b27716714abd">Disable</a> ()</td></tr>
-<tr class="memdesc:aa1caab296b14cde913f9b27716714abd inherit pub_methods_classge_1_1_event_receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deaktiviert das Verarbeiten von Events.  <a href="#aa1caab296b14cde913f9b27716714abd"></a><br/></td></tr>
-<tr class="separator:aa1caab296b14cde913f9b27716714abd inherit pub_methods_classge_1_1_event_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac37443daeb887dc9b08612d0bbfd7f2f inherit pub_methods_classge_1_1_event_receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_receiver.html#ac37443daeb887dc9b08612d0bbfd7f2f">Enable</a> (bool enable=true)</td></tr>
-<tr class="memdesc:ac37443daeb887dc9b08612d0bbfd7f2f inherit pub_methods_classge_1_1_event_receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktiviert bzw. Deaktiviert das Verarbeiten von Events.  <a href="#ac37443daeb887dc9b08612d0bbfd7f2f"></a><br/></td></tr>
-<tr class="separator:ac37443daeb887dc9b08612d0bbfd7f2f inherit pub_methods_classge_1_1_event_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a469444e249ac80591e0e8a5cfa5c7031 inherit pub_methods_classge_1_1_event_receiver"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_receiver.html#a469444e249ac80591e0e8a5cfa5c7031">Enabled</a> ()</td></tr>
-<tr class="memdesc:a469444e249ac80591e0e8a5cfa5c7031 inherit pub_methods_classge_1_1_event_receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt an, ob aktuell eingehende Events verarbeitet werden.  <a href="#a469444e249ac80591e0e8a5cfa5c7031"></a><br/></td></tr>
-<tr class="separator:a469444e249ac80591e0e8a5cfa5c7031 inherit pub_methods_classge_1_1_event_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classge_1_1_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classge_1_1_event_listener')"><img src="closed.png" alt="-"/>&#160;Öffentliche Methoden geerbt von <a class="el" href="classge_1_1_event_listener.html">ge::EventListener</a></td></tr>
+<tr class="memitem:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a95a24db2a870ab70445ecf066ccff4f3">EventListener</a> ()</td></tr>
+<tr class="memdesc:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Das Verarbeiten von Events ist nach Anlegen eines Objektes automatisch aktiviert. Dieser Status kann mit <a class="el" href="classge_1_1_event_listener.html#ad2a4ab4c8ad6ac81962f868e4df53ad2" title="Aktiviert bzw. Deaktiviert das Verarbeiten von Events.">Enable()</a> bzw. <a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9" title="Deaktiviert das Verarbeiten von Events.">Disable()</a> jederzeit geändert werden.  <a href="#a95a24db2a870ab70445ecf066ccff4f3"></a><br/></td></tr>
+<tr class="separator:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9">Disable</a> ()</td></tr>
+<tr class="memdesc:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deaktiviert das Verarbeiten von Events.  <a href="#a359aca2f49af6e6777613bbfaee0eae9"></a><br/></td></tr>
+<tr class="separator:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a4ab4c8ad6ac81962f868e4df53ad2 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#ad2a4ab4c8ad6ac81962f868e4df53ad2">Enable</a> (bool enable=true)</td></tr>
+<tr class="memdesc:ad2a4ab4c8ad6ac81962f868e4df53ad2 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktiviert bzw. Deaktiviert das Verarbeiten von Events.  <a href="#ad2a4ab4c8ad6ac81962f868e4df53ad2"></a><br/></td></tr>
+<tr class="separator:ad2a4ab4c8ad6ac81962f868e4df53ad2 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a766274fe6b1f0b1691325753d7d587d8">Enabled</a> () const </td></tr>
+<tr class="memdesc:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt an, ob aktuell eingehende Events verarbeitet werden.  <a href="#a766274fe6b1f0b1691325753d7d587d8"></a><br/></td></tr>
+<tr class="separator:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Input-Klasse für Taststur-Eingaben. Wird über <a class="el" href="classge_1_1_input_core.html#a766adb2575d99ec85b9d5228904b9d4f" title="Liefert den Pointer zur Komponente für Taststur-Eingaben.">InputCore::Keyboard()</a> geliefert. </p>
@@ -178,21 +178,21 @@ Klassendiagramm für ge::InputKeyboard:</div>
 </div>
 </div>
 <h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
-<a class="anchor" id="aeaf8efa93da1f2b982cd653c73db9833"></a>
+<a class="anchor" id="aece3008cd8f047cc72be8facef81f89d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">ge::InputKeyboard::InputKeyboard </td>
           <td>(</td>
-          <td class="paramtype">OIS::InputManager *&#160;</td>
-          <td class="paramname"><em>inputManager</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classge_1_1_event_controller.html">EventController</a> *&#160;</td>
+          <td class="paramname"><em>eventCtrl</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Konstruktor. Benötigt den Pointer zu einem validen Objekt vom Typ OIS::InputManager (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben). </p>
+<p>Konstruktor. Benötigt den Pointer zu einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Klasse zur zentralen Event-Erfassung und deren Weiterleitung an die zuständigen EventListener-Objekte...">ge::EventController</a> (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben). </p>
 
 </div>
 </div>
@@ -240,7 +240,7 @@ Klassendiagramm für ge::InputKeyboard:</div>
 <p>Im Gegensatz zu <a class="el" href="classge_1_1_input_keyboard.html#aedd0e63dc4084e7a36abc226a2e43f23" title="Ermittelt, ob gerade eine Taste gedrückt wurde.">KeyPressed()</a> ist dieser Status immer <em>true</em>, solange die Taste gehalten wird. </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>None = keine, Any = beliebig; Nummer 0 - 255 (Standard: Any) </td></tr>
+    <tr><td class="paramname">key</td><td>Key_None = keine, Key_Any = beliebig; Nummer 0 - 255 (Standard: Key_Any) </td></tr>
   </table>
   </dd>
 </dl>
@@ -265,7 +265,7 @@ Klassendiagramm für ge::InputKeyboard:</div>
 <p>Im Gegensatz zu <a class="el" href="classge_1_1_input_keyboard.html#a9fc06d6afd1c727a2f8a80e51963a86c" title="Ermittelt, ob eine Taste gehalten wird.">Key()</a> ist dieser Status nur im Moment des Herunterdrückens <em>true</em>, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_keyboard.html#aa3143383fffcc9ed906df6d6936dce87" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>. </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>None = keine, Any = beliebig; Nummer 0 - 255 (Standard: Any) </td></tr>
+    <tr><td class="paramname">key</td><td>Key_None = keine, Key_Any = beliebig; Nummer 0 - 255 (Standard: Key_Any) </td></tr>
   </table>
   </dd>
 </dl>
@@ -290,7 +290,7 @@ Klassendiagramm für ge::InputKeyboard:</div>
 <p>Dieser Status ist nur im Moment des Loslassens <em>true</em>, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_keyboard.html#aa3143383fffcc9ed906df6d6936dce87" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>. </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>None = keine, Any = beliebig; Nummer 0 - 255 (Standard: Any) </td></tr>
+    <tr><td class="paramname">key</td><td>Key_None = keine, Key_Any = beliebig; Nummer 0 - 255 (Standard: Key_Any) </td></tr>
   </table>
   </dd>
 </dl>
@@ -320,7 +320,7 @@ Klassendiagramm für ge::InputKeyboard:</div>
 
 <p>Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchlauf aufgerufen werden, damit die Eingaben korrekt verarbeitet werden können. </p>
 
-<p>Implementiert <a class="el" href="classge_1_1_event_receiver.html">ge::EventReceiver</a>.</p>
+<p>Implementiert <a class="el" href="classge_1_1_event_listener.html">ge::EventListener</a>.</p>
 
 </div>
 </div>
@@ -331,7 +331,7 @@ Klassendiagramm für ge::InputKeyboard:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

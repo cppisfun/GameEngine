@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -123,8 +123,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 &#160;
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>Rectangle()
-: <a class="el" href="classge_1_1_rectangle.html#a9b8884d68863219bd3cadbd2aaa86b90">ge::Rectangle</a>
+<li>Rect()
+: <a class="el" href="classge_1_1_rect.html#aa6cff0f3abd3d27b92ee45b71b57e7db">ge::Rect&lt; T &gt;</a>
 </li>
 <li>Red()
 : <a class="el" href="classge_1_1_color.html#a01b1e2a33702fab448709f0cb33b8ce7">ge::Color</a>
@@ -141,11 +141,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <li>RemoveAll()
 : <a class="el" href="classge_1_1_audio_core.html#a63834af2511edd460a47078ce4a1c544">ge::AudioCore</a>
 </li>
-<li>RemoveAllBinaries()
-: <a class="el" href="classge_1_1_resources_core.html#a641b6cb04e607a29794d6445634fd420">ge::ResourcesCore</a>
+<li>RemoveAllBinaryResources()
+: <a class="el" href="classge_1_1_resources_core.html#a28362cc62f8482ba046c4a669d18c30c">ge::ResourcesCore</a>
 </li>
 <li>RemoveAllFonts()
-: <a class="el" href="classge_1_1_graphics_core.html#a856461af036617fdd6ed56bcb440468d">ge::GraphicsCore</a>
+: <a class="el" href="classge_1_1_graphics_core.html#a7e96a76992d4f26f4aa3fe785bc080e4">ge::GraphicsCore</a>
+, <a class="el" href="classge_1_1_resources_core.html#a0b586451c5b23924e883d8192fea4c79">ge::ResourcesCore</a>
 </li>
 <li>RemoveAllMusic()
 : <a class="el" href="classge_1_1_resources_core.html#af79b8d201eac429e4bc716b2ba8424f4">ge::ResourcesCore</a>
@@ -156,20 +157,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <li>RemoveAllSounds()
 : <a class="el" href="classge_1_1_resources_core.html#a8a866bbbc4f7d540c58aa33731344dd8">ge::ResourcesCore</a>
 </li>
-<li>RemoveAllStrings()
-: <a class="el" href="classge_1_1_resources_core.html#a025cba635d8d9f7ce9158d234df86a85">ge::ResourcesCore</a>
+<li>RemoveAllStringResources()
+: <a class="el" href="classge_1_1_resources_core.html#a4f1aa13bf419eb0ffdcf5657de548a81">ge::ResourcesCore</a>
 </li>
 <li>RemoveAllTextures()
-: <a class="el" href="classge_1_1_graphics_core.html#a3d453abf63c66bc5c9b08c5437966362">ge::GraphicsCore</a>
+: <a class="el" href="classge_1_1_graphics_core.html#a2bd6f9b434fce6f94aa62ac73713e72d">ge::GraphicsCore</a>
+, <a class="el" href="classge_1_1_resources_core.html#afb35467d7b1bba142e637746d5bb7157">ge::ResourcesCore</a>
 </li>
 <li>RemoveAllXMLs()
 : <a class="el" href="classge_1_1_resources_core.html#adb7717532927487e5b4b7c3b457c7102">ge::ResourcesCore</a>
 </li>
-<li>RemoveBinary()
-: <a class="el" href="classge_1_1_resources_core.html#ae5eadd3afddc7a15eca95fb013185704">ge::ResourcesCore</a>
+<li>RemoveBinaryResource()
+: <a class="el" href="classge_1_1_resources_core.html#a2fa996f0f15dfbe0c02491d15e18df9c">ge::ResourcesCore</a>
 </li>
 <li>RemoveFont()
 : <a class="el" href="classge_1_1_graphics_core.html#a8170ca6b1e79641bdb655fd26c552832">ge::GraphicsCore</a>
+, <a class="el" href="classge_1_1_resources_core.html#ad87414a122fcb98dc1ebe0b3f8cfb9ad">ge::ResourcesCore</a>
+</li>
+<li>RemoveGamepadCallback()
+: <a class="el" href="classge_1_1_event_controller.html#a144bad58963b76e449a1fb8103d335db">ge::EventController</a>
+</li>
+<li>RemoveKeyboardCallback()
+: <a class="el" href="classge_1_1_event_controller.html#ae32acfa57e2a15c2149bf9b8f40fb738">ge::EventController</a>
+</li>
+<li>RemoveMouseCallback()
+: <a class="el" href="classge_1_1_event_controller.html#af7b3e5f98eeac82f8009ebd3b37cea3c">ge::EventController</a>
 </li>
 <li>RemoveMusic()
 : <a class="el" href="classge_1_1_resources_core.html#aea9872a9bd91f299904b348cb388e22a">ge::ResourcesCore</a>
@@ -180,11 +192,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <li>RemoveSound()
 : <a class="el" href="classge_1_1_resources_core.html#a2c7b8bde91b984f63dccc8457ef264f6">ge::ResourcesCore</a>
 </li>
-<li>RemoveString()
-: <a class="el" href="classge_1_1_resources_core.html#a0f90a96896cd0c5972adb70cce5ddf7e">ge::ResourcesCore</a>
+<li>RemoveStringResource()
+: <a class="el" href="classge_1_1_resources_core.html#afdd45a7a6770832885f5456b2489b583">ge::ResourcesCore</a>
 </li>
 <li>RemoveTexture()
-: <a class="el" href="classge_1_1_graphics_core.html#ad8bf98e612941126099ca1d94233b55f">ge::GraphicsCore</a>
+: <a class="el" href="classge_1_1_resources_core.html#ad6a58203a8ce22cf5bd81c33cd98e453">ge::ResourcesCore</a>
+, <a class="el" href="classge_1_1_graphics_core.html#ad8bf98e612941126099ca1d94233b55f">ge::GraphicsCore</a>
+</li>
+<li>RemoveWindowCallback()
+: <a class="el" href="classge_1_1_event_controller.html#ad5b3de32eff5df1d90aba92785b5d706">ge::EventController</a>
 </li>
 <li>RemoveXML()
 : <a class="el" href="classge_1_1_resources_core.html#a473e86ae7bfcfccd90f9606c5c05cae7">ge::ResourcesCore</a>
@@ -193,35 +209,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 : <a class="el" href="classge_1_1_core.html#a70bc77ae79c79973be7305be911abb80">ge::Core</a>
 , <a class="el" href="classge_1_1_input_core.html#a2bb285c503f05ddac71a461b03553db9">ge::InputCore</a>
 </li>
-<li>ResizableWindow()
-: <a class="el" href="classge_1_1_core.html#a00d7c438bdecbae8f30564b3e27245ba">ge::Core</a>
-</li>
 <li>Resources()
 : <a class="el" href="classge_1_1_core.html#a966e1157b4951cb336432f3807c60516">ge::Core</a>
 </li>
 <li>ResourcesCore()
 : <a class="el" href="classge_1_1_resources_core.html#a81052dfe8f28151bcb072299144b9a4c">ge::ResourcesCore</a>
 </li>
-<li>RestoreWindow()
-: <a class="el" href="classge_1_1_core.html#aba8d762c9922a6f5dcd69145c0c1e811">ge::Core</a>
-</li>
 <li>ResumeAll()
 : <a class="el" href="classge_1_1_audio_core.html#a881f28b2bc1d5594cbe3236c8f3de1eb">ge::AudioCore</a>
 </li>
 <li>ResumeMusic()
-: <a class="el" href="classge_1_1_audio_core.html#a9e63f47ca736a8ea757e31c614ad4bdd">ge::AudioCore</a>
+: <a class="el" href="classge_1_1_audio_core.html#af0891825d2cfe3a5337190074aed14fc">ge::AudioCore</a>
 </li>
 <li>ResumeSound()
-: <a class="el" href="classge_1_1_audio_core.html#a0e3a3c639f5909823b4a24ca7b2dd709">ge::AudioCore</a>
+: <a class="el" href="classge_1_1_audio_core.html#a9b3e1a52aa481c7bd8fce6b39e146672">ge::AudioCore</a>
 </li>
 <li>Right()
-: <a class="el" href="classge_1_1_rectangle.html#abd2424efc8827dd91c9917039151f395">ge::Rectangle</a>
+: <a class="el" href="classge_1_1_rect.html#a722544343345b9e9025f3f5077fc3cf5">ge::Rect&lt; T &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:53 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -101,6 +101,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
  <a href="classge_1_1_core.html#details">Mehr ...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_core_8h_source.html">Core.h</a>&gt;</code></p>
+<div class="dynheader">
+Klassendiagramm für ge::Core:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classge_1_1_core.png" usemap="#ge::Core_map" alt=""/>
+  <map id="ge::Core_map" name="ge::Core_map">
+<area href="classge_1_1_event_listener.html" alt="ge::EventListener" shape="rect" coords="0,0,109,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Öffentliche Typen</h2></td></tr>
@@ -125,85 +134,116 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <tr class="memitem:a0baf0b9f2fbec7002bf441c7daba1fc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_audio_core.html">AudioCore</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a0baf0b9f2fbec7002bf441c7daba1fc7">Audio</a> ()</td></tr>
 <tr class="memdesc:a0baf0b9f2fbec7002bf441c7daba1fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zur Kernkomponente für Audio.  <a href="#a0baf0b9f2fbec7002bf441c7daba1fc7"></a><br/></td></tr>
 <tr class="separator:a0baf0b9f2fbec7002bf441c7daba1fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98062e4dd0e8f804dfa80484e524f70f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a98062e4dd0e8f804dfa80484e524f70f">ClearSystemMessages</a> ()</td></tr>
-<tr class="memdesc:a98062e4dd0e8f804dfa80484e524f70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leert den Puffer der Systemnachrichten an die Anwendung.  <a href="#a98062e4dd0e8f804dfa80484e524f70f"></a><br/></td></tr>
-<tr class="separator:a98062e4dd0e8f804dfa80484e524f70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7af73c3f4ceebebf753f28cadcf00b95"><td class="memItemLeft" align="right" valign="top">irr::IrrlichtDevice *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a7af73c3f4ceebebf753f28cadcf00b95">Device</a> () const </td></tr>
-<tr class="memdesc:a7af73c3f4ceebebf753f28cadcf00b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zum irrlicht-Device.  <a href="#a7af73c3f4ceebebf753f28cadcf00b95"></a><br/></td></tr>
-<tr class="separator:a7af73c3f4ceebebf753f28cadcf00b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b9281aa29f7a86edebea39b873a4e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a87b9281aa29f7a86edebea39b873a4e9">DisableFrameRateLimit</a> ()</td></tr>
+<tr class="memdesc:a87b9281aa29f7a86edebea39b873a4e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schaltet die Limitierung der Frame-Rate ab.  <a href="#a87b9281aa29f7a86edebea39b873a4e9"></a><br/></td></tr>
+<tr class="separator:a87b9281aa29f7a86edebea39b873a4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d15f15733dc469b9b7c06a99e776e36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a6d15f15733dc469b9b7c06a99e776e36">DisableKeyRepeat</a> ()</td></tr>
+<tr class="memdesc:a6d15f15733dc469b9b7c06a99e776e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schaltet die Verwendung des automatischen Key Repeat ab.  <a href="#a6d15f15733dc469b9b7c06a99e776e36"></a><br/></td></tr>
+<tr class="separator:a6d15f15733dc469b9b7c06a99e776e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a8348390483346f8f7c92b72e6f6c0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a2a8348390483346f8f7c92b72e6f6c0d">DisableVSync</a> ()</td></tr>
+<tr class="memdesc:a2a8348390483346f8f7c92b72e6f6c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schaltet die Verwendung von Vertical Sync ab.  <a href="#a2a8348390483346f8f7c92b72e6f6c0d"></a><br/></td></tr>
+<tr class="separator:a2a8348390483346f8f7c92b72e6f6c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa29309a9773ab1da030fbfaa113a2a9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#aa29309a9773ab1da030fbfaa113a2a9f">DoNothing</a> ()</td></tr>
-<tr class="memdesc:aa29309a9773ab1da030fbfaa113a2a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signalisiert, dass das irrlicht-Device aktuell keine Rechenzeit benötigt.  <a href="#aa29309a9773ab1da030fbfaa113a2a9f"></a><br/></td></tr>
+<tr class="memdesc:aa29309a9773ab1da030fbfaa113a2a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stoppt die Ausführung des Programms, ohne Prozessor-Zeit zu beanspruchen (z.B. wenn das Fenster keinen Fokus besitzt).  <a href="#aa29309a9773ab1da030fbfaa113a2a9f"></a><br/></td></tr>
 <tr class="separator:aa29309a9773ab1da030fbfaa113a2a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e44b7375dcf065cfbc880abec39bb00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a0e44b7375dcf065cfbc880abec39bb00">EnableFrameRateLimit</a> (unsigned int limit)</td></tr>
+<tr class="memdesc:a0e44b7375dcf065cfbc880abec39bb00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Limitierung der Frame-Rate fest (limit &gt; 0) oder schaltet die Limitierung ab (limit = 0).  <a href="#a0e44b7375dcf065cfbc880abec39bb00"></a><br/></td></tr>
+<tr class="separator:a0e44b7375dcf065cfbc880abec39bb00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6144fd697cd69394a6ddc071aa870c64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a6144fd697cd69394a6ddc071aa870c64">EnableKeyRepeat</a> (bool enable=true)</td></tr>
+<tr class="memdesc:a6144fd697cd69394a6ddc071aa870c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt fest, ob automatisches Key Repeat verwendet werden soll.  <a href="#a6144fd697cd69394a6ddc071aa870c64"></a><br/></td></tr>
+<tr class="separator:a6144fd697cd69394a6ddc071aa870c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae4bd6f49cd256e245df723b8b4e519a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#aae4bd6f49cd256e245df723b8b4e519a">EnableVSync</a> (bool enable=true)</td></tr>
+<tr class="memdesc:aae4bd6f49cd256e245df723b8b4e519a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt fest, ob Vertical Sync verwendet werden soll.  <a href="#aae4bd6f49cd256e245df723b8b4e519a"></a><br/></td></tr>
+<tr class="separator:aae4bd6f49cd256e245df723b8b4e519a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15eb85a25be37c890cadf65dbb8b73cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_graphics_core.html">GraphicsCore</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a15eb85a25be37c890cadf65dbb8b73cf">Graphics</a> ()</td></tr>
 <tr class="memdesc:a15eb85a25be37c890cadf65dbb8b73cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zur Kernkomponente für Grafik.  <a href="#a15eb85a25be37c890cadf65dbb8b73cf"></a><br/></td></tr>
 <tr class="separator:a15eb85a25be37c890cadf65dbb8b73cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef379a757b46bee2d9c0db6c498dd4d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#adef379a757b46bee2d9c0db6c498dd4d">HasFocus</a> () const </td></tr>
+<tr class="memdesc:adef379a757b46bee2d9c0db6c498dd4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob das SFML-RenderWindow aktuell den Fokus besitzt.  <a href="#adef379a757b46bee2d9c0db6c498dd4d"></a><br/></td></tr>
+<tr class="separator:adef379a757b46bee2d9c0db6c498dd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae15e70bf57b27513df23268e51f1d984"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#ae15e70bf57b27513df23268e51f1d984">HideMouse</a> ()</td></tr>
+<tr class="memdesc:ae15e70bf57b27513df23268e51f1d984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macht den Mauszeiger unsichtbar.  <a href="#ae15e70bf57b27513df23268e51f1d984"></a><br/></td></tr>
+<tr class="separator:ae15e70bf57b27513df23268e51f1d984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c61e78c24224a9c9b5756748ee05cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a49c61e78c24224a9c9b5756748ee05cd">HideWindow</a> ()</td></tr>
+<tr class="memdesc:a49c61e78c24224a9c9b5756748ee05cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macht das Fenster unsichtbar (es besteht jedoch noch).  <a href="#a49c61e78c24224a9c9b5756748ee05cd"></a><br/></td></tr>
+<tr class="separator:a49c61e78c24224a9c9b5756748ee05cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68dfb0faa14dc45d7a19b98a5ec88324"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_input_core.html">InputCore</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a68dfb0faa14dc45d7a19b98a5ec88324">Input</a> ()</td></tr>
 <tr class="memdesc:a68dfb0faa14dc45d7a19b98a5ec88324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zur Kernkomponente für Eingabegeräte.  <a href="#a68dfb0faa14dc45d7a19b98a5ec88324"></a><br/></td></tr>
 <tr class="separator:a68dfb0faa14dc45d7a19b98a5ec88324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a352c49bb0a18bd601b56ff060a7547bc"><td class="memItemLeft" align="right" valign="top">HINSTANCE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a352c49bb0a18bd601b56ff060a7547bc">InstanceHandle</a> () const </td></tr>
-<tr class="memdesc:a352c49bb0a18bd601b56ff060a7547bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert das Handle der Instanz, unter welchem die Anwendung läuft.  <a href="#a352c49bb0a18bd601b56ff060a7547bc"></a><br/></td></tr>
-<tr class="separator:a352c49bb0a18bd601b56ff060a7547bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68a2d8a086ebfe8fa592e3a988bc122e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a68a2d8a086ebfe8fa592e3a988bc122e">IsFullscreen</a> () const </td></tr>
-<tr class="memdesc:a68a2d8a086ebfe8fa592e3a988bc122e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob die Anwendung im Fullscreen-Modus ausgeführt wird.  <a href="#a68a2d8a086ebfe8fa592e3a988bc122e"></a><br/></td></tr>
-<tr class="separator:a68a2d8a086ebfe8fa592e3a988bc122e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9695b4634c08d92b468b21f00b71e36a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a9695b4634c08d92b468b21f00b71e36a">IsRunning</a> () const </td></tr>
-<tr class="memdesc:a9695b4634c08d92b468b21f00b71e36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob das irrlicht-Device aktiviert wurde und aktuell fehlerfrei arbeitet.  <a href="#a9695b4634c08d92b468b21f00b71e36a"></a><br/></td></tr>
-<tr class="separator:a9695b4634c08d92b468b21f00b71e36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afab824c207c91aa16b7a18c8f144ac0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#afab824c207c91aa16b7a18c8f144ac0e">IsWindowActive</a> () const </td></tr>
-<tr class="memdesc:afab824c207c91aa16b7a18c8f144ac0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob das Fenster aktiviert ist.  <a href="#afab824c207c91aa16b7a18c8f144ac0e"></a><br/></td></tr>
-<tr class="separator:afab824c207c91aa16b7a18c8f144ac0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a715ef0ae1a2947af8895aae41ebc76b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a715ef0ae1a2947af8895aae41ebc76b7">IsWindowFocused</a> () const </td></tr>
-<tr class="memdesc:a715ef0ae1a2947af8895aae41ebc76b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob das Fenster den Fokus besitzt.  <a href="#a715ef0ae1a2947af8895aae41ebc76b7"></a><br/></td></tr>
-<tr class="separator:a715ef0ae1a2947af8895aae41ebc76b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81b0c798aa2298ef23c48901e8ecbffb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a81b0c798aa2298ef23c48901e8ecbffb">IsWindowMinimized</a> () const </td></tr>
-<tr class="memdesc:a81b0c798aa2298ef23c48901e8ecbffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob das Fenster minimiert ist.  <a href="#a81b0c798aa2298ef23c48901e8ecbffb"></a><br/></td></tr>
-<tr class="separator:a81b0c798aa2298ef23c48901e8ecbffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add344712b56ce95cf54314ca98589e06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#add344712b56ce95cf54314ca98589e06">IsWindowResizable</a> () const </td></tr>
-<tr class="memdesc:add344712b56ce95cf54314ca98589e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob die Fenstergröße geändert werden kann.  <a href="#add344712b56ce95cf54314ca98589e06"></a><br/></td></tr>
-<tr class="separator:add344712b56ce95cf54314ca98589e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5ffd27867acdd9569a62d069ecce92c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#aa5ffd27867acdd9569a62d069ecce92c">MaximizeWindow</a> ()</td></tr>
-<tr class="memdesc:aa5ffd27867acdd9569a62d069ecce92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximiert das Fenster.  <a href="#aa5ffd27867acdd9569a62d069ecce92c"></a><br/></td></tr>
-<tr class="separator:aa5ffd27867acdd9569a62d069ecce92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61ca6c61551d7a2bacdf36e86606582d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a61ca6c61551d7a2bacdf36e86606582d">MinimizeWindow</a> ()</td></tr>
-<tr class="memdesc:a61ca6c61551d7a2bacdf36e86606582d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimiert das Fenster.  <a href="#a61ca6c61551d7a2bacdf36e86606582d"></a><br/></td></tr>
-<tr class="separator:a61ca6c61551d7a2bacdf36e86606582d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bcacd36b497e154eb9aebde7ec3e9b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a6bcacd36b497e154eb9aebde7ec3e9b5">IsRunning</a> ()</td></tr>
+<tr class="memdesc:a6bcacd36b497e154eb9aebde7ec3e9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob das SFML-RenderWindow aktiviert wurde und aktuell fehlerfrei arbeitet.  <a href="#a6bcacd36b497e154eb9aebde7ec3e9b5"></a><br/></td></tr>
+<tr class="separator:a6bcacd36b497e154eb9aebde7ec3e9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9e62ea0b797bb241e1a29e1b5e963c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#aa9e62ea0b797bb241e1a29e1b5e963c9">Quit</a> ()</td></tr>
-<tr class="memdesc:aa9e62ea0b797bb241e1a29e1b5e963c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schließt das irrlicht-Device.  <a href="#aa9e62ea0b797bb241e1a29e1b5e963c9"></a><br/></td></tr>
+<tr class="memdesc:aa9e62ea0b797bb241e1a29e1b5e963c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schließt das Fenster und beendet die Einsatzbereitschaft der Kernkomponenten.  <a href="#aa9e62ea0b797bb241e1a29e1b5e963c9"></a><br/></td></tr>
 <tr class="separator:aa9e62ea0b797bb241e1a29e1b5e963c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70bc77ae79c79973be7305be911abb80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a70bc77ae79c79973be7305be911abb80">Reset</a> (const <a class="el" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6c">What</a> &amp;what)</td></tr>
 <tr class="memdesc:a70bc77ae79c79973be7305be911abb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setzt eine oder mehrere Kernkomponenten zurück. Dies beinhaltet die Freigabe der Ressourcen, die in den entsprechenden Komponenten gehalten werden.  <a href="#a70bc77ae79c79973be7305be911abb80"></a><br/></td></tr>
 <tr class="separator:a70bc77ae79c79973be7305be911abb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00d7c438bdecbae8f30564b3e27245ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a00d7c438bdecbae8f30564b3e27245ba">ResizableWindow</a> (bool resizable=true)</td></tr>
-<tr class="memdesc:a00d7c438bdecbae8f30564b3e27245ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt fest, ob die Fenstergröße verändert werden kann.  <a href="#a00d7c438bdecbae8f30564b3e27245ba"></a><br/></td></tr>
-<tr class="separator:a00d7c438bdecbae8f30564b3e27245ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a966e1157b4951cb336432f3807c60516"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_resources_core.html">ResourcesCore</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a966e1157b4951cb336432f3807c60516">Resources</a> ()</td></tr>
 <tr class="memdesc:a966e1157b4951cb336432f3807c60516"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zur Kernkomponente für Ressourcen.  <a href="#a966e1157b4951cb336432f3807c60516"></a><br/></td></tr>
 <tr class="separator:a966e1157b4951cb336432f3807c60516"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba8d762c9922a6f5dcd69145c0c1e811"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#aba8d762c9922a6f5dcd69145c0c1e811">RestoreWindow</a> ()</td></tr>
-<tr class="memdesc:aba8d762c9922a6f5dcd69145c0c1e811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stellt das Fenster wieder her.  <a href="#aba8d762c9922a6f5dcd69145c0c1e811"></a><br/></td></tr>
-<tr class="separator:aba8d762c9922a6f5dcd69145c0c1e811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e4398e4f4405af5f908b71eea395a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a97e4398e4f4405af5f908b71eea395a3">ShowMouse</a> (bool show=true)</td></tr>
+<tr class="memdesc:a97e4398e4f4405af5f908b71eea395a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt fest, ob der Mauszeiger sichtbar sein soll.  <a href="#a97e4398e4f4405af5f908b71eea395a3"></a><br/></td></tr>
+<tr class="separator:a97e4398e4f4405af5f908b71eea395a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d9b3f208fc86adbee8eaef6e08f00c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#ad6d9b3f208fc86adbee8eaef6e08f00c">ShowWindow</a> (bool show=true)</td></tr>
+<tr class="memdesc:ad6d9b3f208fc86adbee8eaef6e08f00c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt fest, ob das Fenster sichtbar sein soll.  <a href="#ad6d9b3f208fc86adbee8eaef6e08f00c"></a><br/></td></tr>
+<tr class="separator:ad6d9b3f208fc86adbee8eaef6e08f00c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8e1ddfc8df1c43b242347f1802df523"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#ab8e1ddfc8df1c43b242347f1802df523">ShutDown</a> (const <a class="el" href="classge_1_1_core.html#aaaf620df9c2342a89113bff910267b6c">What</a> &amp;what)</td></tr>
 <tr class="memdesc:ab8e1ddfc8df1c43b242347f1802df523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt eine oder mehrere Kernkomponenten. Dies beinhaltet die Freigabe der Ressourcen, die in den entsprechenden Komponenten gehalten werden.  <a href="#ab8e1ddfc8df1c43b242347f1802df523"></a><br/></td></tr>
 <tr class="separator:ab8e1ddfc8df1c43b242347f1802df523"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a718ade574dd8ebb2f9e34c34da743358"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a718ade574dd8ebb2f9e34c34da743358">StaticWindow</a> ()</td></tr>
-<tr class="memdesc:a718ade574dd8ebb2f9e34c34da743358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt fest, dass die Fenstergröße nicht geändert werden kann.  <a href="#a718ade574dd8ebb2f9e34c34da743358"></a><br/></td></tr>
-<tr class="separator:a718ade574dd8ebb2f9e34c34da743358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2259b44f7feb3b20f81d3bcde55e5070"><td class="memItemLeft" align="right" valign="top">HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a2259b44f7feb3b20f81d3bcde55e5070">WindowHandle</a> () const </td></tr>
-<tr class="memdesc:a2259b44f7feb3b20f81d3bcde55e5070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert das Handle des Fensters, in welchem die Anwendung läuft.  <a href="#a2259b44f7feb3b20f81d3bcde55e5070"></a><br/></td></tr>
+<tr class="memdesc:a2259b44f7feb3b20f81d3bcde55e5070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert das Handle des Fensters.  <a href="#a2259b44f7feb3b20f81d3bcde55e5070"></a><br/></td></tr>
 <tr class="separator:a2259b44f7feb3b20f81d3bcde55e5070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a583106dc100a4f3c6370cf2773fa1427"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a583106dc100a4f3c6370cf2773fa1427">WindowTitle</a> (const std::string &amp;title)</td></tr>
-<tr class="memdesc:a583106dc100a4f3c6370cf2773fa1427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Fenstertitel fest.  <a href="#a583106dc100a4f3c6370cf2773fa1427"></a><br/></td></tr>
-<tr class="separator:a583106dc100a4f3c6370cf2773fa1427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3069d8e2a4c8b2fcdbe68f457527475c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a3069d8e2a4c8b2fcdbe68f457527475c">WindowIcon</a> (const std::string &amp;iconFile)</td></tr>
+<tr class="memdesc:a3069d8e2a4c8b2fcdbe68f457527475c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erzeugt das Fenster-Icon aus einer entsprechenden Datei (ohne die Verwendung von <a class="el" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung diverser Resourcen in Text- bzw. Binärform. Wird über Core::Res...">ResourcesCore</a>).  <a href="#a3069d8e2a4c8b2fcdbe68f457527475c"></a><br/></td></tr>
+<tr class="separator:a3069d8e2a4c8b2fcdbe68f457527475c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9bbb0e5639fbd1e73df6dd1a5b765f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#ad9bbb0e5639fbd1e73df6dd1a5b765f0">WindowIcon</a> (const <a class="el" href="_base_2_precomp_8h.html#a1e63762fee40128116e0ac87ba6b8089">Binary</a> &amp;resource)</td></tr>
+<tr class="memdesc:ad9bbb0e5639fbd1e73df6dd1a5b765f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erzeugt das Fenster-Icon aus bereits im Speicher befindlichen Binärdaten (normalerweise im <a class="el" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung diverser Resourcen in Text- bzw. Binärform. Wird über Core::Res...">ResourcesCore</a> gehalten).  <a href="#ad9bbb0e5639fbd1e73df6dd1a5b765f0"></a><br/></td></tr>
+<tr class="separator:ad9bbb0e5639fbd1e73df6dd1a5b765f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c89748a28785942687f6b2e1a66580"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#af2c89748a28785942687f6b2e1a66580">WindowPosition</a> (int x, int y)</td></tr>
+<tr class="memdesc:af2c89748a28785942687f6b2e1a66580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Fensterposition fest.  <a href="#af2c89748a28785942687f6b2e1a66580"></a><br/></td></tr>
+<tr class="separator:af2c89748a28785942687f6b2e1a66580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7fe5584f0bbfb3775b464438ccf9fbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#af7fe5584f0bbfb3775b464438ccf9fbd">WindowPosition</a> (const <a class="el" href="classge_1_1_point.html">Point</a>&lt; int &gt; &amp;pos)</td></tr>
+<tr class="memdesc:af7fe5584f0bbfb3775b464438ccf9fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Fensterposition fest.  <a href="#af7fe5584f0bbfb3775b464438ccf9fbd"></a><br/></td></tr>
+<tr class="separator:af7fe5584f0bbfb3775b464438ccf9fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3dbd0358cc78483c3dd6384d85f46e4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#ab3dbd0358cc78483c3dd6384d85f46e4">WindowPosition</a> () const </td></tr>
+<tr class="memdesc:ab3dbd0358cc78483c3dd6384d85f46e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Fensterposition.  <a href="#ab3dbd0358cc78483c3dd6384d85f46e4"></a><br/></td></tr>
+<tr class="separator:ab3dbd0358cc78483c3dd6384d85f46e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9394bcc478beb5ec3061b50e81cbbf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#aa9394bcc478beb5ec3061b50e81cbbf0">WindowSize</a> (unsigned int width, unsigned int height)</td></tr>
+<tr class="memdesc:aa9394bcc478beb5ec3061b50e81cbbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Fenstergröße fest.  <a href="#aa9394bcc478beb5ec3061b50e81cbbf0"></a><br/></td></tr>
+<tr class="separator:aa9394bcc478beb5ec3061b50e81cbbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5628aef9900231b5cf7e2c120dd562db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a5628aef9900231b5cf7e2c120dd562db">WindowSize</a> (const <a class="el" href="classge_1_1_point.html">Point</a>&lt; unsigned int &gt; &amp;dims)</td></tr>
+<tr class="memdesc:a5628aef9900231b5cf7e2c120dd562db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Fenstergröße fest.  <a href="#a5628aef9900231b5cf7e2c120dd562db"></a><br/></td></tr>
+<tr class="separator:a5628aef9900231b5cf7e2c120dd562db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1efa8e10897e1bf968430b63e237ce80"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a1efa8e10897e1bf968430b63e237ce80">WindowSize</a> () const </td></tr>
+<tr class="memdesc:a1efa8e10897e1bf968430b63e237ce80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Fenstergröße.  <a href="#a1efa8e10897e1bf968430b63e237ce80"></a><br/></td></tr>
+<tr class="separator:a1efa8e10897e1bf968430b63e237ce80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e712f17b84ed4ad07e5190444b91a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_core.html">Core</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a51e712f17b84ed4ad07e5190444b91a9">WindowTitle</a> (const std::string &amp;title)</td></tr>
+<tr class="memdesc:a51e712f17b84ed4ad07e5190444b91a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Fenstertitel fest.  <a href="#a51e712f17b84ed4ad07e5190444b91a9"></a><br/></td></tr>
+<tr class="separator:a51e712f17b84ed4ad07e5190444b91a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classge_1_1_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classge_1_1_event_listener')"><img src="closed.png" alt="-"/>&#160;Öffentliche Methoden geerbt von <a class="el" href="classge_1_1_event_listener.html">ge::EventListener</a></td></tr>
+<tr class="memitem:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a95a24db2a870ab70445ecf066ccff4f3">EventListener</a> ()</td></tr>
+<tr class="memdesc:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Das Verarbeiten von Events ist nach Anlegen eines Objektes automatisch aktiviert. Dieser Status kann mit <a class="el" href="classge_1_1_event_listener.html#ad2a4ab4c8ad6ac81962f868e4df53ad2" title="Aktiviert bzw. Deaktiviert das Verarbeiten von Events.">Enable()</a> bzw. <a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9" title="Deaktiviert das Verarbeiten von Events.">Disable()</a> jederzeit geändert werden.  <a href="#a95a24db2a870ab70445ecf066ccff4f3"></a><br/></td></tr>
+<tr class="separator:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9">Disable</a> ()</td></tr>
+<tr class="memdesc:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deaktiviert das Verarbeiten von Events.  <a href="#a359aca2f49af6e6777613bbfaee0eae9"></a><br/></td></tr>
+<tr class="separator:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a4ab4c8ad6ac81962f868e4df53ad2 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#ad2a4ab4c8ad6ac81962f868e4df53ad2">Enable</a> (bool enable=true)</td></tr>
+<tr class="memdesc:ad2a4ab4c8ad6ac81962f868e4df53ad2 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktiviert bzw. Deaktiviert das Verarbeiten von Events.  <a href="#ad2a4ab4c8ad6ac81962f868e4df53ad2"></a><br/></td></tr>
+<tr class="separator:ad2a4ab4c8ad6ac81962f868e4df53ad2 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a766274fe6b1f0b1691325753d7d587d8">Enabled</a> () const </td></tr>
+<tr class="memdesc:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt an, ob aktuell eingehende Events verarbeitet werden.  <a href="#a766274fe6b1f0b1691325753d7d587d8"></a><br/></td></tr>
+<tr class="separator:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Öffentliche, statische Methoden</h2></td></tr>
-<tr class="memitem:a51240e3b80a751ff2c2575f531fa3697"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classge_1_1_core.html">Core</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#a51240e3b80a751ff2c2575f531fa3697">Instance</a> (HINSTANCE inst=nullptr)</td></tr>
-<tr class="memdesc:a51240e3b80a751ff2c2575f531fa3697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird dieses erstellt, alle Aufrufe liefern dieses einzelne Objekt zurück.  <a href="#a51240e3b80a751ff2c2575f531fa3697"></a><br/></td></tr>
-<tr class="separator:a51240e3b80a751ff2c2575f531fa3697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e28dc401305f12771f5cb2e9112d9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classge_1_1_core.html">Core</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_core.html#aa1e28dc401305f12771f5cb2e9112d9e">Instance</a> ()</td></tr>
+<tr class="memdesc:aa1e28dc401305f12771f5cb2e9112d9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird dieses erstellt, alle Aufrufe liefern dieses einzelne Objekt zurück.  <a href="#aa1e28dc401305f12771f5cb2e9112d9e"></a><br/></td></tr>
+<tr class="separator:aa1e28dc401305f12771f5cb2e9112d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Hauptkomponente von GameEngine, verwaltet alle Kernobjekte. </p>
-<p>Wurde nach dem Singleton-Muster entworfen und steht somit immer durch Aufrufen von <a class="el" href="classge_1_1_core.html#a51240e3b80a751ff2c2575f531fa3697" title="Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird dieses erstellt, alle Aufrufe liefern di...">Core::Instance()</a> zur Verfügung.</p>
+<p>Wurde nach dem Singleton-Muster entworfen und steht somit immer durch Aufrufen von <a class="el" href="classge_1_1_core.html#aa1e28dc401305f12771f5cb2e9112d9e" title="Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird dieses erstellt, alle Aufrufe liefern di...">Core::Instance()</a> zur Verfügung.</p>
 <p>Die Klasse instantiiert Kernobjekte entweder durch Aufrufen der Methode <a class="el" href="classge_1_1_core.html#a70bc77ae79c79973be7305be911abb80" title="Setzt eine oder mehrere Kernkomponenten zurück. Dies beinhaltet die Freigabe der Ressourcen, die in den entsprechenden Komponenten gehalten werden.">Reset()</a> oder Verwenden eines entsprechenden Getters. Sollte die Verwendung einer Kernkomponente vom Bestehen einer anderen abhängen, wird dies intern entsprechend berücksichtigt. </p>
 </div><h2 class="groupheader">Dokumentation der Aufzählungstypen</h2>
 <a class="anchor" id="aaaf620df9c2342a89113bff910267b6c"></a>
@@ -240,6 +280,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <a class="anchor" id="a3e26f54c3a985975b5a2fcb1c361d92e"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">ge::Core::~Core </td>
@@ -248,6 +291,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Destruktor. Entfernt automatisch alle noch bestehenden Kernkomponenten und gibt Ressourcen frei, die innerhalb von <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> oder eines in <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> gehaltenen Kernobjektes erreichbar sind. </p>
@@ -280,7 +328,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="a98062e4dd0e8f804dfa80484e524f70f"></a>
+<a class="anchor" id="a87b9281aa29f7a86edebea39b873a4e9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -288,7 +336,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::ClearSystemMessages </td>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::DisableFrameRateLimit </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -301,11 +349,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Leert den Puffer der Systemnachrichten an die Anwendung. </p>
+<p>Schaltet die Limitierung der Frame-Rate ab. </p>
 
 </div>
 </div>
-<a class="anchor" id="a7af73c3f4ceebebf753f28cadcf00b95"></a>
+<a class="anchor" id="a6d15f15733dc469b9b7c06a99e776e36"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -313,10 +361,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">irr::IrrlichtDevice* ge::Core::Device </td>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::DisableKeyRepeat </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -326,7 +374,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Liefert den Pointer zum irrlicht-Device. </p>
+<p>Schaltet die Verwendung des automatischen Key Repeat ab. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2a8348390483346f8f7c92b72e6f6c0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::DisableVSync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Schaltet die Verwendung von Vertical Sync ab. </p>
 
 </div>
 </div>
@@ -351,7 +424,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Signalisiert, dass das irrlicht-Device aktuell keine Rechenzeit benötigt. </p>
+<p>Stoppt die Ausführung des Programms, ohne Prozessor-Zeit zu beanspruchen (z.B. wenn das Fenster keinen Fokus besitzt). </p>
+
+</div>
+</div>
+<a class="anchor" id="a0e44b7375dcf065cfbc880abec39bb00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::EnableFrameRateLimit </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>limit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Limitierung der Frame-Rate fest (limit &gt; 0) oder schaltet die Limitierung ab (limit = 0). </p>
+
+</div>
+</div>
+<a class="anchor" id="a6144fd697cd69394a6ddc071aa870c64"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::EnableKeyRepeat </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt fest, ob automatisches Key Repeat verwendet werden soll. </p>
+
+</div>
+</div>
+<a class="anchor" id="aae4bd6f49cd256e245df723b8b4e519a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::EnableVSync </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt fest, ob Vertical Sync verwendet werden soll. </p>
 
 </div>
 </div>
@@ -380,6 +531,81 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
+<a class="anchor" id="adef379a757b46bee2d9c0db6c498dd4d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ge::Core::HasFocus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ermittelt, ob das SFML-RenderWindow aktuell den Fokus besitzt. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae15e70bf57b27513df23268e51f1d984"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::HideMouse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Macht den Mauszeiger unsichtbar. </p>
+
+</div>
+</div>
+<a class="anchor" id="a49c61e78c24224a9c9b5756748ee05cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::HideWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Macht das Fenster unsichtbar (es besteht jedoch noch). </p>
+
+</div>
+</div>
 <a class="anchor" id="a68dfb0faa14dc45d7a19b98a5ec88324"></a>
 <div class="memitem">
 <div class="memproto">
@@ -405,7 +631,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="a51240e3b80a751ff2c2575f531fa3697"></a>
+<a class="anchor" id="aa1e28dc401305f12771f5cb2e9112d9e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -415,8 +641,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
         <tr>
           <td class="memname">static <a class="el" href="classge_1_1_core.html">Core</a>* ge::Core::Instance </td>
           <td>(</td>
-          <td class="paramtype">HINSTANCE&#160;</td>
-          <td class="paramname"><em>inst</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -428,62 +653,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><div class="memdoc">
 
 <p>Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird dieses erstellt, alle Aufrufe liefern dieses einzelne Objekt zurück. </p>
-<p>Für den ersten Aufruf muss das Instanz-Handle übergeben werden, unter welchem die Anwendung gestartet wurde. Dieses kann aus dem ersten Parameter der WinMain-Funktion direkt übernommen werden.</p>
-<p>Sobald das Core-Objekt erstellt wurde, genügt das Aufrufen der Funktion <a class="el" href="classge_1_1_core.html#a51240e3b80a751ff2c2575f531fa3697" title="Liefert den Pointer zum Core-Objekt. Beim ersten Aufruf wird dieses erstellt, alle Aufrufe liefern di...">Instance()</a> ohne die Angabe von Parametern. </p>
 
 </div>
 </div>
-<a class="anchor" id="a352c49bb0a18bd601b56ff060a7547bc"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">HINSTANCE ge::Core::InstanceHandle </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Liefert das Handle der Instanz, unter welchem die Anwendung läuft. </p>
-
-</div>
-</div>
-<a class="anchor" id="a68a2d8a086ebfe8fa592e3a988bc122e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ge::Core::IsFullscreen </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Ermittelt, ob die Anwendung im Fullscreen-Modus ausgeführt wird. </p>
-
-</div>
-</div>
-<a class="anchor" id="a9695b4634c08d92b468b21f00b71e36a"></a>
+<a class="anchor" id="a6bcacd36b497e154eb9aebde7ec3e9b5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -494,131 +667,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
           <td class="memname">bool ge::Core::IsRunning </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Ermittelt, ob das irrlicht-Device aktiviert wurde und aktuell fehlerfrei arbeitet. </p>
-
-</div>
-</div>
-<a class="anchor" id="afab824c207c91aa16b7a18c8f144ac0e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ge::Core::IsWindowActive </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Ermittelt, ob das Fenster aktiviert ist. </p>
-
-</div>
-</div>
-<a class="anchor" id="a715ef0ae1a2947af8895aae41ebc76b7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ge::Core::IsWindowFocused </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Ermittelt, ob das Fenster den Fokus besitzt. </p>
-
-</div>
-</div>
-<a class="anchor" id="a81b0c798aa2298ef23c48901e8ecbffb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ge::Core::IsWindowMinimized </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Ermittelt, ob das Fenster minimiert ist. </p>
-
-</div>
-</div>
-<a class="anchor" id="add344712b56ce95cf54314ca98589e06"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ge::Core::IsWindowResizable </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Ermittelt, ob die Fenstergröße geändert werden kann. </p>
-
-</div>
-</div>
-<a class="anchor" id="aa5ffd27867acdd9569a62d069ecce92c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::MaximizeWindow </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -629,32 +677,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Maximiert das Fenster. </p>
-
-</div>
-</div>
-<a class="anchor" id="a61ca6c61551d7a2bacdf36e86606582d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::MinimizeWindow </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Minimiert das Fenster. </p>
+<p>Ermittelt, ob das SFML-RenderWindow aktiviert wurde und aktuell fehlerfrei arbeitet. </p>
 
 </div>
 </div>
@@ -679,7 +702,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Schließt das irrlicht-Device. </p>
+<p>Schließt das Fenster und beendet die Einsatzbereitschaft der Kernkomponenten. </p>
 
 </div>
 </div>
@@ -715,38 +738,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="a00d7c438bdecbae8f30564b3e27245ba"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::ResizableWindow </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>resizable</em> = <code>true</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Legt fest, ob die Fenstergröße verändert werden kann. </p>
-<dl class="params"><dt>Parameter</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resizable</td><td>Gibt an, ob die Größenänderung möglich ist (Standard: true) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="a966e1157b4951cb336432f3807c60516"></a>
 <div class="memitem">
 <div class="memproto">
@@ -772,7 +763,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="aba8d762c9922a6f5dcd69145c0c1e811"></a>
+<a class="anchor" id="a97e4398e4f4405af5f908b71eea395a3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -780,9 +771,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::RestoreWindow </td>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::ShowMouse </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -793,7 +785,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Stellt das Fenster wieder her. </p>
+<p>Legt fest, ob der Mauszeiger sichtbar sein soll. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad6d9b3f208fc86adbee8eaef6e08f00c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::ShowWindow </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>show</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt fest, ob das Fenster sichtbar sein soll. </p>
 
 </div>
 </div>
@@ -829,31 +847,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="a718ade574dd8ebb2f9e34c34da743358"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::StaticWindow </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Legt fest, dass die Fenstergröße nicht geändert werden kann. </p>
-
-</div>
-</div>
 <a class="anchor" id="a2259b44f7feb3b20f81d3bcde55e5070"></a>
 <div class="memitem">
 <div class="memproto">
@@ -875,36 +868,269 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Liefert das Handle des Fensters, in welchem die Anwendung läuft. </p>
+<p>Liefert das Handle des Fensters. </p>
 
 </div>
 </div>
-<a class="anchor" id="a583106dc100a4f3c6370cf2773fa1427"></a>
+<a class="anchor" id="a3069d8e2a4c8b2fcdbe68f457527475c"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a> &amp; ge::Core::WindowTitle </td>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::WindowIcon </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>iconFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erzeugt das Fenster-Icon aus einer entsprechenden Datei (ohne die Verwendung von <a class="el" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung diverser Resourcen in Text- bzw. Binärform. Wird über Core::Res...">ResourcesCore</a>). </p>
+
+</div>
+</div>
+<a class="anchor" id="ad9bbb0e5639fbd1e73df6dd1a5b765f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::WindowIcon </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_base_2_precomp_8h.html#a1e63762fee40128116e0ac87ba6b8089">Binary</a> &amp;&#160;</td>
+          <td class="paramname"><em>resource</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erzeugt das Fenster-Icon aus bereits im Speicher befindlichen Binärdaten (normalerweise im <a class="el" href="classge_1_1_resources_core.html" title="Ressourcen-Basisklasse zur Verwaltung diverser Resourcen in Text- bzw. Binärform. Wird über Core::Res...">ResourcesCore</a> gehalten). </p>
+
+</div>
+</div>
+<a class="anchor" id="af2c89748a28785942687f6b2e1a66580"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::WindowPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Fensterposition fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="af7fe5584f0bbfb3775b464438ccf9fbd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::WindowPosition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Fensterposition fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab3dbd0358cc78483c3dd6384d85f46e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classge_1_1_point.html">Point</a>&lt;int&gt; ge::Core::WindowPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Fensterposition. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa9394bcc478beb5ec3061b50e81cbbf0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::WindowSize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Fenstergröße fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5628aef9900231b5cf7e2c120dd562db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::WindowSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; unsigned int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dims</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Fenstergröße fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1efa8e10897e1bf968430b63e237ce80"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classge_1_1_point.html">Point</a>&lt;unsigned int&gt; ge::Core::WindowSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Fenstergröße. </p>
+
+</div>
+</div>
+<a class="anchor" id="a51e712f17b84ed4ad07e5190444b91a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_core.html">Core</a>&amp; ge::Core::WindowTitle </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>title</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Legt den Fenstertitel fest. </p>
 
 </div>
 </div>
-<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
 <li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_core_8h_source.html">Core.h</a></li>
-<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_core_8cpp.html">Core.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

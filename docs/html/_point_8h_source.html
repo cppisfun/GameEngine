@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -94,47 +94,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_engine_2_precomp_8h.html">Precomp.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector2d.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;SFML/System/Vector2.hpp&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html">DLL_DEF.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>ge {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="classge_1_1_point.html">   14</a></span>&#160;   <span class="keyword">class </span><a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html#ac72fb9969cca8dcf1382f1dca2c65d48">GEDLL</a> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;   {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      <span class="keywordtype">int</span> x;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      <span class="keywordtype">int</span> y;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#a0d20fd5fc72dd558f54ad36f0b76e2c6">   21</a></span>&#160;      <a class="code" href="classge_1_1_point.html#a0d20fd5fc72dd558f54ad36f0b76e2c6" title="Konstruktor. Initialisierung über Zahlenangaben.">Point</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) : x(x), y(y) { }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#a269a5b8062fa22f6d233f215379f8c8a">   24</a></span>&#160;      <a class="code" href="classge_1_1_point.html#a269a5b8062fa22f6d233f215379f8c8a" title="Konstruktor. Initialisierung über einen irrlicht-Vektor.">Point</a> (<span class="keyword">const</span> irr::core::vector2d&lt;int&gt;&amp; vec) : x(vec.X), y(vec.Y) { }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#aa0cf7d005e8336d5de72bb40b643081c">   28</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a>&amp; <a class="code" href="classge_1_1_point.html#aa0cf7d005e8336d5de72bb40b643081c" title="Legt die X-Position fest.">X</a> (<span class="keywordtype">int</span> val) { x = val; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;   <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="classge_1_1_point.html">   15</a></span>&#160;   <span class="keyword">class </span><a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html#ac72fb9969cca8dcf1382f1dca2c65d48">GEDLL</a> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;   {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      T x;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      T y;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordtype">void</span> CheckType () { static_assert(std::is_arithmetic&lt;T&gt;::value, <span class="stringliteral">&quot;ge::Point&lt;T&gt; only supports integral or floating point types!&quot;</span>); }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#a97e343a3beaadc4b82dbad4b49733adb">   24</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a> (T x, T y)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;         CheckType();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         Set(x, y);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#af3fe5eca0e12de6cc4cc976a66d2854d">   31</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a>&amp; <a class="code" href="classge_1_1_point.html#af3fe5eca0e12de6cc4cc976a66d2854d" title="Legt die Y-Position fest.">Y</a> (<span class="keywordtype">int</span> val) { y = val; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#a59e5a38b0eca6e32d25d602181fcb92c">   34</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a>&amp; <a class="code" href="classge_1_1_point.html#a59e5a38b0eca6e32d25d602181fcb92c" title="Legt die Position über Zahlenwerte fest.">Set</a> (<span class="keywordtype">int</span> xVal, <span class="keywordtype">int</span> yVal) { x = xVal; y = yVal; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#a6b317a5bcd12d98ffa2da4c784b3bfd4">   37</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a>&amp; <a class="code" href="classge_1_1_point.html#a6b317a5bcd12d98ffa2da4c784b3bfd4" title="Left die Position über einen irrlicht-Vektor fest.">FromIrrVector</a> (<span class="keyword">const</span> irr::core::vector2d&lt;int&gt;&amp; vec) { <span class="keywordflow">return</span> Set(vec.X, vec.Y); }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#acac862fc6eba6defa834d3c00876be40">   41</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_point.html#acac862fc6eba6defa834d3c00876be40" title="Liefert die X-Position.">X</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> x; }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#ac21bfb00ada883104bdc6237a1dcae2d">   44</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="classge_1_1_point.html#ac21bfb00ada883104bdc6237a1dcae2d" title="Liefert die Y-Position.">Y</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> y; }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#a7f6bc2275f00df634b0f02b6b423ddea">   31</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a> (<span class="keyword">const</span> sf::Vector2&lt;T&gt;&amp; vec)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;         CheckType();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;         FromSFMLVector(vec);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#ac436f3625ea67fd1b707a7665de24af1">   39</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a>&amp; <a class="code" href="classge_1_1_point.html#ac436f3625ea67fd1b707a7665de24af1" title="Legt die X-Position fest.">X</a> (T val) { x = val; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#a73aaa29f7a50a60d865e960659b6888c">   42</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a>&amp; <a class="code" href="classge_1_1_point.html#a73aaa29f7a50a60d865e960659b6888c" title="Legt die Y-Position fest.">Y</a> (T val) { y = val; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#aeb0340267def55cef08ede4675c58af4">   45</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a>&amp; <a class="code" href="classge_1_1_point.html#aeb0340267def55cef08ede4675c58af4" title="Legt die Position über Zahlenwerte fest.">Set</a> (T xVal, T yVal) { x = xVal; y = yVal; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#ad53a59cc189d3814d0d94596799f11a4">   48</a></span>&#160;      <span class="keyword">const</span> irr::core::vector2d&lt;int&gt; <a class="code" href="classge_1_1_point.html#ad53a59cc189d3814d0d94596799f11a4" title="Liefert einen entsprechenden irrlicht-Vektor.">AsIrrVector</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> irr::core::vector2d&lt;int&gt;(x, y); }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   };</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#aca2c621b98808fb08683928b29a4fd68">   48</a></span>&#160;      <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point</a>&amp; <a class="code" href="classge_1_1_point.html#aca2c621b98808fb08683928b29a4fd68" title="Legt die Position über einen SFML-Vektor fest.">FromSFMLVector</a> (<span class="keyword">const</span> sf::Vector2&lt;T&gt;&amp; vec) { <span class="keywordflow">return</span> Set(vec.x, vec.y); }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#ad8f7fe072bacd54b4017e776afd04e24">   52</a></span>&#160;      T <a class="code" href="classge_1_1_point.html#ad8f7fe072bacd54b4017e776afd04e24" title="Liefert die X-Position.">X</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> x; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#aacb4429a1db4791eb607d73720fced56">   55</a></span>&#160;      T <a class="code" href="classge_1_1_point.html#aacb4429a1db4791eb607d73720fced56" title="Liefert die Y-Position.">Y</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> y; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#a8bbf39e11eaf84486b221b304d9df46b">   59</a></span>&#160;      <span class="keyword">const</span> sf::Vector2&lt;T&gt; <a class="code" href="classge_1_1_point.html#a8bbf39e11eaf84486b221b304d9df46b" title="Liefert einen entsprechenden SFML-Vektor.">AsSFMLVector</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> sf::Vector2&lt;T&gt;(x, y); }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#a0daba93444ef2d3bfe28ebda433133d5">   63</a></span>&#160;      <span class="keywordtype">bool</span> operator== (<span class="keyword">const</span> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>&amp; other)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> x == other.<a class="code" href="classge_1_1_point.html#ac436f3625ea67fd1b707a7665de24af1" title="Legt die X-Position fest.">X</a>() &amp;&amp; y == other.<a class="code" href="classge_1_1_point.html#a73aaa29f7a50a60d865e960659b6888c" title="Legt die Y-Position fest.">Y</a>(); }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="classge_1_1_point.html#ade0fc9bdc77890eae65f06e989e47155">   66</a></span>&#160;      <span class="keywordtype">bool</span> operator!= (<span class="keyword">const</span> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>&amp; other)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> x != other.<a class="code" href="classge_1_1_point.html#ac436f3625ea67fd1b707a7665de24af1" title="Legt die X-Position fest.">X</a>() || y != other.<a class="code" href="classge_1_1_point.html#a73aaa29f7a50a60d865e960659b6888c" title="Legt die Y-Position fest.">Y</a>(); }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   };</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

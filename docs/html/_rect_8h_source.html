@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: E:/Projekte/GameEngine/GameEngine/Rect.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b304f6c6273f651fae44313af9022017.html">GameEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Rect.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_rect_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_engine_2_precomp_8h.html">Precomp.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;SFML/System/Vector2.hpp&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_point_8h.html">Point.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html">DLL_DEF.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>ge {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;   <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html">   17</a></span>&#160;   <span class="keyword">class </span><a class="code" href="_game_engine_2_d_l_l___d_e_f_8h.html#ac72fb9969cca8dcf1382f1dca2c65d48">GEDLL</a> <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      T left;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      T top;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      T right;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      T bottom;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordtype">void</span> CheckType() { static_assert(std::is_arithmetic&lt;T&gt;::value, <span class="stringliteral">&quot;ge::Rectangle&lt;T&gt; only supports integral or floating point types!&quot;</span>); }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keywordtype">void</span> Adjust ()</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         <span class="keywordflow">if</span> (left &gt; right) std::swap(left, right);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;         <span class="keywordflow">if</span> (top &gt; bottom) std::swap(top, bottom);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#aa6cff0f3abd3d27b92ee45b71b57e7db">   34</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a> (T left, T top, T right, T bottom)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;         CheckType();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;         Set(left, top, right, bottom);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a8197e2ad91cc84c19b967973c9931707">   41</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a> (<span class="keyword">const</span> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>&amp; topLeft, <span class="keyword">const</span> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>&amp; bottomRight)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         CheckType();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;         FromPoints(topLeft, bottomRight);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a6465d511eb457dc3b7839dc2387292fa">   48</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a> (<span class="keyword">const</span> sf::Vector2&lt;T&gt;&amp; topLeft, <span class="keyword">const</span> sf::Vector2&lt;T&gt;&amp; bottomRight)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;         CheckType();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;         FromSFMLVectors(topLeft, bottomRight);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#ac7aece227d791c98482344bb8e02a648">   56</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a>&amp; <a class="code" href="classge_1_1_rect.html#ac7aece227d791c98482344bb8e02a648" title="Legt die linke Position fest (verändert die Breite).">Left</a> (T val) { left = val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#abe6b58fa56d6b008ef693b0ec85be61d">   59</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a>&amp; <a class="code" href="classge_1_1_rect.html#abe6b58fa56d6b008ef693b0ec85be61d" title="Legt die obere Position fest (verändert die Höhe).">Top</a> (T val) { top = val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a722544343345b9e9025f3f5077fc3cf5">   62</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a>&amp; <a class="code" href="classge_1_1_rect.html#a722544343345b9e9025f3f5077fc3cf5" title="Legt die rechte Position fest (verändert die Breite).">Right</a> (T val) { right = val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#ae040ff64d0d10c0f5bb9dfaaa988d853">   65</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a>&amp; <a class="code" href="classge_1_1_rect.html#ae040ff64d0d10c0f5bb9dfaaa988d853" title="Legt die untere Position fest (verändert die Höhe).">Bottom</a> (T val) { bottom = val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a519c6ba8dd05211be96023654037f438">   68</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a>&amp; Set (T leftVal, T topVal, T rightVal, T bottomVal)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;         left   = leftVal;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         top    = topVal;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;         right  = rightVal;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;         bottom = bottomVal;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         Adjust();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a4f95bb9523960085025d578e2c687a0d">   80</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a>&amp; FromPoints (<span class="keyword">const</span> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>&amp; topLeft, <span class="keyword">const</span> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>&amp; bottomRight)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;         <span class="keywordflow">return</span> Set(topLeft.<a class="code" href="classge_1_1_point.html#ac436f3625ea67fd1b707a7665de24af1" title="Legt die X-Position fest.">X</a>(), topLeft.<a class="code" href="classge_1_1_point.html#a73aaa29f7a50a60d865e960659b6888c" title="Legt die Y-Position fest.">Y</a>(), bottomRight.<a class="code" href="classge_1_1_point.html#ac436f3625ea67fd1b707a7665de24af1" title="Legt die X-Position fest.">X</a>(), bottomRight.<a class="code" href="classge_1_1_point.html#a73aaa29f7a50a60d865e960659b6888c" title="Legt die Y-Position fest.">Y</a>());</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a57e4aad49a712315a5e3d52d67b77baf">   86</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a>&amp; FromSFMLVectors (<span class="keyword">const</span> sf::Vector2&lt;T&gt;&amp; topLeft, <span class="keyword">const</span> sf::Vector2&lt;T&gt;&amp; bottomRight)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         <span class="keywordflow">return</span> Set(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a82a3eda827ce4ad813fb085876a78756">   92</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a>&amp; <a class="code" href="classge_1_1_rect.html#a82a3eda827ce4ad813fb085876a78756" title="Legt die Breite fest (verändert rechte Position).">Width</a> (T val) { right = left + val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a8e9698ca5fb51af1fcf650cdd770da15">   95</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect</a>&amp; <a class="code" href="classge_1_1_rect.html#a8e9698ca5fb51af1fcf650cdd770da15" title="Legt die Höhe fest (verändert untere Position).">Height</a> (T val) { bottom = top + val; Adjust(); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#ad18410f41d0bf3cbbd53fb82cb52e18e">   99</a></span>&#160;      T <a class="code" href="classge_1_1_rect.html#ad18410f41d0bf3cbbd53fb82cb52e18e" title="Liefert die linke Position.">Left</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> left; }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a1c3933a30c968b47dcc847b9d2372791">  102</a></span>&#160;      T <a class="code" href="classge_1_1_rect.html#a1c3933a30c968b47dcc847b9d2372791" title="Liefert die obere Position.">Top</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> top; }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a8f28db31c2bffae5d1ab37d39143db58">  105</a></span>&#160;      T <a class="code" href="classge_1_1_rect.html#a8f28db31c2bffae5d1ab37d39143db58" title="Liefert die rechte Position.">Right</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> right; }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#af30863b3935ec5b4646b7f5bc0c935f5">  108</a></span>&#160;      T <a class="code" href="classge_1_1_rect.html#af30863b3935ec5b4646b7f5bc0c935f5" title="Liefert die untere Position.">Bottom</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> bottom; }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a0bda5fe475ddbbda7d5bf873de044f57">  111</a></span>&#160;      T <a class="code" href="classge_1_1_rect.html#a0bda5fe475ddbbda7d5bf873de044f57" title="Liefert die Breite.">Width</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> right - left; }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#ae3bdcc0247712602449327e72ba55fa0">  114</a></span>&#160;      T <a class="code" href="classge_1_1_rect.html#ae3bdcc0247712602449327e72ba55fa0" title="Liefert die Höhe.">Height</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> bottom - top; }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a1b69f75371a7b2766e1d2b30dd517dbd">  118</a></span>&#160;      <span class="keyword">const</span> std::pair&lt;Point&lt;T&gt;, <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>&gt; <a class="code" href="classge_1_1_rect.html#a1b69f75371a7b2766e1d2b30dd517dbd" title="Liefert ein entsprechendes Paar aus ge::Point.">AsPoints</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::make_pair(<a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>(left, top), <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>(right, bottom)); }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#aec0b0f8ef7a73863e0c96ec8aeb7f7f5">  121</a></span>&#160;      <span class="keyword">const</span> std::pair&lt;sf::Vector2&lt;T&gt;, sf::Vector2&lt;T&gt;&gt; AsSFMLVectors ()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">      </span>{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;         <span class="keywordflow">return</span> std::make_pair(sf::Vector2&lt;T&gt;(left, top), sf::Vector2&lt;int&gt;(right, bottom));</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#aa6563d84f8f0484f067bd7692d58c747">  129</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_rect.html#aa6563d84f8f0484f067bd7692d58c747" title="Stellt fest, ob ein angegebener Punkt vom aktuellen Rechteck beinhaltet wird.">Contains</a> (<span class="keyword">const</span> <a class="code" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">Point&lt;T&gt;</a>&amp; point)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> left &lt;= point.<a class="code" href="classge_1_1_point.html#ac436f3625ea67fd1b707a7665de24af1" title="Legt die X-Position fest.">X</a>() &amp;&amp; top &lt;= point.<a class="code" href="classge_1_1_point.html#a73aaa29f7a50a60d865e960659b6888c" title="Legt die Y-Position fest.">Y</a>() &amp;&amp; right &gt;= point.<a class="code" href="classge_1_1_point.html#ac436f3625ea67fd1b707a7665de24af1" title="Legt die X-Position fest.">X</a>() &amp;&amp; bottom &gt;= point.<a class="code" href="classge_1_1_point.html#a73aaa29f7a50a60d865e960659b6888c" title="Legt die Y-Position fest.">Y</a>(); }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#ac9426c99439e5b2dc10ad51ea5164c0c">  133</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_rect.html#ac9426c99439e5b2dc10ad51ea5164c0c" title="Stellt fest, ob ein angegebenes Rechteck vom aktuellen Rechteck beinhaltet wird.">Contains</a> (<span class="keyword">const</span> <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect&lt;T&gt;</a>&amp; rect)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> left &lt;= rect.<a class="code" href="classge_1_1_rect.html#ac7aece227d791c98482344bb8e02a648" title="Legt die linke Position fest (verändert die Breite).">Left</a>() &amp;&amp; top &lt;= rect.<a class="code" href="classge_1_1_rect.html#abe6b58fa56d6b008ef693b0ec85be61d" title="Legt die obere Position fest (verändert die Höhe).">Top</a>() &amp;&amp; right &gt;= rect.<a class="code" href="classge_1_1_rect.html#a722544343345b9e9025f3f5077fc3cf5" title="Legt die rechte Position fest (verändert die Breite).">Right</a>() &amp;&amp; bottom &gt;= rect.<a class="code" href="classge_1_1_rect.html#ae040ff64d0d10c0f5bb9dfaaa988d853" title="Legt die untere Position fest (verändert die Höhe).">Bottom</a>(); }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#ac53e92f2c21b0f0f2a41da9c8bcbd35c">  137</a></span>&#160;      <span class="keywordtype">bool</span> Intersects (<span class="keyword">const</span> <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect&lt;T&gt;</a>&amp; other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">      </span>{</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;         <span class="keywordflow">return</span> !(other.<a class="code" href="classge_1_1_rect.html#ac029ab0b4ffec7ec105b272e9996de3b" title="Stellt fest, ob das Rechteck eine Breite und Höhe besitzt oder ob es gewissermaßen &quot;leer&quot; ist...">Empty</a>() || left &gt; other.<a class="code" href="classge_1_1_rect.html#a722544343345b9e9025f3f5077fc3cf5" title="Legt die rechte Position fest (verändert die Breite).">Right</a>() || right &lt; other.<a class="code" href="classge_1_1_rect.html#ac7aece227d791c98482344bb8e02a648" title="Legt die linke Position fest (verändert die Breite).">Left</a>() || top &gt; other.<a class="code" href="classge_1_1_rect.html#ae040ff64d0d10c0f5bb9dfaaa988d853" title="Legt die untere Position fest (verändert die Höhe).">Bottom</a>() || bottom &lt; other.<a class="code" href="classge_1_1_rect.html#abe6b58fa56d6b008ef693b0ec85be61d" title="Legt die obere Position fest (verändert die Höhe).">Top</a>());</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#ac029ab0b4ffec7ec105b272e9996de3b">  144</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classge_1_1_rect.html#ac029ab0b4ffec7ec105b272e9996de3b" title="Stellt fest, ob das Rechteck eine Breite und Höhe besitzt oder ob es gewissermaßen &quot;leer&quot; ist...">Empty</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Width() &gt; 0 &amp;&amp; Height() &gt; 0; }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a2eb57d2a1747072e4bb7e267ce8de6f2">  148</a></span>&#160;      <span class="keywordtype">bool</span> operator== (<span class="keyword">const</span> <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect&lt;T&gt;</a>&amp; other)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> left == other.<a class="code" href="classge_1_1_rect.html#ac7aece227d791c98482344bb8e02a648" title="Legt die linke Position fest (verändert die Breite).">Left</a>() &amp;&amp; top == other.<a class="code" href="classge_1_1_rect.html#abe6b58fa56d6b008ef693b0ec85be61d" title="Legt die obere Position fest (verändert die Höhe).">Top</a>() &amp;&amp; right == other.<a class="code" href="classge_1_1_rect.html#a722544343345b9e9025f3f5077fc3cf5" title="Legt die rechte Position fest (verändert die Breite).">Right</a>() &amp;&amp; bottom == other.<a class="code" href="classge_1_1_rect.html#ae040ff64d0d10c0f5bb9dfaaa988d853" title="Legt die untere Position fest (verändert die Höhe).">Bottom</a>(); }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a2360fe0c869f5dfccba9d39db2d1c953">  151</a></span>&#160;      <span class="keywordtype">bool</span> operator!= (<span class="keyword">const</span> <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect&lt;T&gt;</a>&amp; other)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> left != other.<a class="code" href="classge_1_1_rect.html#ac7aece227d791c98482344bb8e02a648" title="Legt die linke Position fest (verändert die Breite).">Left</a>() || top != other.<a class="code" href="classge_1_1_rect.html#abe6b58fa56d6b008ef693b0ec85be61d" title="Legt die obere Position fest (verändert die Höhe).">Top</a>() || right != other.<a class="code" href="classge_1_1_rect.html#a722544343345b9e9025f3f5077fc3cf5" title="Legt die rechte Position fest (verändert die Breite).">Right</a>() || bottom != other.<a class="code" href="classge_1_1_rect.html#ae040ff64d0d10c0f5bb9dfaaa988d853" title="Legt die untere Position fest (verändert die Höhe).">Bottom</a>(); }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="code" href="classge_1_1_rect.html#a4b91600a8b1a2205c822ad215cf99c58">  155</a></span>&#160;      <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect&lt;T&gt;</a> operator% (<span class="keyword">const</span> <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect&lt;T&gt;</a>&amp; other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">      </span>{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;         <a class="code" href="classge_1_1_rect.html" title="Standard-Klasse für Rechtecke (Koordinaten).">Rect&lt;T&gt;</a> rect(0, 0, 0, 0);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;         <span class="keywordflow">if</span> (!Intersects(other)) <span class="keywordflow">return</span> rect;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;         rect.<a class="code" href="classge_1_1_rect.html#a519c6ba8dd05211be96023654037f438" title="Legt alle Positionen über Zahlenwerte fest.">Set</a>(std::max(left, other.<a class="code" href="classge_1_1_rect.html#ac7aece227d791c98482344bb8e02a648" title="Legt die linke Position fest (verändert die Breite).">Left</a>()), std::max(top, other.<a class="code" href="classge_1_1_rect.html#abe6b58fa56d6b008ef693b0ec85be61d" title="Legt die obere Position fest (verändert die Höhe).">Top</a>()), std::min(right, other.<a class="code" href="classge_1_1_rect.html#a722544343345b9e9025f3f5077fc3cf5" title="Legt die rechte Position fest (verändert die Breite).">Right</a>()), std::min(bottom, other.<a class="code" href="classge_1_1_rect.html#ae040ff64d0d10c0f5bb9dfaaa988d853" title="Legt die untere Position fest (verändert die Höhe).">Bottom</a>()));</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;         <span class="keywordflow">return</span> rect;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;   };</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

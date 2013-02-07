@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -117,9 +117,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:a9a8783da3ddf4706488548b8ab96b651"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a9a8783da3ddf4706488548b8ab96b651">InputCore</a> (HWND window)</td></tr>
-<tr class="memdesc:a9a8783da3ddf4706488548b8ab96b651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Benötigt ein valides Window-Handle (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben).  <a href="#a9a8783da3ddf4706488548b8ab96b651"></a><br/></td></tr>
-<tr class="separator:a9a8783da3ddf4706488548b8ab96b651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f5c22497b956c13c95bc874543ac7c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a5f5c22497b956c13c95bc874543ac7c3">InputCore</a> (<a class="el" href="classge_1_1_event_controller.html">EventController</a> *eventCtrl)</td></tr>
+<tr class="memdesc:a5f5c22497b956c13c95bc874543ac7c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Benötigt einen Pointer zu einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Klasse zur zentralen Event-Erfassung und deren Weiterleitung an die zuständigen EventListener-Objekte...">ge::EventController</a> (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben).  <a href="#a5f5c22497b956c13c95bc874543ac7c3"></a><br/></td></tr>
+<tr class="separator:a5f5c22497b956c13c95bc874543ac7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4373b25d0dec9b5fa5579cc00f5128ac"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_core.html#a4373b25d0dec9b5fa5579cc00f5128ac">~InputCore</a> ()</td></tr>
 <tr class="memdesc:a4373b25d0dec9b5fa5579cc00f5128ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor. Entfernt automatisch alle noch bestehenden Input-Komponenten und gibt Ressourcen frei, die innerhalb von <a class="el" href="classge_1_1_input_core.html" title="Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über Core::Input() geliefert.">InputCore</a> oder einer in <a class="el" href="classge_1_1_input_core.html" title="Input-Basisklasse, verwaltet alle Input-Komponenten zur Behandlung von Eingabegeräten. Wird über Core::Input() geliefert.">InputCore</a> gehaltenen Input-Komponente erreichbar sind.  <a href="#a4373b25d0dec9b5fa5579cc00f5128ac"></a><br/></td></tr>
 <tr class="separator:a4373b25d0dec9b5fa5579cc00f5128ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,21 +174,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div>
 </div>
 <h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
-<a class="anchor" id="a9a8783da3ddf4706488548b8ab96b651"></a>
+<a class="anchor" id="a5f5c22497b956c13c95bc874543ac7c3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">ge::InputCore::InputCore </td>
           <td>(</td>
-          <td class="paramtype">HWND&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classge_1_1_event_controller.html">EventController</a> *&#160;</td>
+          <td class="paramname"><em>eventCtrl</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Konstruktor. Benötigt ein valides Window-Handle (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben). </p>
+<p>Konstruktor. Benötigt einen Pointer zu einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Klasse zur zentralen Event-Erfassung und deren Weiterleitung an die zuständigen EventListener-Objekte...">ge::EventController</a> (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben). </p>
 
 </div>
 </div>
@@ -365,7 +365,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

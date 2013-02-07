@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>GameEngine: ge::Point Klassenreferenz</title>
+<title>GameEngine: ge::Point&lt; T &gt; Template-Klassenreferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <a href="#pub-methods">Öffentliche Methoden</a> &#124;
 <a href="classge_1_1_point-members.html">Aufstellung aller Elemente</a>  </div>
   <div class="headertitle">
-<div class="title">ge::Point Klassenreferenz</div>  </div>
+<div class="title">ge::Point&lt; T &gt; Template-Klassenreferenz</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,54 +102,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:a0d20fd5fc72dd558f54ad36f0b76e2c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#a0d20fd5fc72dd558f54ad36f0b76e2c6">Point</a> (int x, int y)</td></tr>
-<tr class="memdesc:a0d20fd5fc72dd558f54ad36f0b76e2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Initialisierung über Zahlenangaben.  <a href="#a0d20fd5fc72dd558f54ad36f0b76e2c6"></a><br/></td></tr>
-<tr class="separator:a0d20fd5fc72dd558f54ad36f0b76e2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a269a5b8062fa22f6d233f215379f8c8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#a269a5b8062fa22f6d233f215379f8c8a">Point</a> (const irr::core::vector2d&lt; int &gt; &amp;vec)</td></tr>
-<tr class="memdesc:a269a5b8062fa22f6d233f215379f8c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Initialisierung über einen irrlicht-Vektor.  <a href="#a269a5b8062fa22f6d233f215379f8c8a"></a><br/></td></tr>
-<tr class="separator:a269a5b8062fa22f6d233f215379f8c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad53a59cc189d3814d0d94596799f11a4"><td class="memItemLeft" align="right" valign="top">const irr::core::vector2d&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#ad53a59cc189d3814d0d94596799f11a4">AsIrrVector</a> () const </td></tr>
-<tr class="memdesc:ad53a59cc189d3814d0d94596799f11a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert einen entsprechenden irrlicht-Vektor.  <a href="#ad53a59cc189d3814d0d94596799f11a4"></a><br/></td></tr>
-<tr class="separator:ad53a59cc189d3814d0d94596799f11a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b317a5bcd12d98ffa2da4c784b3bfd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#a6b317a5bcd12d98ffa2da4c784b3bfd4">FromIrrVector</a> (const irr::core::vector2d&lt; int &gt; &amp;vec)</td></tr>
-<tr class="memdesc:a6b317a5bcd12d98ffa2da4c784b3bfd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left die Position über einen irrlicht-Vektor fest.  <a href="#a6b317a5bcd12d98ffa2da4c784b3bfd4"></a><br/></td></tr>
-<tr class="separator:a6b317a5bcd12d98ffa2da4c784b3bfd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59e5a38b0eca6e32d25d602181fcb92c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#a59e5a38b0eca6e32d25d602181fcb92c">Set</a> (int xVal, int yVal)</td></tr>
-<tr class="memdesc:a59e5a38b0eca6e32d25d602181fcb92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Position über Zahlenwerte fest.  <a href="#a59e5a38b0eca6e32d25d602181fcb92c"></a><br/></td></tr>
-<tr class="separator:a59e5a38b0eca6e32d25d602181fcb92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0cf7d005e8336d5de72bb40b643081c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#aa0cf7d005e8336d5de72bb40b643081c">X</a> (int val)</td></tr>
-<tr class="memdesc:aa0cf7d005e8336d5de72bb40b643081c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die X-Position fest.  <a href="#aa0cf7d005e8336d5de72bb40b643081c"></a><br/></td></tr>
-<tr class="separator:aa0cf7d005e8336d5de72bb40b643081c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac862fc6eba6defa834d3c00876be40"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#acac862fc6eba6defa834d3c00876be40">X</a> () const </td></tr>
-<tr class="memdesc:acac862fc6eba6defa834d3c00876be40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die X-Position.  <a href="#acac862fc6eba6defa834d3c00876be40"></a><br/></td></tr>
-<tr class="separator:acac862fc6eba6defa834d3c00876be40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3fe5eca0e12de6cc4cc976a66d2854d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#af3fe5eca0e12de6cc4cc976a66d2854d">Y</a> (int val)</td></tr>
-<tr class="memdesc:af3fe5eca0e12de6cc4cc976a66d2854d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Y-Position fest.  <a href="#af3fe5eca0e12de6cc4cc976a66d2854d"></a><br/></td></tr>
-<tr class="separator:af3fe5eca0e12de6cc4cc976a66d2854d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac21bfb00ada883104bdc6237a1dcae2d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#ac21bfb00ada883104bdc6237a1dcae2d">Y</a> () const </td></tr>
-<tr class="memdesc:ac21bfb00ada883104bdc6237a1dcae2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Y-Position.  <a href="#ac21bfb00ada883104bdc6237a1dcae2d"></a><br/></td></tr>
-<tr class="separator:ac21bfb00ada883104bdc6237a1dcae2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e343a3beaadc4b82dbad4b49733adb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#a97e343a3beaadc4b82dbad4b49733adb">Point</a> (T x, T y)</td></tr>
+<tr class="memdesc:a97e343a3beaadc4b82dbad4b49733adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Initialisierung über Zahlenangaben.  <a href="#a97e343a3beaadc4b82dbad4b49733adb"></a><br/></td></tr>
+<tr class="separator:a97e343a3beaadc4b82dbad4b49733adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f6bc2275f00df634b0f02b6b423ddea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#a7f6bc2275f00df634b0f02b6b423ddea">Point</a> (const sf::Vector2&lt; T &gt; &amp;vec)</td></tr>
+<tr class="memdesc:a7f6bc2275f00df634b0f02b6b423ddea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Initialisierung über einen SFML-Vektor.  <a href="#a7f6bc2275f00df634b0f02b6b423ddea"></a><br/></td></tr>
+<tr class="separator:a7f6bc2275f00df634b0f02b6b423ddea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bbf39e11eaf84486b221b304d9df46b"><td class="memItemLeft" align="right" valign="top">const sf::Vector2&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#a8bbf39e11eaf84486b221b304d9df46b">AsSFMLVector</a> () const </td></tr>
+<tr class="memdesc:a8bbf39e11eaf84486b221b304d9df46b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert einen entsprechenden SFML-Vektor.  <a href="#a8bbf39e11eaf84486b221b304d9df46b"></a><br/></td></tr>
+<tr class="separator:a8bbf39e11eaf84486b221b304d9df46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca2c621b98808fb08683928b29a4fd68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#aca2c621b98808fb08683928b29a4fd68">FromSFMLVector</a> (const sf::Vector2&lt; T &gt; &amp;vec)</td></tr>
+<tr class="memdesc:aca2c621b98808fb08683928b29a4fd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Position über einen SFML-Vektor fest.  <a href="#aca2c621b98808fb08683928b29a4fd68"></a><br/></td></tr>
+<tr class="separator:aca2c621b98808fb08683928b29a4fd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0fc9bdc77890eae65f06e989e47155"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#ade0fc9bdc77890eae65f06e989e47155">operator!=</a> (const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;other) const </td></tr>
+<tr class="memdesc:ade0fc9bdc77890eae65f06e989e47155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator != für zwei Point-Objekte.  <a href="#ade0fc9bdc77890eae65f06e989e47155"></a><br/></td></tr>
+<tr class="separator:ade0fc9bdc77890eae65f06e989e47155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0daba93444ef2d3bfe28ebda433133d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#a0daba93444ef2d3bfe28ebda433133d5">operator==</a> (const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;other) const </td></tr>
+<tr class="memdesc:a0daba93444ef2d3bfe28ebda433133d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator == für zwei Point-Objekte.  <a href="#a0daba93444ef2d3bfe28ebda433133d5"></a><br/></td></tr>
+<tr class="separator:a0daba93444ef2d3bfe28ebda433133d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0340267def55cef08ede4675c58af4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#aeb0340267def55cef08ede4675c58af4">Set</a> (T xVal, T yVal)</td></tr>
+<tr class="memdesc:aeb0340267def55cef08ede4675c58af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Position über Zahlenwerte fest.  <a href="#aeb0340267def55cef08ede4675c58af4"></a><br/></td></tr>
+<tr class="separator:aeb0340267def55cef08ede4675c58af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac436f3625ea67fd1b707a7665de24af1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#ac436f3625ea67fd1b707a7665de24af1">X</a> (T val)</td></tr>
+<tr class="memdesc:ac436f3625ea67fd1b707a7665de24af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die X-Position fest.  <a href="#ac436f3625ea67fd1b707a7665de24af1"></a><br/></td></tr>
+<tr class="separator:ac436f3625ea67fd1b707a7665de24af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8f7fe072bacd54b4017e776afd04e24"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#ad8f7fe072bacd54b4017e776afd04e24">X</a> () const </td></tr>
+<tr class="memdesc:ad8f7fe072bacd54b4017e776afd04e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die X-Position.  <a href="#ad8f7fe072bacd54b4017e776afd04e24"></a><br/></td></tr>
+<tr class="separator:ad8f7fe072bacd54b4017e776afd04e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73aaa29f7a50a60d865e960659b6888c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#a73aaa29f7a50a60d865e960659b6888c">Y</a> (T val)</td></tr>
+<tr class="memdesc:a73aaa29f7a50a60d865e960659b6888c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Y-Position fest.  <a href="#a73aaa29f7a50a60d865e960659b6888c"></a><br/></td></tr>
+<tr class="separator:a73aaa29f7a50a60d865e960659b6888c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacb4429a1db4791eb607d73720fced56"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_point.html#aacb4429a1db4791eb607d73720fced56">Y</a> () const </td></tr>
+<tr class="memdesc:aacb4429a1db4791eb607d73720fced56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Y-Position.  <a href="#aacb4429a1db4791eb607d73720fced56"></a><br/></td></tr>
+<tr class="separator:aacb4429a1db4791eb607d73720fced56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
-<div class="textblock"><p>Standard-Klasse für Punkte (Koordinaten). </p>
+<div class="textblock"><h3>template&lt;typename T&gt;<br/>
+class ge::Point&lt; T &gt;</h3>
+
+<p>Standard-Klasse für Punkte (Koordinaten). </p>
 </div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
-<a class="anchor" id="a0d20fd5fc72dd558f54ad36f0b76e2c6"></a>
+<a class="anchor" id="a97e343a3beaadc4b82dbad4b49733adb"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ge::Point::Point </td>
+          <td class="memname"><a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::<a class="el" href="classge_1_1_point.html">Point</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
@@ -169,17 +180,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="a269a5b8062fa22f6d233f215379f8c8a"></a>
+<a class="anchor" id="a7f6bc2275f00df634b0f02b6b423ddea"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ge::Point::Point </td>
+          <td class="memname"><a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::<a class="el" href="classge_1_1_point.html">Point</a> </td>
           <td>(</td>
-          <td class="paramtype">const irr::core::vector2d&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const sf::Vector2&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em></td><td>)</td>
           <td></td>
         </tr>
@@ -191,20 +204,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Konstruktor. Initialisierung über einen irrlicht-Vektor. </p>
+<p>Konstruktor. Initialisierung über einen SFML-Vektor. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a class="anchor" id="ad53a59cc189d3814d0d94596799f11a4"></a>
+<a class="anchor" id="a8bbf39e11eaf84486b221b304d9df46b"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const irr::core::vector2d&lt;int&gt; ge::Point::AsIrrVector </td>
+          <td class="memname">const sf::Vector2&lt;T&gt; <a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::AsSFMLVector </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -217,21 +232,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Liefert einen entsprechenden irrlicht-Vektor. </p>
+<p>Liefert einen entsprechenden SFML-Vektor. </p>
 
 </div>
 </div>
-<a class="anchor" id="a6b317a5bcd12d98ffa2da4c784b3bfd4"></a>
+<a class="anchor" id="aca2c621b98808fb08683928b29a4fd68"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classge_1_1_point.html">Point</a>&amp; ge::Point::FromIrrVector </td>
+          <td class="memname"><a class="el" href="classge_1_1_point.html">Point</a>&amp; <a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::FromSFMLVector </td>
           <td>(</td>
-          <td class="paramtype">const irr::core::vector2d&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const sf::Vector2&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em></td><td>)</td>
           <td></td>
         </tr>
@@ -243,27 +260,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </table>
 </div><div class="memdoc">
 
-<p>Left die Position über einen irrlicht-Vektor fest. </p>
+<p>Legt die Position über einen SFML-Vektor fest. </p>
 
 </div>
 </div>
-<a class="anchor" id="a59e5a38b0eca6e32d25d602181fcb92c"></a>
+<a class="anchor" id="ade0fc9bdc77890eae65f06e989e47155"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classge_1_1_point.html">Point</a>&amp; ge::Point::Set </td>
+          <td class="memname">bool <a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::operator!= </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator != für zwei Point-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0daba93444ef2d3bfe28ebda433133d5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator == für zwei Point-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeb0340267def55cef08ede4675c58af4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_point.html">Point</a>&amp; <a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::Set </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>xVal</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>yVal</em>&#160;</td>
         </tr>
         <tr>
@@ -283,17 +358,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="aa0cf7d005e8336d5de72bb40b643081c"></a>
+<a class="anchor" id="ac436f3625ea67fd1b707a7665de24af1"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classge_1_1_point.html">Point</a>&amp; ge::Point::X </td>
+          <td class="memname"><a class="el" href="classge_1_1_point.html">Point</a>&amp; <a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::X </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>
           <td></td>
         </tr>
@@ -309,15 +386,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="acac862fc6eba6defa834d3c00876be40"></a>
+<a class="anchor" id="ad8f7fe072bacd54b4017e776afd04e24"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ge::Point::X </td>
+          <td class="memname">T <a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::X </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -334,17 +413,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="af3fe5eca0e12de6cc4cc976a66d2854d"></a>
+<a class="anchor" id="a73aaa29f7a50a60d865e960659b6888c"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classge_1_1_point.html">Point</a>&amp; ge::Point::Y </td>
+          <td class="memname"><a class="el" href="classge_1_1_point.html">Point</a>&amp; <a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::Y </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>
           <td></td>
         </tr>
@@ -360,15 +441,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 </div>
 </div>
-<a class="anchor" id="ac21bfb00ada883104bdc6237a1dcae2d"></a>
+<a class="anchor" id="aacb4429a1db4791eb607d73720fced56"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int ge::Point::Y </td>
+          <td class="memname">T <a class="el" href="classge_1_1_point.html">ge::Point</a>&lt; T &gt;::Y </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -391,7 +474,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

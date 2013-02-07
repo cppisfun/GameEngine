@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -95,9 +95,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><!--header-->
 <div class="contents">
 
-<p>Oberklasse für Event-Listener. Alle Klassen, die ihre Events von <a class="el" href="classge_1_1_event_controller.html" title="Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventLi...">ge::EventController</a> erhalten, müssen von <a class="el" href="classge_1_1_event_listener.html" title="Oberklasse für Event-Listener. Alle Klassen, die ihre Events von ge::EventController erhalten...">EventListener</a> abgeleitet werden.  
- <a href="classge_1_1_event_listener.html#details">Mehr ...</a></p>
-
 <p><code>#include &lt;<a class="el" href="_event_listener_8h_source.html">EventListener.h</a>&gt;</code></p>
 <div class="dynheader">
 Klassendiagramm für ge::EventListener:</div>
@@ -105,32 +102,30 @@ Klassendiagramm für ge::EventListener:</div>
  <div class="center">
   <img src="classge_1_1_event_listener.png" usemap="#ge::EventListener_map" alt=""/>
   <map id="ge::EventListener_map" name="ge::EventListener_map">
-<area href="classge_1_1_input_gamepad.html" title="Input-Klasse für Gamepad-Steuerung. Wird über InputCore::Gamepad() geliefert." alt="ge::InputGamepad" shape="rect" coords="0,56,114,80"/>
-<area href="classge_1_1_input_keyboard.html" title="Input-Klasse für Tastatureingaben. Wird über InputCore::Keyboard() geliefert." alt="ge::InputKeyboard" shape="rect" coords="124,56,238,80"/>
-<area href="classge_1_1_input_mouse.html" title="Input-Klasse für Mauseingaben. Wird über InputCore::Mouse() geliefert." alt="ge::InputMouse" shape="rect" coords="248,56,362,80"/>
+<area href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte." alt="ge::Core" shape="rect" coords="0,56,114,80"/>
+<area href="classge_1_1_input_gamepad.html" title="Input-Klasse für Gamepad-Steuerung. Wird über InputCore::Gamepad() geliefert." alt="ge::InputGamepad" shape="rect" coords="124,56,238,80"/>
+<area href="classge_1_1_input_keyboard.html" title="Input-Klasse für Taststur-Eingaben. Wird über InputCore::Keyboard() geliefert." alt="ge::InputKeyboard" shape="rect" coords="248,56,362,80"/>
+<area href="classge_1_1_input_mouse.html" title="Input-Klasse für Maus-Steuerung. Wird über InputCore::Mouse() geliefert." alt="ge::InputMouse" shape="rect" coords="372,56,486,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
 <tr class="memitem:a95a24db2a870ab70445ecf066ccff4f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a95a24db2a870ab70445ecf066ccff4f3">EventListener</a> ()</td></tr>
-<tr class="memdesc:a95a24db2a870ab70445ecf066ccff4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Schaltet automatisch die Event-Bearbeitung ein.  <a href="#a95a24db2a870ab70445ecf066ccff4f3"></a><br/></td></tr>
+<tr class="memdesc:a95a24db2a870ab70445ecf066ccff4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Das Verarbeiten von Events ist nach Anlegen eines Objektes automatisch aktiviert. Dieser Status kann mit <a class="el" href="classge_1_1_event_listener.html#ad2a4ab4c8ad6ac81962f868e4df53ad2" title="Aktiviert bzw. Deaktiviert das Verarbeiten von Events.">Enable()</a> bzw. <a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9" title="Deaktiviert das Verarbeiten von Events.">Disable()</a> jederzeit geändert werden.  <a href="#a95a24db2a870ab70445ecf066ccff4f3"></a><br/></td></tr>
 <tr class="separator:a95a24db2a870ab70445ecf066ccff4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8619ff6aa8543c02f4583cc22cd8c89c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a8619ff6aa8543c02f4583cc22cd8c89c">~EventListener</a> ()</td></tr>
-<tr class="memdesc:a8619ff6aa8543c02f4583cc22cd8c89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor.  <a href="#a8619ff6aa8543c02f4583cc22cd8c89c"></a><br/></td></tr>
-<tr class="separator:a8619ff6aa8543c02f4583cc22cd8c89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a359aca2f49af6e6777613bbfaee0eae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9">Disable</a> ()</td></tr>
-<tr class="memdesc:a359aca2f49af6e6777613bbfaee0eae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schaltet die Event-Bearbeitung aus. Events können zwar weiterhin an den Listener gesendet werden, es erfolgt aber keine Reaktion vom Listener.  <a href="#a359aca2f49af6e6777613bbfaee0eae9"></a><br/></td></tr>
+<tr class="memdesc:a359aca2f49af6e6777613bbfaee0eae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deaktiviert das Verarbeiten von Events.  <a href="#a359aca2f49af6e6777613bbfaee0eae9"></a><br/></td></tr>
 <tr class="separator:a359aca2f49af6e6777613bbfaee0eae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a633e4068e794befa7d0109fccf021731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a633e4068e794befa7d0109fccf021731">Enable</a> (bool enable)</td></tr>
-<tr class="memdesc:a633e4068e794befa7d0109fccf021731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt fest, ob dieser Listener aktuell auf Events reagieren soll.  <a href="#a633e4068e794befa7d0109fccf021731"></a><br/></td></tr>
-<tr class="separator:a633e4068e794befa7d0109fccf021731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a4ab4c8ad6ac81962f868e4df53ad2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#ad2a4ab4c8ad6ac81962f868e4df53ad2">Enable</a> (bool enable=true)</td></tr>
+<tr class="memdesc:ad2a4ab4c8ad6ac81962f868e4df53ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktiviert bzw. Deaktiviert das Verarbeiten von Events.  <a href="#ad2a4ab4c8ad6ac81962f868e4df53ad2"></a><br/></td></tr>
+<tr class="separator:ad2a4ab4c8ad6ac81962f868e4df53ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a766274fe6b1f0b1691325753d7d587d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a766274fe6b1f0b1691325753d7d587d8">Enabled</a> () const </td></tr>
-<tr class="memdesc:a766274fe6b1f0b1691325753d7d587d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob der Listener aktuell auf Events reagiert oder die empfangenen Events ignoriert.  <a href="#a766274fe6b1f0b1691325753d7d587d8"></a><br/></td></tr>
+<tr class="memdesc:a766274fe6b1f0b1691325753d7d587d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt an, ob aktuell eingehende Events verarbeitet werden.  <a href="#a766274fe6b1f0b1691325753d7d587d8"></a><br/></td></tr>
 <tr class="separator:a766274fe6b1f0b1691325753d7d587d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
-<div class="textblock"><p>Oberklasse für Event-Listener. Alle Klassen, die ihre Events von <a class="el" href="classge_1_1_event_controller.html" title="Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventLi...">ge::EventController</a> erhalten, müssen von <a class="el" href="classge_1_1_event_listener.html" title="Oberklasse für Event-Listener. Alle Klassen, die ihre Events von ge::EventController erhalten...">EventListener</a> abgeleitet werden. </p>
+<div class="textblock"><p>@ brief Interface für alle Klassen, die Events vom Typ sf::Event verarbeiten. Alle Klassen, die ihre Events von <a class="el" href="classge_1_1_event_controller.html" title="Klasse zur zentralen Event-Erfassung und deren Weiterleitung an die zuständigen EventListener-Objekte...">ge::EventController</a> erhalten, müssen von <a class="el" href="classge_1_1_event_listener.html">EventListener</a> abgeleitet werden. </p>
 </div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a class="anchor" id="a95a24db2a870ab70445ecf066ccff4f3"></a>
 <div class="memitem">
@@ -153,32 +148,7 @@ Klassendiagramm für ge::EventListener:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Konstruktor. Schaltet automatisch die Event-Bearbeitung ein. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8619ff6aa8543c02f4583cc22cd8c89c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual ge::EventListener::~EventListener </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Destruktor. </p>
+<p>Konstruktor. Das Verarbeiten von Events ist nach Anlegen eines Objektes automatisch aktiviert. Dieser Status kann mit <a class="el" href="classge_1_1_event_listener.html#ad2a4ab4c8ad6ac81962f868e4df53ad2" title="Aktiviert bzw. Deaktiviert das Verarbeiten von Events.">Enable()</a> bzw. <a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9" title="Deaktiviert das Verarbeiten von Events.">Disable()</a> jederzeit geändert werden. </p>
 
 </div>
 </div>
@@ -204,11 +174,11 @@ Klassendiagramm für ge::EventListener:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Schaltet die Event-Bearbeitung aus. Events können zwar weiterhin an den Listener gesendet werden, es erfolgt aber keine Reaktion vom Listener. </p>
+<p>Deaktiviert das Verarbeiten von Events. </p>
 
 </div>
 </div>
-<a class="anchor" id="a633e4068e794befa7d0109fccf021731"></a>
+<a class="anchor" id="ad2a4ab4c8ad6ac81962f868e4df53ad2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -219,7 +189,7 @@ Klassendiagramm für ge::EventListener:</div>
           <td class="memname">void ge::EventListener::Enable </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td class="paramname"><em>enable</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -230,7 +200,7 @@ Klassendiagramm für ge::EventListener:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Legt fest, ob dieser Listener aktuell auf Events reagieren soll. </p>
+<p>Aktiviert bzw. Deaktiviert das Verarbeiten von Events. </p>
 
 </div>
 </div>
@@ -255,7 +225,7 @@ Klassendiagramm für ge::EventListener:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Ermittelt, ob der Listener aktuell auf Events reagiert oder die empfangenen Events ignoriert. </p>
+<p>Gibt an, ob aktuell eingehende Events verarbeitet werden. </p>
 
 </div>
 </div>
@@ -265,7 +235,7 @@ Klassendiagramm für ge::EventListener:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

@@ -1,0 +1,1038 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>GameEngine: ge::Rect&lt; T &gt; Template-Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">GameEngine
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
+   </div>
+   <div id="projectbrief">Another fun project. Nothing more to it.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.2 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="namespaces.html"><span>Namensbereiche</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namensbereiche</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typdefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Makrodefinitionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Seiten</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacege.html">ge</a></li><li class="navelem"><a class="el" href="classge_1_1_rect.html">Rect</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classge_1_1_rect-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">ge::Rect&lt; T &gt; Template-Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Standard-Klasse für Rechtecke (Koordinaten).  
+ <a href="classge_1_1_rect.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_rect_8h_source.html">Rect.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:aa6cff0f3abd3d27b92ee45b71b57e7db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#aa6cff0f3abd3d27b92ee45b71b57e7db">Rect</a> (T left, T top, T right, T bottom)</td></tr>
+<tr class="memdesc:aa6cff0f3abd3d27b92ee45b71b57e7db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Initialisierung über Zahlenangaben.  <a href="#aa6cff0f3abd3d27b92ee45b71b57e7db"></a><br/></td></tr>
+<tr class="separator:aa6cff0f3abd3d27b92ee45b71b57e7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8197e2ad91cc84c19b967973c9931707"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a8197e2ad91cc84c19b967973c9931707">Rect</a> (const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;topLeft, const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;bottomRight)</td></tr>
+<tr class="memdesc:a8197e2ad91cc84c19b967973c9931707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Initialisierung über <a class="el" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">ge::Point</a>.  <a href="#a8197e2ad91cc84c19b967973c9931707"></a><br/></td></tr>
+<tr class="separator:a8197e2ad91cc84c19b967973c9931707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6465d511eb457dc3b7839dc2387292fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a6465d511eb457dc3b7839dc2387292fa">Rect</a> (const sf::Vector2&lt; T &gt; &amp;topLeft, const sf::Vector2&lt; T &gt; &amp;bottomRight)</td></tr>
+<tr class="memdesc:a6465d511eb457dc3b7839dc2387292fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Initialisierung über SFML-Vektoren.  <a href="#a6465d511eb457dc3b7839dc2387292fa"></a><br/></td></tr>
+<tr class="separator:a6465d511eb457dc3b7839dc2387292fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b69f75371a7b2766e1d2b30dd517dbd"><td class="memItemLeft" align="right" valign="top">const std::pair&lt; <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt;<br class="typebreak"/>
+, <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a1b69f75371a7b2766e1d2b30dd517dbd">AsPoints</a> () const </td></tr>
+<tr class="memdesc:a1b69f75371a7b2766e1d2b30dd517dbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert ein entsprechendes Paar aus <a class="el" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">ge::Point</a>.  <a href="#a1b69f75371a7b2766e1d2b30dd517dbd"></a><br/></td></tr>
+<tr class="separator:a1b69f75371a7b2766e1d2b30dd517dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec0b0f8ef7a73863e0c96ec8aeb7f7f5"><td class="memItemLeft" align="right" valign="top">const std::pair&lt; sf::Vector2<br class="typebreak"/>
+&lt; T &gt;, sf::Vector2&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#aec0b0f8ef7a73863e0c96ec8aeb7f7f5">AsSFMLVectors</a> () const </td></tr>
+<tr class="memdesc:aec0b0f8ef7a73863e0c96ec8aeb7f7f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert ein entsprechendes Paar aus SFML-Vektoren.  <a href="#aec0b0f8ef7a73863e0c96ec8aeb7f7f5"></a><br/></td></tr>
+<tr class="separator:aec0b0f8ef7a73863e0c96ec8aeb7f7f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae040ff64d0d10c0f5bb9dfaaa988d853"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#ae040ff64d0d10c0f5bb9dfaaa988d853">Bottom</a> (T val)</td></tr>
+<tr class="memdesc:ae040ff64d0d10c0f5bb9dfaaa988d853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die untere Position fest (verändert die Höhe).  <a href="#ae040ff64d0d10c0f5bb9dfaaa988d853"></a><br/></td></tr>
+<tr class="separator:ae040ff64d0d10c0f5bb9dfaaa988d853"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af30863b3935ec5b4646b7f5bc0c935f5"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#af30863b3935ec5b4646b7f5bc0c935f5">Bottom</a> () const </td></tr>
+<tr class="memdesc:af30863b3935ec5b4646b7f5bc0c935f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die untere Position.  <a href="#af30863b3935ec5b4646b7f5bc0c935f5"></a><br/></td></tr>
+<tr class="separator:af30863b3935ec5b4646b7f5bc0c935f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6563d84f8f0484f067bd7692d58c747"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#aa6563d84f8f0484f067bd7692d58c747">Contains</a> (const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;point) const </td></tr>
+<tr class="memdesc:aa6563d84f8f0484f067bd7692d58c747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stellt fest, ob ein angegebener Punkt vom aktuellen Rechteck beinhaltet wird.  <a href="#aa6563d84f8f0484f067bd7692d58c747"></a><br/></td></tr>
+<tr class="separator:aa6563d84f8f0484f067bd7692d58c747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9426c99439e5b2dc10ad51ea5164c0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#ac9426c99439e5b2dc10ad51ea5164c0c">Contains</a> (const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;rect) const </td></tr>
+<tr class="memdesc:ac9426c99439e5b2dc10ad51ea5164c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stellt fest, ob ein angegebenes Rechteck vom aktuellen Rechteck beinhaltet wird.  <a href="#ac9426c99439e5b2dc10ad51ea5164c0c"></a><br/></td></tr>
+<tr class="separator:ac9426c99439e5b2dc10ad51ea5164c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac029ab0b4ffec7ec105b272e9996de3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#ac029ab0b4ffec7ec105b272e9996de3b">Empty</a> () const </td></tr>
+<tr class="memdesc:ac029ab0b4ffec7ec105b272e9996de3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stellt fest, ob das Rechteck eine Breite und Höhe besitzt oder ob es gewissermaßen "leer" ist.  <a href="#ac029ab0b4ffec7ec105b272e9996de3b"></a><br/></td></tr>
+<tr class="separator:ac029ab0b4ffec7ec105b272e9996de3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f95bb9523960085025d578e2c687a0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a4f95bb9523960085025d578e2c687a0d">FromPoints</a> (const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;topLeft, const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;bottomRight)</td></tr>
+<tr class="memdesc:a4f95bb9523960085025d578e2c687a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt alle Positionen über zwei Point-Objekte fest.  <a href="#a4f95bb9523960085025d578e2c687a0d"></a><br/></td></tr>
+<tr class="separator:a4f95bb9523960085025d578e2c687a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e4aad49a712315a5e3d52d67b77baf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a57e4aad49a712315a5e3d52d67b77baf">FromSFMLVectors</a> (const sf::Vector2&lt; T &gt; &amp;topLeft, const sf::Vector2&lt; T &gt; &amp;bottomRight)</td></tr>
+<tr class="memdesc:a57e4aad49a712315a5e3d52d67b77baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt alle Positionen über zwei SFML-Vektoren fest.  <a href="#a57e4aad49a712315a5e3d52d67b77baf"></a><br/></td></tr>
+<tr class="separator:a57e4aad49a712315a5e3d52d67b77baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e9698ca5fb51af1fcf650cdd770da15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a8e9698ca5fb51af1fcf650cdd770da15">Height</a> (T val)</td></tr>
+<tr class="memdesc:a8e9698ca5fb51af1fcf650cdd770da15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Höhe fest (verändert untere Position).  <a href="#a8e9698ca5fb51af1fcf650cdd770da15"></a><br/></td></tr>
+<tr class="separator:a8e9698ca5fb51af1fcf650cdd770da15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3bdcc0247712602449327e72ba55fa0"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#ae3bdcc0247712602449327e72ba55fa0">Height</a> () const </td></tr>
+<tr class="memdesc:ae3bdcc0247712602449327e72ba55fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Höhe.  <a href="#ae3bdcc0247712602449327e72ba55fa0"></a><br/></td></tr>
+<tr class="separator:ae3bdcc0247712602449327e72ba55fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53e92f2c21b0f0f2a41da9c8bcbd35c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#ac53e92f2c21b0f0f2a41da9c8bcbd35c">Intersects</a> (const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;other) const </td></tr>
+<tr class="memdesc:ac53e92f2c21b0f0f2a41da9c8bcbd35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stellt fest, ob ein angegebenes Rechteck mit dem aktuellen Rechteck eine Schnittmenge bildet.  <a href="#ac53e92f2c21b0f0f2a41da9c8bcbd35c"></a><br/></td></tr>
+<tr class="separator:ac53e92f2c21b0f0f2a41da9c8bcbd35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7aece227d791c98482344bb8e02a648"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#ac7aece227d791c98482344bb8e02a648">Left</a> (T val)</td></tr>
+<tr class="memdesc:ac7aece227d791c98482344bb8e02a648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die linke Position fest (verändert die Breite).  <a href="#ac7aece227d791c98482344bb8e02a648"></a><br/></td></tr>
+<tr class="separator:ac7aece227d791c98482344bb8e02a648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad18410f41d0bf3cbbd53fb82cb52e18e"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#ad18410f41d0bf3cbbd53fb82cb52e18e">Left</a> () const </td></tr>
+<tr class="memdesc:ad18410f41d0bf3cbbd53fb82cb52e18e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die linke Position.  <a href="#ad18410f41d0bf3cbbd53fb82cb52e18e"></a><br/></td></tr>
+<tr class="separator:ad18410f41d0bf3cbbd53fb82cb52e18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2360fe0c869f5dfccba9d39db2d1c953"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a2360fe0c869f5dfccba9d39db2d1c953">operator!=</a> (const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;other) const </td></tr>
+<tr class="memdesc:a2360fe0c869f5dfccba9d39db2d1c953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator != für zwei Rect-Objekte.  <a href="#a2360fe0c869f5dfccba9d39db2d1c953"></a><br/></td></tr>
+<tr class="separator:a2360fe0c869f5dfccba9d39db2d1c953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b91600a8b1a2205c822ad215cf99c58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a4b91600a8b1a2205c822ad215cf99c58">operator%</a> (const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;other) const </td></tr>
+<tr class="memdesc:a4b91600a8b1a2205c822ad215cf99c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überschriebener Operator % (Modulo). Liefert die Schnittmenge zweier Rechtecke als Rect-Objekt.  <a href="#a4b91600a8b1a2205c822ad215cf99c58"></a><br/></td></tr>
+<tr class="separator:a4b91600a8b1a2205c822ad215cf99c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb57d2a1747072e4bb7e267ce8de6f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a2eb57d2a1747072e4bb7e267ce8de6f2">operator==</a> (const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;other) const </td></tr>
+<tr class="memdesc:a2eb57d2a1747072e4bb7e267ce8de6f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator == für zwei Rect-Objekte.  <a href="#a2eb57d2a1747072e4bb7e267ce8de6f2"></a><br/></td></tr>
+<tr class="separator:a2eb57d2a1747072e4bb7e267ce8de6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722544343345b9e9025f3f5077fc3cf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a722544343345b9e9025f3f5077fc3cf5">Right</a> (T val)</td></tr>
+<tr class="memdesc:a722544343345b9e9025f3f5077fc3cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die rechte Position fest (verändert die Breite).  <a href="#a722544343345b9e9025f3f5077fc3cf5"></a><br/></td></tr>
+<tr class="separator:a722544343345b9e9025f3f5077fc3cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f28db31c2bffae5d1ab37d39143db58"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a8f28db31c2bffae5d1ab37d39143db58">Right</a> () const </td></tr>
+<tr class="memdesc:a8f28db31c2bffae5d1ab37d39143db58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die rechte Position.  <a href="#a8f28db31c2bffae5d1ab37d39143db58"></a><br/></td></tr>
+<tr class="separator:a8f28db31c2bffae5d1ab37d39143db58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519c6ba8dd05211be96023654037f438"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a519c6ba8dd05211be96023654037f438">Set</a> (T leftVal, T topVal, T rightVal, T bottomVal)</td></tr>
+<tr class="memdesc:a519c6ba8dd05211be96023654037f438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt alle Positionen über Zahlenwerte fest.  <a href="#a519c6ba8dd05211be96023654037f438"></a><br/></td></tr>
+<tr class="separator:a519c6ba8dd05211be96023654037f438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe6b58fa56d6b008ef693b0ec85be61d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#abe6b58fa56d6b008ef693b0ec85be61d">Top</a> (T val)</td></tr>
+<tr class="memdesc:abe6b58fa56d6b008ef693b0ec85be61d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die obere Position fest (verändert die Höhe).  <a href="#abe6b58fa56d6b008ef693b0ec85be61d"></a><br/></td></tr>
+<tr class="separator:abe6b58fa56d6b008ef693b0ec85be61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c3933a30c968b47dcc847b9d2372791"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a1c3933a30c968b47dcc847b9d2372791">Top</a> () const </td></tr>
+<tr class="memdesc:a1c3933a30c968b47dcc847b9d2372791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die obere Position.  <a href="#a1c3933a30c968b47dcc847b9d2372791"></a><br/></td></tr>
+<tr class="separator:a1c3933a30c968b47dcc847b9d2372791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a3eda827ce4ad813fb085876a78756"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classge_1_1_rect.html">Rect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a82a3eda827ce4ad813fb085876a78756">Width</a> (T val)</td></tr>
+<tr class="memdesc:a82a3eda827ce4ad813fb085876a78756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt die Breite fest (verändert rechte Position).  <a href="#a82a3eda827ce4ad813fb085876a78756"></a><br/></td></tr>
+<tr class="separator:a82a3eda827ce4ad813fb085876a78756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bda5fe475ddbbda7d5bf873de044f57"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_rect.html#a0bda5fe475ddbbda7d5bf873de044f57">Width</a> () const </td></tr>
+<tr class="memdesc:a0bda5fe475ddbbda7d5bf873de044f57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Breite.  <a href="#a0bda5fe475ddbbda7d5bf873de044f57"></a><br/></td></tr>
+<tr class="separator:a0bda5fe475ddbbda7d5bf873de044f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br/>
+class ge::Rect&lt; T &gt;</h3>
+
+<p>Standard-Klasse für Rechtecke (Koordinaten). </p>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="aa6cff0f3abd3d27b92ee45b71b57e7db"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::<a class="el" href="classge_1_1_rect.html">Rect</a> </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>bottom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor. Initialisierung über Zahlenangaben. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8197e2ad91cc84c19b967973c9931707"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::<a class="el" href="classge_1_1_rect.html">Rect</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>topLeft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bottomRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor. Initialisierung über <a class="el" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">ge::Point</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6465d511eb457dc3b7839dc2387292fa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::<a class="el" href="classge_1_1_rect.html">Rect</a> </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>topLeft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bottomRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor. Initialisierung über SFML-Vektoren. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a1b69f75371a7b2766e1d2b30dd517dbd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::pair&lt;<a class="el" href="classge_1_1_point.html">Point</a>&lt;T&gt;, <a class="el" href="classge_1_1_point.html">Point</a>&lt;T&gt; &gt; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::AsPoints </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert ein entsprechendes Paar aus <a class="el" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">ge::Point</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="aec0b0f8ef7a73863e0c96ec8aeb7f7f5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::pair&lt;sf::Vector2&lt;T&gt;, sf::Vector2&lt;T&gt; &gt; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::AsSFMLVectors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert ein entsprechendes Paar aus SFML-Vektoren. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae040ff64d0d10c0f5bb9dfaaa988d853"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&amp; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Bottom </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die untere Position fest (verändert die Höhe). </p>
+
+</div>
+</div>
+<a class="anchor" id="af30863b3935ec5b4646b7f5bc0c935f5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Bottom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die untere Position. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa6563d84f8f0484f067bd7692d58c747"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Contains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stellt fest, ob ein angegebener Punkt vom aktuellen Rechteck beinhaltet wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac9426c99439e5b2dc10ad51ea5164c0c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Contains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rect</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stellt fest, ob ein angegebenes Rechteck vom aktuellen Rechteck beinhaltet wird. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac029ab0b4ffec7ec105b272e9996de3b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stellt fest, ob das Rechteck eine Breite und Höhe besitzt oder ob es gewissermaßen "leer" ist. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4f95bb9523960085025d578e2c687a0d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&amp; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::FromPoints </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>topLeft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bottomRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt alle Positionen über zwei Point-Objekte fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="a57e4aad49a712315a5e3d52d67b77baf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&amp; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::FromSFMLVectors </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>topLeft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bottomRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt alle Positionen über zwei SFML-Vektoren fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8e9698ca5fb51af1fcf650cdd770da15"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&amp; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Height </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Höhe fest (verändert untere Position). </p>
+
+</div>
+</div>
+<a class="anchor" id="ae3bdcc0247712602449327e72ba55fa0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Höhe. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac53e92f2c21b0f0f2a41da9c8bcbd35c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Intersects </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stellt fest, ob ein angegebenes Rechteck mit dem aktuellen Rechteck eine Schnittmenge bildet. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac7aece227d791c98482344bb8e02a648"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&amp; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Left </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die linke Position fest (verändert die Breite). </p>
+
+</div>
+</div>
+<a class="anchor" id="ad18410f41d0bf3cbbd53fb82cb52e18e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Left </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die linke Position. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2360fe0c869f5dfccba9d39db2d1c953"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator != für zwei Rect-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4b91600a8b1a2205c822ad215cf99c58"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&lt;T&gt; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::operator% </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Überschriebener Operator % (Modulo). Liefert die Schnittmenge zweier Rechtecke als Rect-Objekt. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2eb57d2a1747072e4bb7e267ce8de6f2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classge_1_1_rect.html">Rect</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operator == für zwei Rect-Objekte. </p>
+
+</div>
+</div>
+<a class="anchor" id="a722544343345b9e9025f3f5077fc3cf5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&amp; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Right </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die rechte Position fest (verändert die Breite). </p>
+
+</div>
+</div>
+<a class="anchor" id="a8f28db31c2bffae5d1ab37d39143db58"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Right </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die rechte Position. </p>
+
+</div>
+</div>
+<a class="anchor" id="a519c6ba8dd05211be96023654037f438"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&amp; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Set </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>leftVal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>topVal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>rightVal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>bottomVal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt alle Positionen über Zahlenwerte fest. </p>
+
+</div>
+</div>
+<a class="anchor" id="abe6b58fa56d6b008ef693b0ec85be61d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&amp; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Top </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die obere Position fest (verändert die Höhe). </p>
+
+</div>
+</div>
+<a class="anchor" id="a1c3933a30c968b47dcc847b9d2372791"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Top </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die obere Position. </p>
+
+</div>
+</div>
+<a class="anchor" id="a82a3eda827ce4ad813fb085876a78756"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classge_1_1_rect.html">Rect</a>&amp; <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Width </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Legt die Breite fest (verändert rechte Position). </p>
+
+</div>
+</div>
+<a class="anchor" id="a0bda5fe475ddbbda7d5bf873de044f57"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classge_1_1_rect.html">ge::Rect</a>&lt; T &gt;::Width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liefert die Breite. </p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+<li>E:/Projekte/GameEngine/GameEngine/<a class="el" href="_rect_8h_source.html">Rect.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.2
+</small></address>
+</body>
+</html>

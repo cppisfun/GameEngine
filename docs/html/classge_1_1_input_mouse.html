@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -106,7 +106,7 @@ Klassendiagramm für ge::InputMouse:</div>
  <div class="center">
   <img src="classge_1_1_input_mouse.png" usemap="#ge::InputMouse_map" alt=""/>
   <map id="ge::InputMouse_map" name="ge::InputMouse_map">
-<area href="classge_1_1_event_receiver.html" alt="ge::EventReceiver" shape="rect" coords="0,0,115,24"/>
+<area href="classge_1_1_event_listener.html" alt="ge::EventListener" shape="rect" coords="0,0,109,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -115,17 +115,13 @@ Klassendiagramm für ge::InputMouse:</div>
 <tr class="memitem:aa32457657600dbc4c230244ea27bcf89"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89">ButtonType</a> { <br/>
 &#160;&#160;<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a0bfd510269f689c6e01be219036f7eb0">Button_None</a> = -2, 
 <a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a911e559fae183db3b899d5e0b2a08a50">Button_Any</a> = -1, 
-<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89aba032799f1591215c0ee64d7c7da2d35">Button_Left</a> = 0, 
-<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a388a7738291d276a501576808e4ec1ce">Button_Right</a> = 1, 
+<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89aba032799f1591215c0ee64d7c7da2d35">Button_Left</a> = sf::Mouse::Left, 
+<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a388a7738291d276a501576808e4ec1ce">Button_Right</a> = sf::Mouse::Right, 
 <br/>
-&#160;&#160;<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a078b820c74029dd4c5bb8ea29d9bc8dd">Button_Middle</a> = 2, 
-<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89afe6420122c8281715cf52c79f4d11908">Button_Extra1</a> = 3, 
-<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89ae1655fb7949e356e2bab6a98711d1556">Button_Extra2</a> = 4, 
-<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a312a065a91c6a7d52ce13348c3fbb939">Button_Extra3</a> = 5, 
-<br/>
-&#160;&#160;<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a51b05c816a08eed3f5d3f0e900e3241b">Button_Extra4</a> = 6, 
-<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89ac0af40dd033e29ec6ec24281dbbb8a31">Button_Extra5</a> = 7, 
-<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89aa490ab2dfb94511177c792e23eca7e4c">Button_Count</a> = 8
+&#160;&#160;<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89a078b820c74029dd4c5bb8ea29d9bc8dd">Button_Middle</a> = sf::Mouse::Middle, 
+<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89afe6420122c8281715cf52c79f4d11908">Button_Extra1</a> = sf::Mouse::XButton1, 
+<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89ae1655fb7949e356e2bab6a98711d1556">Button_Extra2</a> = sf::Mouse::XButton2, 
+<a class="el" href="classge_1_1_input_mouse.html#aa32457657600dbc4c230244ea27bcf89aa490ab2dfb94511177c792e23eca7e4c">Button_Count</a> = sf::Mouse::ButtonCount
 <br/>
  }</td></tr>
 <tr class="separator:aa32457657600dbc4c230244ea27bcf89"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,9 +141,9 @@ Klassendiagramm für ge::InputMouse:</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:ad356c33b2d5c3ed2d1fbe7b7efb94f65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#ad356c33b2d5c3ed2d1fbe7b7efb94f65">InputMouse</a> (OIS::InputManager *inputManager)</td></tr>
-<tr class="memdesc:ad356c33b2d5c3ed2d1fbe7b7efb94f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Benötigt den Pointer zu einem validen Objekt vom Typ OIS::InputManager (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben).  <a href="#ad356c33b2d5c3ed2d1fbe7b7efb94f65"></a><br/></td></tr>
-<tr class="separator:ad356c33b2d5c3ed2d1fbe7b7efb94f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbcecddbe6e5612bd1e61f84fdeab017"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#afbcecddbe6e5612bd1e61f84fdeab017">InputMouse</a> (<a class="el" href="classge_1_1_event_controller.html">EventController</a> *eventCtrl)</td></tr>
+<tr class="memdesc:afbcecddbe6e5612bd1e61f84fdeab017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Benötigt den Pointer zu einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Klasse zur zentralen Event-Erfassung und deren Weiterleitung an die zuständigen EventListener-Objekte...">ge::EventController</a> (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben).  <a href="#afbcecddbe6e5612bd1e61f84fdeab017"></a><br/></td></tr>
+<tr class="separator:afbcecddbe6e5612bd1e61f84fdeab017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd3ae3e0bc5bc1dcd66eb7d75a71b134"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#acd3ae3e0bc5bc1dcd66eb7d75a71b134">~InputMouse</a> ()</td></tr>
 <tr class="memdesc:acd3ae3e0bc5bc1dcd66eb7d75a71b134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor.  <a href="#acd3ae3e0bc5bc1dcd66eb7d75a71b134"></a><br/></td></tr>
 <tr class="separator:acd3ae3e0bc5bc1dcd66eb7d75a71b134"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,9 +168,9 @@ Klassendiagramm für ge::InputMouse:</div>
 <tr class="memitem:aa8fe75d7a5fd375c5331d93a1b5dfb5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#aa8fe75d7a5fd375c5331d93a1b5dfb5d">Moved</a> (int direction=<a class="el" href="classge_1_1_input_mouse.html#a1911c800122a283e431f11627eb2c265a3f5a5544261dfbd5af35fdf707da61e3">Direction_Any</a>)</td></tr>
 <tr class="memdesc:aa8fe75d7a5fd375c5331d93a1b5dfb5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt, ob die Maus seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a2cc4d5bedca36fd0da79e99242c7cf10" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf bewegt wurde (und ggf. in welche Richtung).  <a href="#aa8fe75d7a5fd375c5331d93a1b5dfb5d"></a><br/></td></tr>
 <tr class="separator:aa8fe75d7a5fd375c5331d93a1b5dfb5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bc38efcff31a17d68166c51bb259803"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classge_1_1_point.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a8bc38efcff31a17d68166c51bb259803">Position</a> () const </td></tr>
-<tr class="memdesc:a8bc38efcff31a17d68166c51bb259803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Mausposition als <a class="el" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">ge::Point</a>.  <a href="#a8bc38efcff31a17d68166c51bb259803"></a><br/></td></tr>
-<tr class="separator:a8bc38efcff31a17d68166c51bb259803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac262874be79b4f7242ff0f3f80980ef9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classge_1_1_point.html">Point</a>&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#ac262874be79b4f7242ff0f3f80980ef9">Position</a> () const </td></tr>
+<tr class="memdesc:ac262874be79b4f7242ff0f3f80980ef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Mausposition als <a class="el" href="classge_1_1_point.html" title="Standard-Klasse für Punkte (Koordinaten).">ge::Point</a>.  <a href="#ac262874be79b4f7242ff0f3f80980ef9"></a><br/></td></tr>
+<tr class="separator:ac262874be79b4f7242ff0f3f80980ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cc4d5bedca36fd0da79e99242c7cf10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a2cc4d5bedca36fd0da79e99242c7cf10">Update</a> () override</td></tr>
 <tr class="memdesc:a2cc4d5bedca36fd0da79e99242c7cf10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchlauf aufgerufen werden, damit die Eingaben korrekt verarbeitet werden können.  <a href="#a2cc4d5bedca36fd0da79e99242c7cf10"></a><br/></td></tr>
 <tr class="separator:a2cc4d5bedca36fd0da79e99242c7cf10"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,19 +186,19 @@ Klassendiagramm für ge::InputMouse:</div>
 <tr class="memitem:a3ce4962f007f9724c2624f1a86efe3e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_input_mouse.html#a3ce4962f007f9724c2624f1a86efe3e2">Y</a> () const </td></tr>
 <tr class="memdesc:a3ce4962f007f9724c2624f1a86efe3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liefert die Y-Position.  <a href="#a3ce4962f007f9724c2624f1a86efe3e2"></a><br/></td></tr>
 <tr class="separator:a3ce4962f007f9724c2624f1a86efe3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classge_1_1_event_receiver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classge_1_1_event_receiver')"><img src="closed.png" alt="-"/>&#160;Öffentliche Methoden geerbt von <a class="el" href="classge_1_1_event_receiver.html">ge::EventReceiver</a></td></tr>
-<tr class="memitem:a67765e3a8e9525a9e3c6f9aa1d67ac33 inherit pub_methods_classge_1_1_event_receiver"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_receiver.html#a67765e3a8e9525a9e3c6f9aa1d67ac33">EventReceiver</a> ()</td></tr>
-<tr class="memdesc:a67765e3a8e9525a9e3c6f9aa1d67ac33 inherit pub_methods_classge_1_1_event_receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Das Verarbeiten von Events ist nach Anlegen eines Objektes automatisch aktiviert. Dieser Status kann mit <a class="el" href="classge_1_1_event_receiver.html#ac37443daeb887dc9b08612d0bbfd7f2f" title="Aktiviert bzw. Deaktiviert das Verarbeiten von Events.">Enable()</a> bzw. <a class="el" href="classge_1_1_event_receiver.html#aa1caab296b14cde913f9b27716714abd" title="Deaktiviert das Verarbeiten von Events.">Disable()</a> jederzeit geändert werden.  <a href="#a67765e3a8e9525a9e3c6f9aa1d67ac33"></a><br/></td></tr>
-<tr class="separator:a67765e3a8e9525a9e3c6f9aa1d67ac33 inherit pub_methods_classge_1_1_event_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1caab296b14cde913f9b27716714abd inherit pub_methods_classge_1_1_event_receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_receiver.html#aa1caab296b14cde913f9b27716714abd">Disable</a> ()</td></tr>
-<tr class="memdesc:aa1caab296b14cde913f9b27716714abd inherit pub_methods_classge_1_1_event_receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deaktiviert das Verarbeiten von Events.  <a href="#aa1caab296b14cde913f9b27716714abd"></a><br/></td></tr>
-<tr class="separator:aa1caab296b14cde913f9b27716714abd inherit pub_methods_classge_1_1_event_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac37443daeb887dc9b08612d0bbfd7f2f inherit pub_methods_classge_1_1_event_receiver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_receiver.html#ac37443daeb887dc9b08612d0bbfd7f2f">Enable</a> (bool enable=true)</td></tr>
-<tr class="memdesc:ac37443daeb887dc9b08612d0bbfd7f2f inherit pub_methods_classge_1_1_event_receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktiviert bzw. Deaktiviert das Verarbeiten von Events.  <a href="#ac37443daeb887dc9b08612d0bbfd7f2f"></a><br/></td></tr>
-<tr class="separator:ac37443daeb887dc9b08612d0bbfd7f2f inherit pub_methods_classge_1_1_event_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a469444e249ac80591e0e8a5cfa5c7031 inherit pub_methods_classge_1_1_event_receiver"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_receiver.html#a469444e249ac80591e0e8a5cfa5c7031">Enabled</a> ()</td></tr>
-<tr class="memdesc:a469444e249ac80591e0e8a5cfa5c7031 inherit pub_methods_classge_1_1_event_receiver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt an, ob aktuell eingehende Events verarbeitet werden.  <a href="#a469444e249ac80591e0e8a5cfa5c7031"></a><br/></td></tr>
-<tr class="separator:a469444e249ac80591e0e8a5cfa5c7031 inherit pub_methods_classge_1_1_event_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classge_1_1_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classge_1_1_event_listener')"><img src="closed.png" alt="-"/>&#160;Öffentliche Methoden geerbt von <a class="el" href="classge_1_1_event_listener.html">ge::EventListener</a></td></tr>
+<tr class="memitem:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a95a24db2a870ab70445ecf066ccff4f3">EventListener</a> ()</td></tr>
+<tr class="memdesc:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Das Verarbeiten von Events ist nach Anlegen eines Objektes automatisch aktiviert. Dieser Status kann mit <a class="el" href="classge_1_1_event_listener.html#ad2a4ab4c8ad6ac81962f868e4df53ad2" title="Aktiviert bzw. Deaktiviert das Verarbeiten von Events.">Enable()</a> bzw. <a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9" title="Deaktiviert das Verarbeiten von Events.">Disable()</a> jederzeit geändert werden.  <a href="#a95a24db2a870ab70445ecf066ccff4f3"></a><br/></td></tr>
+<tr class="separator:a95a24db2a870ab70445ecf066ccff4f3 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a359aca2f49af6e6777613bbfaee0eae9">Disable</a> ()</td></tr>
+<tr class="memdesc:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deaktiviert das Verarbeiten von Events.  <a href="#a359aca2f49af6e6777613bbfaee0eae9"></a><br/></td></tr>
+<tr class="separator:a359aca2f49af6e6777613bbfaee0eae9 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a4ab4c8ad6ac81962f868e4df53ad2 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#ad2a4ab4c8ad6ac81962f868e4df53ad2">Enable</a> (bool enable=true)</td></tr>
+<tr class="memdesc:ad2a4ab4c8ad6ac81962f868e4df53ad2 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktiviert bzw. Deaktiviert das Verarbeiten von Events.  <a href="#ad2a4ab4c8ad6ac81962f868e4df53ad2"></a><br/></td></tr>
+<tr class="separator:ad2a4ab4c8ad6ac81962f868e4df53ad2 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_listener.html#a766274fe6b1f0b1691325753d7d587d8">Enabled</a> () const </td></tr>
+<tr class="memdesc:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt an, ob aktuell eingehende Events verarbeitet werden.  <a href="#a766274fe6b1f0b1691325753d7d587d8"></a><br/></td></tr>
+<tr class="separator:a766274fe6b1f0b1691325753d7d587d8 inherit pub_methods_classge_1_1_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Input-Klasse für Maus-Steuerung. Wird über <a class="el" href="classge_1_1_input_core.html#a330d9750639bc37ea72ac2df4c592f61" title="Liefert den Pointer zur Komponente für Maus-Eingaben.">InputCore::Mouse()</a> geliefert. </p>
@@ -230,12 +226,6 @@ Klassendiagramm für ge::InputMouse:</div>
 <tr><td valign="top"><em><a class="anchor" id="aa32457657600dbc4c230244ea27bcf89afe6420122c8281715cf52c79f4d11908"></a>Button_Extra1</em>&nbsp;</td><td>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="aa32457657600dbc4c230244ea27bcf89ae1655fb7949e356e2bab6a98711d1556"></a>Button_Extra2</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="aa32457657600dbc4c230244ea27bcf89a312a065a91c6a7d52ce13348c3fbb939"></a>Button_Extra3</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="aa32457657600dbc4c230244ea27bcf89a51b05c816a08eed3f5d3f0e900e3241b"></a>Button_Extra4</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="aa32457657600dbc4c230244ea27bcf89ac0af40dd033e29ec6ec24281dbbb8a31"></a>Button_Extra5</em>&nbsp;</td><td>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="aa32457657600dbc4c230244ea27bcf89aa490ab2dfb94511177c792e23eca7e4c"></a>Button_Count</em>&nbsp;</td><td>
 </td></tr>
@@ -278,21 +268,21 @@ Klassendiagramm für ge::InputMouse:</div>
 </div>
 </div>
 <h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
-<a class="anchor" id="ad356c33b2d5c3ed2d1fbe7b7efb94f65"></a>
+<a class="anchor" id="afbcecddbe6e5612bd1e61f84fdeab017"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">ge::InputMouse::InputMouse </td>
           <td>(</td>
-          <td class="paramtype">OIS::InputManager *&#160;</td>
-          <td class="paramname"><em>inputManager</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classge_1_1_event_controller.html">EventController</a> *&#160;</td>
+          <td class="paramname"><em>eventCtrl</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Konstruktor. Benötigt den Pointer zu einem validen Objekt vom Typ OIS::InputManager (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben). </p>
+<p>Konstruktor. Benötigt den Pointer zu einem validen Objekt vom Typ <a class="el" href="classge_1_1_event_controller.html" title="Klasse zur zentralen Event-Erfassung und deren Weiterleitung an die zuständigen EventListener-Objekte...">ge::EventController</a> (wird automatisch bei der Initialisierung über <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> übergeben). </p>
 
 </div>
 </div>
@@ -340,7 +330,7 @@ Klassendiagramm für ge::InputMouse:</div>
 <p>Im Gegensatz zu <a class="el" href="classge_1_1_input_mouse.html#a71c34019fad1fb5a4649d1ee684fb50f" title="Ermittelt, ob gerade ein Button gedrückt wurde.">ButtonPressed()</a> ist dieser Status immer <em>true</em>, solange der Button gehalten wird. </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">btn</td><td>None = keiner, Any = beliebig; Nummer 0 - 7 (Standard: Any) </td></tr>
+    <tr><td class="paramname">btn</td><td>Button_None = keiner, Button_Any = beliebig; Nummer 0 - 4 (Standard: Button_Any) </td></tr>
   </table>
   </dd>
 </dl>
@@ -365,7 +355,7 @@ Klassendiagramm für ge::InputMouse:</div>
 <p>Im Gegensatz zu <a class="el" href="classge_1_1_input_mouse.html#a71cd00c109da0636c6e9f8e328c539eb" title="Ermittelt, ob ein Button gehalten wird.">Button()</a> ist dieser Status nur im Moment des Herunterdrückens <em>true</em>, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a2cc4d5bedca36fd0da79e99242c7cf10" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>. </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">btn</td><td>None = keiner, Any = beliebig; Nummer 0 - 7 (Standard: Any) </td></tr>
+    <tr><td class="paramname">btn</td><td>Button_None = keiner, Button_Any = beliebig; Nummer 0 - 4 (Standard: Button_Any) </td></tr>
   </table>
   </dd>
 </dl>
@@ -390,7 +380,7 @@ Klassendiagramm für ge::InputMouse:</div>
 <p>Dieser Status ist nur im Moment des Loslassens <em>true</em>, nach dem nächsten Aufruf von <a class="el" href="classge_1_1_input_mouse.html#a2cc4d5bedca36fd0da79e99242c7cf10" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a> allerdings wieder <em>false</em>. </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">btn</td><td>None = keiner, Any = beliebig; Nummer 0 - 7 (Standard: Any) </td></tr>
+    <tr><td class="paramname">btn</td><td>Button_None = keiner, Button_Any = beliebig; Nummer 0 - 4 (Standard: Button_Any) </td></tr>
   </table>
   </dd>
 </dl>
@@ -489,14 +479,14 @@ Klassendiagramm für ge::InputMouse:</div>
 <p>Ermittelt, ob die Maus seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a2cc4d5bedca36fd0da79e99242c7cf10" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf bewegt wurde (und ggf. in welche Richtung). </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">direction</td><td>NoDirection = keine, AnyDirection = beliebig, Left, Right, Up, Down, Horizontal, Vertical (Standard: AnyDirection) </td></tr>
+    <tr><td class="paramname">direction</td><td>Direction_None = keine, Direction_Any = beliebig, Direction_Left, Direction_Right, Direction_Up, Direction_Down, Direction_Horizontal, Direction_Vertical (Standard: Direction_Any) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a8bc38efcff31a17d68166c51bb259803"></a>
+<a class="anchor" id="ac262874be79b4f7242ff0f3f80980ef9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -504,7 +494,7 @@ Klassendiagramm für ge::InputMouse:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classge_1_1_point.html">Point</a>&amp; ge::InputMouse::Position </td>
+          <td class="memname">const <a class="el" href="classge_1_1_point.html">Point</a>&lt;int&gt;&amp; ge::InputMouse::Position </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -544,7 +534,7 @@ Klassendiagramm für ge::InputMouse:</div>
 
 <p>Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchlauf aufgerufen werden, damit die Eingaben korrekt verarbeitet werden können. </p>
 
-<p>Implementiert <a class="el" href="classge_1_1_event_receiver.html">ge::EventReceiver</a>.</p>
+<p>Implementiert <a class="el" href="classge_1_1_event_listener.html">ge::EventListener</a>.</p>
 
 </div>
 </div>
@@ -590,7 +580,7 @@ Klassendiagramm für ge::InputMouse:</div>
 <p>Ermittelt, ob das Mausrad seit dem letzten <a class="el" href="classge_1_1_input_mouse.html#a2cc4d5bedca36fd0da79e99242c7cf10" title="Aktualisiert den Eingabestatus und stellt Abweichungen vom vorigen Status fest. Muss bei jedem Durchl...">Update()</a>-Aufruf bewegt wurde (und ggf. in welche Richtung). </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">direction</td><td>NoDirection = keine, AnyDirection = beliebig, Up = nach oben / vom Benutzer weg, Down = nach unten / zum Benutzer hin (Standard: AnyDirection) </td></tr>
+    <tr><td class="paramname">direction</td><td>Direction_None = keine, Direction_Any = beliebig, Direction_Up = nach oben / vom Benutzer weg, Direction_Down = nach unten / zum Benutzer hin (Standard: Direction_Any) </td></tr>
   </table>
   </dd>
 </dl>
@@ -654,7 +644,7 @@ Klassendiagramm für ge::InputMouse:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

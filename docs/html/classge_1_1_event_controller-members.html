@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -94,22 +94,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 
 <p>Vollständige Aufstellung aller Elemente für <a class="el" href="classge_1_1_event_controller.html">ge::EventController</a> einschließlich aller geerbten Elemente.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a7ba36ee564c6a5790a1688846d6d4bf2">CustomCallback</a>(const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#aaee2b7a020c6059747d074af826db666">Event</a>(const sf::Event &amp;event)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#af935ca14a2b4edc4199b22de05b7c454">EventController</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#adbf116754f9156cdbf5f7cc8b0203a79">GamepadCallback</a>(const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a137475cb01b06d01f0b90b9e7ede95e3">GUICallback</a>(const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a4d1dff401cda229293242a9f0e3488b8">KeyboardCallback</a>(const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a97b71a7e54b1477f4b6c6ef2bf31d343">MouseCallback</a>(const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a13e075bc65670a90654001023a0346b5">ResetCustomCallback</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a961af3fa09c57a448d5644b0d9d24e6c">ResetGamepadCallback</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a4d6a8fab6f232d3a94286905448a4ebc">ResetGUICallback</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a8d8e7f1749ac2ff31f8ab453fd372818">ResetKeyboardCallback</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#aa0de2ea30dbf43c9b19be62a272cf875">ResetMouseCallback</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a61122e909e05f6c24dd19cddecf560e3">~EventController</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#ac8780f084fad2005907ce38190944b73">GamepadCallback</a>(const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;callback)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#ad102c56b563e10b01686b7dfcaba2c4e">KeyboardCallback</a>(const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;callback)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a13f4582c3a6d0332ea51f6c9dc965219">MouseCallback</a>(const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;callback)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a144bad58963b76e449a1fb8103d335db">RemoveGamepadCallback</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#ae32acfa57e2a15c2149bf9b8f40fb738">RemoveKeyboardCallback</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#af7b3e5f98eeac82f8009ebd3b37cea3c">RemoveMouseCallback</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#ad5b3de32eff5df1d90aba92785b5d706">RemoveWindowCallback</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classge_1_1_event_controller.html#abe841815219876df975b505436f6618c">WindowCallback</a>(const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;callback)</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classge_1_1_event_controller.html#a61122e909e05f6c24dd19cddecf560e3">~EventController</a>()</td><td class="entry"><a class="el" href="classge_1_1_event_controller.html">ge::EventController</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

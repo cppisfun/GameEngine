@@ -2,8 +2,8 @@ var searchData=
 [
   ['clear',['Clear',['../classbase_1_1_scope_guard.html#a687d9807828584979fb80f2b07f29a31',1,'base::ScopeGuard']]],
   ['clearcolor',['ClearColor',['../classge_1_1_graphics_core.html#a5da2490bde096b179347f23b91ff6fe1',1,'ge::GraphicsCore::ClearColor(const Color &amp;color)'],['../classge_1_1_graphics_core.html#ac76b13a585b7a73b01a2268f2ce11848',1,'ge::GraphicsCore::ClearColor() const ']]],
-  ['clearsystemmessages',['ClearSystemMessages',['../classge_1_1_core.html#a98062e4dd0e8f804dfa80484e524f70f',1,'ge::Core']]],
-  ['color',['Color',['../classge_1_1_color.html#a7c3ab3dfc4fef85542b494321a476aa3',1,'ge::Color::Color(int red, int green, int blue, int alpha=255)'],['../classge_1_1_color.html#a4c1ce62f7d1070b668b62d1e93dc4d05',1,'ge::Color::Color(const irr::video::SColor &amp;color)']]],
+  ['color',['Color',['../classge_1_1_color.html#a7c3ab3dfc4fef85542b494321a476aa3',1,'ge::Color::Color(int red, int green, int blue, int alpha=255)'],['../classge_1_1_color.html#a0aca3a6f07a7a37bb1930d96bc845153',1,'ge::Color::Color(const sf::Color &amp;color)']]],
+  ['contains',['Contains',['../classge_1_1_rect.html#aa6563d84f8f0484f067bd7692d58c747',1,'ge::Rect::Contains(const Point&lt; T &gt; &amp;point) const '],['../classge_1_1_rect.html#ac9426c99439e5b2dc10ad51ea5164c0c',1,'ge::Rect::Contains(const Rect&lt; T &gt; &amp;rect) const ']]],
   ['copy',['Copy',['../namespaceerror.html#ab222081b850159cd2432b68a181fd3a7',1,'error']]],
   ['copyfile',['CopyFile',['../namespacebase.html#ac13972160f2c53727a57df4c269166de',1,'base']]],
   ['create',['Create',['../namespaceerror.html#a974c3de109e454e6f2a131033fa5e57a',1,'error']]],

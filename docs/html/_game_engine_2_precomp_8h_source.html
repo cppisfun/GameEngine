@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -109,25 +109,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;Windows.h&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// Secure handling for DirectX memory-related matters</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// Type definitions for general use</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a428d9870c5e95ce337b8d167189dfe59">   23</a></span>&#160;<span class="preprocessor">#define SecureDelete(x)  { if (x != nullptr) delete x; x = nullptr; }</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a0fd02d91164ae1e1c4573292a719c235">   24</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SecureRelease(x) { if (x != nullptr) x-&gt;Release(); x = nullptr; }</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a42578c926f2d6148b842b6b5feeec0f9">   26</a></span>&#160;<span class="preprocessor">#define ShowError(x) { MessageBox(nullptr, x, &quot;Error&quot;, MB_OK | MB_ICONERROR); }</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span><span class="preprocessor">   #define ShowWarning(x) { MessageBox(nullptr, x, &quot;Warning&quot;, MB_OK | MB_ICONWARNING); }</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span><span class="preprocessor">   #define ShowInfo(x)    { MessageBox(nullptr, x, &quot;Information&quot;, MB_OK); }</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a8ac9e322271cf43bae3274ee5ea2dedc">   32</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">   #define ShowWarning(x)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a2d1cd3feb5626eb3a8795a514c4f976c">   33</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">   #define ShowInfo(x)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a1e63762fee40128116e0ac87ba6b8089">   23</a></span>&#160;<span class="keyword">typedef</span> std::vector&lt;char&gt; <a class="code" href="_base_2_precomp_8h.html#a1e63762fee40128116e0ac87ba6b8089">Binary</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Message boxes</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a42578c926f2d6148b842b6b5feeec0f9">   28</a></span>&#160;<span class="preprocessor">#define ShowError(x) { MessageBox(nullptr, x, &quot;Error&quot;, MB_OK | MB_ICONERROR); }</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">   #define ShowWarning(x) { MessageBox(nullptr, x, &quot;Warning&quot;, MB_OK | MB_ICONWARNING); }</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span><span class="preprocessor">   #define ShowInfo(x)    { MessageBox(nullptr, x, &quot;Information&quot;, MB_OK); }</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a8ac9e322271cf43bae3274ee5ea2dedc">   34</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">   #define ShowWarning(x)</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a2d1cd3feb5626eb3a8795a514c4f976c">   35</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">   #define ShowInfo(x)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// Secure handling for DirectX memory-related matters (deprecation awaits you)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a428d9870c5e95ce337b8d167189dfe59">   41</a></span>&#160;<span class="preprocessor">#define SecureDelete(x)  { if (x != nullptr) delete x; x = nullptr; }</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="_game_engine_2_precomp_8h.html#a0fd02d91164ae1e1c4573292a719c235">   42</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SecureRelease(x) { if (x != nullptr) x-&gt;Release(); x = nullptr; }</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Nov 25 2012 13:32:52 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

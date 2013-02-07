@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameEngine
-   &#160;<span id="projectnumber">0.0.1 (experimental state)</span>
+   &#160;<span id="projectnumber">0.0.5 (experimental state)</span>
    </div>
    <div id="projectbrief">Another fun project. Nothing more to it.</div>
   </td>
@@ -95,19 +95,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </div><!--header-->
 <div class="contents">
 
-<p>Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventListener-Objekte.  
+<p>Klasse zur zentralen Event-Erfassung und deren Weiterleitung an die zuständigen EventListener-Objekte.  
  <a href="classge_1_1_event_controller.html#details">Mehr ...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_event_controller_8h_source.html">EventController.h</a>&gt;</code></p>
-<div class="dynheader">
-Klassendiagramm für ge::EventController:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classge_1_1_event_controller.png" usemap="#ge::EventController_map" alt=""/>
-  <map id="ge::EventController_map" name="ge::EventController_map">
-<area href="classirr_1_1_i_event_receiver.html" alt="IEventReceiver" shape="rect" coords="0,0,120,24"/>
-</map>
- </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
@@ -117,42 +108,38 @@ Klassendiagramm für ge::EventController:</div>
 <tr class="memitem:a61122e909e05f6c24dd19cddecf560e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a61122e909e05f6c24dd19cddecf560e3">~EventController</a> ()</td></tr>
 <tr class="memdesc:a61122e909e05f6c24dd19cddecf560e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor.  <a href="#a61122e909e05f6c24dd19cddecf560e3"></a><br/></td></tr>
 <tr class="separator:a61122e909e05f6c24dd19cddecf560e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ba36ee564c6a5790a1688846d6d4bf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a7ba36ee564c6a5790a1688846d6d4bf2">CustomCallback</a> (const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td></tr>
-<tr class="memdesc:a7ba36ee564c6a5790a1688846d6d4bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Listener für benutzerdefinierte Events fest.  <a href="#a7ba36ee564c6a5790a1688846d6d4bf2"></a><br/></td></tr>
-<tr class="separator:a7ba36ee564c6a5790a1688846d6d4bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbf116754f9156cdbf5f7cc8b0203a79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#adbf116754f9156cdbf5f7cc8b0203a79">GamepadCallback</a> (const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td></tr>
-<tr class="memdesc:adbf116754f9156cdbf5f7cc8b0203a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Listener für Gamepad-Events fest.  <a href="#adbf116754f9156cdbf5f7cc8b0203a79"></a><br/></td></tr>
-<tr class="separator:adbf116754f9156cdbf5f7cc8b0203a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a137475cb01b06d01f0b90b9e7ede95e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a137475cb01b06d01f0b90b9e7ede95e3">GUICallback</a> (const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td></tr>
-<tr class="memdesc:a137475cb01b06d01f0b90b9e7ede95e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Listener für GUI-Events fest.  <a href="#a137475cb01b06d01f0b90b9e7ede95e3"></a><br/></td></tr>
-<tr class="separator:a137475cb01b06d01f0b90b9e7ede95e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d1dff401cda229293242a9f0e3488b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a4d1dff401cda229293242a9f0e3488b8">KeyboardCallback</a> (const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td></tr>
-<tr class="memdesc:a4d1dff401cda229293242a9f0e3488b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Listener für Tastatur-Events fest.  <a href="#a4d1dff401cda229293242a9f0e3488b8"></a><br/></td></tr>
-<tr class="separator:a4d1dff401cda229293242a9f0e3488b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97b71a7e54b1477f4b6c6ef2bf31d343"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a97b71a7e54b1477f4b6c6ef2bf31d343">MouseCallback</a> (const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;callback)</td></tr>
-<tr class="memdesc:a97b71a7e54b1477f4b6c6ef2bf31d343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Listener für Maus-Events fest.  <a href="#a97b71a7e54b1477f4b6c6ef2bf31d343"></a><br/></td></tr>
-<tr class="separator:a97b71a7e54b1477f4b6c6ef2bf31d343"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13e075bc65670a90654001023a0346b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a13e075bc65670a90654001023a0346b5">ResetCustomCallback</a> ()</td></tr>
-<tr class="memdesc:a13e075bc65670a90654001023a0346b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt die Verbindung zum Listener für benutzerdefinierte Events.  <a href="#a13e075bc65670a90654001023a0346b5"></a><br/></td></tr>
-<tr class="separator:a13e075bc65670a90654001023a0346b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a961af3fa09c57a448d5644b0d9d24e6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a961af3fa09c57a448d5644b0d9d24e6c">ResetGamepadCallback</a> ()</td></tr>
-<tr class="memdesc:a961af3fa09c57a448d5644b0d9d24e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt die Verbindung zum Listener für Gamepad-Events.  <a href="#a961af3fa09c57a448d5644b0d9d24e6c"></a><br/></td></tr>
-<tr class="separator:a961af3fa09c57a448d5644b0d9d24e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d6a8fab6f232d3a94286905448a4ebc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a4d6a8fab6f232d3a94286905448a4ebc">ResetGUICallback</a> ()</td></tr>
-<tr class="memdesc:a4d6a8fab6f232d3a94286905448a4ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt die Verbindung zum Listener für GUI-Events.  <a href="#a4d6a8fab6f232d3a94286905448a4ebc"></a><br/></td></tr>
-<tr class="separator:a4d6a8fab6f232d3a94286905448a4ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d8e7f1749ac2ff31f8ab453fd372818"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a8d8e7f1749ac2ff31f8ab453fd372818">ResetKeyboardCallback</a> ()</td></tr>
-<tr class="memdesc:a8d8e7f1749ac2ff31f8ab453fd372818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt die Verbindung zum Listener für Tastatur-Events.  <a href="#a8d8e7f1749ac2ff31f8ab453fd372818"></a><br/></td></tr>
-<tr class="separator:a8d8e7f1749ac2ff31f8ab453fd372818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0de2ea30dbf43c9b19be62a272cf875"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#aa0de2ea30dbf43c9b19be62a272cf875">ResetMouseCallback</a> ()</td></tr>
-<tr class="memdesc:aa0de2ea30dbf43c9b19be62a272cf875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt die Verbindung zum Listener für Maus-Events.  <a href="#aa0de2ea30dbf43c9b19be62a272cf875"></a><br/></td></tr>
-<tr class="separator:aa0de2ea30dbf43c9b19be62a272cf875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaee2b7a020c6059747d074af826db666"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#aaee2b7a020c6059747d074af826db666">Event</a> (const sf::Event &amp;event)</td></tr>
+<tr class="memdesc:aaee2b7a020c6059747d074af826db666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leitet einen Event an den entsprechenden Listener weiter.  <a href="#aaee2b7a020c6059747d074af826db666"></a><br/></td></tr>
+<tr class="separator:aaee2b7a020c6059747d074af826db666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8780f084fad2005907ce38190944b73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#ac8780f084fad2005907ce38190944b73">GamepadCallback</a> (const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;callback)</td></tr>
+<tr class="memdesc:ac8780f084fad2005907ce38190944b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Listener für Gamepad-Events fest.  <a href="#ac8780f084fad2005907ce38190944b73"></a><br/></td></tr>
+<tr class="separator:ac8780f084fad2005907ce38190944b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad102c56b563e10b01686b7dfcaba2c4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#ad102c56b563e10b01686b7dfcaba2c4e">KeyboardCallback</a> (const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;callback)</td></tr>
+<tr class="memdesc:ad102c56b563e10b01686b7dfcaba2c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Listener für Tastatur-Events fest.  <a href="#ad102c56b563e10b01686b7dfcaba2c4e"></a><br/></td></tr>
+<tr class="separator:ad102c56b563e10b01686b7dfcaba2c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f4582c3a6d0332ea51f6c9dc965219"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a13f4582c3a6d0332ea51f6c9dc965219">MouseCallback</a> (const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;callback)</td></tr>
+<tr class="memdesc:a13f4582c3a6d0332ea51f6c9dc965219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Listener für Maus-Events fest.  <a href="#a13f4582c3a6d0332ea51f6c9dc965219"></a><br/></td></tr>
+<tr class="separator:a13f4582c3a6d0332ea51f6c9dc965219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144bad58963b76e449a1fb8103d335db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#a144bad58963b76e449a1fb8103d335db">RemoveGamepadCallback</a> ()</td></tr>
+<tr class="memdesc:a144bad58963b76e449a1fb8103d335db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt den Listener für Gamepad-Events.  <a href="#a144bad58963b76e449a1fb8103d335db"></a><br/></td></tr>
+<tr class="separator:a144bad58963b76e449a1fb8103d335db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae32acfa57e2a15c2149bf9b8f40fb738"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#ae32acfa57e2a15c2149bf9b8f40fb738">RemoveKeyboardCallback</a> ()</td></tr>
+<tr class="memdesc:ae32acfa57e2a15c2149bf9b8f40fb738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt den Listener für Tastatur-Events.  <a href="#ae32acfa57e2a15c2149bf9b8f40fb738"></a><br/></td></tr>
+<tr class="separator:ae32acfa57e2a15c2149bf9b8f40fb738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7b3e5f98eeac82f8009ebd3b37cea3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#af7b3e5f98eeac82f8009ebd3b37cea3c">RemoveMouseCallback</a> ()</td></tr>
+<tr class="memdesc:af7b3e5f98eeac82f8009ebd3b37cea3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt den Listener für Maus-Events.  <a href="#af7b3e5f98eeac82f8009ebd3b37cea3c"></a><br/></td></tr>
+<tr class="separator:af7b3e5f98eeac82f8009ebd3b37cea3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b3de32eff5df1d90aba92785b5d706"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#ad5b3de32eff5df1d90aba92785b5d706">RemoveWindowCallback</a> ()</td></tr>
+<tr class="memdesc:ad5b3de32eff5df1d90aba92785b5d706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entfernt den Listener für die Events des Hauptfensters.  <a href="#ad5b3de32eff5df1d90aba92785b5d706"></a><br/></td></tr>
+<tr class="separator:ad5b3de32eff5df1d90aba92785b5d706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe841815219876df975b505436f6618c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classge_1_1_event_controller.html#abe841815219876df975b505436f6618c">WindowCallback</a> (const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;callback)</td></tr>
+<tr class="memdesc:abe841815219876df975b505436f6618c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legt den Listener für die Events des Hauptfensters fest.  <a href="#abe841815219876df975b505436f6618c"></a><br/></td></tr>
+<tr class="separator:abe841815219876df975b505436f6618c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
-<div class="textblock"><p>Event-Basisklasse zur zentralen Event-Erfassung und deren Weiterleitung an die entsprehcenden EventListener-Objekte. </p>
-<p>Alle Events (z.B. Eingabe-Events der Tastatur oder benutzerdefinierte Events) werden an dieses Objekt gesendet. Jedes Event-Objekt wird daraufhin auf seinen Typ untersucht und an die entsprechende Behandlungskomponente weitergeleitet, die eine Ableitung von <a class="el" href="classge_1_1_event_listener.html" title="Oberklasse für Event-Listener. Alle Klassen, die ihre Events von ge::EventController erhalten...">ge::EventListener</a> sein muss.</p>
-<p>Die Anmeldung der Event-Listener als Endstation für eine bestimmte Art von Events erfolgt über ein entsprechendes Callback.</p>
-<p>Die Event-Listener werden bei der Verwendung von <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> automatisch gesetzt, so dass im Normalfall keine weiteren Einstellungen notwendig sind. </p>
+<div class="textblock"><p>Klasse zur zentralen Event-Erfassung und deren Weiterleitung an die zuständigen EventListener-Objekte. </p>
+<p>Alle Events, die über sf::Event-Objekte weitergegeben werden können, werden an dieses Objekt gesendet. Jedes eingehende Event-Objekt wird abhängig vom Typ an den zuständigen Event-Listener weitergeleitet.</p>
+<p>Die Anmeldung der Event-Listener erfolgt über ein entsprechendes Callback. Diese werden bei Verwendung von <a class="el" href="classge_1_1_core.html" title="Hauptkomponente von GameEngine, verwaltet alle Kernobjekte.">Core</a> automatisch gesetzt, so dass im Normalfall keine weiteren Einstellungen notwendig sind. </p>
 </div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a class="anchor" id="af935ca14a2b4edc4199b22de05b7c454"></a>
 <div class="memitem">
@@ -205,7 +192,7 @@ Klassendiagramm für ge::EventController:</div>
 </div>
 </div>
 <h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a class="anchor" id="a7ba36ee564c6a5790a1688846d6d4bf2"></a>
+<a class="anchor" id="aaee2b7a020c6059747d074af826db666"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -213,10 +200,10 @@ Klassendiagramm für ge::EventController:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ge::EventController::CustomCallback </td>
+          <td class="memname">bool ge::EventController::Event </td>
           <td>(</td>
-          <td class="paramtype">const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td class="paramtype">const sf::Event &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -227,11 +214,11 @@ Klassendiagramm für ge::EventController:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Legt den Listener für benutzerdefinierte Events fest. </p>
+<p>Leitet einen Event an den entsprechenden Listener weiter. </p>
 
 </div>
 </div>
-<a class="anchor" id="adbf116754f9156cdbf5f7cc8b0203a79"></a>
+<a class="anchor" id="ac8780f084fad2005907ce38190944b73"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -241,7 +228,7 @@ Klassendiagramm für ge::EventController:</div>
         <tr>
           <td class="memname">void ge::EventController::GamepadCallback </td>
           <td>(</td>
-          <td class="paramtype">const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
@@ -257,33 +244,7 @@ Klassendiagramm für ge::EventController:</div>
 
 </div>
 </div>
-<a class="anchor" id="a137475cb01b06d01f0b90b9e7ede95e3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ge::EventController::GUICallback </td>
-          <td>(</td>
-          <td class="paramtype">const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Legt den Listener für GUI-Events fest. </p>
-
-</div>
-</div>
-<a class="anchor" id="a4d1dff401cda229293242a9f0e3488b8"></a>
+<a class="anchor" id="ad102c56b563e10b01686b7dfcaba2c4e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -293,7 +254,7 @@ Klassendiagramm für ge::EventController:</div>
         <tr>
           <td class="memname">void ge::EventController::KeyboardCallback </td>
           <td>(</td>
-          <td class="paramtype">const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
@@ -309,7 +270,7 @@ Klassendiagramm für ge::EventController:</div>
 
 </div>
 </div>
-<a class="anchor" id="a97b71a7e54b1477f4b6c6ef2bf31d343"></a>
+<a class="anchor" id="a13f4582c3a6d0332ea51f6c9dc965219"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -319,7 +280,7 @@ Klassendiagramm für ge::EventController:</div>
         <tr>
           <td class="memname">void ge::EventController::MouseCallback </td>
           <td>(</td>
-          <td class="paramtype">const std::function&lt; void(const irr::SEvent &amp;)&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
@@ -335,7 +296,7 @@ Klassendiagramm für ge::EventController:</div>
 
 </div>
 </div>
-<a class="anchor" id="a13e075bc65670a90654001023a0346b5"></a>
+<a class="anchor" id="a144bad58963b76e449a1fb8103d335db"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -343,7 +304,7 @@ Klassendiagramm für ge::EventController:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ge::EventController::ResetCustomCallback </td>
+          <td class="memname">void ge::EventController::RemoveGamepadCallback </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -356,11 +317,11 @@ Klassendiagramm für ge::EventController:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Entfernt die Verbindung zum Listener für benutzerdefinierte Events. </p>
+<p>Entfernt den Listener für Gamepad-Events. </p>
 
 </div>
 </div>
-<a class="anchor" id="a961af3fa09c57a448d5644b0d9d24e6c"></a>
+<a class="anchor" id="ae32acfa57e2a15c2149bf9b8f40fb738"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -368,7 +329,7 @@ Klassendiagramm für ge::EventController:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ge::EventController::ResetGamepadCallback </td>
+          <td class="memname">void ge::EventController::RemoveKeyboardCallback </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -381,11 +342,11 @@ Klassendiagramm für ge::EventController:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Entfernt die Verbindung zum Listener für Gamepad-Events. </p>
+<p>Entfernt den Listener für Tastatur-Events. </p>
 
 </div>
 </div>
-<a class="anchor" id="a4d6a8fab6f232d3a94286905448a4ebc"></a>
+<a class="anchor" id="af7b3e5f98eeac82f8009ebd3b37cea3c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -393,7 +354,7 @@ Klassendiagramm für ge::EventController:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ge::EventController::ResetGUICallback </td>
+          <td class="memname">void ge::EventController::RemoveMouseCallback </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -406,11 +367,11 @@ Klassendiagramm für ge::EventController:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Entfernt die Verbindung zum Listener für GUI-Events. </p>
+<p>Entfernt den Listener für Maus-Events. </p>
 
 </div>
 </div>
-<a class="anchor" id="a8d8e7f1749ac2ff31f8ab453fd372818"></a>
+<a class="anchor" id="ad5b3de32eff5df1d90aba92785b5d706"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -418,7 +379,7 @@ Klassendiagramm für ge::EventController:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ge::EventController::ResetKeyboardCallback </td>
+          <td class="memname">void ge::EventController::RemoveWindowCallback </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -431,11 +392,11 @@ Klassendiagramm für ge::EventController:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Entfernt die Verbindung zum Listener für Tastatur-Events. </p>
+<p>Entfernt den Listener für die Events des Hauptfensters. </p>
 
 </div>
 </div>
-<a class="anchor" id="aa0de2ea30dbf43c9b19be62a272cf875"></a>
+<a class="anchor" id="abe841815219876df975b505436f6618c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -443,9 +404,10 @@ Klassendiagramm für ge::EventController:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ge::EventController::ResetMouseCallback </td>
+          <td class="memname">void ge::EventController::WindowCallback </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::function&lt; bool(const sf::Event &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -456,7 +418,7 @@ Klassendiagramm für ge::EventController:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Entfernt die Verbindung zum Listener für Maus-Events. </p>
+<p>Legt den Listener für die Events des Hauptfensters fest. </p>
 
 </div>
 </div>
@@ -466,7 +428,7 @@ Klassendiagramm für ge::EventController:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Son Okt 7 2012 01:17:44 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Mit Feb 6 2013 20:23:55 für GameEngine von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>
