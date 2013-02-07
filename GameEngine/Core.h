@@ -166,7 +166,7 @@ namespace ge {
 
       /// @brief Erzeugt das Fenster-Icon aus bereits im Speicher befindlichen
       /// Binärdaten (normalerweise im ResourcesCore gehalten).
-      Core& WindowIcon (const std::vector<char>& resource)
+      Core& WindowIcon (const Binary& resource)
       {
          if (resource.empty()) throw error::InvalidParam("Icon resource is empty!", __FUNCTION__);
 

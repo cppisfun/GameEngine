@@ -204,10 +204,10 @@ namespace base {
 
 
    /// @brief Konvertiert Binärdaten in Stringdaten.
-   BASEDLL const std::string AsString (const std::vector<char>& val);
+   BASEDLL const std::string AsString (const Binary& val);
 
    /// @brief Konvertiert Stringdaten in Binärdaten.
-   BASEDLL const std::vector<char> AsBinary (const std::string& val);
+   BASEDLL const Binary AsBinary (const std::string& val);
 
    /// @brief Konvertiert std::string in std::wstring.
    BASEDLL const std::wstring AsWString (const std::string& val);

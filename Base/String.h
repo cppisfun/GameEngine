@@ -114,13 +114,13 @@ namespace base {
    /// @brief Zerlegt einen String unter Berücksichtingung eines Trenners und
    /// gibt die Teilstrings als Vektor zurück.
    /// @param val Zu zerlegender String
-   /// @param Trenner
+   /// @param seperator Trenner
    BASEDLL std::vector<std::string> Split (const std::string& val, const std::string& seperator = "\n");
 
    /// @brief Fügt einzelne Strings aus einem String-Vektor unter Verwendung
    /// eines Trenners zu einem String zusammen und gibt diesen zurück.
    /// @param vals Zusammenzufügender String-Vektor
-   /// @param Trenner
+   /// @param seperator Trenner
    BASEDLL std::string Join (const std::vector<std::string>& vals, const std::string& seperator = "\n");
 
 }

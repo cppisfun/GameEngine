@@ -43,7 +43,7 @@ namespace ge {
       /// befindlichen Binärdaten (normalerweise im ResourceCore gehalten).
       /// @param id Eindeutiger Bezeichner der Audio-Ressource
       /// @param resource Binärdaten
-      AudioCore& Add (const std::string& id, const std::vector<char>& resource);
+      AudioCore& Add (const std::string& id, const Binary& resource);
 
       /// @brief Entfernt eine Audio-Ressource.
       /// @param id Eindeutiger Bezeichner der Audio-Ressource

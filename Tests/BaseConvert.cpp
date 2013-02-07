@@ -284,7 +284,7 @@ SUITE (BaseConvert)
 
    TEST (StringBinary)
    {
-      std::vector<char> binary;
+      Binary binary;
       binary.push_back('T'); binary.push_back('e'); binary.push_back('s'); binary.push_back('t'); binary.push_back(' ');
       binary.push_back('T'); binary.push_back('E'); binary.push_back('S'); binary.push_back('T'); binary.push_back(' ');
       binary.push_back('t'); binary.push_back('e'); binary.push_back('s'); binary.push_back('t');

@@ -62,7 +62,7 @@ namespace base {
    /// @param content Zu speichernde Daten
    /// @param append Gibt an, ob die Daten angehängt werden sollen, wenn eine gleichlautende Datei existiert (Standard: false)
    /// @param removeExisting Gibt an, ob gleichlautende Dateien entfernt werden sollen (Standard: false)
-   BASEDLL void Save (const std::string& path, const std::vector<char>& content, bool append = false, bool removeExisting = false);
+   BASEDLL void Save (const std::string& path, const Binary& content, bool append = false, bool removeExisting = false);
 
 
 
@@ -89,7 +89,7 @@ namespace base {
 
    /// @brief Liefert Binärdaten aus einer Datei.
    /// @param path Dateipfad
-   BASEDLL const std::vector<char> LoadBinary (const std::string& path);
+   BASEDLL const Binary LoadBinary (const std::string& path);
 
 }
 

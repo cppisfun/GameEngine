@@ -83,7 +83,7 @@ namespace ge {
       /// Binärdaten hinzu (normalerweise im ResourcesCore gehalten).
       /// @param id Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool
       /// @param resource Binärdaten
-      GraphicsCore& AddFont (const std::string& id, const std::vector<char>& resource);
+      GraphicsCore& AddFont (const std::string& id, const Binary& resource);
 
       /// @brief Entfernt eine Schriftart.
       /// @param id Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool
@@ -104,7 +104,7 @@ namespace ge {
       /// Binärdaten hinzu (normalerweise im ResourcesCore gehalten).
       /// @param id Eindeutiger Bezeichner der Textur im Texturen-Pool
       /// @param resource Binärdaten
-      GraphicsCore& AddTexture (const std::string& id, const std::vector<char>& resource);
+      GraphicsCore& AddTexture (const std::string& id, const Binary& resource);
 
       /// @brief Entfernt eine Textur.
       /// @param id Eindeutiger Bezeichner der Textur im Texturen-Pool
@@ -320,6 +320,7 @@ namespace ge {
       /// @param y Y-Position der linken oberen Ecke
       /// @param text Auszugebender Text
       /// @param fontId Eindeutiger Bezeichner der Schriftart im Schriftarten-Pool.
+      /// @param fontSizeInPixels Größe der Schriftart in Pixeln
       GraphicsCore& Text (float x, float y, const std::string& text, const std::string& fontId, int fontSizeInPixels = 16)
       {
          DrawText(x, y, text, Font(fontId), fontSizeInPixels); return *this;

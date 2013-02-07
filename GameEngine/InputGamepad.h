@@ -70,7 +70,7 @@ namespace ge {
       ///
       /// Dieser Status ist nur im Moment des Loslassens _true_, nach dem
       /// nächsten Aufruf von Update() allerdings wieder _false_.
-      /// @param key Button_None = keine, Button_Any = beliebig; Nummer 0 - 31
+      /// @param btn Button_None = keine, Button_Any = beliebig; Nummer 0 - 31
       /// (Standard: Button_Any)
       bool ButtonReleased (int btn = Button_Any);
    };

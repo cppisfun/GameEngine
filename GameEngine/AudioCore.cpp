@@ -55,7 +55,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::Add (const std::string& id, const std::vector<char>& resource)
+   AudioCore& AudioCore::Add (const std::string& id, const Binary& resource)
    {
       if (id.empty())                                 throw error::InvalidParam("No id specified!", __FUNCTION__);
       else if (resource.empty())                      throw error::InvalidParam("No resource data specified!", __FUNCTION__);

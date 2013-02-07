@@ -52,23 +52,23 @@ namespace ge {
 
       /// @brief Legt die X-Koordinate fest.
       /// @param val X-Position
-      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
+      /// @param absolute _true_ = absolute Änderung / Zuweisung, _false_ = relative Änderung / Addition (Standard: _true_)
       Vector& X (float val, bool absolute = true) { return Value(XValue, val, absolute); }
 
       /// @brief Legt die Y-Koordinate fest.
       /// @param val Y-Position
-      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
+      /// @param absolute _true_ = absolute Änderung / Zuweisung, _false_ = relative Änderung / Addition (Standard: _true_)
       Vector& Y (float val, bool absolute = true) { return Value(YValue, val, absolute); }
 
       /// @brief Legt die Z-Koordinate fest.
       /// @param val Z-Position
-      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
+      /// @param absolute _true_ = absolute Änderung / Zuweisung, _false_ = relative Änderung / Addition (Standard: _true_)
       Vector& Z (float val, bool absolute = true) { return Value(ZValue, val, absolute); }
 
       /// @brief Legt den angegebenen Wert aus dem Vector-Objekt fest.
       /// @param what Koordinatenangabe aus Vector::What
       /// @param val Positionswert
-      /// @param mode ABS = absolute Änderung / Zuweisung, REL = relative Änderung / Addition (Standard: ABS)
+      /// @param absolute _true_ = absolute Änderung / Zuweisung, _false_ = relative Änderung / Addition (Standard: _true_)
       Vector& Value (const What& what, float val, bool absolute = true)
       {
          if (absolute) values[what] = val;

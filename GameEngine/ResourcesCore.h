@@ -11,8 +11,8 @@ namespace ge {
    /// Wird über Core::Resources() geliefert.
    class GEDLL ResourcesCore
    {
-      typedef std::map<std::string, std::string>       StringMap;
-      typedef std::map<std::string, std::vector<char>> BinaryMap;
+      typedef std::map<std::string, std::string> StringMap;
+      typedef std::map<std::string, Binary>      BinaryMap;
 
       StringMap strings;
       StringMap scripts;
@@ -30,7 +30,7 @@ namespace ge {
       void Remove (const std::string& id, BinaryMap& map);
 
       const std::string& Find (const std::string& id, const StringMap& map) const;
-      const std::vector<char>& Find (const std::string& id, const BinaryMap& map) const;
+      const Binary& Find (const std::string& id, const BinaryMap& map) const;
 
    public:
       /// @brief Konstruktor.
@@ -47,7 +47,7 @@ namespace ge {
       /// der Daten nicht in direkter Form von ResourcesCore verwalten lässt.
       /// @param id Eindeutiger Bezeichner der String-Ressource
       /// @param path Dateipfad
-      ResourcesCore& AddString (const std::string& id, const std::string& path) { Add(id, path, strings); return *this; }
+      ResourcesCore& AddStringResource (const std::string& id, const std::string& path) { Add(id, path, strings); return *this; }
 
       /// @brief Fügt eine Script-Ressource aus einer Datei hinzu (Textdaten).
       /// @param id Eindeutiger Bezeichner der Script-Ressource
@@ -66,7 +66,7 @@ namespace ge {
       /// der Daten nicht in direkter Form von ResourcesCore verwalten lässt.
       /// @param id Eindeutiger Bezeichner der Binär-Ressource
       /// @param path Dateipfad
-      ResourcesCore& AddBinary (const std::string& id, const std::string& path) { Add(id, path, binaries); return *this; }
+      ResourcesCore& AddBinaryResource (const std::string& id, const std::string& path) { Add(id, path, binaries); return *this; }
 
       /// @brief Fügt eine Musik-Ressource aus einer Datei hinzu (Binärdaten).
       /// @param id Eindeutiger Bezeichner der Musik-Ressource
@@ -90,7 +90,7 @@ namespace ge {
 
 
       /// @brief Entfernt eine String-Ressource.
-      ResourcesCore& RemoveString (const std::string& id) { Remove(id, strings); return *this; }
+      ResourcesCore& RemoveStringResource (const std::string& id) { Remove(id, strings); return *this; }
 
       /// @brief Entfernt eine Script-Ressource.
       ResourcesCore& RemoveScript (const std::string& id) { Remove(id, scripts); return *this; }
@@ -100,7 +100,7 @@ namespace ge {
 
 
       /// @brief Entfernt eine Binär-Ressource.
-      ResourcesCore& RemoveBinary (const std::string& id) { Remove(id, binaries); return *this; }
+      ResourcesCore& RemoveBinaryResource (const std::string& id) { Remove(id, binaries); return *this; }
 
       /// @brief Entfernt eine Musik-Ressource.
       ResourcesCore& RemoveMusic (const std::string& id) { Remove(id, musics); return *this; }
@@ -116,7 +116,7 @@ namespace ge {
 
 
       /// @brief Entfernt alle String-Ressourcen.
-      ResourcesCore& RemoveAllStrings () { strings.clear(); return *this; }
+      ResourcesCore& RemoveAllStringResources () { strings.clear(); return *this; }
 
       /// @brief Entfernt alle Script-Ressourcen.
       ResourcesCore& RemoveAllScripts () { scripts.clear(); return *this; }
@@ -126,7 +126,7 @@ namespace ge {
 
 
       /// @brief Entfernt alle Binär-Ressourcen.
-      ResourcesCore& RemoveAllBinaries () { binaries.clear(); return *this; }
+      ResourcesCore& RemoveAllBinaryResources () { binaries.clear(); return *this; }
 
       /// @brief Entfernt alle Musik-Ressourcen.
       ResourcesCore& RemoveAllMusic () { musics.clear(); return *this; }
@@ -142,7 +142,7 @@ namespace ge {
 
 
       /// @brief Liefert eine String-Ressource (Textdaten).
-      const std::string& String (const std::string& id) const { return Find(id, strings); }
+      const std::string& StringResource (const std::string& id) const { return Find(id, strings); }
 
       /// @brief Liefert eine Script-Ressource (Textdaten).
       const std::string& Script (const std::string& id) const { return Find(id, scripts); }
@@ -152,19 +152,19 @@ namespace ge {
 
 
       /// @brief Liefert eine Binär-Ressource (Binärdaten).
-      const std::vector<char>& Binary (const std::string& id) const { return Find(id, binaries); }
+      const Binary& BinaryResource (const std::string& id) const { return Find(id, binaries); }
 
       /// @brief Liefert eine Musik-Ressource (Binärdaten).
-      const std::vector<char>& Music (const std::string& id) const { return Find(id, musics); }
+      const Binary& Music (const std::string& id) const { return Find(id, musics); }
 
       /// @brief Liefert eine Sound-Ressource (Binärdaten).
-      const std::vector<char>& Sound (const std::string& id) const { return Find(id, sounds); }
+      const Binary& Sound (const std::string& id) const { return Find(id, sounds); }
 
       /// @brief Liefert eine Font-Ressource (Binärdaten).
-      const std::vector<char>& Font (const std::string& id) const { return Find(id, fonts); }
+      const Binary& Font (const std::string& id) const { return Find(id, fonts); }
 
       /// @brief Liefert eine Textur-Ressource (Binärdaten).
-      const std::vector<char>& Texture (const std::string& id) const { return Find(id, textures); }
+      const Binary& Texture (const std::string& id) const { return Find(id, textures); }
    };
 
 }

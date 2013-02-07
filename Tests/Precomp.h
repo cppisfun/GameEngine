@@ -9,3 +9,8 @@
 
 #include <UnitTest++.h>
 
+
+// Type definitions for general use
+
+typedef std::vector<char> Binary;
+

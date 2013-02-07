@@ -189,14 +189,14 @@ namespace base {
       return ret;
    }
 
-   const std::string AsString (const std::vector<char>& val)
+   const std::string AsString (const Binary& val)
    {
       return std::string(val.begin(), val.end());
    }
 
-   const std::vector<char> AsBinary (const std::string& val)
+   const Binary AsBinary (const std::string& val)
    {
-      return std::vector<char>(val.begin(), val.end());
+      return Binary(val.begin(), val.end());
    }
 
    const std::wstring AsWString (const std::string& val)

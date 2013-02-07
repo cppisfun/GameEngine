@@ -18,10 +18,12 @@
 #include <Windows.h>
 
 
-// Secure handling for DirectX memory-related matters
+// Type definitions for general use
 
-#define SecureDelete(x)  { if (x != nullptr) delete x; x = nullptr; }
-#define SecureRelease(x) { if (x != nullptr) x->Release(); x = nullptr; }
+typedef std::vector<char> Binary;
+
+
+// Message boxes
 
 #define ShowError(x) { MessageBox(nullptr, x, "Error", MB_OK | MB_ICONERROR); }
 
@@ -32,4 +34,10 @@
    #define ShowWarning(x)
    #define ShowInfo(x)
 #endif
+
+
+// Secure handling for DirectX memory-related matters (deprecation awaits you)
+
+#define SecureDelete(x)  { if (x != nullptr) delete x; x = nullptr; }
+#define SecureRelease(x) { if (x != nullptr) x->Release(); x = nullptr; }
 

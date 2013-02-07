@@ -99,15 +99,15 @@
  * \subsection foreignBoost 3.1 boost
  *
  * Die in Base vorhandenen Funktionen sowie Teile der GameEngine-DLL verwenden
- * die Funktionalität von boost 1.80, insbesondere boost::filesystem wird an
+ * die Funktionalität von boost 1.53.0, insbesondere boost::filesystem wird an
  * allen passenden Stellen eingesetzt.
  *
- * \subsection foreignIrrlicht 3.2 irrlicht
+ * \subsection foreignIrrlicht 3.2 SFML
  *
  * Hinter den Basisklassen Core, GraphicsCore und InputCore verbirgt sich an
- * vielen Stellen die leistungsstarke Funktionalität von irrlicht 1.7.3, einem
+ * vielen Stellen die leistungsstarke Funktionalität von SFML 2.0, einem
  * Opensource-Framework zur Spiele-Entwicklung. Insbesondere im Hinblick auf die
- * bereits komplett vorhandene Grafik-Engine wurde diese Komponente eingebunden.
+ * Grafik-Engine wurde diese Komponente eingebunden.
  *
  * \subsection foreignIrrklang 3.3 irrKlang
  *
@@ -118,12 +118,6 @@
 
 
 
-/// @brief _Beschreibung siehe irrlicht-Dokumentation._
-namespace irr {
-   /// @brief _Beschreibung siehe irrlicht-Dokumentation._
-   namespace gui { }
-}
-
-/// @brief _Beschreibung siese irrKlang-Dokumentation._
+/// @brief _Beschreibung siehe irrKlang-Dokumentation._
 namespace irrklang { }
 

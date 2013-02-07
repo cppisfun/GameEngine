@@ -114,7 +114,7 @@ namespace base {
       if (file != nullptr) ::CloseHandle(file);
    }
 
-   void Save (const std::string& path, const std::vector<char>& content, bool append, bool removeExisting)
+   void Save (const std::string& path, const Binary& content, bool append, bool removeExisting)
    {
       Save(path, std::string(content.begin(), content.end()), append, removeExisting);
    }
@@ -156,7 +156,7 @@ namespace base {
       return std::string(content.begin(), content.end());
    }
 
-   const std::vector<char> LoadBinary (const std::string& path)
+   const Binary LoadBinary (const std::string& path)
    {
       if (path.empty()) throw error::InvalidParam("No path specified!", __FUNCTION__);
       else if (!ExistFile(path)) throw error::NotFound("Specified path does not exist!", __FUNCTION__);
@@ -183,7 +183,7 @@ namespace base {
       if (!::ReadFile(file, buffer, fileSize, &bytesRead, nullptr)) throw error::Read("Failed to read from file!", __FUNCTION__);
 
       char* charBuffer = (char*)buffer;
-      std::vector<char> content(charBuffer, charBuffer + fileSize);
+      Binary content(charBuffer, charBuffer + fileSize);
 
       return content;
    }

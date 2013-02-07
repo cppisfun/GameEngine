@@ -61,7 +61,7 @@ namespace ge {
       return *this;
    }
 
-   GraphicsCore& GraphicsCore::AddFont (const std::string& id, const std::vector<char>& resource)
+   GraphicsCore& GraphicsCore::AddFont (const std::string& id, const Binary& resource)
    {
       if (id.empty())                         throw error::InvalidParam("No id specified!", __FUNCTION__);
       else if (resource.empty())              throw error::InvalidParam("Font resource is empty!", __FUNCTION__);
@@ -97,7 +97,7 @@ namespace ge {
       return *this;
    }
 
-   GraphicsCore& GraphicsCore::AddTexture (const std::string& id, const std::vector<char>& resource)
+   GraphicsCore& GraphicsCore::AddTexture (const std::string& id, const Binary& resource)
    {
       if (id.empty())                               throw error::InvalidParam("No id specified!", __FUNCTION__);
       else if (resource.empty())                    throw error::InvalidParam("Texture resource is empty!", __FUNCTION__);

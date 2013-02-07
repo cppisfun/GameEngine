@@ -20,7 +20,7 @@ namespace ge {
       map.insert(std::make_pair(id, LoadString(path)));
    }
 
-   void ResourcesCore::Add (const std::string& id, const std::string& path, std::map<std::string, std::vector<char>>& map)
+   void ResourcesCore::Add (const std::string& id, const std::string& path, std::map<std::string, Binary>& map)
    {
       if (id.empty())                     throw error::InvalidParam("No id specified!", __FUNCTION__);
       else if (path.empty())              throw error::InvalidParam("No path specified!", __FUNCTION__);
@@ -37,7 +37,7 @@ namespace ge {
       if (res != map.end()) map.erase(res);
    }
 
-   void ResourcesCore::Remove (const std::string& id, std::map<std::string, std::vector<char>>& map)
+   void ResourcesCore::Remove (const std::string& id, std::map<std::string, Binary>& map)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
@@ -55,7 +55,7 @@ namespace ge {
       return res->second;
    }
 
-   const std::vector<char>& ResourcesCore::Find (const std::string& id, const std::map<std::string, std::vector<char>>& map) const
+   const Binary& ResourcesCore::Find (const std::string& id, const std::map<std::string, Binary>& map) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
 
