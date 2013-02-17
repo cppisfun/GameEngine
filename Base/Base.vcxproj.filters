@@ -11,6 +11,10 @@
     <ClInclude Include="String.h" />
     <ClInclude Include="Tools.h" />
     <ClInclude Include="LimitedValue.h" />
+    <ClInclude Include="XML.h" />
+    <ClInclude Include="..\foreign\TinyXML-2\tinyxml2.h">
+      <Filter>Foreign Tools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Convert.cpp" />
@@ -19,5 +23,14 @@
     <ClCompile Include="Numeric.cpp" />
     <ClCompile Include="Precomp.cpp" />
     <ClCompile Include="String.cpp" />
+    <ClCompile Include="XML.cpp" />
+    <ClCompile Include="..\foreign\TinyXML-2\tinyxml2.cpp">
+      <Filter>Foreign Tools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Foreign Tools">
+      <UniqueIdentifier>{12f56b70-3f8e-4483-8f1a-05734b9eb802}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
