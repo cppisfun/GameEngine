@@ -1,32 +1,50 @@
 
 #pragma once
 
-namespace tinyxml2 {
-   class XMLDocument;
-   enum XMLError;
+namespace ticpp {
+   class Document;
+   class Node;
+   class Element;
 }
 
 
 namespace xml {
 
-   class XMLDocument
+   class Node
    {
-      tinyxml2::XMLDocument doc;
-
-      void CheckResult (const tinyxml2::XMLError& result);
+      ticpp::Node*    parent;
+      ticpp::Node*    node;
+      ticpp::Element* element;
 
    public:
-      XMLDocument () { }
+      Node (const std::string& nodeName);
+      Node (const std::string& nodeName, const Node& parent);
 
-      XMLDocument& Parse (const std::string& xml);
-      XMLDocument& Load (const std::string& filePath);
-      XMLDocument& Save (const std::string& filePath);
-      XMLDocument& Clear ();
+      Node& AddChild (const Node& child);
+      Node& AddChild (const std::string& childName);
+      Node& RemoveChild (const Node& child);
+      Node& RemoveChild (const std::string& childName);
+      Node& Parent (const Node& parent);
+      Node& Clear ();
 
-      XMLDocument& BOM (bool set = true);
+      bool IsEditable () const { return element != nullptr; }
+      bool HasChildren () const;
 
-      bool HasBOM () const;
-      bool Valid () const;
+      Node Clone ();
+      std::vector<Node> Children () const;
+   };
+
+   class Document
+   {
+      ticpp::Document doc;
+      Node            node;
+
+   public:
+      Document () : node("") { }
+
+      Document& Parse (const std::string& xml);
+      Document& Load (const std::string& filePath);
+      Document& Save (const std::string& filePath);
    };
 
 }

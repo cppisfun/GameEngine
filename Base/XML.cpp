@@ -1,43 +1,43 @@
 
 #include "Precomp.h"
 
-#include <tinyxml2.h>
+#include <ticpp.h>
 
 #include "XML.h"
 
 #include "../Base/File.h"
 #include "../Base/Error.h"
 
-using namespace tinyxml2;
-
 
 namespace xml {
 
-   XMLDocument& XMLDocument::Parse (const std::string& xml)
-   {
-      if (xml.empty()) throw error::InvalidParam("No XML string specified!", __FUNCTION__);
+   Document& Document::Parse (const std::string& xml)     { doc.Parse(xml); return *this; }
+   Document& Document::Load (const std::string& filePath) { doc.LoadFile(filePath); return *this; }
+   Document& Document::Save (const std::string& filePath) { doc.SaveFile(filePath); return *this; }
 
-      CheckResult(doc.Parse(xml.c_str(), xml.size()));
-      return *this;
+}
+
+
+/*
+namespace xml {
+
+   Node::Node (const std::string& name, Node& parent) : parent(nullptr), node(nullptr)
+   {
+      if (parent.node == nullptr) throw error::NullPointer("Invalid tinyxml2::XMLElement pointer!", ERROR_LOCATION);
+
+      this->parent = parent.node;
+      node         = parent.node->GetDocument()->NewElement(name.c_str());
    }
 
-   XMLDocument& XMLDocument::Load (const std::string& filePath)
-   {
-      if (filePath.empty()) throw error::InvalidParam("No XML file path specified!", __FUNCTION__);
+   Node& Node::Name (const std::string& val) { node->SetName(val.c_str()); return *this; }
 
-      CheckResult(doc.LoadFile(filePath.c_str()));
-      return *this;
-   }
+   std::string Node::Name () const { return node->Name(); }
 
-   XMLDocument& XMLDocument::Save (const std::string& filePath)
-   {
-      if (filePath.empty()) throw error::InvalidParam("No XML file path specified!", __FUNCTION__);
 
-      CheckResult(doc.SaveFile(filePath.c_str()));
-      return *this;
-   }
 
-   void XMLDocument::CheckResult (const tinyxml2::XMLError& result)
+
+
+   void Document::CheckResult (const tinyxml2::XMLError& result)
    {
       if (result == tinyxml2::XML_SUCCESS || result == tinyxml2::XML_NO_ERROR) return;
 
@@ -70,13 +70,22 @@ namespace xml {
       err += "\n\nSecond error string:\n";
       err += doc.GetErrorStr2();
 
-      throw error::Error("XML Error", err, __FUNCTION__, __FILE__, __LINE__);
+      throw error::BadFormat(err, ERROR_LOCATION);
    }
 
-   XMLDocument& XMLDocument::Clear ()       { doc.Clear(); return *this; }
-   XMLDocument& XMLDocument::BOM (bool set) { doc.SetBOM(set); return *this; }
+   Document& Document::Clear ()       { doc.Clear(); return *this; }
+   Document& Document::BOM (bool use) { doc.SetBOM(use); return *this; }
 
-   bool XMLDocument::HasBOM () const { return doc.HasBOM(); }
-   bool XMLDocument::Valid () const  { return !doc.Error(); }
+   bool Document::HasBOM () const { return doc.HasBOM(); }
+   bool Document::Valid () const  { return !doc.Error(); }
+
+   Node Document::Child (const std::string& name) const
+   {
+      if (doc.NoChildren()) throw error::InvalidParam("XML child node position is out of range!", ERROR_LOCATION);
+      auto node = doc.
+
+   }
 
 }
+
+*/
