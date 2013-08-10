@@ -12,7 +12,7 @@ namespace ge {
    InputMouse::InputMouse (EventController* eventCtrl)
    : currPosition(0, 0), prevPosition(0, 0), currWheelPosition(0), prevWheelPosition(0)
    {
-      if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+      if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", ERROR_LOCATION);
       eventCtrl->MouseCallback(std::bind(&InputMouse::OnEvent, this, std::placeholders::_1));
 
       std::fill(currButtons.begin(), currButtons.end(), false);
@@ -50,7 +50,7 @@ namespace ge {
 
    bool InputMouse::Button (int btn)
    {
-      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
+      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
       else if (btn >= 0) return currButtons[btn];
 
       for (int i = 0; i < Button_Count; ++i) {
@@ -62,7 +62,7 @@ namespace ge {
 
    bool InputMouse::ButtonPressed (int btn)
    {
-      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
+      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
       else if (btn >= 0) return (currButtons[btn] && !prevButtons[btn]);
 
       for (int i = 0; i < Button_Count; ++i) {
@@ -74,7 +74,7 @@ namespace ge {
 
    bool InputMouse::ButtonReleased (int btn)
    {
-      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
+      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
       else if (btn >= 0) return (!currButtons[btn] && prevButtons[btn]);
 
       for (int i = 0; i < Button_Count; ++i) {
@@ -94,7 +94,7 @@ namespace ge {
       else if (direction == Direction_Up)         return (DY() < 0);
       else if (direction == Direction_Down)       return (DY() > 0);
       else if (direction == Direction_Vertical)   return (DY() != 0);
-      else throw error::InvalidParam("Direction out of range!", __FUNCTION__);
+      else throw error::InvalidParam("Direction out of range!", ERROR_LOCATION);
    }
 
    bool InputMouse::WheelMoved (int direction)
@@ -104,7 +104,7 @@ namespace ge {
       else if (direction == Direction_Up)       return (DWheel() < 0);
       else if (direction == Direction_Down)     return (DWheel() > 0);
       else if (direction == Direction_Vertical) return (DWheel() != 0);
-      else throw error::InvalidParam("Direction out of range!", __FUNCTION__);
+      else throw error::InvalidParam("Direction out of range!", ERROR_LOCATION);
    }
 
 }

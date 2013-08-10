@@ -38,6 +38,7 @@ namespace error {
    std::exception InvalidParam   (const std::string& what, const std::string& function, const std::string& file, int line) { return Error("Invalid Param", what, function, file, line); }
    std::exception NullPointer    (const std::string& what, const std::string& function, const std::string& file, int line) { return Error("Null Pointer", what, function, file, line); }
    std::exception BadReference   (const std::string& what, const std::string& function, const std::string& file, int line) { return Error("Bad Reference", what, function, file, line); }
+   std::exception BadFormat      (const std::string& what, const std::string& function, const std::string& file, int line) { return Error("Bad Format", what, function, file, line); }
    std::exception Query          (const std::string& what, const std::string& function, const std::string& file, int line) { return Error("Query", what, function, file, line); }
 
    std::exception NotAvailable   (const std::string& what, const std::string& function, const std::string& file, int line) { return Error("Not Available", what, function, file, line); }

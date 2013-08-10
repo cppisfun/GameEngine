@@ -60,14 +60,14 @@ namespace ge {
       Core () : hasFocus(true), eventController(nullptr), graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
       {
          window.reset(new sf::RenderWindow);
-         if (window == nullptr) throw error::Create("Failed to create application window!", __FUNCTION__);
+         if (window == nullptr) throw error::Create("Failed to create application window!", ERROR_LOCATION);
 
          window->create(sf::VideoMode(800, 600), "GameEngine 0.0.5");
          window->clear(sf::Color::Blue);
          window->display();
 
          eventController.reset(new EventController);
-         if (eventController == nullptr) throw error::Create("Failed to create event controller!", __FUNCTION__);
+         if (eventController == nullptr) throw error::Create("Failed to create event controller!", ERROR_LOCATION);
 
          eventController->WindowCallback(std::bind(&Core::OnEvent, this, std::placeholders::_1));
       }
@@ -153,10 +153,10 @@ namespace ge {
       /// die Verwendung von ResourcesCore).
       Core& WindowIcon (const std::string& iconFile)
       {
-         if (iconFile.empty()) throw error::InvalidParam("No icon file specified!", __FUNCTION__);
+         if (iconFile.empty()) throw error::InvalidParam("No icon file specified!", ERROR_LOCATION);
 
          sf::Image img;
-         if (!img.loadFromFile(iconFile)) throw error::Create("Failed to create icon from file \"" + iconFile + "\"!", __FUNCTION__);
+         if (!img.loadFromFile(iconFile)) throw error::Create("Failed to create icon from file \"" + iconFile + "\"!", ERROR_LOCATION);
 
          const auto size = img.getSize();
          window->setIcon(size.x, size.y, img.getPixelsPtr());
@@ -168,10 +168,10 @@ namespace ge {
       /// Binärdaten (normalerweise im ResourcesCore gehalten).
       Core& WindowIcon (const Binary& resource)
       {
-         if (resource.empty()) throw error::InvalidParam("Icon resource is empty!", __FUNCTION__);
+         if (resource.empty()) throw error::InvalidParam("Icon resource is empty!", ERROR_LOCATION);
 
          sf::Image img;
-         if (!img.loadFromMemory(resource.data(), resource.size())) throw error::Create("Failed to create icon from resource!", __FUNCTION__);
+         if (!img.loadFromMemory(resource.data(), resource.size())) throw error::Create("Failed to create icon from resource!", ERROR_LOCATION);
 
          const auto size = img.getSize();
          window->setIcon(size.x, size.y, img.getPixelsPtr());

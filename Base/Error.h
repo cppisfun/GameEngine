@@ -10,7 +10,7 @@ namespace error {
    /// @brief Erzeugt ein Objekt vom Typ std::exception mit entsprechenden Zusatz-Informationen. Alle anderen Funktionen im Namespace error verwenden diese Funktion.
    /// @param type Fehlertyp
    /// @param message Fehlertext
-   /// @param function Funktion, in welcher der Fehler aufgetreten ist. Für diesen Parameter sollte grundsätzlich \__FUNCTION__ verwendet werden.
+   /// @param function Funktion, in welcher der Fehler aufgetreten ist. Für diesen Parameter sollte grundsätzlich \__FUNCTION__ oder das Makro ERROR_LOCATION verwendet werden.
    /// @param file Datei, in welcher der Fehler aufgetreten ist. Für diesen Parameter sollte grundsätzlich \__FILE__ verwendet werden. Der Wert wird nur im Debug-Build berücksichtigt.
    /// @param line Zeile, in welcher der Fehler aufgetreten ist. Für diesen Parameter sollte grundsätzlich \__LINE__ verwendet werden. Der Wert wird nur im Debug-Build berücksichtigt.
    BASEDLL std::exception Error (const std::string& type, const std::string& message, const std::string& function, const std::string& file, int line);
@@ -56,8 +56,11 @@ namespace error {
    /// @brief Erzeugt eine Ausnahme für den Fehlerfall "invalid pointer error".
    BASEDLL std::exception NullPointer (const std::string& what, const std::string& function, const std::string& file = "", int line = 0);
 
-   /// @brief Erzeugt eine Ausnahme für den Fehlerfall "create error".
+   /// @brief Erzeugt eine Ausnahme für den Fehlerfall "bad reference error".
    BASEDLL std::exception BadReference (const std::string& what, const std::string& function, const std::string& file = "", int line = 0);
+
+   /// @brief Erzeugt eine Ausnahme für den Fehlerfall "bad format error".
+   BASEDLL std::exception BadFormat (const std::string& what, const std::string& function, const std::string& file = "", int line = 0);
 
    /// @brief Erzeugt eine Ausnahme für den Fehlerfall "query error".
    BASEDLL std::exception Query (const std::string& what, const std::string& function, const std::string& file = "", int line = 0);
@@ -80,6 +83,11 @@ namespace error {
 
    /// @brief Erzeugt eine Ausnahme für den Fehlerfall "not implemented error".
    BASEDLL std::exception NotImplemented (const std::string& what, const std::string& function, const std::string& file = "", int line = 0);
+
+
+
+   /// @brief Kurzschreibweise für die zu übergebenden Zusatzattribute (Funktionsname, Datei, Zeile).
+   #define ERROR_LOCATION __FUNCTION__, __FILE__, __LINE__
 
 }
 

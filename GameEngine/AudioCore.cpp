@@ -39,17 +39,17 @@ namespace ge {
    void AudioCore::Init ()
    {
       device = irrklang::createIrrKlangDevice();
-      if (device == nullptr) throw error::Create("Failed to create irrKlang audio device!", __FUNCTION__);
+      if (device == nullptr) throw error::Create("Failed to create irrKlang audio device!", ERROR_LOCATION);
    }
 
    AudioCore& AudioCore::Add (const std::string& id, const std::string& audioFile)
    {
-      if (id.empty())                                 throw error::InvalidParam("No id specified!", __FUNCTION__);
-      else if (audioFile.empty())                     throw error::InvalidParam("No audio file specified!", __FUNCTION__);
-      else if (audioPool.find(id) != audioPool.end()) throw error::AlreadyExists("Audio resource with specified id already exists!", __FUNCTION__);
+      if (id.empty())                                 throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+      else if (audioFile.empty())                     throw error::InvalidParam("No audio file specified!", ERROR_LOCATION);
+      else if (audioPool.find(id) != audioPool.end()) throw error::AlreadyExists("Audio resource with specified id already exists!", ERROR_LOCATION);
 
       auto aud = device->addSoundSourceFromFile(audioFile.c_str(), irrklang::ESM_AUTO_DETECT, true);
-      if (aud == nullptr) throw error::Read("Failed to read audio file!", __FUNCTION__);
+      if (aud == nullptr) throw error::Read("Failed to read audio file!", ERROR_LOCATION);
 
       audioPool[id] = aud;
       return *this;
@@ -57,12 +57,12 @@ namespace ge {
 
    AudioCore& AudioCore::Add (const std::string& id, const Binary& resource)
    {
-      if (id.empty())                                 throw error::InvalidParam("No id specified!", __FUNCTION__);
-      else if (resource.empty())                      throw error::InvalidParam("No resource data specified!", __FUNCTION__);
-      else if (audioPool.find(id) != audioPool.end()) throw error::AlreadyExists("Audio resource with specified id already exists!", __FUNCTION__);
+      if (id.empty())                                 throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+      else if (resource.empty())                      throw error::InvalidParam("No resource data specified!", ERROR_LOCATION);
+      else if (audioPool.find(id) != audioPool.end()) throw error::AlreadyExists("Audio resource with specified id already exists!", ERROR_LOCATION);
 
       auto aud = device->addSoundSourceFromMemory((void*)&resource[0], resource.size(), id.c_str());
-      if (aud == nullptr) throw error::Query("Failed to query resource data!", __FUNCTION__);
+      if (aud == nullptr) throw error::Query("Failed to query resource data!", ERROR_LOCATION);
 
       audioPool[id] = aud;
       return *this;
@@ -70,7 +70,7 @@ namespace ge {
 
    AudioCore& AudioCore::Remove (const std::string& id)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto aud = audioPool.find(id);
       if (aud == audioPool.end()) return *this;
@@ -114,7 +114,7 @@ namespace ge {
 
    AudioCore& AudioCore::DefaultVolume (const std::string& id, int percent)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto aud = audioPool.find(id);
       if (aud == audioPool.end()) return *this;
@@ -130,7 +130,7 @@ namespace ge {
 
    AudioCore& AudioCore::PlayMusic (const std::string& id, bool looped)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
       else if (music.find(id) != music.end()) return *this;
 
       auto aud = audioPool.find(id);
@@ -154,7 +154,7 @@ namespace ge {
 
    AudioCore& AudioCore::StopMusic (const std::string& id)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return *this;
@@ -174,7 +174,7 @@ namespace ge {
 
    AudioCore& AudioCore::PauseMusic (const std::string& id, bool pause)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return *this;
@@ -199,7 +199,7 @@ namespace ge {
 
    AudioCore& AudioCore::MusicVolume (const std::string& id, int percent)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return *this;
@@ -229,7 +229,7 @@ namespace ge {
 
    AudioCore& AudioCore::MusicSpeed (const std::string& id, int percent)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return *this;
@@ -259,7 +259,7 @@ namespace ge {
 
    AudioCore& AudioCore::MusicPan (const std::string& id, int percent)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return *this;
@@ -275,7 +275,7 @@ namespace ge {
 
    AudioCore& AudioCore::MusicPosition (const std::string& id, int position)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return *this;
@@ -292,7 +292,7 @@ namespace ge {
 
    AudioCore& AudioCore::PlaySound (const std::string& id, bool looped)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto aud = audioPool.find(id);
       if (aud == audioPool.end()) return *this;
@@ -319,7 +319,7 @@ namespace ge {
 
    AudioCore& AudioCore::StopSound (const std::string& id)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end()) return *this;
@@ -346,7 +346,7 @@ namespace ge {
 
    AudioCore& AudioCore::PauseSound (const std::string& id, bool pause)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end()) return *this;
@@ -376,7 +376,7 @@ namespace ge {
 
    AudioCore& AudioCore::SoundVolume (const std::string& id, int percent)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return *this;
@@ -411,7 +411,7 @@ namespace ge {
 
    AudioCore& AudioCore::SoundSpeed (const std::string& id, int percent)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return *this;
@@ -446,7 +446,7 @@ namespace ge {
 
    AudioCore& AudioCore::SoundPan (const std::string& id, int percent)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return *this;
@@ -475,7 +475,7 @@ namespace ge {
 
    int AudioCore::DefaultVolume (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto aud = audioPool.find(id);
       if (aud == audioPool.end()) return 0;
@@ -490,7 +490,7 @@ namespace ge {
 
    bool AudioCore::IsPlaying (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto aud = audioPool.find(id);
       if (aud == audioPool.end()) return false;
@@ -500,7 +500,7 @@ namespace ge {
 
    bool AudioCore::IsMusicPaused (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return false;
@@ -510,7 +510,7 @@ namespace ge {
 
    bool AudioCore::IsMusicLooped (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return false;
@@ -520,7 +520,7 @@ namespace ge {
 
    bool AudioCore::IsMusicFinished (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return true;
@@ -530,7 +530,7 @@ namespace ge {
 
    int AudioCore::MusicVolume (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return 0;
@@ -545,7 +545,7 @@ namespace ge {
 
    int AudioCore::MusicSpeed (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return 0;
@@ -555,7 +555,7 @@ namespace ge {
 
    int AudioCore::MusicPan (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return 0;
@@ -570,7 +570,7 @@ namespace ge {
 
    int AudioCore::MusicPosition (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return -1;
@@ -580,7 +580,7 @@ namespace ge {
 
    int AudioCore::MusicLength (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return -1;
@@ -590,7 +590,7 @@ namespace ge {
 
    bool AudioCore::IsSoundPaused (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return false;
@@ -600,7 +600,7 @@ namespace ge {
 
    bool AudioCore::IsSoundLooped (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return false;
@@ -610,7 +610,7 @@ namespace ge {
 
    bool AudioCore::IsSoundFinished (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return true;
@@ -620,7 +620,7 @@ namespace ge {
 
    int AudioCore::SoundVolume (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return 0;
@@ -635,7 +635,7 @@ namespace ge {
 
    int AudioCore::SoundSpeed (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return 0;
@@ -645,7 +645,7 @@ namespace ge {
 
    int AudioCore::SoundPan (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return 0;
@@ -660,7 +660,7 @@ namespace ge {
 
    int AudioCore::SoundPosition (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return -1;
@@ -670,7 +670,7 @@ namespace ge {
 
    int AudioCore::SoundLength (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return -1;
@@ -680,7 +680,7 @@ namespace ge {
 
    const std::string AudioCore::FileName (const std::string& id) const
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", __FUNCTION__);
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto aud = audioPool.find(id);
       if (aud == audioPool.end()) return "";

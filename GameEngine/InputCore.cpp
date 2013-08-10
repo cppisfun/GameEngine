@@ -14,7 +14,7 @@ namespace ge {
    InputCore::InputCore (EventController* eventCtrl)
    : eventController(nullptr), keyboard(nullptr), mouse(nullptr), gamepad(nullptr)
    {
-      if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller handle!", __FUNCTION__);
+      if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller handle!", ERROR_LOCATION);
       eventController = eventCtrl;
 
       Reset(KeyboardInterface);

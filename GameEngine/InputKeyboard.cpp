@@ -11,7 +11,7 @@ namespace ge {
 
    InputKeyboard::InputKeyboard (EventController* eventCtrl)
    {
-      if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+      if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", ERROR_LOCATION);
       eventCtrl->KeyboardCallback(std::bind(&InputKeyboard::OnEvent, this, std::placeholders::_1));
 
       std::fill(currKeys.begin(), currKeys.end(), false);
@@ -42,7 +42,7 @@ namespace ge {
 
    bool InputKeyboard::Key (int key)
    {
-      if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+      if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", ERROR_LOCATION);
       else if (key >= 0) return (currKeys[key]);
 
       for (int i = 0; i < Key_Count; ++i) {
@@ -54,7 +54,7 @@ namespace ge {
 
    bool InputKeyboard::KeyPressed (int key)
    {
-      if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+      if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", ERROR_LOCATION);
       else if (key >= 0) return (currKeys[key] && !prevKeys[key]);
 
       for (int i = 0; i < Key_Count; ++i) {
@@ -66,7 +66,7 @@ namespace ge {
 
    bool InputKeyboard::KeyReleased (int key)
    {
-      if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", __FUNCTION__);
+      if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", ERROR_LOCATION);
       else if (key >= 0) return (!currKeys[key] && prevKeys[key]);
 
       for (int i = 0; i < Key_Count; ++i) {

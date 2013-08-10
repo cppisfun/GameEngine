@@ -13,7 +13,7 @@ namespace ge {
 
    InputGamepad::InputGamepad (EventController* eventCtrl)
    {
-      if (eventCtrl ==  nullptr) throw error::NullPointer("Invalid event controller pointer!", __FUNCTION__);
+      if (eventCtrl ==  nullptr) throw error::NullPointer("Invalid event controller pointer!", ERROR_LOCATION);
       eventCtrl->GamepadCallback(std::bind(&InputGamepad::OnEvent, this, std::placeholders::_1));
 
       std::fill(currButtons.begin(), currButtons.end(), false);
@@ -45,7 +45,7 @@ namespace ge {
 
    bool InputGamepad::Button (int btn)
    {
-      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
+      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
       else if (btn > 0) return currButtons[btn];
 
       for (int i = 0; i < Button_Count; ++i) {
@@ -57,7 +57,7 @@ namespace ge {
 
    bool InputGamepad::ButtonPressed (int btn)
    {
-      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
+      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
       else if (btn > 0) return (currButtons[btn] && !prevButtons[btn]);
 
       for (int i = 0; i < Button_Count; ++i) {
@@ -69,7 +69,7 @@ namespace ge {
 
    bool InputGamepad::ButtonReleased (int btn)
    {
-      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", __FUNCTION__);
+      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
       else if (btn > 0) return (!currButtons[btn] && prevButtons[btn]);
 
       for (int i = 0; i < Button_Count; ++i) {
