@@ -56,51 +56,51 @@ namespace base {
 
 
    /// @brief Liefert eine Kopie des Strings ohne linksseitige Leerzeichen.
-   BASEDLL std::string LTrim (const std::string& val);
+   BASEDLL std::string LTrimCopy (const std::string& val);
 
    /// @brief Liefert eine Kopie des Strings ohne rechtsseitige Leerzeichen.
-   BASEDLL std::string RTrim (const std::string& val);
+   BASEDLL std::string RTrimCopy (const std::string& val);
 
    /// @brief Liefert eine Kopie des Strings ohne links- und rechtsseitige
    /// Leerzeichen.
-   BASEDLL std::string Trim (const std::string& val);
+   BASEDLL std::string TrimCopy (const std::string& val);
 
    /// @brief Liefert eine Kopie des Strings in Großbuchstaben.
-   BASEDLL std::string Upper (const std::string& val);
+   BASEDLL std::string UpperCopy (const std::string& val);
 
    /// @brief Liefert eine Kopie des Strings in Kleinbuchstaben.
-   BASEDLL std::string Lower (const std::string& val);
+   BASEDLL std::string LowerCopy (const std::string& val);
 
    /// @brief Liefert eine Kopie des Strings, in dem die angegebene
    /// Zeichenfolge durch eine andere ersetzt wurde.
    /// @param src Original-String
    /// @param what Zu ersetzende Zeichenfolge
    /// @param with Zeichenfolge, die statt _what_ eingesetzt werden soll
-   BASEDLL std::string Replace (const std::string& src, const std::string& what, const std::string& with);
+   BASEDLL std::string ReplaceCopy (const std::string& src, const std::string& what, const std::string& with);
 
    /// @brief Liefert einen linksseitigen Teilstring einer bestimmten Länge.
    /// @param val Original-String
    /// @param length Teilstring-Länge
-   BASEDLL std::string Left (const std::string& val, int length);
+   BASEDLL std::string LeftCopy (const std::string& val, int length);
 
    /// @brief Liefert einen rechtsseitigen Teilstring einer bestimmten Länge.
    /// @param val Original-String
    /// @param length Teilstring-Länge
-   BASEDLL std::string Right (const std::string& val, int length);
+   BASEDLL std::string RightCopy (const std::string& val, int length);
 
    /// @brief Liefert eine Kopie des Strings, die linksseitig bis zur
    /// gewünschten Länge mit einem oder mehreren Zeichen aufgefüllt wurde.
    /// @param val Original-String
    /// @param length Füll-Länge
    /// @param filling Füll-String
-   BASEDLL std::string LFill (const std::string& val, int length, const std::string& filling = " ");
+   BASEDLL std::string LFillCopy (const std::string& val, int length, const std::string& filling = " ");
 
    /// @brief Liefert eine Kopie des Strings, die rechtsseitig bis zur
    /// gewünschten Länge mit einem oder mehreren Zeichen aufgefüllt wurde.
    /// @param val Original-String
    /// @param length Füll-Länge
    /// @param filling Füll-String
-   BASEDLL std::string RFill (const std::string& val, int length, const std::string& filling = " ");
+   BASEDLL std::string RFillCopy (const std::string& val, int length, const std::string& filling = " ");
 
    /// @brief Liefert alle Buchstaben aus einem String.
    BASEDLL std::string Letters (const std::string& val);

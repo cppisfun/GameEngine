@@ -60,8 +60,10 @@ namespace base {
    {
       if (val.empty()) return false;
 
+      const std::string tester(UpperCopy(val));
       const auto& checklist = constants::checkBool;
-      return std::any_of(checklist.begin(), checklist.end(), [&val] (const std::string& check) { return (Upper(val) == check); });
+
+      return std::any_of(checklist.begin(), checklist.end(), [&tester] (const std::string& check) { return (tester == check); });
    }
 
    int AsInt (const std::string& val)
@@ -175,7 +177,7 @@ namespace base {
    {
       std::string ret(AsString(boost::numeric_cast<int>(val), pretty));
       ret += (pretty) ? "," : ".";
-      ret += RFill(AsString(boost::numeric_cast<int>(Fraction(val) * std::pow(10.0f, boost::numeric_cast<float>(decimals))), false), decimals, "0");
+      ret += RFillCopy(AsString(boost::numeric_cast<int>(Fraction(val) * std::pow(10.0f, boost::numeric_cast<float>(decimals))), false), decimals, "0");
 
       return ret;
    }
@@ -184,7 +186,7 @@ namespace base {
    {
       std::string ret(AsString(boost::numeric_cast<int>(val), pretty));
       ret += (pretty) ? "," : ".";
-      ret += RFill(AsString(boost::numeric_cast<int>(Fraction(val) * std::pow(10.0, boost::numeric_cast<double>(decimals))), false), decimals, "0");
+      ret += RFillCopy(AsString(boost::numeric_cast<int>(Fraction(val) * std::pow(10.0, boost::numeric_cast<double>(decimals))), false), decimals, "0");
 
       return ret;
    }

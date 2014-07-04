@@ -11,7 +11,6 @@
     <ClInclude Include="String.h" />
     <ClInclude Include="Tools.h" />
     <ClInclude Include="LimitedValue.h" />
-    <ClInclude Include="XML.h" />
     <ClInclude Include="..\foreign\TinyXML++\src\ticpp.h">
       <Filter>TinyXML++</Filter>
     </ClInclude>
@@ -24,6 +23,8 @@
     <ClInclude Include="..\foreign\TinyXML++\src\tinystr.h">
       <Filter>TinyXML++</Filter>
     </ClInclude>
+    <ClInclude Include="XML.h" />
+    <ClInclude Include="Parser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Convert.cpp" />
@@ -32,7 +33,6 @@
     <ClCompile Include="Numeric.cpp" />
     <ClCompile Include="Precomp.cpp" />
     <ClCompile Include="String.cpp" />
-    <ClCompile Include="XML.cpp" />
     <ClCompile Include="..\foreign\TinyXML++\src\ticpp.cpp">
       <Filter>TinyXML++</Filter>
     </ClCompile>
@@ -42,6 +42,8 @@
     <ClCompile Include="..\foreign\TinyXML++\src\tinyxmlerror.cpp">
       <Filter>TinyXML++</Filter>
     </ClCompile>
+    <ClCompile Include="XML.cpp" />
+    <ClCompile Include="Parser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="TinyXML++">

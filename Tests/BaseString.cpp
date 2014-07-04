@@ -11,94 +11,94 @@ SUITE (BaseString)
 
    TEST (TrimFunctions)
    {
-      CHECK_EQUAL("",         LTrim(""));
-      CHECK_EQUAL("",         LTrim("   "));
-      CHECK_EQUAL("test",     LTrim("test"));
-      CHECK_EQUAL("test",     LTrim("   test"));
-      CHECK_EQUAL("test   ",  LTrim("test   "));
-      CHECK_EQUAL("test   ",  LTrim("   test   "));
-      CHECK_EQUAL("t e s t ", LTrim(" t e s t "));
+      CHECK_EQUAL("",         LTrimCopy(""));
+      CHECK_EQUAL("",         LTrimCopy("   "));
+      CHECK_EQUAL("test",     LTrimCopy("test"));
+      CHECK_EQUAL("test",     LTrimCopy("   test"));
+      CHECK_EQUAL("test   ",  LTrimCopy("test   "));
+      CHECK_EQUAL("test   ",  LTrimCopy("   test   "));
+      CHECK_EQUAL("t e s t ", LTrimCopy(" t e s t "));
 
-      CHECK_EQUAL("",         RTrim(""));
-      CHECK_EQUAL("",         RTrim("   "));
-      CHECK_EQUAL("test",     RTrim("test"));
-      CHECK_EQUAL("   test",  RTrim("   test"));
-      CHECK_EQUAL("test",     RTrim("test   "));
-      CHECK_EQUAL("   test",  RTrim("   test   "));
-      CHECK_EQUAL(" t e s t", RTrim(" t e s t "));
+      CHECK_EQUAL("",         RTrimCopy(""));
+      CHECK_EQUAL("",         RTrimCopy("   "));
+      CHECK_EQUAL("test",     RTrimCopy("test"));
+      CHECK_EQUAL("   test",  RTrimCopy("   test"));
+      CHECK_EQUAL("test",     RTrimCopy("test   "));
+      CHECK_EQUAL("   test",  RTrimCopy("   test   "));
+      CHECK_EQUAL(" t e s t", RTrimCopy(" t e s t "));
 
-      CHECK_EQUAL("",         Trim(""));
-      CHECK_EQUAL("",         Trim("   "));
-      CHECK_EQUAL("test",     Trim("test"));
-      CHECK_EQUAL("test",     Trim("   test"));
-      CHECK_EQUAL("test",     Trim("test   "));
-      CHECK_EQUAL("test",     Trim("   test   "));
-      CHECK_EQUAL("t e s t",  Trim(" t e s t "));
+      CHECK_EQUAL("",         TrimCopy(""));
+      CHECK_EQUAL("",         TrimCopy("   "));
+      CHECK_EQUAL("test",     TrimCopy("test"));
+      CHECK_EQUAL("test",     TrimCopy("   test"));
+      CHECK_EQUAL("test",     TrimCopy("test   "));
+      CHECK_EQUAL("test",     TrimCopy("   test   "));
+      CHECK_EQUAL("t e s t",  TrimCopy(" t e s t "));
    }
 
    TEST (FillFunctions)
    {
-      CHECK_EQUAL("",        LFill("", -1, ""));
-      CHECK_EQUAL("",        LFill("", 0, ""));
-      CHECK_EQUAL("",        LFill("", 1, ""));
-      CHECK_EQUAL("",        LFill("", -1, "+"));
-      CHECK_EQUAL("",        LFill("", 0, "+"));
-      CHECK_EQUAL("+",       LFill("", 1, "+"));
-      CHECK_EQUAL("123",     LFill("123", 3, "+"));
-      CHECK_EQUAL("+++123",  LFill("123", 6, "+"));
-      CHECK_EQUAL("test123", LFill("123", 7, "test"));
-      CHECK_EQUAL("test1",   LFill("123", 5, "test"));
+      CHECK_EQUAL("",        LFillCopy("", -1, ""));
+      CHECK_EQUAL("",        LFillCopy("", 0, ""));
+      CHECK_EQUAL("",        LFillCopy("", 1, ""));
+      CHECK_EQUAL("",        LFillCopy("", -1, "+"));
+      CHECK_EQUAL("",        LFillCopy("", 0, "+"));
+      CHECK_EQUAL("+",       LFillCopy("", 1, "+"));
+      CHECK_EQUAL("123",     LFillCopy("123", 3, "+"));
+      CHECK_EQUAL("+++123",  LFillCopy("123", 6, "+"));
+      CHECK_EQUAL("test123", LFillCopy("123", 7, "test"));
+      CHECK_EQUAL("test1",   LFillCopy("123", 5, "test"));
 
-      CHECK_EQUAL("",        RFill("", -1, ""));
-      CHECK_EQUAL("",        RFill("", 0, ""));
-      CHECK_EQUAL("",        RFill("", 1, ""));
-      CHECK_EQUAL("",        RFill("", -1, "+"));
-      CHECK_EQUAL("",        RFill("", 0, "+"));
-      CHECK_EQUAL("+",       RFill("", 1, "+"));
-      CHECK_EQUAL("123",     RFill("123", 3, "+"));
-      CHECK_EQUAL("123+++",  RFill("123", 6, "+"));
-      CHECK_EQUAL("123test", RFill("123", 7, "test"));
-      CHECK_EQUAL("123te",   RFill("123", 5, "test"));
+      CHECK_EQUAL("",        RFillCopy("", -1, ""));
+      CHECK_EQUAL("",        RFillCopy("", 0, ""));
+      CHECK_EQUAL("",        RFillCopy("", 1, ""));
+      CHECK_EQUAL("",        RFillCopy("", -1, "+"));
+      CHECK_EQUAL("",        RFillCopy("", 0, "+"));
+      CHECK_EQUAL("+",       RFillCopy("", 1, "+"));
+      CHECK_EQUAL("123",     RFillCopy("123", 3, "+"));
+      CHECK_EQUAL("123+++",  RFillCopy("123", 6, "+"));
+      CHECK_EQUAL("123test", RFillCopy("123", 7, "test"));
+      CHECK_EQUAL("123te",   RFillCopy("123", 5, "test"));
    }
 
    TEST (SubstringFunctions)
    {
-      CHECK_EQUAL("",     Left("", -1));
-      CHECK_EQUAL("",     Left("", 0));
-      CHECK_EQUAL("",     Left("", 1));
-      CHECK_EQUAL("",     Left("test", -1));
-      CHECK_EQUAL("",     Left("test", 0));
-      CHECK_EQUAL("te",   Left("test", 2));
-      CHECK_EQUAL("test", Left("test", 4));
-      CHECK_EQUAL("test", Left("test", 5));
+      CHECK_EQUAL("",     LeftCopy("", -1));
+      CHECK_EQUAL("",     LeftCopy("", 0));
+      CHECK_EQUAL("",     LeftCopy("", 1));
+      CHECK_EQUAL("",     LeftCopy("test", -1));
+      CHECK_EQUAL("",     LeftCopy("test", 0));
+      CHECK_EQUAL("te",   LeftCopy("test", 2));
+      CHECK_EQUAL("test", LeftCopy("test", 4));
+      CHECK_EQUAL("test", LeftCopy("test", 5));
 
-      CHECK_EQUAL("",     Right("", -1));
-      CHECK_EQUAL("",     Right("", 0));
-      CHECK_EQUAL("",     Right("", 1));
-      CHECK_EQUAL("",     Right("test", -1));
-      CHECK_EQUAL("",     Right("test", 0));
-      CHECK_EQUAL("st",   Right("test", 2));
-      CHECK_EQUAL("test", Right("test", 4));
-      CHECK_EQUAL("test", Right("test", 5));
+      CHECK_EQUAL("",     RightCopy("", -1));
+      CHECK_EQUAL("",     RightCopy("", 0));
+      CHECK_EQUAL("",     RightCopy("", 1));
+      CHECK_EQUAL("",     RightCopy("test", -1));
+      CHECK_EQUAL("",     RightCopy("test", 0));
+      CHECK_EQUAL("st",   RightCopy("test", 2));
+      CHECK_EQUAL("test", RightCopy("test", 4));
+      CHECK_EQUAL("test", RightCopy("test", 5));
    }
 
    TEST (CaseFunctions)
    {
-      CHECK_EQUAL("",          Upper(""));
-      CHECK_EQUAL("   ",       Upper("   "));
-      CHECK_EQUAL("ABC",       Upper("abc"));
-      CHECK_EQUAL("ABC",       Upper("ABC"));
-      CHECK_EQUAL("AABBCC",    Upper("aAbBcC"));
-      CHECK_EQUAL("123456789", Upper("123456789"));
-      CHECK_EQUAL("!$%&()=?*", Upper("!$%&()=?*"));
+      CHECK_EQUAL("",          UpperCopy(""));
+      CHECK_EQUAL("   ",       UpperCopy("   "));
+      CHECK_EQUAL("ABC",       UpperCopy("abc"));
+      CHECK_EQUAL("ABC",       UpperCopy("ABC"));
+      CHECK_EQUAL("AABBCC",    UpperCopy("aAbBcC"));
+      CHECK_EQUAL("123456789", UpperCopy("123456789"));
+      CHECK_EQUAL("!$%&()=?*", UpperCopy("!$%&()=?*"));
 
-      CHECK_EQUAL("",          Lower(""));
-      CHECK_EQUAL("   ",       Lower("   "));
-      CHECK_EQUAL("abc",       Lower("abc"));
-      CHECK_EQUAL("abc",       Lower("ABC"));
-      CHECK_EQUAL("aabbcc",    Lower("aAbBcC"));
-      CHECK_EQUAL("123456789", Lower("123456789"));
-      CHECK_EQUAL("!$%&()=?*", Lower("!$%&()=?*"));
+      CHECK_EQUAL("",          LowerCopy(""));
+      CHECK_EQUAL("   ",       LowerCopy("   "));
+      CHECK_EQUAL("abc",       LowerCopy("abc"));
+      CHECK_EQUAL("abc",       LowerCopy("ABC"));
+      CHECK_EQUAL("aabbcc",    LowerCopy("aAbBcC"));
+      CHECK_EQUAL("123456789", LowerCopy("123456789"));
+      CHECK_EQUAL("!$%&()=?*", LowerCopy("!$%&()=?*"));
    }
 
    TEST (FilterFunctions)
@@ -145,17 +145,17 @@ SUITE (BaseString)
 
    TEST (Replace)
    {
-      CHECK_EQUAL("",    Replace("", "", ""));
-      CHECK_EQUAL("   ", Replace("   ", "", ""));
-      CHECK_EQUAL("",    Replace("   ", "   ", ""));
-      CHECK_EQUAL("   ", Replace("   ", "", "   "));
-      CHECK_EQUAL("   ", Replace("   ", "   ", "   "));
-      CHECK_EQUAL("123", Replace("123", "", ""));
-      CHECK_EQUAL("",    Replace("123", "123", ""));
-      CHECK_EQUAL("1--", Replace("123", "23", "--"));
-      CHECK_EQUAL("-2-", Replace("-+-", "+", "2"));
-      CHECK_EQUAL("--3", Replace("123", "12", "--"));
-      CHECK_EQUAL("ABC", Replace("123", "123", "ABC"));
+      CHECK_EQUAL("",    ReplaceCopy("", "", ""));
+      CHECK_EQUAL("   ", ReplaceCopy("   ", "", ""));
+      CHECK_EQUAL("",    ReplaceCopy("   ", "   ", ""));
+      CHECK_EQUAL("   ", ReplaceCopy("   ", "", "   "));
+      CHECK_EQUAL("   ", ReplaceCopy("   ", "   ", "   "));
+      CHECK_EQUAL("123", ReplaceCopy("123", "", ""));
+      CHECK_EQUAL("",    ReplaceCopy("123", "123", ""));
+      CHECK_EQUAL("1--", ReplaceCopy("123", "23", "--"));
+      CHECK_EQUAL("-2-", ReplaceCopy("-+-", "+", "2"));
+      CHECK_EQUAL("--3", ReplaceCopy("123", "12", "--"));
+      CHECK_EQUAL("ABC", ReplaceCopy("123", "123", "ABC"));
    }
 
 }

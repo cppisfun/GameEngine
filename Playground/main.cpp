@@ -95,7 +95,7 @@ int main ()
    catch (std::exception& e) {
       std::string err = "Unhandled exception caught in main loop!\n\n";
       err += e.what();
-      err += "\n\nProgram will be shut down.";
+      err += "\n\nShutting down program.";
 
       ShowError(err.c_str());
       return 5;

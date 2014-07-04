@@ -26,10 +26,10 @@ SUITE (MiscLimitedValue)
 
       CHECK_EQUAL(false, var == 9);
       CHECK_EQUAL(true,  var != 9);
-      CHECK_EQUAL(true, var <  9);
-      CHECK_EQUAL(true, var <= 9);
-      CHECK_EQUAL(false,  var >  9);
-      CHECK_EQUAL(false,  var >= 9);
+      CHECK_EQUAL(true,  var <  9);
+      CHECK_EQUAL(true,  var <= 9);
+      CHECK_EQUAL(false, var >  9);
+      CHECK_EQUAL(false, var >= 9);
 
 
       LimitedInt other(var);

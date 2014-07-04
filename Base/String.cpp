@@ -63,36 +63,36 @@ namespace base {
       val = val.substr(0, len);
    }
 
-   std::string LTrim (const std::string& val) { return boost::trim_left_copy(val); }
-   std::string RTrim (const std::string& val) { return boost::trim_right_copy(val); }
-   std::string Trim (const std::string& val)  { return boost::trim_copy(val); }
-   std::string Upper (const std::string& val) { return boost::to_upper_copy(val); }
-   std::string Lower (const std::string& val) { return boost::to_lower_copy(val); }
+   std::string LTrimCopy (const std::string& val) { return boost::trim_left_copy(val); }
+   std::string RTrimCopy (const std::string& val) { return boost::trim_right_copy(val); }
+   std::string TrimCopy (const std::string& val)  { return boost::trim_copy(val); }
+   std::string UpperCopy (const std::string& val) { return boost::to_upper_copy(val); }
+   std::string LowerCopy (const std::string& val) { return boost::to_lower_copy(val); }
 
-   std::string Replace (const std::string& src, const std::string& what, const std::string& with) { return boost::replace_all_copy(src, what, with); }
+   std::string ReplaceCopy (const std::string& src, const std::string& what, const std::string& with) { return boost::replace_all_copy(src, what, with); }
 
-   std::string Left (const std::string& val, int length)
+   std::string LeftCopy (const std::string& val, int length)
    {
       std::string ret(val);
       Left(ret, length);
       return ret;
    }
 
-   std::string Right (const std::string& val, int length)
+   std::string RightCopy (const std::string& val, int length)
    {
       std::string ret(val);
       Right(ret, length);
       return ret;
    }
 
-   std::string LFill (const std::string& val, int length, const std::string& filling)
+   std::string LFillCopy (const std::string& val, int length, const std::string& filling)
    {
       std::string ret(val);
       LFill(ret, length, filling);
       return ret;
    }
 
-   std::string RFill (const std::string& val, int length, const std::string& filling)
+   std::string RFillCopy (const std::string& val, int length, const std::string& filling)
    {
       std::string ret(val);
       RFill(ret, length, filling);

@@ -17,7 +17,7 @@ namespace base {
    /// es kein Objekt gibt, dessen Destruktor für die Abarbeitung genutzt
    /// werden kann, oder wenn der auszuführende Code für einen Destruktor
    /// ungeeignet ist, kann stattdessen ein ScopeGuard-Objekt verwendet werden.
-   class ScopeGuard
+   class BASEDLL ScopeGuard
    {
       std::function<void()> releaser;
 

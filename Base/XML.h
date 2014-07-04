@@ -1,51 +1,74 @@
 
 #pragma once
 
-namespace ticpp {
-   class Document;
-   class Node;
-   class Element;
-}
+#include "DLL_DEF.h"
 
 
 namespace xml {
 
-   class Node
+   class BASEDLL Node
    {
-      ticpp::Node*    parent;
-      ticpp::Node*    node;
-      ticpp::Element* element;
+      Node*       parent;
+      std::string name;
+      std::string value;
+
+      std::map<std::string, std::string> attributes;
+      std::vector<Node>                  children;
 
    public:
-      Node (const std::string& nodeName);
-      Node (const std::string& nodeName, const Node& parent);
+      Node (const std::string& name, Node& parent) : name(name), parent(&parent) { }
 
-      Node& AddChild (const Node& child);
-      Node& AddChild (const std::string& childName);
-      Node& RemoveChild (const Node& child);
-      Node& RemoveChild (const std::string& childName);
-      Node& Parent (const Node& parent);
-      Node& Clear ();
+      Node& Name (const std::string& val)                                  { name = val; return *this; }
+      Node& Value (const std::string& val)                                 { value = val; return *this; }
+      Node& AddChild (const Node& childNode)                               { children.push_back(childNode); return *this; }
+      Node& AddAttribute (const std::string& name, const std::string& val) { attributes[name] = val; return *this; }
+      Node& RemoveValue ()                                                 { value.clear(); return *this; }
+      Node& RemoveChildren ()                                              { children.clear(); return *this; }
+      Node& RemoveAttributes ()                                            { attributes.clear(); return *this; }
 
-      bool IsEditable () const { return element != nullptr; }
-      bool HasChildren () const;
+      Node& RemoveChild (const std::string& name);
+      Node& RemoveChild (size_t pos);
+      Node& RemoveAttribute (const std::string& name);
 
-      Node Clone ();
-      std::vector<Node> Children () const;
+      Node& Parent () const                             { return *parent; }
+      const std::string& Name () const                  { return name; }
+      const std::string& Value () const                 { return value; }
+      size_t ChildCount () const                        { return children.size(); }
+
+      bool HasChild (const std::string& name) const;
+      bool HasAttribute (const std::string& name) const;
+      Node& Child (const std::string& name);
+      Node& Child (size_t pos);
+      std::string AttributeValue (const std::string& name) const;
    };
 
-   class Document
+/*   class BASEDLL Document
    {
-      ticpp::Document doc;
-      Node            node;
 
    public:
-      Document () : node("") { }
+      Document (const std::string& )*/
 
-      Document& Parse (const std::string& xml);
-      Document& Load (const std::string& filePath);
-      Document& Save (const std::string& filePath);
-   };
+      /* will be useful here:
+      Name (2x)
+      AddChild
+      RemoveChildren
+      RemoveChild (2x)
+      ChildCount
+      HasChild
+      Child (2x)
+      */
+
+      /* will cause trouble here:
+      Value (2x)
+      AddAttribute
+      RemoveValue
+      RemoveAttributes
+      RemoveAttribute
+      Parent
+      HasAttribute
+      AttributeValue
+      */
+//   };
 
 }
 
