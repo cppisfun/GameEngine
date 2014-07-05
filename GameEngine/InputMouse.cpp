@@ -13,7 +13,7 @@ namespace ge {
    : currPosition(0, 0), prevPosition(0, 0), currWheelPosition(0), prevWheelPosition(0)
    {
       if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", ERROR_LOCATION);
-      eventCtrl->MouseCallback(std::bind(&InputMouse::OnEvent, this, std::placeholders::_1));
+      eventCtrl->MouseCallback(std::bind(&InputMouse::OnEvent, this));
 
       std::fill(currButtons.begin(), currButtons.end(), false);
       std::fill(prevButtons.begin(), prevButtons.end(), false);
@@ -23,18 +23,18 @@ namespace ge {
    {
    }
 
-   bool InputMouse::OnEvent (const sf::Event& event)
+   bool InputMouse::OnEvent (/*const sf::Event& event*/)
    {
       if (!Enabled()) return false;
 
-      switch (event.type) {
-         case sf::Event::MouseButtonPressed:  currButtons[event.mouseButton.button] = true;           return true;
-         case sf::Event::MouseButtonReleased: currButtons[event.mouseButton.button] = false;          return true;
-         case sf::Event::MouseMoved:          currPosition.Set(event.mouseMove.x, event.mouseMove.y); return true;
-         case sf::Event::MouseWheelMoved:     currWheelPosition += event.mouseWheel.delta;            return true;
-         // TODO: sf::Event::MouseEntered
-         // TODO: sf::Event::MouseLeft
-      }
+//      switch (event.type) {
+//         case sf::Event::MouseButtonPressed:  currButtons[event.mouseButton.button] = true;           return true;
+//         case sf::Event::MouseButtonReleased: currButtons[event.mouseButton.button] = false;          return true;
+//         case sf::Event::MouseMoved:          currPosition.Set(event.mouseMove.x, event.mouseMove.y); return true;
+//         case sf::Event::MouseWheelMoved:     currWheelPosition += event.mouseWheel.delta;            return true;
+//         // TODO: sf::Event::MouseEntered
+//         // TODO: sf::Event::MouseLeft
+//      }
 
       return false;
    }

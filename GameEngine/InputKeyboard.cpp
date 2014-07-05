@@ -12,7 +12,7 @@ namespace ge {
    InputKeyboard::InputKeyboard (EventController* eventCtrl)
    {
       if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", ERROR_LOCATION);
-      eventCtrl->KeyboardCallback(std::bind(&InputKeyboard::OnEvent, this, std::placeholders::_1));
+      eventCtrl->KeyboardCallback(std::bind(&InputKeyboard::OnEvent, this));
 
       std::fill(currKeys.begin(), currKeys.end(), false);
       std::fill(prevKeys.begin(), prevKeys.end(), false);
@@ -22,14 +22,14 @@ namespace ge {
    {
    }
 
-   bool InputKeyboard::OnEvent (const sf::Event& event)
+   bool InputKeyboard::OnEvent (/*const sf::Event& event*/)
    {
       if (!Enabled()) return false;
 
-      switch (event.type) {
-         case sf::Event::KeyPressed:  currKeys[event.key.code] = true;  return true;
-         case sf::Event::KeyReleased: currKeys[event.key.code] = false; return true;
-      }
+//      switch (event.type) {
+//         case sf::Event::KeyPressed:  currKeys[event.key.code] = true;  return true;
+//         case sf::Event::KeyReleased: currKeys[event.key.code] = false; return true;
+//      }
 
       return false;
    }

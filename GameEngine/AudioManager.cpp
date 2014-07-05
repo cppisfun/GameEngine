@@ -3,19 +3,19 @@
 
 #include <irrKlang.h>
 
-#include "AudioCore.h"
+#include "AudioManager.h"
 
 #include "../Base/Error.h"
 
 
 namespace ge {
 
-   AudioCore::AudioCore () : device(nullptr)
+   AudioManager::AudioManager () : device(nullptr)
    {
       Init();
    }
 
-   AudioCore::~AudioCore ()
+   AudioManager::~AudioManager ()
    {
       if (device != nullptr) {
          device->stopAllSounds();
@@ -36,13 +36,13 @@ namespace ge {
       }
    }
 
-   void AudioCore::Init ()
+   void AudioManager::Init ()
    {
       device = irrklang::createIrrKlangDevice();
       if (device == nullptr) throw error::Create("Failed to create irrKlang audio device!", ERROR_LOCATION);
    }
 
-   AudioCore& AudioCore::Add (const std::string& id, const std::string& audioFile)
+   AudioManager& AudioManager::Add (const std::string& id, const std::string& audioFile)
    {
       if (id.empty())                                 throw error::InvalidParam("No id specified!", ERROR_LOCATION);
       else if (audioFile.empty())                     throw error::InvalidParam("No audio file specified!", ERROR_LOCATION);
@@ -55,7 +55,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::Add (const std::string& id, const Binary& resource)
+   AudioManager& AudioManager::Add (const std::string& id, const Binary& resource)
    {
       if (id.empty())                                 throw error::InvalidParam("No id specified!", ERROR_LOCATION);
       else if (resource.empty())                      throw error::InvalidParam("No resource data specified!", ERROR_LOCATION);
@@ -68,7 +68,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::Remove (const std::string& id)
+   AudioManager& AudioManager::Remove (const std::string& id)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -81,7 +81,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::RemoveAll ()
+   AudioManager& AudioManager::RemoveAll ()
    {
       device->removeAllSoundSources();
       audioPool.clear();
@@ -89,19 +89,19 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::StopAll ()
+   AudioManager& AudioManager::StopAll ()
    {
       device->stopAllSounds();
       return *this;
    }
 
-   AudioCore& AudioCore::PauseAll (bool pause)
+   AudioManager& AudioManager::PauseAll (bool pause)
    {
       device->setAllSoundsPaused(pause);
       return *this;
    }
 
-   AudioCore& AudioCore::MasterVolume (int percent)
+   AudioManager& AudioManager::MasterVolume (int percent)
    {
       float vol = boost::numeric_cast<float>(percent) / 100.0f;
 
@@ -112,7 +112,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::DefaultVolume (const std::string& id, int percent)
+   AudioManager& AudioManager::DefaultVolume (const std::string& id, int percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -128,7 +128,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::PlayMusic (const std::string& id, bool looped)
+   AudioManager& AudioManager::PlayMusic (const std::string& id, bool looped)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
       else if (music.find(id) != music.end()) return *this;
@@ -143,7 +143,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::StopMusic ()
+   AudioManager& AudioManager::StopMusic ()
    {
       std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, irrklang::ISound*> mus) {
          mus.second->stop();
@@ -152,7 +152,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::StopMusic (const std::string& id)
+   AudioManager& AudioManager::StopMusic (const std::string& id)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -163,7 +163,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::PauseMusic (bool pause)
+   AudioManager& AudioManager::PauseMusic (bool pause)
    {
       std::for_each(music.begin(), music.end(), [&pause] (const std::pair<std::string, irrklang::ISound*> mus) {
          mus.second->setIsPaused(pause);
@@ -172,7 +172,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::PauseMusic (const std::string& id, bool pause)
+   AudioManager& AudioManager::PauseMusic (const std::string& id, bool pause)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -183,7 +183,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::MusicVolume (int percent)
+   AudioManager& AudioManager::MusicVolume (int percent)
    {
       float vol = boost::numeric_cast<float>(percent) / 100.0f;
 
@@ -197,7 +197,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::MusicVolume (const std::string& id, int percent)
+   AudioManager& AudioManager::MusicVolume (const std::string& id, int percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -213,7 +213,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::MusicSpeed (int percent)
+   AudioManager& AudioManager::MusicSpeed (int percent)
    {
       float spd = boost::numeric_cast<float>(percent) / 100.0f;
 
@@ -227,7 +227,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::MusicSpeed (const std::string& id, int percent)
+   AudioManager& AudioManager::MusicSpeed (const std::string& id, int percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -243,7 +243,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::MusicPan (int percent)
+   AudioManager& AudioManager::MusicPan (int percent)
    {
       float pan = boost::numeric_cast<float>(percent) / 100.0f;
 
@@ -257,7 +257,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::MusicPan (const std::string& id, int percent)
+   AudioManager& AudioManager::MusicPan (const std::string& id, int percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -273,7 +273,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::MusicPosition (const std::string& id, int position)
+   AudioManager& AudioManager::MusicPosition (const std::string& id, int position)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -290,7 +290,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::PlaySound (const std::string& id, bool looped)
+   AudioManager& AudioManager::PlaySound (const std::string& id, bool looped)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -304,7 +304,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::StopSound ()
+   AudioManager& AudioManager::StopSound ()
    {
       for (auto it = sounds.begin(); it != sounds.end(); ++it) {
          std::for_each(it->second.begin(), it->second.end(), [] (irrklang::ISound* snd) {
@@ -317,7 +317,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::StopSound (const std::string& id)
+   AudioManager& AudioManager::StopSound (const std::string& id)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -333,7 +333,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::PauseSound (bool pause)
+   AudioManager& AudioManager::PauseSound (bool pause)
    {
       for (auto it = sounds.begin(); it != sounds.end(); ++it) {
          std::for_each(it->second.begin(), it->second.end(), [&pause] (irrklang::ISound* snd) {
@@ -344,7 +344,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::PauseSound (const std::string& id, bool pause)
+   AudioManager& AudioManager::PauseSound (const std::string& id, bool pause)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -358,7 +358,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::SoundVolume (int percent)
+   AudioManager& AudioManager::SoundVolume (int percent)
    {
       float vol = boost::numeric_cast<float>(percent) / 100.0f;
 
@@ -374,7 +374,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::SoundVolume (const std::string& id, int percent)
+   AudioManager& AudioManager::SoundVolume (const std::string& id, int percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -393,7 +393,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::SoundSpeed (int percent)
+   AudioManager& AudioManager::SoundSpeed (int percent)
    {
       float spd = boost::numeric_cast<float>(percent) / 100.0f;
 
@@ -409,7 +409,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::SoundSpeed (const std::string& id, int percent)
+   AudioManager& AudioManager::SoundSpeed (const std::string& id, int percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -428,7 +428,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::SoundPan (int percent)
+   AudioManager& AudioManager::SoundPan (int percent)
    {
       float pan = boost::numeric_cast<float>(percent) / 100.0f;
 
@@ -444,7 +444,7 @@ namespace ge {
       return *this;
    }
 
-   AudioCore& AudioCore::SoundPan (const std::string& id, int percent)
+   AudioManager& AudioManager::SoundPan (const std::string& id, int percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -463,7 +463,7 @@ namespace ge {
       return *this;
    }
 
-   int AudioCore::MasterVolume () const
+   int AudioManager::MasterVolume () const
    {
       int vol = boost::numeric_cast<int>(device->getSoundVolume() * 100.0f);
 
@@ -473,7 +473,7 @@ namespace ge {
       return vol;
    }
 
-   int AudioCore::DefaultVolume (const std::string& id) const
+   int AudioManager::DefaultVolume (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -488,7 +488,7 @@ namespace ge {
       return vol;
    }
 
-   bool AudioCore::IsPlaying (const std::string& id) const
+   bool AudioManager::IsPlaying (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -498,7 +498,7 @@ namespace ge {
       return device->isCurrentlyPlaying(aud->second);
    }
 
-   bool AudioCore::IsMusicPaused (const std::string& id) const
+   bool AudioManager::IsMusicPaused (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -508,7 +508,7 @@ namespace ge {
       return mus->second->getIsPaused();
    }
 
-   bool AudioCore::IsMusicLooped (const std::string& id) const
+   bool AudioManager::IsMusicLooped (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -518,7 +518,7 @@ namespace ge {
       return mus->second->isLooped();
    }
 
-   bool AudioCore::IsMusicFinished (const std::string& id) const
+   bool AudioManager::IsMusicFinished (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -528,7 +528,7 @@ namespace ge {
       return mus->second->isFinished();
    }
 
-   int AudioCore::MusicVolume (const std::string& id) const
+   int AudioManager::MusicVolume (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -543,7 +543,7 @@ namespace ge {
       return vol;
    }
 
-   int AudioCore::MusicSpeed (const std::string& id) const
+   int AudioManager::MusicSpeed (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -553,7 +553,7 @@ namespace ge {
       return boost::numeric_cast<int>(mus->second->getPlaybackSpeed() * 100.0f);
    }
 
-   int AudioCore::MusicPan (const std::string& id) const
+   int AudioManager::MusicPan (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -568,7 +568,7 @@ namespace ge {
       return pan;
    }
 
-   int AudioCore::MusicPosition (const std::string& id) const
+   int AudioManager::MusicPosition (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -578,7 +578,7 @@ namespace ge {
       return mus->second->getPlayPosition();
    }
 
-   int AudioCore::MusicLength (const std::string& id) const
+   int AudioManager::MusicLength (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -588,7 +588,7 @@ namespace ge {
       return mus->second->getPlayLength();
    }
 
-   bool AudioCore::IsSoundPaused (const std::string& id) const
+   bool AudioManager::IsSoundPaused (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -598,7 +598,7 @@ namespace ge {
       return snd->second.back()->getIsPaused();
    }
 
-   bool AudioCore::IsSoundLooped (const std::string& id) const
+   bool AudioManager::IsSoundLooped (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -608,7 +608,7 @@ namespace ge {
       return snd->second.back()->isLooped();
    }
 
-   bool AudioCore::IsSoundFinished (const std::string& id) const
+   bool AudioManager::IsSoundFinished (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -618,7 +618,7 @@ namespace ge {
       return snd->second.back()->isFinished();
    }
 
-   int AudioCore::SoundVolume (const std::string& id) const
+   int AudioManager::SoundVolume (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -633,7 +633,7 @@ namespace ge {
       return vol;
    }
 
-   int AudioCore::SoundSpeed (const std::string& id) const
+   int AudioManager::SoundSpeed (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -643,7 +643,7 @@ namespace ge {
       return boost::numeric_cast<int>(snd->second.back()->getPlaybackSpeed() * 100.0f);
    }
 
-   int AudioCore::SoundPan (const std::string& id) const
+   int AudioManager::SoundPan (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -658,7 +658,7 @@ namespace ge {
       return pan;
    }
 
-   int AudioCore::SoundPosition (const std::string& id) const
+   int AudioManager::SoundPosition (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -668,7 +668,7 @@ namespace ge {
       return snd->second.back()->getPlayPosition();
    }
 
-   int AudioCore::SoundLength (const std::string& id) const
+   int AudioManager::SoundLength (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -678,7 +678,7 @@ namespace ge {
       return snd->second.back()->getPlayLength();
    }
 
-   const std::string AudioCore::FileName (const std::string& id) const
+   const std::string AudioManager::FileName (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 

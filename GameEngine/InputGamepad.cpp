@@ -1,8 +1,6 @@
 
 #include "Precomp.h"
 
-#include <SFML/Window/Event.hpp>
-
 #include "InputGamepad.h"
 #include "EventController.h"
 
@@ -14,7 +12,7 @@ namespace ge {
    InputGamepad::InputGamepad (EventController* eventCtrl)
    {
       if (eventCtrl ==  nullptr) throw error::NullPointer("Invalid event controller pointer!", ERROR_LOCATION);
-      eventCtrl->GamepadCallback(std::bind(&InputGamepad::OnEvent, this, std::placeholders::_1));
+      eventCtrl->GamepadCallback(std::bind(&InputGamepad::OnEvent, this));
 
       std::fill(currButtons.begin(), currButtons.end(), false);
       std::fill(prevButtons.begin(), prevButtons.end(), false);
@@ -24,15 +22,15 @@ namespace ge {
    {
    }
 
-   bool InputGamepad::OnEvent (const sf::Event& event)
+   bool InputGamepad::OnEvent (/*const sf::Event& event*/)
    {
       if (!Enabled()) return false;
 
-      switch (event.type) {
-         case sf::Event::JoystickButtonPressed:  currButtons[event.joystickButton.button] = true;  return true;
-         case sf::Event::JoystickButtonReleased: currButtons[event.joystickButton.button] = false; return true;
-         // TODO: sf::Event::JoyMoved
-      }
+//      switch (event.type) {
+//         case sf::Event::JoystickButtonPressed:  currButtons[event.joystickButton.button] = true;  return true;
+//         case sf::Event::JoystickButtonReleased: currButtons[event.joystickButton.button] = false; return true;
+//         // TODO: sf::Event::JoyMoved
+//      }
 
       return false;
    }
