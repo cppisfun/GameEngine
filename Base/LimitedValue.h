@@ -74,9 +74,6 @@ namespace misc {
       LimitedValue<T>& operator*= (T val) { value *= val; Adjust(); return *this; }
       LimitedValue<T>& operator/= (T val) { value /= val; Adjust(); return *this; }
 
-      LimitedValue<T> operator++ (T) { LimitedValue<T> tmp(*this); ++value; Adjust(); return tmp; }
-      LimitedValue<T> operator-- (T) { LimitedValue<T> tmp(*this); --value; Adjust(); return tmp; }
-
       LimitedValue<T>& operator++ () { ++value; Adjust(); return *this; }
       LimitedValue<T>& operator-- () { --value; Adjust(); return *this; }
    };
