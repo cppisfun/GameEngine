@@ -1,27 +1,28 @@
 
 #pragma once
 
-#include "EventController.h"
 #include "EventListener.h"
+#include "Point.h"
 
 #include "GraphicsManager.h"
 #include "InputManager.h"
 #include "AudioManager.h"
 #include "ResourcesManager.h"
 
-#include "Point.h"
-
-#include "../Base/Error.h"
-
 #include "DLL_DEF.h"
+
+struct SDL_Window;
+struct SDL_Renderer;
 
 
 namespace ge {
 
+   class EventController;
+
    class GEDLL Core : public EventListener
    {
    public:
-      enum What {
+      enum InterfaceType {
          NoInterface        = 0,
          GraphicsInterface  = 1,
          InputInterface     = 2,
@@ -30,10 +31,17 @@ namespace ge {
          AllInterfaces      = 15
       };
 
+      enum WindowModeType {
+         Window,
+         Fullscreen,
+         FullscreenWindow
+      };
+
    private:
       static std::unique_ptr<Core> instance;
 
-//      std::unique_ptr<sf::RenderWindow> window;
+      SDL_Window*   window;
+      SDL_Renderer* renderer;
 
       std::unique_ptr<EventController>  eventController;
       std::unique_ptr<GraphicsManager>  graphics;
@@ -41,133 +49,63 @@ namespace ge {
       std::unique_ptr<AudioManager>     audio;
       std::unique_ptr<ResourcesManager> resources;
 
-      bool hasFocus;
-
-      Core () : hasFocus(true), eventController(nullptr), graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
-      {
-//         window.reset(new sf::RenderWindow);
-//         if (window == nullptr) throw error::Create("Failed to create application window!", ERROR_LOCATION);
-//
-//         window->create(sf::VideoMode(800, 600), "GameEngine 0.0.5");
-//         window->clear(sf::Color::Blue);
-//         window->display();
-
-         eventController.reset(new EventController);
-         if (eventController == nullptr) throw error::Create("Failed to create event controller!", ERROR_LOCATION);
-
-         eventController->WindowCallback(std::bind(&Core::OnEvent, this));
-      }
-
+      Core ();
       Core (const Core&);
       Core& operator= (const Core&);
 
-      void Update () override
-      {
-         if (!Enabled()) return;
+      void Update () override;
 
-//         sf::Event event;
-//         while (window->pollEvent(event)) eventController->Event(event);
-      }
-
-      bool OnEvent (/*const sf::Event& event*/) override
-      {
-         if (!Enabled()) return false;
-
-//         switch (event.type) {
-//            case sf::Event::Closed:      window->close();  return true;
-//            case sf::Event::GainedFocus: hasFocus = true;  return true;
-//            case sf::Event::LostFocus:   hasFocus = false; return true;
-//            // TODO: sf::Event::Resized
-//            // TODO: sf::Event::TextEntered
-//         }
-
-         return false;
-      }
+      bool OnEvent (/*const sf::Event& event*/) override;
 
    public:
-      ~Core ()
-      {
-         ShutDown(AllInterfaces);
-//         if (window->isOpen()) window->close();
-      }
+      virtual ~Core ();
 
-      static Core* Instance ()
-      {
-         if (instance == nullptr) instance.reset(new Core);
-         return instance.get();
-      }
+      static Core* Instance () { if (instance == nullptr) instance.reset(new Core); return instance.get(); }
 
-      Core& Reset (const What& what)
-      {
-         if (what & GraphicsInterface)  graphics.reset(new GraphicsManager/*(window.get())*/);
-         if (what & InputInterface)     input.reset(new InputManager(eventController.get()));
-         if (what & AudioInterface)     audio.reset(new AudioManager);
-         if (what & ResourcesInterface) resources.reset(new ResourcesManager);
+      Core& Reset (InterfaceType what);
+      Core& ShutDown (InterfaceType what);
 
-         return *this;
-      }
+      Core& EnableScreenSaver (bool enable = true);
+      Core& DisableScreenSaver ();
+      Core& Brightness (float value);
 
-      Core& ShutDown (const What& what)
-      {
-         if (what & ResourcesInterface) resources.reset();
-         if (what & AudioInterface)     audio.reset();
-         if (what & InputInterface)     input.reset();
-         if (what & GraphicsInterface)  graphics.reset();
+      Core& WindowTitle (const std::string& title);
+      Core& WindowIcon (const std::string& iconFile);
+      Core& WindowIcon (const Binary& resource);
 
-         return *this;
-      }
+      Core& WindowPosition (int x, int y);
+      Core& WindowSize (int width, int height);
+      Core& WindowMaximumSize (int width, int height);
+      Core& WindowMinimumSize (int width, int height);
 
-//      Core& WindowTitle (const std::string& title) { window->setTitle(title); return *this; }
+      Core& WindowPosition (const Point<int>& pos)     { return WindowPosition(pos.X(), pos.Y()); }
+      Core& WindowSize (const Point<int>& dims)        { return WindowSize(dims.X(), dims.Y()); }
+      Core& WindowMaximumSize (const Point<int>& dims) { return WindowMaximumSize(dims.X(), dims.Y()); }
+      Core& WindowMinimumSize (const Point<int>& dims) { return WindowMinimumSize(dims.X(), dims.Y()); }
 
-      Core& WindowIcon (const std::string& iconFile)
-      {
-         if (iconFile.empty()) throw error::InvalidParam("No icon file specified!", ERROR_LOCATION);
+      Core& MaximizeWindow ();
+      Core& MinimizeWindow ();
+      Core& RestoreWindow ();
+      Core& WindowToFront ();
+      Core& WindowMode (WindowModeType mode);
+      Core& WindowBorder (bool border = true);
+      Core& ShowWindow (bool show = true);
+      Core& HideWindow ();
 
-//         sf::Image img;
-//         if (!img.loadFromFile(iconFile)) throw error::Create("Failed to create icon from file \"" + iconFile + "\"!", ERROR_LOCATION);
-//
-//         const auto size = img.getSize();
-//         window->setIcon(size.x, size.y, img.getPixelsPtr());
+      Core& Focus (bool focus = true);
+      Core& DoNothing ();
+      Core& Quit ();
 
-         return *this;
-      }
+      bool ScreenSaverEnabled () const;
+      float Brightness () const;
 
-      Core& WindowIcon (const Binary& resource)
-      {
-         if (resource.empty()) throw error::InvalidParam("Icon resource is empty!", ERROR_LOCATION);
+      Point<int> WindowPosition () const;
+      Point<int> WindowSize () const;
+      Point<int> WindowMaximumSize () const;
+      Point<int> WindowMinimumSize () const;
 
-//         sf::Image img;
-//         if (!img.loadFromMemory(resource.data(), resource.size())) throw error::Create("Failed to create icon from resource!", ERROR_LOCATION);
-//
-//         const auto size = img.getSize();
-//         window->setIcon(size.x, size.y, img.getPixelsPtr());
-
-         return *this;
-      }
-
-//      Core& WindowPosition (int x, int y)                        { window->setPosition(sf::Vector2<int>(x, y)); return *this; }
-//      Core& WindowPosition (const Point<int>& pos)               { window->setPosition(pos.AsSFMLVector()); return *this; }
-//      Core& WindowSize (unsigned int width, unsigned int height) { window->setSize(sf::Vector2<unsigned int>(width, height)); return *this; }
-//      Core& WindowSize (const Point<unsigned int>& dims)         { window->setSize(dims.AsSFMLVector()); return *this; }
-//      Core& ShowWindow (bool show = true)                        { window->setVisible(show); return *this; }
-//      Core& HideWindow ()                                        { window->setVisible(false); return *this; }
-//      Core& ShowMouse (bool show = true)                         { window->setMouseCursorVisible(show); return *this; }
-//      Core& HideMouse ()                                         { window->setMouseCursorVisible(false); return *this; }
-//      Core& EnableVSync (bool enable = true)                     { window->setVerticalSyncEnabled(enable); return *this; }
-//      Core& DisableVSync ()                                      { window->setVerticalSyncEnabled(false); return *this; }
-//      Core& EnableKeyRepeat (bool enable = true)                 { window->setKeyRepeatEnabled(enable); return *this; }
-//      Core& DisableKeyRepeat ()                                  { window->setKeyRepeatEnabled(false); return *this; }
-//      Core& EnableFrameRateLimit (unsigned int limit)            { window->setFramerateLimit(limit); return *this; }
-//      Core& DisableFrameRateLimit ()                             { window->setFramerateLimit(0u); return *this; }
-//      Core& DoNothing ()                                         { sf::sleep(sf::milliseconds(50)); return *this; }
-//      Core& Quit ()                                              { window->close(); return *this; }
-
-//      const Point<int> WindowPosition () const      { return Point<int>(window->getPosition()); }
-//      const Point<unsigned int> WindowSize () const { return Point<unsigned int>(window->getSize()); }
-//      HWND WindowHandle () const                    { return window->getSystemHandle(); }
-
-//      bool IsRunning () { Update(); return window->isOpen(); }
-//      bool HasFocus () const { return hasFocus; }
+      bool Running ();
+      bool Focussed () const;
 
       GraphicsManager* Graphics ()   { if (graphics == nullptr) Reset(GraphicsInterface); return graphics.get(); }
       InputManager* Input ()         { if (input == nullptr) Reset(InputInterface); return input.get(); }
