@@ -6,6 +6,9 @@
 
 #include "DLL_DEF.h"
 
+union SDL_Event;
+struct SDL_Window;
+
 
 namespace ge {
 
@@ -37,6 +40,8 @@ namespace ge {
       };
 
    private:
+      SDL_Window* window;
+
       Point<int> currPosition;
       Point<int> prevPosition;
       int        currWheelPosition;
@@ -45,13 +50,17 @@ namespace ge {
       std::array<bool, Button_Count> currButtons;
       std::array<bool, Button_Count> prevButtons;
 
-      bool OnEvent (/*const sf::Event& event*/) override;
+      bool OnEvent (const SDL_Event& event) override;
 
    public:
-      InputMouse (EventController* eventCtrl);
+      InputMouse (EventController* eventCtrl, SDL_Window* window);
       virtual ~InputMouse ();
 
       void Update () override;
+
+      InputMouse& Position (const Point<int>& position);
+      InputMouse& Show (bool show = true);
+      InputMouse& Hide ();
 
       int X () const                      { return currPosition.X(); }
       int Y () const                      { return currPosition.Y(); }
@@ -61,45 +70,15 @@ namespace ge {
       int DY () const                     { return currPosition.Y() - prevPosition.Y(); }
       int DWheel () const                 { return currWheelPosition - prevWheelPosition; }
 
-      bool Moved (int direction = Direction_Any);
-      bool WheelMoved (int direction = Direction_Any);
+      bool Moved (int direction = Direction_Any) const;
+      bool WheelMoved (int direction = Direction_Any) const;
 
-      bool Button (int btn = Button_Any);
-      bool ButtonPressed (int btn = Button_Any);
-      bool ButtonReleased (int btn = Button_Any);
+      bool Button (int btn = Button_Any) const;
+      bool ButtonPressed (int btn = Button_Any) const;
+      bool ButtonReleased (int btn = Button_Any) const;
+
+      bool Visible () const;
    };
 
 }
 
-
-/*
-   class GEDLL InputMouse : public EventListener
-   {
-      irr::gui::ICursorControl* cursor;
-
-   public:
-      /// Legt fest, ob der Mauszeiger angezeigt werden soll.
-      /// @param show Gibt an, ob der Mauszeiger sichtbar sein soll (Standard:
-      /// true)
-      InputMouse& Show (bool show = true) { cursor->setVisible(show); return *this; }
-
-      /// Legt fest, dass der Mauszeiger nicht angezeigt wird.
-      InputMouse& Hide () { cursor->setVisible(false); return *this; }
-
-      /// Legt die X-Position fest.
-      InputMouse& X (int x);
-
-      /// Legt die Y-Position fest.
-      InputMouse& Y (int y);
-
-      /// Legt X- und Y-Position fest.
-      InputMouse& Position (int x, int y);
-
-
-      /// Ermittelt, ob der Mauszeiger sichtbar ist.
-      bool IsVisible () const { return cursor->isVisible(); }
-   };
-
-}
-
-*/

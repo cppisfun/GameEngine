@@ -1,6 +1,8 @@
 
 #include "Precomp.h"
 
+#include <SDL.h>
+
 #include "InputManager.h"
 
 #include "../Base/Convert.h"
@@ -11,8 +13,8 @@ using namespace base;
 
 namespace ge {
 
-   InputManager::InputManager (EventController* eventCtrl)
-   : eventController(nullptr), keyboard(nullptr), mouse(nullptr), gamepad(nullptr)
+   InputManager::InputManager (EventController* eventCtrl, SDL_Window* window)
+   : window(window), eventController(nullptr), keyboard(nullptr), mouse(nullptr), gamepad(nullptr)
    {
       if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller handle!", ERROR_LOCATION);
       eventController = eventCtrl;
@@ -31,16 +33,16 @@ namespace ge {
       if (gamepad != nullptr)  gamepad->Update();
    }
 
-   InputManager& InputManager::Reset (const What& what)
+   InputManager& InputManager::Reset (InterfaceType what)
    {
       if (what & KeyboardInterface) keyboard.reset(new InputKeyboard(eventController));
-      if (what & MouseInterface)    mouse.reset(new InputMouse(eventController));
+      if (what & MouseInterface)    mouse.reset(new InputMouse(eventController, window));
       if (what & GamepadInterface)  gamepad.reset(new InputGamepad(eventController));
 
       return *this;
    }
 
-   InputManager& InputManager::ShutDown (const What& what)
+   InputManager& InputManager::ShutDown (InterfaceType what)
    {
       if (what & KeyboardInterface) keyboard.reset();
       if (what & MouseInterface)    mouse.reset();

@@ -34,64 +34,57 @@ int main ()
 
       bool paused = false;
 
-      core->WindowIcon(resources->Texture("texture"));
+//      core->WindowIcon(resources->Texture("texture"));
 
-      while (core->Running()) {
-         if (!core->Focussed()) {
-            core->DoNothing();
+      while (core->Running()) { // GAME LOOP - BEGIN
+         if (keyboard->KeyReleased()) core->Quit();
+
+         if (mouse->ButtonPressed(InputMouse::Button_Left)) {
+            mouse->Show(paused);
+            paused = !paused;
+            audio->PauseMusic(paused);
          }
-         else {
-            // GAME LOOP - BEGIN
 
-//            if (keyboard->KeyReleased()) core->Quit();
-
-//            if (mouse->ButtonPressed(InputMouse::Button_Left)) {
-//               core->ShowMouse(paused);
-//               paused = !paused;
-//               audio->PauseMusic(paused);
-//            }
-
-//            if (mouse->ButtonPressed(InputMouse::Button_Right)) {
-//               if (audio->IsPlaying("music")) audio->StopMusic("music");
-//               else audio->PlayMusic("music", true);
-//            }
-
-//            if (mouse->WheelMoved()) {
-//               audio->MusicVolume("music", audio->MusicVolume("music") + mouse->DWheel());
-//               audio->MusicVolume("piano", audio->MusicVolume("piano") - mouse->DWheel());
-//            }
-
-//            graphics->BeginScene();
-//            {
-//               graphics->DrawTexture("image", ge::Rectangle<float>(300, 100, 310, 110));
-//               graphics->DrawTexture("image", ge::Rectangle<float>(310, 110, 360, 160));
-//               graphics->DrawTexture("image", ge::Rectangle<float>(360, 160, 620, 320));
-
-//               graphics->DrawBox(5, 5, 160, 235);
-
-//               graphics->Text(10, 10, "Filename:       " + audio->FileName("music"));
-//               graphics->Text(10, 30, "Master Volume:  " + base::AsString(audio->MasterVolume()) + " %");
-//               graphics->Text(10, 50, "Default Volume: " + base::AsString(audio->DefaultVolume("music")) + " %");
-
-//               graphics->Log(10, 80, "Source Playing: " + base::AsString(audio->IsPlaying("music")));
-
-//               graphics->Text(10, 110, "Music Paused:   " + base::AsString(audio->IsMusicPaused("music")));
-//               graphics->Text(10, 130, "Music Looped:   " + base::AsString(audio->IsMusicLooped("music")));
-//               graphics->Text(10, 150, "Music Finished: " + base::AsString(audio->IsMusicFinished("music")));
-
-//               graphics->Log(10, 180, "Music Volume: " + base::AsString(audio->MusicVolume("music")) + " %");
-//               graphics->Log(10, 200, "Music Speed:  " + base::AsString(audio->MusicSpeed("music")) + " %");
-//               graphics->Log(10, 220, "Music Pan:    " + base::AsString(audio->MusicPan("music")) + " %");
-
-//               graphics->Text(10, 250, "Music Length:   " + base::AsString(audio->MusicLength("music")));
-//               graphics->Text(10, 270, "Music Position: " + base::AsString(audio->MusicPosition("music")));
-//            }
-//            graphics->EndScene();
-
-//            input->Update();
-
-            // GAME LOOP - END
+         if (mouse->ButtonPressed(InputMouse::Button_Right)) {
+            if (audio->IsPlaying("music")) audio->StopMusic("music");
+            else audio->PlayMusic("music", true);
          }
+
+         if (mouse->WheelMoved()) {
+            audio->MusicVolume("music", audio->MusicVolume("music") + mouse->DWheel());
+            audio->MusicVolume("piano", audio->MusicVolume("piano") - mouse->DWheel());
+         }
+
+         graphics->BeginScene(); // DRAWING OPERATIONS - BEGIN
+         {
+//            graphics->DrawTexture("image", ge::Rectangle<float>(300, 100, 310, 110));
+//            graphics->DrawTexture("image", ge::Rectangle<float>(310, 110, 360, 160));
+//            graphics->DrawTexture("image", ge::Rectangle<float>(360, 160, 620, 320));
+
+//            graphics->DrawBox(5, 5, 160, 235);
+
+//            graphics->Text(10, 10, "Filename:       " + audio->FileName("music"));
+//            graphics->Text(10, 30, "Master Volume:  " + base::AsString(audio->MasterVolume()) + " %");
+//            graphics->Text(10, 50, "Default Volume: " + base::AsString(audio->DefaultVolume("music")) + " %");
+
+//            graphics->Log(10, 80, "Source Playing: " + base::AsString(audio->IsPlaying("music")));
+
+//            graphics->Text(10, 110, "Music Paused:   " + base::AsString(audio->IsMusicPaused("music")));
+//            graphics->Text(10, 130, "Music Looped:   " + base::AsString(audio->IsMusicLooped("music")));
+//            graphics->Text(10, 150, "Music Finished: " + base::AsString(audio->IsMusicFinished("music")));
+
+//            graphics->Log(10, 180, "Music Volume: " + base::AsString(audio->MusicVolume("music")) + " %");
+//            graphics->Log(10, 200, "Music Speed:  " + base::AsString(audio->MusicSpeed("music")) + " %");
+//            graphics->Log(10, 220, "Music Pan:    " + base::AsString(audio->MusicPan("music")) + " %");
+
+//            graphics->Text(10, 250, "Music Length:   " + base::AsString(audio->MusicLength("music")));
+//            graphics->Text(10, 270, "Music Position: " + base::AsString(audio->MusicPosition("music")));
+         }
+         graphics->EndScene(); // DRAWING OPERATIONS - END
+
+         input->Update();
+
+         // GAME LOOP - END
       }
    }
    catch (std::exception& e) {

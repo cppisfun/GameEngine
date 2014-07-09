@@ -1,6 +1,8 @@
 
 #include "Precomp.h"
 
+#include <SDL.h>
+
 #include "InputGamepad.h"
 #include "EventController.h"
 
@@ -12,7 +14,7 @@ namespace ge {
    InputGamepad::InputGamepad (EventController* eventCtrl)
    {
       if (eventCtrl ==  nullptr) throw error::NullPointer("Invalid event controller pointer!", ERROR_LOCATION);
-      eventCtrl->GamepadCallback(std::bind(&InputGamepad::OnEvent, this));
+      eventCtrl->GamepadCallback(std::bind(&InputGamepad::OnEvent, this, std::placeholders::_1));
 
       std::fill(currButtons.begin(), currButtons.end(), false);
       std::fill(prevButtons.begin(), prevButtons.end(), false);
@@ -22,7 +24,7 @@ namespace ge {
    {
    }
 
-   bool InputGamepad::OnEvent (/*const sf::Event& event*/)
+   bool InputGamepad::OnEvent (const SDL_Event& event)
    {
       if (!Enabled()) return false;
 

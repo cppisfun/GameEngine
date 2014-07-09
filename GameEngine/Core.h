@@ -49,13 +49,15 @@ namespace ge {
       std::unique_ptr<AudioManager>     audio;
       std::unique_ptr<ResourcesManager> resources;
 
+      bool running;
+
       Core ();
       Core (const Core&);
       Core& operator= (const Core&);
 
       void Update () override;
 
-      bool OnEvent (/*const sf::Event& event*/) override;
+      bool OnEvent (const SDL_Event& event) override;
 
    public:
       virtual ~Core ();
@@ -70,9 +72,6 @@ namespace ge {
       Core& Brightness (float value);
 
       Core& WindowTitle (const std::string& title);
-      Core& WindowIcon (const std::string& iconFile);
-      Core& WindowIcon (const Binary& resource);
-
       Core& WindowPosition (int x, int y);
       Core& WindowSize (int width, int height);
       Core& WindowMaximumSize (int width, int height);
@@ -93,7 +92,6 @@ namespace ge {
       Core& HideWindow ();
 
       Core& Focus (bool focus = true);
-      Core& DoNothing ();
       Core& Quit ();
 
       bool ScreenSaverEnabled () const;

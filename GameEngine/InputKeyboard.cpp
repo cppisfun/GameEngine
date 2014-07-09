@@ -1,6 +1,8 @@
 
 #include "Precomp.h"
 
+#include <SDL.h>
+
 #include "InputKeyboard.h"
 #include "EventController.h"
 
@@ -12,7 +14,7 @@ namespace ge {
    InputKeyboard::InputKeyboard (EventController* eventCtrl)
    {
       if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", ERROR_LOCATION);
-      eventCtrl->KeyboardCallback(std::bind(&InputKeyboard::OnEvent, this));
+      eventCtrl->KeyboardCallback(std::bind(&InputKeyboard::OnEvent, this, std::placeholders::_1));
 
       std::fill(currKeys.begin(), currKeys.end(), false);
       std::fill(prevKeys.begin(), prevKeys.end(), false);
@@ -22,14 +24,14 @@ namespace ge {
    {
    }
 
-   bool InputKeyboard::OnEvent (/*const sf::Event& event*/)
+   bool InputKeyboard::OnEvent (const SDL_Event& event)
    {
       if (!Enabled()) return false;
 
-//      switch (event.type) {
-//         case sf::Event::KeyPressed:  currKeys[event.key.code] = true;  return true;
-//         case sf::Event::KeyReleased: currKeys[event.key.code] = false; return true;
-//      }
+      switch (event.type) {
+         case SDL_KEYDOWN: currKeys[event.key.keysym.scancode] = true;  return true;
+         case SDL_KEYUP:   currKeys[event.key.keysym.scancode] = false; return true;
+      }
 
       return false;
    }
@@ -40,7 +42,7 @@ namespace ge {
       std::copy(currKeys.begin(), currKeys.end(), prevKeys.begin());
    }
 
-   bool InputKeyboard::Key (int key)
+   bool InputKeyboard::Key (int key) const
    {
       if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", ERROR_LOCATION);
       else if (key >= 0) return (currKeys[key]);
@@ -52,7 +54,7 @@ namespace ge {
       return (key == Key_None);
    }
 
-   bool InputKeyboard::KeyPressed (int key)
+   bool InputKeyboard::KeyPressed (int key) const
    {
       if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", ERROR_LOCATION);
       else if (key >= 0) return (currKeys[key] && !prevKeys[key]);
@@ -64,7 +66,7 @@ namespace ge {
       return (key == Key_None);
    }
 
-   bool InputKeyboard::KeyReleased (int key)
+   bool InputKeyboard::KeyReleased (int key) const
    {
       if (key < Key_None || key >= Key_Count) throw error::InvalidParam("Key id out of range!", ERROR_LOCATION);
       else if (key >= 0) return (!currKeys[key] && prevKeys[key]);

@@ -6,6 +6,8 @@
 
 #include "DLL_DEF.h"
 
+struct SDL_Renderer;
+
 
 namespace ge {
 
@@ -18,7 +20,7 @@ namespace ge {
       };
 
    private:
-//      sf::RenderWindow* device;
+      SDL_Renderer* device;
 
       Color clearColor;
       Color foreColor;
@@ -33,7 +35,7 @@ namespace ge {
 //      void DrawText (float x, float y, const std::string& text, const sf::Font& font, int fontSizeInPixels);
 
    public:
-      GraphicsManager (/*sf::RenderWindow* device*/);
+      GraphicsManager (SDL_Renderer* device);
       virtual ~GraphicsManager ();
 
 

@@ -5,6 +5,8 @@
 
 #include "DLL_DEF.h"
 
+union SDL_Event;
+
 
 namespace ge {
 
@@ -23,7 +25,7 @@ namespace ge {
       std::array<bool, Button_Count> currButtons;
       std::array<bool, Button_Count> prevButtons;
 
-      bool OnEvent (/*const sf::Event& event*/) override;
+      bool OnEvent (const SDL_Event& event) override;
 
    public:
       InputGamepad (EventController* eventCtrl);

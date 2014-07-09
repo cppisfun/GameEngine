@@ -1,6 +1,8 @@
 
 #include "Precomp.h"
 
+#include <SDL.h>
+
 #include "GraphicsManager.h"
 
 #include "../Base/Convert.h"
@@ -11,10 +13,10 @@ using namespace ge;
 
 namespace ge {
 
-   GraphicsManager::GraphicsManager (/*sf::RenderWindow* device*/)
-   : /*device(device),*/ clearColor(0, 0, 63), foreColor(255, 255, 255), backColor(0, 0, 0)
+   GraphicsManager::GraphicsManager (SDL_Renderer* device)
+   : device(device), clearColor(0, 0, 63), foreColor(255, 255, 255), backColor(0, 0, 0)
    {
-//      if (device == nullptr) throw error::NullPointer("Invalid window device pointer!", ERROR_LOCATION);
+      if (device == nullptr) throw error::NullPointer("Invalid window device pointer!", ERROR_LOCATION);
 
       SystemFont("../resources/graphics/fonts/cour.ttf");
       DefaultFont("../resources/graphics/fonts/arial.ttf");
@@ -122,12 +124,13 @@ namespace ge {
 
    void GraphicsManager::BeginScene ()
    {
-//      device->clear(clearColor.AsSFMLColor());
+      SDL_SetRenderDrawColor(device, clearColor.Red(), clearColor.Green(), clearColor.Blue(), clearColor.Alpha());
+      SDL_RenderClear(device);
    }
 
    void GraphicsManager::EndScene ()
    {
-//      device->display();
+      SDL_RenderPresent(device);
    }
 
 // FIXME: GE-42

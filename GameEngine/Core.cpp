@@ -15,11 +15,11 @@
 
 namespace ge {
 
-   Core::Core () : window(nullptr), renderer(nullptr), eventController(nullptr), graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
+   Core::Core () : running(false), window(nullptr), renderer(nullptr), eventController(nullptr), graphics(nullptr), input(nullptr), audio(nullptr), resources(nullptr)
    {
       if (SDL_Init(SDL_INIT_EVERYTHING) != 0) throw error::Create("Failed to initialize SDL!", ERROR_LOCATION);
 
-      window = SDL_CreateWindow("GameEngine 0.1.0", 30, 30, 800, 600, 0);
+      window = SDL_CreateWindow("GameEngine 0.1.0", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
       if (window == nullptr) throw error::Create("Failed to create SDL application window!", ERROR_LOCATION);
 
       renderer = SDL_CreateRenderer(window, -1, 0);
@@ -28,41 +28,43 @@ namespace ge {
       eventController.reset(new EventController);
       if (eventController == nullptr) throw error::Create("Failed to create event controller!", ERROR_LOCATION);
 
-      eventController->WindowCallback(std::bind(&Core::OnEvent, this));
+      eventController->CoreCallback(std::bind(&Core::OnEvent, this, std::placeholders::_1));
+      running = true;
    }
 
    Core::~Core ()
    {
-      Quit();
+      ShutDown(AllInterfaces);
+
+      if (renderer != nullptr) { SDL_DestroyRenderer(renderer); renderer = nullptr; }
+      if (window != nullptr)   { SDL_DestroyWindow(window); window = nullptr; }
+
+      SDL_Quit();
    }
 
    void Core::Update ()
    {
       if (!Enabled()) return;
 
-//      sf::Event event;
-//      while (window->pollEvent(event)) eventController->Event(event);
+      SDL_Event event;
+      while (SDL_PollEvent(&event)) eventController->Event(event);
    }
 
-   bool Core::OnEvent (/*const sf::Event& event*/)
+   bool Core::OnEvent (const SDL_Event& event)
    {
       if (!Enabled()) return false;
 
-//      switch (event.type) {
-//         case sf::Event::Closed:      window->close();  return true;
-//         case sf::Event::GainedFocus: hasFocus = true;  return true;
-//         case sf::Event::LostFocus:   hasFocus = false; return true;
-//         // TODO: sf::Event::Resized
-//         // TODO: sf::Event::TextEntered
-//      }
+      switch (event.type) {
+         case SDL_QUIT: running = false; return true;
+      }
 
       return false;
    }
 
    Core& Core::Reset (InterfaceType what)
    {
-      if (what & GraphicsInterface)  graphics.reset(new GraphicsManager/*(window.get())*/);
-      if (what & InputInterface)     input.reset(new InputManager(eventController.get()));
+      if (what & GraphicsInterface)  graphics.reset(new GraphicsManager(renderer));
+      if (what & InputInterface)     input.reset(new InputManager(eventController.get(), window));
       if (what & AudioInterface)     audio.reset(new AudioManager);
       if (what & ResourcesInterface) resources.reset(new ResourcesManager);
 
@@ -102,32 +104,6 @@ namespace ge {
    Core& Core::WindowTitle (const std::string& title)
    {
       SDL_SetWindowTitle(window, title.c_str());
-      return *this;
-   }
-
-   Core& Core::WindowIcon (const std::string& iconFile)
-   {
-      if (iconFile.empty()) throw error::InvalidParam("No icon file specified!", ERROR_LOCATION);
-
-//      sf::Image img;
-//      if (!img.loadFromFile(iconFile)) throw error::Create("Failed to create icon from file \"" + iconFile + "\"!", ERROR_LOCATION);
-//
-//      const auto size = img.getSize();
-//      window->setIcon(size.x, size.y, img.getPixelsPtr());
-
-      return *this;
-   }
-
-   Core& Core::WindowIcon (const Binary& resource)
-   {
-      if (resource.empty()) throw error::InvalidParam("Icon resource is empty!", ERROR_LOCATION);
-
-//      sf::Image img;
-//      if (!img.loadFromMemory(resource.data(), resource.size())) throw error::Create("Failed to create icon from resource!", ERROR_LOCATION);
-//
-//      const auto size = img.getSize();
-//      window->setIcon(size.x, size.y, img.getPixelsPtr());
-
       return *this;
    }
 
@@ -214,19 +190,9 @@ namespace ge {
       return *this;
    }
 
-   Core& Core::DoNothing ()
-   {
-      SDL_Delay(50);
-      return *this;
-   }
-
    Core& Core::Quit ()
    {
-      ShutDown(AllInterfaces);
-
-      if (renderer != nullptr) { SDL_DestroyRenderer(renderer); renderer = nullptr; }
-      if (window != nullptr)   { SDL_DestroyWindow(window); window = nullptr; }
-
+      running = false;
       return *this;
    }
 
@@ -279,7 +245,7 @@ namespace ge {
    bool Core::Running ()
    {
       if (window != nullptr) Update();
-      return window != nullptr;
+      return running;
    }
 
    bool Core::Focussed () const

@@ -3,6 +3,8 @@
 
 #include "DLL_DEF.h"
 
+union SDL_Event;
+
 
 namespace ge {
 
@@ -10,8 +12,8 @@ namespace ge {
    {
       bool enabled;
 
-      virtual bool OnEvent (/*const sf::Event& event*/) = 0;
-      virtual void Update ()                            = 0;
+      virtual bool OnEvent (const SDL_Event& event) = 0;
+      virtual void Update ()                        = 0;
 
    public:
       EventListener () : enabled(true) { }

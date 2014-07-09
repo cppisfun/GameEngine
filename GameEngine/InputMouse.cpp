@@ -1,6 +1,8 @@
 
 #include "Precomp.h"
 
+#include <SDL.h>
+
 #include "InputMouse.h"
 #include "EventController.h"
 
@@ -9,11 +11,11 @@
 
 namespace ge {
 
-   InputMouse::InputMouse (EventController* eventCtrl)
-   : currPosition(0, 0), prevPosition(0, 0), currWheelPosition(0), prevWheelPosition(0)
+   InputMouse::InputMouse (EventController* eventCtrl, SDL_Window* window)
+   : window(window), currPosition(0, 0), prevPosition(0, 0), currWheelPosition(0), prevWheelPosition(0)
    {
       if (eventCtrl == nullptr) throw error::NullPointer("Invalid event controller pointer!", ERROR_LOCATION);
-      eventCtrl->MouseCallback(std::bind(&InputMouse::OnEvent, this));
+      eventCtrl->MouseCallback(std::bind(&InputMouse::OnEvent, this, std::placeholders::_1));
 
       std::fill(currButtons.begin(), currButtons.end(), false);
       std::fill(prevButtons.begin(), prevButtons.end(), false);
@@ -23,18 +25,16 @@ namespace ge {
    {
    }
 
-   bool InputMouse::OnEvent (/*const sf::Event& event*/)
+   bool InputMouse::OnEvent (const SDL_Event& event)
    {
       if (!Enabled()) return false;
 
-//      switch (event.type) {
-//         case sf::Event::MouseButtonPressed:  currButtons[event.mouseButton.button] = true;           return true;
-//         case sf::Event::MouseButtonReleased: currButtons[event.mouseButton.button] = false;          return true;
-//         case sf::Event::MouseMoved:          currPosition.Set(event.mouseMove.x, event.mouseMove.y); return true;
-//         case sf::Event::MouseWheelMoved:     currWheelPosition += event.mouseWheel.delta;            return true;
-//         // TODO: sf::Event::MouseEntered
-//         // TODO: sf::Event::MouseLeft
-//      }
+      switch (event.type) {
+         case SDL_MOUSEBUTTONDOWN: currButtons[event.button.button - 1] = true;      return true;
+         case SDL_MOUSEBUTTONUP:   currButtons[event.button.button - 1] = false;     return true;
+         case SDL_MOUSEMOTION:     currPosition.Set(event.motion.x, event.motion.y); return true;
+         case SDL_MOUSEWHEEL:      currWheelPosition += event.wheel.y;               return true;
+      }
 
       return false;
    }
@@ -48,43 +48,27 @@ namespace ge {
       prevWheelPosition = currWheelPosition;
    }
 
-   bool InputMouse::Button (int btn)
+   InputMouse& InputMouse::Position (const Point<int>& position)
    {
-      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
-      else if (btn >= 0) return currButtons[btn];
+      currPosition = position;
+      SDL_WarpMouseInWindow(window, position.X(), position.Y());
 
-      for (int i = 0; i < Button_Count; ++i) {
-         if (currButtons[i]) return (btn == Button_Any);
-      }
-
-      return (btn == Button_None);
+      return *this;
    }
 
-   bool InputMouse::ButtonPressed (int btn)
+   InputMouse& InputMouse::Show (bool show)
    {
-      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
-      else if (btn >= 0) return (currButtons[btn] && !prevButtons[btn]);
-
-      for (int i = 0; i < Button_Count; ++i) {
-         if (currButtons[i] && !prevButtons[i]) return (btn == Button_Any);
-      }
-
-      return (btn == Button_None);
+      SDL_ShowCursor(show ? 1 : 0);
+      return *this;
    }
 
-   bool InputMouse::ButtonReleased (int btn)
+   InputMouse& InputMouse::Hide ()
    {
-      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
-      else if (btn >= 0) return (!currButtons[btn] && prevButtons[btn]);
-
-      for (int i = 0; i < Button_Count; ++i) {
-         if (!currButtons[i] && prevButtons[i]) return (btn == Button_Any);
-      }
-
-      return (btn == Button_None);
+      SDL_ShowCursor(0);
+      return *this;
    }
 
-   bool InputMouse::Moved (int direction)
+   bool InputMouse::Moved (int direction) const
    {
       if (direction == Direction_Any)             return (DX() != 0 || DY() != 0);
       else if (direction == Direction_None)       return (DX() == 0 && DY() == 0);
@@ -97,7 +81,7 @@ namespace ge {
       else throw error::InvalidParam("Direction out of range!", ERROR_LOCATION);
    }
 
-   bool InputMouse::WheelMoved (int direction)
+   bool InputMouse::WheelMoved (int direction) const
    {
       if (direction == Direction_Any)           return (DWheel() != 0);
       else if (direction == Direction_None)     return (DWheel() == 0);
@@ -107,36 +91,46 @@ namespace ge {
       else throw error::InvalidParam("Direction out of range!", ERROR_LOCATION);
    }
 
+   bool InputMouse::Button (int btn) const
+   {
+      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
+      else if (btn >= 0) return currButtons[btn];
+
+      for (int i = 0; i < Button_Count; ++i) {
+         if (currButtons[i]) return (btn == Button_Any);
+      }
+
+      return (btn == Button_None);
+   }
+
+   bool InputMouse::ButtonPressed (int btn) const
+   {
+      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
+      else if (btn >= 0) return (currButtons[btn] && !prevButtons[btn]);
+
+      for (int i = 0; i < Button_Count; ++i) {
+         if (currButtons[i] && !prevButtons[i]) return (btn == Button_Any);
+      }
+
+      return (btn == Button_None);
+   }
+
+   bool InputMouse::ButtonReleased (int btn) const
+   {
+      if (btn < Button_None || btn >= Button_Count) throw error::InvalidParam("Button id out of range!", ERROR_LOCATION);
+      else if (btn >= 0) return (!currButtons[btn] && prevButtons[btn]);
+
+      for (int i = 0; i < Button_Count; ++i) {
+         if (!currButtons[i] && prevButtons[i]) return (btn == Button_Any);
+      }
+
+      return (btn == Button_None);
+   }
+
+   bool InputMouse::Visible () const
+   {
+      return SDL_ShowCursor(-1) == 1;
+   }
+
 }
 
-
-/*
-   InputMouse& InputMouse::X (int x)
-   {
-      currX = x;
-      prevX = x;
-
-      cursor->setPosition(x, currY);
-      return *this;
-   }
-
-   InputMouse& InputMouse::Y (int y)
-   {
-      currY = y;
-      prevY = y;
-
-      cursor->setPosition(currX, y);
-      return *this;
-   }
-
-   InputMouse& InputMouse::Position (int x, int y)
-   {
-      currX = x;
-      prevX = x;
-      currY = y;
-      prevY = y;
-
-      cursor->setPosition(x, y);
-      return *this;
-   }
-*/
