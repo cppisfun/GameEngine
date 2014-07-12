@@ -1,8 +1,6 @@
 
 #pragma once
 
-#include <functional>
-
 union SDL_Event;
 
 

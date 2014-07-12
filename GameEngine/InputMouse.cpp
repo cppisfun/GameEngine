@@ -70,24 +70,24 @@ namespace ge {
 
    bool InputMouse::Moved (int direction) const
    {
-      if (direction == Direction_Any)             return (DX() != 0 || DY() != 0);
-      else if (direction == Direction_None)       return (DX() == 0 && DY() == 0);
-      else if (direction == Direction_Left)       return (DX() < 0);
-      else if (direction == Direction_Right)      return (DX() > 0);
-      else if (direction == Direction_Horizontal) return (DX() != 0);
-      else if (direction == Direction_Up)         return (DY() < 0);
-      else if (direction == Direction_Down)       return (DY() > 0);
-      else if (direction == Direction_Vertical)   return (DY() != 0);
+      if      (direction == Direction_Any)        return DX() != 0 || DY() != 0;
+      else if (direction == Direction_None)       return DX() == 0 && DY() == 0;
+      else if (direction == Direction_Left)       return DX() < 0;
+      else if (direction == Direction_Right)      return DX() > 0;
+      else if (direction == Direction_Horizontal) return DX() != 0;
+      else if (direction == Direction_Up)         return DY() < 0;
+      else if (direction == Direction_Down)       return DY() > 0;
+      else if (direction == Direction_Vertical)   return DY() != 0;
       else throw error::InvalidParam("Direction out of range!", ERROR_LOCATION);
    }
 
    bool InputMouse::WheelMoved (int direction) const
    {
-      if (direction == Direction_Any)           return (DWheel() != 0);
-      else if (direction == Direction_None)     return (DWheel() == 0);
-      else if (direction == Direction_Up)       return (DWheel() < 0);
-      else if (direction == Direction_Down)     return (DWheel() > 0);
-      else if (direction == Direction_Vertical) return (DWheel() != 0);
+      if      (direction == Direction_Any)      return DWheel() != 0;
+      else if (direction == Direction_None)     return DWheel() == 0;
+      else if (direction == Direction_Up)       return DWheel() < 0;
+      else if (direction == Direction_Down)     return DWheel() > 0;
+      else if (direction == Direction_Vertical) return DWheel() != 0;
       else throw error::InvalidParam("Direction out of range!", ERROR_LOCATION);
    }
 

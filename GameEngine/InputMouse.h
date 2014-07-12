@@ -64,11 +64,12 @@ namespace ge {
 
       int X () const                      { return currPosition.X(); }
       int Y () const                      { return currPosition.Y(); }
-      const Point<int>& Position () const { return currPosition; }
-      int Wheel () const                  { return currWheelPosition; }
       int DX () const                     { return currPosition.X() - prevPosition.X(); }
       int DY () const                     { return currPosition.Y() - prevPosition.Y(); }
-      int DWheel () const                 { return currWheelPosition - prevWheelPosition; }
+      const Point<int>& Position () const { return currPosition; }
+
+      int Wheel () const  { return currWheelPosition; }
+      int DWheel () const { return currWheelPosition - prevWheelPosition; }
 
       bool Moved (int direction = Direction_Any) const;
       bool WheelMoved (int direction = Direction_Any) const;
