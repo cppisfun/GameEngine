@@ -12,12 +12,14 @@ cd ..\TinyXML++
 xcopy %1\ticpp.lib ..\..\%1 /i /y /q
 echo TinyXML++ beendet.
 
-echo Beginne mit SDL 2.0 ...
+echo Beginne mit SDL 2.0.3 ...
 cd ..\SDL
-xcopy SDL2\lib\*.lib ..\..\%1 /i /y /q
-xcopy SDL2\bin\*.dll ..\..\%1 /i /y /q
-xcopy SDL_Image\lib\*.lib ..\..\%1 /i /y /q
-xcopy SDL_Image\bin\*.dll ..\..\%1 /i /y /q
+xcopy SDL2\lib\x86\*.lib ..\..\%1 /i /y /q
+xcopy SDL2\lib\x86\*.dll ..\..\%1 /i /y /q
+xcopy SDL2_image\lib\x86\*.lib ..\..\%1 /i /y /q
+xcopy SDL2_image\lib\x86\*.dll ..\..\%1 /i /y /q
+xcopy SDL2_ttf\lib\x86\*.lib ..\..\%1 /i /y /q
+xcopy SDL2_ttf\lib\x86\*.dll ..\..\%1 /i /y /q
 echo SDL beendet.
 
 echo Beginne mit irrKlang 1.4.0 ...

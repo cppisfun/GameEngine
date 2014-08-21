@@ -11,7 +11,3 @@ foreign/boost/bin.v2/config.log
 *.sdf
 *.suo
 *.vcxproj.user
-
-.hg
-.hgignore
-.hgtags
