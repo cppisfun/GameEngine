@@ -18,7 +18,6 @@ namespace ge {
       BinaryMap binaries;
       BinaryMap musics;
       BinaryMap sounds;
-      BinaryMap fonts;
       BinaryMap textures;
 
       void Add (const std::string& id, const std::string& path, StringMap& map);
@@ -40,7 +39,6 @@ namespace ge {
       ResourcesManager& AddBinaryResource (const std::string& id, const std::string& path) { Add(id, path, binaries); return *this; }
       ResourcesManager& AddMusic (const std::string& id, const std::string& path)          { Add(id, path, musics); return *this; }
       ResourcesManager& AddSound (const std::string& id, const std::string& path)          { Add(id, path, sounds); return *this; }
-      ResourcesManager& AddFont (const std::string& id, const std::string& path)           { Add(id, path, fonts); return *this; }
       ResourcesManager& AddTexture (const std::string& id, const std::string& path)        { Add(id, path, textures); return *this; }
 
       ResourcesManager& RemoveStringResource (const std::string& id) { Remove(id, strings); return *this; }
@@ -50,7 +48,6 @@ namespace ge {
       ResourcesManager& RemoveBinaryResource (const std::string& id) { Remove(id, binaries); return *this; }
       ResourcesManager& RemoveMusic (const std::string& id)          { Remove(id, musics); return *this; }
       ResourcesManager& RemoveSound (const std::string& id)          { Remove(id, sounds); return *this; }
-      ResourcesManager& RemoveFont (const std::string& id)           { Remove(id, fonts); return *this; }
       ResourcesManager& RemoveTexture (const std::string& id)        { Remove(id, textures); return *this; }
 
       ResourcesManager& RemoveAllStringResources () { strings.clear(); return *this; }
@@ -60,7 +57,6 @@ namespace ge {
       ResourcesManager& RemoveAllBinaryResources () { binaries.clear(); return *this; }
       ResourcesManager& RemoveAllMusic ()           { musics.clear(); return *this; }
       ResourcesManager& RemoveAllSounds ()          { sounds.clear(); return *this; }
-      ResourcesManager& RemoveAllFonts ()           { fonts.clear(); return *this; }
       ResourcesManager& RemoveAllTextures ()        { textures.clear(); return *this; }
 
       const std::string& StringResource (const std::string& id) const { return Find(id, strings); }
@@ -70,7 +66,6 @@ namespace ge {
       const Binary& BinaryResource (const std::string& id) const { return Find(id, binaries); }
       const Binary& Music (const std::string& id) const          { return Find(id, musics); }
       const Binary& Sound (const std::string& id) const          { return Find(id, sounds); }
-      const Binary& Font (const std::string& id) const           { return Find(id, fonts); }
       const Binary& Texture (const std::string& id) const        { return Find(id, textures); }
    };
 

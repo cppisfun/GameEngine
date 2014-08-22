@@ -2,77 +2,96 @@
 #include "Precomp.h"
 
 #include <SDL.h>
+#include <SDL_ttf.h>
 
 #include "GraphicsManager.h"
 
 #include "../Base/Convert.h"
 #include "../Base/Error.h"
+#include "../Base/File.h"
+#include "../Base/Tools.h"
 
-using namespace ge;
+using namespace base;
 
 
 namespace ge {
 
    GraphicsManager::GraphicsManager (SDL_Renderer* device)
-   : device(device), clearColor(0, 0, 63), foreColor(255, 255, 255), backColor(0, 0, 0)
+   : device(device), clearColor(0, 0, 63), foreColor(255, 255, 255), backColor(0, 0, 0), systemFont(nullptr), defaultFont(nullptr)
    {
-      if (device == nullptr) throw error::NullPointer("Invalid window device pointer!", ERROR_LOCATION);
+      if (device == nullptr)    throw error::NullPointer("Invalid window device pointer!", ERROR_LOCATION);
+      else if (TTF_Init() != 0) throw error::Create("Failed to initialize SDL_ttf!", ERROR_LOCATION);
 
-      SystemFont("../resources/graphics/fonts/cour.ttf");
-      DefaultFont("../resources/graphics/fonts/arial.ttf");
+      SystemFont("../resources/graphics/fonts/cour.ttf", 16);
+      DefaultFont("../resources/graphics/fonts/arial.ttf", 16);
    }
 
    GraphicsManager::~GraphicsManager ()
    {
+      RemoveAllFonts();
+
+      if (systemFont != nullptr)  { TTF_CloseFont(systemFont); systemFont = nullptr; }
+      if (defaultFont != nullptr) { TTF_CloseFont(defaultFont); defaultFont = nullptr; }
+
+      TTF_Quit();
    }
 
-//   void GraphicsManager::DrawText (float x, float y, const std::string& text, const sf::Font& font, int fontSizeInPixels)
-//   {
-//      sf::Text txt(text, font, (fontSizeInPixels > 0) ? fontSizeInPixels : 0);
-//      txt.setPosition(x, y);
-//
-//      device->draw(txt);
-//   }
-
-   GraphicsManager& GraphicsManager::SystemFont (const std::string& fontFile)
+   void GraphicsManager::LoadFont (const std::string& fontFile, int size, TTF_Font** font)
    {
-      if (fontFile.empty()) throw error::InvalidParam("No font file specified!", ERROR_LOCATION);
-//      else if (!systemFont.loadFromFile(fontFile)) throw error::Read("Failed to read from font file \"" + fontFile + "\"!", ERROR_LOCATION);
+      if (fontFile.empty())          throw error::InvalidParam("No font file specified!", ERROR_LOCATION);
+      else if (!ExistFile(fontFile)) throw error::NotFound("Specified font file does not exist!", ERROR_LOCATION);
 
-      return *this;
+      if (*font != nullptr) {
+         TTF_CloseFont(*font);
+         *font = nullptr;
+      }
+
+      *font = TTF_OpenFont(fontFile.c_str(), size);
+      if (*font == nullptr) throw error::Create("Failed to create font from file \"" + fontFile + "\"!", ERROR_LOCATION);
    }
 
-   GraphicsManager& GraphicsManager::DefaultFont (const std::string& fontFile)
+   void GraphicsManager::Text (int x, int y, const std::string& text, const Color& color, TTF_Font* font)
    {
-      if (fontFile.empty()) throw error::InvalidParam("No font file specified!", ERROR_LOCATION);
-//      else if (!defaultFont.loadFromFile(fontFile)) throw error::Read("Failed to read from font file \"" + fontFile + "\"!", ERROR_LOCATION);
+      SDL_Color sdlColor   = { color.Red(), color.Green(), color.Blue(), color.Alpha() };
+      SDL_Surface* surface = nullptr;
+      SDL_Texture* texture = nullptr;
 
-      return *this;
+      ScopeGuard guard([&surface, &texture] () {
+         if (texture != nullptr) { SDL_DestroyTexture(texture); texture = nullptr; }
+         if (surface != nullptr) { SDL_FreeSurface(surface); surface = nullptr; }
+      });
+
+      surface = TTF_RenderText_Blended(font, text.c_str(), sdlColor);
+      if (surface == nullptr) throw error::Create("Failed to create surface!", ERROR_LOCATION);
+
+      texture = SDL_CreateTextureFromSurface(device, surface);
+      if (texture == nullptr) throw error::Create("Failed to create texture from surface!", ERROR_LOCATION);
+
+      SDL_Rect destRect = { x, y, 0, 0 };
+
+      SDL_QueryTexture(texture, nullptr, nullptr, &destRect.w, &destRect.h);
+      SDL_RenderCopy(device, texture, nullptr, &destRect);
    }
 
-   GraphicsManager& GraphicsManager::AddFont (const std::string& id, const std::string& fontFile)
+   _TTF_Font* GraphicsManager::Font (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+
+      auto fnt = fonts.find(id);
+      if (fnt == fonts.end()) throw error::NotFound("Font with id \"" + id + "\" does not exist!", ERROR_LOCATION);
+
+      return fnt->second;
+   }
+
+   GraphicsManager& GraphicsManager::AddFont (const std::string& id, const std::string& fontFile, int fontSize)
    {
       if (id.empty())                         throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-      else if (fontFile.empty())              throw error::InvalidParam("No font file specified!", ERROR_LOCATION);
-//      else if (fonts.find(id) != fonts.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in font map!", ERROR_LOCATION);
-//
-//      sf::Font fnt;
-//      if (!fnt.loadFromFile(fontFile)) throw error::Create("Failed to create font from file \"" + fontFile + "\"!", ERROR_LOCATION);
-//
-//      fonts.insert(std::make_pair(id, fnt));
-      return *this;
-   }
+      else if (fonts.find(id) != fonts.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in font map!", ERROR_LOCATION);
 
-   GraphicsManager& GraphicsManager::AddFont (const std::string& id, const Binary& resource)
-   {
-      if (id.empty())                         throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-      else if (resource.empty())              throw error::InvalidParam("Font resource is empty!", ERROR_LOCATION);
-//      else if (fonts.find(id) != fonts.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in font map!", ERROR_LOCATION);
-//
-//      sf::Font fnt;
-//      if (!fnt.loadFromMemory(resource.data(), resource.size())) throw error::Read("Failed to create font from resource!", ERROR_LOCATION);
-//
-//      fonts.insert(std::make_pair(id, fnt));
+      TTF_Font* font = nullptr;
+      LoadFont(fontFile, fontSize, &font);
+
+      fonts.insert(std::make_pair(id, font));
       return *this;
    }
 
@@ -80,9 +99,22 @@ namespace ge {
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
-//      const auto fnt = fonts.find(id);
-//      if (fnt != fonts.end()) fonts.erase(fnt);
+      const auto fnt = fonts.find(id);
+      if (fnt == fonts.end()) return *this;
 
+      if (fnt->second != nullptr) TTF_CloseFont(fnt->second);
+      fonts.erase(fnt);
+
+      return *this;
+   }
+
+   GraphicsManager& GraphicsManager::RemoveAllFonts ()
+   {
+      for (const auto& font : fonts) {
+         if (font.second != nullptr) TTF_CloseFont(font.second);
+      }
+
+      fonts.clear();
       return *this;
    }
 
@@ -216,16 +248,6 @@ namespace ge {
 //
 //      driver->draw2DImage(tex->second, dstRect.AsIrrRect(), srcRect.AsIrrRect());
 //      return *this;
-//   }
-
-//   const sf::Font& GraphicsManager::Font (const std::string& id) const
-//   {
-//      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-//
-//      auto fnt = fonts.find(id);
-//      if (fnt == fonts.end()) throw error::NotFound("Font with id \"" + id + "\" does not exist!", ERROR_LOCATION);
-//
-//      return fnt->second;
 //   }
 
 //   const sf::Texture& GraphicsManager::Texture (const std::string& id) const

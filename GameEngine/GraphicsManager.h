@@ -7,6 +7,7 @@
 #include "DLL_DEF.h"
 
 struct SDL_Renderer;
+struct _TTF_Font; // TTF_Font cannot be forwarded directly due to a name clash issue
 
 
 namespace ge {
@@ -26,29 +27,32 @@ namespace ge {
       Color foreColor;
       Color backColor;
 
-//      sf::Font systemFont;
-//      sf::Font defaultFont;
+      _TTF_Font* systemFont;
+      _TTF_Font* defaultFont;
 
-//      std::map<std::string, sf::Font>    fonts;
+      std::map<std::string, _TTF_Font*> fonts;
+
 //      std::map<std::string, sf::Texture> textures;
 
-//      void DrawText (float x, float y, const std::string& text, const sf::Font& font, int fontSizeInPixels);
+      void LoadFont (const std::string& fontFile, int size, _TTF_Font** font);
+      void Text (int x, int y, const std::string& text, const Color& color, _TTF_Font* font);
+
+      _TTF_Font* Font (const std::string& id) const;
 
    public:
       GraphicsManager (SDL_Renderer* device);
       virtual ~GraphicsManager ();
 
-
       GraphicsManager& ClearColor (const Color& color) { clearColor = color; return *this; }
       GraphicsManager& ForeColor (const Color& color)  { foreColor = color; return *this; }
       GraphicsManager& BackColor (const Color& color)  { backColor = color; return *this; }
 
-      GraphicsManager& SystemFont (const std::string& fontFile);
-      GraphicsManager& DefaultFont (const std::string& fontFile);
-      GraphicsManager& AddFont (const std::string& id, const std::string& fontFile);
-      GraphicsManager& AddFont (const std::string& id, const Binary& resource);
+      GraphicsManager& SystemFont (const std::string& fontFile, int fontSize)  { LoadFont(fontFile, fontSize, &systemFont); return *this; }
+      GraphicsManager& DefaultFont (const std::string& fontFile, int fontSize) { LoadFont(fontFile, fontSize, &defaultFont); return *this; }
+      GraphicsManager& AddFont (const std::string& id, const std::string& fontFile, int fontSize);
+      GraphicsManager& AddFont (const std::string& id, const Binary& resource, int fontSize);
       GraphicsManager& RemoveFont (const std::string& id);
-//      GraphicsManager& RemoveAllFonts () { fonts.clear(); return *this; }
+      GraphicsManager& RemoveAllFonts ();
 
       GraphicsManager& AddTexture (const std::string& id, const std::string& textureFile);
       GraphicsManager& AddTexture (const std::string& id, const Binary& resource);
@@ -98,17 +102,16 @@ namespace ge {
 //      GraphicsManager& DrawTexture (const std::string& id, const Rectangle& srcRect, const Point& dstPos);
 //      GraphicsManager& DrawTexture (const std::string& id, const Rectangle& srcRect, const Rectangle& dstRect);
 
-//      GraphicsManager& Log (float x, float y, const std::string& text, int fontSizeInPixels = 16)                             { DrawText(x, y, text, systemFont, fontSizeInPixels); return *this; }
-//      GraphicsManager& Text (float x, float y, const std::string& text, int fontSizeInPixels = 16)                            { DrawText(x, y, text, defaultFont, fontSizeInPixels); return *this; }
-//      GraphicsManager& Text (float x, float y, const std::string& text, const std::string& fontId, int fontSizeInPixels = 16) { DrawText(x, y, text, Font(fontId), fontSizeInPixels); return *this; }
+      GraphicsManager& Log (int x, int y, const std::string& text)                                                 { Text(x, y, text, foreColor, systemFont); return *this; }
+      GraphicsManager& Log (int x, int y, const std::string& text, const Color& color)                             { Text(x, y, text, color, systemFont); return *this; }
+      GraphicsManager& Text (int x, int y, const std::string& text)                                                { Text(x, y, text, foreColor, defaultFont); return *this; }
+      GraphicsManager& Text (int x, int y, const std::string& text, const Color& color)                            { Text(x, y, text, color, defaultFont); return *this; }
+      GraphicsManager& Text (int x, int y, const std::string& text, const std::string& fontId)                     { Text(x, y, text, foreColor, Font(fontId)); return *this; }
+      GraphicsManager& Text (int x, int y, const std::string& text, const Color& color, const std::string& fontId) { Text(x, y, text, color, Font(fontId)); return *this; }
 
       const Color& ClearColor () const { return clearColor; }
       const Color& ForeColor () const  { return foreColor; }
       const Color& BackColor () const  { return backColor; }
-
-//      const sf::Font& SystemFont () const  { return systemFont; }
-//      const sf::Font& DefaultFont () const { return defaultFont; }
-//      const sf::Font& Font (const std::string& id) const;
 
 //      const sf::Texture& Texture (const std::string& id) const;
 
