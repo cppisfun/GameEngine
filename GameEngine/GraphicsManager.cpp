@@ -2,6 +2,7 @@
 #include "Precomp.h"
 
 #include <SDL.h>
+#include <SDL_image.h>
 #include <SDL_ttf.h>
 
 #include "GraphicsManager.h"
@@ -17,7 +18,7 @@ using namespace base;
 namespace ge {
 
    GraphicsManager::GraphicsManager (SDL_Renderer* device)
-   : device(device), clearColor(0, 0, 63), foreColor(255, 255, 255), backColor(0, 0, 0), systemFont(nullptr), defaultFont(nullptr)
+   : device(device), clearColor(0, 0, 63), foreColor(255, 255, 255), backColor(0, 0, 0), textColor(255, 255, 255), systemFont(nullptr), defaultFont(nullptr)
    {
       if (device == nullptr)    throw error::NullPointer("Invalid window device pointer!", ERROR_LOCATION);
       else if (TTF_Init() != 0) throw error::Create("Failed to initialize SDL_ttf!", ERROR_LOCATION);
@@ -50,7 +51,7 @@ namespace ge {
       if (*font == nullptr) throw error::Create("Failed to create font from file \"" + fontFile + "\"!", ERROR_LOCATION);
    }
 
-   void GraphicsManager::Text (int x, int y, const std::string& text, const Color& color, TTF_Font* font)
+   void GraphicsManager::RenderText (int x, int y, const std::string& text, const Color& color, TTF_Font* font)
    {
       SDL_Color sdlColor   = { color.Red(), color.Green(), color.Blue(), color.Alpha() };
       SDL_Surface* surface = nullptr;
@@ -73,7 +74,44 @@ namespace ge {
       SDL_RenderCopy(device, texture, nullptr, &destRect);
    }
 
-   _TTF_Font* GraphicsManager::Font (const std::string& id) const
+   void GraphicsManager::RenderTexture (const std::string& id, int srcLeft, int srcTop, int srcRight, int srcBottom, int dstLeft, int dstTop, int dstRight, int dstBottom)
+   {
+      SDL_Rect* srcRect = nullptr;
+      SDL_Rect* dstRect = nullptr;
+
+      ScopeGuard guard([&srcRect, &dstRect] () {
+         if (srcRect != nullptr) { delete srcRect; srcRect = nullptr; }
+         if (dstRect != nullptr) { delete dstRect; dstRect = nullptr; }
+      });
+
+      auto texture = Texture(id);
+
+      if (srcLeft != -1 || srcTop != -1 || srcRight != -1 || srcBottom != -1) {
+         srcRect    = new SDL_Rect;
+         srcRect->x = srcLeft;
+         srcRect->y = srcTop;
+         srcRect->w = srcRight - srcLeft;
+         srcRect->h = srcBottom - srcTop;
+      }
+
+      if (dstLeft != -1 || dstTop != -1 || dstRight != -1 || dstBottom != -1) {
+         dstRect    = new SDL_Rect;
+         dstRect->x = dstLeft;
+         dstRect->y = dstTop;
+
+         if (dstRight != -1 || dstBottom != -1) {
+            dstRect->w = dstRight - dstLeft;
+            dstRect->h = dstBottom - dstTop;
+         }
+         else {
+            SDL_QueryTexture(texture, nullptr, nullptr, &dstRect->w, &dstRect->h);
+         }
+      }
+
+      SDL_RenderCopy(device, Texture(id), srcRect, dstRect);
+   }
+
+   TTF_Font* GraphicsManager::Font (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
@@ -81,6 +119,16 @@ namespace ge {
       if (fnt == fonts.end()) throw error::NotFound("Font with id \"" + id + "\" does not exist!", ERROR_LOCATION);
 
       return fnt->second;
+   }
+
+   SDL_Texture* GraphicsManager::Texture (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+
+      auto tex = textures.find(id);
+      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", ERROR_LOCATION);
+
+      return tex->second;
    }
 
    GraphicsManager& GraphicsManager::AddFont (const std::string& id, const std::string& fontFile, int fontSize)
@@ -121,26 +169,23 @@ namespace ge {
    GraphicsManager& GraphicsManager::AddTexture (const std::string& id, const std::string& textureFile)
    {
       if (id.empty())                               throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+      else if (textures.find(id) != textures.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in texture map!", ERROR_LOCATION);
       else if (textureFile.empty())                 throw error::InvalidParam("No texture file specified!", ERROR_LOCATION);
-//      else if (textures.find(id) != textures.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in texture map!", ERROR_LOCATION);
-//
-//      sf::Texture tex;
-//      if (!tex.loadFromFile(textureFile)) throw error::Create("Failed to create texture from file \"" + textureFile + "\"!", ERROR_LOCATION);
-//
-//      textures.insert(std::make_pair(id, tex));
-      return *this;
-   }
+      else if (!ExistFile(textureFile))             throw error::NotFound("Specified texture file does not exist!", ERROR_LOCATION);
 
-   GraphicsManager& GraphicsManager::AddTexture (const std::string& id, const Binary& resource)
-   {
-      if (id.empty())                               throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-      else if (resource.empty())                    throw error::InvalidParam("Texture resource is empty!", ERROR_LOCATION);
-//      else if (textures.find(id) != textures.end()) throw error::AlreadyExists("Specified id \"" + id + "\" already exists in texture map!", ERROR_LOCATION);
-//
-//      sf::Texture tex;
-//      if (!tex.loadFromMemory(resource.data(), resource.size())) throw error::Create("Failed to create texture from resource!", ERROR_LOCATION);
-//
-//      textures.insert(std::make_pair(id, tex));
+      SDL_Surface* surface = nullptr;
+
+      ScopeGuard guard([&surface] () {
+         if (surface != nullptr) { SDL_FreeSurface(surface); surface = nullptr; }
+      });
+
+      surface = IMG_Load(textureFile.c_str());
+      if (surface == nullptr) throw error::Create("Failed to create surface from file \"" + textureFile + "\"!", ERROR_LOCATION);
+
+      auto texture = SDL_CreateTextureFromSurface(device, surface);
+      if (texture == nullptr) throw error::Create("Failed to create texture from surface!", ERROR_LOCATION);
+
+      textures.insert(std::make_pair(id, texture));
       return *this;
    }
 
@@ -148,9 +193,22 @@ namespace ge {
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
-//      auto tex = textures.find(id);
-//      if (tex != textures.end()) textures.erase(tex);
+      const auto tex = textures.find(id);
+      if (tex == textures.end()) return *this;
 
+      if (tex->second != nullptr) SDL_DestroyTexture(tex->second);
+      textures.erase(tex);
+
+      return *this;
+   }
+
+   GraphicsManager& GraphicsManager::RemoveAllTextures ()
+   {
+      for (const auto& texture : textures) {
+         if (texture.second != nullptr) SDL_DestroyTexture(texture.second);
+      }
+
+      textures.clear();
       return *this;
    }
 
@@ -165,132 +223,49 @@ namespace ge {
       SDL_RenderPresent(device);
    }
 
-// FIXME: GE-42
-//   GraphicsManager& GraphicsManager::DrawPixel (int x, int y, const Color& color)
-//   {
-//      driver->drawPixel(x, y, color.AsIrrColor());
-//      return *this;
-//   }
-
-// FIXME: GE-42
-//   GraphicsManager& GraphicsManager::DrawLine (int left, int top, int right, int bottom, const Color& color)
-//   {
-//      driver->draw2DLine(core::vector2d<int>(left, top), core::vector2d<int>(right, bottom), color.AsIrrColor());
-//      return *this;
-//   }
-
-// FIXME: GE-42
-//   GraphicsManager& GraphicsManager::DrawRectangle (int left, int top, int right, int bottom, const Color& colorTopLeft, const Color& colorTopRight, const Color& colorBottomLeft, const Color& colorBottomRight)
-//   {
-//      driver->draw2DRectangle(core::rect<int>(left, top, right, bottom), colorTopLeft.AsIrrColor(), colorTopRight.AsIrrColor(), colorBottomLeft.AsIrrColor(), colorBottomRight.AsIrrColor());
-//      return *this;
-//   }
-
-// FIXME: GE-42
-//   GraphicsManager& GraphicsManager::DrawRectangle (int left, int top, int right, int bottom, const Color& color, const DrawType& type)
-//   {
-//      if (type == Outline) driver->draw2DRectangleOutline(core::rect<int>(left, top, right, bottom), color.AsIrrColor());
-//      else                 driver->draw2DRectangle(color.AsIrrColor(), core::rect<int>(left, top, right, bottom));
-//
-//      return *this;
-//   }
-
-   GraphicsManager& GraphicsManager::DrawTexture (const std::string& id, const Point<float>& pos)
+   GraphicsManager& GraphicsManager::DrawPixel (int x, int y, const Color& color)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+      SDL_SetRenderDrawColor(device, color.Red(), color.Green(), color.Blue(), color.Alpha());
+      SDL_RenderDrawPoint(device, x, y);
 
-//      auto tex = textures.find(id);
-//      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", ERROR_LOCATION);
-//
-//      sf::Sprite spr(tex->second);
-//      spr.setPosition(pos.AsSFMLVector());
-//
-//      device->draw(spr);
       return *this;
    }
 
-   GraphicsManager& GraphicsManager::DrawTexture (const std::string& id, const Rectangle<float>& rect)
+   GraphicsManager& GraphicsManager::DrawLine (int left, int top, int right, int bottom, const Color& color)
    {
-      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+      SDL_SetRenderDrawColor(device, color.Red(), color.Green(), color.Blue(), color.Alpha());
+      SDL_RenderDrawLine(device, left, top, right, bottom);
 
-//      auto tex = textures.find(id);
-//      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", ERROR_LOCATION);
-//
-//      const auto texSize = tex->second.getSize();
-//
-//      sf::Sprite spr(tex->second);
-//      spr.setPosition(rect.Left(), rect.Top());
-//      spr.setScale(rect.Width() / texSize.x, rect.Height() / texSize.y);
-//
-//      device->draw(spr);
       return *this;
    }
 
-// FIXME: GE-42
-//   GraphicsManager& GraphicsManager::DrawTexture (const std::string& id, const Rectangle& srcRect, const Point& dstPos)
-//   {
-//      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-//
-//      auto tex = textures.find(id);
-//      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", ERROR_LOCATION);
-//
-//      driver->draw2DImage(tex->second, dstPos.AsIrrVector(), srcRect.AsIrrRect());
-//      return *this;
-//   }
+   GraphicsManager& GraphicsManager::DrawRectangle (int left, int top, int right, int bottom, const Color& color)
+   {
+      SDL_Rect rect;
+      rect.x = left;
+      rect.y = top;
+      rect.w = right - left;
+      rect.h = bottom - top;
 
-// FIXME: GE-42
-//   GraphicsManager& GraphicsManager::DrawTexture (const std::string& id, const Rectangle& srcRect, const Rectangle& dstRect)
-//   {
-//      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-//
-//      auto tex = textures.find(id);
-//      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", ERROR_LOCATION);
-//
-//      driver->draw2DImage(tex->second, dstRect.AsIrrRect(), srcRect.AsIrrRect());
-//      return *this;
-//   }
+      SDL_SetRenderDrawColor(device, color.Red(), color.Green(), color.Blue(), color.Alpha());
+      SDL_RenderDrawRect(device, &rect);
 
-//   const sf::Texture& GraphicsManager::Texture (const std::string& id) const
-//   {
-//      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-//
-//      auto tex = textures.find(id);
-//      if (tex == textures.end()) throw error::NotFound("Texture with id \"" + id + "\" does not exist!", ERROR_LOCATION);
-//
-//      return tex->second;
-//   }
+      return *this;
+   }
 
-// FIXME: GE-42
-//   int GraphicsManager::ScreenWidth () const
-//   {
-//      return driver->getScreenSize().Width;
-//   }
+   GraphicsManager& GraphicsManager::FillRectangle (int left, int top, int right, int bottom, const Color& color)
+   {
+      SDL_Rect rect;
+      rect.x = left;
+      rect.y = top;
+      rect.w = right - left;
+      rect.h = bottom - top;
 
-// FIXME: GE-42
-//   int GraphicsManager::ScreenHeight () const
-//   {
-//      return driver->getScreenSize().Height;
-//   }
+      SDL_SetRenderDrawColor(device, color.Red(), color.Green(), color.Blue(), color.Alpha());
+      SDL_RenderFillRect(device, &rect);
 
-// FIXME: GE-42
-//   const Rectangle GraphicsManager::Screen () const
-//   {
-//      auto dims = driver->getScreenSize();
-//
-//      int right = dims.Width - 1;
-//      if (right < 0) right = 0;
-//
-//      int bottom = dims.Height - 1;
-//      if (bottom < 0) bottom = 0;
-//
-//      return Rectangle(0, 0, right, bottom);
-//   }
-
-// FIXME: GE-42
-//   int GraphicsManager::FPS () const
-//   {
-//      return driver->getFPS();
-//   }
+      return *this;
+   }
 
 }
 

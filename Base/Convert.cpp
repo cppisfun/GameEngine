@@ -204,7 +204,7 @@ namespace base {
    const std::wstring AsWString (const std::string& val)
    {
       std::wstring ret;
-      std::for_each(val.begin(), val.end(), [&ret] (char ch) { ret += static_cast<wchar_t>(ch); });
+      for (char ch : val) ret += static_cast<wchar_t>(ch);
 
       return ret;
    }

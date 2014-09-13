@@ -105,13 +105,13 @@ namespace base {
 
       std::string ret;
 
-      std::for_each(val.begin(), val.end(), [&ret] (char ch) {
+      for (char ch : val) {
          if ((ch >= 'A' && ch <= 'Z') ||
              (ch >= 'a' && ch <= 'z') ||
              ch == 'Ä' || ch == 'Ö' || ch == 'Ü' ||
              ch == 'ä' || ch == 'ö' || ch == 'ü' ||
              ch == 'ß') ret += ch;
-      });
+      }
 
       return ret;
    }
@@ -121,10 +121,7 @@ namespace base {
       if (val.empty()) return "";
 
       std::string ret;
-
-      std::for_each(val.begin(), val.end(), [&ret] (char ch) {
-         if (ch >= '0' && ch <= '9') ret += ch;
-      });
+      for (char ch : val) if (ch >= '0' && ch <= '9') ret += ch;
 
       return ret;
    }
@@ -135,14 +132,14 @@ namespace base {
 
       std::string ret;
 
-      std::for_each(val.begin(), val.end(), [&ret] (char ch) {
+      for (char ch : val) {
          if ((ch >= 'A' && ch <= 'Z') ||
              (ch >= 'a' && ch <= 'z') ||
              (ch >= '0' && ch <= '9') ||
              ch == 'Ä' || ch == 'Ö' || ch == 'Ü' ||
              ch == 'ä' || ch == 'ö' || ch == 'ü' ||
              ch == 'ß') ret += ch;
-      });
+      }
 
       return ret;
    }

@@ -20,19 +20,13 @@ namespace ge {
       if (device != nullptr) {
          device->stopAllSounds();
 
-         std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, irrklang::ISound*> mus) {
-            mus.second->drop();
-         });
+         for (const auto& mus : music) mus.second->drop();
 
-         for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-            std::for_each(it->second.begin(), it->second.end(), [] (irrklang::ISound* snd) {
-               snd->drop();
-            });
+         for (const auto& snds : sounds) {
+            for (const auto& snd : snds.second) snd->drop();
          }
 
-         std::for_each(audioPool.begin(), audioPool.end(), [] (const std::pair<std::string, irrklang::ISoundSource*> aud) {
-            aud.second->drop();
-         });
+         for (const auto& aud : audioPool) aud.second->drop();
       }
    }
 
@@ -145,10 +139,7 @@ namespace ge {
 
    AudioManager& AudioManager::StopMusic ()
    {
-      std::for_each(music.begin(), music.end(), [] (const std::pair<std::string, irrklang::ISound*> mus) {
-         mus.second->stop();
-      });
-
+      for (const auto& mus : music) mus.second->stop();
       return *this;
    }
 
@@ -165,10 +156,7 @@ namespace ge {
 
    AudioManager& AudioManager::PauseMusic (bool pause)
    {
-      std::for_each(music.begin(), music.end(), [&pause] (const std::pair<std::string, irrklang::ISound*> mus) {
-         mus.second->setIsPaused(pause);
-      });
-
+      for (const auto& mus : music) mus.second->setIsPaused(pause);
       return *this;
    }
 
@@ -190,10 +178,7 @@ namespace ge {
       if (vol < 0.0f)      vol = 0.0f;
       else if (vol > 1.0f) vol = 1.0f;
 
-      std::for_each(music.begin(), music.end(), [&vol] (const std::pair<std::string, irrklang::ISound*>& mus) {
-         mus.second->setVolume(vol);
-      });
-
+      for (const auto& mus : music) mus.second->setVolume(vol);
       return *this;
    }
 
@@ -220,10 +205,7 @@ namespace ge {
       if (spd < 0.01f)     spd = 0.01f;
       else if (spd > 4.0f) spd = 4.0f;
 
-      std::for_each(music.begin(), music.end(), [&spd] (const std::pair<std::string, irrklang::ISound*>& mus) {
-         mus.second->setPlaybackSpeed(spd);
-      });
-
+      for (const auto& mus : music) mus.second->setPlaybackSpeed(spd);
       return *this;
    }
 
@@ -250,10 +232,7 @@ namespace ge {
       if (pan < -1.0f)     pan = -1.0f;
       else if (pan > 1.0f) pan = 1.0f;
 
-      std::for_each(music.begin(), music.end(), [&pan] (const std::pair<std::string, irrklang::ISound*>& mus) {
-         mus.second->setPan(pan);
-      });
-
+      for (const auto& mus : music) mus.second->setPan(pan);
       return *this;
    }
 
@@ -306,11 +285,11 @@ namespace ge {
 
    AudioManager& AudioManager::StopSound ()
    {
-      for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [] (irrklang::ISound* snd) {
+      for (const auto& snds : sounds) {
+         for (const auto& snd : snds.second) {
             snd->stop();
             snd->drop();
-         });
+         }
       }
 
       sounds.clear();
@@ -321,24 +300,22 @@ namespace ge {
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
-      auto snd = sounds.find(id);
-      if (snd == sounds.end()) return *this;
+      auto snds = sounds.find(id);
+      if (snds == sounds.end()) return *this;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [] (irrklang::ISound* snd) {
+      for (const auto& snd : snds->second) {
          snd->stop();
          snd->drop();
-      });
+      }
 
-      sounds.erase(snd);
+      sounds.erase(snds);
       return *this;
    }
 
    AudioManager& AudioManager::PauseSound (bool pause)
    {
-      for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [&pause] (irrklang::ISound* snd) {
-            snd->setIsPaused(pause);
-         });
+      for (const auto& snds : sounds) {
+         for (const auto& snd : snds.second) snd->setIsPaused(pause);
       }
 
       return *this;
@@ -348,13 +325,10 @@ namespace ge {
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
-      auto snd = sounds.find(id);
-      if (snd == sounds.end()) return *this;
+      auto snds = sounds.find(id);
+      if (snds == sounds.end()) return *this;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [&pause] (irrklang::ISound* snd) {
-         snd->setIsPaused(pause);
-      });
-
+      for (const auto& snd : snds->second) snd->setIsPaused(pause);
       return *this;
    }
 
@@ -365,10 +339,8 @@ namespace ge {
       if (vol < 0.0f)      vol = 0.0f;
       else if (vol > 1.0f) vol = 1.0f;
 
-      for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [&vol] (irrklang::ISound* snd) {
-            snd->setVolume(vol);
-         });
+      for (const auto& snds : sounds) {
+         for (const auto& snd : snds.second) snd->setVolume(vol);
       }
 
       return *this;
@@ -378,18 +350,15 @@ namespace ge {
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
-      auto snd = sounds.find(id);
-      if (snd == sounds.end() || snd->second.empty()) return *this;
+      auto snds = sounds.find(id);
+      if (snds == sounds.end() || snds->second.empty()) return *this;
 
       float vol = boost::numeric_cast<float>(percent) / 100.0f;
 
       if (vol < 0.0f)      vol = 0.0f;
       else if (vol > 1.0f) vol = 1.0f;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [&vol] (irrklang::ISound* sound) {
-         sound->setVolume(vol);
-      });
-
+      for (const auto& snd : snds->second) snd->setVolume(vol);
       return *this;
    }
 
@@ -400,10 +369,8 @@ namespace ge {
       if (spd < 0.01f)     spd = 0.01f;
       else if (spd > 4.0f) spd = 4.0f;
 
-      for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [&spd] (irrklang::ISound* snd) {
-            snd->setPlaybackSpeed(spd);
-         });
+      for (const auto& snds : sounds) {
+         for (const auto& snd : snds.second) snd->setPlaybackSpeed(spd);
       }
 
       return *this;
@@ -413,18 +380,15 @@ namespace ge {
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
-      auto snd = sounds.find(id);
-      if (snd == sounds.end() || snd->second.empty()) return *this;
+      auto snds = sounds.find(id);
+      if (snds == sounds.end() || snds->second.empty()) return *this;
 
       float spd = boost::numeric_cast<float>(percent) / 100.0f;
 
       if (spd < 0.01f)     spd = 0.01f;
       else if (spd > 4.0f) spd = 4.0f;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [&spd] (irrklang::ISound* sound) {
-         sound->setPlaybackSpeed(spd);
-      });
-
+      for (const auto& snd : snds->second) snd->setPlaybackSpeed(spd);
       return *this;
    }
 
@@ -435,10 +399,8 @@ namespace ge {
       if (pan < -1.0f)     pan = -1.0f;
       else if (pan > 1.0f) pan = 1.0f;
 
-      for (auto it = sounds.begin(); it != sounds.end(); ++it) {
-         std::for_each(it->second.begin(), it->second.end(), [&pan] (irrklang::ISound* snd) {
-            snd->setPan(pan);
-         });
+      for (const auto& snds : sounds) {
+         for (const auto& snd : snds.second) snd->setPan(pan);
       }
 
       return *this;
@@ -448,18 +410,15 @@ namespace ge {
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
-      auto snd = sounds.find(id);
-      if (snd == sounds.end() || snd->second.empty()) return *this;
+      auto snds = sounds.find(id);
+      if (snds == sounds.end() || snds->second.empty()) return *this;
 
       float pan = boost::numeric_cast<float>(percent) / 100.0f;
 
       if (pan < -1.0f)     pan = -1.0f;
       else if (pan > 1.0f) pan = 1.0f;
 
-      std::for_each(snd->second.begin(), snd->second.end(), [&pan] (irrklang::ISound* sound) {
-         sound->setPan(pan);
-      });
-
+      for (const auto& snd : snds->second) snd->setPan(pan);
       return *this;
    }
 

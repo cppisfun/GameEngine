@@ -19,10 +19,9 @@ int main ()
       auto keyboard  = input->Keyboard();
       auto mouse     = input->Mouse();
 
-      resources->AddTexture("texture", "../resources/graphics/textures/texture.png");
       resources->AddMusic("music", "../resources/audio/music/music.ogg");
 
-      graphics->AddTexture("image", resources->Texture("texture"));
+      graphics->AddTexture("image", "../resources/graphics/textures/texture.png");
 
       audio->Add("music", resources->Music("music"));
       audio->Add("piano", "../resources/audio/music/piano.ogg");
@@ -33,8 +32,6 @@ int main ()
       audio->PlayMusic("piano", true);
 
       bool paused = false;
-
-//      core->WindowIcon(resources->Texture("texture"));
 
       while (core->Running()) { // GAME LOOP - BEGIN
          if (keyboard->KeyReleased()) core->Quit();
@@ -57,11 +54,12 @@ int main ()
 
          graphics->BeginScene(); // DRAWING OPERATIONS - BEGIN
          {
-            graphics->DrawTexture("image", ge::Rectangle<float>(300, 100, 310, 110));
-            graphics->DrawTexture("image", ge::Rectangle<float>(310, 110, 360, 160));
-            graphics->DrawTexture("image", ge::Rectangle<float>(360, 160, 620, 320));
+            graphics->DrawTexture("image", ge::Rectangle<int>(300, 100, 310, 110));
+            graphics->DrawTexture("image", ge::Rectangle<int>(310, 110, 360, 160));
+            graphics->DrawTexture("image", ge::Rectangle<int>(360, 160, 620, 320));
 
-//            graphics->DrawBox(5, 5, 160, 235);
+            graphics->FillRectangle(5, 5, 240, 320);
+            graphics->DrawRectangle(5, 5, 240, 320);
 
             graphics->Text(10, 10, "Filename:       " + audio->FileName("music"));
             graphics->Text(10, 30, "Master Volume:  " + base::AsString(audio->MasterVolume()) + " %");
@@ -83,9 +81,7 @@ int main ()
          graphics->EndScene(); // DRAWING OPERATIONS - END
 
          input->Update();
-
-         // GAME LOOP - END
-      }
+      } // GAME LOOP - END
    }
    catch (std::exception& e) {
       std::string err = "Unhandled exception caught in main loop!\n\n";
