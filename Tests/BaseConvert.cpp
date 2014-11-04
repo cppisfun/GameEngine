@@ -30,6 +30,9 @@ SUITE (BaseConvert)
       CHECK_EQUAL(true,  AsBool(1LL));
       CHECK_EQUAL(true,  AsBool(-1LL));
 
+      CHECK_EQUAL(false, AsBool(0U));
+      CHECK_EQUAL(true,  AsBool(1U));
+
       CHECK_EQUAL(false, AsBool(0.0f));
       CHECK_EQUAL(true,  AsBool(1.0f));
       CHECK_EQUAL(true,  AsBool(0.1f));
@@ -62,6 +65,9 @@ SUITE (BaseConvert)
       CHECK_EQUAL(-1234567890, AsInt(-1234567890LL));
       CHECK_EQUAL(0,           AsInt(0LL));
 
+      CHECK_EQUAL(1234567890,  AsInt(1234567890U));
+      CHECK_EQUAL(0,           AsInt(0U));
+
       CHECK_CLOSE(1234567890,  AsInt(1234567890.0f),  50);
       CHECK_CLOSE(-1234567890, AsInt(-1234567890.0f), 50);
       CHECK_EQUAL(0,           AsInt(0.0f));
@@ -83,7 +89,7 @@ SUITE (BaseConvert)
    {
       CHECK_EQUAL(1234567890L,  AsLong("1234567890"));
       CHECK_EQUAL(-1234567890L, AsLong("-1234567890"));
-      CHECK_EQUAL(789L,         AsInt("789IgnoreMe23"));
+      CHECK_EQUAL(789L,         AsLong("789IgnoreMe23"));
       CHECK_EQUAL(0L,           AsLong("theregoes789"));
       CHECK_EQUAL(0L,           AsLong(""));
 
@@ -97,6 +103,9 @@ SUITE (BaseConvert)
       CHECK_EQUAL(1234567890L,  AsLong(1234567890LL));
       CHECK_EQUAL(-1234567890L, AsLong(-1234567890LL));
       CHECK_EQUAL(0L,           AsLong(0LL));
+
+      CHECK_EQUAL(1234567890L,  AsLong(1234567890U));
+      CHECK_EQUAL(0L,           AsLong(0U));
 
       CHECK_CLOSE(1234567890L,  AsLong(1234567890.0f),  50L);
       CHECK_CLOSE(-1234567890L, AsLong(-1234567890.0f), 50L);
@@ -117,38 +126,71 @@ SUITE (BaseConvert)
 
    TEST (AsLongLong)
    {
-      CHECK_EQUAL(1234567890LL,  AsLong("1234567890"));
-      CHECK_EQUAL(-1234567890LL, AsLong("-1234567890"));
-      CHECK_EQUAL(789LL,         AsInt("789IgnoreMe23"));
-      CHECK_EQUAL(0LL,           AsLong("theregoes789"));
-      CHECK_EQUAL(0LL,           AsLong(""));
+      CHECK_EQUAL(1234567890LL,  AsLongLong("1234567890"));
+      CHECK_EQUAL(-1234567890LL, AsLongLong("-1234567890"));
+      CHECK_EQUAL(789LL,         AsLongLong("789IgnoreMe23"));
+      CHECK_EQUAL(0LL,           AsLongLong("theregoes789"));
+      CHECK_EQUAL(0LL,           AsLongLong(""));
 
-      CHECK_EQUAL(0LL,           AsLong(false));
-      CHECK_EQUAL(1LL,           AsLong(true));
+      CHECK_EQUAL(0LL,           AsLongLong(false));
+      CHECK_EQUAL(1LL,           AsLongLong(true));
 
-      CHECK_EQUAL(1234567890LL,  AsLong(1234567890));
-      CHECK_EQUAL(-1234567890LL, AsLong(-1234567890));
-      CHECK_EQUAL(0LL,           AsLong(0));
+      CHECK_EQUAL(1234567890LL,  AsLongLong(1234567890));
+      CHECK_EQUAL(-1234567890LL, AsLongLong(-1234567890));
+      CHECK_EQUAL(0LL,           AsLongLong(0));
 
-      CHECK_EQUAL(1234567890LL,  AsLong(1234567890L));
-      CHECK_EQUAL(-1234567890LL, AsLong(-1234567890L));
-      CHECK_EQUAL(0LL,           AsLong(0L));
+      CHECK_EQUAL(1234567890LL,  AsLongLong(1234567890L));
+      CHECK_EQUAL(-1234567890LL, AsLongLong(-1234567890L));
+      CHECK_EQUAL(0LL,           AsLongLong(0L));
 
-      CHECK_CLOSE(1234567890LL,  AsLong(1234567890.0f),  50LL);
-      CHECK_CLOSE(-1234567890LL, AsLong(-1234567890.0f), 50LL);
-      CHECK_EQUAL(0LL,           AsLong(0.0f));
-      CHECK_EQUAL(0LL,           AsLong(0.123f));
-      CHECK_EQUAL(0LL,           AsLong(0.987f));
-      CHECK_EQUAL(0LL,           AsLong(-0.123f));
-      CHECK_EQUAL(0LL,           AsLong(-0.987f));
+      CHECK_EQUAL(1234567890LL,  AsLongLong(1234567890U));
+      CHECK_EQUAL(0LL,           AsLongLong(0U));
 
-      CHECK_EQUAL(1234567890LL,  AsLong(1234567890.0));
-      CHECK_EQUAL(-1234567890LL, AsLong(-1234567890.0));
-      CHECK_EQUAL(0LL,           AsLong(0.0));
-      CHECK_EQUAL(0LL,           AsLong(0.123));
-      CHECK_EQUAL(0LL,           AsLong(0.987));
-      CHECK_EQUAL(0LL,           AsLong(-0.123));
-      CHECK_EQUAL(0LL,           AsLong(-0.987));
+      CHECK_CLOSE(1234567890LL,  AsLongLong(1234567890.0f),  50LL);
+      CHECK_CLOSE(-1234567890LL, AsLongLong(-1234567890.0f), 50LL);
+      CHECK_EQUAL(0LL,           AsLongLong(0.0f));
+      CHECK_EQUAL(0LL,           AsLongLong(0.123f));
+      CHECK_EQUAL(0LL,           AsLongLong(0.987f));
+      CHECK_EQUAL(0LL,           AsLongLong(-0.123f));
+      CHECK_EQUAL(0LL,           AsLongLong(-0.987f));
+
+      CHECK_EQUAL(1234567890LL,  AsLongLong(1234567890.0));
+      CHECK_EQUAL(-1234567890LL, AsLongLong(-1234567890.0));
+      CHECK_EQUAL(0LL,           AsLongLong(0.0));
+      CHECK_EQUAL(0LL,           AsLongLong(0.123));
+      CHECK_EQUAL(0LL,           AsLongLong(0.987));
+      CHECK_EQUAL(0LL,           AsLongLong(-0.123));
+      CHECK_EQUAL(0LL,           AsLongLong(-0.987));
+   }
+
+   TEST (AsUnsignedInt)
+   {
+      CHECK_EQUAL(1234567890U, AsUnsignedInt("1234567890"));
+      CHECK_EQUAL(789U,        AsUnsignedInt("789IgnoreMe23"));
+      CHECK_EQUAL(0U,          AsUnsignedInt("theregoes789"));
+      CHECK_EQUAL(0U,          AsUnsignedInt(""));
+
+      CHECK_EQUAL(0U,          AsUnsignedInt(false));
+      CHECK_EQUAL(1U,          AsUnsignedInt(true));
+
+      CHECK_EQUAL(1234567890U, AsUnsignedInt(1234567890));
+      CHECK_EQUAL(0U,          AsUnsignedInt(0));
+
+      CHECK_EQUAL(1234567890U, AsUnsignedInt(1234567890L));
+      CHECK_EQUAL(0U,          AsUnsignedInt(0L));
+
+      CHECK_EQUAL(1234567890U, AsUnsignedInt(1234567890LL));
+      CHECK_EQUAL(0U,          AsUnsignedInt(0LL));
+
+      CHECK_CLOSE(1234567890U, AsUnsignedInt(1234567890.0f), 50);
+      CHECK_EQUAL(0U,          AsUnsignedInt(0.0f));
+      CHECK_EQUAL(0U,          AsUnsignedInt(0.123f));
+      CHECK_EQUAL(0U,          AsUnsignedInt(0.987f));
+
+      CHECK_EQUAL(1234567890U, AsUnsignedInt(1234567890.0));
+      CHECK_EQUAL(0U,          AsUnsignedInt(0.0));
+      CHECK_EQUAL(0U,          AsUnsignedInt(0.123));
+      CHECK_EQUAL(0U,          AsUnsignedInt(0.987));
    }
 
    TEST (AsDouble)
@@ -177,6 +219,9 @@ SUITE (BaseConvert)
       CHECK_EQUAL(1234567890.0,  AsDouble(1234567890LL));
       CHECK_EQUAL(-1234567890.0, AsDouble(-1234567890LL));
       CHECK_EQUAL(0.0,           AsDouble(0LL));
+
+      CHECK_EQUAL(1234567890.0,  AsDouble(1234567890U));
+      CHECK_EQUAL(0.0,           AsDouble(0U));
 
       CHECK_CLOSE(1234567890.0,  AsDouble(1234567890.0f),  50);
       CHECK_CLOSE(-1234567890.0, AsDouble(-1234567890.0f), 50);
@@ -212,6 +257,9 @@ SUITE (BaseConvert)
       CHECK_EQUAL(-1234567890.0f, AsFloat(-1234567890LL));
       CHECK_EQUAL(0.0f,           AsFloat(0LL));
 
+      CHECK_EQUAL(1234567890.0f,  AsFloat(1234567890U));
+      CHECK_EQUAL(0.0f,           AsFloat(0U));
+
       CHECK_EQUAL(1234567890.0f,  AsFloat(1234567890.0));
       CHECK_EQUAL(-1234567890.0f, AsFloat(-1234567890.0));
       CHECK_EQUAL(0.0f,           AsFloat(0.0));
@@ -244,6 +292,11 @@ SUITE (BaseConvert)
       CHECK_EQUAL("1.234.567.890",    AsString(1234567890LL));
       CHECK_EQUAL("-1.234.567.890",   AsString(-1234567890LL));
       CHECK_EQUAL("0",                AsString(0LL));
+
+      CHECK_EQUAL("1234567890",       AsString(1234567890U, false));
+      CHECK_EQUAL("0",                AsString(0U, false));
+      CHECK_EQUAL("1.234.567.890",    AsString(1234567890U));
+      CHECK_EQUAL("0",                AsString(0U));
 
       CHECK_EQUAL("1234567936.0",     AsString(1234567890.0f, 1, false));
       CHECK_EQUAL("-1234567936.0",    AsString(-1234567890.0f, 1, false));

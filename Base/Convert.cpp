@@ -14,6 +14,7 @@ namespace base {
    bool AsBool (int val)         { return (val != 0); }
    bool AsBool (long val)        { return (val != 0L); }
    bool AsBool (long long val)   { return (val != 0LL); }
+   bool AsBool (size_t val)      { return (val != 0U); }
    bool AsBool (float val)       { return (val != 0.0f); }
    bool AsBool (double val)      { return (val != 0.0); }
    bool AsBool (const char* val) { return AsBool(std::string(val)); }
@@ -21,6 +22,7 @@ namespace base {
    int AsInt (bool val)        { return (val) ? 1 : 0; }
    int AsInt (long val)        { return boost::numeric_cast<int>(val); }
    int AsInt (long long val)   { return boost::numeric_cast<int>(val); }
+   int AsInt (size_t val)      { return boost::numeric_cast<int>(val); }
    int AsInt (float val)       { return boost::numeric_cast<int>(val); }
    int AsInt (double val)      { return boost::numeric_cast<int>(val); }
    int AsInt (const char* val) { return AsInt(std::string(val)); }
@@ -28,6 +30,7 @@ namespace base {
    long AsLong (bool val)        { return (val) ? 1L : 0L; }
    long AsLong (int val)         { return boost::numeric_cast<long>(val); }
    long AsLong (long long val)   { return boost::numeric_cast<long>(val); }
+   long AsLong (size_t val)      { return boost::numeric_cast<long>(val); }
    long AsLong (float val)       { return boost::numeric_cast<long>(val); }
    long AsLong (double val)      { return boost::numeric_cast<long>(val); }
    long AsLong (const char* val) { return AsLong(std::string(val)); }
@@ -35,14 +38,24 @@ namespace base {
    long long AsLongLong (bool val)        { return (val) ? 1LL : 0LL; }
    long long AsLongLong (int val)         { return boost::numeric_cast<long long>(val); }
    long long AsLongLong (long val)        { return boost::numeric_cast<long long>(val); }
+   long long AsLongLong (size_t val)      { return boost::numeric_cast<long long>(val); }
    long long AsLongLong (float val)       { return boost::numeric_cast<long long>(val); }
    long long AsLongLong (double val)      { return boost::numeric_cast<long long>(val); }
    long long AsLongLong (const char* val) { return AsLongLong(std::string(val)); }
+
+   size_t AsUnsignedInt (bool val)        { return (val) ? 1U : 0U; }
+   size_t AsUnsignedInt (int val)         { return boost::numeric_cast<size_t>(val); }
+   size_t AsUnsignedInt (long val)        { return boost::numeric_cast<size_t>(val); }
+   size_t AsUnsignedInt (long long val)   { return boost::numeric_cast<size_t>(val); }
+   size_t AsUnsignedInt (float val)       { return boost::numeric_cast<size_t>(val); }
+   size_t AsUnsignedInt (double val)      { return boost::numeric_cast<size_t>(val); }
+   size_t AsUnsignedInt (const char* val) { return AsUnsignedInt(std::string(val)); }
 
    double AsDouble (bool val)        { return (val) ? 1.0 : 0.0; }
    double AsDouble (int val)         { return boost::numeric_cast<double>(val); }
    double AsDouble (long val)        { return boost::numeric_cast<double>(val); }
    double AsDouble (long long val)   { return boost::numeric_cast<double>(val); }
+   double AsDouble (size_t val)      { return boost::numeric_cast<double>(val); }
    double AsDouble (float val)       { return boost::numeric_cast<double>(val); }
    double AsDouble (const char* val) { return AsDouble(std::string(val)); }
 
@@ -51,10 +64,11 @@ namespace base {
    float AsFloat (int val)                { return boost::numeric_cast<float>(val); }
    float AsFloat (long val)               { return boost::numeric_cast<float>(val); }
    float AsFloat (long long val)          { return boost::numeric_cast<float>(val); }
+   float AsFloat (size_t val)             { return boost::numeric_cast<float>(val); }
    float AsFloat (double val)             { return boost::numeric_cast<float>(val); }
    float AsFloat (const char* val)        { return AsFloat(std::string(val)); }
 
-   const std::string AsString (bool val) { return (val) ? "True" : "False"; }
+   std::string AsString (bool val) { return (val) ? "True" : "False"; }
 
    bool AsBool (const std::string& val)
    {
@@ -99,6 +113,17 @@ namespace base {
       return boost::lexical_cast<long long>(val.substr(0, pos));
    }
 
+   size_t AsUnsignedInt (const std::string& val)
+   {
+      if (val.empty()) return 0U;
+
+      size_t pos = 0;
+      while (pos < val.size() && ((val[pos] >= '0' && val[pos] <= '9') || (pos == 0 && val[pos] == '-'))) ++pos;
+
+      if (pos == 0 || (pos == 1 && val[0] == '-')) return 0U;
+      return boost::lexical_cast<size_t>(val.substr(0, pos));
+   }
+
    double AsDouble (const std::string& val)
    {
       if (val.empty()) return 0.0;
@@ -111,7 +136,7 @@ namespace base {
          ++pos;
       }
 
-      if (pos == 0 || (pos == 1 && val[0] == '-')) return 0.0f;
+      if (pos == 0 || (pos == 1 && val[0] == '-')) return 0.0;
 
       std::string prefix((val[0] == '.') ? "0" : "");
       std::string suffix((val[pos] == '.') ? "0" : "");
@@ -119,7 +144,7 @@ namespace base {
       return boost::lexical_cast<double>(prefix + val.substr(0, pos) + suffix);
    }
 
-   const std::string AsString (int val, bool pretty)
+   std::string AsString (int val, bool pretty)
    {
       bool negative = (val < 0);
       if (negative) val = -val;
@@ -136,7 +161,7 @@ namespace base {
       return ret;
    }
 
-   const std::string AsString (long val, bool pretty)
+   std::string AsString (long val, bool pretty)
    {
       bool negative = (val < 0L);
       if (negative) val = -val;
@@ -153,7 +178,7 @@ namespace base {
       return ret;
    }
 
-   const std::string AsString (long long val, bool pretty)
+   std::string AsString (long long val, bool pretty)
    {
       bool negative = (val < 0LL);
       if (negative) val = -val;
@@ -173,7 +198,20 @@ namespace base {
       return ret;
    }
 
-   const std::string AsString (float val, int decimals, bool pretty)
+   std::string AsString (size_t val, bool pretty)
+   {
+      std::string ret(boost::lexical_cast<std::string>(val));
+
+      if (pretty) {
+         if (val >= 1000U)       ret = ret.substr(0, ret.size() -  3) + "." + ret.substr(ret.size() - 3);
+         if (val >= 1000000U)    ret = ret.substr(0, ret.size() -  7) + "." + ret.substr(ret.size() - 7);
+         if (val >= 1000000000U) ret = ret.substr(0, ret.size() - 11) + "." + ret.substr(ret.size() - 11);
+      }
+
+      return ret;
+   }
+
+   std::string AsString (float val, int decimals, bool pretty)
    {
       std::string ret(AsString(boost::numeric_cast<int>(val), pretty));
       ret += (pretty) ? "," : ".";
@@ -182,7 +220,7 @@ namespace base {
       return ret;
    }
 
-   const std::string AsString (double val, int decimals, bool pretty)
+   std::string AsString (double val, int decimals, bool pretty)
    {
       std::string ret(AsString(boost::numeric_cast<int>(val), pretty));
       ret += (pretty) ? "," : ".";
@@ -191,17 +229,17 @@ namespace base {
       return ret;
    }
 
-   const std::string AsString (const Binary& val)
+   std::string AsString (const Binary& val)
    {
       return std::string(val.begin(), val.end());
    }
 
-   const Binary AsBinary (const std::string& val)
+   Binary AsBinary (const std::string& val)
    {
       return Binary(val.begin(), val.end());
    }
 
-   const std::wstring AsWString (const std::string& val)
+   std::wstring AsWString (const std::string& val)
    {
       std::wstring ret;
       for (char ch : val) ret += static_cast<wchar_t>(ch);
