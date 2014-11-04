@@ -171,101 +171,97 @@ namespace ge {
       return *this;
    }
 
-   AudioManager& AudioManager::MusicVolume (int percent)
+   AudioManager& AudioManager::MusicVolume (float percent)
    {
-      float vol = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (vol < 0.0f)      vol = 0.0f;
-      else if (vol > 1.0f) vol = 1.0f;
+      if (percent < 0.0f)      percent = 0.0f;
+      else if (percent > 1.0f) percent = 1.0f;
 
-      for (const auto& mus : music) mus.second->setVolume(vol);
+      for (const auto& mus : music) mus.second->setVolume(percent);
       return *this;
    }
 
-   AudioManager& AudioManager::MusicVolume (const std::string& id, int percent)
+   AudioManager& AudioManager::MusicVolume (const std::string& id, float percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return *this;
 
-      float vol = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (vol < 0.0f) vol      = 0.0f;
-      else if (vol > 1.0f) vol = 1.0f;
+      if (percent < 0.0f) percent      = 0.0f;
+      else if (percent > 1.0f) percent = 1.0f;
 
-      mus->second->setVolume(vol);
+      mus->second->setVolume(percent);
       return *this;
    }
 
-   AudioManager& AudioManager::MusicSpeed (int percent)
+   AudioManager& AudioManager::MusicSpeed (float percent)
    {
-      float spd = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (spd < 0.01f)     spd = 0.01f;
-      else if (spd > 4.0f) spd = 4.0f;
+      if (percent < 0.01f)     percent = 0.01f;
+      else if (percent > 4.0f) percent = 4.0f;
 
-      for (const auto& mus : music) mus.second->setPlaybackSpeed(spd);
+      for (const auto& mus : music) mus.second->setPlaybackSpeed(percent);
       return *this;
    }
 
-   AudioManager& AudioManager::MusicSpeed (const std::string& id, int percent)
-   {
-      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-
-      auto mus = music.find(id);
-      if (mus == music.end()) return *this;
-
-      float spd = boost::numeric_cast<float>(percent) / 100.0f;
-
-      if (spd < 0.01f)     spd = 0.01f;
-      else if (spd > 4.0f) spd = 4.0f;
-
-      mus->second->setPlaybackSpeed(spd);
-      return *this;
-   }
-
-   AudioManager& AudioManager::MusicPan (int percent)
-   {
-      float pan = boost::numeric_cast<float>(percent) / 100.0f;
-
-      if (pan < -1.0f)     pan = -1.0f;
-      else if (pan > 1.0f) pan = 1.0f;
-
-      for (const auto& mus : music) mus.second->setPan(pan);
-      return *this;
-   }
-
-   AudioManager& AudioManager::MusicPan (const std::string& id, int percent)
+   AudioManager& AudioManager::MusicSpeed (const std::string& id, float percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return *this;
 
-      float pan = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (pan < -1.0f)     pan = -1.0f;
-      else if (pan > 1.0f) pan = 1.0f;
+      if (percent < 0.01f)     percent = 0.01f;
+      else if (percent > 4.0f) percent = 4.0f;
 
-      mus->second->setPan(pan);
+      mus->second->setPlaybackSpeed(percent);
       return *this;
    }
 
-   AudioManager& AudioManager::MusicPosition (const std::string& id, int position)
+   AudioManager& AudioManager::MusicPan (float percent)
+   {
+      percent /= 100.0f;
+
+      if (percent < -1.0f)     percent = -1.0f;
+      else if (percent > 1.0f) percent = 1.0f;
+
+      for (const auto& mus : music) mus.second->setPan(percent);
+      return *this;
+   }
+
+   AudioManager& AudioManager::MusicPan (const std::string& id, float percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return *this;
 
-      size_t pos;
+      percent /= 100.0f;
 
-      if (position < 0)                                             pos = 0;
-      else if ((size_t)position > mus->second->getPlayLength() - 1) pos = mus->second->getPlayLength() - 1;
-      else                                                          pos = position;
+      if (percent < -1.0f)     percent = -1.0f;
+      else if (percent > 1.0f) percent = 1.0f;
 
-      mus->second->setPlayPosition(pos);
+      mus->second->setPan(percent);
+      return *this;
+   }
+
+   AudioManager& AudioManager::MusicPosition (const std::string& id, size_t position)
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return *this;
+
+      if (position > mus->second->getPlayLength() - 1) position = mus->second->getPlayLength() - 1;
+
+      mus->second->setPlayPosition(position);
       return *this;
    }
 
@@ -332,119 +328,109 @@ namespace ge {
       return *this;
    }
 
-   AudioManager& AudioManager::SoundVolume (int percent)
+   AudioManager& AudioManager::SoundVolume (float percent)
    {
-      float vol = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (vol < 0.0f)      vol = 0.0f;
-      else if (vol > 1.0f) vol = 1.0f;
+      if (percent < 0.0f)      percent = 0.0f;
+      else if (percent > 1.0f) percent = 1.0f;
 
       for (const auto& snds : sounds) {
-         for (const auto& snd : snds.second) snd->setVolume(vol);
+         for (const auto& snd : snds.second) snd->setVolume(percent);
       }
 
       return *this;
    }
 
-   AudioManager& AudioManager::SoundVolume (const std::string& id, int percent)
+   AudioManager& AudioManager::SoundVolume (const std::string& id, float percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snds = sounds.find(id);
       if (snds == sounds.end() || snds->second.empty()) return *this;
 
-      float vol = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (vol < 0.0f)      vol = 0.0f;
-      else if (vol > 1.0f) vol = 1.0f;
+      if (percent < 0.0f)      percent = 0.0f;
+      else if (percent > 1.0f) percent = 1.0f;
 
-      for (const auto& snd : snds->second) snd->setVolume(vol);
+      for (const auto& snd : snds->second) snd->setVolume(percent);
       return *this;
    }
 
-   AudioManager& AudioManager::SoundSpeed (int percent)
+   AudioManager& AudioManager::SoundSpeed (float percent)
    {
-      float spd = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (spd < 0.01f)     spd = 0.01f;
-      else if (spd > 4.0f) spd = 4.0f;
+      if (percent < 0.01f)     percent = 0.01f;
+      else if (percent > 4.0f) percent = 4.0f;
 
       for (const auto& snds : sounds) {
-         for (const auto& snd : snds.second) snd->setPlaybackSpeed(spd);
+         for (const auto& snd : snds.second) snd->setPlaybackSpeed(percent);
       }
 
       return *this;
    }
 
-   AudioManager& AudioManager::SoundSpeed (const std::string& id, int percent)
+   AudioManager& AudioManager::SoundSpeed (const std::string& id, float percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snds = sounds.find(id);
       if (snds == sounds.end() || snds->second.empty()) return *this;
 
-      float spd = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (spd < 0.01f)     spd = 0.01f;
-      else if (spd > 4.0f) spd = 4.0f;
+      if (percent < 0.01f)     percent = 0.01f;
+      else if (percent > 4.0f) percent = 4.0f;
 
-      for (const auto& snd : snds->second) snd->setPlaybackSpeed(spd);
+      for (const auto& snd : snds->second) snd->setPlaybackSpeed(percent);
       return *this;
    }
 
-   AudioManager& AudioManager::SoundPan (int percent)
+   AudioManager& AudioManager::SoundPan (float percent)
    {
-      float pan = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (pan < -1.0f)     pan = -1.0f;
-      else if (pan > 1.0f) pan = 1.0f;
+      if (percent < -1.0f)     percent = -1.0f;
+      else if (percent > 1.0f) percent = 1.0f;
 
       for (const auto& snds : sounds) {
-         for (const auto& snd : snds.second) snd->setPan(pan);
+         for (const auto& snd : snds.second) snd->setPan(percent);
       }
 
       return *this;
    }
 
-   AudioManager& AudioManager::SoundPan (const std::string& id, int percent)
+   AudioManager& AudioManager::SoundPan (const std::string& id, float percent)
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snds = sounds.find(id);
       if (snds == sounds.end() || snds->second.empty()) return *this;
 
-      float pan = boost::numeric_cast<float>(percent) / 100.0f;
+      percent /= 100.0f;
 
-      if (pan < -1.0f)     pan = -1.0f;
-      else if (pan > 1.0f) pan = 1.0f;
+      if (percent < -1.0f)     percent = -1.0f;
+      else if (percent > 1.0f) percent = 1.0f;
 
-      for (const auto& snd : snds->second) snd->setPan(pan);
+      for (const auto& snd : snds->second) snd->setPan(percent);
       return *this;
    }
 
-   int AudioManager::MasterVolume () const
+   float AudioManager::MasterVolume () const
    {
-      int vol = boost::numeric_cast<int>(device->getSoundVolume() * 100.0f);
-
-      if (vol < 0)        vol = 0;
-      else if (vol > 100) vol = 100;
-
-      return vol;
+      return device->getSoundVolume() * 100.0f;
    }
 
-   int AudioManager::DefaultVolume (const std::string& id) const
+   float AudioManager::DefaultVolume (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto aud = audioPool.find(id);
-      if (aud == audioPool.end()) return 0;
+      if (aud == audioPool.end()) return 0.0f;
 
-      int vol = boost::numeric_cast<int>(aud->second->getDefaultVolume() * 100.0f);
-
-      if (vol < 0)        vol = 0;
-      else if (vol > 100) vol = 100;
-
-      return vol;
+      return aud->second->getDefaultVolume() * 100.0f;
    }
 
    bool AudioManager::IsPlaying (const std::string& id) const
@@ -487,62 +473,52 @@ namespace ge {
       return mus->second->isFinished();
    }
 
-   int AudioManager::MusicVolume (const std::string& id) const
+   float AudioManager::MusicVolume (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return 0.0f;
+
+      return mus->second->getVolume() * 100.0f;
+   }
+
+   float AudioManager::MusicSpeed (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return 0.0f;
+
+      return mus->second->getPlaybackSpeed() * 100.0f;
+   }
+
+   float AudioManager::MusicPan (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+
+      auto mus = music.find(id);
+      if (mus == music.end()) return 0.0f;
+
+      return mus->second->getPan() * 100.0f;
+   }
+
+   size_t AudioManager::MusicPosition (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
       if (mus == music.end()) return 0;
-
-      int vol = boost::numeric_cast<int>(mus->second->getVolume() * 100.0f);
-
-      if (vol < 0)        vol = 0;
-      else if (vol > 100) vol = 100;
-
-      return vol;
-   }
-
-   int AudioManager::MusicSpeed (const std::string& id) const
-   {
-      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-
-      auto mus = music.find(id);
-      if (mus == music.end()) return 0;
-
-      return boost::numeric_cast<int>(mus->second->getPlaybackSpeed() * 100.0f);
-   }
-
-   int AudioManager::MusicPan (const std::string& id) const
-   {
-      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-
-      auto mus = music.find(id);
-      if (mus == music.end()) return 0;
-
-      int pan = boost::numeric_cast<int>(mus->second->getPan() * 100.0f);
-
-      if (pan < -100)     pan = -100;
-      else if (pan > 100) pan = 100;
-
-      return pan;
-   }
-
-   int AudioManager::MusicPosition (const std::string& id) const
-   {
-      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-
-      auto mus = music.find(id);
-      if (mus == music.end()) return -1;
 
       return mus->second->getPlayPosition();
    }
 
-   int AudioManager::MusicLength (const std::string& id) const
+   size_t AudioManager::MusicLength (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto mus = music.find(id);
-      if (mus == music.end()) return -1;
+      if (mus == music.end()) return 0;
 
       return mus->second->getPlayLength();
    }
@@ -577,62 +553,52 @@ namespace ge {
       return snd->second.back()->isFinished();
    }
 
-   int AudioManager::SoundVolume (const std::string& id) const
+   float AudioManager::SoundVolume (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return 0.0f;
+
+      return snd->second.back()->getVolume() * 100.0f;
+   }
+
+   float AudioManager::SoundSpeed (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return 0.0f;
+
+      return snd->second.back()->getPlaybackSpeed() * 100.0f;
+   }
+
+   float AudioManager::SoundPan (const std::string& id) const
+   {
+      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
+
+      auto snd = sounds.find(id);
+      if (snd == sounds.end() || snd->second.empty()) return 0.0f;
+
+      return snd->second.back()->getPan() * 100.0f;
+   }
+
+   size_t AudioManager::SoundPosition (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
       if (snd == sounds.end() || snd->second.empty()) return 0;
-
-      int vol = boost::numeric_cast<int>(snd->second.back()->getVolume() * 100.0f);
-
-      if (vol < 0)        vol = 0;
-      else if (vol > 100) vol = 100;
-
-      return vol;
-   }
-
-   int AudioManager::SoundSpeed (const std::string& id) const
-   {
-      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-
-      auto snd = sounds.find(id);
-      if (snd == sounds.end() || snd->second.empty()) return 0;
-
-      return boost::numeric_cast<int>(snd->second.back()->getPlaybackSpeed() * 100.0f);
-   }
-
-   int AudioManager::SoundPan (const std::string& id) const
-   {
-      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-
-      auto snd = sounds.find(id);
-      if (snd == sounds.end() || snd->second.empty()) return 0;
-
-      int pan = boost::numeric_cast<int>(snd->second.back()->getPan() * 100.0f);
-
-      if (pan < -100)     pan = -100;
-      else if (pan > 100) pan = 100;
-
-      return pan;
-   }
-
-   int AudioManager::SoundPosition (const std::string& id) const
-   {
-      if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
-
-      auto snd = sounds.find(id);
-      if (snd == sounds.end() || snd->second.empty()) return -1;
 
       return snd->second.back()->getPlayPosition();
    }
 
-   int AudioManager::SoundLength (const std::string& id) const
+   size_t AudioManager::SoundLength (const std::string& id) const
    {
       if (id.empty()) throw error::InvalidParam("No id specified!", ERROR_LOCATION);
 
       auto snd = sounds.find(id);
-      if (snd == sounds.end() || snd->second.empty()) return -1;
+      if (snd == sounds.end() || snd->second.empty()) return 0;
 
       return snd->second.back()->getPlayLength();
    }

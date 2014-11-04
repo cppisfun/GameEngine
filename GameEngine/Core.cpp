@@ -206,40 +206,40 @@ namespace ge {
       return SDL_GetWindowBrightness(window);
    }
 
-   Point<int> Core::WindowPosition () const
+   Position Core::WindowPosition () const
    {
       int x = 0;
       int y = 0;
 
       SDL_GetWindowPosition(window, &x, &y);
-      return Point<int>(x, y);
+      return Position(x, y);
    }
 
-   Point<int> Core::WindowSize () const
+   Size Core::WindowSize () const
    {
       int width  = 0;
       int height = 0;
 
       SDL_GetWindowSize(window, &width, &height);
-      return Point<int>(width, height);
+      return Size(width, height);
    }
 
-   Point<int> Core::WindowMaximumSize () const
+   Size Core::WindowMaximumSize () const
    {
       int width  = 0;
       int height = 0;
 
       SDL_GetWindowMaximumSize(window, &width, &height);
-      return Point<int>(width, height);
+      return Size(width, height);
    }
 
-   Point<int> Core::WindowMinimumSize () const
+   Size Core::WindowMinimumSize () const
    {
       int width  = 0;
       int height = 0;
 
       SDL_GetWindowMinimumSize(window, &width, &height);
-      return Point<int>(width, height);
+      return Size(width, height);
    }
 
    bool Core::Running ()

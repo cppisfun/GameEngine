@@ -48,7 +48,7 @@ namespace ge {
       prevWheelPosition = currWheelPosition;
    }
 
-   InputMouse& InputMouse::Position (const Point<int>& position)
+   InputMouse& InputMouse::Position (const ge::Position& position)
    {
       currPosition = position;
       SDL_WarpMouseInWindow(window, position.X(), position.Y());

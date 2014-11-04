@@ -101,6 +101,8 @@
     <ClInclude Include="EventController.h" />
     <ClInclude Include="EventListener.h" />
     <ClInclude Include="GraphicsManager.h" />
+    <ClInclude Include="Box.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InputGamepad.h" />
     <ClInclude Include="InputKeyboard.h" />
@@ -109,6 +111,9 @@
     <ClInclude Include="Precomp.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="ResourcesManager.h" />
+    <ClInclude Include="Factor.h" />
+    <ClInclude Include="Size.h" />
+    <ClInclude Include="Sprite.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +130,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ResourcesManager.cpp" />
+    <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base\Base.vcxproj">

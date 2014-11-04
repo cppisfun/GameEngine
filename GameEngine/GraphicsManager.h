@@ -2,7 +2,8 @@
 #pragma once
 
 #include "Color.h"
-#include "Rectangle.h"
+#include "Position.h"
+#include "Box.h"
 
 #include "DLL_DEF.h"
 
@@ -59,35 +60,35 @@ namespace ge {
       void EndScene ();
 
       GraphicsManager& DrawPixel (int x, int y, const Color& color);
-      GraphicsManager& DrawPixel (const Point<int>& pos, const Color& color) { return DrawPixel(pos.X(), pos.Y(), color); }
-      GraphicsManager& DrawPixel (int x, int y)                              { return DrawPixel(x, y, foreColor); }
-      GraphicsManager& DrawPixel (const Point<int>& pos)                     { return DrawPixel(pos.X(), pos.Y(), foreColor); }
+      GraphicsManager& DrawPixel (const Position& pos, const Color& color) { return DrawPixel(pos.X(), pos.Y(), color); }
+      GraphicsManager& DrawPixel (int x, int y)                            { return DrawPixel(x, y, foreColor); }
+      GraphicsManager& DrawPixel (const Position& pos)                     { return DrawPixel(pos.X(), pos.Y(), foreColor); }
 
       GraphicsManager& DrawLine (int left, int top, int right, int bottom, const Color& color);
-      GraphicsManager& DrawLine (const Point<int>& topLeft, const Point<int>& bottomRight, const Color& color) { return DrawLine(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), color); }
-      GraphicsManager& DrawLine (const Rectangle<int>& rect, const Color& color)                               { return DrawLine(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), color); }
-      GraphicsManager& DrawLine (int left, int top, int right, int bottom)                                     { return DrawLine(left, top, right, bottom, foreColor); }
-      GraphicsManager& DrawLine (const Point<int>& topLeft, const Point<int>& bottomRight)                     { return DrawLine(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), foreColor); }
-      GraphicsManager& DrawLine (const Rectangle<int>& rect)                                                   { return DrawLine(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), foreColor); }
+      GraphicsManager& DrawLine (const Position& topLeft, const Position& bottomRight, const Color& color) { return DrawLine(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), color); }
+      GraphicsManager& DrawLine (const Box& rect, const Color& color)                                      { return DrawLine(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), color); }
+      GraphicsManager& DrawLine (int left, int top, int right, int bottom)                                 { return DrawLine(left, top, right, bottom, foreColor); }
+      GraphicsManager& DrawLine (const Position& topLeft, const Position& bottomRight)                     { return DrawLine(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), foreColor); }
+      GraphicsManager& DrawLine (const Box& rect)                                                          { return DrawLine(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), foreColor); }
 
       GraphicsManager& DrawRectangle (int left, int top, int right, int bottom, const Color& color);
-      GraphicsManager& DrawRectangle (const Point<int>& topLeft, const Point<int>& bottomRight, const Color& color) { return DrawRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), color); }
-      GraphicsManager& DrawRectangle (const Rectangle<int>& rect, const Color& color)                               { return DrawRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), color); }
-      GraphicsManager& DrawRectangle (int left, int top, int right, int bottom)                                     { return DrawRectangle(left, top, right, bottom, foreColor); }
-      GraphicsManager& DrawRectangle (const Point<int>& topLeft, const Point<int>& bottomRight)                     { return DrawRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), foreColor); }
-      GraphicsManager& DrawRectangle (const Rectangle<int>& rect)                                                   { return DrawRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), foreColor); }
+      GraphicsManager& DrawRectangle (const Position& topLeft, const Position& bottomRight, const Color& color) { return DrawRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), color); }
+      GraphicsManager& DrawRectangle (const Box& rect, const Color& color)                                      { return DrawRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), color); }
+      GraphicsManager& DrawRectangle (int left, int top, int right, int bottom)                                 { return DrawRectangle(left, top, right, bottom, foreColor); }
+      GraphicsManager& DrawRectangle (const Position& topLeft, const Position& bottomRight)                     { return DrawRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), foreColor); }
+      GraphicsManager& DrawRectangle (const Box& rect)                                                          { return DrawRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), foreColor); }
 
       GraphicsManager& FillRectangle (int left, int top, int right, int bottom, const Color& color);
-      GraphicsManager& FillRectangle (const Point<int>& topLeft, const Point<int>& bottomRight, const Color& color) { return FillRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), color); }
-      GraphicsManager& FillRectangle (const Rectangle<int>& rect, const Color& color)                               { return FillRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), color); }
-      GraphicsManager& FillRectangle (int left, int top, int right, int bottom)                                     { return FillRectangle(left, top, right, bottom, backColor); }
-      GraphicsManager& FillRectangle (const Point<int>& topLeft, const Point<int>& bottomRight)                     { return FillRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), backColor); }
-      GraphicsManager& FillRectangle (const Rectangle<int>& rect)                                                   { return FillRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), backColor); }
+      GraphicsManager& FillRectangle (const Position& topLeft, const Position& bottomRight, const Color& color) { return FillRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), color); }
+      GraphicsManager& FillRectangle (const Box& rect, const Color& color)                                      { return FillRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), color); }
+      GraphicsManager& FillRectangle (int left, int top, int right, int bottom)                                 { return FillRectangle(left, top, right, bottom, backColor); }
+      GraphicsManager& FillRectangle (const Position& topLeft, const Position& bottomRight)                     { return FillRectangle(topLeft.X(), topLeft.Y(), bottomRight.X(), bottomRight.Y(), backColor); }
+      GraphicsManager& FillRectangle (const Box& rect)                                                          { return FillRectangle(rect.Left(), rect.Top(), rect.Right(), rect.Bottom(), backColor); }
 
-      GraphicsManager& DrawTexture (const std::string& id, const Point<int>& dstPos)                                     { RenderTexture(id, -1, -1, -1, -1, dstPos.X(), dstPos.Y(), -1, -1); return *this; }
-      GraphicsManager& DrawTexture (const std::string& id, const Rectangle<int>& dstRect)                                { RenderTexture(id, -1, -1, -1, -1, dstRect.Left(), dstRect.Top(), dstRect.Right(), dstRect.Bottom()); return *this; }
-      GraphicsManager& DrawTexture (const std::string& id, const Rectangle<int>& srcRect, const Point<int>& dstPos)      { RenderTexture(id, srcRect.Left(), srcRect.Top(), srcRect.Right(), srcRect.Bottom(), dstPos.X(), dstPos.Y(), -1, -1); return *this; }
-      GraphicsManager& DrawTexture (const std::string& id, const Rectangle<int>& srcRect, const Rectangle<int>& dstRect) { RenderTexture(id, srcRect.Left(), srcRect.Top(), srcRect.Right(), srcRect.Bottom(), dstRect.Left(), dstRect.Top(), dstRect.Right(), dstRect.Bottom()); return *this; }
+      GraphicsManager& DrawTexture (const std::string& id, const Position& dstPos)                     { RenderTexture(id, -1, -1, -1, -1, dstPos.X(), dstPos.Y(), -1, -1); return *this; }
+      GraphicsManager& DrawTexture (const std::string& id, const Box& dstRect)                         { RenderTexture(id, -1, -1, -1, -1, dstRect.Left(), dstRect.Top(), dstRect.Right(), dstRect.Bottom()); return *this; }
+      GraphicsManager& DrawTexture (const std::string& id, const Box& srcRect, const Position& dstPos) { RenderTexture(id, srcRect.Left(), srcRect.Top(), srcRect.Right(), srcRect.Bottom(), dstPos.X(), dstPos.Y(), -1, -1); return *this; }
+      GraphicsManager& DrawTexture (const std::string& id, const Box& srcRect, const Box& dstRect)     { RenderTexture(id, srcRect.Left(), srcRect.Top(), srcRect.Right(), srcRect.Bottom(), dstRect.Left(), dstRect.Top(), dstRect.Right(), dstRect.Bottom()); return *this; }
 
       GraphicsManager& Log (int x, int y, const std::string& text)                                                 { RenderText(x, y, text, textColor, systemFont); return *this; }
       GraphicsManager& Log (int x, int y, const std::string& text, const Color& color)                             { RenderText(x, y, text, color, systemFont); return *this; }

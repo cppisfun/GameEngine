@@ -2,7 +2,7 @@
 #pragma once
 
 #include "EventListener.h"
-#include "Point.h"
+#include "Position.h"
 
 #include "DLL_DEF.h"
 
@@ -37,11 +37,11 @@ namespace ge {
    private:
       _SDL_Joystick* device;
 
-      Point<int> prevLeftStick;
-      Point<int> currLeftStick;
+      Position prevLeftStick;
+      Position currLeftStick;
 
-      Point<int> prevRightStick;
-      Point<int> currRightStick;
+      Position prevRightStick;
+      Position currRightStick;
 
       std::array<bool, Button_Count> currButtons;
       std::array<bool, Button_Count> prevButtons;
@@ -58,13 +58,13 @@ namespace ge {
       int LeftStickY () const              { return currLeftStick.Y(); }
       int LeftStickDX () const             { return currLeftStick.X() - prevLeftStick.X(); }
       int LeftStickDY () const             { return currLeftStick.Y() - prevLeftStick.Y(); }
-      const Point<int>& LeftStick () const { return currLeftStick; }
+      const Position& LeftStick () const { return currLeftStick; }
 
       int RightStickX () const              { return currRightStick.X(); }
       int RightStickY () const              { return currRightStick.Y(); }
       int RightStickDX () const             { return currRightStick.X() - prevRightStick.X(); }
       int RightStickDY () const             { return currRightStick.Y() - prevRightStick.Y(); }
-      const Point<int>& RightStick () const { return currRightStick; }
+      const Position& RightStick () const { return currRightStick; }
 
       bool LeftStickMoved (int direction = Direction_Any) const;
       bool RightStickMoved (int direction = Direction_Any) const;

@@ -36,9 +36,6 @@
     <ClInclude Include="InputGamepad.h">
       <Filter>Input</Filter>
     </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>Primitives</Filter>
-    </ClInclude>
     <ClInclude Include="Point.h">
       <Filter>Primitives</Filter>
     </ClInclude>
@@ -68,6 +65,24 @@
     </ClInclude>
     <ClInclude Include="GraphicsManager.h">
       <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Size.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Factor.h">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
+      <Filter>Primitives</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="EventController.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

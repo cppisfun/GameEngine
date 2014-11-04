@@ -2,7 +2,8 @@
 #pragma once
 
 #include "EventListener.h"
-#include "Point.h"
+#include "Position.h"
+#include "Size.h"
 
 #include "GraphicsManager.h"
 #include "InputManager.h"
@@ -77,10 +78,10 @@ namespace ge {
       Core& WindowMaximumSize (int width, int height);
       Core& WindowMinimumSize (int width, int height);
 
-      Core& WindowPosition (const Point<int>& pos)     { return WindowPosition(pos.X(), pos.Y()); }
-      Core& WindowSize (const Point<int>& dims)        { return WindowSize(dims.X(), dims.Y()); }
-      Core& WindowMaximumSize (const Point<int>& dims) { return WindowMaximumSize(dims.X(), dims.Y()); }
-      Core& WindowMinimumSize (const Point<int>& dims) { return WindowMinimumSize(dims.X(), dims.Y()); }
+      Core& WindowPosition (const Position& pos) { return WindowPosition(pos.X(), pos.Y()); }
+      Core& WindowSize (const Position& dims)    { return WindowSize(dims.X(), dims.Y()); }
+      Core& WindowMaximumSize (const Size& dims) { return WindowMaximumSize(dims.X(), dims.Y()); }
+      Core& WindowMinimumSize (const Size& dims) { return WindowMinimumSize(dims.X(), dims.Y()); }
 
       Core& MaximizeWindow ();
       Core& MinimizeWindow ();
@@ -97,10 +98,10 @@ namespace ge {
       bool ScreenSaverEnabled () const;
       float Brightness () const;
 
-      Point<int> WindowPosition () const;
-      Point<int> WindowSize () const;
-      Point<int> WindowMaximumSize () const;
-      Point<int> WindowMinimumSize () const;
+      Position WindowPosition () const;
+      Size WindowSize () const;
+      Size WindowMaximumSize () const;
+      Size WindowMinimumSize () const;
 
       bool Running ();
       bool Focussed () const;

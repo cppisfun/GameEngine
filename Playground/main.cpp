@@ -3,8 +3,9 @@
 #include "Base/Convert.h"
 
 #include "GameEngine/Core.h"
-#include "GameEngine/Rectangle.h"
+#include "GameEngine/Box.h"
 
+using namespace base;
 using namespace ge;
 
 
@@ -54,29 +55,29 @@ int main ()
 
          graphics->BeginScene(); // DRAWING OPERATIONS - BEGIN
          {
-            graphics->DrawTexture("image", ge::Rectangle<int>(300, 100, 310, 110));
-            graphics->DrawTexture("image", ge::Rectangle<int>(310, 110, 360, 160));
-            graphics->DrawTexture("image", ge::Rectangle<int>(360, 160, 620, 320));
+            graphics->DrawTexture("image", Box(300, 100, 310, 110));
+            graphics->DrawTexture("image", Box(310, 110, 360, 160));
+            graphics->DrawTexture("image", Box(360, 160, 620, 320));
 
             graphics->FillRectangle(5, 5, 240, 320);
             graphics->DrawRectangle(5, 5, 240, 320);
 
             graphics->Text(10, 10, "Filename:       " + audio->FileName("music"));
-            graphics->Text(10, 30, "Master Volume:  " + base::AsString(audio->MasterVolume()) + " %");
-            graphics->Text(10, 50, "Default Volume: " + base::AsString(audio->DefaultVolume("music")) + " %");
+            graphics->Text(10, 30, "Master Volume:  " + AsString(audio->MasterVolume()) + " %");
+            graphics->Text(10, 50, "Default Volume: " + AsString(audio->DefaultVolume("music")) + " %");
 
-            graphics->Log(10, 80, "Source Playing: " + base::AsString(audio->IsPlaying("music")));
+            graphics->Log(10, 80, "Source Playing: " + AsString(audio->IsPlaying("music")));
 
-            graphics->Text(10, 110, "Music Paused:   " + base::AsString(audio->IsMusicPaused("music")));
-            graphics->Text(10, 130, "Music Looped:   " + base::AsString(audio->IsMusicLooped("music")));
-            graphics->Text(10, 150, "Music Finished: " + base::AsString(audio->IsMusicFinished("music")));
+            graphics->Text(10, 110, "Music Paused:   " + AsString(audio->IsMusicPaused("music")));
+            graphics->Text(10, 130, "Music Looped:   " + AsString(audio->IsMusicLooped("music")));
+            graphics->Text(10, 150, "Music Finished: " + AsString(audio->IsMusicFinished("music")));
 
-            graphics->Log(10, 180, "Music Volume: " + base::AsString(audio->MusicVolume("music")) + " %");
-            graphics->Log(10, 200, "Music Speed:  " + base::AsString(audio->MusicSpeed("music")) + " %");
-            graphics->Log(10, 220, "Music Pan:    " + base::AsString(audio->MusicPan("music")) + " %");
+            graphics->Log(10, 180, "Music Volume: " + AsString(audio->MusicVolume("music")) + " %");
+            graphics->Log(10, 200, "Music Speed:  " + AsString(audio->MusicSpeed("music")) + " %");
+            graphics->Log(10, 220, "Music Pan:    " + AsString(audio->MusicPan("music")) + " %");
 
-            graphics->Text(10, 250, "Music Length:   " + base::AsString(audio->MusicLength("music")));
-            graphics->Text(10, 270, "Music Position: " + base::AsString(audio->MusicPosition("music")));
+            graphics->Text(10, 250, "Music Length:   " + AsString(audio->MusicLength("music")));
+            graphics->Text(10, 270, "Music Position: " + AsString(audio->MusicPosition("music")));
          }
          graphics->EndScene(); // DRAWING OPERATIONS - END
 

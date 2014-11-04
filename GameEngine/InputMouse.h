@@ -2,7 +2,7 @@
 #pragma once
 
 #include "EventListener.h"
-#include "Point.h"
+#include "Position.h"
 
 #include "DLL_DEF.h"
 
@@ -32,8 +32,8 @@ namespace ge {
          Button_None   = -2,
          Button_Any    = -1,
          Button_Left   = 0,
-         Button_Right  = 1,
-         Button_Middle = 2,
+         Button_Middle = 1,
+         Button_Right  = 2,
          Button_Extra1 = 3,
          Button_Extra2 = 4,
          Button_Count  = 5
@@ -42,10 +42,10 @@ namespace ge {
    private:
       SDL_Window* window;
 
-      Point<int> currPosition;
-      Point<int> prevPosition;
-      int        currWheelPosition;
-      int        prevWheelPosition;
+      Position currPosition;
+      Position prevPosition;
+      int      currWheelPosition;
+      int      prevWheelPosition;
 
       std::array<bool, Button_Count> currButtons;
       std::array<bool, Button_Count> prevButtons;
@@ -58,15 +58,15 @@ namespace ge {
 
       void Update () override;
 
-      InputMouse& Position (const Point<int>& position);
+      InputMouse& Position (const ge::Position& position);
       InputMouse& Show (bool show = true);
       InputMouse& Hide ();
 
-      int X () const                      { return currPosition.X(); }
-      int Y () const                      { return currPosition.Y(); }
-      int DX () const                     { return currPosition.X() - prevPosition.X(); }
-      int DY () const                     { return currPosition.Y() - prevPosition.Y(); }
-      const Point<int>& Position () const { return currPosition; }
+      int X () const                        { return currPosition.X(); }
+      int Y () const                        { return currPosition.Y(); }
+      int DX () const                       { return currPosition.X() - prevPosition.X(); }
+      int DY () const                       { return currPosition.Y() - prevPosition.Y(); }
+      const ge::Position& Position () const { return currPosition; }
 
       int Wheel () const  { return currWheelPosition; }
       int DWheel () const { return currWheelPosition - prevWheelPosition; }

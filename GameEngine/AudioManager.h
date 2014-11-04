@@ -43,13 +43,13 @@ namespace ge {
       AudioManager& PauseMusic (bool pause = true);
       AudioManager& PauseMusic (const std::string& id, bool pause = true);
 
-      AudioManager& MusicVolume (int percent);
-      AudioManager& MusicVolume (const std::string& id, int percent);
-      AudioManager& MusicSpeed (int percent);
-      AudioManager& MusicSpeed (const std::string& id, int percent);
-      AudioManager& MusicPan (int percent);
-      AudioManager& MusicPan (const std::string& id, int percent);
-      AudioManager& MusicPosition (const std::string& id, int position);
+      AudioManager& MusicVolume (float percent);
+      AudioManager& MusicVolume (const std::string& id, float percent);
+      AudioManager& MusicSpeed (float percent);
+      AudioManager& MusicSpeed (const std::string& id, float percent);
+      AudioManager& MusicPan (float percent);
+      AudioManager& MusicPan (const std::string& id, float percent);
+      AudioManager& MusicPosition (const std::string& id, size_t position);
 
       AudioManager& PlaySound (const std::string& id, bool looped = false);
       AudioManager& StopSound ();
@@ -57,12 +57,12 @@ namespace ge {
       AudioManager& PauseSound (bool pause = true);
       AudioManager& PauseSound (const std::string& id, bool pause = true);
 
-      AudioManager& SoundVolume (int percent);
-      AudioManager& SoundVolume (const std::string& id, int percent);
-      AudioManager& SoundSpeed (int percent);
-      AudioManager& SoundSpeed (const std::string& id, int percent);
-      AudioManager& SoundPan (int percent);
-      AudioManager& SoundPan (const std::string& id, int percent);
+      AudioManager& SoundVolume (float percent);
+      AudioManager& SoundVolume (const std::string& id, float percent);
+      AudioManager& SoundSpeed (float percent);
+      AudioManager& SoundSpeed (const std::string& id, float percent);
+      AudioManager& SoundPan (float percent);
+      AudioManager& SoundPan (const std::string& id, float percent);
 
       AudioManager& ResumeAll ()                        { return PauseAll(false); }
       AudioManager& ResumeMusic ()                      { return PauseMusic(false); }
@@ -72,8 +72,8 @@ namespace ge {
 
       irrklang::ISoundEngine* Device () const { return device; }
 
-      int MasterVolume () const;
-      int DefaultVolume (const std::string& id) const;
+      float MasterVolume () const;
+      float DefaultVolume (const std::string& id) const;
 
       bool IsPlaying (const std::string& id) const;
 
@@ -81,21 +81,21 @@ namespace ge {
       bool IsMusicLooped (const std::string& id) const;
       bool IsMusicFinished (const std::string& id) const;
 
-      int MusicVolume (const std::string& id) const;
-      int MusicSpeed (const std::string& id) const;
-      int MusicPan (const std::string& id) const;
-      int MusicPosition (const std::string& id) const;
-      int MusicLength (const std::string& id) const;
+      float MusicVolume (const std::string& id) const;
+      float MusicSpeed (const std::string& id) const;
+      float MusicPan (const std::string& id) const;
+      size_t MusicPosition (const std::string& id) const;
+      size_t MusicLength (const std::string& id) const;
 
       bool IsSoundPaused (const std::string& id) const;
       bool IsSoundLooped (const std::string& id) const;
       bool IsSoundFinished (const std::string& id) const;
 
-      int SoundVolume (const std::string& id) const;
-      int SoundSpeed (const std::string& id) const;
-      int SoundPan (const std::string& id) const;
-      int SoundPosition (const std::string& id) const;
-      int SoundLength (const std::string& id) const;
+      float SoundVolume (const std::string& id) const;
+      float SoundSpeed (const std::string& id) const;
+      float SoundPan (const std::string& id) const;
+      size_t SoundPosition (const std::string& id) const;
+      size_t SoundLength (const std::string& id) const;
 
       const std::string FileName (const std::string& id) const;
    };
